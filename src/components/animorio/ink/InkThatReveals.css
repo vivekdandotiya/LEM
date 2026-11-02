@@ -1,0 +1,120 @@
+/*
+  "Ink that reveals" from Animorio · https://animorio.com
+  License: free on your own sites and your clients’ sites, paid work included.
+  Not for resale, redistribution, templates or code collections · https://animorio.com/en/license/
+*/
+/* L'inchiostro che scopre */
+.ink-palco {
+  --carta: #F5F3EE;
+  --inchiostro: #000;
+  --margine: clamp(18px, 4vw, 56px);
+  --schermo: 100vh;
+}
+@supports (height: 100svh) {
+  .ink-palco { --schermo: 100svh; }
+}
+
+
+
+/* ------------------------------------------------------------------ la carta */
+.ink-palco {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: var(--schermo);
+  overflow: hidden;
+  /* fuori da un iframe il dito dipinge; dentro, lo script lascia alla pagina lo scorrimento in verticale */
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ink-palco--dentro {
+  touch-action: pan-y;
+}
+
+/* la parola stampata: misurata dallo script perché riempia la larghezza */
+.ink-parola {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  overflow: clip;
+  font-size: var(--corpo, 22vw);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.js .ink-parola:not(.pronta) {
+  visibility: hidden;
+}
+.ink-parola span {
+  display: inline-block;
+}
+/* un segno invisibile sulla linea di base: dice allo script dove appoggiare il gemello */
+.ink-parola .ink-linea-base {
+  width: 0;
+  height: 0;
+  vertical-align: baseline;
+}
+
+/* la tela sta sopra la carta ed è trasparente dove non c'è inchiostro */
+.ink-tela {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ il gemello in CSS (senza WebGL) */
+.ink-gemello {
+  --x: 50%;
+  --y: 50%;
+  --r: 0px;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: none;
+  place-items: center;
+  background: #000;
+  pointer-events: none;
+  -webkit-mask: radial-gradient(circle at var(--x) var(--y), #000 var(--r), transparent calc(var(--r) + 36px));
+  mask: radial-gradient(circle at var(--x) var(--y), #000 var(--r), transparent calc(var(--r) + 36px));
+}
+.modo-css .ink-gemello {
+  display: grid;
+}
+.modo-css .ink-tela {
+  display: none;
+}
+.ink-gemello span {
+  font-size: var(--corpo, 22vw);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: transparent;
+  background: linear-gradient(180deg, #fbfbfc 0%, #c9c9ce 30%, #f4f4f6 47%, #3b3b40 52%, #8d8d93 72%, #e4e4e8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ------------------------------------------------------------------ la riga in basso */
+.ink-nota {
+  position: absolute;
+  z-index: 3;
+  left: var(--margine);
+  bottom: var(--margine);
+  max-width: 30ch;
+  margin: 0;
+  color: #fff;
+  /* bianco in differenza: scuro sulla carta, chiaro sull'inchiostro */
+  mix-blend-mode: difference;
+  font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.2rem);
+  font-weight: 560;
+  line-height: 1.3;
+  pointer-events: none;
+}

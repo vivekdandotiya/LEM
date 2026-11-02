@@ -1,0 +1,128 @@
+/*
+  "The candle loader that burns down" from Animorio — https://animorio.com
+  License: free on your own sites and your clients' sites, paid work included.
+  Not for resale, redistribution, templates or code collections — https://animorio.com/en/license/
+*/
+.candle-wrap {
+  --candle-bg: #000000;
+  --candle-line: #ece4d4;
+  --candle-muted: #8d877c;
+  --candle-accent: #C9A66B; /* Lead Edge Champagne Bronze */
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--candle-bg);
+  color: var(--candle-line);
+  font-family: 'Mona Sans Variable', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  z-index: 10000;
+}
+
+.candle-stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  position: relative;
+}
+
+.candle-loader {
+  width: min(300px, 86vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 2.4vh, 18px);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.candle-loader__scene {
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.candle-canvas {
+  display: block;
+  height: clamp(170px, 56vh, 360px);
+  width: 100%;
+}
+
+.candle-word {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 34%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: clamp(30px, 10vh, 52px);
+  font-weight: 560;
+  font-variation-settings: 'wdth' 112;
+  letter-spacing: -.02em;
+  line-height: 1;
+  pointer-events: none;
+}
+.candle-word span { display: inline-block; will-change: transform, opacity, filter; }
+.candle-word .candle-dot { color: var(--candle-accent); }
+
+.candle-loader__meta {
+  width: 100%;
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.candle-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(233, 227, 214, .14);
+}
+.candle-event__name { font-weight: 560; font-variation-settings: 'wdth' 100; }
+.candle-event__date { color: var(--candle-muted); font-variation-settings: 'wdth' 92; }
+
+.candle-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  color: var(--candle-muted);
+  height: 1.3em;
+  overflow: hidden;
+}
+.candle-status__text { display: inline-block; }
+.candle-status__num { color: var(--candle-line); font-variation-settings: 'wdth' 88; min-width: 4ch; text-align: right; }
+
+.candle-skip-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+  color: var(--candle-muted);
+  font-size: 12px;
+  font-family: 'Mona Sans Variable', sans-serif;
+  background: transparent;
+  border: 1px solid rgba(233, 227, 214, 0.22);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.candle-skip-btn:hover {
+  color: #FFFFFF;
+  border-color: var(--candle-accent);
+}
+.candle-skip-btn:focus-visible {
+  outline: 2px solid var(--candle-accent);
+  outline-offset: 3px;
+}
+
+@media (max-height: 460px) {
+  .candle-loader__meta { font-size: 12px; gap: 4px; }
+  .candle-event { padding-bottom: 5px; }
+}
