@@ -10,6 +10,7 @@ import { SocialScene } from './scenes/SocialScene';
 import { WebScene } from './scenes/WebScene';
 import { CheckCircle2, ChevronRight, SkipForward } from 'lucide-react';
 import { StackSeparate } from '@/components/stack/StackSeparate';
+import { StageVideo } from '@/components/services/StageVideo';
 
 interface ProcessStageProps {
   slug: string;
@@ -22,6 +23,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
   const progressTextRef = useRef<HTMLSpanElement>(null);
   const [activePhase, setActivePhase] = useState(0);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
 
   const processData = PROCESS_DATA[slug] || PROCESS_DATA['seo'];
 
@@ -30,6 +32,12 @@ export function ProcessStage({ slug }: ProcessStageProps) {
 
     const checkReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     setIsReducedMotion(checkReduced);
+
+    const mql = window.matchMedia('(min-width: 1024px)');
+    setIsDesktop(mql.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
   }, [slug]);
 
   const scrollToPhase = (idx: number) => {
@@ -106,7 +114,11 @@ export function ProcessStage({ slug }: ProcessStageProps) {
                 <h3 className="font-display font-bold text-xl text-ink">{phase.headline}</h3>
                 <p className="font-sans text-sm text-grey-3">{phase.body}</p>
                 <div className="h-64 rounded-xl overflow-hidden mt-2">
-                  {renderScene(idx, true)}
+                  <StageVideo
+                    serviceSlug={slug}
+                    activePhase={idx}
+                    phaseTitle={phase.headline}
+                  />
                 </div>
               </div>
             ))}
@@ -226,15 +238,15 @@ export function ProcessStage({ slug }: ProcessStageProps) {
           </div>
 
           {/* Right Column (62% width -> col-span-7) */}
-          <div className="col-span-7 h-[620px] relative rounded-[28px] overflow-hidden shadow-soft-lg border border-ink/15">
-            {/* Permanent Corner "ILLUSTRATIVE" Sticker */}
-            <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink/95 border border-white/10 text-[10px] font-mono tracking-widest uppercase text-lime shadow-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
-              ILLUSTRATIVE
-            </div>
-
-            {/* Render Active Scene */}
-            {renderScene(activePhase)}
+          <div className="col-span-7 h-[620px] relative">
+            {isDesktop && (
+              <StageVideo
+                key={`${slug}-${isDesktop}`}
+                serviceSlug={slug}
+                activePhase={activePhase}
+                phaseTitle={processData.phases[activePhase]?.headline || ''}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -286,8 +298,14 @@ export function ProcessStage({ slug }: ProcessStageProps) {
               </div>
 
               {/* Dedicated mini-stage illustration */}
-              <div className="h-72 rounded-xl overflow-hidden mt-2 border border-ink/10">
-                {renderScene(idx, true)}
+              <div className="h-72 rounded-xl overflow-hidden mt-2">
+                {!isDesktop && (
+                  <StageVideo
+                    serviceSlug={slug}
+                    activePhase={idx}
+                    phaseTitle={phase.headline}
+                  />
+                )}
               </div>
             </div>
           ))}

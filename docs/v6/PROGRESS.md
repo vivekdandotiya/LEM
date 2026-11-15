@@ -188,3 +188,50 @@ This document tracks progress through tasks T0 to T8 in strict accordance with t
   - `docs/v6/PROGRESS.md`
   - Evidence: `docs/v6/T4-evidence/*.png`, `docs/v6/T4-evidence/*.json`
 - **Commit:** `T4: stack-then-separate card system`
+
+---
+
+## T5: Video Stages on Service Pages
+- **Date:** 2026-11-16
+- **Branch:** `v6-stack-video-drip`
+- **Status:** **PASSED**
+- **Changes & Findings:**
+  - Excluded recording routes `/__scene/` in `src/app/robots.ts` and `src/app/sitemap.ts`.
+  - Created internal recording canvas route `src/app/__scene/[service]/[phase]/page.tsx` rendering clean 16:10 stage animations.
+  - Built recording pipeline `tools/record-scenes.ts` utilizing Playwright headless browser and `ffmpeg-static` to capture and encode all 16 scenes (4 services × 4 phases):
+    - Desktop 1080p MP4 (H.264, crf 22, faststart): 140–234 KB (budget <= 1800 KB).
+    - Desktop 1080p WebM (VP9, crf 33): 140–213 KB.
+    - Mobile 720p MP4 (H.264, crf 24): 60–94 KB (budget <= 900 KB).
+    - High-res WebP poster stills: 34–48 KB.
+    - Generated pipeline documentation in `docs/v6/T5-video-pipeline.md`.
+  - Built dual-slot `<video>` cross-fade player `src/components/services/StageVideo.tsx`:
+    - Seamless 450ms A/B opacity cross-fade when phases switch.
+    - Pauses the inactive video completely once the cross-fade finishes.
+    - Only ONE video decodes/plays at any moment.
+    - IntersectionObserver pauses playback automatically whenever the stage section is scrolled offscreen or hidden.
+    - High-res poster fallback rendered if `prefers-reduced-motion: reduce` or data-saver is active, with an explicit "Play Animation" button.
+    - Permanent corner "ILLUSTRATIVE" sticker badge rendered on top of the stage video at all times.
+    - HTML overlays for Phase title, status indicator, and workflow label (zero fabricated metrics).
+  - Integrated `StageVideo` into `src/components/process/ProcessStage.tsx`:
+    - Responsive separation: desktop pinned stage renders exactly 1 right-column `StageVideo` instance; mobile viewport renders dedicated mini-stages with off-screen IntersectionObserver pausing.
+    - Added unmount pausing cleanup to eliminate any lingering audio/decoders across route changes.
+  - Verified with automated Playwright harness `tools/verify-t5.mjs`:
+    - All 16 video sets verified on disk with sizes logged (< 250 KB desktop, < 100 KB mobile, all 100% within budget).
+    - Verified all 4 service pages (`/services/seo`, `/services/ppc`, `/services/social-media`, `/services/web-development`) across all 4 phases on desktop (1440x900).
+    - Asserted `playingVideos.length <= 1` on every phase transition across all pages.
+    - Off-screen pause verified: all videos pause when scrolled away from the stage.
+    - Mobile viewports (390x844) verified with screenshots saved.
+    - Reduced motion fallback verified: poster displayed with "Play Animation" button.
+    - Captured 21 screenshots saved in `docs/v6/T5-evidence/desktop/`, `docs/v6/T5-evidence/mobile/`, and `docs/v6/T5-evidence/reduced-motion-fallback.png`.
+- **Files Touched:**
+  - `src/components/services/StageVideo.tsx`
+  - `src/components/process/ProcessStage.tsx`
+  - `src/app/robots.ts`
+  - `src/app/sitemap.ts`
+  - `src/app/__scene/[service]/[phase]/page.tsx`
+  - `tools/record-scenes.ts`
+  - `tools/verify-t5.mjs`
+  - `docs/v6/T5-video-pipeline.md`
+  - `docs/v6/PROGRESS.md`
+  - Evidence: `docs/v6/T5-evidence/desktop/*.png`, `docs/v6/T5-evidence/mobile/*.png`, `docs/v6/T5-evidence/*.png`
+- **Commit:** `T5: video stages on all service pages`
