@@ -72,10 +72,11 @@ export function ServicesPreview() {
                         src={imgSrc}
                         alt={`${service.title} execution preview`}
                         fill
+                        decoding="async"
                         sizes="(max-width: 768px) 100vw, 600px"
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
-                      <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ink/80 backdrop-blur-md text-[10px] font-mono text-white tracking-widest uppercase border border-white/10">
+                      <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ink/90 text-[10px] font-mono text-white tracking-widest uppercase border border-white/10">
                         {service.label}
                       </div>
                     </div>

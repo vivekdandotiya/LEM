@@ -70,10 +70,10 @@ export function SelectedWork() {
 
                   {/* Overlaid details */}
                   <div className="relative z-10 flex items-center justify-between p-4">
-                    <span className="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-sm text-[10px] font-mono tracking-wider uppercase text-warmgray-200 border border-white/10">
+                    <span className="px-2.5 py-1 rounded-md bg-black/85 text-[10px] font-mono tracking-wider uppercase text-warmgray-200 border border-white/10">
                       {project.category}
                     </span>
-                    <span className="text-xs font-mono text-warmgray-300 bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
+                    <span className="text-xs font-mono text-warmgray-300 bg-black/75 px-2 py-0.5 rounded">
                       {project.year}
                     </span>
                   </div>

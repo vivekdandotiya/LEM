@@ -23,3 +23,56 @@ This document tracks progress through tasks T0 to T8 in strict accordance with t
   - `docs/v6/PROGRESS.md`
   - Evidence: `docs/v6/T0-evidence/traces/*.json`, `docs/v6/T0-evidence/lighthouse/*`
 - **Commit:** `T0: baseline measurements`
+
+---
+
+## T1: Fix the Lag (Smoothness Repairs, Measured)
+- **Date:** 2026-11-16
+- **Branch:** `v6-stack-video-drip`
+- **Status:** **PASSED**
+- **Changes & Findings:**
+  - Removed full-viewport repainting mask (`body::after`) and promoted base dots (`body::before`) with `transform: translateZ(0)`.
+  - Replaced dot cursor layer in `DotGridPointerListener.tsx` with a small, 442×442 element with static radial mask and grid-snapped `translate3d()` via `gsap.quickTo`.
+  - Removed `backdrop-blur` from all cards, chips, badges, and moving columns (retained strictly on navbar and contact form).
+  - Optimized `HeroWall.tsx`: added `will-change: transform` directly to column elements, converted pause/resume to direct DOM operations (zero React re-renders during scroll), and capped rendered creatives per column to visible + 1 buffer.
+  - Optimized `cursor.ts`: throttled `elementFromPoint` to at most once per 80ms during scroll, removed per-frame `gsap.ticker` loop, and targeted `MutationObserver` strictly to the active target's parent.
+  - Eliminated synchronous layout thrash in `Magnetic.tsx`, `Tilt3D.tsx`, and `FinalCTA.tsx` by pre-caching element bounding boxes on `pointerenter` and invalidating on scroll/resize.
+  - Added `content-visibility: auto` to below-the-fold sections and explicit `decoding="async"` to `<Image>` tags.
+  - Re-measured on production build with real headed Google Chrome:
+    - Normal profile: 5 out of 6 routes achieved 0 long tasks; `/services/seo` p95 improved by 11x from 366.6ms down to 33.4ms with 0 long tasks; `/` p95 dropped from 99.9ms to 66.6ms with only 1 task at 50.0ms.
+    - 4x CPU slowdown: `/` median dropped from 100.0ms to 16.7ms (6x faster), with long tasks reduced by 75.5%; `/services/seo` max frame time dropped from 1883ms to 200ms.
+    - Cursor test suite: 8/8 tests passed (100%).
+    - Lighthouse mobile: Homepage improved from 39 to 50 (+11 pts, LCP 6.6s -> 2.0s); Services improved from 49 to 51.
+- **Files Touched:**
+  - `src/styles/globals.css`
+  - `src/components/ui/DotGridPointerListener.tsx`
+  - `src/components/hero/AdCard.tsx`
+  - `src/components/hero/HeroWall.tsx`
+  - `src/components/hero/HeroVisualCards.tsx`
+  - `src/components/hero/HeroVisualStack.tsx`
+  - `src/components/hero/HomeHero.tsx`
+  - `src/components/home/SelectedWork.tsx`
+  - `src/components/home/ServicesPreview.tsx`
+  - `src/components/home/TrustBar.tsx`
+  - `src/components/about/AboutJourney.tsx`
+  - `src/components/process/ProcessStage.tsx`
+  - `src/components/process/scenes/MetaScene.tsx`
+  - `src/components/process/scenes/SocialScene.tsx`
+  - `src/components/services/ServicePageTemplate.tsx`
+  - `src/components/three/PhoneFallback.tsx`
+  - `src/components/ui/CircularBadge.tsx`
+  - `src/components/intro/BrandFloodIntro.tsx`
+  - `src/components/home/FAQSection.tsx`
+  - `src/components/home/StatsSection.tsx`
+  - `src/components/home/FinalCTA.tsx`
+  - `src/components/home/ConceptWorkGallery.tsx`
+  - `src/components/home/ProcessSteps.tsx`
+  - `src/motion/cursor.ts`
+  - `src/motion/Magnetic.tsx`
+  - `src/motion/Tilt3D.tsx`
+  - `src/motion/ImageReveal.tsx`
+  - `next.config.mjs`
+  - `docs/v6/T1-before-after.md`
+  - `docs/v6/PROGRESS.md`
+  - Evidence: `docs/v6/T1-evidence/traces/*.json`, `docs/v6/T1-evidence/lighthouse/*`, `docs/v6/T1-evidence/baseline-metrics.json`
+- **Commit:** `T1: smoothness repairs`

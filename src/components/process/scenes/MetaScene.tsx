@@ -167,7 +167,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
 
             {/* Center High-Intent Cluster (Active in Lime) */}
-            <div className="relative z-10 w-28 h-28 rounded-full bg-[#1B2A00]/90 border-2 border-lime flex flex-col items-center justify-center shadow-lime-glow backdrop-blur-md">
+            <div className="relative z-10 w-28 h-28 rounded-full bg-[#1B2A00] border-2 border-lime flex flex-col items-center justify-center shadow-lime-glow">
               <Target className="w-6 h-6 text-lime mb-1" />
               <span className="font-mono font-bold text-[11px] text-lime">TOP 15%</span>
               <span className="font-mono text-[8px] text-white/80">HIGH-INTENT BUYERS</span>

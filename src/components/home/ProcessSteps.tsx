@@ -22,7 +22,7 @@ export function ProcessSteps() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="py-24 sm:py-32 bg-transparent" id="process">
+    <section className="py-24 sm:py-32 bg-transparent content-auto" id="process">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
         <div className="pb-12 border-b border-ink/10 flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -102,6 +102,7 @@ export function ProcessSteps() {
                   src={src}
                   alt={`Process step ${idx + 1}`}
                   fill
+                  decoding="async"
                   sizes="(max-width: 1024px) 100vw, 500px"
                   className="object-cover"
                 />

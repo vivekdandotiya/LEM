@@ -152,7 +152,7 @@ export function HeroVisualStack({ className = "" }: HeroVisualStackProps) {
       </div>
 
       {/* Unobtrusive Step Indicators & WCAG 2.2.2 Pause/Play Control */}
-      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-white/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-charcoal-900/10 shadow-soft-sm z-30">
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-white px-3.5 py-1.5 rounded-full border border-charcoal-900/10 shadow-soft-sm z-30">
         <button
           type="button"
           onClick={() => setIsPaused(!isPaused)}

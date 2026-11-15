@@ -84,6 +84,7 @@ export default function ImageReveal({
             fill
             sizes={sizes}
             priority={priority}
+            decoding="async"
             className="object-cover w-full h-full"
           />
         ) : (
@@ -93,6 +94,7 @@ export default function ImageReveal({
             width={width || 600}
             height={height || 400}
             priority={priority}
+            decoding="async"
             className="object-cover w-full h-full"
           />
         )}

@@ -8,7 +8,6 @@ import { AdCard } from './AdCard';
 export function HeroWall() {
   const wallRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const wall = wallRef.current;
@@ -17,16 +16,21 @@ export function HeroWall() {
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // 1. IntersectionObserver: Pause animations and hide wall when offscreen
+    // 1. IntersectionObserver: Pause animations and hide wall when offscreen (Direct DOM, zero React re-renders)
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const cols = wall.querySelectorAll<HTMLElement>('.wall-col');
           if (!entry.isIntersecting) {
-            setIsPaused(true);
             wall.style.visibility = 'hidden';
+            cols.forEach((col) => {
+              col.style.animationPlayState = 'paused';
+            });
           } else {
-            setIsPaused(false);
             wall.style.visibility = 'visible';
+            cols.forEach((col) => {
+              col.style.animationPlayState = 'running';
+            });
           }
         });
       },
@@ -82,14 +86,14 @@ export function HeroWall() {
     };
   }, []);
 
-  // Organize 24 creatives into 6 columns (4 per col, duplicated once to 8 per col)
+  // Organize creatives into 6 columns capped to visible viewport + 1 buffer (3 per col, duplicated once to 6 per col)
   const columns: { creatives: HeroCreative[]; dur: number; dir: 'up' | 'down' }[] = [
-    { creatives: [HERO_CREATIVES[0], HERO_CREATIVES[6], HERO_CREATIVES[12], HERO_CREATIVES[18]], dur: 85, dir: 'up' },
-    { creatives: [HERO_CREATIVES[1], HERO_CREATIVES[7], HERO_CREATIVES[13], HERO_CREATIVES[19]], dur: 105, dir: 'down' },
-    { creatives: [HERO_CREATIVES[2], HERO_CREATIVES[8], HERO_CREATIVES[14], HERO_CREATIVES[20]], dur: 75, dir: 'up' },
-    { creatives: [HERO_CREATIVES[3], HERO_CREATIVES[9], HERO_CREATIVES[15], HERO_CREATIVES[21]], dur: 95, dir: 'down' },
-    { creatives: [HERO_CREATIVES[4], HERO_CREATIVES[10], HERO_CREATIVES[16], HERO_CREATIVES[22]], dur: 80, dir: 'up' },
-    { creatives: [HERO_CREATIVES[5], HERO_CREATIVES[11], HERO_CREATIVES[17], HERO_CREATIVES[23]], dur: 110, dir: 'down' },
+    { creatives: [HERO_CREATIVES[0], HERO_CREATIVES[6], HERO_CREATIVES[12]], dur: 85, dir: 'up' },
+    { creatives: [HERO_CREATIVES[1], HERO_CREATIVES[7], HERO_CREATIVES[13]], dur: 105, dir: 'down' },
+    { creatives: [HERO_CREATIVES[2], HERO_CREATIVES[8], HERO_CREATIVES[14]], dur: 75, dir: 'up' },
+    { creatives: [HERO_CREATIVES[3], HERO_CREATIVES[9], HERO_CREATIVES[15]], dur: 95, dir: 'down' },
+    { creatives: [HERO_CREATIVES[4], HERO_CREATIVES[10], HERO_CREATIVES[16]], dur: 80, dir: 'up' },
+    { creatives: [HERO_CREATIVES[5], HERO_CREATIVES[11], HERO_CREATIVES[17]], dur: 110, dir: 'down' },
   ];
 
   return (
@@ -101,9 +105,6 @@ export function HeroWall() {
       <div
         ref={wallRef}
         className="absolute inset-[-25%_-14%] rotate-[-5deg] md:rotate-[-7deg] scale-[1.08] grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 pointer-events-none"
-        style={{
-          willChange: 'transform, opacity',
-        }}
       >
         {columns.map((col, colIdx) => (
           <div
@@ -116,7 +117,7 @@ export function HeroWall() {
               animationDuration: `${col.dur}s`,
               animationTimingFunction: 'linear',
               animationIterationCount: 'infinite',
-              animationPlayState: isPaused ? 'paused' : 'running',
+              willChange: 'transform',
             }}
           >
             {/* First set of 4 cards */}

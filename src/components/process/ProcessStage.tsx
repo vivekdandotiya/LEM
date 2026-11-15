@@ -17,8 +17,9 @@ interface ProcessStageProps {
 export function ProcessStage({ slug }: ProcessStageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
+  const progressFillRef = useRef<HTMLDivElement>(null);
+  const progressTextRef = useRef<HTMLSpanElement>(null);
   const [activePhase, setActivePhase] = useState(0);
-  const [progress, setProgress] = useState(0);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
   const stRef = useRef<ScrollTrigger | null>(null);
 
@@ -43,13 +44,19 @@ export function ProcessStage({ slug }: ProcessStageProps) {
         trigger: triggerEl,
         pin: pinEl,
         start: 'top top',
-        end: '+=280%',
+        end: '+=200%',
         scrub: 0.6,
         onUpdate: (self) => {
           const p = self.progress;
-          setProgress(p);
+          const pct = Math.round(p * 100);
+          if (progressFillRef.current) {
+            progressFillRef.current.style.width = `${pct}%`;
+          }
+          if (progressTextRef.current) {
+            progressTextRef.current.textContent = `${pct}%`;
+          }
           const phaseIdx = Math.min(3, Math.floor(p * 4));
-          setActivePhase(phaseIdx);
+          setActivePhase((prev) => (prev === phaseIdx ? prev : phaseIdx));
         },
       });
 
@@ -99,15 +106,15 @@ export function ProcessStage({ slug }: ProcessStageProps) {
   const renderScene = (phaseIndex: number, isStatic = false) => {
     switch (slug) {
       case 'seo':
-        return <SeoScene activePhase={phaseIndex} progress={progress} isStatic={isStatic} />;
+        return <SeoScene activePhase={phaseIndex} isStatic={isStatic} />;
       case 'meta-ads':
-        return <MetaScene activePhase={phaseIndex} progress={progress} isStatic={isStatic} />;
+        return <MetaScene activePhase={phaseIndex} isStatic={isStatic} />;
       case 'social-media':
-        return <SocialScene activePhase={phaseIndex} progress={progress} isStatic={isStatic} />;
+        return <SocialScene activePhase={phaseIndex} isStatic={isStatic} />;
       case 'web-development':
-        return <WebScene activePhase={phaseIndex} progress={progress} isStatic={isStatic} />;
+        return <WebScene activePhase={phaseIndex} isStatic={isStatic} />;
       default:
-        return <SeoScene activePhase={phaseIndex} progress={progress} isStatic={isStatic} />;
+        return <SeoScene activePhase={phaseIndex} isStatic={isStatic} />;
     }
   };
 
@@ -223,12 +230,13 @@ export function ProcessStage({ slug }: ProcessStageProps) {
               <div className="flex items-center gap-3">
                 <div className="w-24 h-1.5 bg-ink/10 rounded-full overflow-hidden">
                   <div
+                    ref={progressFillRef}
                     className="h-full bg-lime transition-all duration-300"
-                    style={{ width: `${Math.round(progress * 100)}%` }}
+                    style={{ width: '0%' }}
                   />
                 </div>
-                <span className="font-mono text-[11px] text-grey-3 font-semibold">
-                  {Math.round(progress * 100)}%
+                <span ref={progressTextRef} className="font-mono text-[11px] text-grey-3 font-semibold">
+                  0%
                 </span>
               </div>
 
@@ -245,7 +253,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
           {/* Right Column (62% width -> col-span-7) */}
           <div className="col-span-7 h-[620px] relative rounded-[28px] overflow-hidden shadow-soft-lg border border-ink/15">
             {/* Permanent Corner "ILLUSTRATIVE" Sticker */}
-            <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink/90 backdrop-blur-md border border-white/10 text-[10px] font-mono tracking-widest uppercase text-lime shadow-md">
+            <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink/95 border border-white/10 text-[10px] font-mono tracking-widest uppercase text-lime shadow-md">
               <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
               ILLUSTRATIVE
             </div>

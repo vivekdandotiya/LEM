@@ -80,7 +80,7 @@ export function AboutJourney() {
     <div className="relative pt-28 sm:pt-36 pb-24 bg-transparent select-none">
       {/* Sticky Journey Navigation Bar */}
       <div className="sticky top-20 z-40 max-w-2xl mx-auto px-4 mb-14">
-        <div className="card-glass-elevated bg-paper-2/90 backdrop-blur-md p-2 rounded-full border border-ink/10 flex items-center justify-between shadow-soft-sm">
+        <div className="card-glass-elevated bg-paper-2 p-2 rounded-full border border-ink/10 flex items-center justify-between shadow-soft-sm">
           <div className="flex items-center gap-2 pl-3">
             <SparkleGlyph size={14} className="text-lime" spin={true} />
             <span className="text-[11px] font-mono uppercase tracking-wider text-grey-3 font-semibold hidden sm:inline">

@@ -375,7 +375,7 @@ export function BrandFloodIntro() {
         </span>
         <button
           onClick={handleSkip}
-          className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-ink/20 bg-paper/60 backdrop-blur-sm text-xs font-mono font-medium text-ink/80 hover:text-ink hover:border-lime hover:bg-paper transition-all duration-200"
+          className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-ink/20 bg-paper text-xs font-mono font-medium text-ink/80 hover:text-ink hover:border-lime transition-all duration-200"
           aria-label="Skip introduction animation (Press Escape)"
         >
           <span className="text-[10px] text-grey-2 group-hover:text-lime transition-colors">ESC</span>

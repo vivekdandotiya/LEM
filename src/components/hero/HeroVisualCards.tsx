@@ -106,7 +106,7 @@ export function CardSocial() {
           sizes="(max-width: 768px) 100vw, 550px"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/85 via-charcoal-900/20 to-transparent" />
-        <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm text-[10px] text-warmgray-300 font-mono">
+        <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/85 text-[10px] text-warmgray-300 font-mono">
           0:15 / 4K
         </div>
         <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between">

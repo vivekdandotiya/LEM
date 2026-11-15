@@ -144,7 +144,7 @@ export function HomeHero() {
         className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center py-8 my-auto"
       >
         {/* Eyebrow Label */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono tracking-widest uppercase text-white/90 mb-6 shadow-sm">
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-charcoal/90 border border-white/15 text-xs font-mono tracking-widest uppercase text-white/90 mb-6 shadow-sm">
           <SparkleGlyph size={14} spin={true} />
           <span>{HERO_DATA.eyebrow}</span>
         </div>

@@ -36,8 +36,10 @@ export function AdCard({
         src={creative.image}
         alt={isDecorative ? '' : `${creative.brand} — ${creative.category}`}
         fill
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+        sizes="(max-width: 640px) 280px, 360px"
         priority={priority}
+        loading={isDecorative ? (priority ? undefined : 'eager') : 'lazy'}
+        decoding="async"
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
 
@@ -55,7 +57,7 @@ export function AdCard({
       {/* Card Header Top Row */}
       <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 z-10">
         {/* Brand Pill with Brand Dot */}
-        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ink/75 backdrop-blur-md border border-white/15 text-[12px] font-sans font-medium text-white shadow-sm">
+        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ink/90 border border-white/15 text-[12px] font-sans font-medium text-white shadow-sm">
           <i
             className="w-2 h-2 rounded-full shrink-0"
             style={{ backgroundColor: creative.dot }}
@@ -69,7 +71,7 @@ export function AdCard({
           {showConceptBadge && (
             <span className="sticker-badge text-[10px] py-0.5 px-2">Concept</span>
           )}
-          <span className="px-2.5 py-1 rounded bg-white/15 backdrop-blur-md border border-white/10 text-[10px] font-mono tracking-wider uppercase text-white/90">
+          <span className="px-2.5 py-1 rounded bg-charcoal/90 border border-white/10 text-[10px] font-mono tracking-wider uppercase text-white/90">
             {creative.category}
           </span>
         </div>

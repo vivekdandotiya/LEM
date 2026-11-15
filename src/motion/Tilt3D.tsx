@@ -21,22 +21,40 @@ export default function Tilt3D({ children, maxTilt = 6, className = '' }: Tilt3D
     const rx = gsap.quickTo(el, 'rotationX', { duration: 0.6 });
     const ry = gsap.quickTo(el, 'rotationY', { duration: 0.6 });
 
+    let rect: DOMRect | null = null;
+
+    const onEnter = () => {
+      rect = el.getBoundingClientRect();
+    };
+
     const onMove = (e: PointerEvent) => {
-      const r = el.getBoundingClientRect();
-      ry(((e.clientX - r.left) / r.width - 0.5) * (maxTilt * 1.3));
-      rx(-((e.clientY - r.top) / r.height - 0.5) * (maxTilt * 1.3));
+      if (!rect) rect = el.getBoundingClientRect();
+      ry(((e.clientX - rect.left) / rect.width - 0.5) * (maxTilt * 1.3));
+      rx(-((e.clientY - rect.top) / rect.height - 0.5) * (maxTilt * 1.3));
     };
 
     const onLeave = () => {
+      rect = null;
       rx(0);
       ry(0);
     };
 
+    const onInvalidate = () => {
+      rect = null;
+    };
+
+    el.addEventListener('pointerenter', onEnter);
     el.addEventListener('pointermove', onMove);
     el.addEventListener('pointerleave', onLeave);
+    window.addEventListener('scroll', onInvalidate, { passive: true });
+    window.addEventListener('resize', onInvalidate, { passive: true });
+
     return () => {
+      el.removeEventListener('pointerenter', onEnter);
       el.removeEventListener('pointermove', onMove);
       el.removeEventListener('pointerleave', onLeave);
+      window.removeEventListener('scroll', onInvalidate);
+      window.removeEventListener('resize', onInvalidate);
     };
   }, [maxTilt]);
 

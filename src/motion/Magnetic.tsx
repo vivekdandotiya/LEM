@@ -20,22 +20,49 @@ export function Magnetic({ children, strength = 0.28, className = '' }: Magnetic
     const xTo = gsap.quickTo(el, 'x', { duration: 0.5, ease: 'power3' });
     const yTo = gsap.quickTo(el, 'y', { duration: 0.5, ease: 'power3' });
 
-    const onMove = (e: PointerEvent) => {
+    let centerX = 0;
+    let centerY = 0;
+    let hasCoords = false;
+
+    const updateCoords = () => {
       const r = el.getBoundingClientRect();
-      xTo((e.clientX - (r.left + r.width / 2)) * strength);
-      yTo((e.clientY - (r.top + r.height / 2)) * strength);
+      centerX = r.left + r.width / 2;
+      centerY = r.top + r.height / 2;
+      hasCoords = true;
+    };
+
+    const onEnter = () => {
+      updateCoords();
+    };
+
+    const onMove = (e: PointerEvent) => {
+      if (!hasCoords) updateCoords();
+      xTo((e.clientX - centerX) * strength);
+      yTo((e.clientY - centerY) * strength);
     };
 
     const onLeave = () => {
+      hasCoords = false;
       xTo(0);
       yTo(0);
     };
 
+    const onInvalidate = () => {
+      hasCoords = false;
+    };
+
+    el.addEventListener('pointerenter', onEnter);
     el.addEventListener('pointermove', onMove);
     el.addEventListener('pointerleave', onLeave);
+    window.addEventListener('scroll', onInvalidate, { passive: true });
+    window.addEventListener('resize', onInvalidate, { passive: true });
+
     return () => {
+      el.removeEventListener('pointerenter', onEnter);
       el.removeEventListener('pointermove', onMove);
       el.removeEventListener('pointerleave', onLeave);
+      window.removeEventListener('scroll', onInvalidate);
+      window.removeEventListener('resize', onInvalidate);
     };
   }, [strength]);
 

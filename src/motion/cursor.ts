@@ -30,11 +30,36 @@ export function initCursor(options: CursorOptions = {}) {
     y: gsap.quickTo(el, 'y', { duration: 0.16, ease: 'power2.out' }),
   };
 
+  // Targeted observer that only watches removals of the currently hovered [data-cursor] element
+  let currentWatchedTarget: HTMLElement | null = null;
+  let targetObserver: MutationObserver | null = null;
+
+  function watchTarget(target: HTMLElement | null) {
+    if (currentWatchedTarget === target) return;
+    if (targetObserver) {
+      targetObserver.disconnect();
+      targetObserver = null;
+    }
+    currentWatchedTarget = target;
+    if (target && target.parentElement) {
+      targetObserver = new MutationObserver(() => {
+        if (!document.body.contains(target)) {
+          applyState('default');
+          watchTarget(null);
+        }
+      });
+      targetObserver.observe(target.parentElement, { childList: true });
+    }
+  }
+
   function applyState(next: typeof currentState, text = '') {
     if (currentState === next && label!.textContent === text) return;
     currentState = next;
     el!.dataset.state = next;
     label!.textContent = text;
+    if (next === 'default') {
+      watchTarget(null);
+    }
   }
 
   function evaluate(x: number, y: number) {
@@ -56,6 +81,8 @@ export function initCursor(options: CursorOptions = {}) {
       applyState(isInteractive ? 'link' : 'default');
       return;
     }
+
+    watchTarget(target);
 
     const mode = target.getAttribute('data-cursor');
     if (mode === 'view') {
@@ -85,10 +112,22 @@ export function initCursor(options: CursorOptions = {}) {
     }
   };
 
-  // Re-evaluate on every frame while an active non-default state is held
-  const ticker = () => {
-    if (currentState !== 'default') {
-      evaluate(lastX, lastY);
+  // Throttle elementFromPoint to at most once every 80ms while scrolling
+  let scrollThrottleTimer: ReturnType<typeof setTimeout> | null = null;
+  let lastScrollEval = 0;
+
+  const onScrollThrottled = () => {
+    const now = performance.now();
+    const elapsed = now - lastScrollEval;
+    if (elapsed >= 80) {
+      lastScrollEval = now;
+      reEvaluate();
+    } else if (!scrollThrottleTimer) {
+      scrollThrottleTimer = setTimeout(() => {
+        scrollThrottleTimer = null;
+        lastScrollEval = performance.now();
+        reEvaluate();
+      }, 80 - elapsed);
     }
   };
 
@@ -107,8 +146,8 @@ export function initCursor(options: CursorOptions = {}) {
   const onRouteRevealed = () => reEvaluate();
 
   window.addEventListener('pointermove', onPointerMove, { passive: true });
-  window.addEventListener('scroll', reEvaluate, { passive: true });
-  window.addEventListener('wheel', reEvaluate, { passive: true });
+  window.addEventListener('scroll', onScrollThrottled, { passive: true });
+  window.addEventListener('wheel', onScrollThrottled, { passive: true });
   window.addEventListener('resize', reEvaluate, { passive: true });
   document.addEventListener('mouseout', onMouseOut);
   window.addEventListener('blur', onBlur);
@@ -120,21 +159,20 @@ export function initCursor(options: CursorOptions = {}) {
 
   // Hook into Lenis if supplied or available on window
   const activeLenis = options.lenis || (window as unknown as { __lenis?: { on: (event: string, cb: () => void) => void } }).__lenis;
-  activeLenis?.on?.('scroll', reEvaluate);
-
-  gsap.ticker.add(ticker);
+  activeLenis?.on?.('scroll', onScrollThrottled);
 
   return () => {
     isInitialized = false;
+    watchTarget(null);
+    if (scrollThrottleTimer) clearTimeout(scrollThrottleTimer);
     window.removeEventListener('pointermove', onPointerMove);
-    window.removeEventListener('scroll', reEvaluate);
-    window.removeEventListener('wheel', reEvaluate);
+    window.removeEventListener('scroll', onScrollThrottled);
+    window.removeEventListener('wheel', onScrollThrottled);
     window.removeEventListener('resize', reEvaluate);
     document.removeEventListener('mouseout', onMouseOut);
     window.removeEventListener('blur', onBlur);
     document.removeEventListener('visibilitychange', onVisibilityChange);
     window.removeEventListener('route:start', onRouteStart);
     window.removeEventListener('route:revealed', onRouteRevealed);
-    gsap.ticker.remove(ticker);
   };
 }

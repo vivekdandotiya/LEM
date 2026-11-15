@@ -43,7 +43,7 @@ export function CircularBadge({
       </svg>
 
       {/* Center stationary core badge */}
-      <div className="absolute inset-[24%] rounded-full bg-accent/10 border border-accent/30 backdrop-blur-sm flex items-center justify-center text-charcoal-900 shadow-soft-sm">
+      <div className="absolute inset-[24%] rounded-full bg-paper-2 border border-accent/30 flex items-center justify-center text-charcoal-900 shadow-soft-sm">
         <ArrowDownRight className="w-4 h-4 text-accent" />
       </div>
     </div>

@@ -15,7 +15,7 @@ export function ConceptWorkGallery() {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-transparent overflow-hidden" id="concept-work">
+    <section className="py-24 sm:py-32 bg-transparent overflow-hidden content-auto" id="concept-work">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-ink/10">
@@ -66,7 +66,7 @@ export function ConceptWorkGallery() {
         className="flex items-stretch gap-5 px-4 sm:px-6 lg:px-12 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory cursor-grab active:cursor-grabbing"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {HERO_CREATIVES.map((creative) => (
+        {HERO_CREATIVES.slice(0, 8).map((creative) => (
           <div
             key={creative.id}
             className="w-[280px] sm:w-[320px] lg:w-[360px] shrink-0 snap-start"

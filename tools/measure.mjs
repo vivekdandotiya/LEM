@@ -7,7 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const BASE_URL = 'http://localhost:3000';
-const EVIDENCE_DIR = path.resolve(__dirname, '..', 'docs', 'v6', 'T0-evidence');
+const targetDirName = process.env.TARGET_DIR || process.argv[2] || 'T0-evidence';
+const EVIDENCE_DIR = path.resolve(__dirname, '..', 'docs', 'v6', targetDirName);
 const TRACE_DIR = path.join(EVIDENCE_DIR, 'traces');
 
 fs.mkdirSync(TRACE_DIR, { recursive: true });

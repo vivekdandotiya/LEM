@@ -23,33 +23,61 @@ export function FinalCTA() {
     const letters = headline.querySelectorAll<HTMLSpanElement>('.prox-char');
     if (!letters.length) return;
 
-    // Pre-calculate centers
+    // Pre-calculate setters
     const setters = Array.from(letters).map((letter) => ({
       el: letter,
       setWght: gsap.quickSetter(letter, 'fontVariationSettings'),
     }));
 
+    let cachedCenters: { cx: number; cy: number; setWght: Function }[] = [];
+
+    const updateCenters = () => {
+      cachedCenters = setters.map(({ el, setWght }) => {
+        const rect = el.getBoundingClientRect();
+        return {
+          cx: rect.left + rect.width / 2,
+          cy: rect.top + rect.height / 2,
+          setWght,
+        };
+      });
+    };
+
     const onPointerMove = (e: PointerEvent) => {
+      if (!cachedCenters.length) updateCenters();
       const px = e.clientX;
       const py = e.clientY;
 
-      setters.forEach(({ el, setWght }) => {
-        const rect = el.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
+      cachedCenters.forEach(({ cx, cy, setWght }) => {
         const dist = Math.hypot(px - cx, py - cy);
-
-        // Map distance (0 to 350px) to font weight (800 near, 300 far)
         const factor = Math.max(0, 1 - dist / 350);
         const wght = Math.round(300 + factor * 500);
         setWght(`'wght' ${wght}, 'wdth' 85`);
       });
     };
 
-    window.addEventListener('pointermove', onPointerMove, { passive: true });
+    const onPointerLeave = () => {
+      cachedCenters = [];
+      setters.forEach(({ setWght }) => {
+        setWght("'wght' 300, 'wdth' 85");
+      });
+    };
+
+    const onInvalidate = () => {
+      cachedCenters = [];
+    };
+
+    container.addEventListener('pointerenter', updateCenters);
+    container.addEventListener('pointermove', onPointerMove, { passive: true });
+    container.addEventListener('pointerleave', onPointerLeave);
+    window.addEventListener('scroll', onInvalidate, { passive: true });
+    window.addEventListener('resize', onInvalidate, { passive: true });
 
     return () => {
-      window.removeEventListener('pointermove', onPointerMove);
+      container.removeEventListener('pointerenter', updateCenters);
+      container.removeEventListener('pointermove', onPointerMove);
+      container.removeEventListener('pointerleave', onPointerLeave);
+      window.removeEventListener('scroll', onInvalidate);
+      window.removeEventListener('resize', onInvalidate);
     };
   }, []);
 
@@ -65,9 +93,8 @@ export function FinalCTA() {
   return (
     <section
       ref={containerRef}
-      className="py-24 sm:py-36 bg-ink text-white relative overflow-hidden dark-dots select-none border-t border-white/10"
+      className="py-24 sm:py-36 bg-ink text-white relative overflow-hidden dark-dots select-none border-t border-white/10 content-auto"
       data-theme="dark"
-      data-cv="auto"
     >
       {/* Top Lime Sparkle Marquee */}
       <div className="mb-14 opacity-75 hover:opacity-100 transition-opacity">

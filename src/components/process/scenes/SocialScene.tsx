@@ -207,7 +207,7 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
 
             {/* Bottom Playhead Timeline Scrubber */}
-            <div className="space-y-1.5 bg-white/10 p-2 rounded-xl backdrop-blur-md">
+            <div className="space-y-1.5 bg-white/10 p-2 rounded-xl">
               <div className="flex items-center justify-between text-[8px] font-mono text-grey-2">
                 <span>00:03</span>
                 <span className="text-lime font-bold">RETENTION: 84%</span>

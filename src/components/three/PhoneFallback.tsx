@@ -42,7 +42,7 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
       />
 
       {/* Floating Tactical Annotation Cards (Anchored to screen plane) */}
-      <div className="hidden sm:block absolute -left-12 top-24 z-20 bg-charcoal-900/90 backdrop-blur-md border border-white/15 p-3 rounded-xl shadow-glass text-white max-w-[190px] animate-pulse">
+      <div className="hidden sm:block absolute -left-12 top-24 z-20 bg-charcoal-900 border border-white/15 p-3 rounded-xl shadow-glass text-white max-w-[190px] animate-pulse">
         <div className="flex items-center gap-1.5 text-accent-tint text-[10px] font-mono mb-1">
           <Sparkles className="w-3 h-3" />
           <span>Real-Time Engagement</span>
@@ -52,7 +52,7 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
         </p>
       </div>
 
-      <div className="hidden sm:block absolute -right-10 bottom-28 z-20 bg-charcoal-900/90 backdrop-blur-md border border-white/15 p-3 rounded-xl shadow-glass text-white max-w-[180px]">
+      <div className="hidden sm:block absolute -right-10 bottom-28 z-20 bg-charcoal-900 border border-white/15 p-3 rounded-xl shadow-glass text-white max-w-[180px]">
         <div className="flex items-center gap-1.5 text-titanium text-[10px] font-mono mb-1">
           <Eye className="w-3 h-3 text-accent" />
           <span>Audience Retention</span>
@@ -99,7 +99,7 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
                   Lead Edge / Reel
                 </span>
               </div>
-              <div className="p-1 rounded-full bg-black/40 backdrop-blur-sm text-white border border-white/10">
+              <div className="p-1 rounded-full bg-black/80 text-white border border-white/10">
                 <VolumeX className="w-3.5 h-3.5" />
               </div>
             </div>
@@ -112,7 +112,7 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
               <h5 className="text-xl sm:text-2xl font-display font-medium text-white leading-snug tracking-tight drop-shadow-md">
                 “Momentum is not accidental. It is engineered.”
               </h5>
-              <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/15 text-white text-[11px] font-mono">
+              <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 border border-white/15 text-white text-[11px] font-mono">
                 <span>Campaign Phase 04</span>
               </div>
             </div>
@@ -142,7 +142,7 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
                 >
                   <div
                     className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
-                      isLiked ? "bg-accent text-white" : "bg-black/40 backdrop-blur-sm border border-white/15 text-white"
+                      isLiked ? "bg-accent text-white" : "bg-black/80 border border-white/15 text-white"
                     }`}
                   >
                     <Heart className={`w-4 h-4 ${isLiked ? "fill-current" : ""}`} />
@@ -153,14 +153,14 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
                 </button>
 
                 <div className="flex flex-col items-center gap-0.5">
-                  <div className="w-9 h-9 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white">
+                  <div className="w-9 h-9 rounded-full bg-black/80 border border-white/15 flex items-center justify-center text-white">
                     <MessageCircle className="w-4 h-4" />
                   </div>
                   <span className="text-[10px] font-mono text-warmgray-300">492</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-0.5">
-                  <div className="w-9 h-9 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white">
+                  <div className="w-9 h-9 rounded-full bg-black/80 border border-white/15 flex items-center justify-center text-white">
                     <Share2 className="w-4 h-4" />
                   </div>
                   <span className="text-[10px] font-mono text-warmgray-300">Share</span>

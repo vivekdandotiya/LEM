@@ -31,7 +31,7 @@ const stats: StatBlock[] = [
 
 export function StatsSection() {
   return (
-    <section className="py-20 sm:py-24 bg-lime text-ink border-y border-ink/20 select-none relative overflow-hidden" data-cv="auto">
+    <section className="py-20 sm:py-24 bg-lime text-ink border-y border-ink/20 select-none relative overflow-hidden content-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-10 border-b border-ink/15">

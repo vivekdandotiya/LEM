@@ -25,7 +25,7 @@ export function FAQSection() {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-transparent" id="faq" data-cv="auto">
+    <section className="py-24 sm:py-32 bg-transparent content-auto" id="faq">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

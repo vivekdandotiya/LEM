@@ -32,7 +32,7 @@ export function TrustBar() {
       </div>
 
       {/* Velocity Reactive Marquee */}
-      <ScrollMarquee speed={22} className="py-2.5 border-y border-ink/8 bg-paper-2/60 backdrop-blur-sm">
+      <ScrollMarquee speed={22} className="py-2.5 border-y border-ink/8 bg-paper-2">
         <div className="inline-flex items-center gap-8 px-4">
           {marqueeItems.map((item, i) => (
             <div key={i} className="inline-flex items-center gap-8">

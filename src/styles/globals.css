@@ -32,7 +32,7 @@
     position: relative;
   }
 
-  /* Section 4: Faint Black Dots Background System */
+  /* Section 4: Faint Black Dots Background System (Promoted once, no variable repaints) */
   body::before {
     content: '';
     position: fixed;
@@ -41,26 +41,12 @@
     pointer-events: none;
     background-image: radial-gradient(circle at center, var(--dot-light) var(--dot-r), transparent calc(var(--dot-r) + 0.6px));
     background-size: var(--dot-gap) var(--dot-gap);
-  }
-
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-image: radial-gradient(circle at center, rgba(8, 10, 11, 0.62) 1.9px, transparent 2.5px);
-    background-size: var(--dot-gap) var(--dot-gap);
-    -webkit-mask-image: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), #000 0%, transparent 70%);
-    mask-image: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), #000 0%, transparent 70%);
-    opacity: var(--lit, 0);
-    transition: opacity 0.35s ease;
+    background-position: 0 0;
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   @media (hover: none) {
-    body::after {
-      display: none;
-    }
     :root {
       --dot-gap: 22px;
     }
@@ -310,6 +296,12 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(8, 10, 11, 0.08);
   box-shadow: var(--shadow-sm);
+}
+
+/* Layout and Paint performance optimization for below-the-fold sections */
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
 }
 
 .glass-panel-dark {
