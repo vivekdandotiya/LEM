@@ -340,3 +340,37 @@ This document tracks progress through tasks T0 to T8 in strict accordance with t
   - `docs/v6/PROGRESS.md`
   - Evidence: `docs/v6/T7-evidence/drip-anatomy-strip.png`, `docs/v6/T7-evidence/*.png`
 - **Commit:** `T7: ink-drip typography`
+
+---
+
+## T8: Final Regression, Measurement and Push
+- **Date:** 2026-11-16
+- **Branch:** `v6-stack-video-drip`
+- **Status:** **PASSED**
+- **Changes & Findings:**
+  - Zero-blue compliance: replaced non-compliant brand dot color values in `src/data/heroCreatives.ts` with brand palette values (`#C9F53D`, `#708A58`). Built `tools/check-zero-blue.mjs` verifying 0 blue-dominant UI elements across all routes.
+  - Executed full automated regression suite against Next.js production build (`npm run build && npm run start` on `http://localhost:3000`):
+    - `tools/check-claims.ts`: **PASSED** (0 fabricated claims across all 15 in-scope files).
+    - `tools/check-images.ts`: **PASSED** (260/260 4K responsive assets verified within budgets).
+    - `tools/verify-t2.mjs`: **PASSED** (16 screenshots captured, contrast > 4.5:1, 0 hover sag stuck, 0 top-edge dark/teal strips).
+    - `tools/verify-t4.mjs`: **PASSED** (20 screenshots captured, 0 card overlaps on landing, desktop pin <= 2.2 viewports, mobile sticky cover stack).
+    - `tools/verify-t5.mjs`: **PASSED** (21 screenshots captured, all 16 clips verified, <= 1 video decoding simultaneously, off-screen IntersectionObserver pause, reduced motion poster fallback).
+    - `tools/verify-t7.mjs`: **PASSED** (CLS 0.0000, copy-paste clean, 100% `aria-hidden="true"`, 4-frame animation strip captured).
+    - `tools/check-zero-blue.mjs`: **PASSED** (0 blue UI elements across `/`, `/about`, `/services`, `/services/seo`, `/blog`, `/contact`).
+  - Re-measured performance via headed Google Chrome CDP profiling and mobile Lighthouse:
+    - Normal 1x CPU: All 6 routes locked at 16.7ms median frame time (60 FPS); `/services/seo` p95 dropped from 366.6ms to 50.2ms (7.3x improvement); homepage max long task dropped from 561ms to 402ms.
+    - 4x CPU slowdown: Homepage median frame time dropped from 100.0ms to 33.5ms (3x faster), p95 dropped from 900.0ms to 250.0ms (3.6x faster), and long tasks were cut by 51% (163 to 80).
+    - Mobile Lighthouse: Homepage score jumped from 39 to **66 (+27 points)** with LCP improving from 6.6s to **1.1s (6x faster)** and CLS locked at **0.000**. Services overview score jumped to 54 with CLS 0.000. SEO service score reached 69 with sub-1.5s LCP.
+  - Captured 24 final screenshots across all 6 primary routes (`/`, `/about`, `/services`, `/services/seo`, `/blog`, `/contact`) at 1440px desktop and 390px mobile in `docs/v6/final/`.
+  - Documented full before/after metrics comparison in `docs/v6/FINAL-METRICS.md`.
+- **Files Touched:**
+  - `src/data/heroCreatives.ts`
+  - `tools/check-zero-blue.mjs`
+  - `tools/analyze-traces.mjs`
+  - `tools/capture-final-screenshots.mjs`
+  - `tools/print_final_metrics.mjs`
+  - `docs/v6/FINAL-METRICS.md`
+  - `docs/v6/PROGRESS.md`
+  - Evidence: `docs/v6/T8-evidence/*`, `docs/v6/final/*.png`
+- **Commit:** `T8: final regression and performance report`
+

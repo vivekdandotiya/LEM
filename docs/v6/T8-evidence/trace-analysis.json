@@ -1,0 +1,622 @@
+[
+  {
+    "filename": "home-normal.json",
+    "categories": [
+      [
+        "RunTask",
+        10817.697000000064
+      ],
+      [
+        "ThreadControllerImpl::RunTask",
+        10686.74000000006
+      ],
+      [
+        "GPUTask",
+        2386.150999999999
+      ],
+      [
+        "ThreadPool_RunTask",
+        2088.3189999999995
+      ],
+      [
+        "ANGLEPlatformImpl::RunWorkerTask",
+        1450.2179999999992
+      ],
+      [
+        "FunctionCall",
+        770.3379999999978
+      ],
+      [
+        "UpdateLayoutTree",
+        505.36799999999954
+      ],
+      [
+        "FireAnimationFrame",
+        473.3220000000001
+      ],
+      [
+        "IOHandler::OnIOCompleted",
+        283.8299999999976
+      ],
+      [
+        "Layerize",
+        249.53599999999992
+      ],
+      [
+        "TaskGraphRunner::RunTask",
+        232.27899999999963
+      ],
+      [
+        "ImageDecodeTask",
+        220.298
+      ],
+      [
+        "SimpleWatcher::OnHandleReady",
+        218.8690000000002
+      ],
+      [
+        "EventDispatch",
+        217.63999999999982
+      ],
+      [
+        "Decode LazyPixelRef",
+        210.892
+      ]
+    ],
+    "longEvents": [
+      {
+        "name": "RunTask",
+        "duration": 248.831,
+        "args": {},
+        "ts": 45397539089
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 248.765,
+        "args": {
+          "src_file": "gpu/command_buffer/service/scheduler.cc",
+          "src_func": "RunNextTask",
+          "src_line": 654
+        },
+        "ts": 45397539092
+      },
+      {
+        "name": "RunTask",
+        "duration": 234.517,
+        "args": {},
+        "ts": 45398906167
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 234.508,
+        "args": {
+          "src_file": "gpu/command_buffer/service/scheduler.cc",
+          "src_func": "RunNextTask",
+          "src_line": 654
+        },
+        "ts": 45398906170
+      },
+      {
+        "name": "GPUTask",
+        "duration": 234.441,
+        "args": {
+          "data": {
+            "renderer_pid": 4492,
+            "used_bytes": 246645504
+          }
+        },
+        "ts": 45398906185
+      },
+      {
+        "name": "RunTask",
+        "duration": 158.894,
+        "args": {},
+        "ts": 45395897940
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 158.887,
+        "args": {
+          "src_file": "gpu/command_buffer/service/scheduler.cc",
+          "src_func": "RunNextTask",
+          "src_line": 654
+        },
+        "ts": 45395897942
+      },
+      {
+        "name": "GPUTask",
+        "duration": 158.835,
+        "args": {
+          "data": {
+            "renderer_pid": 4492,
+            "used_bytes": 182691584
+          }
+        },
+        "ts": 45395897959
+      },
+      {
+        "name": "RunTask",
+        "duration": 144.009,
+        "args": {},
+        "ts": 45396934074
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 144.003,
+        "args": {
+          "src_file": "gpu/command_buffer/service/scheduler.cc",
+          "src_func": "RunNextTask",
+          "src_line": 654
+        },
+        "ts": 45396934076
+      }
+    ]
+  },
+  {
+    "filename": "home-cpu-4x.json",
+    "categories": [
+      [
+        "RunTask",
+        28559.983000000706
+      ],
+      [
+        "ThreadControllerImpl::RunTask",
+        27166.329000001155
+      ],
+      [
+        "FunctionCall",
+        5763.2419999999875
+      ],
+      [
+        "FireAnimationFrame",
+        3353.503999999998
+      ],
+      [
+        "UpdateLayoutTree",
+        3073.671
+      ],
+      [
+        "ThreadPool_RunTask",
+        2661.9759999999987
+      ],
+      [
+        "ImageDecodeTask",
+        1568.212000000001
+      ],
+      [
+        "Decode LazyPixelRef",
+        1498.3449999999998
+      ],
+      [
+        "RunMicrotasks",
+        1370.5100000000004
+      ],
+      [
+        "TaskGraphRunner::RunTask",
+        1359.114999999997
+      ],
+      [
+        "Layout",
+        1351.6899999999998
+      ],
+      [
+        "GPUTask",
+        1284.7850000000008
+      ],
+      [
+        "Layerize",
+        1136.6349999999995
+      ],
+      [
+        "BlinkScheduler_PerformMicrotaskCheckpoint",
+        1105.1779999999828
+      ],
+      [
+        "EventDispatch",
+        949.9890000000001
+      ]
+    ],
+    "longEvents": [
+      {
+        "name": "RunTask",
+        "duration": 953.274,
+        "args": {},
+        "ts": 45466311138
+      },
+      {
+        "name": "BlinkScheduler_PerformMicrotaskCheckpoint",
+        "duration": 952.126,
+        "args": {},
+        "ts": 45466311661
+      },
+      {
+        "name": "RunMicrotasks",
+        "duration": 952.112,
+        "args": {
+          "microtask_count": 3
+        },
+        "ts": 45466311666
+      },
+      {
+        "name": "RunTask",
+        "duration": 699.537,
+        "args": {},
+        "ts": 45473510037
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 699.112,
+        "args": {
+          "src_file": "cc/trees/proxy_impl.cc",
+          "src_func": "ScheduledActionSendBeginMainFrame",
+          "src_line": 849
+        },
+        "ts": 45473510038
+      },
+      {
+        "name": "RunTask",
+        "duration": 564.979,
+        "args": {},
+        "ts": 45474680282
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 564.434,
+        "args": {
+          "src_file": "cc/trees/proxy_impl.cc",
+          "src_func": "ScheduledActionSendBeginMainFrame",
+          "src_line": 849
+        },
+        "ts": 45474680286
+      },
+      {
+        "name": "RunTask",
+        "duration": 555.864,
+        "args": {},
+        "ts": 45472350981
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 555.25,
+        "args": {
+          "src_file": "cc/trees/proxy_impl.cc",
+          "src_func": "ScheduledActionSendBeginMainFrame",
+          "src_line": 849
+        },
+        "ts": 45472350982
+      },
+      {
+        "name": "RunTask",
+        "duration": 399.821,
+        "args": {},
+        "ts": 45464737464
+      }
+    ]
+  },
+  {
+    "filename": "services-seo-normal.json",
+    "categories": [
+      [
+        "RunTask",
+        10891.287999999315
+      ],
+      [
+        "ThreadControllerImpl::RunTask",
+        10680.355000001427
+      ],
+      [
+        "ThreadPool_RunTask",
+        2858.500000000115
+      ],
+      [
+        "GPUTask",
+        1234.205
+      ],
+      [
+        "FunctionCall",
+        709.2759999999975
+      ],
+      [
+        "ANGLEPlatformImpl::RunWorkerTask",
+        474.80300000000005
+      ],
+      [
+        "UpdateLayoutTree",
+        470.3279999999999
+      ],
+      [
+        "IOHandler::OnIOCompleted",
+        418.9859999999976
+      ],
+      [
+        "Receive mojo message",
+        367.75999999999857
+      ],
+      [
+        "SimpleWatcher::OnHandleReady",
+        363.212
+      ],
+      [
+        "FireAnimationFrame",
+        358.56800000000004
+      ],
+      [
+        "TaskGraphRunner::RunTask",
+        268.9339999999982
+      ],
+      [
+        "EventDispatch",
+        217.93400000000008
+      ],
+      [
+        "Layerize",
+        204.716
+      ],
+      [
+        "V8.GC_MC_BACKGROUND_MARKING",
+        181.75799999999998
+      ]
+    ],
+    "longEvents": [
+      {
+        "name": "ThreadPool_RunTask",
+        "duration": 343.045,
+        "args": {
+          "src_file": "components/metrics/motherboard_metrics_provider.cc",
+          "src_func": "AsyncInit",
+          "src_line": 61
+        },
+        "ts": 45421262131
+      },
+      {
+        "name": "ThreadPool_RunTask",
+        "duration": 283.575,
+        "args": {
+          "src_file": "components/metrics/drive_metrics_provider.cc",
+          "src_func": "AsyncInit",
+          "src_line": 74
+        },
+        "ts": 45421446618
+      },
+      {
+        "name": "ThreadPool_RunTask",
+        "duration": 183.713,
+        "args": {
+          "src_file": "components/metrics/drive_metrics_provider.cc",
+          "src_func": "AsyncInit",
+          "src_line": 74
+        },
+        "ts": 45421262881
+      },
+      {
+        "name": "RunTask",
+        "duration": 168.133,
+        "args": {},
+        "ts": 45418632624
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 168.124,
+        "args": {
+          "src_file": "gpu/command_buffer/service/scheduler.cc",
+          "src_func": "RunNextTask",
+          "src_line": 654
+        },
+        "ts": 45418632625
+      },
+      {
+        "name": "ThreadPool_RunTask",
+        "duration": 139.105,
+        "args": {
+          "src_file": "chrome/browser/metrics/google_update_metrics_provider_win.cc",
+          "src_func": "AsyncInit",
+          "src_line": 74
+        },
+        "ts": 45421605288
+      },
+      {
+        "name": "ThreadPool_RunTask",
+        "duration": 137.947,
+        "args": {
+          "src_file": "v8/src/compiler-dispatcher/optimizing-compile-dispatcher.cc",
+          "src_func": "void v8::internal::OptimizingCompileTaskExecutor::EnsureStarted()",
+          "src_line": 119
+        },
+        "ts": 45419813045
+      },
+      {
+        "name": "RunTask",
+        "duration": 83.197,
+        "args": {},
+        "ts": 45419326839
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 83.126,
+        "args": {
+          "src_file": "cc/trees/proxy_impl.cc",
+          "src_func": "ScheduledActionSendBeginMainFrame",
+          "src_line": 849
+        },
+        "ts": 45419326840
+      },
+      {
+        "name": "RunTask",
+        "duration": 82.56,
+        "args": {},
+        "ts": 45418319750
+      }
+    ]
+  },
+  {
+    "filename": "services-seo-cpu-4x.json",
+    "categories": [
+      [
+        "RunTask",
+        22817.377000000113
+      ],
+      [
+        "ThreadControllerImpl::RunTask",
+        22111.117000001137
+      ],
+      [
+        "FunctionCall",
+        3617.451000000002
+      ],
+      [
+        "ThreadPool_RunTask",
+        2326.3709999999987
+      ],
+      [
+        "FireAnimationFrame",
+        2218.2869999999957
+      ],
+      [
+        "UpdateLayoutTree",
+        2088.463999999999
+      ],
+      [
+        "EventDispatch",
+        957.9129999999996
+      ],
+      [
+        "GPUTask",
+        812.4059999999989
+      ],
+      [
+        "Layout",
+        791.7350000000005
+      ],
+      [
+        "RunMicrotasks",
+        777.2200000000006
+      ],
+      [
+        "Layerize",
+        681.199
+      ],
+      [
+        "SimpleWatcher::OnHandleReady",
+        574.0150000000014
+      ],
+      [
+        "Receive mojo message",
+        567.0159999999979
+      ],
+      [
+        "IOHandler::OnIOCompleted",
+        556.7279999999924
+      ],
+      [
+        "EvaluateScript",
+        461.339
+      ]
+    ],
+    "longEvents": [
+      {
+        "name": "ThreadPool_RunTask",
+        "duration": 1310.351,
+        "args": {
+          "chrome_task_annotator": {
+            "delay_policy": "FLEXIBLE_NO_SOONER",
+            "task_delay_us": 112000000
+          },
+          "src_file": "chrome/browser/profiles/profile_manager.cc",
+          "src_func": "DoFinalInitLogging",
+          "src_line": 1666
+        },
+        "ts": 45503611886
+      },
+      {
+        "name": "RunTask",
+        "duration": 745.702,
+        "args": {},
+        "ts": 45500065408
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 745.295,
+        "args": {
+          "src_file": "cc/trees/proxy_impl.cc",
+          "src_func": "ScheduledActionSendBeginMainFrame",
+          "src_line": 849
+        },
+        "ts": 45500065415
+      },
+      {
+        "name": "RunTask",
+        "duration": 673.149,
+        "args": {},
+        "ts": 45504267271
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 673.07,
+        "args": {
+          "src_file": "cc/trees/proxy_impl.cc",
+          "src_func": "ScheduledActionSendBeginMainFrame",
+          "src_line": 849
+        },
+        "ts": 45504267272
+      },
+      {
+        "name": "FireAnimationFrame",
+        "duration": 423.825,
+        "args": {
+          "data": {
+            "frame": "83EBDC9DF9B811A6F81C734D5DBF6CC4",
+            "id": 129
+          }
+        },
+        "ts": 45500067226
+      },
+      {
+        "name": "FunctionCall",
+        "duration": 423.58,
+        "args": {
+          "data": {
+            "columnNumber": 14199,
+            "frame": "83EBDC9DF9B811A6F81C734D5DBF6CC4",
+            "functionName": "r",
+            "isolate": "15645293121183534484",
+            "lineNumber": 1,
+            "sampleTraceId": 4803747581666240,
+            "scriptId": "9",
+            "url": "http://localhost:3000/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js"
+          }
+        },
+        "ts": 45500067244
+      },
+      {
+        "name": "RunTask",
+        "duration": 338.487,
+        "args": {},
+        "ts": 45501424531
+      },
+      {
+        "name": "ThreadControllerImpl::RunTask",
+        "duration": 337.88,
+        "args": {
+          "src_file": "third_party/blink/renderer/core/script/script_runner.cc",
+          "src_func": "RemoveDelayReasonFromScript",
+          "src_line": 227
+        },
+        "ts": 45501424532
+      },
+      {
+        "name": "EvaluateScript",
+        "duration": 333.418,
+        "args": {
+          "data": {
+            "columnNumber": 1,
+            "frame": "83EBDC9DF9B811A6F81C734D5DBF6CC4",
+            "lineNumber": 1,
+            "scriptId": 0,
+            "url": "http://localhost:3000/_next/static/chunks/546-61137ba0ace2c105.js"
+          }
+        },
+        "ts": 45501424735
+      }
+    ]
+  }
+]

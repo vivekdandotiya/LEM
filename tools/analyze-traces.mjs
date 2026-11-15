@@ -5,7 +5,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const TRACE_DIR = path.resolve(__dirname, '..', 'docs', 'v6', 'T0-evidence', 'traces');
+const targetDirName = process.argv[2] || 'T0-evidence';
+const TRACE_DIR = path.resolve(__dirname, '..', 'docs', 'v6', targetDirName, 'traces');
 
 function analyzeTrace(filename) {
   const filePath = path.join(TRACE_DIR, filename);
@@ -55,7 +56,7 @@ const report = [
 ];
 
 fs.writeFileSync(
-  path.resolve(__dirname, '..', 'docs', 'v6', 'T0-evidence', 'trace-analysis.json'),
+  path.resolve(__dirname, '..', 'docs', 'v6', targetDirName, 'trace-analysis.json'),
   JSON.stringify(report, null, 2)
 );
-console.log('Analysis saved to docs/v6/T0-evidence/trace-analysis.json');
+console.log(`Analysis saved to docs/v6/${targetDirName}/trace-analysis.json`);

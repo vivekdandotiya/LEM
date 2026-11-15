@@ -44,15 +44,19 @@
     }
   ],
   "traceMetrics": {
-    "longTasksCount": 2,
+    "longTasksCount": 3,
     "longTasks": [
       {
         "name": "RunTask",
-        "duration": 72.46
+        "duration": 54.04
       },
       {
         "name": "RunTask",
-        "duration": 79.44
+        "duration": 83.02
+      },
+      {
+        "name": "RunTask",
+        "duration": 72.94
       }
     ],
     "passed": false
