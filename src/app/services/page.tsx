@@ -7,6 +7,7 @@ import { DripLink } from '@/components/animorio/drip/DripLink';
 import { FinalCTA } from '@/components/home/FinalCTA';
 import { ArrowUpRight } from 'lucide-react';
 import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
+import { StackSeparate } from '@/components/stack/StackSeparate';
 
 const panelImages: Record<string, string> = {
   seo: '/images/pages/P01-services-seo-hero-16x9.webp',
@@ -44,83 +45,88 @@ export default function ServicesPage() {
         </p>
       </section>
 
-      {/* 2. Four Huge Panels (Image-led, Number, 6-word line, "Discover") */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-24 flex flex-col gap-12 sm:gap-16">
-        {business.services.map((service, idx) => {
-          const imgSrc = panelImages[service.slug] || '/images/pages/P01-services-seo-hero-16x9.webp';
-          const line = sixWordLines[service.slug] || service.headline;
-          const num = `0${idx + 1}`;
+      {/* 2. Four Service Panels in Stack-Then-Separate 2x2 Grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-24">
+        <StackSeparate
+          items={business.services}
+          layout="grid2x2"
+          renderCard={(service, idx, isPeeled, isActive) => {
+            const imgSrc = panelImages[service.slug] || '/images/pages/P01-services-seo-hero-16x9.webp';
+            const line = sixWordLines[service.slug] || service.headline;
+            const num = `0${idx + 1}`;
 
-          return (
-            <article
-              key={service.id}
-              className="group relative rounded-[28px] overflow-hidden border border-ink/10 bg-paper-2 card-glass-elevated shadow-soft-lg flex flex-col lg:flex-row items-stretch"
-            >
-              {/* Left Image Section with Zoom Effect */}
-              <div className="lg:w-7/12 relative aspect-[16/10] lg:aspect-auto min-h-[340px] sm:min-h-[440px] overflow-hidden">
-                <Image
-                  src={imgSrc}
-                  alt={`${service.title} discipline visual`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 750px"
-                  priority={idx < 2}
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent lg:hidden" />
-                <div className="absolute top-4 left-4 lg:hidden">
-                  <span className="px-3 py-1 rounded-full bg-ink/80 text-white font-mono text-xs uppercase tracking-wider">
-                    {num} / {service.shortTitle}
-                  </span>
-                </div>
-              </div>
-
-              {/* Right Content Section */}
-              <div className="lg:w-5/12 p-8 sm:p-12 flex flex-col justify-between bg-paper-2 border-t lg:border-t-0 lg:border-l border-ink/10">
-                <div>
-                  {/* Huge Outlined Number */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-6xl sm:text-7xl font-display font-extrabold text-outline group-hover:text-ink transition-colors duration-300">
-                      {num}
+            return (
+              <article
+                className={`group relative rounded-[28px] overflow-hidden border transition-colors duration-300 bg-paper-2 card-glass-elevated shadow-soft-lg flex flex-col justify-between h-[520px] sm:h-[540px] ${
+                  isActive
+                    ? 'border-lime shadow-soft-md'
+                    : isPeeled
+                    ? 'border-ink/10 shadow-soft-sm'
+                    : 'border-ink/10 opacity-90'
+                }`}
+              >
+                {/* Top Image Section */}
+                <div className="relative w-full aspect-[16/9] min-h-[200px] overflow-hidden">
+                  <Image
+                    src={imgSrc}
+                    alt={`${service.title} discipline visual`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 600px"
+                    priority={idx < 2}
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 rounded-full bg-ink/90 text-white font-mono text-xs uppercase tracking-wider">
+                      {num} / {service.shortTitle}
                     </span>
-                    <SparkleGlyph size={18} className="text-lime" />
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-4xl sm:text-5xl font-display font-extrabold text-outline group-hover:text-ink transition-colors duration-300">
+                        {num}
+                      </span>
+                      <SparkleGlyph size={16} className="text-lime" />
+                    </div>
+
+                    <h2 className="text-xl sm:text-2xl font-display font-bold text-ink mb-2">
+                      {service.title}
+                    </h2>
+
+                    <p className="text-base font-display font-medium text-ink leading-snug mb-2">
+                      {line}
+                    </p>
+
+                    <p className="text-xs sm:text-sm font-sans text-grey-3 leading-relaxed line-clamp-2">
+                      {service.description}
+                    </p>
                   </div>
 
-                  {/* Title max 4 words */}
-                  <h2 className="text-2xl sm:text-3xl font-display font-bold text-ink mb-3">
-                    {service.title}
-                  </h2>
+                  {/* "Discover" CTA */}
+                  <div className="pt-4 mt-4 border-t border-ink/8 flex items-center justify-between">
+                    <DripLink
+                      href={`/services/${service.slug}`}
+                      className="btn-primary text-xs font-bold flex items-center gap-2 group-hover:bg-lime-soft transition-colors"
+                    >
+                      <span>Discover</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </DripLink>
 
-                  {/* Exactly 6-word line */}
-                  <p className="text-lg sm:text-xl font-display font-medium text-ink leading-snug mb-4">
-                    {line}
-                  </p>
-
-                  <p className="text-sm font-sans text-grey-3 leading-relaxed">
-                    {service.description}
-                  </p>
+                    <span className="text-[11px] font-mono uppercase tracking-widest text-grey-2">
+                      {service.shortTitle}
+                    </span>
+                  </div>
                 </div>
-
-                {/* "Discover" CTA */}
-                <div className="pt-8 mt-8 border-t border-ink/8 flex items-center justify-between">
-                  <DripLink
-                    href={`/services/${service.slug}`}
-                    className="btn-primary text-sm font-bold flex items-center gap-2 group-hover:bg-lime-soft transition-colors"
-                  >
-                    <span>Discover</span>
-                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </DripLink>
-
-                  <span className="text-xs font-mono uppercase tracking-widest text-grey-2">
-                    {service.shortTitle}
-                  </span>
-                </div>
-              </div>
-            </article>
-          );
-        })}
+              </article>
+            );
+          }}
+        />
       </section>
 
-      {/* 3. Global CTA Band */}
+      {/* 3. Final Call to Action */}
       <FinalCTA />
     </div>
   );

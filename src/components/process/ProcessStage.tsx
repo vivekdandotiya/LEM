@@ -9,6 +9,7 @@ import { MetaScene } from './scenes/MetaScene';
 import { SocialScene } from './scenes/SocialScene';
 import { WebScene } from './scenes/WebScene';
 import { CheckCircle2, ChevronRight, SkipForward } from 'lucide-react';
+import { StackSeparate } from '@/components/stack/StackSeparate';
 
 interface ProcessStageProps {
   slug: string;
@@ -21,7 +22,6 @@ export function ProcessStage({ slug }: ProcessStageProps) {
   const progressTextRef = useRef<HTMLSpanElement>(null);
   const [activePhase, setActivePhase] = useState(0);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
-  const stRef = useRef<ScrollTrigger | null>(null);
 
   const processData = PROCESS_DATA[slug] || PROCESS_DATA['seo'];
 
@@ -30,52 +30,11 @@ export function ProcessStage({ slug }: ProcessStageProps) {
 
     const checkReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     setIsReducedMotion(checkReduced);
-    if (checkReduced) return;
-
-    // Only enable ScrollTrigger pinning on desktop (>=1024px)
-    const mm = gsap.matchMedia();
-
-    mm.add('(min-width: 1024px)', () => {
-      const pinEl = pinRef.current;
-      const triggerEl = containerRef.current;
-      if (!pinEl || !triggerEl) return;
-
-      const st = ScrollTrigger.create({
-        trigger: triggerEl,
-        pin: pinEl,
-        start: 'top top',
-        end: '+=200%',
-        scrub: 0.6,
-        onUpdate: (self) => {
-          const p = self.progress;
-          const pct = Math.round(p * 100);
-          if (progressFillRef.current) {
-            progressFillRef.current.style.width = `${pct}%`;
-          }
-          if (progressTextRef.current) {
-            progressTextRef.current.textContent = `${pct}%`;
-          }
-          const phaseIdx = Math.min(3, Math.floor(p * 4));
-          setActivePhase((prev) => (prev === phaseIdx ? prev : phaseIdx));
-        },
-      });
-
-      stRef.current = st;
-
-      return () => {
-        st.kill();
-        stRef.current = null;
-      };
-    });
-
-    return () => {
-      mm.revert();
-    };
   }, [slug]);
 
   const scrollToPhase = (idx: number) => {
     setActivePhase(idx);
-    const st = stRef.current;
+    const st = ScrollTrigger.getAll().find((s) => s.trigger === containerRef.current);
     if (!st) return;
 
     // Calculate target scroll position within pin range
@@ -92,7 +51,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
 
   const skipWalkthrough = (e: React.MouseEvent) => {
     e.preventDefault();
-    const st = stRef.current;
+    const st = ScrollTrigger.getAll().find((s) => s.trigger === containerRef.current);
     if (!st) return;
 
     const activeLenis = (window as unknown as { __lenis?: { scrollTo: (target: number, opts?: { duration?: number }) => void } }).__lenis;
@@ -184,45 +143,61 @@ export function ProcessStage({ slug }: ProcessStageProps) {
                 {processData.headingSuffix}
               </h2>
 
-              {/* 4 Interactive Phase Buttons */}
-              <div className="flex flex-col gap-3">
-                {processData.phases.map((phase, idx) => {
-                  const isActive = activePhase === idx;
-                  return (
-                    <button
-                      key={phase.id}
-                      onClick={() => scrollToPhase(idx)}
-                      className={`text-left p-4 rounded-xl border transition-all duration-300 relative overflow-hidden ${
-                        isActive
-                          ? 'bg-paper-2 border-lime shadow-soft-sm opacity-100 scale-[1.01]'
-                          : 'bg-transparent border-ink/10 opacity-50 hover:opacity-80'
-                      }`}
-                    >
-                      {isActive && (
-                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-lime" />
-                      )}
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="font-mono text-[10px] tracking-wider uppercase font-bold text-ink">
-                          {phase.monoLabel}
+              {/* Stack-Then-Separate Phase Cards (List Layout) */}
+              <StackSeparate
+                items={processData.phases}
+                layout="list"
+                triggerRef={containerRef}
+                pinRef={pinRef}
+                onStepChange={(step) => {
+                  setActivePhase(step);
+                  const pct = Math.round(((step + 1) / processData.phases.length) * 100);
+                  if (progressFillRef.current) {
+                    progressFillRef.current.style.width = `${pct}%`;
+                  }
+                  if (progressTextRef.current) {
+                    progressTextRef.current.textContent = `${pct}%`;
+                  }
+                }}
+                renderCard={(phase, idx, isPeeled, isActive) => (
+                  <button
+                    key={phase.id}
+                    type="button"
+                    onClick={() => scrollToPhase(idx)}
+                    className={`w-full text-left p-4 rounded-xl border transition-colors duration-300 relative overflow-hidden h-[105px] flex flex-col justify-between cursor-pointer ${
+                      isActive
+                        ? 'bg-paper-2 border-lime shadow-soft-sm opacity-100 scale-[1.01]'
+                        : isPeeled
+                        ? 'bg-paper-2/95 border-ink/10 opacity-90 hover:opacity-100'
+                        : 'bg-paper-2/80 border-ink/10 opacity-75'
+                    }`}
+                  >
+                    {isActive && (
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-lime" />
+                    )}
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="font-mono text-[10px] tracking-wider uppercase font-bold text-ink">
+                        {phase.monoLabel}
+                      </span>
+                      {isActive ? (
+                        <span className="text-[10px] font-mono font-bold text-ink bg-lime px-2 py-0.5 rounded">
+                          ACTIVE
                         </span>
-                        {isActive && (
-                          <span className="text-[10px] font-mono font-bold text-ink bg-lime px-2 py-0.5 rounded">
-                            ACTIVE
-                          </span>
-                        )}
-                      </div>
-                      <h4 className="font-display font-bold text-ink text-sm sm:text-base mb-1">
-                        {phase.headline}
-                      </h4>
-                      {isActive && (
-                        <p className="font-sans text-xs text-grey-3 leading-relaxed mt-1 animate-fadeIn">
-                          {phase.body}
-                        </p>
+                      ) : (
+                        <span className="text-[10px] font-mono text-grey-3">
+                          PHASE 0{idx + 1}
+                        </span>
                       )}
-                    </button>
-                  );
-                })}
-              </div>
+                    </div>
+                    <h4 className="font-display font-bold text-ink text-sm sm:text-base leading-tight line-clamp-1">
+                      {phase.headline}
+                    </h4>
+                    <p className="font-sans text-[11px] text-grey-3 truncate">
+                      {phase.deliverables.join(' · ')}
+                    </p>
+                  </button>
+                )}
+              />
             </div>
 
             {/* Bottom Controls: Progress & Skip Walkthrough */}

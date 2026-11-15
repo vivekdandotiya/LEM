@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { business } from '@/data/business';
+import { StackSeparate } from '@/components/stack/StackSeparate';
 
 const stepImages = [
   '/images/pages/P10-about-process-1x1.webp',
@@ -43,81 +44,64 @@ export function ProcessSteps() {
           </p>
         </div>
 
-        {/* Process Content Grid with Photo Crossfade */}
-        <div className="pt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left Column: 4 Interactive Steps with Giant Outlined Numerals */}
-          <div className="lg:col-span-7 flex flex-col gap-4">
-            {business.process.map((p, idx) => {
-              const isActive = activeStep === idx;
-              return (
-                <div
-                  key={p.step}
-                  onMouseEnter={() => setActiveStep(idx)}
-                  className={`group relative p-6 sm:p-7 rounded-[20px] transition-all duration-300 cursor-pointer border ${
-                    isActive
-                      ? 'bg-paper-2 border-ink/20 shadow-soft-sm'
-                      : 'bg-transparent border-transparent hover:bg-paper-2/50'
-                  }`}
-                >
-                  <div className="flex items-start gap-6">
-                    {/* Giant Outlined Numeral */}
-                    <span
-                      className={`text-5xl sm:text-6xl font-display font-extrabold leading-none transition-colors duration-300 ${
-                        isActive ? 'text-ink' : 'text-outline'
-                      }`}
-                    >
-                      {p.step}
-                    </span>
-
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-1.5">
-                        <h3 className="text-2xl font-display font-bold text-ink">
-                          {p.name}
-                        </h3>
-                        {isActive && (
-                          <span className="w-2.5 h-2.5 rounded-full bg-lime shadow-sm" />
-                        )}
-                      </div>
-                      {/* Short Description: max 12 words */}
-                      <p className="text-sm sm:text-base font-sans text-grey-3 leading-snug">
-                        {shortStepDescriptions[idx]}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Right Column: Sticky / Crossfading Photo Panel */}
-          <div className="lg:col-span-5 relative aspect-[4/5] rounded-[24px] overflow-hidden border border-ink/10 shadow-soft-md card-glass-elevated">
-            {stepImages.map((src, idx) => (
+        {/* 4-Step Row with Stack-Then-Separate Animation */}
+        <div className="pt-12">
+          <StackSeparate
+            items={business.process}
+            layout="row"
+            onStepChange={(step) => setActiveStep(step)}
+            renderCard={(p, idx, isPeeled, isActive) => (
               <div
-                key={src}
-                className={`absolute inset-0 transition-opacity duration-500 ease-out ${
-                  activeStep === idx ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-95 z-0'
+                className={`group relative p-5 sm:p-6 rounded-[22px] border transition-colors duration-300 flex flex-col justify-between h-[360px] sm:h-[380px] overflow-hidden ${
+                  isActive
+                    ? 'bg-paper-2 border-lime shadow-soft-md'
+                    : isPeeled
+                    ? 'bg-paper-2 border-ink/10 shadow-soft-sm'
+                    : 'bg-paper-2/90 border-ink/10'
                 }`}
               >
-                <Image
-                  src={src}
-                  alt={`Process step ${idx + 1}`}
-                  fill
-                  decoding="async"
-                  sizes="(max-width: 1024px) 100vw, 500px"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white z-10">
-                  <span className="text-xs font-mono tracking-widest uppercase">
-                    Stage {business.process[activeStep].step}
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-lime text-ink font-mono font-bold text-xs">
-                    {business.process[activeStep].name}
+                <div>
+                  {/* Top Image Preview */}
+                  <div className="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden mb-4 border border-ink/10">
+                    <Image
+                      src={stepImages[idx]}
+                      alt={`Process step ${p.step}: ${p.name}`}
+                      fill
+                      decoding="async"
+                      sizes="(max-width: 1024px) 100vw, 300px"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                    <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-ink/90 text-[10px] font-mono text-white font-bold">
+                      {p.step}
+                    </div>
+                  </div>
+
+                  {/* Step Title */}
+                  <div className="flex items-center justify-between mb-1.5">
+                    <h3 className="text-lg sm:text-xl font-display font-bold text-ink">
+                      {p.name}
+                    </h3>
+                    {isActive && (
+                      <span className="w-2 h-2 rounded-full bg-lime shadow-sm" />
+                    )}
+                  </div>
+
+                  {/* Step Description */}
+                  <p className="text-xs sm:text-sm font-sans text-grey-3 leading-snug">
+                    {shortStepDescriptions[idx]}
+                  </p>
+                </div>
+
+                {/* Bottom Step Indicator */}
+                <div className="pt-3 border-t border-ink/8 flex items-center justify-between font-mono text-[10px] text-grey-3">
+                  <span>STEP {p.step}</span>
+                  <span className={isActive ? 'text-lime font-bold' : ''}>
+                    {isActive ? 'IN PROGRESS' : 'ROADMAP'}
                   </span>
                 </div>
               </div>
-            ))}
-          </div>
+            )}
+          />
         </div>
       </div>
     </section>

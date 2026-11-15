@@ -6,6 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { business } from '@/data/business';
 import Tilt3D from '@/motion/Tilt3D';
 import { DripLink } from '@/components/animorio/drip/DripLink';
+import { StackSeparate } from '@/components/stack/StackSeparate';
 
 const serviceImages: Record<string, string> = {
   seo: '/images/pages/P01-services-seo-hero-16x9.webp',
@@ -53,62 +54,72 @@ export function ServicesPreview() {
           </p>
         </div>
 
-        {/* 4 Tall Image Cards with Spotlight + Tilt */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 pt-12">
-          {business.services.map((service) => {
-            const imgSrc = serviceImages[service.slug] || '/images/pages/P01-services-seo-hero-16x9.webp';
-            const shortLine = serviceShortLines[service.slug] || service.headline;
+        {/* 4 Tall Image Cards with Stack-Then-Separate System */}
+        <div className="pt-12">
+          <StackSeparate
+            items={business.services}
+            layout="grid2x2"
+            renderCard={(service, idx, isPeeled, isActive) => {
+              const imgSrc = serviceImages[service.slug] || '/images/pages/P01-services-seo-hero-16x9.webp';
+              const shortLine = serviceShortLines[service.slug] || service.headline;
 
-            return (
-              <Tilt3D key={service.id} maxTilt={6}>
-                <div
-                  onPointerMove={handlePointerMove}
-                  className="group spotlight-card card-glass-elevated relative p-6 sm:p-8 rounded-[24px] bg-paper-2 border border-ink/10 flex flex-col justify-between overflow-hidden h-full transition-all duration-300"
-                >
-                  <div>
-                    {/* Image Thumbnail Banner */}
-                    <div className="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden mb-6 border border-ink/10">
-                      <Image
-                        src={imgSrc}
-                        alt={`${service.title} execution preview`}
-                        fill
-                        decoding="async"
-                        sizes="(max-width: 768px) 100vw, 600px"
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                      />
-                      <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ink/90 text-[10px] font-mono text-white tracking-widest uppercase border border-white/10">
-                        {service.label}
+              return (
+                <Tilt3D maxTilt={6}>
+                  <div
+                    onPointerMove={handlePointerMove}
+                    className={`group spotlight-card card-glass-elevated relative p-6 sm:p-8 rounded-[24px] border flex flex-col justify-between overflow-hidden h-[460px] sm:h-[480px] transition-colors duration-300 ${
+                      isActive
+                        ? 'bg-paper-2 border-lime shadow-soft-md'
+                        : isPeeled
+                        ? 'bg-paper-2 border-ink/10 shadow-soft-sm'
+                        : 'bg-paper-2/90 border-ink/10'
+                    }`}
+                  >
+                    <div>
+                      {/* Image Thumbnail Banner */}
+                      <div className="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden mb-6 border border-ink/10">
+                        <Image
+                          src={imgSrc}
+                          alt={`${service.title} execution preview`}
+                          fill
+                          decoding="async"
+                          sizes="(max-width: 768px) 100vw, 600px"
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ink/90 text-[10px] font-mono text-white tracking-widest uppercase border border-white/10">
+                          {service.label}
+                        </div>
                       </div>
+
+                      {/* Title max 4 words */}
+                      <h3 className="text-2xl sm:text-3xl font-display font-bold text-ink mb-2 transition-colors">
+                        {service.title}
+                      </h3>
+
+                      {/* Description max 12 words */}
+                      <p className="text-sm sm:text-base font-sans text-grey-3 leading-snug">
+                        {shortLine}
+                      </p>
                     </div>
 
-                    {/* Title max 4 words */}
-                    <h3 className="text-2xl sm:text-3xl font-display font-bold text-ink mb-2 transition-colors">
-                      {service.title}
-                    </h3>
-
-                    {/* Description max 12 words */}
-                    <p className="text-sm sm:text-base font-sans text-grey-3 leading-snug">
-                      {shortLine}
-                    </p>
+                    {/* Card Bottom CTA Link */}
+                    <div className="pt-6 mt-6 border-t border-ink/8 flex items-center justify-between">
+                      <span className="text-xs font-mono uppercase tracking-wider text-grey-2 group-hover:text-ink transition-colors">
+                        Explore Practice
+                      </span>
+                      <DripLink
+                        href={`/services/${service.slug}`}
+                        className="w-10 h-10 rounded-full bg-paper hover:bg-lime border border-ink/10 flex items-center justify-center text-ink transition-colors duration-300"
+                        aria-label={`View ${service.title}`}
+                      >
+                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </DripLink>
+                    </div>
                   </div>
-
-                  {/* Card Bottom CTA Link */}
-                  <div className="pt-6 mt-6 border-t border-ink/8 flex items-center justify-between">
-                    <span className="text-xs font-mono uppercase tracking-wider text-grey-2 group-hover:text-ink transition-colors">
-                      Explore Practice
-                    </span>
-                    <DripLink
-                      href={`/services/${service.slug}`}
-                      className="w-10 h-10 rounded-full bg-paper hover:bg-lime border border-ink/10 flex items-center justify-center text-ink transition-colors duration-300"
-                      aria-label={`View ${service.title}`}
-                    >
-                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </DripLink>
-                  </div>
-                </div>
-              </Tilt3D>
-            );
-          })}
+                </Tilt3D>
+              );
+            }}
+          />
         </div>
       </div>
     </section>

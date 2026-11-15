@@ -1,0 +1,60 @@
+{
+  "desktopChecks": [
+    {
+      "target": "services-seo-list",
+      "cardCount": 4,
+      "overlaps": [],
+      "maxPinViewports": 0
+    },
+    {
+      "target": "home-services-grid",
+      "cardCount": 4,
+      "overlaps": [],
+      "maxPinViewports": 0
+    },
+    {
+      "target": "home-process-row",
+      "cardCount": 4,
+      "overlaps": [],
+      "maxPinViewports": 0
+    },
+    {
+      "target": "services-overview-grid",
+      "cardCount": 4,
+      "overlaps": [],
+      "maxPinViewports": 0
+    }
+  ],
+  "mobileChecks": [
+    {
+      "target": "services-seo-list",
+      "passed": true
+    },
+    {
+      "target": "home-services-grid",
+      "passed": true
+    },
+    {
+      "target": "home-process-row",
+      "passed": true
+    },
+    {
+      "target": "services-overview-grid",
+      "passed": true
+    }
+  ],
+  "traceMetrics": {
+    "longTasksCount": 2,
+    "longTasks": [
+      {
+        "name": "RunTask",
+        "duration": 72.46
+      },
+      {
+        "name": "RunTask",
+        "duration": 79.44
+      }
+    ],
+    "passed": false
+  }
+}

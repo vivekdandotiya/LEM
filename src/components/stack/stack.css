@@ -1,0 +1,74 @@
+/* Lead Edge Marketing — Stack-Then-Separate Card Animation System */
+
+.stack-section {
+  position: relative;
+}
+
+.stack-container {
+  position: relative;
+  width: 100%;
+}
+
+.stack-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+/* Base card styling */
+.stack-card-item {
+  position: relative;
+  will-change: transform, opacity;
+  transform-origin: center center;
+  transition: box-shadow 0.3s ease;
+}
+
+.stack-card-item:focus-within {
+  z-index: 40 !important;
+  transform: translate3d(0, 0, 0) scale(1) rotate(0deg) !important;
+}
+
+/* Layout variants for desktop */
+@media (min-width: 1024px) {
+  .stack-layout-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .stack-layout-grid2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .stack-layout-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+/* Mobile Sticky Cover Stack (< 1024px) */
+@media (max-width: 1023px) {
+  .stack-mobile-cover > .stack-card-item {
+    position: sticky;
+    top: calc(var(--nav-h, 72px) + 12px + var(--i, 0) * 10px);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(8, 10, 11, 0.15);
+  }
+
+  .stack-mobile-cover > .stack-card-item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .stack-card-item {
+    transform: none !important;
+    opacity: 1 !important;
+    position: relative !important;
+  }
+}

@@ -150,3 +150,41 @@ This document tracks progress through tasks T0 to T8 in strict accordance with t
   - `docs/v6/T3-removed-claims.md`
   - `docs/v6/PROGRESS.md`
 - **Commit:** `T3: remove fabricated metrics from scenes`
+
+---
+
+## T4: Stack-Then-Separate Card System
+- **Date:** 2026-11-16
+- **Branch:** `v6-stack-video-drip`
+- **Status:** **PASSED**
+- **Changes & Findings:**
+  - Built reusable `StackSeparate.tsx` and `stack.css` (`src/components/stack/`):
+    - Desktop (>= 1024px): Pinned ScrollTrigger (end capped at <= 1.9 viewports, scrub 0.6) with mono progress indicator ("01 / 04").
+    - Cards start stacked at anchor slot 0 (z-index reversed, lower cards offset by `y: +14px * n`, `scale: 0.97^n`, `rotate: +-1.5deg`, opacity reduced).
+    - As the user scrolls, each card peels in sequence: lifts (`scale: 1.03`), travels along a curved flight path with gentle overshoot (`power3.out`), and settles into its precomputed slot with `translate3d(0,0,0)`, `scale(1)`, `rotate(0)`.
+    - Dispatches custom `stack:step` event on boundary crossings for external state synchronization (used by T5 stage video player).
+    - Mobile (< 1024px): unpinned sticky cover stack using `position: sticky; top: calc(var(--nav-h) + 12px + var(--i) * 10px)` where cards stack and cover the previous one before releasing.
+    - Reduced motion: full static final layout rendered with zero transforms.
+    - Accessibility: semantic `<ol>` ordered list, "Skip interactive card stack" skip-link preceding every section, and instant keyboard focus resolution.
+  - Integrated into all 4 required locations:
+    1. Service pages: Left-column 4 phase cards in list layout (`src/components/process/ProcessStage.tsx`).
+    2. Home: Four service cards in 2x2 grid layout (`src/components/home/ServicesPreview.tsx`).
+    3. Home: Four-step process cards in row layout (`src/components/home/ProcessSteps.tsx`).
+    4. Services overview: Four discipline panels in 2x2 grid layout (`src/app/services/page.tsx`).
+  - Fixed transition-thrash bug: replaced `transition-all` on animated card containers with specific `transition-colors`, eliminating hundreds of `transitionstart`/`transitioncancel` events during scroll scrubbing.
+  - Verified with automated harness `tools/verify-t4.mjs`:
+    - 20 screenshots captured across 1440px desktop and 390px mobile viewports showing start pile, mid-peel, fully separated, and sticky cover states.
+    - Overlap verification: 0 overlapping cards after landing across all 4 targets.
+    - Pin duration: verified <= 2.2 viewports.
+    - Performance trace captured (`docs/v6/T4-evidence/stack-scroll-trace.json`).
+- **Files Touched:**
+  - `src/components/stack/StackSeparate.tsx`
+  - `src/components/stack/stack.css`
+  - `src/components/process/ProcessStage.tsx`
+  - `src/components/home/ServicesPreview.tsx`
+  - `src/components/home/ProcessSteps.tsx`
+  - `src/app/services/page.tsx`
+  - `tools/verify-t4.mjs`
+  - `docs/v6/PROGRESS.md`
+  - Evidence: `docs/v6/T4-evidence/*.png`, `docs/v6/T4-evidence/*.json`
+- **Commit:** `T4: stack-then-separate card system`
