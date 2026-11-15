@@ -290,7 +290,7 @@ export function ContactForm() {
                   className="px-4 py-3 text-base sm:text-sm rounded-xl bg-white/80 border border-charcoal-900/10 text-charcoal-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors"
                 >
                   <option value="seo">Search Engine Optimization (SEO)</option>
-                  <option value="meta-ads">Meta Ads & Paid Social</option>
+                  <option value="ppc">PPC Services</option>
                   <option value="social-media">Social Media Marketing</option>
                   <option value="web-development">Web Development & UI/UX</option>
                   <option value="other">Full-Funnel Growth / Other</option>

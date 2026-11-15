@@ -1,6 +1,6 @@
 /**
  * Lead Edge Marketing — Brand & Business Source of Truth
- * Section 1 of V3 Design Overhaul Specification
+ * Updated to Client Source of Truth (Google Doc V5)
  */
 
 export interface ServiceItem {
@@ -48,34 +48,34 @@ export const business: BusinessData = {
   services: [
     {
       id: "seo",
-      title: "Search Engine Optimisation",
+      title: "Search Engine Optimization",
       shortTitle: "SEO",
       slug: "seo",
-      headline: "Be the answer when they search.",
-      tagline: "Organic visibility engineered for sustained commercial discovery.",
+      headline: "Be the answer when buyers search",
+      tagline: "Dominate search engine rankings and capture high-intent organic traffic.",
       description: "Search architecture that turns queries into steady, high-intent customer acquisition.",
       icon: "Search",
       label: "01 / SEO",
     },
     {
-      id: "meta-ads",
-      title: "Meta Advertising",
-      shortTitle: "Meta Ads",
-      slug: "meta-ads",
-      headline: "Ads people stop scrolling for.",
-      tagline: "High-converting ad creative paired with algorithmic audience architecture.",
-      description: "Paid social campaigns built to break through fatigue and drive profitable customer volume.",
+      id: "ppc",
+      title: "PPC Services",
+      shortTitle: "PPC Services",
+      slug: "ppc",
+      headline: "Targeted Facebook & Instagram ads engineered to drive instant leads and max ROAS.",
+      tagline: "Targeted Facebook & Instagram ads engineered to drive instant leads and max ROAS.",
+      description: "Targeted Facebook & Instagram ads engineered to drive instant leads and max ROAS.",
       icon: "Target",
-      label: "02 / ADS",
+      label: "02 / PPC",
     },
     {
       id: "social-media",
-      title: "Social Media Marketing",
+      title: "Social Media Services",
       shortTitle: "Social Media",
       slug: "social-media",
-      headline: "Content with a pulse.",
-      tagline: "Editorial social presence that turns passive followers into active brand advocates.",
-      description: "Social storytelling that builds authentic community trust and compounding brand equity.",
+      headline: "Content built to build loyal brand communities.",
+      tagline: "Scale your brand reach with Lead Edge Marketers.",
+      description: "We craft targeted social media marketing campaigns that drive engagement, build authority, and generate high-converting leads across all platforms.",
       icon: "Share2",
       label: "03 / SOCIAL",
     },
@@ -84,9 +84,9 @@ export const business: BusinessData = {
       title: "Web Development",
       shortTitle: "Web Dev",
       slug: "web-development",
-      headline: "Sites built to convert.",
-      tagline: "Ultra-fast, editorial web experiences engineered for sub-second speeds and maximum conversion.",
-      description: "Bespoke digital architecture that turns incoming traffic into qualified customer inquiries.",
+      headline: "High-speed sites engineered to turn clicks into clients.",
+      tagline: "Build high-converting, lightning-fast websites with Lead Edge Marketers.",
+      description: "Our SEO-first web development creates sub-second speed sites engineered to capture search traffic and scale revenue.",
       icon: "Code",
       label: "04 / WEB",
     },

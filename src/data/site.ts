@@ -6,20 +6,23 @@ export interface ClientConfig {
   enableMarquee: boolean;
 }
 
+export const BRAND_NAME = "Lead Edge Marketing";
+export const BRAND_NAME_DOC = "Lead Edge Marketers";
+
 export const clientConfig: ClientConfig = {
   showPlaceholders: true, // Shows non-intrusive "PLACEHOLDER - REPLACE" indicators in dev
   experienceClaimApproved: false, // Pending client confirmation (CIR-02)
   statsVerified: false, // Pending client audited numbers (CIR-03)
-  enableExtraServices: false, // Default 4 services; client may approve 6 (CIR-10)
+  enableExtraServices: false, // Confirmed 4 core services in Google Doc (CIR-10)
   enableMarquee: false, // Marquee disabled until client provides approved logo assets
 };
 
 export const siteConfig = {
-  name: "Lead Edge Marketing",
+  name: BRAND_NAME,
   shortName: "Lead Edge",
-  tagline: "We Don't Just Generate Leads. We Create Momentum.",
+  tagline: "We Don't Just Rank Websites. We Scale Revenue.",
   description:
-    "Lead Edge Marketing is a premium digital marketing agency delivering strategic SEO, Meta Ads, social media creative, and high-performance web development.",
+    "Lead Edge Marketing is a premier digital growth studio delivering strategic SEO, PPC Services, social media marketing, and high-speed web development.",
   url: "https://leadedge.agency",
   ogImage: "/logo/lead-edge-logo.png",
   contact: {

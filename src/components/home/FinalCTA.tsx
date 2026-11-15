@@ -67,6 +67,7 @@ export function FinalCTA() {
       ref={containerRef}
       className="py-24 sm:py-36 bg-ink text-white relative overflow-hidden dark-dots select-none border-t border-white/10"
       data-theme="dark"
+      data-cv="auto"
     >
       {/* Top Lime Sparkle Marquee */}
       <div className="mb-14 opacity-75 hover:opacity-100 transition-opacity">

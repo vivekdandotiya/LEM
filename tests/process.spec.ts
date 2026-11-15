@@ -10,10 +10,10 @@ test.describe('Part B — Animated How We Deliver Process Stages', () => {
     await expect(sticker).toBeVisible();
 
     // Check 4 phase buttons
-    const phase01Btn = page.locator('button:has-text("01 / AUDIT & DISCOVERY")').first();
-    const phase02Btn = page.locator('button:has-text("02 / ARCHITECTURE & SERP")').first();
-    const phase03Btn = page.locator('button:has-text("03 / AUTHORITY NETWORK")').first();
-    const phase04Btn = page.locator('button:has-text("04 / COMMERCIAL RANKING")').first();
+    const phase01Btn = page.locator('button:has-text("01 / OPPORTUNITY DISCOVERY")').first();
+    const phase02Btn = page.locator('button:has-text("02 / SEARCH INTENT ALIGNMENT")').first();
+    const phase03Btn = page.locator('button:has-text("03 / FOUNDATION ARCHITECTURE")').first();
+    const phase04Btn = page.locator('button:has-text("04 / CONVERSION MOMENTUM")').first();
 
     await expect(phase01Btn).toBeVisible();
     await expect(phase02Btn).toBeVisible();
@@ -29,7 +29,7 @@ test.describe('Part B — Animated How We Deliver Process Stages', () => {
     await page.goto('/services/seo?skip_loader=1', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(500);
 
-    const phase02Btn = page.locator('button:has-text("02 / ARCHITECTURE & SERP")').first();
+    const phase02Btn = page.locator('button:has-text("02 / SEARCH INTENT ALIGNMENT")').first();
     await phase02Btn.click();
     await page.waitForTimeout(400);
 
@@ -37,8 +37,8 @@ test.describe('Part B — Animated How We Deliver Process Stages', () => {
     await expect(phase02Btn.locator('text=ACTIVE')).toBeVisible();
   });
 
-  test('3. Meta Ads discipline renders Funnel & Creative Matrix stage', async ({ page }) => {
-    await page.goto('/services/meta-ads?skip_loader=1', { waitUntil: 'domcontentloaded' });
+  test('3. PPC Services discipline renders Funnel & Creative Matrix stage (and redirects from /services/meta-ads)', async ({ page }) => {
+    await page.goto('/services/ppc?skip_loader=1', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(500);
 
     const sticker = page.locator('text=ILLUSTRATIVE').first();

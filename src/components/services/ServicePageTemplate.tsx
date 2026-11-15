@@ -37,15 +37,23 @@ const serviceVisuals: Record<
     ],
     conceptIndices: [0, 1, 2],
   },
+  ppc: {
+    hero: '/images/pages/P03-services-meta-hero-16x9.webp',
+    showcase: '/images/pages/P04-services-meta-creative-4x5.webp',
+    chips: [
+      'Creative Hook Diversity',
+      'Active Practice',
+      'Algorithmic Audience Modeling',
+    ],
+    conceptIndices: [3, 4, 5],
+  },
   'meta-ads': {
     hero: '/images/pages/P03-services-meta-hero-16x9.webp',
     showcase: '/images/pages/P04-services-meta-creative-4x5.webp',
     chips: [
       'Creative Hook Diversity',
-      'Server-Side CAPI Tracking',
+      'Active Practice',
       'Algorithmic Audience Modeling',
-      'Ad Account Governance',
-      'Unit Economic Scaling',
     ],
     conceptIndices: [3, 4, 5],
   },
@@ -80,7 +88,8 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
 
   const config = serviceVisuals[service.slug] || serviceVisuals['web-development'];
   const conceptCards = config.conceptIndices.map((i) => HERO_CREATIVES[i]);
-  const serviceFaqs = service.faqs.slice(0, 4);
+  const serviceFaqs = service.faqs.slice(0, 5);
+  const displayChips = service.deliverables && service.deliverables.length > 0 ? service.deliverables : config.chips;
 
   return (
     <div className="overflow-hidden bg-transparent select-none">
@@ -113,7 +122,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                   Core Deliverables
                 </span>
                 <div className="flex flex-wrap gap-2.5">
-                  {config.chips.map((chip, idx) => (
+                  {displayChips.map((chip, idx) => (
                     <span
                       key={idx}
                       className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-paper-2 border border-ink/10 text-xs font-mono font-semibold text-ink shadow-sm hover:border-lime transition-colors"
@@ -194,29 +203,47 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
               />
             </figure>
             <div className="lg:col-span-5 flex flex-col gap-4">
-              <div className="p-7 rounded-[22px] bg-paper-2 border border-ink/10 card-glass-elevated">
-                <span className="text-[10px] font-mono uppercase text-grey-2 tracking-wider block mb-2">
-                  Standard 01
-                </span>
-                <h3 className="text-xl font-display font-bold text-ink mb-1">
-                  Speed to Impact
-                </h3>
-                <p className="text-sm font-sans text-grey-3">
-                  Deployments happen in days, not months.
-                </p>
-              </div>
+              {service.features && service.features.length >= 2 ? (
+                service.features.slice(0, 2).map((feat, idx) => (
+                  <div key={idx} className="p-7 rounded-[22px] bg-paper-2 border border-ink/10 card-glass-elevated">
+                    <span className="text-[10px] font-mono uppercase text-grey-2 tracking-wider block mb-2">
+                      Standard 0{idx + 1}
+                    </span>
+                    <h3 className="text-xl font-display font-bold text-ink mb-1">
+                      {feat.title}
+                    </h3>
+                    <p className="text-sm font-sans text-grey-3">
+                      {feat.description}
+                    </p>
+                  </div>
+                ))
+              ) : (
+                <>
+                  <div className="p-7 rounded-[22px] bg-paper-2 border border-ink/10 card-glass-elevated">
+                    <span className="text-[10px] font-mono uppercase text-grey-2 tracking-wider block mb-2">
+                      Standard 01
+                    </span>
+                    <h3 className="text-xl font-display font-bold text-ink mb-1">
+                      Speed to Impact
+                    </h3>
+                    <p className="text-sm font-sans text-grey-3">
+                      Deployments happen in days, not months.
+                    </p>
+                  </div>
 
-              <div className="p-7 rounded-[22px] bg-paper-2 border border-ink/10 card-glass-elevated">
-                <span className="text-[10px] font-mono uppercase text-grey-2 tracking-wider block mb-2">
-                  Standard 02
-                </span>
-                <h3 className="text-xl font-display font-bold text-ink mb-1">
-                  Obsessive Quality
-                </h3>
-                <p className="text-sm font-sans text-grey-3">
-                  Crafted for high conversion and brand equity.
-                </p>
-              </div>
+                  <div className="p-7 rounded-[22px] bg-paper-2 border border-ink/10 card-glass-elevated">
+                    <span className="text-[10px] font-mono uppercase text-grey-2 tracking-wider block mb-2">
+                      Standard 02
+                    </span>
+                    <h3 className="text-xl font-display font-bold text-ink mb-1">
+                      Obsessive Quality
+                    </h3>
+                    <p className="text-sm font-sans text-grey-3">
+                      Crafted for high conversion and brand equity.
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -285,7 +312,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                   </button>
                   {isOpen && (
                     <div className="px-6 pb-5 pt-1 text-sm font-sans text-grey-3 border-t border-ink/8 leading-relaxed">
-                      {faq.answer.split('. ').slice(0, 2).join('. ')}.
+                      {faq.answer}
                     </div>
                   )}
                 </div>

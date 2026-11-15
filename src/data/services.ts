@@ -39,161 +39,151 @@ export const confirmedServices: ServiceItem[] = [
     number: "01",
     title: "Search Engine Optimization",
     shortTitle: "SEO",
-    heroHeadline: "CAPTURE HIGH-INTENT DEMAND AT THE MOMENT OF SEARCH.",
-    tagline: "Organic visibility engineered for sustainable, compounding commercial growth.",
-    shortDescription:
-      "Technical audits, deep keyword architecture, and editorial link-building that position your brand at the summit of organic search.",
+    heroHeadline: "TURN SEARCH VISIBILITY INTO SUSTAINABLE BUSINESS Growth.",
+    tagline: "Be the answer when buyers search",
+    shortDescription: "Dominate search engine rankings and capture high-intent organic traffic.",
     fullDescription:
       "Modern search engine optimization is no longer about isolated keywords or superficial tweaks. We build comprehensive technical foundations, architect topical authority across your entire domain, and secure reputable editorial mentions that establish lasting organic visibility.",
     deliverables: [
-      "Technical SEO & Core Web Vitals Auditing",
-      "Comprehensive On-Page Semantic Optimisation",
-      "High-Intent Commercial Keyword Architecture",
-      "Local SEO & Multi-Location Citation Mapping",
-      "Editorial Link Acquisition & Digital PR",
-      "Granular Organic Revenue & Conversion Reporting",
+      "Technical SEO",
+      "On-Page SEO",
+      "Off-Page SEO",
+      "Keyword Research",
+      "SEO Content Strategy",
+      "Organic Growth",
     ],
     features: [
       {
-        title: "Technical Infrastructure",
+        title: "Strategic SEO Architecture",
         description:
-          "Zero-friction crawlability, clean schema markup, and rigorous Core Web Vitals performance tuning so search bots index your commercial pages without impediment.",
+          "Build SEO strategies around keyword research, search intent, and competitor analysis to reach the right audience and identify growth opportunities.",
       },
       {
-        title: "Topical Authority Clustering",
+        title: "Continuous Refinement & Impact",
         description:
-          "Structuring content hubs that demonstrate unmatched expertise to search algorithms and answer exact prospective customer intent.",
-      },
-      {
-        title: "Digital PR & Link Architecture",
-        description:
-          "Earning verified high-authority editorial references and citations that permanently elevate domain trust and ranking power.",
-      },
-      {
-        title: "Transparent Attribution Reporting",
-        description:
-          "Actionable dashboards tracking keyword movement, organic impression share, assisted conversions, and bottom-line revenue pipeline.",
+          "Refine website performance, content, and search visibility through ongoing analysis, technical improvements, and measurable SEO actions.",
       },
     ],
     processSteps: [
       {
         number: "01",
-        title: "Deep Technical & Competitor Audit",
-        description: "We rigorously crawl your architecture, diagnose crawl errors, benchmark competitors, and map high-value keyword opportunities.",
+        title: "We uncover opportunities others overlook.",
+        description: "Analyze your website, competitors, and search performance to identify technical issues and opportunities for organic growth.",
       },
       {
         number: "02",
-        title: "Information Architecture & On-Page Calibration",
-        description: "We optimize title tags, schema entities, heading hierarchy, and internal linking structures for maximum relevance.",
+        title: "We align your content with search intent.",
+        description: "Discover relevant keywords and develop a content strategy that connects your business with the right audience.",
       },
       {
         number: "03",
-        title: "Authority Content & Outreach Execution",
-        description: "We publish authoritative industry content and execute high-tier editorial outreach to capture influential backlinks.",
+        title: "We build a stronger search foundation.",
+        description: "Improve website structure, crawlability, indexing, and backlink quality to strengthen your website's search engine performance.",
       },
       {
         number: "04",
-        title: "Rank Tracking & Compounding Scaling",
-        description: "Continuous monitoring, algorithmic adaptation, and expansion into adjacent commercial search queries.",
+        title: "We turn rankings into meaningful results.",
+        description: "Monitor keyword rankings, organic traffic, and conversions while continuously optimizing your SEO strategy for long-term growth.",
       },
     ],
     faqs: [
       {
-        question: "How long does it typically take to see tangible SEO results?",
+        question: "1. What do SEO services include?",
         answer:
-          "While technical fixes can show crawling benefits within 3–6 weeks, sustained commercial ranking gains and traffic momentum generally compound over 3 to 6 months depending on domain authority and competitive density.",
+          "Lead Edge Marketers provides technical SEO audits, keyword research, on-page optimization, backlink building, and local SEO services. We structure your site to earn high search rankings and drive consistent organic traffic.",
       },
       {
-        question: "Do you guarantee number one rankings on Google?",
+        question: "2. How long does SEO take to work?",
         answer:
-          "No reputable agency guarantees position one due to algorithmic volatility. Instead, we guarantee rigorous technical compliance, high-grade authority execution, and transparent monthly performance reporting.",
+          "Professional SEO is a long-term campaign that typically delivers noticeable keyword ranking gains and traffic growth within 3 to 6 months. Initial technical site fixes provide early traction, but lasting search engine authority builds over time.",
       },
       {
-        question: "What does your monthly SEO reporting include?",
+        question: "3. Which SEO metrics do you report on?",
         answer:
-          "You receive a clear executive report detailing keyword trajectory, organic search impressions, qualified click volume, assisted conversions, and ongoing technical health.",
+          "We track transparent, revenue-driving KPIs including organic keyword rankings, monthly organic traffic growth, domain authority, click-through rates (CTR), conversion rates, and total leads generated. You receive detailed monthly reports demonstrating clear campaign ROI.",
+      },
+      {
+        question: "4. What is the difference between an SEO agency and an SEO consultant?",
+        answer:
+          "An SEO consultant primarily provides strategic advice, site audits, and recommendations for your internal team to execute. Lead Edge Marketers operates as a full-service SEO agency, handling strategy, technical fixes, content creation, and ongoing optimization from start to finish.",
       },
     ],
   },
   {
-    id: "meta-ads",
-    slug: "meta-ads",
+    id: "ppc",
+    slug: "ppc",
     number: "02",
-    title: "Meta Advertising & Paid Social",
-    shortTitle: "Meta Ads",
-    heroHeadline: "PRECISION PAID ACQUISITION THAT TURNS ATTENTION INTO REVENUE.",
-    tagline: "High-converting ad creatives paired with data-backed audience architecture.",
-    shortDescription:
-      "Scalable customer acquisition across Facebook and Instagram driven by modular creative testing, algorithmic bidding, and full-funnel attribution.",
+    title: "PPC Services",
+    shortTitle: "PPC",
+    heroHeadline: "DATA-DRIVEN META ADS THAT TURN TARGET AUDIENCES INTO customers.",
+    tagline: "Targeted Facebook & Instagram ads engineered to drive instant leads and max ROAS.",
+    shortDescription: "Targeted Facebook & Instagram ads engineered to drive instant leads and max ROAS.",
     fullDescription:
-      "We design, produce, and manage performance-engineered paid social campaigns across Facebook and Instagram. By uniting bespoke visual assets with advanced audience modeling and first-party conversion tracking (Conversions API), we scale profitability while mitigating ad fatigue.",
+      "Targeted Facebook and Instagram ads engineered to drive instant leads and max ROAS. By uniting bespoke visual assets with advanced audience modeling and first-party conversion tracking (Conversions API), we scale profitability while eliminating ad fatigue.",
     deliverables: [
-      "Custom Campaign Architecture & Budget Allocation",
-      "High-Impact Motion & Static Creative Production",
-      "Meta Pixel & Conversions API (CAPI) Integration",
-      "Lookalike & Predictive In-Market Audience Segmentation",
-      "Dynamic Retargeting & Offer Sequencing",
-      "Real-Time Blended ROAS & Attribution Analytics",
+      "Creative Hook Diversity",
+      "Active Practice",
+      "Algorithmic Audience Modeling",
     ],
     features: [
       {
-        title: "Iterative Creative Testing",
+        title: "Visibility Without Delay",
         description:
-          "Testing modular hooks, angles, and visual formats every week to identify breakthrough ad creatives that drop customer acquisition cost.",
+          "Strategic campaigns and targeted technical fixes designed to strengthen your search presence and accelerate organic growth.",
       },
       {
-        title: "Server-Side CAPI Tracking",
+        title: "Precision That Performs",
         description:
-          "Resilient first-party conversion tracking that overcomes browser tracking restrictions and fuels Meta's machine learning engine.",
-      },
-      {
-        title: "Full-Funnel Value Sequencing",
-        description:
-          "Guiding cold prospects through brand consideration, value demonstration, and frictionless conversion offers.",
-      },
-      {
-        title: "Rigorous Unit Economics Focus",
-        description:
-          "Managing campaigns against real profit margins, customer lifetime value (LTV), and target CAC thresholds.",
+          "From search-focused content to on-page optimization, every detail is refined to improve rankings, build trust, and attract the right audience.",
       },
     ],
     processSteps: [
       {
         number: "01",
-        title: "Data Audit & Tracking Calibration",
-        description: "We configure server-side Conversions API, evaluate past ad spend efficiency, and establish baseline unit economics.",
+        title: "3-Tier Funnel Architecture",
+        description: "Segmenting cold discovery, mid-funnel consideration, and high-intent checkout funnels so ad spend never bleeds.",
       },
       {
         number: "02",
-        title: "Creative Strategy & Angle Production",
-        description: "We develop compelling video and static creative assets tailored specifically to overcome common buyer objections.",
+        title: "3x3 Creative Matrix Testing",
+        description: "Deploying modular creative variations testing visual hooks, angles, and editorial copy against strict unit metrics.",
       },
       {
         number: "03",
-        title: "Algorithmic Testing & Budget Ramp",
-        description: "We deploy controlled test budgets across broad and interest audiences, rapidly identifying top-performing creative variations.",
+        title: "Algorithmic Audience Modeling",
+        description: "Server-side CAPI tracking and algorithmic lookalikes zeroing in on buyers with the highest lifetime purchasing intent.",
       },
       {
         number: "04",
-        title: "Horizontal & Vertical Scaling",
-        description: "We systematically scale winning assets while rotating fresh hooks to prevent audience fatigue and protect ROAS.",
+        title: "Dynamic Efficiency Scaling",
+        description: "Scaling daily budgets profitably on validated creatives while maintaining target CPA thresholds and healthy margins.",
       },
     ],
     faqs: [
       {
-        question: "What minimum ad spend do you recommend for Meta campaigns?",
+        question: "1. What do Facebook marketing services include?",
         answer:
-          "To allow Meta's machine-learning algorithm to gather sufficient conversion data (50 conversions per ad set per week), we typically recommend a minimum media budget of £2,500 – £4,000 per month.",
+          "Lead Edge Marketers handles custom ad creation, audience targeting, campaign setup, continuous A/B testing, and conversion tracking to ensure your Meta ads generate consistent leads and sales.",
       },
       {
-        question: "Who handles ad creative production and copywriting?",
+        question: "2. How long does Facebook marketing take to show results?",
         answer:
-          "Our in-house design and copywriting team handles all creative production, including video briefs, motion graphics, carousel assets, and high-converting ad copy.",
+          "Meta ads start generating website traffic and lead inquiries almost immediately after launching, with full campaign optimization and steady return on ad spend achieved within the first 2 to 4 weeks.",
       },
       {
-        question: "How do you track conversions after iOS 14+ tracking changes?",
+        question: "3. How much does a Facebook marketing agency cost?",
         answer:
-          "We implement Meta Conversions API (CAPI) server-side tracking alongside clean UTM architecture and Google Analytics 4 to maintain robust attribution data.",
+          "Agency fees depend on your total monthly ad spend and project goals, with Lead Edge Marketers offering flexible performance retainers designed to maximize your profit and return on investment.",
+      },
+      {
+        question: "4. Should I use Advantage+ or manual targeting on Facebook?",
+        answer:
+          "Advantage+ uses Meta's AI algorithms to reach broad potential buyers fast, while manual targeting lets us focus on specific niche demographics; we often test both to find what delivers the lowest cost per lead.",
+      },
+      {
+        question: "5. Are Facebook Groups worth it for a small business?",
+        answer:
+          "Yes, running or participating in active Facebook Groups helps build direct community trust, though combining group engagement with targeted paid ads yields much faster lead generation.",
       },
     ],
   },
@@ -201,21 +191,20 @@ export const confirmedServices: ServiceItem[] = [
     id: "social-media",
     slug: "social-media",
     number: "03",
-    title: "Social Media Marketing",
+    title: "Social Media Services",
     shortTitle: "Social Media",
     heroHeadline: "CULTIVATE AN ENGAGED AUDIENCE THAT ADVOCATES FOR YOUR BRAND.",
-    tagline: "Distinctive brand storytelling, editorial content creation, and active community growth.",
+    tagline: "Content built to build loyal brand communities.",
     shortDescription:
-      "Strategic content calendars, short-form video production, and intentional community management that build loyal brand equity.",
+      "Scale your brand reach with Lead Edge Marketers. We craft targeted social media marketing campaigns that drive engagement, build authority, and generate high-converting leads across all platforms.",
     fullDescription:
-      "Social media should be a powerful brand moat, not an afterthought. We build cohesive visual identities, develop engaging editorial content calendars, produce cinematic short-form vertical videos, and foster genuine two-way conversations that transform passive followers into vocal advocates.",
+      "Content built to build loyal brand communities. Scale your brand reach with Lead Edge Marketers. We craft targeted social media marketing campaigns that drive engagement, build authority, and generate high-converting leads across all platforms.",
     deliverables: [
-      "Brand Narrative & Social Positioning Strategy",
-      "Comprehensive Monthly Content Calendars",
-      "Short-Form Video (Reels/Shorts/TikTok) Direction",
-      "High-Fidelity Graphic Design & Carousel Storytelling",
-      "Proactive Community Moderation & Outreach",
-      "Monthly Engagement & Share of Voice Insights",
+      "Editorial Content Calendars",
+      "High-Retention Vertical Video",
+      "Distinct Brand Voice",
+      "Proactive Community Care",
+      "Organic Demand Attribution",
     ],
     features: [
       {
@@ -283,21 +272,20 @@ export const confirmedServices: ServiceItem[] = [
     id: "web-development",
     slug: "web-development",
     number: "04",
-    title: "Web Development & UI/UX",
-    shortTitle: "Web Development",
+    title: "Web Development",
+    shortTitle: "Web Dev",
     heroHeadline: "DIGITAL EXPERIENCES ENGINEERED FOR SPEED, ELEGANCE AND CONVERSION.",
-    tagline: "Bespoke digital architecture that elevates your brand and turns visitors into clients.",
+    tagline: "High-speed sites engineered to turn clicks into clients.",
     shortDescription:
-      "Modern Next.js and headless architectures delivering sub-second load times, fluid micro-interactions, and conversion-optimized user flows.",
+      "Build high-converting, lightning-fast websites with Lead Edge Marketers. Our SEO-first web development creates sub-second speed sites engineered to capture search traffic and scale revenue.",
     fullDescription:
-      "Your website is the single most important asset in your digital ecosystem. We architect bespoke digital flagships that unite minimalist editorial beauty with cutting-edge front-end engineering. Fast, accessible, and structured to convert, every site is crafted to elevate your market positioning.",
+      "High-speed sites engineered to turn clicks into clients. Build high-converting, lightning-fast websites with Lead Edge Marketers. Our SEO-first web development creates sub-second speed sites engineered to capture search traffic and scale revenue.",
     deliverables: [
-      "Custom UI/UX Design & Interactive Prototyping",
-      "Next.js / React Modern Front-End Engineering",
-      "Sub-Second Core Web Vitals & Performance Tuning",
-      "Semantic WCAG 2.2 AA Accessibility Compliance",
-      "Custom CMS Integration for Frictionless Content Editing",
-      "Automated CI/CD Pipeline & Enterprise Edge Hosting",
+      "Sub-Second Core Vitals",
+      "Bespoke Next.js Engine",
+      "Fluid Device Geometry",
+      "Zero Theme Bloat",
+      "Conversion-Focused Funnels",
     ],
     features: [
       {
@@ -363,48 +351,15 @@ export const confirmedServices: ServiceItem[] = [
   },
 ];
 
-export const placeholderServices: ServiceItem[] = [
-  {
-    id: "service-05-placeholder",
-    slug: "email-marketing-placeholder",
-    number: "05",
-    title: "Email & Retention Marketing",
-    shortTitle: "Email Marketing",
-    heroHeadline: "LIFETIME VALUE MAXIMIZATION VIA AUTOMATED RETENTION.",
-    tagline: "Awaiting Client Confirmation — Placeholder Service.",
-    shortDescription: "Automated lifecycle flows, segmentation, and customer retention campaigns.",
-    fullDescription: "Service 05 is currently held as an optional expansion slot pending client strategic review.",
-    deliverables: ["Lifecycle Flow Architecture", "Predictive Customer Segmentation", "A/B Subject Line Testing"],
-    features: [],
-    processSteps: [],
-    faqs: [],
-    isPlaceholder: true,
-  },
-  {
-    id: "service-06-placeholder",
-    slug: "conversion-rate-optimization-placeholder",
-    number: "06",
-    title: "Conversion Rate Optimization",
-    shortTitle: "CRO",
-    heroHeadline: "SCIENTIFIC REVENUE ACCELERATION VIA USER TESTING.",
-    tagline: "Awaiting Client Confirmation — Placeholder Service.",
-    shortDescription: "Data-driven landing page experiments, user recordings, and checkout optimization.",
-    fullDescription: "Service 06 is currently held as an optional expansion slot pending client strategic review.",
-    deliverables: ["Heatmap & Session Analysis", "Hypothesis-Driven A/B Testing", "Checkout Friction Elimination"],
-    features: [],
-    processSteps: [],
-    faqs: [],
-    isPlaceholder: true,
-  },
-];
+export const placeholderServices: ServiceItem[] = [];
 
 export function getActiveServices(includePlaceholders = false): ServiceItem[] {
-  if (includePlaceholders) {
-    return [...confirmedServices, ...placeholderServices];
-  }
   return confirmedServices;
 }
 
 export function getServiceBySlug(slug: string): ServiceItem | undefined {
+  if (slug === 'meta-ads') {
+    return confirmedServices.find((s) => s.slug === 'ppc');
+  }
   return confirmedServices.find((s) => s.slug === slug);
 }

@@ -9,6 +9,7 @@ import { DripLink } from '@/components/animorio/drip/DripLink';
 
 const serviceImages: Record<string, string> = {
   seo: '/images/pages/P01-services-seo-hero-16x9.webp',
+  ppc: '/images/pages/P03-services-meta-hero-16x9.webp',
   'meta-ads': '/images/pages/P03-services-meta-hero-16x9.webp',
   'social-media': '/images/pages/P05-services-social-hero-16x9.webp',
   'web-development': '/images/pages/P07-services-web-hero-16x9.webp',
@@ -16,7 +17,8 @@ const serviceImages: Record<string, string> = {
 
 const serviceShortLines: Record<string, string> = {
   seo: 'Be the answer when buyers search.',
-  'meta-ads': 'Ads people stop scrolling for.',
+  ppc: 'Targeted ads engineered for instant leads and ROAS.',
+  'meta-ads': 'Targeted ads engineered for instant leads and ROAS.',
   'social-media': 'Editorial content with a living pulse.',
   'web-development': 'Sub-second web built to convert.',
 };

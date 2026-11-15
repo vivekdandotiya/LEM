@@ -17,7 +17,7 @@ export const contactFormSchema = z.object({
     .optional()
     .or(z.literal("")),
   serviceRequired: z.enum(
-    ["seo", "meta-ads", "social-media", "web-development", "other"],
+    ["seo", "ppc", "meta-ads", "social-media", "web-development", "other"],
     {
       errorMap: () => ({ message: "Please select the primary service you require." }),
     }

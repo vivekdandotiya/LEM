@@ -2,7 +2,6 @@
 @import '@fontsource/instrument-serif';
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/jetbrains-mono';
-@import '@fontsource-variable/mona-sans/wdth.css'; /* Preserved for candle preloader */
 @import './tokens.css';
 
 @tailwind base;
@@ -504,6 +503,14 @@
 
 .cursor[data-state="none"] {
   opacity: 0;
+}
+
+/* Below-the-fold render optimization */
+.cv-auto,
+section[data-cv="auto"],
+.below-fold-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
 }
 
 /* Reduced motion overrides */

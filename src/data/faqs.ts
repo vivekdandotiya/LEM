@@ -3,49 +3,57 @@ export interface FAQItem {
   question: string;
   answer: string;
   category?: string;
+  source?: 'client-doc' | 'legacy';
 }
 
 export const homepageFAQs: FAQItem[] = [
   {
     id: "faq-01",
-    question: "What makes Lead Edge Marketing different from conventional marketing agencies?",
+    question: "1. What digital marketing services does Lead Edge Marketers offer?",
     answer:
-      "We pair minimalist, editorial brand craft with rigorous technical engineering. Rather than relying on generic templates or vanity metrics, we focus exclusively on commercial outcomes: compounding organic search authority, unit-profitable paid acquisition, and custom web experiences engineered for high conversion.",
+      "We provide a full suite of services including SEO, technical SEO, Google and Meta ads management, social media marketing, local SEO, and web development, all customized to match your business goals.",
+    source: "client-doc",
   },
   {
     id: "faq-02",
-    question: "How do you structure project timelines and onboarding?",
+    question: "2. How does Lead Edge Marketers align strategies with my specific business goals?",
     answer:
-      "Every engagement begins with our Discover phase—a thorough 2-week technical and brand audit where we diagnose bottlenecks, verify tracking infrastructure, and map 90-day growth milestones. Campaign execution or development sprints begin immediately following discovery approval.",
+      "We start by learning about your target audience, industry, and revenue goals, then build a custom digital marketing strategy designed specifically for your brand's growth.",
+    source: "client-doc",
   },
   {
     id: "faq-03",
-    question: "What is your pricing approach?",
+    question: "3. Does Lead Edge Marketers require long-term contracts?",
     answer:
-      "Our pricing is tied strictly to the scope of work and technical depth required. Web development and digital design are typically structured as fixed-scope project milestones. Ongoing SEO, Meta Ads, and social media creative are delivered under transparent monthly retainers with clear deliverables and no hidden fees.",
+      "No, we believe in earning your partnership every month through real results rather than locking you into rigid, long-term contracts.",
+    source: "client-doc",
   },
   {
     id: "faq-04",
-    question: "Do you require long-term lock-in contracts?",
+    question: "4. How will I receive updates on my campaigns' performance?",
     answer:
-      "We believe retention should be earned through consistent performance. For retainer services, we operate with an initial 90-day momentum commitment (to allow search algorithms and ad learning phases to mature), transitioning to flexible 30-day rolling terms thereafter.",
+      "You will get clear, transparent regular reports and direct updates from our team tracking your traffic growth, rankings, and overall return on investment.",
+    source: "client-doc",
   },
   {
     id: "faq-05",
-    question: "Who will actually work on our account?",
+    question: "5. Does Lead Edge Marketers work with businesses of all sizes and industries?",
     answer:
-      "You work directly with senior practitioners—strategists, senior designers, and technical developers—not junior account coordinators. Communication is direct, transparent, and structured around regular sprint updates.",
+      "Yes, we partner with businesses of all sizes—from local startups to growing e-commerce brands across various industries to scale their online presence.",
+    source: "client-doc",
   },
   {
     id: "faq-06",
-    question: "How do you handle reporting and communication?",
+    question: "6. How quickly can I expect to see results from digital marketing?",
     answer:
-      "Clients have 24/7 access to live, custom dashboards aggregating Google Search Console, Meta Ads Manager, and web analytics. In addition, we deliver bi-weekly executive summaries and monthly strategic review calls.",
+      "Paid advertising can drive leads almost immediately, while organic SEO and content strategies typically show noticeable growth and rankings within 3 to 6 months.",
+    source: "client-doc",
   },
   {
     id: "faq-07",
-    question: "How do we get started?",
+    question: "7. What makes Lead Edge Marketers different from other digital marketing agencies?",
     answer:
-      "Submit an inquiry through our contact form with brief details regarding your business and objectives. We review submissions within 24 business hours and schedule an introductory discovery conversation to evaluate mutual fit.",
+      "We focus purely on measurable revenue growth and momentum rather than vanity metrics, offering dedicated support, transparent reporting, and proven white-hat strategies.",
+    source: "client-doc",
   },
 ];

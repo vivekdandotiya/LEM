@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { siteConfig } from "@/data/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import SitePreloader from "@/components/SitePreloader";
+import { BrandFloodIntro } from "@/components/intro/BrandFloodIntro";
 import SmoothScroll from "@/motion/SmoothScroll";
 import { DripTransitionProvider } from "@/components/animorio/drip/DripTransitionProvider";
 import CustomCursor from "@/motion/CustomCursor";
@@ -77,8 +77,8 @@ export default function RootLayout({
         {/* Custom cursor */}
         <CustomCursor />
 
-        {/* Site Preloader - Candle that burns down (1st session visit) */}
-        <SitePreloader />
+        {/* Brand Name Flood Intro (Plays once per session, ?intro=1 forces replay) */}
+        <BrandFloodIntro />
 
         {/* WCAG 2.2 Skip-To-Content Link */}
         <a

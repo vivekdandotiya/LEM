@@ -2,43 +2,10 @@
 
 import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
-
-interface FAQItem {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-const faqs: FAQItem[] = [
-  {
-    id: 'faq-1',
-    question: 'How quickly can we launch?',
-    answer: 'Most engagements launch within two to three weeks following initial audit, creative planning, and technical calibration.',
-  },
-  {
-    id: 'faq-2',
-    question: 'Do you require long-term contracts?',
-    answer: 'No. We work on flexible monthly retainers. Continued collaboration is earned through steady, trackable performance.',
-  },
-  {
-    id: 'faq-3',
-    question: 'Who manages our accounts directly?',
-    answer: 'Senior specialists handle every deployment. You collaborate directly with growth architects, never junior middlemen.',
-  },
-  {
-    id: 'faq-4',
-    question: 'What makes your creative perform?',
-    answer: 'We test diverse visual hooks and editorial layouts engineered specifically to halt scrolling and trigger genuine inquiries.',
-  },
-  {
-    id: 'faq-5',
-    question: 'How do you report campaign outcomes?',
-    answer: 'Plain-English weekly dashboards detailing cost per inquiry, qualified lead volume, and pipeline movement without vanity jargon.',
-  },
-];
+import { homepageFAQs } from '@/data/faqs';
 
 export function FAQSection() {
-  const [openId, setOpenId] = useState<string | null>('faq-1');
+  const [openId, setOpenId] = useState<string | null>(homepageFAQs[0]?.id || 'faq-01');
 
   const toggleItem = (id: string) => {
     setOpenId((prev) => (prev === id ? null : id));
@@ -47,7 +14,7 @@ export function FAQSection() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
+    mainEntity: homepageFAQs.map((f) => ({
       '@type': 'Question',
       name: f.question,
       acceptedAnswer: {
@@ -58,7 +25,7 @@ export function FAQSection() {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-transparent" id="faq">
+    <section className="py-24 sm:py-32 bg-transparent" id="faq" data-cv="auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -82,9 +49,9 @@ export function FAQSection() {
           </p>
         </div>
 
-        {/* 5 Questions Accordion */}
+        {/* Client FAQs Accordion */}
         <div className="flex flex-col gap-3">
-          {faqs.map((faq) => {
+          {homepageFAQs.map((faq) => {
             const isOpen = openId === faq.id;
 
             return (
