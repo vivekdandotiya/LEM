@@ -1,0 +1,206 @@
+[
+  {
+    "route": "home",
+    "path": "/?intro=0",
+    "profile": "normal",
+    "cpuThrottling": 1,
+    "stats": {
+      "count": 109,
+      "median": 16.7,
+      "p95": 99.9,
+      "max": 466.7,
+      "mean": 36.7
+    },
+    "longTasksCount": 5,
+    "maxLongTask": 561,
+    "loafCount": 21,
+    "traceFilename": "home-normal.json"
+  },
+  {
+    "route": "services-overview",
+    "path": "/services?intro=0",
+    "profile": "normal",
+    "cpuThrottling": 1,
+    "stats": {
+      "count": 216,
+      "median": 16.7,
+      "p95": 16.8,
+      "max": 17,
+      "mean": 16.67
+    },
+    "longTasksCount": 0,
+    "maxLongTask": 0,
+    "loafCount": 7,
+    "traceFilename": "services-overview-normal.json"
+  },
+  {
+    "route": "services-seo",
+    "path": "/services/seo?intro=0",
+    "profile": "normal",
+    "cpuThrottling": 1,
+    "stats": {
+      "count": 73,
+      "median": 16.7,
+      "p95": 366.6,
+      "max": 432.9,
+      "mean": 50.91
+    },
+    "longTasksCount": 0,
+    "maxLongTask": 0,
+    "loafCount": 17,
+    "traceFilename": "services-seo-normal.json"
+  },
+  {
+    "route": "services-ppc",
+    "path": "/services/ppc?intro=0",
+    "profile": "normal",
+    "cpuThrottling": 1,
+    "stats": {
+      "count": 196,
+      "median": 16.7,
+      "p95": 33.4,
+      "max": 99.7,
+      "mean": 18.79
+    },
+    "longTasksCount": 0,
+    "maxLongTask": 0,
+    "loafCount": 9,
+    "traceFilename": "services-ppc-normal.json"
+  },
+  {
+    "route": "services-social-media",
+    "path": "/services/social-media?intro=0",
+    "profile": "normal",
+    "cpuThrottling": 1,
+    "stats": {
+      "count": 215,
+      "median": 16.7,
+      "p95": 16.8,
+      "max": 37,
+      "mean": 17.05
+    },
+    "longTasksCount": 0,
+    "maxLongTask": 0,
+    "loafCount": 7,
+    "traceFilename": "services-social-media-normal.json"
+  },
+  {
+    "route": "services-web-development",
+    "path": "/services/web-development?intro=0",
+    "profile": "normal",
+    "cpuThrottling": 1,
+    "stats": {
+      "count": 208,
+      "median": 16.7,
+      "p95": 16.8,
+      "max": 133.4,
+      "mean": 17.31
+    },
+    "longTasksCount": 0,
+    "maxLongTask": 0,
+    "loafCount": 8,
+    "traceFilename": "services-web-development-normal.json"
+  },
+  {
+    "route": "home",
+    "path": "/?intro=0",
+    "profile": "cpu-4x",
+    "cpuThrottling": 4,
+    "stats": {
+      "count": 112,
+      "median": 100,
+      "p95": 900,
+      "max": 1733.3,
+      "mean": 212.35
+    },
+    "longTasksCount": 163,
+    "maxLongTask": 1483,
+    "loafCount": 91,
+    "traceFilename": "home-cpu-4x.json"
+  },
+  {
+    "route": "services-overview",
+    "path": "/services?intro=0",
+    "profile": "cpu-4x",
+    "cpuThrottling": 4,
+    "stats": {
+      "count": 160,
+      "median": 33.4,
+      "p95": 166.6,
+      "max": 416.6,
+      "mean": 53.44
+    },
+    "longTasksCount": 21,
+    "maxLongTask": 389,
+    "loafCount": 32,
+    "traceFilename": "services-overview-cpu-4x.json"
+  },
+  {
+    "route": "services-seo",
+    "path": "/services/seo?intro=0",
+    "profile": "cpu-4x",
+    "cpuThrottling": 4,
+    "stats": {
+      "count": 204,
+      "median": 33.3,
+      "p95": 133.4,
+      "max": 1883.3,
+      "mean": 60.46
+    },
+    "longTasksCount": 19,
+    "maxLongTask": 1745,
+    "loafCount": 27,
+    "traceFilename": "services-seo-cpu-4x.json"
+  },
+  {
+    "route": "services-ppc",
+    "path": "/services/ppc?intro=0",
+    "profile": "cpu-4x",
+    "cpuThrottling": 4,
+    "stats": {
+      "count": 196,
+      "median": 33.3,
+      "p95": 116.7,
+      "max": 1666.7,
+      "mean": 57.91
+    },
+    "longTasksCount": 25,
+    "maxLongTask": 1468,
+    "loafCount": 30,
+    "traceFilename": "services-ppc-cpu-4x.json"
+  },
+  {
+    "route": "services-social-media",
+    "path": "/services/social-media?intro=0",
+    "profile": "cpu-4x",
+    "cpuThrottling": 4,
+    "stats": {
+      "count": 217,
+      "median": 16.8,
+      "p95": 133.2,
+      "max": 1866.7,
+      "mean": 53.07
+    },
+    "longTasksCount": 19,
+    "maxLongTask": 1527,
+    "loafCount": 24,
+    "traceFilename": "services-social-media-cpu-4x.json"
+  },
+  {
+    "route": "services-web-development",
+    "path": "/services/web-development?intro=0",
+    "profile": "cpu-4x",
+    "cpuThrottling": 4,
+    "stats": {
+      "count": 153,
+      "median": 49.9,
+      "p95": 216.8,
+      "max": 2016.6,
+      "mean": 91.94
+    },
+    "longTasksCount": 70,
+    "maxLongTask": 1676,
+    "loafCount": 61,
+    "traceFilename": "services-web-development-cpu-4x.json"
+  }
+]
