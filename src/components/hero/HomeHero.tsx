@@ -9,6 +9,7 @@ import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
 import { Magnetic } from '@/motion/Magnetic';
 import { HERO_DATA } from '@/data/hero';
 import { Pause, Play } from 'lucide-react';
+import { InkDripText } from '@/motion/InkDrip';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -162,7 +163,7 @@ export function HomeHero() {
             aria-live="polite"
             className="text-[clamp(2.75rem,8.5vw,7.8rem)] font-display font-extrabold uppercase leading-[0.88] tracking-[-0.04em] text-white"
           >
-            {currentHeadline.prefix}{' '}
+            <InkDripText text={currentHeadline.prefix} color="#C9F53D" maxDrips={1} />{' '}
             <span className="relative inline-block font-serif lowercase italic text-lime font-normal tracking-normal mx-1">
               {currentHeadline.italicWord}
               {/* Hand-drawn swash underline */}

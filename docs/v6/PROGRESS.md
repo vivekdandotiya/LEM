@@ -292,3 +292,51 @@ This document tracks progress through tasks T0 to T8 in strict accordance with t
   - `docs/v6/PROGRESS.md`
   - Evidence: `docs/v6/T6-evidence/seo-card-4k-crop.png`, `docs/v6/T6-evidence/seo-hero-4k-crop.png`
 - **Commit:** `T6: 4K card imagery with responsive delivery`
+
+---
+
+## T7: Ink-Drip Typography
+- **Date:** 2026-11-16
+- **Branch:** `v6-stack-video-drip`
+- **Status:** **PASSED**
+- **Changes & Findings:**
+  - Designed anatomical 3.2s ink-drip animation system (`src/motion/drips.css` and `src/motion/InkDrip.tsx`):
+    - Phase 1: Surface tension build (0.0s – 1.2s): baseline meniscus swells smoothly.
+    - Phase 2: Necking (1.2s – 1.8s): droplet stretches downward into a teardrop with a thin capillary stem.
+    - Phase 3: Pinch-off & fall (1.8s – 2.4s): capillary stem snaps; droplet accelerates downwards along gravitational curve.
+    - Phase 4: Settle & fade (2.4s – 3.2s): meniscus snaps back to the letter baseline with damped recovery.
+  - Implemented with pure SVG and CSS keyframes animating strictly `transform` and `opacity` (zero layout reflow, zero height/width animations).
+  - Deterministic letter eligibility:
+    - Anchors only onto letters without descenders (`E, L, T, H, M, K, k, d, b, h, t, r`).
+    - Frequency capped at 1 drip per 4–7 words, max 1–2 drips per major heading.
+    - Deterministic hashing: element text hash guarantees the same word always drips from the same letter on every reload.
+  - Full accessibility compliance:
+    - Text copy-paste is 100% unaffected (verified exact string equality).
+    - Drip elements render with `aria-hidden="true"`, ensuring screen readers hear uninterrupted words without rogue glyphs.
+    - Drip elements use `pointer-events: none` and `display: inline` anchors with absolute positioning, preventing any font kerning or layout shift.
+  - Integrated into:
+    - `src/components/hero/HomeHero.tsx` (H1: lime ink drip on rotating headline prefix).
+    - `src/components/home/ServicesPreview.tsx` (H2: deep ink drip on "Disciplines built to create").
+    - `src/components/home/ProcessSteps.tsx` (H2: deep ink drip on "Four steps to steady").
+    - `src/components/layout/Navbar.tsx` (Primary CTA: ink drip on "Start a project").
+    - `src/components/home/FinalCTA.tsx` (Primary CTA: ink drip on "Start a project").
+  - Automated verification via `tools/verify-t7.mjs`:
+    - Layout shift (CLS): **0.0000** measured during live animation.
+    - Copy-paste equality: **PASSED** (retrieved text `"Disciplines built to create momentum."` exactly).
+    - Screen reader accessibility: **PASSED** (100% of drip elements have `aria-hidden="true"`).
+    - Compositor execution: **PASSED** (verified 0 reflow properties across all drip keyframes).
+    - Captured 4-frame animation strip (build, necking, pinch-off, fall) and stitched into `docs/v6/T7-evidence/drip-anatomy-strip.png`.
+    - Diagnostic URL override `?drips=0`: **PASSED** (all drips immediately hidden).
+- **Files Touched:**
+  - `src/motion/drips.css`
+  - `src/motion/InkDrip.tsx`
+  - `src/styles/globals.css`
+  - `src/components/hero/HomeHero.tsx`
+  - `src/components/home/ServicesPreview.tsx`
+  - `src/components/home/ProcessSteps.tsx`
+  - `src/components/layout/Navbar.tsx`
+  - `src/components/home/FinalCTA.tsx`
+  - `tools/verify-t7.mjs`
+  - `docs/v6/PROGRESS.md`
+  - Evidence: `docs/v6/T7-evidence/drip-anatomy-strip.png`, `docs/v6/T7-evidence/*.png`
+- **Commit:** `T7: ink-drip typography`

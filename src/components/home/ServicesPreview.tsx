@@ -8,6 +8,7 @@ import Tilt3D from '@/motion/Tilt3D';
 import { DripLink } from '@/components/animorio/drip/DripLink';
 import { StackSeparate } from '@/components/stack/StackSeparate';
 import { ResponsiveCardImage } from '@/components/ui/ResponsiveCardImage';
+import { InkDripText } from '@/motion/InkDrip';
 
 const serviceImages: Record<string, string> = {
   seo: '/images/pages/P01-services-seo-hero-16x9.webp',
@@ -46,7 +47,7 @@ export function ServicesPreview() {
             </div>
             {/* H2 max 7 words with Serif Swap */}
             <h2 className="text-fs-lg font-display font-extrabold text-ink tracking-tight leading-[0.96]">
-              Disciplines built to create{' '}
+              <InkDripText text="Disciplines built to create" color="#080A0B" maxDrips={1} />{' '}
               <span className="serif-swap text-ink">momentum.</span>
             </h2>
           </div>

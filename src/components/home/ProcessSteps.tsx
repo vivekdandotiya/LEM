@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { business } from '@/data/business';
 import { StackSeparate } from '@/components/stack/StackSeparate';
+import { InkDripText } from '@/motion/InkDrip';
 
 const stepImages = [
   '/images/pages/P10-about-process-1x1.webp',
@@ -36,7 +37,8 @@ export function ProcessSteps() {
             </div>
             {/* H2 max 7 words with Outline + Fill */}
             <h2 className="text-fs-lg font-display font-extrabold text-ink tracking-tight leading-[0.96]">
-              Four steps to steady <span className="serif-swap text-ink">momentum.</span>
+              <InkDripText text="Four steps to steady" color="#080A0B" maxDrips={1} />{' '}
+              <span className="serif-swap text-ink">momentum.</span>
             </h2>
           </div>
           <p className="text-sm font-sans text-grey-3 max-w-xs leading-relaxed">

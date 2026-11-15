@@ -3,6 +3,7 @@
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/jetbrains-mono';
 @import './tokens.css';
+@import '../motion/drips.css';
 
 @tailwind base;
 @tailwind components;

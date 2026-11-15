@@ -7,6 +7,7 @@ import { primaryNavItems } from '@/data/nav';
 import { MobileMenu } from './MobileMenu';
 import { DripLink } from '@/components/animorio/drip/DripLink';
 import { Magnetic } from '@/motion/Magnetic';
+import { InkDripAnchorChar } from '@/motion/InkDrip';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -178,7 +179,7 @@ export function Navbar() {
                 href="/contact"
                 className="btn-primary text-xs px-5 py-2 min-h-[38px] group"
               >
-                Start a project →
+                Star<InkDripAnchorChar char="t" color="#080A0B" delay={1.2} /> a project →
               </DripLink>
             </Magnetic>
 

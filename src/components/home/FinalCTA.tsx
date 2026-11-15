@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { Magnetic } from '@/motion/Magnetic';
 import ScrollMarquee from '@/motion/ScrollMarquee';
 import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
+import { InkDripAnchorChar } from '@/motion/InkDrip';
 
 export function FinalCTA() {
   const containerRef = useRef<HTMLElement>(null);
@@ -144,7 +145,7 @@ export function FinalCTA() {
         {/* Primary CTA Button */}
         <Magnetic strength={0.3}>
           <Link href="/contact" className="btn-primary text-base px-8 py-4 shadow-lime-glow">
-            Start a project →
+            Star<InkDripAnchorChar char="t" color="#080A0B" delay={0.6} /> a project →
           </Link>
         </Magnetic>
       </div>
