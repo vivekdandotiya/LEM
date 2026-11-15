@@ -11,6 +11,7 @@ import { FinalCTA } from '@/components/home/FinalCTA';
 import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
 import { CheckCircle2, Plus, Sparkles, Cpu, Layers, Target, Code, ArrowUpRight } from 'lucide-react';
 import { Magnetic } from '@/motion/Magnetic';
+import { ResponsiveCardImage } from '@/components/ui/ResponsiveCardImage';
 
 interface ServicePageTemplateProps {
   service: ServiceItem;
@@ -149,14 +150,11 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
               data-cursor-label="VIEW"
               className="lg:col-span-5 relative aspect-[16/10] sm:aspect-[4/5] rounded-[24px] overflow-hidden border border-ink/10 shadow-soft-lg card-glass-elevated m-0"
             >
-              <Image
+              <ResponsiveCardImage
                 src={config.hero}
                 alt={`${service.title} flagship workspace`}
-                fill
                 priority
-                decoding="async"
-                sizes="(max-width: 1024px) 100vw, 600px"
-                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white text-xs font-mono">
@@ -195,13 +193,10 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
               data-cursor-label="VIEW"
               className="lg:col-span-7 relative aspect-[16/10] rounded-[24px] overflow-hidden border border-ink/10 shadow-soft-md card-glass-elevated m-0"
             >
-              <Image
+              <ResponsiveCardImage
                 src={config.showcase}
                 alt={`${service.title} showcase artifact`}
-                fill
-                decoding="async"
-                sizes="(max-width: 1024px) 100vw, 750px"
-                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 750px"
               />
             </figure>
             <div className="lg:col-span-5 flex flex-col gap-4">

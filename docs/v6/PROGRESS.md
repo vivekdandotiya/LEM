@@ -235,3 +235,60 @@ This document tracks progress through tasks T0 to T8 in strict accordance with t
   - `docs/v6/PROGRESS.md`
   - Evidence: `docs/v6/T5-evidence/desktop/*.png`, `docs/v6/T5-evidence/mobile/*.png`, `docs/v6/T5-evidence/*.png`
 - **Commit:** `T5: video stages on all service pages`
+
+---
+
+## T6: 4K Card Imagery with Responsive Delivery
+- **Date:** 2026-11-16
+- **Branch:** `v6-stack-video-drip`
+- **Status:** **PASSED**
+- **Changes & Findings:**
+  - Installed `sharp` (v0.34.5) and `@types/sharp` for high-performance multithreaded image processing.
+  - Built 4K generation pipeline in `tools/generate-4k-images.ts` covering all in-scope cards and stage assets:
+    - 4 Home & Services discipline cards (`P01`, `P03`, `P05`, `P07`).
+    - 4 Service showcase artifacts (`P02`, `P04`, `P06`, `P08`).
+    - About hero flagship photo (`P09`).
+    - Featured Blog analysis hero (`P12`).
+    - 16 Stage posters from T5 (`seo`, `ppc`, `social-media`, `web-development` phases 0–3).
+  - Generated true 4K resolution masters (3840 long-edge) and 5 responsive widths (3840w, 2560w, 1920w, 1280w, 768w) in dual formats:
+    - Primary format: AVIF (quality: 80, effort: 4).
+    - Fallback format: WebP (quality: 88, effort: 4).
+    - Total: 260 assets generated.
+    - File size budgets verified:
+      - 3840w: 60–436 KB (budget <= 850 KB, 100% PASS).
+      - 2560w: 42–279 KB (budget <= 550 KB, 100% PASS).
+      - 1920w: 31–204 KB (budget <= 320 KB, 100% PASS).
+      - 1280w: 18–133 KB (budget <= 180 KB, 100% PASS).
+      - 768w:  9–70 KB (budget <= 95 KB, 100% PASS).
+  - Documented all 260 generated assets with paths, dimensions, formats, sizes, and sha256 hashes in `docs/IMAGE-LOG.md`.
+  - Built reusable `<ResponsiveCardImage>` component (`src/components/ui/ResponsiveCardImage.tsx`):
+    - Multi-source `<picture>` markup serving AVIF first with WebP fallback.
+    - Full `srcset` for all 5 widths with appropriate `sizes` attributes.
+    - `decoding="async"` across every image.
+    - Eager loading on hero cards with `priority`; lazy loading for all others.
+  - Integrated `<ResponsiveCardImage>` into:
+    - `src/components/home/ServicesPreview.tsx`
+    - `src/app/services/page.tsx`
+    - `src/components/services/ServicePageTemplate.tsx`
+    - `src/components/about/AboutJourney.tsx`
+    - `src/components/blog/BlogListingView.tsx`
+    - `src/components/services/StageVideo.tsx`
+  - In-repo verification:
+    - Built validator `tools/check-images.ts` asserting natural max long-edge >= 3840px, existence of all 5 srcset widths in both AVIF and WebP, and file size compliance across all 26 targets (260 variants).
+    - Result: **260/260 PASSED**.
+    - Captured 200% zoom crop of the SEO card image in headed Chrome with `deviceScaleFactor: 2` to `docs/v6/T6-evidence/seo-card-4k-crop.png` and `seo-hero-4k-crop.png`.
+- **Files Touched:**
+  - `src/components/ui/ResponsiveCardImage.tsx`
+  - `src/components/home/ServicesPreview.tsx`
+  - `src/app/services/page.tsx`
+  - `src/components/services/ServicePageTemplate.tsx`
+  - `src/components/about/AboutJourney.tsx`
+  - `src/components/blog/BlogListingView.tsx`
+  - `src/components/services/StageVideo.tsx`
+  - `tools/generate-4k-images.ts`
+  - `tools/check-images.ts`
+  - `tools/capture-4k-evidence.mjs`
+  - `docs/IMAGE-LOG.md`
+  - `docs/v6/PROGRESS.md`
+  - Evidence: `docs/v6/T6-evidence/seo-card-4k-crop.png`, `docs/v6/T6-evidence/seo-hero-4k-crop.png`
+- **Commit:** `T6: 4K card imagery with responsive delivery`

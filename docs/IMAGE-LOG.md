@@ -1,49 +1,268 @@
-# Lead Edge Marketing — Visual Asset Production Log (V3)
+# Lead Edge Marketing — Visual Asset Production Log (V6 Responsive 4K)
 
-**Generated Assets Count:** 41
-**Format:** Next-Gen WebP (AVIF/WebP fallback pipeline)
-**Quality Gate Standard:** Zero assets under 40 KB, zero missing dimensions, strictly NO blue spectrum dominance, zero watermarks.
+**Total Generated Assets:** 260
+**Standards:** True 4K Master long-edge, 5 responsive widths (3840w, 2560w, 1920w, 1280w, 768w), dual AVIF (q=80) + WebP (q=88) formats.
+**Budgets:** 3840w <= 850 KB, 1920w <= 320 KB, 768w <= 95 KB.
 
-| Asset Path | Concept Brand / Subject | Aspect Ratio | Dimensions | Size | Art Direction Prompt |
-|---|---|---|---|---|---|
-| `/images/hero/hero-01-trailnest-cabin-4x5.webp` | TrailNest Cabins | 4:5 | 800x1000 | 60.3 KB | warm-lit wooden cabin among pines at dusk, glowing windows, mist |
-| `/images/hero/hero-02-hillcrest-homes-4x5.webp` | Hillcrest Homes | 4:5 | 800x1000 | 85.2 KB | modern black-clad house with floor-to-ceiling glass at dusk, warm interior light |
-| `/images/hero/hero-03-greenleaf-botanical-9x16.webp` | Greenleaf Co. | 9:16 | 720x1280 | 51.9 KB | spiky aloe in a matte pot on seamless grey studio backdrop, soft shadow |
-| `/images/hero/hero-04-stridefit-runner-4x5.webp` | StrideFit | 4:5 | 800x1000 | 136.9 KB | runner from behind on a gravel country road, cloudy sky, golden hour |
-| `/images/hero/hero-05-oak-thread-apparel-4x5.webp` | Oak & Thread | 4:5 | 800x1000 | 47.9 KB | model in mustard-yellow streetwear against studio wall, hard flash look |
-| `/images/hero/hero-06-dew-skin-tube-4x5.webp` | Dew Skin | 4:5 | 800x1000 | 36.3 KB | cosmetic squeeze tube on pale backdrop with cream swipe beside it |
-| `/images/hero/hero-07-ember-roasters-coffee-4x5.webp` | Ember Roasters | 4:5 | 800x1000 | 74.5 KB | pour-over kettle stream into a glass server, steam, moody side light |
-| `/images/hero/hero-08-hush-sleep-bed-4x5.webp` | Hush Sleep | 4:5 | 800x1000 | 132.9 KB | minimal bed, rumpled oatmeal linen, soft morning light through sheers |
-| `/images/hero/hero-09-crumb-co-sourdough-1x1.webp` | Crumb & Co. | 1:1 | 800x800 | 173.1 KB | scored sourdough loaf on wooden board, flour dust, warm terracotta wall |
-| `/images/hero/hero-10-barkley-bites-dog-4x5.webp` | Barkley Bites | 4:5 | 800x1000 | 56.9 KB | happy golden retriever beside ceramic bowl on warm sunny backdrop |
-| `/images/hero/hero-11-swiftfix-tools-4x5.webp` | SwiftFix | 4:5 | 800x1000 | 50.5 KB | tidy tool roll with wrench on clean white worktop, top-down |
-| `/images/hero/hero-12-brightline-dental-clinic-4x5.webp` | BrightLine Dental | 4:5 | 800x1000 | 47.3 KB | bright modern ceramic clinic interior with accent chair, architectural light |
-| `/images/hero/hero-13-northpath-laptop-code-9x16.webp` | Northpath Academy | 9:16 | 720x1280 | 71.3 KB | laptop on dark desk with abstract glowing editor screen, moody rim light |
-| `/images/hero/hero-14-fresh-crate-veggies-1x1.webp` | Fresh Crate | 1:1 | 800x800 | 115.5 KB | overhead flat lay of colourful raw vegetables on clean surface |
-| `/images/hero/hero-15-form-fern-livingroom-4x5.webp` | Form & Fern | 4:5 | 800x1000 | 72.3 KB | sunlit living room, terracotta sofa, tall fern, textured plaster wall |
-| `/images/hero/hero-16-spoke-cycling-bike-4x5.webp` | Spoke | 4:5 | 800x1000 | 83.1 KB | gravel bike leaning on concrete wall, vivid warm backdrop, hard sunlight |
-| `/images/hero/hero-17-lumen-gold-ring-4x5.webp` | Lumen | 4:5 | 800x1000 | 43.7 KB | gold ring on dark slate stone, one crisp hard light, deep shadows |
-| `/images/hero/hero-18-wavelength-headphones-4x5.webp` | Wavelength | 4:5 | 800x1000 | 45.5 KB | headphones resting on dark olive fabric, warm rim light, studio shot |
-| `/images/hero/hero-19-saffron-salt-plated-dish-4x5.webp` | Saffron & Salt | 4:5 | 800x1000 | 76.6 KB | single plated gourmet dish in moody restaurant light, steam, shallow focus |
-| `/images/hero/hero-20-tern-mountain-pack-9x16.webp` | Tern | 9:16 | 720x1280 | 73.7 KB | backpack on mountain ridge at sunrise, bold orange and slate palette |
-| `/images/hero/hero-21-petal-press-green-juice-4x5.webp` | Petal Press | 4:5 | 800x1000 | 64.7 KB | row of cold green juice bottles on vivid lime backdrop with water condensation |
-| `/images/hero/hero-22-nimbus-app-phone-9x16.webp` | Nimbus | 9:16 | 720x1280 | 46.1 KB | hand holding smartphone with clean abstract UI layout, minimal pale studio |
-| `/images/hero/hero-23-keystone-boxes-room-4x5.webp` | Keystone Movers | 4:5 | 800x1000 | 59.1 KB | stacked kraft cardboard boxes in bright airy empty room, soft morning sun |
-| `/images/hero/hero-24-frostline-red-puffer-4x5.webp` | Frostline | 4:5 | 800x1000 | 49.8 KB | red puffer jacket in snowy alpine dusk setting, crisp cold twilight |
-| `/images/pages/P01-services-seo-hero-16x9.webp` | SEO Practice Flagship | 16:9 | 1200x675 | 49.9 KB | laptop on clean desk showing rising line chart and search blocks, warm morning light |
-| `/images/pages/P02-services-seo-audit-4x5.webp` | SEO Technical Audit | 4:5 | 800x1000 | 76.2 KB | magnifying glass over printed website wireframe on desk, red pen, sticky notes |
-| `/images/pages/P03-services-meta-hero-16x9.webp` | Meta Ads Command Console | 16:9 | 1200x675 | 52.7 KB | smartphone showing social ad creative beside monitor with blurred analytics dashboard |
-| `/images/pages/P04-services-meta-creative-4x5.webp` | Creative Iteration Deck | 4:5 | 800x1000 | 51.9 KB | printed ad creatives fanned on studio table, colour-blocked, top-down |
-| `/images/pages/P05-services-social-hero-16x9.webp` | Social Production Studio | 16:9 | 1200x675 | 49.0 KB | creator filming product on phone tripod in bright studio, ring light, colourful backdrop |
-| `/images/pages/P06-services-social-calendar-4x5.webp` | Editorial Content Calendar | 4:5 | 800x1000 | 43.8 KB | wall-sized content calendar with colour-coded sticky notes, hand placing note |
-| `/images/pages/P07-services-web-hero-16x9.webp` | Web Engineering Architecture | 16:9 | 1200x675 | 43.3 KB | designer workspace, large monitor with abstract modern layout, wireframes |
-| `/images/pages/P08-services-web-devices-16x9.webp` | Responsive Device Ecosystem | 16:9 | 1200x675 | 74.3 KB | laptop, tablet and phone showing responsive website on pale surface |
-| `/images/pages/P09-about-hero-4x5.webp` | Agency Headquarters Studio | 4:5 | 800x1000 | 72.7 KB | modern creative-agency studio with long wooden table, laptops, plants, warm light |
-| `/images/pages/P10-about-process-1x1.webp` | Strategy Mapping Workshop | 1:1 | 800x800 | 61.8 KB | hands arranging sticky notes on whiteboard strategy map, shallow focus |
-| `/images/pages/P11-contact-hero-4x5.webp` | Executive Consultation Workspace | 4:5 | 800x1000 | 71.3 KB | minimal desk with coffee cup, notebook, phone in warm sunlight, lime mug accent |
-| `/images/pages/P12-blog-featured-16x9.webp` | Marketing Intelligence Tools | 16:9 | 1200x675 | 47.6 KB | editorial flat lay of marketing tools: notebook, pens, phone, plant, lime notes |
-| `/images/pages/P13-blog-seo-16x10.webp` | Organic Search Compounding | 16:10 | 1000x625 | 65.3 KB | abstract desk scene with laptop and growing paper bar chart |
-| `/images/pages/P14-blog-ads-16x10.webp` | Creative Diversity in Paid Social | 16:10 | 1000x625 | 103.7 KB | billboard-style ad creative concept on architectural city wall at golden hour |
-| `/images/pages/P15-blog-email-16x10.webp` | High-Intent Acquisition Pipelines | 16:10 | 1000x625 | 68.6 KB | open laptop with clean inbox layout and geometric envelope paper craft |
-| `/images/pages/P16-blog-social-16x10.webp` | Editorial Brand Equity in Social | 16:10 | 1000x625 | 38.6 KB | hand holding phone with vertical video feed, vibrant backdrop |
-| `/images/pages/P17-blog-video-16x10.webp` | Direct Response Video Production | 16:10 | 1000x625 | 71.5 KB | cinema camera on tripod in bright studio with softbox lights |
+| Output Path | Dimensions | Format | Size | Hash | Source |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `public/images/pages/P01-services-seo-hero-16x9-3840w.avif` | 3840x2160 | AVIF | 208 KB | `1b2f1f7665c0` | `public/images/pages/P01-services-seo-hero-16x9.webp` |
+| `public/images/pages/P01-services-seo-hero-16x9-3840w.webp` | 3840x2160 | WebP | 206 KB | `18f30f83eaaa` | `public/images/pages/P01-services-seo-hero-16x9.webp` |
+| `public/images/pages/P01-services-seo-hero-16x9-2560w.avif` | 2560x1440 | AVIF | 134 KB | `65e4e505f271` | `public/images/pages/P01-services-seo-hero-16x9.webp` |
+| `public/images/pages/P01-services-seo-hero-16x9-2560w.webp` | 2560x1440 | WebP | 128 KB | `77c9608fdfbb` | `public/images/pages/P01-services-seo-hero-16x9.webp` |
+| `public/images/pages/P01-services-seo-hero-16x9-1920w.avif` | 1920x1080 | AVIF | 97 KB | `3f3a8d815d65` | `public/images/pages/P01-services-seo-hero-16x9.webp` |
+| `public/images/pages/P01-services-seo-hero-16x9-1920w.webp` | 1920x1080 | WebP | 93 KB | `e45983d245d6` | `public/images/pages/P01-services-seo-hero-16x9.webp` |
+| `public/images/pages/P01-services-seo-hero-16x9-1280w.avif` | 1280x720 | AVIF | 61 KB | `960626a28f45` | `public/images/pages/P01-services-seo-hero-16x9.webp` |
+| `public/images/pages/P01-services-seo-hero-16x9-1280w.webp` | 1280x720 | WebP | 59 KB | `50a95fc5c9ba` | `public/images/pages/P01-services-seo-hero-16x9.webp` |
+| `public/images/pages/P01-services-seo-hero-16x9-768w.avif` | 768x432 | AVIF | 34 KB | `f9156edf1520` | `public/images/pages/P01-services-seo-hero-16x9.webp` |
+| `public/images/pages/P01-services-seo-hero-16x9-768w.webp` | 768x432 | WebP | 34 KB | `39159b28d929` | `public/images/pages/P01-services-seo-hero-16x9.webp` |
+| `public/images/pages/P02-services-seo-audit-4x5-3840w.avif` | 3072x3840 | AVIF | 384 KB | `46fcd0925b63` | `public/images/pages/P02-services-seo-audit-4x5.webp` |
+| `public/images/pages/P02-services-seo-audit-4x5-3840w.webp` | 3072x3840 | WebP | 436 KB | `7c974b18d828` | `public/images/pages/P02-services-seo-audit-4x5.webp` |
+| `public/images/pages/P02-services-seo-audit-4x5-2560w.avif` | 2048x2560 | AVIF | 260 KB | `973a7dbd46da` | `public/images/pages/P02-services-seo-audit-4x5.webp` |
+| `public/images/pages/P02-services-seo-audit-4x5-2560w.webp` | 2048x2560 | WebP | 279 KB | `961d2fa42bc0` | `public/images/pages/P02-services-seo-audit-4x5.webp` |
+| `public/images/pages/P02-services-seo-audit-4x5-1920w.avif` | 1536x1920 | AVIF | 197 KB | `aa5c22338f20` | `public/images/pages/P02-services-seo-audit-4x5.webp` |
+| `public/images/pages/P02-services-seo-audit-4x5-1920w.webp` | 1536x1920 | WebP | 204 KB | `e4be26b01a7f` | `public/images/pages/P02-services-seo-audit-4x5.webp` |
+| `public/images/pages/P02-services-seo-audit-4x5-1280w.avif` | 1024x1280 | AVIF | 129 KB | `d8163235d413` | `public/images/pages/P02-services-seo-audit-4x5.webp` |
+| `public/images/pages/P02-services-seo-audit-4x5-1280w.webp` | 1024x1280 | WebP | 133 KB | `8cd352d413eb` | `public/images/pages/P02-services-seo-audit-4x5.webp` |
+| `public/images/pages/P02-services-seo-audit-4x5-768w.avif` | 614x768 | AVIF | 65 KB | `21d345dc973b` | `public/images/pages/P02-services-seo-audit-4x5.webp` |
+| `public/images/pages/P02-services-seo-audit-4x5-768w.webp` | 614x768 | WebP | 70 KB | `ec0604736412` | `public/images/pages/P02-services-seo-audit-4x5.webp` |
+| `public/images/pages/P03-services-meta-hero-16x9-3840w.avif` | 3840x2160 | AVIF | 209 KB | `206e5a7a1ec2` | `public/images/pages/P03-services-meta-hero-16x9.webp` |
+| `public/images/pages/P03-services-meta-hero-16x9-3840w.webp` | 3840x2160 | WebP | 205 KB | `aa2094740758` | `public/images/pages/P03-services-meta-hero-16x9.webp` |
+| `public/images/pages/P03-services-meta-hero-16x9-2560w.avif` | 2560x1440 | AVIF | 139 KB | `fc44f5e8f132` | `public/images/pages/P03-services-meta-hero-16x9.webp` |
+| `public/images/pages/P03-services-meta-hero-16x9-2560w.webp` | 2560x1440 | WebP | 132 KB | `51ea56e6024d` | `public/images/pages/P03-services-meta-hero-16x9.webp` |
+| `public/images/pages/P03-services-meta-hero-16x9-1920w.avif` | 1920x1080 | AVIF | 103 KB | `d4ba0a18aee3` | `public/images/pages/P03-services-meta-hero-16x9.webp` |
+| `public/images/pages/P03-services-meta-hero-16x9-1920w.webp` | 1920x1080 | WebP | 97 KB | `35c4b839c3b0` | `public/images/pages/P03-services-meta-hero-16x9.webp` |
+| `public/images/pages/P03-services-meta-hero-16x9-1280w.avif` | 1280x720 | AVIF | 65 KB | `94b7a3fb4f2a` | `public/images/pages/P03-services-meta-hero-16x9.webp` |
+| `public/images/pages/P03-services-meta-hero-16x9-1280w.webp` | 1280x720 | WebP | 62 KB | `3eac2abe227a` | `public/images/pages/P03-services-meta-hero-16x9.webp` |
+| `public/images/pages/P03-services-meta-hero-16x9-768w.avif` | 768x432 | AVIF | 35 KB | `02ab74b337cb` | `public/images/pages/P03-services-meta-hero-16x9.webp` |
+| `public/images/pages/P03-services-meta-hero-16x9-768w.webp` | 768x432 | WebP | 33 KB | `1acae6f9d18f` | `public/images/pages/P03-services-meta-hero-16x9.webp` |
+| `public/images/pages/P04-services-meta-creative-4x5-3840w.avif` | 3072x3840 | AVIF | 273 KB | `076de3844898` | `public/images/pages/P04-services-meta-creative-4x5.webp` |
+| `public/images/pages/P04-services-meta-creative-4x5-3840w.webp` | 3072x3840 | WebP | 279 KB | `f7c7018726eb` | `public/images/pages/P04-services-meta-creative-4x5.webp` |
+| `public/images/pages/P04-services-meta-creative-4x5-2560w.avif` | 2048x2560 | AVIF | 174 KB | `8aa5fbf4cae0` | `public/images/pages/P04-services-meta-creative-4x5.webp` |
+| `public/images/pages/P04-services-meta-creative-4x5-2560w.webp` | 2048x2560 | WebP | 169 KB | `edb9870c6020` | `public/images/pages/P04-services-meta-creative-4x5.webp` |
+| `public/images/pages/P04-services-meta-creative-4x5-1920w.avif` | 1536x1920 | AVIF | 127 KB | `244caabdbfec` | `public/images/pages/P04-services-meta-creative-4x5.webp` |
+| `public/images/pages/P04-services-meta-creative-4x5-1920w.webp` | 1536x1920 | WebP | 126 KB | `b9124c5bcf4a` | `public/images/pages/P04-services-meta-creative-4x5.webp` |
+| `public/images/pages/P04-services-meta-creative-4x5-1280w.avif` | 1024x1280 | AVIF | 81 KB | `0be199f336fd` | `public/images/pages/P04-services-meta-creative-4x5.webp` |
+| `public/images/pages/P04-services-meta-creative-4x5-1280w.webp` | 1024x1280 | WebP | 79 KB | `ad9148cfba47` | `public/images/pages/P04-services-meta-creative-4x5.webp` |
+| `public/images/pages/P04-services-meta-creative-4x5-768w.avif` | 614x768 | AVIF | 42 KB | `a612b771f65a` | `public/images/pages/P04-services-meta-creative-4x5.webp` |
+| `public/images/pages/P04-services-meta-creative-4x5-768w.webp` | 614x768 | WebP | 43 KB | `a43838afee92` | `public/images/pages/P04-services-meta-creative-4x5.webp` |
+| `public/images/pages/P05-services-social-hero-16x9-3840w.avif` | 3840x2160 | AVIF | 203 KB | `0883d063192a` | `public/images/pages/P05-services-social-hero-16x9.webp` |
+| `public/images/pages/P05-services-social-hero-16x9-3840w.webp` | 3840x2160 | WebP | 209 KB | `4f8fe2980947` | `public/images/pages/P05-services-social-hero-16x9.webp` |
+| `public/images/pages/P05-services-social-hero-16x9-2560w.avif` | 2560x1440 | AVIF | 131 KB | `0527c9e06c05` | `public/images/pages/P05-services-social-hero-16x9.webp` |
+| `public/images/pages/P05-services-social-hero-16x9-2560w.webp` | 2560x1440 | WebP | 130 KB | `03ab756efe69` | `public/images/pages/P05-services-social-hero-16x9.webp` |
+| `public/images/pages/P05-services-social-hero-16x9-1920w.avif` | 1920x1080 | AVIF | 94 KB | `a3cf7cc620af` | `public/images/pages/P05-services-social-hero-16x9.webp` |
+| `public/images/pages/P05-services-social-hero-16x9-1920w.webp` | 1920x1080 | WebP | 93 KB | `7a10a0360a1c` | `public/images/pages/P05-services-social-hero-16x9.webp` |
+| `public/images/pages/P05-services-social-hero-16x9-1280w.avif` | 1280x720 | AVIF | 60 KB | `64d6e99e5a2c` | `public/images/pages/P05-services-social-hero-16x9.webp` |
+| `public/images/pages/P05-services-social-hero-16x9-1280w.webp` | 1280x720 | WebP | 59 KB | `6b1aada78115` | `public/images/pages/P05-services-social-hero-16x9.webp` |
+| `public/images/pages/P05-services-social-hero-16x9-768w.avif` | 768x432 | AVIF | 35 KB | `548b80b46e55` | `public/images/pages/P05-services-social-hero-16x9.webp` |
+| `public/images/pages/P05-services-social-hero-16x9-768w.webp` | 768x432 | WebP | 33 KB | `f9e81e949d65` | `public/images/pages/P05-services-social-hero-16x9.webp` |
+| `public/images/pages/P06-services-social-calendar-4x5-3840w.avif` | 3072x3840 | AVIF | 227 KB | `bd9283c33c64` | `public/images/pages/P06-services-social-calendar-4x5.webp` |
+| `public/images/pages/P06-services-social-calendar-4x5-3840w.webp` | 3072x3840 | WebP | 236 KB | `7b112e41b9ac` | `public/images/pages/P06-services-social-calendar-4x5.webp` |
+| `public/images/pages/P06-services-social-calendar-4x5-2560w.avif` | 2048x2560 | AVIF | 153 KB | `636fe5c635a7` | `public/images/pages/P06-services-social-calendar-4x5.webp` |
+| `public/images/pages/P06-services-social-calendar-4x5-2560w.webp` | 2048x2560 | WebP | 147 KB | `e9ce725a2f07` | `public/images/pages/P06-services-social-calendar-4x5.webp` |
+| `public/images/pages/P06-services-social-calendar-4x5-1920w.avif` | 1536x1920 | AVIF | 115 KB | `ca1e9c1e044c` | `public/images/pages/P06-services-social-calendar-4x5.webp` |
+| `public/images/pages/P06-services-social-calendar-4x5-1920w.webp` | 1536x1920 | WebP | 105 KB | `f4943aa5a691` | `public/images/pages/P06-services-social-calendar-4x5.webp` |
+| `public/images/pages/P06-services-social-calendar-4x5-1280w.avif` | 1024x1280 | AVIF | 74 KB | `6b1e00400779` | `public/images/pages/P06-services-social-calendar-4x5.webp` |
+| `public/images/pages/P06-services-social-calendar-4x5-1280w.webp` | 1024x1280 | WebP | 66 KB | `39cba05d3746` | `public/images/pages/P06-services-social-calendar-4x5.webp` |
+| `public/images/pages/P06-services-social-calendar-4x5-768w.avif` | 614x768 | AVIF | 36 KB | `3e46e4255b2a` | `public/images/pages/P06-services-social-calendar-4x5.webp` |
+| `public/images/pages/P06-services-social-calendar-4x5-768w.webp` | 614x768 | WebP | 34 KB | `95339f62d0f8` | `public/images/pages/P06-services-social-calendar-4x5.webp` |
+| `public/images/pages/P07-services-web-hero-16x9-3840w.avif` | 3840x2160 | AVIF | 179 KB | `bd023e1ee27b` | `public/images/pages/P07-services-web-hero-16x9.webp` |
+| `public/images/pages/P07-services-web-hero-16x9-3840w.webp` | 3840x2160 | WebP | 184 KB | `1c3c84526b69` | `public/images/pages/P07-services-web-hero-16x9.webp` |
+| `public/images/pages/P07-services-web-hero-16x9-2560w.avif` | 2560x1440 | AVIF | 115 KB | `8794d20f46dd` | `public/images/pages/P07-services-web-hero-16x9.webp` |
+| `public/images/pages/P07-services-web-hero-16x9-2560w.webp` | 2560x1440 | WebP | 119 KB | `c0ab01222959` | `public/images/pages/P07-services-web-hero-16x9.webp` |
+| `public/images/pages/P07-services-web-hero-16x9-1920w.avif` | 1920x1080 | AVIF | 83 KB | `cd8bd08f61b3` | `public/images/pages/P07-services-web-hero-16x9.webp` |
+| `public/images/pages/P07-services-web-hero-16x9-1920w.webp` | 1920x1080 | WebP | 84 KB | `e80c0ebb50eb` | `public/images/pages/P07-services-web-hero-16x9.webp` |
+| `public/images/pages/P07-services-web-hero-16x9-1280w.avif` | 1280x720 | AVIF | 52 KB | `3230399bc362` | `public/images/pages/P07-services-web-hero-16x9.webp` |
+| `public/images/pages/P07-services-web-hero-16x9-1280w.webp` | 1280x720 | WebP | 51 KB | `9316d01fe937` | `public/images/pages/P07-services-web-hero-16x9.webp` |
+| `public/images/pages/P07-services-web-hero-16x9-768w.avif` | 768x432 | AVIF | 30 KB | `778de0b7536f` | `public/images/pages/P07-services-web-hero-16x9.webp` |
+| `public/images/pages/P07-services-web-hero-16x9-768w.webp` | 768x432 | WebP | 28 KB | `4ae97c5bbbcf` | `public/images/pages/P07-services-web-hero-16x9.webp` |
+| `public/images/pages/P08-services-web-devices-16x9-3840w.avif` | 3840x2160 | AVIF | 281 KB | `962e5bfa4583` | `public/images/pages/P08-services-web-devices-16x9.webp` |
+| `public/images/pages/P08-services-web-devices-16x9-3840w.webp` | 3840x2160 | WebP | 304 KB | `e50a69646a0f` | `public/images/pages/P08-services-web-devices-16x9.webp` |
+| `public/images/pages/P08-services-web-devices-16x9-2560w.avif` | 2560x1440 | AVIF | 188 KB | `6b5bbcf9d280` | `public/images/pages/P08-services-web-devices-16x9.webp` |
+| `public/images/pages/P08-services-web-devices-16x9-2560w.webp` | 2560x1440 | WebP | 187 KB | `44afea98bb91` | `public/images/pages/P08-services-web-devices-16x9.webp` |
+| `public/images/pages/P08-services-web-devices-16x9-1920w.avif` | 1920x1080 | AVIF | 138 KB | `17c29b8c61cb` | `public/images/pages/P08-services-web-devices-16x9.webp` |
+| `public/images/pages/P08-services-web-devices-16x9-1920w.webp` | 1920x1080 | WebP | 136 KB | `a7dd36993f31` | `public/images/pages/P08-services-web-devices-16x9.webp` |
+| `public/images/pages/P08-services-web-devices-16x9-1280w.avif` | 1280x720 | AVIF | 89 KB | `03c538295bc3` | `public/images/pages/P08-services-web-devices-16x9.webp` |
+| `public/images/pages/P08-services-web-devices-16x9-1280w.webp` | 1280x720 | WebP | 86 KB | `efbc3c96f514` | `public/images/pages/P08-services-web-devices-16x9.webp` |
+| `public/images/pages/P08-services-web-devices-16x9-768w.avif` | 768x432 | AVIF | 48 KB | `425351b93855` | `public/images/pages/P08-services-web-devices-16x9.webp` |
+| `public/images/pages/P08-services-web-devices-16x9-768w.webp` | 768x432 | WebP | 48 KB | `8211de3c2371` | `public/images/pages/P08-services-web-devices-16x9.webp` |
+| `public/images/pages/P09-about-hero-4x5-3840w.avif` | 3072x3840 | AVIF | 252 KB | `79aa72a141a3` | `public/images/pages/P09-about-hero-4x5.webp` |
+| `public/images/pages/P09-about-hero-4x5-3840w.webp` | 3072x3840 | WebP | 244 KB | `0aeaeb8b0b66` | `public/images/pages/P09-about-hero-4x5.webp` |
+| `public/images/pages/P09-about-hero-4x5-2560w.avif` | 2048x2560 | AVIF | 165 KB | `eaa3736b2221` | `public/images/pages/P09-about-hero-4x5.webp` |
+| `public/images/pages/P09-about-hero-4x5-2560w.webp` | 2048x2560 | WebP | 148 KB | `43c924d6a1a6` | `public/images/pages/P09-about-hero-4x5.webp` |
+| `public/images/pages/P09-about-hero-4x5-1920w.avif` | 1536x1920 | AVIF | 119 KB | `8d596281c109` | `public/images/pages/P09-about-hero-4x5.webp` |
+| `public/images/pages/P09-about-hero-4x5-1920w.webp` | 1536x1920 | WebP | 108 KB | `f69b10551d5a` | `public/images/pages/P09-about-hero-4x5.webp` |
+| `public/images/pages/P09-about-hero-4x5-1280w.avif` | 1024x1280 | AVIF | 72 KB | `79d058bcc4c7` | `public/images/pages/P09-about-hero-4x5.webp` |
+| `public/images/pages/P09-about-hero-4x5-1280w.webp` | 1024x1280 | WebP | 68 KB | `f516b77410d9` | `public/images/pages/P09-about-hero-4x5.webp` |
+| `public/images/pages/P09-about-hero-4x5-768w.avif` | 614x768 | AVIF | 35 KB | `442acc1199a1` | `public/images/pages/P09-about-hero-4x5.webp` |
+| `public/images/pages/P09-about-hero-4x5-768w.webp` | 614x768 | WebP | 34 KB | `62e8803bb949` | `public/images/pages/P09-about-hero-4x5.webp` |
+| `public/images/pages/P12-blog-featured-16x9-3840w.avif` | 3840x2160 | AVIF | 191 KB | `75ed682deedd` | `public/images/pages/P12-blog-featured-16x9.webp` |
+| `public/images/pages/P12-blog-featured-16x9-3840w.webp` | 3840x2160 | WebP | 200 KB | `1c63f18e3ee2` | `public/images/pages/P12-blog-featured-16x9.webp` |
+| `public/images/pages/P12-blog-featured-16x9-2560w.avif` | 2560x1440 | AVIF | 125 KB | `3e51e1b5e2c2` | `public/images/pages/P12-blog-featured-16x9.webp` |
+| `public/images/pages/P12-blog-featured-16x9-2560w.webp` | 2560x1440 | WebP | 124 KB | `44bcd32cca09` | `public/images/pages/P12-blog-featured-16x9.webp` |
+| `public/images/pages/P12-blog-featured-16x9-1920w.avif` | 1920x1080 | AVIF | 92 KB | `7ff55976f033` | `public/images/pages/P12-blog-featured-16x9.webp` |
+| `public/images/pages/P12-blog-featured-16x9-1920w.webp` | 1920x1080 | WebP | 88 KB | `4e2ed6bc7216` | `public/images/pages/P12-blog-featured-16x9.webp` |
+| `public/images/pages/P12-blog-featured-16x9-1280w.avif` | 1280x720 | AVIF | 59 KB | `b6cce3e90f96` | `public/images/pages/P12-blog-featured-16x9.webp` |
+| `public/images/pages/P12-blog-featured-16x9-1280w.webp` | 1280x720 | WebP | 55 KB | `7e326bd4b541` | `public/images/pages/P12-blog-featured-16x9.webp` |
+| `public/images/pages/P12-blog-featured-16x9-768w.avif` | 768x432 | AVIF | 33 KB | `69db401f17bf` | `public/images/pages/P12-blog-featured-16x9.webp` |
+| `public/images/pages/P12-blog-featured-16x9-768w.webp` | 768x432 | WebP | 30 KB | `07b7cec167bf` | `public/images/pages/P12-blog-featured-16x9.webp` |
+| `public/videos/services/seo-phase-0-poster-3840w.avif` | 3840x2400 | AVIF | 85 KB | `50bce900ad1a` | `public/videos/services/seo-phase-0-poster.webp` |
+| `public/videos/services/seo-phase-0-poster-3840w.webp` | 3840x2400 | WebP | 96 KB | `f63c6d0eab0d` | `public/videos/services/seo-phase-0-poster.webp` |
+| `public/videos/services/seo-phase-0-poster-2560w.avif` | 2560x1600 | AVIF | 60 KB | `3032b6f9d57b` | `public/videos/services/seo-phase-0-poster.webp` |
+| `public/videos/services/seo-phase-0-poster-2560w.webp` | 2560x1600 | WebP | 63 KB | `ea029daf7669` | `public/videos/services/seo-phase-0-poster.webp` |
+| `public/videos/services/seo-phase-0-poster-1920w.avif` | 1920x1200 | AVIF | 44 KB | `150c509934e5` | `public/videos/services/seo-phase-0-poster.webp` |
+| `public/videos/services/seo-phase-0-poster-1920w.webp` | 1920x1200 | WebP | 45 KB | `963f88209d6c` | `public/videos/services/seo-phase-0-poster.webp` |
+| `public/videos/services/seo-phase-0-poster-1280w.avif` | 1280x800 | AVIF | 26 KB | `825d7df990bb` | `public/videos/services/seo-phase-0-poster.webp` |
+| `public/videos/services/seo-phase-0-poster-1280w.webp` | 1280x800 | WebP | 26 KB | `92f45098bb58` | `public/videos/services/seo-phase-0-poster.webp` |
+| `public/videos/services/seo-phase-0-poster-768w.avif` | 768x480 | AVIF | 13 KB | `e2ac415bf61c` | `public/videos/services/seo-phase-0-poster.webp` |
+| `public/videos/services/seo-phase-0-poster-768w.webp` | 768x480 | WebP | 15 KB | `a36a367a9314` | `public/videos/services/seo-phase-0-poster.webp` |
+| `public/videos/services/seo-phase-1-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `e971e99962b1` | `public/videos/services/seo-phase-1-poster.webp` |
+| `public/videos/services/seo-phase-1-poster-3840w.webp` | 3840x2400 | WebP | 72 KB | `e260152795b8` | `public/videos/services/seo-phase-1-poster.webp` |
+| `public/videos/services/seo-phase-1-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `51753a1813c2` | `public/videos/services/seo-phase-1-poster.webp` |
+| `public/videos/services/seo-phase-1-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `4f468b65c718` | `public/videos/services/seo-phase-1-poster.webp` |
+| `public/videos/services/seo-phase-1-poster-1920w.avif` | 1920x1200 | AVIF | 32 KB | `6389eb054ea0` | `public/videos/services/seo-phase-1-poster.webp` |
+| `public/videos/services/seo-phase-1-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `6180132302d3` | `public/videos/services/seo-phase-1-poster.webp` |
+| `public/videos/services/seo-phase-1-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `38c19af84d06` | `public/videos/services/seo-phase-1-poster.webp` |
+| `public/videos/services/seo-phase-1-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `c1cbac220669` | `public/videos/services/seo-phase-1-poster.webp` |
+| `public/videos/services/seo-phase-1-poster-768w.avif` | 768x480 | AVIF | 9 KB | `2d2607350d9f` | `public/videos/services/seo-phase-1-poster.webp` |
+| `public/videos/services/seo-phase-1-poster-768w.webp` | 768x480 | WebP | 10 KB | `0ce66472e987` | `public/videos/services/seo-phase-1-poster.webp` |
+| `public/videos/services/seo-phase-2-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `96cd22a907d3` | `public/videos/services/seo-phase-2-poster.webp` |
+| `public/videos/services/seo-phase-2-poster-3840w.webp` | 3840x2400 | WebP | 74 KB | `8bfcbdd23fee` | `public/videos/services/seo-phase-2-poster.webp` |
+| `public/videos/services/seo-phase-2-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `d30cdc48a0d6` | `public/videos/services/seo-phase-2-poster.webp` |
+| `public/videos/services/seo-phase-2-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `0957bbf6f6c0` | `public/videos/services/seo-phase-2-poster.webp` |
+| `public/videos/services/seo-phase-2-poster-1920w.avif` | 1920x1200 | AVIF | 31 KB | `83ce8462c387` | `public/videos/services/seo-phase-2-poster.webp` |
+| `public/videos/services/seo-phase-2-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `9c14a2521ad9` | `public/videos/services/seo-phase-2-poster.webp` |
+| `public/videos/services/seo-phase-2-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `fd42503ddfbd` | `public/videos/services/seo-phase-2-poster.webp` |
+| `public/videos/services/seo-phase-2-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `0f70461b0605` | `public/videos/services/seo-phase-2-poster.webp` |
+| `public/videos/services/seo-phase-2-poster-768w.avif` | 768x480 | AVIF | 9 KB | `1a89497aabaf` | `public/videos/services/seo-phase-2-poster.webp` |
+| `public/videos/services/seo-phase-2-poster-768w.webp` | 768x480 | WebP | 10 KB | `28aa79929111` | `public/videos/services/seo-phase-2-poster.webp` |
+| `public/videos/services/seo-phase-3-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `e971e99962b1` | `public/videos/services/seo-phase-3-poster.webp` |
+| `public/videos/services/seo-phase-3-poster-3840w.webp` | 3840x2400 | WebP | 72 KB | `e260152795b8` | `public/videos/services/seo-phase-3-poster.webp` |
+| `public/videos/services/seo-phase-3-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `51753a1813c2` | `public/videos/services/seo-phase-3-poster.webp` |
+| `public/videos/services/seo-phase-3-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `4f468b65c718` | `public/videos/services/seo-phase-3-poster.webp` |
+| `public/videos/services/seo-phase-3-poster-1920w.avif` | 1920x1200 | AVIF | 32 KB | `6389eb054ea0` | `public/videos/services/seo-phase-3-poster.webp` |
+| `public/videos/services/seo-phase-3-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `6180132302d3` | `public/videos/services/seo-phase-3-poster.webp` |
+| `public/videos/services/seo-phase-3-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `38c19af84d06` | `public/videos/services/seo-phase-3-poster.webp` |
+| `public/videos/services/seo-phase-3-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `c1cbac220669` | `public/videos/services/seo-phase-3-poster.webp` |
+| `public/videos/services/seo-phase-3-poster-768w.avif` | 768x480 | AVIF | 9 KB | `2d2607350d9f` | `public/videos/services/seo-phase-3-poster.webp` |
+| `public/videos/services/seo-phase-3-poster-768w.webp` | 768x480 | WebP | 10 KB | `0ce66472e987` | `public/videos/services/seo-phase-3-poster.webp` |
+| `public/videos/services/ppc-phase-0-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `e971e99962b1` | `public/videos/services/ppc-phase-0-poster.webp` |
+| `public/videos/services/ppc-phase-0-poster-3840w.webp` | 3840x2400 | WebP | 72 KB | `e260152795b8` | `public/videos/services/ppc-phase-0-poster.webp` |
+| `public/videos/services/ppc-phase-0-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `51753a1813c2` | `public/videos/services/ppc-phase-0-poster.webp` |
+| `public/videos/services/ppc-phase-0-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `4f468b65c718` | `public/videos/services/ppc-phase-0-poster.webp` |
+| `public/videos/services/ppc-phase-0-poster-1920w.avif` | 1920x1200 | AVIF | 32 KB | `6389eb054ea0` | `public/videos/services/ppc-phase-0-poster.webp` |
+| `public/videos/services/ppc-phase-0-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `6180132302d3` | `public/videos/services/ppc-phase-0-poster.webp` |
+| `public/videos/services/ppc-phase-0-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `38c19af84d06` | `public/videos/services/ppc-phase-0-poster.webp` |
+| `public/videos/services/ppc-phase-0-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `c1cbac220669` | `public/videos/services/ppc-phase-0-poster.webp` |
+| `public/videos/services/ppc-phase-0-poster-768w.avif` | 768x480 | AVIF | 9 KB | `2d2607350d9f` | `public/videos/services/ppc-phase-0-poster.webp` |
+| `public/videos/services/ppc-phase-0-poster-768w.webp` | 768x480 | WebP | 10 KB | `0ce66472e987` | `public/videos/services/ppc-phase-0-poster.webp` |
+| `public/videos/services/ppc-phase-1-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `a79db2470b1d` | `public/videos/services/ppc-phase-1-poster.webp` |
+| `public/videos/services/ppc-phase-1-poster-3840w.webp` | 3840x2400 | WebP | 74 KB | `1884411b1a10` | `public/videos/services/ppc-phase-1-poster.webp` |
+| `public/videos/services/ppc-phase-1-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `28ff041f9dce` | `public/videos/services/ppc-phase-1-poster.webp` |
+| `public/videos/services/ppc-phase-1-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `54f199654e0c` | `public/videos/services/ppc-phase-1-poster.webp` |
+| `public/videos/services/ppc-phase-1-poster-1920w.avif` | 1920x1200 | AVIF | 31 KB | `c103020c4e32` | `public/videos/services/ppc-phase-1-poster.webp` |
+| `public/videos/services/ppc-phase-1-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `d630a687a44d` | `public/videos/services/ppc-phase-1-poster.webp` |
+| `public/videos/services/ppc-phase-1-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `f1387d1ec9e2` | `public/videos/services/ppc-phase-1-poster.webp` |
+| `public/videos/services/ppc-phase-1-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `222cc743400a` | `public/videos/services/ppc-phase-1-poster.webp` |
+| `public/videos/services/ppc-phase-1-poster-768w.avif` | 768x480 | AVIF | 9 KB | `d393331fea67` | `public/videos/services/ppc-phase-1-poster.webp` |
+| `public/videos/services/ppc-phase-1-poster-768w.webp` | 768x480 | WebP | 10 KB | `78bbab38539f` | `public/videos/services/ppc-phase-1-poster.webp` |
+| `public/videos/services/ppc-phase-2-poster-3840w.avif` | 3840x2400 | AVIF | 60 KB | `a1f14e8e23f9` | `public/videos/services/ppc-phase-2-poster.webp` |
+| `public/videos/services/ppc-phase-2-poster-3840w.webp` | 3840x2400 | WebP | 72 KB | `cde3b1a454ae` | `public/videos/services/ppc-phase-2-poster.webp` |
+| `public/videos/services/ppc-phase-2-poster-2560w.avif` | 2560x1600 | AVIF | 42 KB | `8d72e6899e64` | `public/videos/services/ppc-phase-2-poster.webp` |
+| `public/videos/services/ppc-phase-2-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `540121bd2ee4` | `public/videos/services/ppc-phase-2-poster.webp` |
+| `public/videos/services/ppc-phase-2-poster-1920w.avif` | 1920x1200 | AVIF | 31 KB | `616c8c620429` | `public/videos/services/ppc-phase-2-poster.webp` |
+| `public/videos/services/ppc-phase-2-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `3bbf8d188caa` | `public/videos/services/ppc-phase-2-poster.webp` |
+| `public/videos/services/ppc-phase-2-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `9486c11bc574` | `public/videos/services/ppc-phase-2-poster.webp` |
+| `public/videos/services/ppc-phase-2-poster-1280w.webp` | 1280x800 | WebP | 20 KB | `e8e55ecd22e2` | `public/videos/services/ppc-phase-2-poster.webp` |
+| `public/videos/services/ppc-phase-2-poster-768w.avif` | 768x480 | AVIF | 9 KB | `3c7461299f71` | `public/videos/services/ppc-phase-2-poster.webp` |
+| `public/videos/services/ppc-phase-2-poster-768w.webp` | 768x480 | WebP | 10 KB | `40c0332ad408` | `public/videos/services/ppc-phase-2-poster.webp` |
+| `public/videos/services/ppc-phase-3-poster-3840w.avif` | 3840x2400 | AVIF | 60 KB | `dbb81e4d837f` | `public/videos/services/ppc-phase-3-poster.webp` |
+| `public/videos/services/ppc-phase-3-poster-3840w.webp` | 3840x2400 | WebP | 74 KB | `ff94e06b268e` | `public/videos/services/ppc-phase-3-poster.webp` |
+| `public/videos/services/ppc-phase-3-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `c1f178e17566` | `public/videos/services/ppc-phase-3-poster.webp` |
+| `public/videos/services/ppc-phase-3-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `5f0b9642fe8b` | `public/videos/services/ppc-phase-3-poster.webp` |
+| `public/videos/services/ppc-phase-3-poster-1920w.avif` | 1920x1200 | AVIF | 31 KB | `8c4a5a24f69b` | `public/videos/services/ppc-phase-3-poster.webp` |
+| `public/videos/services/ppc-phase-3-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `1adc5880bb2f` | `public/videos/services/ppc-phase-3-poster.webp` |
+| `public/videos/services/ppc-phase-3-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `b10e32c368cc` | `public/videos/services/ppc-phase-3-poster.webp` |
+| `public/videos/services/ppc-phase-3-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `406a9ce99ae5` | `public/videos/services/ppc-phase-3-poster.webp` |
+| `public/videos/services/ppc-phase-3-poster-768w.avif` | 768x480 | AVIF | 9 KB | `078d992abb5c` | `public/videos/services/ppc-phase-3-poster.webp` |
+| `public/videos/services/ppc-phase-3-poster-768w.webp` | 768x480 | WebP | 10 KB | `14da065be011` | `public/videos/services/ppc-phase-3-poster.webp` |
+| `public/videos/services/social-media-phase-0-poster-3840w.avif` | 3840x2400 | AVIF | 60 KB | `aa88af9ec9ff` | `public/videos/services/social-media-phase-0-poster.webp` |
+| `public/videos/services/social-media-phase-0-poster-3840w.webp` | 3840x2400 | WebP | 74 KB | `03a36c8fc18a` | `public/videos/services/social-media-phase-0-poster.webp` |
+| `public/videos/services/social-media-phase-0-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `810b42439bd3` | `public/videos/services/social-media-phase-0-poster.webp` |
+| `public/videos/services/social-media-phase-0-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `445ffcd5d95a` | `public/videos/services/social-media-phase-0-poster.webp` |
+| `public/videos/services/social-media-phase-0-poster-1920w.avif` | 1920x1200 | AVIF | 31 KB | `76fa7f947d89` | `public/videos/services/social-media-phase-0-poster.webp` |
+| `public/videos/services/social-media-phase-0-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `facdb2e7396f` | `public/videos/services/social-media-phase-0-poster.webp` |
+| `public/videos/services/social-media-phase-0-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `7659a7137316` | `public/videos/services/social-media-phase-0-poster.webp` |
+| `public/videos/services/social-media-phase-0-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `b2f706739e40` | `public/videos/services/social-media-phase-0-poster.webp` |
+| `public/videos/services/social-media-phase-0-poster-768w.avif` | 768x480 | AVIF | 9 KB | `3528527b997d` | `public/videos/services/social-media-phase-0-poster.webp` |
+| `public/videos/services/social-media-phase-0-poster-768w.webp` | 768x480 | WebP | 10 KB | `2a767e54853a` | `public/videos/services/social-media-phase-0-poster.webp` |
+| `public/videos/services/social-media-phase-1-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `06b7acd46ed9` | `public/videos/services/social-media-phase-1-poster.webp` |
+| `public/videos/services/social-media-phase-1-poster-3840w.webp` | 3840x2400 | WebP | 74 KB | `2fd0fde6155b` | `public/videos/services/social-media-phase-1-poster.webp` |
+| `public/videos/services/social-media-phase-1-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `b169a8c2c4ec` | `public/videos/services/social-media-phase-1-poster.webp` |
+| `public/videos/services/social-media-phase-1-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `f31d597b44a7` | `public/videos/services/social-media-phase-1-poster.webp` |
+| `public/videos/services/social-media-phase-1-poster-1920w.avif` | 1920x1200 | AVIF | 31 KB | `ea3e796584ec` | `public/videos/services/social-media-phase-1-poster.webp` |
+| `public/videos/services/social-media-phase-1-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `8236e3873638` | `public/videos/services/social-media-phase-1-poster.webp` |
+| `public/videos/services/social-media-phase-1-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `cafeceb22bf7` | `public/videos/services/social-media-phase-1-poster.webp` |
+| `public/videos/services/social-media-phase-1-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `ce2bf3c201e7` | `public/videos/services/social-media-phase-1-poster.webp` |
+| `public/videos/services/social-media-phase-1-poster-768w.avif` | 768x480 | AVIF | 9 KB | `fdda2e6b75a6` | `public/videos/services/social-media-phase-1-poster.webp` |
+| `public/videos/services/social-media-phase-1-poster-768w.webp` | 768x480 | WebP | 10 KB | `2f2edf98b9b4` | `public/videos/services/social-media-phase-1-poster.webp` |
+| `public/videos/services/social-media-phase-2-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `e971e99962b1` | `public/videos/services/social-media-phase-2-poster.webp` |
+| `public/videos/services/social-media-phase-2-poster-3840w.webp` | 3840x2400 | WebP | 72 KB | `e260152795b8` | `public/videos/services/social-media-phase-2-poster.webp` |
+| `public/videos/services/social-media-phase-2-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `51753a1813c2` | `public/videos/services/social-media-phase-2-poster.webp` |
+| `public/videos/services/social-media-phase-2-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `4f468b65c718` | `public/videos/services/social-media-phase-2-poster.webp` |
+| `public/videos/services/social-media-phase-2-poster-1920w.avif` | 1920x1200 | AVIF | 32 KB | `6389eb054ea0` | `public/videos/services/social-media-phase-2-poster.webp` |
+| `public/videos/services/social-media-phase-2-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `6180132302d3` | `public/videos/services/social-media-phase-2-poster.webp` |
+| `public/videos/services/social-media-phase-2-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `38c19af84d06` | `public/videos/services/social-media-phase-2-poster.webp` |
+| `public/videos/services/social-media-phase-2-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `c1cbac220669` | `public/videos/services/social-media-phase-2-poster.webp` |
+| `public/videos/services/social-media-phase-2-poster-768w.avif` | 768x480 | AVIF | 9 KB | `2d2607350d9f` | `public/videos/services/social-media-phase-2-poster.webp` |
+| `public/videos/services/social-media-phase-2-poster-768w.webp` | 768x480 | WebP | 10 KB | `0ce66472e987` | `public/videos/services/social-media-phase-2-poster.webp` |
+| `public/videos/services/social-media-phase-3-poster-3840w.avif` | 3840x2400 | AVIF | 60 KB | `8da1a43d8ae8` | `public/videos/services/social-media-phase-3-poster.webp` |
+| `public/videos/services/social-media-phase-3-poster-3840w.webp` | 3840x2400 | WebP | 74 KB | `4d8cbaa6d502` | `public/videos/services/social-media-phase-3-poster.webp` |
+| `public/videos/services/social-media-phase-3-poster-2560w.avif` | 2560x1600 | AVIF | 42 KB | `9ea7ed92dbc9` | `public/videos/services/social-media-phase-3-poster.webp` |
+| `public/videos/services/social-media-phase-3-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `e97e2d1030d7` | `public/videos/services/social-media-phase-3-poster.webp` |
+| `public/videos/services/social-media-phase-3-poster-1920w.avif` | 1920x1200 | AVIF | 31 KB | `74be9e002060` | `public/videos/services/social-media-phase-3-poster.webp` |
+| `public/videos/services/social-media-phase-3-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `a66842e529b4` | `public/videos/services/social-media-phase-3-poster.webp` |
+| `public/videos/services/social-media-phase-3-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `c757929cbd76` | `public/videos/services/social-media-phase-3-poster.webp` |
+| `public/videos/services/social-media-phase-3-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `1ed3b63378b5` | `public/videos/services/social-media-phase-3-poster.webp` |
+| `public/videos/services/social-media-phase-3-poster-768w.avif` | 768x480 | AVIF | 9 KB | `8d56514dbd12` | `public/videos/services/social-media-phase-3-poster.webp` |
+| `public/videos/services/social-media-phase-3-poster-768w.webp` | 768x480 | WebP | 10 KB | `bc381471f891` | `public/videos/services/social-media-phase-3-poster.webp` |
+| `public/videos/services/web-development-phase-0-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `c52e3d6e3012` | `public/videos/services/web-development-phase-0-poster.webp` |
+| `public/videos/services/web-development-phase-0-poster-3840w.webp` | 3840x2400 | WebP | 74 KB | `1d026b7079df` | `public/videos/services/web-development-phase-0-poster.webp` |
+| `public/videos/services/web-development-phase-0-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `a4ad52e650bc` | `public/videos/services/web-development-phase-0-poster.webp` |
+| `public/videos/services/web-development-phase-0-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `bac28ab95a45` | `public/videos/services/web-development-phase-0-poster.webp` |
+| `public/videos/services/web-development-phase-0-poster-1920w.avif` | 1920x1200 | AVIF | 31 KB | `431188b9aeae` | `public/videos/services/web-development-phase-0-poster.webp` |
+| `public/videos/services/web-development-phase-0-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `68993f9e4f9d` | `public/videos/services/web-development-phase-0-poster.webp` |
+| `public/videos/services/web-development-phase-0-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `9736c5a2cc91` | `public/videos/services/web-development-phase-0-poster.webp` |
+| `public/videos/services/web-development-phase-0-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `3f7175936492` | `public/videos/services/web-development-phase-0-poster.webp` |
+| `public/videos/services/web-development-phase-0-poster-768w.avif` | 768x480 | AVIF | 9 KB | `c9dc1a2fef7b` | `public/videos/services/web-development-phase-0-poster.webp` |
+| `public/videos/services/web-development-phase-0-poster-768w.webp` | 768x480 | WebP | 10 KB | `4925871b04d3` | `public/videos/services/web-development-phase-0-poster.webp` |
+| `public/videos/services/web-development-phase-1-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `52232391822c` | `public/videos/services/web-development-phase-1-poster.webp` |
+| `public/videos/services/web-development-phase-1-poster-3840w.webp` | 3840x2400 | WebP | 72 KB | `80d2866393a0` | `public/videos/services/web-development-phase-1-poster.webp` |
+| `public/videos/services/web-development-phase-1-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `049c27f0b042` | `public/videos/services/web-development-phase-1-poster.webp` |
+| `public/videos/services/web-development-phase-1-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `90a52dcda5e0` | `public/videos/services/web-development-phase-1-poster.webp` |
+| `public/videos/services/web-development-phase-1-poster-1920w.avif` | 1920x1200 | AVIF | 31 KB | `3f3d5a50b35b` | `public/videos/services/web-development-phase-1-poster.webp` |
+| `public/videos/services/web-development-phase-1-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `a6c82ddab462` | `public/videos/services/web-development-phase-1-poster.webp` |
+| `public/videos/services/web-development-phase-1-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `0c5db51d8bd9` | `public/videos/services/web-development-phase-1-poster.webp` |
+| `public/videos/services/web-development-phase-1-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `8ead5c610efc` | `public/videos/services/web-development-phase-1-poster.webp` |
+| `public/videos/services/web-development-phase-1-poster-768w.avif` | 768x480 | AVIF | 9 KB | `7bd0dc45e98b` | `public/videos/services/web-development-phase-1-poster.webp` |
+| `public/videos/services/web-development-phase-1-poster-768w.webp` | 768x480 | WebP | 10 KB | `267384bff595` | `public/videos/services/web-development-phase-1-poster.webp` |
+| `public/videos/services/web-development-phase-2-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `299da1b24728` | `public/videos/services/web-development-phase-2-poster.webp` |
+| `public/videos/services/web-development-phase-2-poster-3840w.webp` | 3840x2400 | WebP | 72 KB | `03f556ad8597` | `public/videos/services/web-development-phase-2-poster.webp` |
+| `public/videos/services/web-development-phase-2-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `7a45d6775cd9` | `public/videos/services/web-development-phase-2-poster.webp` |
+| `public/videos/services/web-development-phase-2-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `fe4883b977bc` | `public/videos/services/web-development-phase-2-poster.webp` |
+| `public/videos/services/web-development-phase-2-poster-1920w.avif` | 1920x1200 | AVIF | 31 KB | `b7e99cf620dc` | `public/videos/services/web-development-phase-2-poster.webp` |
+| `public/videos/services/web-development-phase-2-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `47d9185a394b` | `public/videos/services/web-development-phase-2-poster.webp` |
+| `public/videos/services/web-development-phase-2-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `dac86c453638` | `public/videos/services/web-development-phase-2-poster.webp` |
+| `public/videos/services/web-development-phase-2-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `3d2639caecd8` | `public/videos/services/web-development-phase-2-poster.webp` |
+| `public/videos/services/web-development-phase-2-poster-768w.avif` | 768x480 | AVIF | 9 KB | `ad68faa4b4d7` | `public/videos/services/web-development-phase-2-poster.webp` |
+| `public/videos/services/web-development-phase-2-poster-768w.webp` | 768x480 | WebP | 10 KB | `49544eebca51` | `public/videos/services/web-development-phase-2-poster.webp` |
+| `public/videos/services/web-development-phase-3-poster-3840w.avif` | 3840x2400 | AVIF | 61 KB | `e971e99962b1` | `public/videos/services/web-development-phase-3-poster.webp` |
+| `public/videos/services/web-development-phase-3-poster-3840w.webp` | 3840x2400 | WebP | 72 KB | `e260152795b8` | `public/videos/services/web-development-phase-3-poster.webp` |
+| `public/videos/services/web-development-phase-3-poster-2560w.avif` | 2560x1600 | AVIF | 43 KB | `51753a1813c2` | `public/videos/services/web-development-phase-3-poster.webp` |
+| `public/videos/services/web-development-phase-3-poster-2560w.webp` | 2560x1600 | WebP | 48 KB | `4f468b65c718` | `public/videos/services/web-development-phase-3-poster.webp` |
+| `public/videos/services/web-development-phase-3-poster-1920w.avif` | 1920x1200 | AVIF | 32 KB | `6389eb054ea0` | `public/videos/services/web-development-phase-3-poster.webp` |
+| `public/videos/services/web-development-phase-3-poster-1920w.webp` | 1920x1200 | WebP | 33 KB | `6180132302d3` | `public/videos/services/web-development-phase-3-poster.webp` |
+| `public/videos/services/web-development-phase-3-poster-1280w.avif` | 1280x800 | AVIF | 18 KB | `38c19af84d06` | `public/videos/services/web-development-phase-3-poster.webp` |
+| `public/videos/services/web-development-phase-3-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `c1cbac220669` | `public/videos/services/web-development-phase-3-poster.webp` |
+| `public/videos/services/web-development-phase-3-poster-768w.avif` | 768x480 | AVIF | 9 KB | `2d2607350d9f` | `public/videos/services/web-development-phase-3-poster.webp` |
+| `public/videos/services/web-development-phase-3-poster-768w.webp` | 768x480 | WebP | 10 KB | `0ce66472e987` | `public/videos/services/web-development-phase-3-poster.webp` |

@@ -8,6 +8,7 @@ import { blogPosts, blogCategories, BlogCategory } from '@/data/posts';
 import { ArrowUpRight, Clock, User } from 'lucide-react';
 import Tilt3D from '@/motion/Tilt3D';
 import { DripLink } from '@/components/animorio/drip/DripLink';
+import { ResponsiveCardImage } from '@/components/ui/ResponsiveCardImage';
 
 const blogCovers: Record<string, string> = {
   'modern-organic-search-architecture': '/images/pages/P13-blog-seo-16x10.webp',
@@ -77,13 +78,12 @@ export function BlogListingView() {
           <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
             {/* Visual Cover (P12) */}
             <div className="lg:col-span-7 relative aspect-[16/10] min-h-[320px] sm:min-h-[420px] overflow-hidden">
-              <Image
+              <ResponsiveCardImage
                 src="/images/pages/P12-blog-featured-16x9.webp"
                 alt="Featured Editorial Analysis"
-                fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 750px"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 750px"
+                className="transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent lg:hidden" />
               <div className="absolute top-4 left-4">

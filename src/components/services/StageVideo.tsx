@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { Play } from 'lucide-react';
+import { ResponsiveCardImage } from '@/components/ui/ResponsiveCardImage';
 
 interface StageVideoProps {
   serviceSlug: string;
@@ -178,13 +179,10 @@ export function StageVideo({
             showPosterFallback ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <Image
+          <ResponsiveCardImage
             src={posterPath}
             alt={`Phase 0${activePhase + 1} ${phaseTitle} architectural preview`}
-            fill
-            sizes="(max-width: 1024px) 100vw, 800px"
-            className="object-cover"
-            onError={() => setVideoError(true)}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
           />
           {isReducedMotion && !userWantsPlay && (
             <div className="absolute inset-0 flex items-center justify-center bg-ink/40">

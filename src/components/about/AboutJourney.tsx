@@ -9,6 +9,7 @@ import { PhoneScene } from '@/components/three/PhoneScene';
 import { Layers, Sparkles, Cpu, Shield, ArrowUpRight } from 'lucide-react';
 import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
 import { Magnetic } from '@/motion/Magnetic';
+import { ResponsiveCardImage } from '@/components/ui/ResponsiveCardImage';
 
 export function AboutJourney() {
   const [activeChapter, setActiveChapter] = useState(1);
@@ -131,13 +132,11 @@ export function AboutJourney() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
           {/* Studio Photography P09 */}
           <div className="lg:col-span-8 relative aspect-[16/10] sm:aspect-[16/9] rounded-[24px] overflow-hidden card-glass-elevated border border-ink/10 shadow-soft-md">
-            <Image
+            <ResponsiveCardImage
               src="/images/pages/P09-about-hero-4x5.webp"
               alt="Lead Edge Studio Headquarters"
-              fill
               priority
-              sizes="(max-width: 1024px) 100vw, 800px"
-              className="object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent pointer-events-none" />
             <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white text-xs font-mono">

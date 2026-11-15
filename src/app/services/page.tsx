@@ -8,6 +8,7 @@ import { FinalCTA } from '@/components/home/FinalCTA';
 import { ArrowUpRight } from 'lucide-react';
 import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
 import { StackSeparate } from '@/components/stack/StackSeparate';
+import { ResponsiveCardImage } from '@/components/ui/ResponsiveCardImage';
 
 const panelImages: Record<string, string> = {
   seo: '/images/pages/P01-services-seo-hero-16x9.webp',
@@ -67,16 +68,15 @@ export default function ServicesPage() {
               >
                 {/* Top Image Section */}
                 <div className="relative w-full aspect-[16/9] min-h-[200px] overflow-hidden">
-                  <Image
+                  <ResponsiveCardImage
                     src={imgSrc}
                     alt={`${service.title} discipline visual`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 600px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
                     priority={idx < 2}
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-ink/90 text-white font-mono text-xs uppercase tracking-wider">
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="px-3 py-1 rounded-full bg-ink/90 text-white font-mono text-xs uppercase tracking-wider border border-white/10">
                       {num} / {service.shortTitle}
                     </span>
                   </div>

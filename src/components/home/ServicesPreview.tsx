@@ -7,6 +7,7 @@ import { business } from '@/data/business';
 import Tilt3D from '@/motion/Tilt3D';
 import { DripLink } from '@/components/animorio/drip/DripLink';
 import { StackSeparate } from '@/components/stack/StackSeparate';
+import { ResponsiveCardImage } from '@/components/ui/ResponsiveCardImage';
 
 const serviceImages: Record<string, string> = {
   seo: '/images/pages/P01-services-seo-hero-16x9.webp',
@@ -78,15 +79,13 @@ export function ServicesPreview() {
                     <div>
                       {/* Image Thumbnail Banner */}
                       <div className="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden mb-6 border border-ink/10">
-                        <Image
+                        <ResponsiveCardImage
                           src={imgSrc}
                           alt={`${service.title} execution preview`}
-                          fill
-                          decoding="async"
-                          sizes="(max-width: 768px) 100vw, 600px"
-                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                          className="transition-transform duration-700 ease-out group-hover:scale-105"
                         />
-                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ink/90 text-[10px] font-mono text-white tracking-widest uppercase border border-white/10">
+                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ink/90 text-[10px] font-mono text-white tracking-widest uppercase border border-white/10 z-10">
                           {service.label}
                         </div>
                       </div>
