@@ -312,17 +312,28 @@
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
 }
 
-/* Section theme transitions for navbar */
-[data-theme="dark"] .glass-nav {
-  background: rgba(8, 10, 11, 0.88);
-  color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.12);
+/* Navbar signature pill styling per V6 specifications */
+.glass-nav-dark {
+  background-color: rgba(8, 10, 11, 0.88);
+  color: #EEEBE3;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
-[data-theme="light"] .glass-nav {
-  background: rgba(238, 235, 227, 0.90);
+.glass-nav-light {
+  background-color: rgba(246, 244, 238, 0.92);
   color: var(--ink);
-  border-color: rgba(8, 10, 11, 0.10);
+  border: 1px solid rgba(8, 10, 11, 0.12);
+  box-shadow: 0 16px 36px rgba(8, 10, 11, 0.10);
+}
+
+@supports not (backdrop-filter: blur(18px)) {
+  .glass-nav-dark {
+    background-color: #080A0B;
+  }
+  .glass-nav-light {
+    background-color: #F6F4EE;
+  }
 }
 
 /* Elevated Glass Card */

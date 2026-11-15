@@ -158,13 +158,13 @@ export function ProcessStage({ slug }: ProcessStageProps) {
   }
 
   return (
-    <div ref={containerRef} className="relative bg-transparent border-b border-ink/10">
+    <div ref={containerRef} className="relative bg-transparent border-b border-ink/10 scroll-mt-24" id="how-we-deliver">
       {/* =====================================================================
           DESKTOP PINNED VIEWPORT (lg:flex)
           ===================================================================== */}
       <div
         ref={pinRef}
-        className="hidden lg:flex w-full min-h-screen items-center justify-center py-12"
+        className="hidden lg:flex w-full min-h-screen items-center justify-center pt-24 pb-12"
       >
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-12 gap-10 items-center">
           {/* Left Column (38% width -> col-span-5) */}
@@ -267,7 +267,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
       {/* =====================================================================
           MOBILE UNPINNED STACKED VIEW (< 1024px)
           ===================================================================== */}
-      <div className="lg:hidden py-16 px-4 sm:px-6">
+      <div className="lg:hidden py-16 px-4 sm:px-6 scroll-mt-24">
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />

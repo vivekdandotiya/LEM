@@ -169,7 +169,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
       </section>
 
       {/* 2. Device or Creative Showcase Section (P02/P04/P06/P08) */}
-      <section className="py-20 sm:py-28 bg-paper-2/60 border-b border-ink/10">
+      <section className="py-20 sm:py-28 bg-paper-2/60 border-b border-ink/10 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-ink/10 mb-12">
             <div>
@@ -255,7 +255,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
       <ProcessStage slug={service.slug} />
 
       {/* 4. Three Concept Work Cards */}
-      <section className="py-20 sm:py-28 bg-transparent border-b border-ink/10 content-auto">
+      <section className="py-20 sm:py-28 bg-transparent border-b border-ink/10 content-auto scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-10 border-b border-ink/10 mb-10">
             <div>
@@ -286,7 +286,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
       </section>
 
       {/* 5. Four Service-Specific FAQs */}
-      <section className="py-20 sm:py-28 bg-paper-2/40 border-b border-ink/10 content-auto">
+      <section className="py-20 sm:py-28 bg-paper-2/40 border-b border-ink/10 content-auto scroll-mt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center pb-10">
             <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold block mb-2">

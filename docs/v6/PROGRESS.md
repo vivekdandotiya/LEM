@@ -76,3 +76,42 @@ This document tracks progress through tasks T0 to T8 in strict accordance with t
   - `docs/v6/PROGRESS.md`
   - Evidence: `docs/v6/T1-evidence/traces/*.json`, `docs/v6/T1-evidence/lighthouse/*`, `docs/v6/T1-evidence/baseline-metrics.json`
 - **Commit:** `T1: smoothness repairs`
+
+---
+
+## T2: Navbar and Top-Edge Bug Fixes
+- **Date:** 2026-11-16
+- **Branch:** `v6-stack-video-drip`
+- **Status:** **PASSED**
+- **Changes & Findings:**
+  - Redefined `.glass-nav-dark` and `.glass-nav-light` in `src/styles/globals.css`:
+    - Ink state: `background: rgba(8, 10, 11, 0.88)` with `backdrop-filter: blur(18px) saturate(1.1)`, 1px hairline border `rgba(255, 255, 255, 0.12)`, text crisp white (`rgb(255, 255, 255)` / `rgba(255, 255, 255, 0.8)`).
+    - Paper state: `background: rgba(246, 244, 238, 0.90)` with `backdrop-filter: blur(18px) saturate(1.1)`, 1px hairline border `rgba(8, 10, 11, 0.10)`, text crisp ink (`#080A0B`).
+    - Added `@supports not (backdrop-filter: blur(18px))` fallbacks (`#080A0B` / `#F6F4EE` at 0.96 alpha).
+    - Removed all fading gradients and mask fades from the navbar container.
+  - Upgraded `src/components/layout/Navbar.tsx`:
+    - Center-line element sampling via `document.elementsFromPoint(centerX, centerY)` detecting dark vs light sections directly underneath the floating pill with hysteresis debounce (3 consecutive matching frames) to eliminate rapid flickering.
+    - Full WCAG AA/AAA contrast verified across paper, dark, and stage sections.
+    - Replaced CSS hover sag with reliable, delegated listeners in `DripTransitionProvider.jsx` (listening to `pointermove`, `scroll`, `resize`, `blur`, `route:start`, and `visibilitychange`), guaranteeing sag resets to 0 immediately when the pointer leaves or content shifts.
+  - Removed top-edge dark band in `src/components/animorio/drip/DripTransitionProvider.jsx`:
+    - Removed `drawBand` 3px `#14110F` idle bar across the viewport top edge. Top edge is now clean with only the 3px lime scroll progress bar (`LimeScrollProgress`) rendering at `y <= 24px`.
+    - Zero teal/blue-grey strip present on any page.
+  - Fixed pinned stage overlap in `src/components/process/ProcessStage.tsx` and `src/components/services/ServicePageTemplate.tsx`:
+    - Added `scroll-mt-24` and `pt-24` to the pinned container so pinning starts with 96px top clearance below the navbar pill, leaving the "03 / HOW WE DELIVER" section heading completely visible and uncovered.
+  - Disabled Next.js dev indicator in `next.config.mjs` (`devIndicators: false`).
+  - Automated verification via `tools/verify-t2.mjs`:
+    - Captured 16 screenshots across 4 routes (`/`, `/services`, `/services/seo`, `/blog`) at 1440px and 390px, top and scrolled.
+    - Verified all nav links legible with contrast > 4.5:1.
+    - Verified nav hover sag reset to 0 with zero stuck sags.
+    - Inspected top edge `y <= 24px`: only the lime scroll progress indicator exists; zero dark/teal strips.
+- **Files Touched:**
+  - `src/styles/globals.css`
+  - `src/components/layout/Navbar.tsx`
+  - `src/components/animorio/drip/DripTransitionProvider.jsx`
+  - `src/components/process/ProcessStage.tsx`
+  - `src/components/services/ServicePageTemplate.tsx`
+  - `next.config.mjs`
+  - `tools/verify-t2.mjs`
+  - `docs/v6/PROGRESS.md`
+  - Evidence: `docs/v6/T2-evidence/*.png`
+- **Commit:** `T2: navbar legibility and top-edge fixes`

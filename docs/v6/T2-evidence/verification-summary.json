@@ -1,0 +1,56 @@
+{
+  "screenshots": [
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\home-1440-top.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\home-1440-scrolled.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\services-1440-top.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\services-1440-scrolled.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\services-seo-1440-top.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\services-seo-1440-scrolled.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\blog-1440-top.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\blog-1440-scrolled.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\home-390-top.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\home-390-scrolled.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\services-390-top.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\services-390-scrolled.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\services-seo-390-top.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\services-seo-390-scrolled.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\blog-390-top.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Demo2\\docs\\v6\\T2-evidence\\blog-390-scrolled.png"
+  ],
+  "contrastChecks": [
+    {
+      "route": "home",
+      "navBg": "rgba(8, 10, 11, 0.88)",
+      "navBorder": "rgba(255, 255, 255, 0.15)",
+      "navBackdrop": "blur(18px) saturate(1.1)",
+      "textColor": "rgb(255, 255, 255)",
+      "fontWeight": "500"
+    },
+    {
+      "route": "services",
+      "navBg": "rgba(8, 10, 11, 0.88)",
+      "navBorder": "rgba(255, 255, 255, 0.15)",
+      "navBackdrop": "blur(18px) saturate(1.1)",
+      "textColor": "rgba(255, 255, 255, 0.8)",
+      "fontWeight": "500"
+    },
+    {
+      "route": "services-seo",
+      "navBg": "rgba(8, 10, 11, 0.88)",
+      "navBorder": "rgba(255, 255, 255, 0.15)",
+      "navBackdrop": "blur(18px) saturate(1.1)",
+      "textColor": "rgba(255, 255, 255, 0.8)",
+      "fontWeight": "500"
+    },
+    {
+      "route": "blog",
+      "navBg": "rgba(8, 10, 11, 0.88)",
+      "navBorder": "rgba(255, 255, 255, 0.15)",
+      "navBackdrop": "blur(18px) saturate(1.1)",
+      "textColor": "rgba(255, 255, 255, 0.8)",
+      "fontWeight": "500"
+    }
+  ],
+  "sagTests": [],
+  "topEdgeStripClean": true
+}

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { primaryNavItems } from '@/data/nav';
@@ -10,25 +10,85 @@ import { Magnetic } from '@/motion/Magnetic';
 
 export function Navbar() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const darkCountRef = useRef(0);
 
   const isHome = pathname === '/';
-  const isDarkOverHero = isHome && !isScrolled;
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setIsScrolled(true);
+    let ticking = false;
+
+    const evaluateBackground = () => {
+      const navEl = navRef.current;
+      if (!navEl) return;
+
+      const rect = navEl.getBoundingClientRect();
+      const centerY = rect.top + rect.height / 2;
+      const centerX = rect.left + rect.width / 2;
+
+      // On homepage top, the hero section is prominently dark
+      if (isHome && window.scrollY < window.innerHeight * 0.72) {
+        darkCountRef.current = 5;
+        setIsDarkTheme(true);
+        return;
+      }
+
+      // Check element directly behind the navbar pill centre line
+      const elements = document.elementsFromPoint(centerX, centerY);
+      const behindEl = elements.find(
+        (el) => !navEl.contains(el) && el !== document.documentElement && el !== document.body
+      );
+
+      let foundDark = false;
+      if (behindEl) {
+        const darkSection = behindEl.closest('[data-theme="dark"], .dark-section, [data-dark="true"]');
+        if (darkSection) {
+          foundDark = true;
+        } else {
+          // Check computed background color luminance
+          const bg = window.getComputedStyle(behindEl).backgroundColor;
+          const match = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+          if (match) {
+            const r = parseInt(match[1], 10);
+            const g = parseInt(match[2], 10);
+            const b = parseInt(match[3], 10);
+            const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+            if (lum < 85) foundDark = true;
+          }
+        }
+      }
+
+      // Small hysteresis counter to prevent flickering at boundaries
+      if (foundDark) {
+        darkCountRef.current = Math.min(5, darkCountRef.current + 1);
+        if (darkCountRef.current >= 2) setIsDarkTheme(true);
       } else {
-        setIsScrolled(false);
+        darkCountRef.current = Math.max(0, darkCountRef.current - 1);
+        if (darkCountRef.current <= 1) setIsDarkTheme(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          evaluateBackground();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    evaluateBackground();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [isHome, pathname]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -38,12 +98,17 @@ export function Navbar() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pt-3 sm:pt-4 pointer-events-none transition-all duration-300">
         <nav
+          ref={navRef}
           aria-label="Main Navigation"
           className={`pointer-events-auto w-full max-w-5xl transition-all duration-300 ease-editorial rounded-pill px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between ${
-            isDarkOverHero
-              ? 'bg-ink/80 text-white backdrop-blur-xl shadow-[0_16px_40px_rgba(0,0,0,0.5),_inset_0_1px_1px_rgba(255,255,255,0.15)] border border-white/15 ring-1 ring-white/10'
-              : 'bg-paper-2/90 text-ink backdrop-blur-xl shadow-[0_16px_40px_rgba(8,10,11,0.15),_inset_0_1px_1px_rgba(255,255,255,0.9)] border border-ink/10 ring-1 ring-ink/5'
+            isDarkTheme
+              ? 'glass-nav-dark'
+              : 'glass-nav-light'
           }`}
+          style={{
+            backdropFilter: 'blur(18px) saturate(1.1)',
+            WebkitBackdropFilter: 'blur(18px) saturate(1.1)',
+          }}
         >
           {/* Logo with DripLink */}
           <DripLink
@@ -69,7 +134,7 @@ export function Navbar() {
             </span>
           </DripLink>
 
-          {/* Desktop 5 Primary Nav Links with DripLink & Variable Font Hover */}
+          {/* Desktop 5 Primary Nav Links with DripLink & High-Contrast Typography */}
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             {primaryNavItems.map((item) => {
               const isActive =
@@ -84,14 +149,14 @@ export function Navbar() {
                   key={item.title}
                   href={item.href}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`relative px-4 py-1.5 text-xs xl:text-sm font-medium tracking-tight rounded-full transition-all duration-300 nav-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime ${
+                  className={`relative px-4 py-1.5 text-xs xl:text-sm font-medium tracking-tight rounded-full transition-all duration-200 nav-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime ${
                     isActive
-                      ? isDarkOverHero
+                      ? isDarkTheme
                         ? 'text-white font-bold'
                         : 'text-ink font-bold'
-                      : isDarkOverHero
-                      ? 'text-white/70 hover:text-white hover:bg-white/10'
-                      : 'text-grey-3 hover:text-ink hover:bg-paper'
+                      : isDarkTheme
+                      ? 'text-white/80 hover:text-white hover:bg-white/10'
+                      : 'text-grey-3 hover:text-ink hover:bg-black/5'
                   }`}
                 >
                   <span>{item.title}</span>

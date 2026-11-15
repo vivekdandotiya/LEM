@@ -144,29 +144,15 @@ export function DripTransitionProvider({ children }) {
   };
 
   const drawBand = (ctx) => {
-    const { W, band, sag, clock } = stateRef.current;
-    const h0 = BAND * band;
-    if (h0 <= 0.01) return;
+    const { W, sag } = stateRef.current;
+    if (sag.h <= 0.05) return;
     const sx = sag.x * W;
-    ctx.fillStyle = PAINT;
+    const r = Math.min(5, sag.h * 0.45);
+    // Idle band is lime hairline only — no dark mass across top edge
+    ctx.fillStyle = GLINT; // #C9F53D
     ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(W, 0);
-    for (let x = W; x >= -STEP; x -= STEP) {
-      const u = (x - sx) / 22;
-      const y = h0 + Math.sin(x * 0.02 + clock * 1.3) * 0.35 + Math.max(0, sag.h) * Math.exp(-u * u);
-      ctx.lineTo(x, y);
-    }
-    ctx.closePath();
+    ctx.arc(sx, 3 + sag.h - r, r, 0, Math.PI * 2);
     ctx.fill();
-
-    if (sag.h > 3) {
-      const r = Math.min(6, sag.h * 0.42);
-      ctx.beginPath();
-      ctx.arc(sx, h0 + sag.h - r, r, 0, Math.PI * 2);
-      ctx.fill();
-      drawGlint(ctx, sx, h0 + sag.h - r, r);
-    }
   };
 
   const drawFill = (ctx, g, f) => {
@@ -344,6 +330,12 @@ export function DripTransitionProvider({ children }) {
     sag.v = (sag.v + f) * 0.78;
     sag.h += sag.v;
 
+    // Snap to 0 when near rest so render loop doesn't leave lingering sag
+    if (Math.abs(sag.h) < 0.05 && Math.abs(sag.v) < 0.05) {
+      sag.h = 0;
+      sag.v = 0;
+    }
+
     ctx.save();
     ctx.scale(dpr, dpr);
     ctx.clearRect(0, 0, W, H);
@@ -366,9 +358,43 @@ export function DripTransitionProvider({ children }) {
     measure();
     window.addEventListener('resize', measure);
 
+    // Self-correcting sag reset: re-evaluate under pointer, reset on scroll, resize, blur, route start, tab hide
+    const resetSag = () => {
+      stateRef.current.sag.target = 0;
+    };
+
+    const onPointerMove = (e) => {
+      if (stateRef.current.sag.target > 0) {
+        const hit = document.elementFromPoint(e.clientX, e.clientY);
+        const link = hit?.closest('a[href]');
+        if (!link || !link.getAttribute('href')?.startsWith('/') || link.getAttribute('href')?.includes('#')) {
+          resetSag();
+        }
+      }
+    };
+
+    const onVisibilityChange = () => {
+      if (document.hidden) resetSag();
+    };
+
+    window.addEventListener('pointermove', onPointerMove, { passive: true });
+    window.addEventListener('scroll', resetSag, { passive: true });
+    window.addEventListener('resize', resetSag, { passive: true });
+    window.addEventListener('blur', resetSag);
+    window.addEventListener('route:start', resetSag);
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    document.addEventListener('mouseleave', resetSag);
+
     gsap.ticker.add(render);
     return () => {
       window.removeEventListener('resize', measure);
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('scroll', resetSag);
+      window.removeEventListener('resize', resetSag);
+      window.removeEventListener('blur', resetSag);
+      window.removeEventListener('route:start', resetSag);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      document.removeEventListener('mouseleave', resetSag);
       gsap.ticker.remove(render);
     };
   }, [measure, render]);
