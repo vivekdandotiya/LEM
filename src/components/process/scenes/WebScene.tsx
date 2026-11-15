@@ -150,7 +150,7 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
             <div className="p-3.5 rounded-xl bg-[#17191B] border border-white/15 flex flex-col justify-between">
               <div className="flex items-center justify-between border-b border-white/10 pb-2">
                 <span className="font-mono text-[10px] text-grey-3">VIEWPORT ENGINE</span>
-                <span className="font-mono text-[10px] text-lime font-bold">100% FLUID</span>
+                <span className="font-mono text-[10px] text-lime font-bold">FLUID GEOMETRY</span>
               </div>
 
               <div className="flex items-center justify-around my-2">
@@ -189,21 +189,21 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
             <div className="grid grid-cols-3 gap-2">
               <div className="p-3 rounded-xl bg-[#1B2A00] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
                 <div className="w-12 h-12 rounded-full border-2 border-lime flex items-center justify-center mb-1">
-                  <span className="font-mono font-black text-sm text-lime">100</span>
+                  <span className="font-mono font-bold text-xs text-lime">FAST</span>
                 </div>
                 <span className="font-mono text-[9px] text-white">PERFORMANCE</span>
               </div>
 
               <div className="p-3 rounded-xl bg-[#1B2A00] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
                 <div className="w-12 h-12 rounded-full border-2 border-lime flex items-center justify-center mb-1">
-                  <span className="font-mono font-black text-sm text-lime">100</span>
+                  <span className="font-mono font-bold text-xs text-lime">WCAG</span>
                 </div>
                 <span className="font-mono text-[9px] text-white">ACCESSIBILITY</span>
               </div>
 
               <div className="p-3 rounded-xl bg-[#1B2A00] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
                 <div className="w-12 h-12 rounded-full border-2 border-lime flex items-center justify-center mb-1">
-                  <span className="font-mono font-black text-sm text-lime">100</span>
+                  <span className="font-mono font-bold text-xs text-lime">CLEAN</span>
                 </div>
                 <span className="font-mono text-[9px] text-white">BEST PRACTICES</span>
               </div>
@@ -216,27 +216,27 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
                   <CheckCircle2 className="w-3.5 h-3.5 text-lime" />
                   SSL & Global Edge CDN Deployed
                 </span>
-                <span>[VERIFIED]</span>
+                <span>[ACTIVE]</span>
               </div>
               <div className="flex items-center justify-between text-lime">
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-lime" />
                   WCAG 2.2 Semantic Accessibility Validated
                 </span>
-                <span>[VERIFIED]</span>
+                <span>[STANDARDS]</span>
               </div>
               <div className="flex items-center justify-between text-lime">
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-lime" />
-                  Sub-Second LCP (0.6s) Benchmark Met
+                  Performance Engineering Standards
                 </span>
-                <span>[PASS]</span>
+                <span>[OPTIMIZED]</span>
               </div>
             </div>
           </div>
           <div className="text-center mt-3 font-mono text-[11px] text-lime flex items-center justify-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-lime" />
-            <span>[PRE-FLIGHT PASSED // SITE ENGINE READY FOR LAUNCH]</span>
+            <span>[PRE-FLIGHT PROTOCOL: PRODUCTION DEPLOYMENT]</span>
           </div>
         </div>
       </div>
@@ -244,7 +244,7 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
       {/* Stage Bottom Bar */}
       <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-3 text-[10px] font-mono text-grey-3">
         <span>RUNTIME ENGINE: NEXT.JS 15 APP ROUTER</span>
-        <span className="text-lime">0KB UNUSED HYDRATION WASTE</span>
+        <span className="text-lime">HANDCRAFTED TYPESCRIPT</span>
       </div>
     </div>
   );

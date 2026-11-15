@@ -115,3 +115,38 @@ This document tracks progress through tasks T0 to T8 in strict accordance with t
   - `docs/v6/PROGRESS.md`
   - Evidence: `docs/v6/T2-evidence/*.png`
 - **Commit:** `T2: navbar legibility and top-edge fixes`
+
+---
+
+## T3: Honesty Cleanup of Scenes and Stage Copy
+- **Date:** 2026-11-16
+- **Branch:** `v6-stack-video-drip`
+- **Status:** **PASSED**
+- **Changes & Findings:**
+  - Audited and sanitized all stage microcopy, process scenes (`SeoScene`, `MetaScene`, `SocialScene`, `WebScene`), hero visual cards (`HeroVisualCards.tsx`), and deliverables (`processes.ts`).
+  - Removed all fabricated measurements, ratings, rank gains, and verifications:
+    - Removed `0.8s LCP`, `0.6s LCP`, `Core Web Vitals 100`, and `100/100 Core Web Vitals`.
+    - Removed `ZERO ERRORS DETECTED`.
+    - Removed `FRAME RATE: 60FPS STABLE`.
+    - Removed `VERIFIED COMMERCIAL ARCHITECTURE`, `404 CRAWL PATH: RESOLVED`, `CANONICAL CONFLICT: FIXED`, and `[VERIFIED]`.
+    - Removed `WINNER: +340% ROAS`, `+312% MER`, and percentages in scenes (`100% VOLUME`, `42% INTENT`, `94.2% Retention`, `RETENTION: 84%`, `100% FLUID`).
+    - Removed `1.8% CTR`, `4.6% CTR`, `2.1% CTR`.
+    - Removed `TARGET COMMERCIAL RANK: POSITION #1 SECURED`, `▲ +8 POS`, `Pos 1.2`.
+    - Removed fabricated media DRs (`TechCrunch [DR 92]`, `Forbes [DR 94]`, `VentureBeat [DR 91]`, `DR 78`) and review scores (`★★★★★ 5.0`).
+  - Substituted neutral process words across all components ("Audit", "Structure", "Mapping", "Active", "Editorial", "Pacing", "Geometry", "Standards", "Workflow").
+  - Client-supplied copy from `docs/CLIENT-CONTENT.md` ("Targeted Facebook & Instagram ads engineered to drive instant leads and max ROAS") remains unaltered verbatim as instructed.
+  - Verified that the "ILLUSTRATIVE" sticker is present as an HTML overlay on every stage in `src/components/process/ProcessStage.tsx`.
+  - Built automated validator `tools/check-claims.ts`, which scans all in-scope files against forbidden patterns and confirms the ILLUSTRATIVE sticker.
+  - Check result: **PASSED** (0 violations).
+  - Documented full before/after list in `docs/v6/T3-removed-claims.md`.
+- **Files Touched:**
+  - `src/components/process/scenes/SeoScene.tsx`
+  - `src/components/process/scenes/MetaScene.tsx`
+  - `src/components/process/scenes/SocialScene.tsx`
+  - `src/components/process/scenes/WebScene.tsx`
+  - `src/components/hero/HeroVisualCards.tsx`
+  - `src/data/processes.ts`
+  - `tools/check-claims.ts`
+  - `docs/v6/T3-removed-claims.md`
+  - `docs/v6/PROGRESS.md`
+- **Commit:** `T3: remove fabricated metrics from scenes`

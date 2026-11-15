@@ -54,7 +54,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
                   <span className="text-[10px] font-sans text-grey-3">Broad hook resonance & thumb-stop testing</span>
                 </div>
               </div>
-              <span className="font-mono text-[10px] text-lime font-bold">100% VOLUME</span>
+              <span className="font-mono text-[10px] text-lime font-bold">TOP FUNNEL</span>
             </div>
 
             {/* Middle of Funnel (Consideration) */}
@@ -68,7 +68,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
                   <span className="text-[10px] font-sans text-grey-3">Social proof & product objection handling</span>
                 </div>
               </div>
-              <span className="font-mono text-[10px] text-lime font-bold">42% INTENT</span>
+              <span className="font-mono text-[10px] text-lime font-bold">MID FUNNEL</span>
             </div>
 
             {/* Bottom of Funnel (Conversion) */}
@@ -82,11 +82,11 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
                   <span className="text-[10px] font-sans text-white/80">Checkout recovery & direct buyers</span>
                 </div>
               </div>
-              <span className="font-mono text-[10px] text-lime font-bold">HIGH LTV</span>
+              <span className="font-mono text-[10px] text-lime font-bold">BOTTOM FUNNEL</span>
             </div>
           </div>
           <div className="text-center mt-3 font-mono text-[11px] text-grey-2">
-            [3-TIER SEGREGATED ARCHITECTURE // ZERO BUDGET LEAKAGE]
+            [SEGREGATED CAMPAIGN ARCHITECTURE: FUNNEL FLOW]
           </div>
         </div>
 
@@ -101,7 +101,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             <div className="p-3 rounded-xl bg-[#17191B] border border-white/10 flex flex-col justify-between aspect-[3/4] opacity-40">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[10px] text-grey-3">HOOK A</span>
-                <span className="text-[9px] font-mono text-white/40">1.8% CTR</span>
+                <span className="text-[9px] font-mono text-white/40">VARIANT A</span>
               </div>
               <div className="space-y-1.5 my-auto">
                 <div className="w-full h-12 rounded bg-white/5" />
@@ -114,7 +114,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             <div className="relative p-3 rounded-xl bg-[#1B2A00] border-2 border-lime flex flex-col justify-between aspect-[3/4] shadow-lime-glow scale-105 z-10">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[10px] text-lime font-bold">HOOK B</span>
-                <span className="text-[10px] font-mono text-lime font-bold">4.6% CTR</span>
+                <span className="text-[10px] font-mono text-lime font-bold">VARIANT B</span>
               </div>
               <div className="space-y-1.5 my-auto">
                 <div className="w-full h-12 rounded bg-lime/20 border border-lime/40 flex items-center justify-center">
@@ -125,7 +125,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
               </div>
               {/* Winner Stamp Badge */}
               <div className="w-full py-1 rounded bg-lime text-ink font-mono font-black text-[9px] text-center tracking-widest uppercase">
-                WINNER: +340% ROAS
+                PRIMARY ASSET
               </div>
             </div>
 
@@ -133,7 +133,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             <div className="p-3 rounded-xl bg-[#17191B] border border-white/10 flex flex-col justify-between aspect-[3/4] opacity-40">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[10px] text-grey-3">HOOK C</span>
-                <span className="text-[9px] font-mono text-white/40">2.1% CTR</span>
+                <span className="text-[9px] font-mono text-white/40">VARIANT C</span>
               </div>
               <div className="space-y-1.5 my-auto">
                 <div className="w-full h-12 rounded bg-white/5" />
@@ -143,7 +143,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
           </div>
           <div className="text-center mt-3 font-mono text-[11px] text-lime">
-            [3x3 MATRIX EXPERIMENTATION // WINNING HOOK ISOLATED]
+            [CREATIVE MATRIX EXPERIMENTATION: ITERATIVE TESTING]
           </div>
         </div>
 
@@ -169,12 +169,12 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Center High-Intent Cluster (Active in Lime) */}
             <div className="relative z-10 w-28 h-28 rounded-full bg-[#1B2A00] border-2 border-lime flex flex-col items-center justify-center shadow-lime-glow">
               <Target className="w-6 h-6 text-lime mb-1" />
-              <span className="font-mono font-bold text-[11px] text-lime">TOP 15%</span>
-              <span className="font-mono text-[8px] text-white/80">HIGH-INTENT BUYERS</span>
+              <span className="font-mono font-bold text-[10px] text-lime">TARGET</span>
+              <span className="font-mono text-[8px] text-white/80">FIRST-PARTY SEGMENTS</span>
             </div>
           </div>
           <div className="text-center mt-2 font-mono text-[11px] text-grey-2">
-            [SERVER-SIDE CAPI MODELING // ZERO-OVERLAP SEGMENTATION]
+            [SERVER-SIDE CAPI MODELING: AUDIENCE SEGMENTS]
           </div>
         </div>
 
@@ -189,7 +189,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             <div className="bg-[#17191B] rounded-2xl border border-white/15 p-5 shadow-xl">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-xs text-grey-2 uppercase">DAILY BUDGET VELOCITY</span>
-                <span className="font-mono text-xs text-lime font-bold">SCALED 10X</span>
+                <span className="font-mono text-xs text-lime font-bold">BUDGET ALLOCATION</span>
               </div>
 
               {/* Progress Slider Bar */}
@@ -197,8 +197,8 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
                 <div className="h-full rounded-full bg-gradient-to-r from-lime/60 to-lime w-[92%] transition-all duration-1000 shadow-lime-glow" />
               </div>
               <div className="flex items-center justify-between font-mono text-[10px] text-grey-3">
-                <span>TESTING: $500/day</span>
-                <span className="text-lime font-bold">SCALING: $5,000/day</span>
+                <span>TESTING CADENCE</span>
+                <span className="text-lime font-bold">SCALING CADENCE</span>
               </div>
             </div>
 
@@ -207,16 +207,16 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
               <div className="p-3.5 rounded-xl bg-[#17191B] border border-white/10">
                 <span className="font-mono text-[10px] text-grey-3 block mb-1">TARGET CPA</span>
                 <div className="flex items-center gap-2">
-                  <span className="font-display font-bold text-white text-base">LOCKED</span>
+                  <span className="font-display font-bold text-white text-base">OPTIMIZED</span>
                   <CheckCircle2 className="w-4 h-4 text-lime" />
                 </div>
                 <span className="font-mono text-[9px] text-lime mt-1 block">Within Unit Margins</span>
               </div>
 
               <div className="p-3.5 rounded-xl bg-[#1B2A00] border border-lime/40">
-                <span className="font-mono text-[10px] text-lime/80 block mb-1">PROFIT EXPANSION</span>
+                <span className="font-mono text-[10px] text-lime/80 block mb-1">GROWTH TRAJECTORY</span>
                 <div className="flex items-center gap-2">
-                  <span className="font-display font-bold text-lime text-base">SUSTAINED</span>
+                  <span className="font-display font-bold text-lime text-base">STRUCTURED</span>
                   <TrendingUp className="w-4 h-4 text-lime" />
                 </div>
                 <span className="font-mono text-[9px] text-white/70 mt-1 block">Predictable Flywheel</span>
@@ -224,7 +224,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
           </div>
           <div className="text-center mt-3 font-mono text-[11px] text-lime">
-            [PROFITABLE EFFICIENCY PRESERVED AT SCALE]
+            [CAMPAIGN ATTRIBUTION AND RETENTION]
           </div>
         </div>
       </div>
@@ -232,7 +232,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
       {/* Stage Bottom Bar */}
       <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-3 text-[10px] font-mono text-grey-3">
         <span>CAPI ATTRIBUTION: SERVER-SIDE</span>
-        <span className="text-lime">ZERO SCRIPT BLOAT</span>
+        <span className="text-lime">CAMPAIGN ARCHITECTURE</span>
       </div>
     </div>
   );

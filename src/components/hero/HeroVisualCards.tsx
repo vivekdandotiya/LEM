@@ -20,7 +20,7 @@ export function CardWebDev() {
         </div>
         <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-accent/20 text-accent-tint text-[10px] font-mono">
           <Sparkles className="w-3 h-3" />
-          <span>Core Vitals 100</span>
+          <span>Performance Standards</span>
         </div>
       </div>
 
@@ -36,7 +36,7 @@ export function CardWebDev() {
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/85 via-charcoal-900/20 to-transparent" />
         <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[11px] font-mono">
           <span className="text-white font-medium">Aura Spatial Flagship</span>
-          <span className="text-accent-tint font-mono">0.6s LCP</span>
+          <span className="text-accent-tint font-mono">Responsive Geometry</span>
         </div>
       </div>
 
@@ -119,10 +119,10 @@ export function CardSocial() {
       {/* Details */}
       <div className="flex items-center justify-between text-xs text-warmgray-300 pt-1">
         <span className="flex items-center gap-1.5 text-[11px] font-mono text-accent-tint">
-          <Eye className="w-3.5 h-3.5" /> 842K Views
+          <Eye className="w-3.5 h-3.5" /> High Retention
         </span>
         <span className="text-[11px] font-mono text-warmgray-400">
-          94.2% Retention
+          Editorial Pacing
         </span>
       </div>
 
@@ -174,25 +174,25 @@ export function CardMetaAds() {
       <div className="grid grid-cols-2 gap-2.5">
         <div className="p-2.5 rounded-lg bg-charcoal-800/80 border border-white/10">
           <span className="text-[10px] font-mono uppercase tracking-wider text-warmgray-400 block mb-0.5">
-            Blended ROAS
+            Attribution Engine
           </span>
           <span className="text-xl sm:text-2xl font-display font-bold text-accent-tint">
-            4.82×
+            ACTIVE
           </span>
           <span className="text-[10px] font-mono text-warmgray-400 mt-0.5 flex items-center gap-1">
-            <TrendingUp className="w-3 h-3 text-accent" /> Top Tier Scaling
+            <TrendingUp className="w-3 h-3 text-accent" /> Algorithmic Modeling
           </span>
         </div>
 
         <div className="p-2.5 rounded-lg bg-charcoal-800/80 border border-white/10">
           <span className="text-[10px] font-mono uppercase tracking-wider text-warmgray-400 block mb-0.5">
-            CAC Reduction
+            Bidding Engine
           </span>
           <span className="text-xl sm:text-2xl font-display font-bold text-white">
-            -34.8%
+            SCALED
           </span>
           <span className="text-[10px] font-mono text-warmgray-400 mt-0.5 flex items-center gap-1">
-            <CheckCircle2 className="w-3 h-3 text-titanium" /> Bidding Engine
+            <CheckCircle2 className="w-3 h-3 text-titanium" /> Margin Aligned
           </span>
         </div>
       </div>
@@ -236,7 +236,7 @@ export function CardSEO() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/85 via-charcoal-900/20 to-transparent" />
         <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between">
-          <span className="text-[11px] font-mono text-accent-tint">#1 Commercial Queries</span>
+          <span className="text-[11px] font-mono text-accent-tint">Commercial Search Target</span>
           <span className="text-[10px] font-mono text-warmgray-300">Topical Graph</span>
         </div>
       </div>
@@ -245,14 +245,14 @@ export function CardSEO() {
       <div className="p-2.5 rounded-lg bg-charcoal-800/80 border border-white/10 space-y-1.5">
         <div className="flex justify-between text-[11px]">
           <span className="text-warmgray-300">Commercial Intent Queries</span>
-          <span className="font-mono text-accent">Pos 1.2</span>
+          <span className="font-mono text-accent">Search Mapped</span>
         </div>
         <div className="h-1.5 w-full bg-charcoal-700 rounded-full overflow-hidden">
           <div className="h-full bg-gradient-to-r from-accent to-accent-tint w-[92%]" />
         </div>
         <div className="flex justify-between text-[11px]">
-          <span className="text-warmgray-300">Domain Authority Rating</span>
-          <span className="font-mono text-white">DR 78</span>
+          <span className="text-warmgray-300">Domain Authority Graph</span>
+          <span className="font-mono text-white">Entity Structured</span>
         </div>
       </div>
 

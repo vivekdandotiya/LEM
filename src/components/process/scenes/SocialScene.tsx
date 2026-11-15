@@ -46,7 +46,7 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Pillar 1 */}
             <div className="p-3.5 rounded-xl bg-paper-2 border border-ink/10 shadow-sm flex flex-col justify-between aspect-[4/3]">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] text-grey-2">25% MIX</span>
+                <span className="font-mono text-[10px] text-grey-2">PILLAR 01</span>
                 <span className="w-2 h-2 rounded-full bg-ink" />
               </div>
               <div>
@@ -60,7 +60,7 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Pillar 2 */}
             <div className="p-3.5 rounded-xl bg-paper-2 border border-ink/10 shadow-sm flex flex-col justify-between aspect-[4/3]">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] text-grey-2">25% MIX</span>
+                <span className="font-mono text-[10px] text-grey-2">PILLAR 02</span>
                 <span className="w-2 h-2 rounded-full bg-lime" />
               </div>
               <div>
@@ -74,7 +74,7 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Pillar 3 */}
             <div className="p-3.5 rounded-xl bg-paper-2 border border-ink/10 shadow-sm flex flex-col justify-between aspect-[4/3]">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] text-grey-2">25% MIX</span>
+                <span className="font-mono text-[10px] text-grey-2">PILLAR 03</span>
                 <span className="w-2 h-2 rounded-full bg-[#B8925A]" />
               </div>
               <div>
@@ -88,7 +88,7 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Pillar 4 */}
             <div className="p-3.5 rounded-xl bg-ink text-white shadow-md flex flex-col justify-between aspect-[4/3]">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] text-lime font-bold">25% MIX</span>
+                <span className="font-mono text-[10px] text-lime font-bold">PILLAR 04</span>
                 <span className="w-2 h-2 rounded-full bg-lime" />
               </div>
               <div>
@@ -100,7 +100,7 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
           </div>
           <div className="text-center mt-3 font-mono text-[11px] text-grey-3">
-            [BALANCED 4-PILLAR BLUEPRINT // ZERO RANDOM POSTING]
+            [BALANCED 4-PILLAR BLUEPRINT: EDITORIAL ARCHITECTURE]
           </div>
         </div>
 
@@ -176,11 +176,11 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
                 <Calendar className="w-4 h-4 text-lime" />
                 <span className="font-mono text-xs font-bold">30-DAY EDITORIAL QUEUE SIGNED OFF</span>
               </div>
-              <span className="font-mono text-[10px] text-lime">100% PRE-PRODUCED</span>
+              <span className="font-mono text-[10px] text-lime">EDITORIAL WORKFLOW</span>
             </div>
           </div>
           <div className="text-center mt-3 font-mono text-[11px] text-grey-3">
-            [SCHEDULED PEAK ENGAGEMENT // ZERO RUNTIME RUSH]
+            [SCHEDULED EDITORIAL CADENCE: CALENDAR RIGOR]
           </div>
         </div>
 
@@ -209,9 +209,9 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Bottom Playhead Timeline Scrubber */}
             <div className="space-y-1.5 bg-white/10 p-2 rounded-xl">
               <div className="flex items-center justify-between text-[8px] font-mono text-grey-2">
-                <span>00:03</span>
-                <span className="text-lime font-bold">RETENTION: 84%</span>
-                <span>00:15</span>
+                <span>HOOK</span>
+                <span className="text-lime font-bold">PACING: OPTIMIZED</span>
+                <span>OUTRO</span>
               </div>
               <div className="w-full h-1.5 bg-white/20 rounded-full overflow-hidden">
                 <div className="h-full bg-lime w-2/3 shadow-lime-glow" />
@@ -219,7 +219,7 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
           </div>
           <div className="text-center mt-2 font-mono text-[11px] text-grey-3">
-            [9:16 VERTICAL MASTERING // RETENTION CURVE OPTIMISED]
+            [9:16 VERTICAL MASTERING: AUDIENCE RETENTION]
           </div>
         </div>
 
@@ -234,15 +234,15 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
             <div className="p-3 rounded-xl bg-paper-2 border border-ink/10 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Heart className="w-4 h-4 text-ink fill-ink" />
-                <span className="font-mono text-xs font-bold">1,840 Likes</span>
+                <span className="font-mono text-xs font-bold">Community Dialogue</span>
               </div>
               <div className="flex items-center gap-2">
                 <MessageSquare className="w-4 h-4 text-ink" />
-                <span className="font-mono text-xs font-bold">142 Inbound Comments</span>
+                <span className="font-mono text-xs font-bold">Direct Responses</span>
               </div>
               <div className="flex items-center gap-1 text-lime font-mono text-xs bg-ink px-2 py-0.5 rounded font-bold">
                 <Sparkles className="w-3 h-3 text-lime" />
-                <span>Hot Lead</span>
+                <span>Commercial Lead</span>
               </div>
             </div>
 
@@ -253,11 +253,11 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
                   <span className="w-2 h-2 rounded-full bg-lime" />
                   <span className="font-mono text-xs font-bold">INBOUND COMMERCIAL ENQUIRY</span>
                 </div>
-                <span className="font-mono text-[9px] text-grey-2">2m ago</span>
+                <span className="font-mono text-[9px] text-grey-2">Recent</span>
               </div>
 
               <p className="font-sans text-xs text-white/90 leading-relaxed italic">
-                &ldquo;Saw your video on creative matrix testing. We have a £40k/mo ad spend — can we schedule a consultation this week?&rdquo;
+                &ldquo;Saw your video on creative matrix testing. We are looking to scale our digital presence — can we schedule a consultation this week?&rdquo;
               </p>
 
               {/* Automated Triage Action */}
@@ -271,15 +271,15 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
           </div>
           <div className="text-center mt-3 font-mono text-[11px] text-ink font-bold">
-            [ACTIVE AUDIENCE TRIAGE // TURNING ENGAGEMENT INTO REVENUE]
+            [ACTIVE AUDIENCE TRIAGE: CONVERSION BLUEPRINT]
           </div>
         </div>
       </div>
 
       {/* Stage Bottom Bar */}
       <div className="relative z-10 flex items-center justify-between border-t border-ink/10 pt-3 text-[10px] font-mono text-grey-3">
-        <span>DELIVERABLE: HIGH-RETENTION ASSETS</span>
-        <span className="text-ink font-bold">PROPRIETARY CALENDAR RIGOR</span>
+        <span>DELIVERABLE: EDITORIAL ASSETS</span>
+        <span className="text-ink font-bold">CALENDAR RIGOR</span>
       </div>
     </div>
   );
