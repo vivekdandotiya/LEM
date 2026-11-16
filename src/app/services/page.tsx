@@ -1,133 +1,201 @@
-'use client';
-
 import React from 'react';
-import Image from 'next/image';
-import { business } from '@/data/business';
-import { DripLink } from '@/components/animorio/drip/DripLink';
-import { FinalCTA } from '@/components/home/FinalCTA';
-import { ArrowUpRight } from 'lucide-react';
-import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
-import { StackSeparate } from '@/components/stack/StackSeparate';
-import { ResponsiveCardImage } from '@/components/ui/ResponsiveCardImage';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { CylinderGallery } from '@/components/shared/CylinderGallery';
+import { CircleServiceRow } from '@/components/shared/CircleServiceRow';
+import { Testimonials } from '@/components/shared/Testimonials';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
-const panelImages: Record<string, string> = {
-  seo: '/images/pages/P01-services-seo-hero-16x9.webp',
-  'meta-ads': '/images/pages/P03-services-meta-hero-16x9.webp',
-  'social-media': '/images/pages/P05-services-social-hero-16x9.webp',
-  'web-development': '/images/pages/P07-services-web-hero-16x9.webp',
+export const metadata: Metadata = {
+  title: 'Services — Five Integrated Growth Disciplines',
+  description:
+    'Explore our 5 core disciplines: SEO, PPC Advertising, Social Media Marketing, Web Development, and Video & Photo Production.',
 };
 
-const sixWordLines: Record<string, string> = {
-  seo: 'Be the answer when they search.',
-  'meta-ads': 'Ads people stop scrolling to buy.',
-  'social-media': 'Editorial content with a living pulse.',
-  'web-development': 'Sub-second sites built to convert visits.',
-};
+const SERVICES_DATA = [
+  {
+    index: 1,
+    slug: 'seo',
+    title: 'Search Engine Optimization',
+    tagline: 'Topical Authority & Crawl Architecture',
+    description:
+      "We don't just rank websites. We build comprehensive topical entity maps, resolve technical crawl bottlenecks, and compound organic revenue visibility.",
+    deliverables: [
+      'Topical Entity Architecture',
+      'Technical Core Vitals',
+      'Crawl Path Optimization',
+      'Editorial Authority Links',
+      'Revenue Search Analytics',
+    ],
+    imageSrc: '/images/services/cylinder-strategy-session.webp',
+    imageAlt: 'Lead Edge technical SEO strategy and analytics architecture',
+    reversed: false,
+  },
+  {
+    index: 2,
+    slug: 'ppc',
+    title: 'Pay-Per-Click Advertising',
+    tagline: 'Precision Acquisition & Scale',
+    description:
+      "Stop wasting money on ads that don't convert. We engineer high-converting paid funnels across Google and Meta powered by algorithmic audience modeling and hook diversity.",
+    deliverables: [
+      'Creative Hook Diversity',
+      'Algorithmic Bidding Models',
+      'Multi-Variant Copy Testing',
+      'First-Party Conversion API',
+      'Transparent ROAS Attribution',
+    ],
+    imageSrc: '/images/hero/hero-04-stridefit-runner-4x5.webp',
+    imageAlt: 'Dynamic performance paid media creative',
+    reversed: true,
+  },
+  {
+    index: 3,
+    slug: 'social-media',
+    title: 'Social Media Marketing',
+    tagline: 'Brand Gravity & Organic Resonance',
+    description:
+      'Transform passive scrollers into loyal brand advocates through structured editorial calendars, high-retention vertical video, and proactive community engagement.',
+    deliverables: [
+      'Editorial Content Calendars',
+      'High-Retention Vertical Reels',
+      'Distinct Visual Identity',
+      'Proactive Community Care',
+      'Organic Demand Capture',
+    ],
+    imageSrc: '/images/hero/hero-07-ember-roasters-coffee-4x5.webp',
+    imageAlt: 'Warm editorial social media photography',
+    reversed: false,
+  },
+  {
+    index: 4,
+    slug: 'web-development',
+    title: 'Web Development',
+    tagline: 'Engineered Conversion & Architecture',
+    description:
+      'Bespoke, high-performance web applications built on Next.js. Engineered for sub-second load times, fluid device geometry, and frictionless conversion funnels.',
+    deliverables: [
+      'Sub-Second Core Web Vitals',
+      'Bespoke Next.js Architecture',
+      'Fluid Multi-Device Layouts',
+      'Zero Template Bloat',
+      'High-Conversion Funnels',
+    ],
+    imageSrc: '/images/hero/hero-10-barkley-bites-dog-4x5.webp',
+    imageAlt: 'Custom high-performance web development interface',
+    reversed: true,
+  },
+  {
+    index: 5,
+    slug: 'video-photo',
+    title: 'Video Editing & Photo Creation',
+    tagline: 'Cinematic Storytelling & Visual Craft',
+    description:
+      'Full-service studio production delivering cinematic brand commercials, high-retention social reels, and high-resolution editorial product photography that commands attention.',
+    deliverables: [
+      'Cinematic Commercial Production',
+      '9:16 High-Retention Reels',
+      'Editorial Product Stills',
+      'Precision Color Grading',
+      'Multi-Platform Sound Design',
+    ],
+    imageSrc: '/images/services/video-photo/video-photo-hero.webp',
+    imageAlt: 'Cinematic cinema camera setup with prime lens',
+    reversed: false,
+  },
+];
 
 export default function ServicesPage() {
   return (
-    <div className="pt-28 sm:pt-36 bg-transparent select-none">
-      {/* 1. Kinetic Hero Header */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-16 sm:pb-20 border-b border-ink/10">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-          <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
-            SERVICES OVERVIEW
-          </span>
+    <main className="overflow-hidden bg-[#F6F3EC] text-ink select-none">
+      {/* 1. Split Hero with 3D Cylinder Gallery */}
+      <section className="pt-28 sm:pt-36 pb-20 sm:pb-28 border-b border-ink/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left: 3D Rotating Cylinder Gallery (6 cols) */}
+            <div className="lg:col-span-6 flex justify-center">
+              <CylinderGallery />
+            </div>
+
+            {/* Right: Headline & Statement (6 cols) */}
+            <div className="lg:col-span-6 flex flex-col justify-center">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-ink/10 text-xs font-mono uppercase tracking-widest text-stone mb-6 w-fit shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5 text-gold" />
+                <span>Our Five Disciplines</span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-ink tracking-tight leading-[0.96] mb-6">
+                Five integrated disciplines.{' '}
+                <span className="font-serif italic font-normal text-gold-deep">
+                  Zero fragmentation.
+                </span>
+              </h1>
+
+              <p className="text-base sm:text-lg font-sans text-stone leading-relaxed mb-8 max-w-lg">
+                Unified organic search, performance acquisition, bespoke web engineering, and cinematic visual production under one roof.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href="#services-list"
+                  className="btn-primary text-xs px-6 py-3 rounded-full font-semibold"
+                >
+                  Explore Disciplines ↓
+                </a>
+                <Link
+                  href="/contact"
+                  className="btn-secondary text-xs px-6 py-3 rounded-full font-semibold"
+                >
+                  Book Strategy Call
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-
-        {/* H1 max 8 words */}
-        <h1 className="text-fs-xl font-display font-extrabold text-ink tracking-tight leading-[0.92] max-w-4xl mb-6">
-          Four disciplines built for <span className="serif-swap text-ink">momentum.</span>
-        </h1>
-
-        <p className="text-base sm:text-lg font-sans text-grey-3 max-w-xl leading-relaxed">
-          We master four core practices and integrate them into one compounding growth engine.
-        </p>
       </section>
 
-      {/* 2. Four Service Panels in Stack-Then-Separate 2x2 Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-24">
-        <StackSeparate
-          items={business.services}
-          layout="grid2x2"
-          renderCard={(service, idx, isPeeled, isActive) => {
-            const imgSrc = panelImages[service.slug] || '/images/pages/P01-services-seo-hero-16x9.webp';
-            const line = sixWordLines[service.slug] || service.headline;
-            const num = `0${idx + 1}`;
-
-            return (
-              <article
-                className={`group relative rounded-[28px] overflow-hidden border transition-colors duration-300 bg-paper-2 card-glass-elevated shadow-soft-lg flex flex-col justify-between h-[520px] sm:h-[540px] ${
-                  isActive
-                    ? 'border-lime shadow-soft-md'
-                    : isPeeled
-                    ? 'border-ink/10 shadow-soft-sm'
-                    : 'border-ink/10 opacity-90'
-                }`}
-              >
-                {/* Top Image Section */}
-                <div className="relative w-full aspect-[16/9] min-h-[200px] overflow-hidden">
-                  <ResponsiveCardImage
-                    src={imgSrc}
-                    alt={`${service.title} discipline visual`}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-                    priority={idx < 2}
-                    className="transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="px-3 py-1 rounded-full bg-ink/90 text-white font-mono text-xs uppercase tracking-wider border border-white/10">
-                      {num} / {service.shortTitle}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content Section */}
-                <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-4xl sm:text-5xl font-display font-extrabold text-outline group-hover:text-ink transition-colors duration-300">
-                        {num}
-                      </span>
-                      <SparkleGlyph size={16} className="text-lime" />
-                    </div>
-
-                    <h2 className="text-xl sm:text-2xl font-display font-bold text-ink mb-2">
-                      {service.title}
-                    </h2>
-
-                    <p className="text-base font-display font-medium text-ink leading-snug mb-2">
-                      {line}
-                    </p>
-
-                    <p className="text-xs sm:text-sm font-sans text-grey-3 leading-relaxed line-clamp-2">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* "Discover" CTA */}
-                  <div className="pt-4 mt-4 border-t border-ink/8 flex items-center justify-between">
-                    <DripLink
-                      href={`/services/${service.slug}`}
-                      className="btn-primary text-xs font-bold flex items-center gap-2 group-hover:bg-lime-soft transition-colors"
-                    >
-                      <span>Discover</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </DripLink>
-
-                    <span className="text-[11px] font-mono uppercase tracking-widest text-grey-2">
-                      {service.shortTitle}
-                    </span>
-                  </div>
-                </div>
-              </article>
-            );
-          }}
-        />
+      {/* 2. Five Circle Service Rows */}
+      <section id="services-list" className="bg-[#F6F3EC]">
+        {SERVICES_DATA.map((srv) => (
+          <CircleServiceRow
+            key={srv.slug}
+            index={srv.index}
+            slug={srv.slug}
+            title={srv.title}
+            tagline={srv.tagline}
+            description={srv.description}
+            deliverables={srv.deliverables}
+            imageSrc={srv.imageSrc}
+            imageAlt={srv.imageAlt}
+            reversed={srv.reversed}
+          />
+        ))}
       </section>
 
-      {/* 3. Final Call to Action */}
-      <FinalCTA />
-    </div>
+      {/* 3. Testimonials (Client Reviews Slider) */}
+      <Testimonials theme="light" />
+
+      {/* 4. Final CTA Banner */}
+      <section className="py-20 sm:py-28 bg-[#EFEBE2] border-t border-ink/10 text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <span className="text-[11px] font-mono uppercase tracking-widest text-gold-deep font-semibold block mb-3">
+            START YOUR CAMPAIGN
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-ink tracking-tight mb-4">
+            Unite your growth channels today.
+          </h2>
+          <p className="text-sm sm:text-base font-sans text-stone max-w-lg mx-auto mb-8 leading-relaxed">
+            Talk directly with our discipline leads to audit your existing media, search, and web funnels.
+          </p>
+          <Link
+            href="/contact"
+            className="btn-primary inline-flex items-center gap-2 text-xs px-7 py-3.5 rounded-full font-semibold group"
+          >
+            <span>Book Strategy Call</span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }

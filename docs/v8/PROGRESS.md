@@ -246,7 +246,28 @@ Tracking execution of tasks **T0 through T10** in accordance with the V8 Master 
 ---
 
 ## Task T7: Services Overview
-- **Status:** NOT STARTED
+- **Status:** COMPLETED ✅
+- **Date:** 2026-11-16
+- **Summary:**
+  - Rebuilt `/services` strictly adhering to Part B5 specification:
+    1. Split Hero with 3D Rotating Cylinder Gallery: Left side hosts `CylinderGallery.tsx` displaying the 5 disciplines in CSS 3D space (`perspective: 1400px`, `transform-style: preserve-3d`) with automatic rotation and interactive mouse/touch drag navigation. Right side features headline "Five integrated disciplines. Zero fragmentation." and client discipline positioning with <= 14 words supporting line.
+    2. Five Circle Service Rows (`CircleServiceRow.tsx`): Alternating editorial rows for SEO, PPC, Social Media, Web Development, and Video & Photo Production. Each row features a 380px circular masked image, animated SVG gold drawing ring triggered on scroll, numbered mono pill, headline, verbatim client copy, deliverable tags, and link to dedicated service page.
+    3. Client Testimonials Slider: Honest sample draft reviews (`verified: false`, zero fabricated claims).
+    4. Next Steps Final CTA banner: "Unite your growth channels today." with "Book Strategy Call" primary button linking to `/contact`.
+  - Audited with Playwright: 0 broken images, 0 404s, 0 lime, 0 blue, 0 leaked developer strings.
+  - Captured 1440 desktop and 390 mobile full-page screenshots to `/docs/v8/T7-evidence/`.
+- **Files Touched:**
+  - `docs/v8/PROGRESS.md`
+  - `docs/v8/T7-evidence/services-audit.txt`
+  - `docs/v8/T7-evidence/services-desktop-1440.png`
+  - `docs/v8/T7-evidence/services-hero-cylinder.png`
+  - `docs/v8/T7-evidence/services-mobile-390.png`
+  - `src/app/services/page.tsx`
+  - `src/components/shared/CircleServiceRow.tsx`
+  - `src/components/shared/CylinderGallery.tsx`
+  - `tools/generate-t7-evidence.mjs`
+- **Evidence Path:** `/docs/v8/T7-evidence/`
+- **Git Commit:** `T7: services overview`
 
 ---
 

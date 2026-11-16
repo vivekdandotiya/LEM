@@ -51,7 +51,7 @@ const DEFAULT_CYLINDER_CARDS: CylinderCard[] = [
     id: 'video',
     title: 'Video & Photo Production',
     tagline: 'Cinematic Editorial Visuals',
-    image: '/images/services/video-photo/cylinder.webp',
+    image: '/images/services/video-photo/video-photo-cylinder.webp',
     slug: 'video-photo',
   },
 ];
