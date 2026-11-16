@@ -221,7 +221,27 @@ Tracking execution of tasks **T0 through T10** in accordance with the V8 Master 
 ---
 
 ## Task T6: About Page
-- **Status:** NOT STARTED
+- **Status:** COMPLETED ✅
+- **Date:** 2026-11-16
+- **Summary:**
+  - Rebuilt `/about` strictly following Part B4 structure:
+    1. Full-bleed office video hero (`100svh`) powered by `public/videos/about/about-hero` (WebM, MP4, 720p) with AVIF/WebP poster fallback, central headline "Built on rigorous engineering and conviction.", and tagline <= 14 words.
+    2. "Our Description": 2-column editorial statement with large display text, 2 short sentences of body copy, and tall high-res agency photography (`/images/about/about-team-table.webp`).
+    3. "How Our Team Works" (`AboutTeamCards.tsx`): 4 photo cards gliding in like papers with smooth easing (`cubic-bezier(0.22, 1, 0.36, 1)`) representing the 4 operating disciplines (Thesis & Architecture, Systems Modeling, Cross-Discipline Alignment, Tactile Production).
+    4. Client Perspective Testimonials: Dark theme review slider (`<Testimonials theme="dark" />`) with honest sample review cards and zero fabricated revenue numbers.
+    5. Next Steps Final CTA banner with "Book Strategy Call" button linking to `/contact`.
+  - Verified clean Next.js production build (`npm run build`).
+  - Captured full-page 1440 desktop and 390 mobile screenshots in `docs/v8/T6-evidence/`.
+- **Files Touched:**
+  - `docs/v8/PROGRESS.md`
+  - `docs/v8/T6-evidence/about-audit.txt`
+  - `docs/v8/T6-evidence/about-desktop-1440.png`
+  - `docs/v8/T6-evidence/about-mobile-390.png`
+  - `src/app/about/page.tsx`
+  - `src/components/about/AboutTeamCards.tsx`
+  - `tools/generate-t6-evidence.mjs`
+- **Evidence Path:** `/docs/v8/T6-evidence/`
+- **Git Commit:** `T6: about`
 
 ---
 
