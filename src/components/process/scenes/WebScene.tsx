@@ -49,15 +49,15 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
               {/* Connecting Paths */}
               <path
                 d="M160 20 L40 70 M160 20 L120 70 M160 20 L200 70 M160 20 L280 70"
-                stroke="#C9F53D"
+                stroke="#B08D57"
                 strokeWidth="1.5"
                 strokeDasharray="4 3"
                 fill="none"
                 opacity="0.8"
               />
               {/* Root Node */}
-              <rect x="110" y="4" width="100" height="26" rx="6" fill="#1B2A00" stroke="#C9F53D" strokeWidth="1.5" />
-              <text x="160" y="21" fill="#C9F53D" fontSize="11" fontFamily="monospace" textAnchor="middle" fontWeight="bold">
+              <rect x="110" y="4" width="100" height="26" rx="6" fill="#1C1D1F" stroke="#B08D57" strokeWidth="1.5" />
+              <text x="160" y="21" fill="#B08D57" fontSize="11" fontFamily="monospace" textAnchor="middle" fontWeight="bold">
                 HOME (/)
               </text>
 
@@ -71,8 +71,8 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
               <rect x="170" y="65" width="60" height="22" rx="4" fill="#17191B" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
               <text x="200" y="80" fill="#EEEBE3" fontSize="9" fontFamily="monospace" textAnchor="middle">/about</text>
 
-              <rect x="250" y="65" width="60" height="22" rx="4" fill="#1B2A00" stroke="#C9F53D" strokeWidth="1" />
-              <text x="280" y="80" fill="#C9F53D" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">/contact</text>
+              <rect x="250" y="65" width="60" height="22" rx="4" fill="#1C1D1F" stroke="#B08D57" strokeWidth="1" />
+              <text x="280" y="80" fill="#B08D57" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">/contact</text>
             </svg>
           </div>
           <div className="text-center mt-3 font-mono text-[11px] text-grey-2">
@@ -99,7 +99,7 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
 
             {/* High-Fi Finished UI State */}
-            <div className="p-3.5 rounded-xl bg-[#1B2A00] border-2 border-lime shadow-lime-glow flex flex-col justify-between aspect-[4/3]">
+            <div className="p-3.5 rounded-xl bg-[#1C1D1F] border-2 border-lime shadow-lime-glow flex flex-col justify-between aspect-[4/3]">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[10px] text-lime font-bold">02 / CRAFTED UI</span>
                 <span className="w-2 h-2 rounded-full bg-lime" />
@@ -187,21 +187,21 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
           <div className="w-full max-w-md mx-auto space-y-3">
             {/* 3 Core Vitals Ring Gauges */}
             <div className="grid grid-cols-3 gap-2">
-              <div className="p-3 rounded-xl bg-[#1B2A00] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
+              <div className="p-3 rounded-xl bg-[#1C1D1F] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
                 <div className="w-12 h-12 rounded-full border-2 border-lime flex items-center justify-center mb-1">
                   <span className="font-mono font-bold text-xs text-lime">FAST</span>
                 </div>
                 <span className="font-mono text-[9px] text-white">PERFORMANCE</span>
               </div>
 
-              <div className="p-3 rounded-xl bg-[#1B2A00] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
+              <div className="p-3 rounded-xl bg-[#1C1D1F] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
                 <div className="w-12 h-12 rounded-full border-2 border-lime flex items-center justify-center mb-1">
                   <span className="font-mono font-bold text-xs text-lime">WCAG</span>
                 </div>
                 <span className="font-mono text-[9px] text-white">ACCESSIBILITY</span>
               </div>
 
-              <div className="p-3 rounded-xl bg-[#1B2A00] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
+              <div className="p-3 rounded-xl bg-[#1C1D1F] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
                 <div className="w-12 h-12 rounded-full border-2 border-lime flex items-center justify-center mb-1">
                   <span className="font-mono font-bold text-xs text-lime">CLEAN</span>
                 </div>

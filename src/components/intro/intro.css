@@ -1,10 +1,10 @@
-/* Brand Flood Intro Styles */
+/* Brand Flood Intro Styles (V8 Professional Palette: Ivory, Ink, Gold) */
 
 .brand-intro-stage {
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background-color: var(--paper, #EEEBE3);
+  background-color: var(--ivory, #F6F3EC);
   isolation: isolate;
   overflow: hidden;
   display: flex;
@@ -13,16 +13,16 @@
   user-select: none;
 }
 
-/* Hairline 3px Lime Progress Line */
+/* Hairline 2px Gold Progress Line */
 .brand-intro-progress-bar {
   position: absolute;
   top: 0;
   left: 0;
-  height: 3px;
-  background-color: var(--lime, #C9F53D);
+  height: 2px;
+  background-color: var(--gold, #B08D57);
   width: 0%;
   z-index: 50;
-  box-shadow: 0 0 12px rgba(201, 245, 61, 0.6);
+  box-shadow: 0 0 12px rgba(176, 141, 87, 0.6);
   transition: width 0.1s linear;
 }
 
@@ -32,7 +32,7 @@
 
 @keyframes introBarFlash {
   0% { filter: brightness(1); }
-  50% { filter: brightness(2.2); box-shadow: 0 0 24px rgba(201, 245, 61, 1); }
+  50% { filter: brightness(1.8); box-shadow: 0 0 20px rgba(176, 141, 87, 0.9); }
   100% { filter: brightness(1); }
 }
 
@@ -59,7 +59,7 @@
   text-transform: uppercase;
   letter-spacing: -0.035em;
   line-height: 0.95;
-  color: #ECE9DF;
+  color: #F6F3EC;
   mix-blend-mode: difference;
   position: relative;
   display: inline-flex;
@@ -79,14 +79,14 @@
   width: 0.3em;
 }
 
-/* Pen Dot Drawing Edge */
+/* Pen Dot Drawing Edge in Gold */
 .brand-intro-pen-dot {
   position: absolute;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--lime, #C9F53D);
-  box-shadow: 0 0 10px rgba(201, 245, 61, 0.9);
+  background-color: var(--gold, #B08D57);
+  box-shadow: 0 0 10px rgba(176, 141, 87, 0.8);
   pointer-events: none;
   opacity: 0;
   z-index: 40;
@@ -103,7 +103,7 @@
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #ECE9DF;
+  color: #F6F3EC;
   mix-blend-mode: difference;
   opacity: 0;
   transform: translateY(12px);
@@ -134,17 +134,17 @@
   left: 0;
   width: 200%;
   height: 280px;
-  fill: var(--ink, #080A0B);
+  fill: var(--ink, #0F1011);
   will-change: transform;
 }
 
 .brand-intro-wave-back {
-  fill: #17191B;
+  fill: #1C1D1F;
   opacity: 0.85;
 }
 
 .brand-intro-wave-front {
-  fill: var(--ink, #080A0B);
+  fill: var(--ink, #0F1011);
 }
 
 .brand-intro-flood-body {
@@ -153,7 +153,7 @@
   left: 0;
   width: 100%;
   height: calc(100% - 278px);
-  background-color: var(--ink, #080A0B);
+  background-color: var(--ink, #0F1011);
 }
 
 /* Droplets */
@@ -162,7 +162,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: var(--lime, #C9F53D);
+  background-color: var(--gold, #B08D57);
   pointer-events: none;
   opacity: 0;
 }

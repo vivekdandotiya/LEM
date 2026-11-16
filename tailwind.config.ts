@@ -10,59 +10,55 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        lime: {
-          DEFAULT: "var(--lime)",
-          soft: "var(--lime-soft)",
-          ink: "var(--lime-ink)",
-        },
-        paper: {
-          DEFAULT: "var(--paper)",
-          2: "var(--paper-2)",
+        // V8 Professional System Tokens
+        ivory: {
+          DEFAULT: "var(--ivory)",
+          2: "var(--ivory-2)",
         },
         ink: {
           DEFAULT: "var(--ink)",
         },
         charcoal: {
           DEFAULT: "var(--charcoal)",
-          950: "#080A0B",
-          900: "#101214",
-          850: "#17191B",
-          800: "#222528",
-          700: "#363A3E",
-          600: "#505459",
-          500: "#6E6B63",
         },
-        grey: {
-          1: "var(--grey-1)",
-          2: "var(--grey-2)",
-          3: "var(--grey-3)",
+        graphite: {
+          DEFAULT: "var(--graphite)",
         },
-        bronze: {
-          DEFAULT: "var(--bronze)",
+        stone: {
+          DEFAULT: "var(--stone)",
+        },
+        gold: {
+          DEFAULT: "var(--gold)",
+          soft: "var(--gold-soft)",
+          deep: "var(--gold-deep)",
+        },
+        line: {
+          DEFAULT: "var(--line)",
+          dark: "var(--line-dark)",
+        },
+        // Legacy fallbacks mapped to V8
+        paper: {
+          DEFAULT: "var(--ivory)",
+          2: "var(--ivory-2)",
+        },
+        lime: {
+          DEFAULT: "var(--gold)",
+          soft: "var(--gold-soft)",
+          ink: "var(--ink)",
         },
         accent: {
-          DEFAULT: "var(--lime)",
-          tint: "var(--lime-soft)",
-          shade: "var(--lime-ink)",
-          subtle: "rgba(201, 245, 61, 0.15)",
+          DEFAULT: "var(--gold)",
+          tint: "var(--gold-soft)",
+          shade: "var(--gold-deep)",
+          subtle: "rgba(176, 141, 87, 0.15)",
         },
         surface: {
-          base: "var(--paper)",
-          warm: "var(--paper)",
-          muted: "var(--paper-2)",
-          dark: "var(--ink)",
-          card: "var(--paper-2)",
-          glass: "rgba(238, 235, 227, 0.85)",
-        },
-        warmgray: {
-          50: "#FAF8F5",
-          100: "#F6F4EE",
-          200: "#EEEBE3",
-          300: "#D9D5CB",
-          400: "#A8A499",
-          500: "#6E6B63",
-          600: "#4A4740",
-          700: "#24221D",
+          base: "var(--ivory)",
+          warm: "var(--ivory)",
+          muted: "var(--ivory-2)",
+          dark: "var(--charcoal)",
+          card: "var(--white)",
+          glass: "rgba(246, 243, 236, 0.88)",
         },
       },
       fontFamily: {
@@ -72,28 +68,23 @@ const config: Config = {
         mono: ["'JetBrains Mono Variable'", "'JetBrains Mono'", "monospace"],
       },
       fontSize: {
-        "fs-mega": "clamp(3.4rem, 11.5vw, 13rem)",
-        "fs-xl": "clamp(2.6rem, 7vw, 7rem)",
-        "fs-lg": "clamp(2rem, 4.6vw, 4.5rem)",
-        "fs-md": "clamp(1.35rem, 2.2vw, 2rem)",
-        "fs-body": "clamp(1rem, 0.95rem + 0.25vw, 1.125rem)",
-        "fs-label": "0.75rem",
-        "display-hero": "clamp(3.4rem, 11.5vw, 13rem)",
-        "display-1": "clamp(2.6rem, 7vw, 7rem)",
-        "display-2": "clamp(2rem, 4.6vw, 4.5rem)",
-        "display-3": "clamp(1.35rem, 2.2vw, 2rem)",
+        "fs-hero": "clamp(2.6rem, 6vw, 5.75rem)",
+        "fs-h2": "clamp(2rem, 4vw, 3.5rem)",
+        "fs-h3": "clamp(1.25rem, 2vw, 1.6rem)",
+        "fs-body": "1.0625rem",
+        "fs-small": "0.75rem",
       },
       borderRadius: {
-        'card': '24px',
-        'modal': '28px',
+        'card': '20px',
+        'modal': '24px',
         'pill': '9999px',
       },
       boxShadow: {
-        'soft-sm': '0 4px 16px -2px rgba(8, 10, 11, 0.10), 0 1px 3px -1px rgba(8, 10, 11, 0.06)',
-        'soft-md': '0 12px 32px -4px rgba(8, 10, 11, 0.15), 0 4px 10px -2px rgba(8, 10, 11, 0.08)',
-        'soft-lg': '0 24px 50px -8px rgba(8, 10, 11, 0.22), 0 8px 18px -4px rgba(8, 10, 11, 0.12)',
-        'glass': '0 16px 40px -8px rgba(8, 10, 11, 0.24)',
-        'lime-glow': '0 0 35px -5px rgba(201, 245, 61, 0.4)',
+        'soft-sm': '0 2px 8px -1px rgba(15, 16, 17, 0.06)',
+        'soft-md': '0 8px 24px -4px rgba(15, 16, 17, 0.08)',
+        'soft-lg': '0 16px 36px -6px rgba(15, 16, 17, 0.10)',
+        'glass': '0 12px 32px -4px rgba(15, 16, 17, 0.12)',
+        'gold-glow': '0 0 35px -5px rgba(176, 141, 87, 0.35)',
       },
       transitionTimingFunction: {
         'editorial': 'cubic-bezier(0.22, 1, 0.36, 1)',

@@ -34,9 +34,9 @@ export function DripTransitionProvider({ children }) {
   const DROPS = 2;
   const SPEED = 1.0;
 
-  // Colors: charcoal paint with lime glint per V3 spec
-  const PAINT = '#14110F';
-  const GLINT = '#C9F53D';
+  // Colors: ink paint with gold glint per V8 spec
+  const PAINT = '#0F1011';
+  const GLINT = '#B08D57';
   const BAND = 3;
   const STEP = 3;
 
@@ -149,7 +149,7 @@ export function DripTransitionProvider({ children }) {
     const sx = sag.x * W;
     const r = Math.min(5, sag.h * 0.45);
     // Idle band is lime hairline only — no dark mass across top edge
-    ctx.fillStyle = GLINT; // #C9F53D
+    ctx.fillStyle = GLINT;
     ctx.beginPath();
     ctx.arc(sx, 3 + sag.h - r, r, 0, Math.PI * 2);
     ctx.fill();

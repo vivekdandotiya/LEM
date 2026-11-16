@@ -16,7 +16,7 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
       <div
         className="absolute inset-0 opacity-15 pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(circle, #C9F53D 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, #B08D57 1px, transparent 1px)',
           backgroundSize: '20px 20px',
         }}
       />
@@ -114,15 +114,15 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
                 {/* Connecting Paths */}
                 <path
                   d="M160 16 L60 60 M160 16 L160 60 M160 16 L260 60"
-                  stroke="#C9F53D"
+                  stroke="#B08D57"
                   strokeWidth="1.5"
                   strokeDasharray="4 3"
                   fill="none"
                   className="opacity-70"
                 />
                 {/* Root Node */}
-                <rect x="110" y="4" width="100" height="24" rx="6" fill="#1B2A00" stroke="#C9F53D" strokeWidth="1" />
-                <text x="160" y="20" fill="#C9F53D" fontSize="10" fontFamily="monospace" textAnchor="middle" fontWeight="bold">
+                <rect x="110" y="4" width="100" height="24" rx="6" fill="#1C1D1F" stroke="#B08D57" strokeWidth="1" />
+                <text x="160" y="20" fill="#B08D57" fontSize="10" fontFamily="monospace" textAnchor="middle" fontWeight="bold">
                   leadedge.agency
                 </text>
                 {/* Child Nodes */}
@@ -174,7 +174,7 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
             <div className="absolute inset-16 rounded-full border border-lime/20 animate-pulse" />
 
             {/* Central Domain Core */}
-            <div className="relative z-10 w-24 h-24 rounded-full bg-[#1B2A00] border-2 border-lime flex flex-col items-center justify-center shadow-lime-glow">
+            <div className="relative z-10 w-24 h-24 rounded-full bg-[#1C1D1F] border-2 border-lime flex flex-col items-center justify-center shadow-lime-glow">
               <Globe className="w-5 h-5 text-lime mb-1" />
               <span className="font-mono font-bold text-[10px] text-lime">LEAD EDGE</span>
               <span className="font-mono text-[8px] text-white/70">CORE DOMAIN</span>
@@ -203,10 +203,10 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
 
             {/* Pulses flowing inward SVG */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 300 300">
-              <path d="M60 40 Q 150 100 150 150" stroke="#C9F53D" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
-              <path d="M240 40 Q 150 100 150 150" stroke="#C9F53D" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
-              <path d="M60 260 Q 150 200 150 150" stroke="#C9F53D" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
-              <path d="M240 260 Q 150 200 150 150" stroke="#C9F53D" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
+              <path d="M60 40 Q 150 100 150 150" stroke="#B08D57" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
+              <path d="M240 40 Q 150 100 150 150" stroke="#B08D57" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
+              <path d="M60 260 Q 150 200 150 150" stroke="#B08D57" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
+              <path d="M240 260 Q 150 200 150 150" stroke="#B08D57" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
             </svg>
           </div>
           <div className="text-center mt-2 font-mono text-[11px] text-grey-2">
@@ -231,7 +231,7 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Ranked Results List */}
             <div className="space-y-2 pt-2">
               {/* Winner #1: Lead Edge */}
-              <div className="p-3.5 rounded-xl bg-[#1B2A00] border-2 border-lime flex items-center justify-between shadow-lime-glow transition-all duration-700">
+              <div className="p-3.5 rounded-xl bg-[#1C1D1F] border-2 border-lime flex items-center justify-between shadow-lime-glow transition-all duration-700">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-lime text-ink font-mono font-black text-xs flex items-center justify-center">
                     TARGET

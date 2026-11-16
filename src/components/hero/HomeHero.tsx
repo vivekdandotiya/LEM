@@ -163,14 +163,14 @@ export function HomeHero() {
             aria-live="polite"
             className="text-[clamp(2.75rem,8.5vw,7.8rem)] font-display font-extrabold uppercase leading-[0.88] tracking-[-0.04em] text-white"
           >
-            <InkDripText text={currentHeadline.prefix} color="#C9F53D" maxDrips={1} />{' '}
-            <span className="relative inline-block font-serif lowercase italic text-lime font-normal tracking-normal mx-1">
+            <InkDripText text={currentHeadline.prefix} color="#F6F3EC" maxDrips={1} />{' '}
+            <span className="relative inline-block font-serif lowercase italic text-[#D9C29A] font-normal tracking-normal mx-1">
               {currentHeadline.italicWord}
-              {/* Hand-drawn swash underline */}
+              {/* Hand-drawn swash underline in gold */}
               <svg
                 viewBox="0 0 280 24"
                 fill="none"
-                className="absolute -bottom-3 left-0 w-full text-lime pointer-events-none"
+                className="absolute -bottom-3 left-0 w-full text-[#B08D57] pointer-events-none"
                 aria-hidden="true"
               >
                 <path

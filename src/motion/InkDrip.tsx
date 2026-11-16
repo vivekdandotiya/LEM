@@ -19,7 +19,7 @@ interface DripSVGProps {
   delay?: number;
 }
 
-export function DripSVG({ color = '#080A0B', delay = 0 }: DripSVGProps) {
+export function DripSVG({ color = '#0F1011', delay = 0 }: DripSVGProps) {
   const delaySec = `${delay.toFixed(2)}s`;
 
   return (
@@ -73,7 +73,7 @@ interface InkDripTextProps {
 export function InkDripText({
   text,
   className = '',
-  color = '#080A0B',
+  color = '#0F1011',
   maxDrips = 2,
 }: InkDripTextProps) {
   const containerRef = useRef<HTMLSpanElement>(null);
@@ -187,7 +187,7 @@ export function InkDripText({
 // Button anchor for primary CTA buttons
 export function InkDripAnchorChar({
   char,
-  color = '#080A0B',
+  color = '#0F1011',
   delay = 0.5,
 }: {
   char: string;

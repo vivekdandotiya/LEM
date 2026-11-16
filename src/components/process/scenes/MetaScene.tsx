@@ -16,7 +16,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
-          backgroundImage: 'linear-gradient(to right, #C9F53D 1px, transparent 1px), linear-gradient(to bottom, #C9F53D 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(to right, #B08D57 1px, transparent 1px), linear-gradient(to bottom, #B08D57 1px, transparent 1px)',
           backgroundSize: '36px 36px',
         }}
       />
@@ -72,7 +72,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
 
             {/* Bottom of Funnel (Conversion) */}
-            <div className="w-[68%] mx-auto p-3 rounded-xl bg-[#1B2A00] border-2 border-lime shadow-lime-glow flex items-center justify-between">
+            <div className="w-[68%] mx-auto p-3 rounded-xl bg-[#1C1D1F] border-2 border-lime shadow-lime-glow flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <span className="w-6 h-6 rounded bg-lime text-ink font-mono text-[10px] flex items-center justify-center font-black">
                   03
@@ -111,7 +111,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
 
             {/* Variation B (The Winner!) */}
-            <div className="relative p-3 rounded-xl bg-[#1B2A00] border-2 border-lime flex flex-col justify-between aspect-[3/4] shadow-lime-glow scale-105 z-10">
+            <div className="relative p-3 rounded-xl bg-[#1C1D1F] border-2 border-lime flex flex-col justify-between aspect-[3/4] shadow-lime-glow scale-105 z-10">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[10px] text-lime font-bold">HOOK B</span>
                 <span className="text-[10px] font-mono text-lime font-bold">VARIANT B</span>
@@ -167,7 +167,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
             </div>
 
             {/* Center High-Intent Cluster (Active in Lime) */}
-            <div className="relative z-10 w-28 h-28 rounded-full bg-[#1B2A00] border-2 border-lime flex flex-col items-center justify-center shadow-lime-glow">
+            <div className="relative z-10 w-28 h-28 rounded-full bg-[#1C1D1F] border-2 border-lime flex flex-col items-center justify-center shadow-lime-glow">
               <Target className="w-6 h-6 text-lime mb-1" />
               <span className="font-mono font-bold text-[10px] text-lime">TARGET</span>
               <span className="font-mono text-[8px] text-white/80">FIRST-PARTY SEGMENTS</span>
@@ -213,7 +213,7 @@ export function MetaScene({ activePhase, isStatic = false }: SceneProps) {
                 <span className="font-mono text-[9px] text-lime mt-1 block">Within Unit Margins</span>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-[#1B2A00] border border-lime/40">
+              <div className="p-3.5 rounded-xl bg-[#1C1D1F] border border-lime/40">
                 <span className="font-mono text-[10px] text-lime/80 block mb-1">GROWTH TRAJECTORY</span>
                 <div className="flex items-center gap-2">
                   <span className="font-display font-bold text-lime text-base">STRUCTURED</span>

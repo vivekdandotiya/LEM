@@ -448,7 +448,7 @@ export function BrandFloodIntro() {
             <path d="M 0,160 Q 360,90 720,160 T 1440,160 T 2160,160 T 2880,160 V 320 H 0 Z" />
           </svg>
 
-          {/* Front Wave (Deep Ink #080A0B) with Lime Foam Crest Hairline */}
+          {/* Front Wave (Deep Ink #0F1011) with Gold Crest Hairline */}
           <svg
             ref={frontWaveRef}
             className="brand-intro-wave-svg brand-intro-wave-front"
@@ -458,7 +458,7 @@ export function BrandFloodIntro() {
             <path d="M 0,110 Q 360,30 720,110 T 1440,110 T 2160,110 T 2880,110 V 320 H 0 Z" />
             <path
               d="M 0,110 Q 360,30 720,110 T 1440,110 T 2160,110 T 2880,110"
-              stroke="#C9F53D"
+              stroke="#B08D57"
               strokeWidth="2.5"
               fill="none"
               strokeLinecap="round"

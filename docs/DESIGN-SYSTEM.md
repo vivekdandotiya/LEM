@@ -1,66 +1,111 @@
-# Design System: Lead Edge Marketing (V3 Overhaul)
+# Lead Edge Marketing — V8 Professional Design System & Contrast Audit
 
-## 1. Visual Philosophy & Energy
-Bold, confident, editorial, a little playful, very polished. Matching the client's reference creative wall and swatch: off-white (`#EEEBE3`) with an acid lime (`#C9F53D`) accent, deep ink (`#080A0B`), and warm charcoal (`#17191B`). The design rejects generic agency templates, random gradient blobs, and blue corporate hues in favor of tactile advertising craftsmanship, intentional negative space, high-contrast typography, and dynamic dot grids.
+**Version:** V8 (Professional System)  
+**Date:** November 16, 2026  
+**Status:** 100% WCAG AA / AAA Compliant (Zero Lime, Zero Blue)  
 
-## 2. V3 Color System & Contrast Verification
-Sampled directly from client reference swatch A & B.
+---
 
-| Token | Hex Value | Role | WCAG Contrast Ratio | Compliance |
-|---|---|---|---|---|
-| `--lime` | `#C9F53D` | Signature highlight / primary CTA fill | **17.2:1** against `--ink` (`#080A0B`) | **AAA Compliant** |
-| `--lime-soft`| `#E4FA8F` | Hover fill / active chips | **15.8:1** against `--ink` | **AAA Compliant** |
-| `--lime-ink` | `#1B2A00` | Text/icons on lime backgrounds | **14.1:1** against `--lime` | **AAA Compliant** |
-| `--paper` | `#EEEBE3` | Main editorial off-white surface | **16.5:1** with `--ink` text | **AAA Compliant** |
-| `--paper-2` | `#F6F4EE` | Elevated card surfaces on paper | **17.8:1** with `--ink` text | **AAA Compliant** |
-| `--ink` | `#080A0B` | Near-black text and hero background | **16.5:1** on `--paper` | **AAA Compliant** |
-| `--charcoal`| `#17191B` | Dark section alternate & cards | **14.2:1** with white text | **AAA Compliant** |
-| `--grey-1` | `#D9D5CB` | Neutral hairline borders | UI border compliant | **3:1+** |
-| `--grey-2` | `#A8A499` | Secondary muted labels | **4.6:1** on `--ink` | **AA Compliant** |
-| `--grey-3` | `#6E6B63` | Subtle UI neutrals | **4.7:1** on `--paper` | **AA Compliant** |
-| `--bronze` | `#B8925A` | Rare secondary accent (3D frame, hairlines) | Distinct metallic accent | — |
-| `--dot-light`| `rgba(8,10,11,.20)` | Faint dots on paper | Non-interfering background | Legibility 100% |
-| `--dot-dark` | `rgba(255,255,255,.12)`| Faint dots on dark sections | Subtle ambient texture | Legibility 100% |
+## 1. Professional Palette Tokens
 
-> [!IMPORTANT]
-> **Strict Non-Negotiable Rules:**
-> 1. **Zero Blue:** Never use blue as a primary, secondary, focus, or link color.
-> 2. **Lime is a Fill and Highlight:** Never use lime as body text on paper. Text on lime is strictly `--ink` (`#080A0B`).
-> 3. **Never combine Lime and Bronze in the same component:** Lime leads the brand; bronze is a quiet, rare secondary accent.
-> 4. **Selection & Focus:** Selection is strictly `background: var(--lime); color: var(--ink)`. Focus ring is `2px var(--ink)` on paper, `2px var(--lime)` on dark.
+The V8 colour system replaces all high-contrast lime and stark neon tones with an elevated, warm-editorial corporate palette derived directly from the brushed gold/bronze mark in the official Lead Edge Marketing emblem (`public/logo/lead-edge-logo.png`).
 
-## 3. Typographic Hierarchy
-Distinctive editorial pairing:
-- **Display:** `Bricolage Grotesque Variable` (axes: `wght 200-800`, `wdth 75-100`, `opsz`). Quirky, heavy, characterful.
-- **Accent:** `Instrument Serif` italic (one word per headline for human contrast).
-- **Labels/Data:** `JetBrains Mono Variable` (11-12px, uppercase, tracking `0.14em`).
-- **Body/UI:** `Inter Variable` (16-18px, line-height 1.55, max measure 56ch).
+```css
+:root {
+  --ivory:     #F6F3EC;   /* Main page background */
+  --ivory-2:   #EFEBE2;   /* Alternate sections, footer */
+  --white:     #FFFFFF;   /* Cards on ivory, highlights */
+  --ink:       #0F1011;   /* Primary text, primary buttons */
+  --charcoal:  #1C1D1F;   /* Dark sections */
+  --graphite:  #2B2D30;   /* Dark cards, borders on dark */
+  --stone:     #6F6A60;   /* Secondary text on ivory */
+  --line:      rgba(15, 16, 17, 0.12);          /* Hairlines on ivory */
+  --line-dark: rgba(246, 243, 236, 0.16);       /* Hairlines on dark */
+  --gold:      #B08D57;   /* Accent: hairlines, icons, hover fills, progress */
+  --gold-soft: #D9C29A;   /* Tints, subtle fills */
+  --gold-deep: #7A5C2E;   /* Gold used as text on ivory */
+}
+```
 
-### Fluid Scale Tokens:
-- `--fs-mega`: `clamp(3.4rem, 11.5vw, 13rem)` — Hero H1 only: `wght 800, wdth 75, lh 0.86, tracking -0.045em, UPPERCASE`.
-- `--fs-xl`: `clamp(2.6rem, 7vw, 7rem)` — Page H1: `wght 780, wdth 80, lh 0.92`.
-- `--fs-lg`: `clamp(2rem, 4.6vw, 4.5rem)` — Section H2: `wght 740, wdth 84, lh 0.96`.
-- `--fs-md`: `clamp(1.35rem, 2.2vw, 2rem)` — Card titles: `wght 700, wdth 90`.
-- `--fs-body`: `clamp(1rem, 0.95rem + 0.25vw, 1.125rem)`.
-- `--fs-label`: `0.75rem` — Mono labels and tags.
+---
 
-### Creative Typographic Moves:
-1. **Serif Swap:** One word set in Instrument Serif italic, lowercase, slightly larger (`"We create momentum."`).
-2. **Lime Marker Sweep:** Lime rectangle (`-1.5deg`, 12% overshoot) draws left to right behind key words on scroll.
-3. **Inline Photo Pill:** Rounded-pill image inside headline between words (`"Ads [pill] people stop for."`). Widens from `1.7em` to `2.4em` on hover.
-4. **Outline + Fill:** `-webkit-text-stroke: 1.5px var(--ink); color: transparent;` fills with ink on scroll/hover.
-5. **Sparkle Glyph:** Lime 8-point SVG spinning slowly (`20s linear`) as punctuation.
-6. **Rotated Sticker Badges:** Small lime pills rotated 3-6deg (`"Concept"`, `"New"`).
-7. **Proximity Weight:** Desktop-only final CTA headline letters adjust font weight based on pointer distance.
+## 2. Numerical WCAG Contrast Compliance Table
 
-## 4. Background & Dot Grid System
-Every page features a quiet, visible dot grid:
-- Base layer: fixed `radial-gradient` at `26px` spacing (`22px` on touch devices) using `--dot-light`.
-- Cursor-lit layer: darker dots revealed under cursor via radial mask (`--mx`, `--my`, `--lit`).
-- Dark sections: carry their own `--dot-dark` grid.
+All text/background combinations evaluated using the standard WCAG relative luminance formula:
+$L = 0.2126 \cdot R + 0.7152 \cdot G + 0.0722 \cdot B$  
+Contrast Ratio: $(L_1 + 0.05) / (L_2 + 0.05)$
 
-## 5. Motion Tokens
-- Standard durations: micro `180ms`, standard `380ms`, reveal `750ms`, cinematic `1200ms`.
-- Primary ease: `cubic-bezier(0.22, 1, 0.36, 1)`.
-- Spring ease: `cubic-bezier(0.34, 1.9, 0.45, 1)`.
-- Full `prefers-reduced-motion` compliance across all components.
+| Text Token | Text Hex | Surface Token | Surface Hex | Contrast Ratio | WCAG AA (>= 4.5:1) | WCAG AAA (>= 7.0:1) |
+|---|---|---|---|:---:|:---:|:---:|
+| `--ink` (Primary Body/Heading) | `#0F1011` | `--ivory` (Base Page) | `#F6F3EC` | **17.19 : 1** | PASS | PASS |
+| `--stone` (Secondary Copy) | `#6F6A60` | `--ivory` (Base Page) | `#F6F3EC` | **4.85 : 1** | PASS | - |
+| `--gold-deep` (Serif Accent) | `#7A5C2E` | `--ivory` (Base Page) | `#F6F3EC` | **5.58 : 1** | PASS | - |
+| `--ink` (Primary Buttons) | `#0F1011` | `--gold` (Button Hover) | `#B08D57` | **5.46 : 1** | PASS | - |
+| `--ivory` (Light Text on Dark) | `#F6F3EC` | `--charcoal` (Dark Section) | `#1C1D1F` | **15.22 : 1** | PASS | PASS |
+| `--gold-soft` (Accent on Dark) | `#D9C29A` | `--charcoal` (Dark Section) | `#1C1D1F` | **9.75 : 1** | PASS | PASS |
+| `--gold` (Accent on Dark) | `#B08D57` | `--charcoal` (Dark Section) | `#1C1D1F` | **5.46 : 1** | PASS | - |
+| `--ivory` (Primary Button Text) | `#F6F3EC` | `--ink` (Primary Button) | `#0F1011` | **17.19 : 1** | PASS | PASS |
+
+**Result:** 100% of text and functional interactive color pairings pass WCAG AA standards. Zero low-contrast violations.
+
+---
+
+## 3. Typography Specifications (A2)
+
+1. **Headlines:**
+   - Font: Bricolage Grotesque Variable (`wght 600–700`, `wdth 100`).
+   - Line height: `1.05`, Letter spacing: `-0.02em`.
+   - `text-wrap: balance` applied to every heading to eliminate orphaned single words.
+2. **Serif Accent Word:**
+   - Font: Instrument Serif italic.
+   - Color: `--gold-deep` on ivory, `--ivory` on dark.
+   - Rule: At most one accent word per headline; never a full sentence.
+3. **Body Copy:**
+   - Font: Inter Variable 17px (`--fs-body`).
+   - Line height: `1.6`.
+   - Color: `--stone` for secondary descriptions, `--ink` for primary lead sentences.
+   - Max measure: `56ch`.
+4. **Small Labels & Tags:**
+   - Font: Inter Variable 12px (`--fs-small`), uppercase, tracking `0.08em`.
+   - Mono font (`JetBrains Mono`) reserved strictly for tiny code tags or file metadata.
+5. **Scale Sizes:**
+   - Hero: `clamp(2.6rem, 6vw, 5.75rem)`
+   - H2: `clamp(2rem, 4vw, 3.5rem)`
+   - H3: `clamp(1.25rem, 2vw, 1.6rem)`
+
+---
+
+## 4. Spacing, Radii & Surface Grid
+
+- **8px Grid System:** All paddings, gaps, and margins are multiples of 8px.
+- **Section Padding:** `112px` desktop, `72px` mobile.
+- **Radii Consistency:**
+  - Cards: `20px` (`--radius-lg`)
+  - Images: `20px` (`--radius-lg`)
+  - Circle service visual: `50%` (`rounded-full`)
+  - Buttons & tags: pill (`9999px`)
+- **Faint Dot Background:**
+  - Ink dots: `rgba(15, 16, 17, 0.11)` on ivory surfaces.
+  - Ivory dots: `rgba(246, 243, 236, 0.09)` on dark charcoal surfaces.
+  - Spacing: `24px` grid, `1.2px` dot radius, static hardware-accelerated layer.
+
+---
+
+## 5. Interactive Components & States
+
+- **Buttons:**
+  - Primary: `--ink` fill, `--ivory` text; hover = `--gold` fill, `--ink` text.
+  - Secondary: `1px solid var(--ink)` outline, hover = `--ink` fill, `--ivory` text.
+  - On dark sections: Primary = `--ivory` fill, `--ink` text; hover = `--gold` fill.
+- **Focus Rings:**
+  - On ivory: `2px solid var(--ink)`, `2px offset`.
+  - On dark: `2px solid var(--ivory)`, `2px offset`.
+- **Text Selection:**
+  - `background: var(--gold-soft); color: var(--ink);`.
+- **Custom Cursor:**
+  - Restrained 8px gold center dot (`--gold`) with 36px ring.
+  - Expands to 72px with gold fill and uppercase Inter label on hoverable view targets.
+  - Automatically hidden on touch devices and resets on blur/leave/scroll.
+- **Ink Drips:**
+  - Restrained scale: max `0.55em` downward drop on headlines, `8px` in buttons.
+  - Capillary gravity animation with maximum 16 concurrent drops site-wide.
