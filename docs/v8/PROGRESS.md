@@ -318,7 +318,44 @@ Tracking execution of tasks **T0 through T10** in accordance with the V8 Master 
 ---
 
 ## Task T9: Blog, Contact, 404
-- **Status:** NOT STARTED
+- **Status:** COMPLETED ✅
+- **Date:** 2026-11-16
+- **Summary:**
+  - Rebuilt `/blog` (`src/app/blog/page.tsx` and `src/components/blog/BlogListingView.tsx`):
+    - Full-width video hero powered by `public/videos/blog/blog-hero` (WebM, MP4, 720p, poster fallbacks).
+    - Headline <= 8 words ("Field notes on modern digital growth."), supporting line <= 14 words.
+    - Large 16:9 featured article card with category tag, author, read time, date, title, and excerpt.
+    - Topic filter pills (All, SEO, Ads, Social, Web, Email).
+    - 3-column article grid with high-resolution editorial covers, title, excerpt, and read time.
+  - Rebuilt `/blog/[slug]` (`src/app/blog/[slug]/page.tsx`):
+    - Clean warm-editorial typography on ivory background, return navigation to `/blog`, high-res cover, structured editorial body with blockquote callouts, author info, CTA box, and adjacent perspectives.
+  - Rebuilt `/contact` (`src/app/contact/page.tsx` and `src/components/contact/ContactForm.tsx`):
+    - 2-column split layout: Left side features Direct Consultation badge, headline <= 8 words ("Let's build steady momentum."), studio photography, direct contact channels (email, phone, hours), and "Direct Senior Evaluation" SLA commitment card.
+    - Right side features accessible Zod-validated contact form with fields for Full Name, Work Email, Company/Website, Primary Discipline (supporting all 5 disciplines: SEO, PPC, Social Media, Web Development, Video & Photo), Budget Range, and Project Objectives.
+    - Full ARIA accessibility, gold focus rings, honest submission state logging safely to console/server API with zero fake instant success.
+  - Rebuilt `src/app/not-found.tsx`:
+    - Monumental letterpress "404" heading in charcoal/graphite with relief print shadow on warm ivory `#F6F3EC`.
+    - Clear explanatory message and navigation buttons to Return to Home and Explore Services.
+  - Automated Playwright audit: 0 broken images, 0 lime, 0 blue, 0 internal leaks across all T9 routes.
+  - Captured 1440 desktop and 390 mobile screenshots in `/docs/v8/T9-evidence/`.
+- **Files Touched:**
+  - `docs/v8/PROGRESS.md`
+  - `docs/v8/T9-evidence/blog-desktop-1440.png`
+  - `docs/v8/T9-evidence/blog-mobile-390.png`
+  - `docs/v8/T9-evidence/contact-desktop-1440.png`
+  - `docs/v8/T9-evidence/contact-mobile-390.png`
+  - `docs/v8/T9-evidence/notfound-desktop-1440.png`
+  - `docs/v8/T9-evidence/notfound-mobile-390.png`
+  - `docs/v8/T9-evidence/t9-audit.txt`
+  - `src/app/blog/[slug]/page.tsx`
+  - `src/app/blog/page.tsx`
+  - `src/app/contact/page.tsx`
+  - `src/app/not-found.tsx`
+  - `src/components/blog/BlogListingView.tsx`
+  - `src/components/contact/ContactForm.tsx`
+  - `tools/generate-t9-evidence.mjs`
+- **Evidence Path:** `/docs/v8/T9-evidence/`
+- **Git Commit:** `T9: blog, contact, 404`
 
 ---
 

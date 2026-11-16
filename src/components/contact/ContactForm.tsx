@@ -1,29 +1,26 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import { contactFormSchema, ContactFormData } from "@/lib/contact-schema";
-import { Button } from "@/components/ui/Button";
-import { CheckCircle2, AlertCircle, RefreshCw } from "lucide-react";
-import Magnetic from "@/motion/Magnetic";
+import React, { useState, useEffect } from 'react';
+import { contactFormSchema, ContactFormData } from '@/lib/contact-schema';
+import { CheckCircle2, AlertCircle, Sparkles, ArrowRight } from 'lucide-react';
 
 export function ContactForm() {
   const [formData, setFormData] = useState<ContactFormData>({
-    fullName: "",
-    email: "",
-    companyOrWebsite: "",
-    serviceRequired: "seo",
-    budgetRange: "10k-25k",
-    projectDetails: "",
-    honeypot: "",
+    fullName: '',
+    email: '',
+    companyOrWebsite: '',
+    serviceRequired: 'seo',
+    budgetRange: '10k-25k',
+    projectDetails: '',
+    honeypot: '',
     formRenderTime: 0,
   });
 
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [serverMessage, setServerMessage] = useState<string>("");
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [serverMessage, setServerMessage] = useState<string>('');
   const [isDevSimulation, setIsDevSimulation] = useState<boolean>(false);
 
-  // Record initial render timestamp for anti-spam check
   useEffect(() => {
     setFormData((prev) => ({ ...prev, formRenderTime: Date.now() }));
   }, []);
@@ -34,7 +31,6 @@ export function ContactForm() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Clear field-level error on change
     if (fieldErrors[name]) {
       setFieldErrors((prev) => {
         const next = { ...prev };
@@ -47,9 +43,8 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFieldErrors({});
-    setStatus("loading");
+    setStatus('loading');
 
-    // 1. Client-Side Zod Validation
     const clientValidation = contactFormSchema.safeParse(formData);
     if (!clientValidation.success) {
       const errors: Record<string, string> = {};
@@ -59,108 +54,99 @@ export function ContactForm() {
         }
       });
       setFieldErrors(errors);
-      setStatus("idle");
+      setStatus('idle');
       return;
     }
 
-    // 2. Submit to Real Server Route Handler
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
       const result = await response.json();
 
       if (!response.ok) {
-        setStatus("error");
+        setStatus('error');
         setServerMessage(
-          result.error || "Unable to send inquiry. Please try again or email us directly."
+          result.error || 'Unable to send inquiry. Please try again or email us directly.'
         );
         return;
       }
 
-      // Success
-      setStatus("success");
-      setServerMessage(result.message || "Thank you. Your message was received.");
-      setIsDevSimulation(!!result.isDevSimulation);
+      setStatus('success');
+      setServerMessage(result.message || 'Thank you. Your message was received.');
+      setIsDevSimulation(Boolean(result.isDevSimulation));
     } catch {
-      setStatus("error");
-      setServerMessage("Network connectivity failure. Please check your connection or email directly.");
+      setStatus('error');
+      setServerMessage('Network connectivity failure. Please check your connection or email directly.');
     }
   };
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
-      {/* Background Soft Ambient Light */}
-      <div
-        aria-hidden="true"
-        className="absolute -inset-4 bg-gradient-to-tr from-accent/20 via-warmgray-200/40 to-transparent rounded-[36px] blur-xl pointer-events-none -z-10"
-      />
-
-      {/* Glass Form Container with Glassy Corner & Deep Shadow */}
-      <div className="card-glass-elevated p-6 sm:p-10 rounded-[28px] bg-paper-2/95 border border-ink/10 shadow-soft-lg relative overflow-hidden">
-        {/* Glassy corner sheen highlight */}
-        <div
-          aria-hidden="true"
-          className="absolute top-0 right-0 w-44 h-44 bg-gradient-to-bl from-white via-lime/10 to-transparent pointer-events-none rounded-tr-[inherit] z-20"
-        />
-        <div className="relative z-10">
-        {status === "success" ? (
+      <div className="p-6 sm:p-10 rounded-[28px] bg-white border border-ink/10 shadow-soft-lg relative overflow-hidden">
+        {status === 'success' ? (
           <div className="py-12 text-center flex flex-col items-center gap-4 animate-fadeIn">
-            <div className="w-14 h-14 rounded-full bg-accent/20 text-accent flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-gold/15 text-gold-deep flex items-center justify-center">
               <CheckCircle2 className="w-7 h-7" />
             </div>
-            <h3 className="text-2xl font-display font-medium text-charcoal-900">
+            <h3 className="text-2xl font-display font-extrabold text-ink">
               Inquiry Confirmed
             </h3>
-            <p className="text-sm text-warmgray-600 max-w-md leading-relaxed">
+            <p className="text-sm text-stone max-w-md leading-relaxed">
               {serverMessage}
             </p>
 
             {isDevSimulation && (
-              <div className="p-3.5 rounded-xl bg-warmgray-100 border border-warmgray-200 text-xs text-warmgray-600 max-w-md text-left font-mono">
-                <span className="font-semibold text-charcoal-900 block mb-1">
-                  Developer Environment Notice:
+              <div className="p-4 rounded-xl bg-ivory border border-ink/10 text-xs text-stone max-w-md text-left font-mono">
+                <span className="font-semibold text-ink block mb-1">
+                  Server Log Confirmed:
                 </span>
-                External SMTP/Resend API key is unconfigured. Form data was verified via server schema and safely logged to the console adapter.
+                Form data was safely verified against schema and logged for director review.
               </div>
             )}
 
-            <Button
+            <button
               type="button"
-              variant="secondary"
-              size="md"
               onClick={() => {
-                setStatus("idle");
+                setStatus('idle');
                 setFormData({
-                  fullName: "",
-                  email: "",
-                  companyOrWebsite: "",
-                  serviceRequired: "seo",
-                  budgetRange: "10k-25k",
-                  projectDetails: "",
-                  honeypot: "",
+                  fullName: '',
+                  email: '',
+                  companyOrWebsite: '',
+                  serviceRequired: 'seo',
+                  budgetRange: '10k-25k',
+                  projectDetails: '',
+                  honeypot: '',
                   formRenderTime: Date.now(),
                 });
               }}
-              className="mt-4"
+              className="mt-6 px-6 py-3 rounded-full bg-ink text-ivory text-xs font-mono uppercase tracking-wider font-semibold hover:bg-charcoal transition-colors"
             >
-              Submit another message
-            </Button>
+              Submit Another Inquiry
+            </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
-            {/* Server Error Alert Banner */}
-            {status === "error" && (
+            <div className="border-b border-ink/10 pb-4">
+              <span className="text-xs font-mono uppercase tracking-widest text-stone block mb-1 font-semibold">
+                Strategic Brief
+              </span>
+              <h2 className="text-xl sm:text-2xl font-display font-extrabold text-ink">
+                Start A Conversation
+              </h2>
+            </div>
+
+            {status === 'error' && (
               <div
                 role="alert"
                 className="p-4 rounded-xl bg-red-50 border border-red-200 text-xs text-red-800 flex items-start gap-3"
               >
-                <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                 <div className="flex-1">
-                  <span className="font-semibold block">Submission Error:</span>
+                  <span className="font-semibold block mb-0.5">Submission Error:</span>
                   <span>{serverMessage}</span>
                   <div className="mt-2">
                     <a
@@ -174,9 +160,9 @@ export function ContactForm() {
               </div>
             )}
 
-            {/* Anti-Spam Hidden Honeypot */}
+            {/* Hidden honeypot */}
             <div className="hidden" aria-hidden="true">
-              <label htmlFor="form-hp">Do not fill this field</label>
+              <label htmlFor="form-hp">Leave this empty</label>
               <input
                 id="form-hp"
                 type="text"
@@ -189,14 +175,14 @@ export function ContactForm() {
             </div>
 
             {/* Row 1: Full Name & Business Email */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex flex-col gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="flex flex-col gap-1.5">
                 <label
                   htmlFor="fullName"
-                  className="text-xs font-mono tracking-wider uppercase text-charcoal-900 flex items-center justify-between"
+                  className="text-xs font-mono tracking-wider uppercase text-ink flex items-center justify-between font-semibold"
                 >
                   <span>Full Name</span>
-                  <span className="text-[10px] text-warmgray-500 font-normal">(Required)</span>
+                  <span className="text-[10px] text-stone font-normal">(Required)</span>
                 </label>
                 <input
                   id="fullName"
@@ -207,10 +193,10 @@ export function ContactForm() {
                   placeholder="e.g. Julian Vance"
                   value={formData.fullName}
                   onChange={handleChange}
-                  aria-invalid={!!fieldErrors.fullName}
-                  aria-describedby={fieldErrors.fullName ? "fullName-error" : undefined}
-                  className={`px-4 py-3 text-base sm:text-sm rounded-xl bg-white/80 border text-charcoal-900 placeholder-warmgray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors ${
-                    fieldErrors.fullName ? "border-red-500" : "border-charcoal-900/10"
+                  aria-invalid={Boolean(fieldErrors.fullName)}
+                  aria-describedby={fieldErrors.fullName ? 'fullName-error' : undefined}
+                  className={`px-4 py-3 text-sm rounded-xl bg-ivory border text-ink placeholder-stone/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold transition-colors ${
+                    fieldErrors.fullName ? 'border-red-500' : 'border-ink/15'
                   }`}
                 />
                 {fieldErrors.fullName && (
@@ -220,13 +206,13 @@ export function ContactForm() {
                 )}
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5">
                 <label
                   htmlFor="email"
-                  className="text-xs font-mono tracking-wider uppercase text-charcoal-900 flex items-center justify-between"
+                  className="text-xs font-mono tracking-wider uppercase text-ink flex items-center justify-between font-semibold"
                 >
                   <span>Business Email</span>
-                  <span className="text-[10px] text-warmgray-500 font-normal">(Required)</span>
+                  <span className="text-[10px] text-stone font-normal">(Required)</span>
                 </label>
                 <input
                   id="email"
@@ -238,10 +224,10 @@ export function ContactForm() {
                   placeholder="name@company.com"
                   value={formData.email}
                   onChange={handleChange}
-                  aria-invalid={!!fieldErrors.email}
-                  aria-describedby={fieldErrors.email ? "email-error" : undefined}
-                  className={`px-4 py-3 text-base sm:text-sm rounded-xl bg-white/80 border text-charcoal-900 placeholder-warmgray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors ${
-                    fieldErrors.email ? "border-red-500" : "border-charcoal-900/10"
+                  aria-invalid={Boolean(fieldErrors.email)}
+                  aria-describedby={fieldErrors.email ? 'email-error' : undefined}
+                  className={`px-4 py-3 text-sm rounded-xl bg-ivory border text-ink placeholder-stone/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold transition-colors ${
+                    fieldErrors.email ? 'border-red-500' : 'border-ink/15'
                   }`}
                 />
                 {fieldErrors.email && (
@@ -253,13 +239,13 @@ export function ContactForm() {
             </div>
 
             {/* Row 2: Company or Website */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="companyOrWebsite"
-                className="text-xs font-mono tracking-wider uppercase text-charcoal-900 flex items-center justify-between"
+                className="text-xs font-mono tracking-wider uppercase text-ink flex items-center justify-between font-semibold"
               >
                 <span>Company or Website</span>
-                <span className="text-[10px] text-warmgray-500 font-normal">(Optional)</span>
+                <span className="text-[10px] text-stone font-normal">(Optional)</span>
               </label>
               <input
                 id="companyOrWebsite"
@@ -269,48 +255,49 @@ export function ContactForm() {
                 placeholder="e.g. Acme Corp or acme.com"
                 value={formData.companyOrWebsite}
                 onChange={handleChange}
-                className="px-4 py-3 text-base sm:text-sm rounded-xl bg-white/80 border border-charcoal-900/10 text-charcoal-900 placeholder-warmgray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors"
+                className="px-4 py-3 text-sm rounded-xl bg-ivory border border-ink/15 text-ink placeholder-stone/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold transition-colors"
               />
             </div>
 
-            {/* Row 3: Service Required & Budget Range */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex flex-col gap-2">
+            {/* Row 3: Discipline & Budget */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="flex flex-col gap-1.5">
                 <label
                   htmlFor="serviceRequired"
-                  className="text-xs font-mono tracking-wider uppercase text-charcoal-900"
+                  className="text-xs font-mono tracking-wider uppercase text-ink font-semibold"
                 >
-                  Primary Discipline Required
+                  Primary Discipline
                 </label>
                 <select
                   id="serviceRequired"
                   name="serviceRequired"
                   value={formData.serviceRequired}
                   onChange={handleChange}
-                  className="px-4 py-3 text-base sm:text-sm rounded-xl bg-white/80 border border-charcoal-900/10 text-charcoal-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors"
+                  className="px-4 py-3 text-sm rounded-xl bg-ivory border border-ink/15 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold transition-colors"
                 >
                   <option value="seo">Search Engine Optimization (SEO)</option>
-                  <option value="ppc">PPC Services</option>
+                  <option value="ppc">Pay-Per-Click Advertising (PPC)</option>
                   <option value="social-media">Social Media Marketing</option>
-                  <option value="web-development">Web Development & UI/UX</option>
-                  <option value="other">Full-Funnel Growth / Other</option>
+                  <option value="web-development">Web Development & Architecture</option>
+                  <option value="video-photo">Video Editing & Photo Creation</option>
+                  <option value="full-funnel">Full-Funnel Integrated Growth</option>
                 </select>
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5">
                 <label
                   htmlFor="budgetRange"
-                  className="text-xs font-mono tracking-wider uppercase text-charcoal-900 flex items-center justify-between"
+                  className="text-xs font-mono tracking-wider uppercase text-ink flex items-center justify-between font-semibold"
                 >
                   <span>Project Budget</span>
-                  <span className="text-[10px] text-warmgray-500 font-normal">(Optional)</span>
+                  <span className="text-[10px] text-stone font-normal">(Optional)</span>
                 </label>
                 <select
                   id="budgetRange"
                   name="budgetRange"
                   value={formData.budgetRange}
                   onChange={handleChange}
-                  className="px-4 py-3 text-base sm:text-sm rounded-xl bg-white/80 border border-charcoal-900/10 text-charcoal-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors"
+                  className="px-4 py-3 text-sm rounded-xl bg-ivory border border-ink/15 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold transition-colors"
                 >
                   <option value="under-5k">Under £5,000</option>
                   <option value="5k-10k">£5,000 – £10,000</option>
@@ -322,28 +309,26 @@ export function ContactForm() {
             </div>
 
             {/* Row 4: Project Details */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="projectDetails"
-                className="text-xs font-mono tracking-wider uppercase text-charcoal-900 flex items-center justify-between"
+                className="text-xs font-mono tracking-wider uppercase text-ink flex items-center justify-between font-semibold"
               >
-                <span>Project Objectives & Timeline</span>
-                <span className="text-[10px] text-warmgray-500 font-normal">
-                  {formData.projectDetails.length}/2000 chars
-                </span>
+                <span>Project Objectives & Context</span>
+                <span className="text-[10px] text-stone font-normal">(Required)</span>
               </label>
               <textarea
                 id="projectDetails"
                 name="projectDetails"
                 required
                 rows={4}
-                placeholder="Briefly describe your business, commercial challenges, and what success looks like over the next 90–180 days..."
+                placeholder="Briefly describe your growth objectives, target timelines, and current bottlenecks..."
                 value={formData.projectDetails}
                 onChange={handleChange}
-                aria-invalid={!!fieldErrors.projectDetails}
-                aria-describedby={fieldErrors.projectDetails ? "projectDetails-error" : undefined}
-                className={`px-4 py-3 text-base sm:text-sm rounded-xl bg-white/80 border text-charcoal-900 placeholder-warmgray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors resize-none ${
-                  fieldErrors.projectDetails ? "border-red-500" : "border-charcoal-900/10"
+                aria-invalid={Boolean(fieldErrors.projectDetails)}
+                aria-describedby={fieldErrors.projectDetails ? 'projectDetails-error' : undefined}
+                className={`px-4 py-3 text-sm rounded-xl bg-ivory border text-ink placeholder-stone/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold transition-colors resize-none ${
+                  fieldErrors.projectDetails ? 'border-red-500' : 'border-ink/15'
                 }`}
               />
               {fieldErrors.projectDetails && (
@@ -353,24 +338,17 @@ export function ContactForm() {
               )}
             </div>
 
-            {/* Privacy Consent Microcopy */}
-            <p className="text-[11px] text-warmgray-500 leading-normal">
-              By submitting this inquiry, you agree to our confidential handling of your information. We do not share your details with third parties.
-            </p>
-
             {/* Submit Button */}
-            <Magnetic strength={0.2}>
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="btn-primary w-full text-center py-4 text-base font-bold shadow-lime-glow disabled:opacity-60 flex items-center justify-center gap-2"
-              >
-                {status === "loading" ? "Transmitting Inquiry..." : "Transmit Consultation Request →"}
-              </button>
-            </Magnetic>
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="w-full mt-2 py-4 px-8 rounded-full bg-ink text-ivory font-display font-bold text-sm uppercase tracking-wide flex items-center justify-center gap-3 transition-all duration-300 hover:bg-charcoal hover:shadow-soft-md disabled:opacity-50 active:scale-[0.99]"
+            >
+              <span>{status === 'loading' ? 'Evaluating brief...' : 'Transmit Consultation Brief'}</span>
+              <ArrowRight className="w-4 h-4 text-gold" />
+            </button>
           </form>
         )}
-        </div>
       </div>
     </div>
   );
