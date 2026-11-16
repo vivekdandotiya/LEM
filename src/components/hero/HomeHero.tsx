@@ -118,7 +118,7 @@ export function HomeHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100svh] w-full flex flex-col justify-between overflow-hidden bg-ink text-white border-b-[6px] border-lime select-none dark-dots"
+      className="relative min-h-[100svh] w-full flex flex-col justify-between overflow-hidden bg-ink text-white border-b border-white/10 select-none dark-dots"
       data-theme="dark"
     >
       {/* 1. Endless Scrolling Wall of Ad Creative Cards */}
@@ -192,7 +192,7 @@ export function HomeHero() {
             <button
               onClick={() => setIsPaused((prev) => !prev)}
               aria-label={isPaused ? 'Resume rotating headlines' : 'Pause rotating headlines'}
-              className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white/80 hover:text-lime transition-colors"
+              className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white/80 hover:text-gold transition-colors"
             >
               {isPaused ? <Play className="w-3 h-3 fill-current" /> : <Pause className="w-3 h-3 fill-current" />}
             </button>
@@ -200,7 +200,7 @@ export function HomeHero() {
         </div>
 
         {/* Support line */}
-        <p className="font-sans text-base sm:text-xl text-warmgray-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+        <p className="font-sans text-base sm:text-xl text-stone max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
           {HERO_DATA.subheadline}
         </p>
 
@@ -208,19 +208,19 @@ export function HomeHero() {
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
           <Magnetic strength={0.25}>
             <Link
-              href="/contact"
+              href={HERO_DATA.primaryCta.href}
               className="btn-primary"
             >
-              Start a project →
+              {HERO_DATA.primaryCta.label}
             </Link>
           </Magnetic>
 
           <Magnetic strength={0.25}>
             <a
-              href="#concept-work"
-              className="btn-secondary-white"
+              href={HERO_DATA.secondaryCta.href}
+              className="btn-secondary"
             >
-              See the work
+              {HERO_DATA.secondaryCta.label}
             </a>
           </Magnetic>
         </div>
@@ -236,7 +236,7 @@ export function HomeHero() {
 
         <button
           onClick={scrollToNext}
-          className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-charcoal/90 hover:bg-charcoal border border-white/20 flex items-center justify-center text-lime transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-charcoal/90 hover:bg-charcoal border border-white/20 flex items-center justify-center text-gold transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           aria-label="Scroll to next section"
         >
           <SparkleGlyph size={22} spin={true} />

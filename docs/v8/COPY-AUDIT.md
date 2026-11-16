@@ -1,7 +1,7 @@
 # LEAD EDGE MARKETING — V8 COPY & LEAK AUDIT REPORT (T0)
 
 **Audit Date:** November 16, 2026  
-**Status:** PASSED ✅  
+**Status:** ACTION REQUIRED ⚠️  
 
 ---
 
@@ -15,12 +15,13 @@
 
 Verifying that all core client propositions are mapped into data files and user-facing views:
 
-- **Hero Headlines Pair:** ✅ Confirmed (mapped in `src/data/hero.ts` and `HomeHero.tsx`)
+- **Hero Headlines Pair:** ❌ Missing from active view
 - **4 Core Service Taglines:** ✅ Confirmed (mapped in `src/data/services.ts`)
 - **7 Client FAQs:** ✅ Confirmed (mapped in `src/data/faqs.ts` and `FAQSection.tsx`)
 
 
-✅ All required client phrases verified present in codebase.
+### Missing Client Phrases:
+- `WE DON'T JUST DRIVE TRAFFIC. WE BUILD`
 
 ---
 

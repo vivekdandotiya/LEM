@@ -16,39 +16,32 @@ export interface HeroData {
 }
 
 export const HERO_DATA: HeroData = {
-  eyebrow: "DIGITAL GROWTH STUDIO // CREATIVE • ADS • SEARCH • WEB",
+  eyebrow: "DIGITAL GROWTH STUDIO // SEARCH • MEDIA • WEB",
   headlines: [
     {
       id: "suggestion-a",
       prefix: "WE DON'T JUST RANK WEBSITES. WE SCALE",
-      italicWord: "revenue",
+      italicWord: "revenue.",
       enabled: true,
       source: "client-doc",
     },
     {
       id: "suggestion-b",
-      prefix: "WE DON'T JUST DRIVE TRAFFIC. WE BUILD",
-      italicWord: "authority.",
+      prefix: "STOP WASTING MONEY ON ADS THAT DON'T",
+      italicWord: "convert.",
       enabled: true,
       source: "client-doc",
     },
-    {
-      id: "legacy",
-      prefix: "WE DON'T JUST GENERATE LEADS. WE CREATE",
-      italicWord: "momentum.",
-      enabled: false,
-      source: "legacy",
-    },
   ],
   subheadline:
-    "We don't just generate leads. We create momentum. Creative, ads, search, and bespoke web engineering under one roof.",
+    "Full-funnel digital growth unifying organic search, performance media, and engineered web.",
   primaryCta: {
-    label: "Start a project →",
+    label: "Book Strategy Call →",
     href: "/contact",
   },
   secondaryCta: {
-    label: "See the work",
-    href: "/#concept-work",
+    label: "Explore Our Work",
+    href: "/#work-showcase",
   },
   intervalMs: 6000,
 };

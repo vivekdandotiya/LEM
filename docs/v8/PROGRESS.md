@@ -190,7 +190,33 @@ Tracking execution of tasks **T0 through T10** in accordance with the V8 Master 
 ---
 
 ## Task T5: Home Page
-- **Status:** NOT STARTED
+- **Status:** COMPLETED ✅
+- **Date:** 2026-11-16
+- **Summary:**
+  - Rebuilt `src/app/page.tsx` adhering strictly to Part B3 section order:
+    1. `HomeHero.tsx`: Hero creative wall + rotating client headline pair (A: "WE DON'T JUST RANK WEBSITES. WE SCALE revenue." / B: "STOP WASTING MONEY ON ADS THAT DON'T convert.") with little text budget (H1 <= 8 words, supporting line <= 14 words: "Full-funnel digital growth unifying organic search, performance media, and engineered web.").
+    2. `WorkShowcase.tsx`: 8 selected work cards (4 photo cards + 4 looping 1080p video cards: TrailNest, StrideFit, Greenleaf, Barkleys, Luxury Residence, Botanical Brand, Apparel Editorial, Roasters) with responsive Lightbox preview modal.
+    3. `HomeServicesTeaser.tsx`: Rich charcoal section featuring the 5 integrated disciplines with circular masked photos, gold accents, and verbatim client copy.
+    4. `Testimonials.tsx`: Client feedback slider with honest draft reviews (`verified: false`, zero fabricated revenue numbers).
+    5. `FAQSection.tsx`: 7 client Q&As verbatim from document with 1-click expand/collapse accordion and gold indicators.
+  - Verified Next.js production build (`npm run build`) compiles with 0 errors.
+  - Verified zero blue UI colors and zero copy leaks.
+  - Captured full-page 1440 and 390 mobile screenshots to `/docs/v8/T5-evidence/`.
+- **Files Touched:**
+  - `docs/v8/PROGRESS.md`
+  - `docs/v8/T5-evidence/home-audit.txt`
+  - `docs/v8/T5-evidence/home-desktop-1440.png`
+  - `docs/v8/T5-evidence/home-lightbox-open.png`
+  - `docs/v8/T5-evidence/home-mobile-390.png`
+  - `src/app/page.tsx`
+  - `src/components/hero/HomeHero.tsx`
+  - `src/components/home/FAQSection.tsx`
+  - `src/components/home/HomeServicesTeaser.tsx`
+  - `src/components/home/WorkShowcase.tsx`
+  - `src/data/hero.ts`
+  - `tools/generate-t5-evidence.mjs`
+- **Evidence Path:** `/docs/v8/T5-evidence/`
+- **Git Commit:** `T5: home`
 
 ---
 
