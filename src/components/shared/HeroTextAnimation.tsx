@@ -40,22 +40,23 @@ export function HeroTextAnimation({
         {variant === 'split-reveal' && (
           <span className="flex flex-wrap gap-x-3 gap-y-1 overflow-hidden">
             {words.map((word, i) => (
-              <span
-                key={i}
-                className="inline-block transition-transform duration-700 ease-out"
-                style={{
-                  transitionDelay: `${i * 65}ms`,
-                  transform: mounted ? 'translateY(0)' : 'translateY(110%)',
-                }}
-              >
-                {word === italicWord ? (
-                  <span className="font-serif italic font-normal text-gold-deep pr-1">
-                    {word}
-                  </span>
-                ) : (
-                  word
-                )}
-              </span>
+              <React.Fragment key={i}>
+                <span
+                  className="inline-block transition-transform duration-700 ease-out"
+                  style={{
+                    transitionDelay: `${i * 65}ms`,
+                    transform: mounted ? 'translateY(0)' : 'translateY(110%)',
+                  }}
+                >
+                  {word === italicWord ? (
+                    <span className="font-serif italic font-normal text-gold-deep pr-1">
+                      {word}
+                    </span>
+                  ) : (
+                    word
+                  )}
+                </span>{' '}
+              </React.Fragment>
             ))}
           </span>
         )}
@@ -63,23 +64,24 @@ export function HeroTextAnimation({
         {variant === 'kinetic-counter' && (
           <span className="flex flex-wrap gap-x-3 gap-y-1">
             {words.map((word, i) => (
-              <span
-                key={i}
-                className="inline-block transition-all duration-600 ease-editorial"
-                style={{
-                  transitionDelay: `${i * 75}ms`,
-                  opacity: mounted ? 1 : 0,
-                  transform: mounted ? 'scale(1)' : 'scale(0.85) translateY(20px)',
-                }}
-              >
-                {word === italicWord ? (
-                  <span className="font-serif italic font-normal text-gold-deep pr-1">
-                    {word}
-                  </span>
-                ) : (
-                  word
-                )}
-              </span>
+              <React.Fragment key={i}>
+                <span
+                  className="inline-block transition-all duration-600 ease-editorial"
+                  style={{
+                    transitionDelay: `${i * 75}ms`,
+                    opacity: mounted ? 1 : 0,
+                    transform: mounted ? 'scale(1)' : 'scale(0.85) translateY(20px)',
+                  }}
+                >
+                  {word === italicWord ? (
+                    <span className="font-serif italic font-normal text-gold-deep pr-1">
+                      {word}
+                    </span>
+                  ) : (
+                    word
+                  )}
+                </span>{' '}
+              </React.Fragment>
             ))}
           </span>
         )}

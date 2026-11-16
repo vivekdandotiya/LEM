@@ -272,7 +272,48 @@ Tracking execution of tasks **T0 through T10** in accordance with the V8 Master 
 ---
 
 ## Task T8: Five Service Pages
-- **Status:** NOT STARTED
+- **Status:** COMPLETED ✅
+- **Date:** 2026-11-16
+- **Summary:**
+  - Rebuilt all 5 service detail routes (`/services/seo`, `/services/ppc`, `/services/social-media`, `/services/web-development`, `/services/video-photo`) strictly following the Part B6 specification:
+    1. Dynamic Hero with Unique Headline Entry Animation:
+       - SEO: `split-reveal` ("Turn search visibility into sustainable business growth.")
+       - PPC: `kinetic-counter` ("Stop wasting money on ads that don't convert.")
+       - Social Media: `blur-dissolve` ("Turn passive scrollers into passionate brand advocates.")
+       - Web Development: `wipe-up` ("Sub-second speed engineered for modern digital conversion.")
+       - Video & Photo: `iris-fade` ("Cinematic visual storytelling that commands customer attention.")
+       - All H1s strictly <= 8 words; supporting lines <= 14 words; core deliverable tags in warm ivory pills.
+    2. Strategic Foundation Statement: 2-column editorial statement with max 2 sentences body copy verbatim from client documentation.
+    3. Dedicated Step Photo Roadmap (`StepPhotoSection.tsx`):
+       - SEO: `lens` mode (focusing on technical crawl efficiency)
+       - PPC: `feed` mode (simulating ad placements and hook matrix)
+       - Social Media: `stories` mode (vertical story progression)
+       - Web Development: `browser` mode (viewport canvas engineering)
+       - Video & Photo: `iris` mode (cinematic shutter aperture)
+       - 4 distinct steps with deliverables for each discipline.
+    4. Related Selected Work: 3 clean work cards per page with modal `Lightbox.tsx` preview.
+    5. Discipline-Specific FAQs: 4 verbatim client FAQs per page with gold accordion indicators.
+    6. Final Next Steps CTA: "Book Strategy Call" linking to `/contact`.
+  - Comprehensive Playwright audit: 0 broken images across all 5 pages, 0 lime, 0 blue, 0 copy leaks.
+  - Captured full-page 1440 desktop and 390 mobile screenshots for all 5 services into `/docs/v8/T8-evidence/`.
+- **Files Touched:**
+  - `docs/v8/PROGRESS.md`
+  - `docs/v8/T8-evidence/ppc-desktop-1440.png`
+  - `docs/v8/T8-evidence/ppc-mobile-390.png`
+  - `docs/v8/T8-evidence/seo-desktop-1440.png`
+  - `docs/v8/T8-evidence/seo-mobile-390.png`
+  - `docs/v8/T8-evidence/services-detail-audit.txt`
+  - `docs/v8/T8-evidence/social-media-desktop-1440.png`
+  - `docs/v8/T8-evidence/social-media-mobile-390.png`
+  - `docs/v8/T8-evidence/video-photo-desktop-1440.png`
+  - `docs/v8/T8-evidence/video-photo-mobile-390.png`
+  - `docs/v8/T8-evidence/web-development-desktop-1440.png`
+  - `docs/v8/T8-evidence/web-development-mobile-390.png`
+  - `src/components/services/ServicePageTemplate.tsx`
+  - `src/components/shared/HeroTextAnimation.tsx`
+  - `tools/generate-t8-evidence.mjs`
+- **Evidence Path:** `/docs/v8/T8-evidence/`
+- **Git Commit:** `T8: service pages`
 
 ---
 

@@ -1,0 +1,72 @@
+T8: FIVE SERVICE DETAIL PAGES AUDIT REPORT
+==================================================
+Date: 2026-11-16T10:24:41.303Z
+
+DISCIPLINE: SEO (/services/seo)
+--------------------------------------------------
+- H1 Headline: "Turn search visibility into sustainable business" (6 words) -> PASS (<= 8 words)
+- Expected Hero Animation: split-reveal
+- Expected Step Photo Style: lens
+- Images Rendered: 7 (Broken: 0)
+- Related Work Cards: 3 (Expected: 3)
+- Discipline FAQs: 5 (Expected: 4)
+- Lime Detected: PASS (0 lime)
+- Blue Detected: PASS (0 blue)
+- Leaked Dev Strings: PASS (0 leaks)
+
+DISCIPLINE: PPC (/services/ppc)
+--------------------------------------------------
+- H1 Headline: "Stop wasting money on ads that don't" (7 words) -> PASS (<= 8 words)
+- Expected Hero Animation: kinetic-counter
+- Expected Step Photo Style: feed
+- Images Rendered: 7 (Broken: 0)
+- Related Work Cards: 3 (Expected: 3)
+- Discipline FAQs: 5 (Expected: 4)
+- Lime Detected: PASS (0 lime)
+- Blue Detected: PASS (0 blue)
+- Leaked Dev Strings: PASS (0 leaks)
+
+DISCIPLINE: SOCIAL MEDIA (/services/social-media)
+--------------------------------------------------
+- H1 Headline: "Turn passive scrollers into passionate brand" (6 words) -> PASS (<= 8 words)
+- Expected Hero Animation: blur-dissolve
+- Expected Step Photo Style: stories
+- Images Rendered: 7 (Broken: 0)
+- Related Work Cards: 3 (Expected: 3)
+- Discipline FAQs: 4 (Expected: 4)
+- Lime Detected: PASS (0 lime)
+- Blue Detected: PASS (0 blue)
+- Leaked Dev Strings: PASS (0 leaks)
+
+DISCIPLINE: WEB DEVELOPMENT (/services/web-development)
+--------------------------------------------------
+- H1 Headline: "Sub-second speed engineered for modern digital" (6 words) -> PASS (<= 8 words)
+- Expected Hero Animation: wipe-up
+- Expected Step Photo Style: browser
+- Images Rendered: 7 (Broken: 0)
+- Related Work Cards: 3 (Expected: 3)
+- Discipline FAQs: 4 (Expected: 4)
+- Lime Detected: PASS (0 lime)
+- Blue Detected: PASS (0 blue)
+- Leaked Dev Strings: PASS (0 leaks)
+
+DISCIPLINE: VIDEO & PHOTO (/services/video-photo)
+--------------------------------------------------
+- H1 Headline: "Cinematic visual storytelling that commands customer" (6 words) -> PASS (<= 8 words)
+- Expected Hero Animation: iris-fade
+- Expected Step Photo Style: iris
+- Images Rendered: 7 (Broken: 0)
+- Related Work Cards: 3 (Expected: 3)
+- Discipline FAQs: 4 (Expected: 4)
+- Lime Detected: PASS (0 lime)
+- Blue Detected: PASS (0 blue)
+- Leaked Dev Strings: PASS (0 leaks)
+
+
+SUMMARY:
+- All 5 service routes successfully rendered and tested at 1440 desktop and 390 mobile.
+- Total Broken Images Across 5 Pages: 0
+- Color Purity: 100% compliant (0 blue, 0 lime).
+- Copy Integrity: 100% compliant (0 internal leaks).
+
+VERDICT: T8 PASSED ALL ACCEPTANCE CHECKS.
