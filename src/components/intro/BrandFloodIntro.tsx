@@ -8,8 +8,8 @@ import './intro.css';
 
 const HERO_PRELOAD_IMAGES = [
   '/images/hero/hero-01-trailnest-cabin-4x5.webp',
-  '/images/hero/hero-02-hillcrest-modern-house-4x5.webp',
-  '/images/hero/hero-03-aurora-audio-earbuds-4x5.webp',
+  '/images/hero/hero-02-hillcrest-homes-4x5.webp',
+  '/images/hero/hero-03-greenleaf-botanical-9x16.webp',
 ];
 
 export function BrandFloodIntro() {
