@@ -266,3 +266,209 @@
 | `public/videos/services/web-development-phase-3-poster-1280w.webp` | 1280x800 | WebP | 19 KB | `c1cbac220669` | `public/videos/services/web-development-phase-3-poster.webp` |
 | `public/videos/services/web-development-phase-3-poster-768w.avif` | 768x480 | AVIF | 9 KB | `2d2607350d9f` | `public/videos/services/web-development-phase-3-poster.webp` |
 | `public/videos/services/web-development-phase-3-poster-768w.webp` | 768x480 | WebP | 10 KB | `0ce66472e987` | `public/videos/services/web-development-phase-3-poster.webp` |
+
+
+## V8 Added Responsive Assets
+
+| Output Path | Width | Format | Size | Description |
+|---|---|---|---|---|
+| `public\images\services\video-photo\video-photo-hero-3840w.avif` | 3840w | AVIF | 381 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-3840w.webp` | 3840w | WebP | 419 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-2560w.avif` | 2560w | AVIF | 252 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-2560w.webp` | 2560w | WebP | 256 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-1920w.avif` | 1920w | AVIF | 186 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-1920w.webp` | 1920w | WebP | 185 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-1280w.avif` | 1280w | AVIF | 118 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-1280w.webp` | 1280w | WebP | 121 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-768w.avif` | 768w | AVIF | 54 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-768w.webp` | 768w | WebP | 58 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-480w.avif` | 480w | AVIF | 27 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-hero-480w.webp` | 480w | WebP | 30 KB | High-end cinema camera on dark oak desk beside curved color-grading monitor |
+| `public\images\services\video-photo\video-photo-concept-2560w.avif` | 2560w | AVIF | 233 KB | Storyboard sketches, drafting pencils, warm gold swatch cards |
+| `public\images\services\video-photo\video-photo-concept-2560w.webp` | 2560w | WebP | 247 KB | Storyboard sketches, drafting pencils, warm gold swatch cards |
+| `public\images\services\video-photo\video-photo-concept-1920w.avif` | 1920w | AVIF | 173 KB | Storyboard sketches, drafting pencils, warm gold swatch cards |
+| `public\images\services\video-photo\video-photo-concept-1920w.webp` | 1920w | WebP | 175 KB | Storyboard sketches, drafting pencils, warm gold swatch cards |
+| `public\images\services\video-photo\video-photo-concept-1280w.avif` | 1280w | AVIF | 108 KB | Storyboard sketches, drafting pencils, warm gold swatch cards |
+| `public\images\services\video-photo\video-photo-concept-1280w.webp` | 1280w | WebP | 111 KB | Storyboard sketches, drafting pencils, warm gold swatch cards |
+| `public\images\services\video-photo\video-photo-concept-768w.avif` | 768w | AVIF | 48 KB | Storyboard sketches, drafting pencils, warm gold swatch cards |
+| `public\images\services\video-photo\video-photo-concept-768w.webp` | 768w | WebP | 51 KB | Storyboard sketches, drafting pencils, warm gold swatch cards |
+| `public\images\services\video-photo\video-photo-concept-480w.avif` | 480w | AVIF | 22 KB | Storyboard sketches, drafting pencils, warm gold swatch cards |
+| `public\images\services\video-photo\video-photo-concept-480w.webp` | 480w | WebP | 24 KB | Storyboard sketches, drafting pencils, warm gold swatch cards |
+| `public\images\services\video-photo\video-photo-shoot-2560w.avif` | 2560w | AVIF | 361 KB | Studio video production set with cinema camera, tripod, parabolic lighting |
+| `public\images\services\video-photo\video-photo-shoot-2560w.webp` | 2560w | WebP | 399 KB | Studio video production set with cinema camera, tripod, parabolic lighting |
+| `public\images\services\video-photo\video-photo-shoot-1920w.avif` | 1920w | AVIF | 268 KB | Studio video production set with cinema camera, tripod, parabolic lighting |
+| `public\images\services\video-photo\video-photo-shoot-1920w.webp` | 1920w | WebP | 305 KB | Studio video production set with cinema camera, tripod, parabolic lighting |
+| `public\images\services\video-photo\video-photo-shoot-1280w.avif` | 1280w | AVIF | 172 KB | Studio video production set with cinema camera, tripod, parabolic lighting |
+| `public\images\services\video-photo\video-photo-shoot-1280w.webp` | 1280w | WebP | 196 KB | Studio video production set with cinema camera, tripod, parabolic lighting |
+| `public\images\services\video-photo\video-photo-shoot-768w.avif` | 768w | AVIF | 81 KB | Studio video production set with cinema camera, tripod, parabolic lighting |
+| `public\images\services\video-photo\video-photo-shoot-768w.webp` | 768w | WebP | 93 KB | Studio video production set with cinema camera, tripod, parabolic lighting |
+| `public\images\services\video-photo\video-photo-shoot-480w.avif` | 480w | AVIF | 39 KB | Studio video production set with cinema camera, tripod, parabolic lighting |
+| `public\images\services\video-photo\video-photo-shoot-480w.webp` | 480w | WebP | 44 KB | Studio video production set with cinema camera, tripod, parabolic lighting |
+| `public\images\services\video-photo\video-photo-edit-2560w.avif` | 2560w | AVIF | 293 KB | Dual display editing suite with timeline waveforms and color console |
+| `public\images\services\video-photo\video-photo-edit-2560w.webp` | 2560w | WebP | 313 KB | Dual display editing suite with timeline waveforms and color console |
+| `public\images\services\video-photo\video-photo-edit-1920w.avif` | 1920w | AVIF | 216 KB | Dual display editing suite with timeline waveforms and color console |
+| `public\images\services\video-photo\video-photo-edit-1920w.webp` | 1920w | WebP | 225 KB | Dual display editing suite with timeline waveforms and color console |
+| `public\images\services\video-photo\video-photo-edit-1280w.avif` | 1280w | AVIF | 137 KB | Dual display editing suite with timeline waveforms and color console |
+| `public\images\services\video-photo\video-photo-edit-1280w.webp` | 1280w | WebP | 145 KB | Dual display editing suite with timeline waveforms and color console |
+| `public\images\services\video-photo\video-photo-edit-768w.avif` | 768w | AVIF | 63 KB | Dual display editing suite with timeline waveforms and color console |
+| `public\images\services\video-photo\video-photo-edit-768w.webp` | 768w | WebP | 68 KB | Dual display editing suite with timeline waveforms and color console |
+| `public\images\services\video-photo\video-photo-edit-480w.avif` | 480w | AVIF | 30 KB | Dual display editing suite with timeline waveforms and color console |
+| `public\images\services\video-photo\video-photo-edit-480w.webp` | 480w | WebP | 33 KB | Dual display editing suite with timeline waveforms and color console |
+| `public\images\services\video-photo\video-photo-color-2560w.avif` | 2560w | AVIF | 338 KB | Color grading reference suite with cinematic footage stills and backlighting |
+| `public\images\services\video-photo\video-photo-color-2560w.webp` | 2560w | WebP | 299 KB | Color grading reference suite with cinematic footage stills and backlighting |
+| `public\images\services\video-photo\video-photo-color-1920w.avif` | 1920w | AVIF | 168 KB | Color grading reference suite with cinematic footage stills and backlighting |
+| `public\images\services\video-photo\video-photo-color-1920w.webp` | 1920w | WebP | 142 KB | Color grading reference suite with cinematic footage stills and backlighting |
+| `public\images\services\video-photo\video-photo-color-1280w.avif` | 1280w | AVIF | 72 KB | Color grading reference suite with cinematic footage stills and backlighting |
+| `public\images\services\video-photo\video-photo-color-1280w.webp` | 1280w | WebP | 69 KB | Color grading reference suite with cinematic footage stills and backlighting |
+| `public\images\services\video-photo\video-photo-color-768w.avif` | 768w | AVIF | 33 KB | Color grading reference suite with cinematic footage stills and backlighting |
+| `public\images\services\video-photo\video-photo-color-768w.webp` | 768w | WebP | 35 KB | Color grading reference suite with cinematic footage stills and backlighting |
+| `public\images\services\video-photo\video-photo-color-480w.avif` | 480w | AVIF | 18 KB | Color grading reference suite with cinematic footage stills and backlighting |
+| `public\images\services\video-photo\video-photo-color-480w.webp` | 480w | WebP | 20 KB | Color grading reference suite with cinematic footage stills and backlighting |
+| `public\images\services\video-photo\video-photo-delivery-2560w.avif` | 2560w | AVIF | 361 KB | Linen box presentation prints, laptop client review on honed stone desk |
+| `public\images\services\video-photo\video-photo-delivery-2560w.webp` | 2560w | WebP | 338 KB | Linen box presentation prints, laptop client review on honed stone desk |
+| `public\images\services\video-photo\video-photo-delivery-1920w.avif` | 1920w | AVIF | 190 KB | Linen box presentation prints, laptop client review on honed stone desk |
+| `public\images\services\video-photo\video-photo-delivery-1920w.webp` | 1920w | WebP | 171 KB | Linen box presentation prints, laptop client review on honed stone desk |
+| `public\images\services\video-photo\video-photo-delivery-1280w.avif` | 1280w | AVIF | 70 KB | Linen box presentation prints, laptop client review on honed stone desk |
+| `public\images\services\video-photo\video-photo-delivery-1280w.webp` | 1280w | WebP | 65 KB | Linen box presentation prints, laptop client review on honed stone desk |
+| `public\images\services\video-photo\video-photo-delivery-768w.avif` | 768w | AVIF | 22 KB | Linen box presentation prints, laptop client review on honed stone desk |
+| `public\images\services\video-photo\video-photo-delivery-768w.webp` | 768w | WebP | 23 KB | Linen box presentation prints, laptop client review on honed stone desk |
+| `public\images\services\video-photo\video-photo-delivery-480w.avif` | 480w | AVIF | 10 KB | Linen box presentation prints, laptop client review on honed stone desk |
+| `public\images\services\video-photo\video-photo-delivery-480w.webp` | 480w | WebP | 11 KB | Linen box presentation prints, laptop client review on honed stone desk |
+| `public\images\services\video-photo\video-photo-circle-2560w.avif` | 2560w | AVIF | 215 KB | High-end cinema prime lens on dark charcoal background with warm gold glass glint |
+| `public\images\services\video-photo\video-photo-circle-2560w.webp` | 2560w | WebP | 182 KB | High-end cinema prime lens on dark charcoal background with warm gold glass glint |
+| `public\images\services\video-photo\video-photo-circle-1920w.avif` | 1920w | AVIF | 126 KB | High-end cinema prime lens on dark charcoal background with warm gold glass glint |
+| `public\images\services\video-photo\video-photo-circle-1920w.webp` | 1920w | WebP | 106 KB | High-end cinema prime lens on dark charcoal background with warm gold glass glint |
+| `public\images\services\video-photo\video-photo-circle-1280w.avif` | 1280w | AVIF | 60 KB | High-end cinema prime lens on dark charcoal background with warm gold glass glint |
+| `public\images\services\video-photo\video-photo-circle-1280w.webp` | 1280w | WebP | 51 KB | High-end cinema prime lens on dark charcoal background with warm gold glass glint |
+| `public\images\services\video-photo\video-photo-circle-768w.avif` | 768w | AVIF | 26 KB | High-end cinema prime lens on dark charcoal background with warm gold glass glint |
+| `public\images\services\video-photo\video-photo-circle-768w.webp` | 768w | WebP | 23 KB | High-end cinema prime lens on dark charcoal background with warm gold glass glint |
+| `public\images\services\video-photo\video-photo-circle-480w.avif` | 480w | AVIF | 14 KB | High-end cinema prime lens on dark charcoal background with warm gold glass glint |
+| `public\images\services\video-photo\video-photo-circle-480w.webp` | 480w | WebP | 13 KB | High-end cinema prime lens on dark charcoal background with warm gold glass glint |
+| `public\images\services\video-photo\video-photo-cylinder-3840w.avif` | 3840w | AVIF | 342 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-3840w.webp` | 3840w | WebP | 346 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-2560w.avif` | 2560w | AVIF | 209 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-2560w.webp` | 2560w | WebP | 200 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-1920w.avif` | 1920w | AVIF | 145 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-1920w.webp` | 1920w | WebP | 143 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-1280w.avif` | 1280w | AVIF | 84 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-1280w.webp` | 1280w | WebP | 78 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-768w.avif` | 768w | AVIF | 39 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-768w.webp` | 768w | WebP | 38 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-480w.avif` | 480w | AVIF | 20 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\services\video-photo\video-photo-cylinder-480w.webp` | 480w | WebP | 20 KB | Professional cinematic camera rig and prime lens in portrait orientation |
+| `public\images\about\about-team-table-2560w.avif` | 2560w | AVIF | 1587 KB | Collaborative strategy desk with laptops, notebooks, coffee in daylight |
+| `public\images\about\about-team-table-2560w.webp` | 2560w | WebP | 1600 KB | Collaborative strategy desk with laptops, notebooks, coffee in daylight |
+| `public\images\about\about-team-table-1920w.avif` | 1920w | AVIF | 1097 KB | Collaborative strategy desk with laptops, notebooks, coffee in daylight |
+| `public\images\about\about-team-table-1920w.webp` | 1920w | WebP | 1071 KB | Collaborative strategy desk with laptops, notebooks, coffee in daylight |
+| `public\images\about\about-team-table-1280w.avif` | 1280w | AVIF | 410 KB | Collaborative strategy desk with laptops, notebooks, coffee in daylight |
+| `public\images\about\about-team-table-1280w.webp` | 1280w | WebP | 380 KB | Collaborative strategy desk with laptops, notebooks, coffee in daylight |
+| `public\images\about\about-team-table-768w.avif` | 768w | AVIF | 101 KB | Collaborative strategy desk with laptops, notebooks, coffee in daylight |
+| `public\images\about\about-team-table-768w.webp` | 768w | WebP | 103 KB | Collaborative strategy desk with laptops, notebooks, coffee in daylight |
+| `public\images\about\about-team-table-480w.avif` | 480w | AVIF | 43 KB | Collaborative strategy desk with laptops, notebooks, coffee in daylight |
+| `public\images\about\about-team-table-480w.webp` | 480w | WebP | 43 KB | Collaborative strategy desk with laptops, notebooks, coffee in daylight |
+| `public\images\about\about-team-whiteboard-2560w.avif` | 2560w | AVIF | 628 KB | Hands sketching architecture flows on glass whiteboard with markers |
+| `public\images\about\about-team-whiteboard-2560w.webp` | 2560w | WebP | 558 KB | Hands sketching architecture flows on glass whiteboard with markers |
+| `public\images\about\about-team-whiteboard-1920w.avif` | 1920w | AVIF | 449 KB | Hands sketching architecture flows on glass whiteboard with markers |
+| `public\images\about\about-team-whiteboard-1920w.webp` | 1920w | WebP | 388 KB | Hands sketching architecture flows on glass whiteboard with markers |
+| `public\images\about\about-team-whiteboard-1280w.avif` | 1280w | AVIF | 202 KB | Hands sketching architecture flows on glass whiteboard with markers |
+| `public\images\about\about-team-whiteboard-1280w.webp` | 1280w | WebP | 168 KB | Hands sketching architecture flows on glass whiteboard with markers |
+| `public\images\about\about-team-whiteboard-768w.avif` | 768w | AVIF | 64 KB | Hands sketching architecture flows on glass whiteboard with markers |
+| `public\images\about\about-team-whiteboard-768w.webp` | 768w | WebP | 57 KB | Hands sketching architecture flows on glass whiteboard with markers |
+| `public\images\about\about-team-whiteboard-480w.avif` | 480w | AVIF | 30 KB | Hands sketching architecture flows on glass whiteboard with markers |
+| `public\images\about\about-team-whiteboard-480w.webp` | 480w | WebP | 28 KB | Hands sketching architecture flows on glass whiteboard with markers |
+| `public\images\about\about-team-meeting-2560w.avif` | 2560w | AVIF | 422 KB | Minimalist agency boardroom with floor-to-ceiling glass and oak table |
+| `public\images\about\about-team-meeting-2560w.webp` | 2560w | WebP | 411 KB | Minimalist agency boardroom with floor-to-ceiling glass and oak table |
+| `public\images\about\about-team-meeting-1920w.avif` | 1920w | AVIF | 306 KB | Minimalist agency boardroom with floor-to-ceiling glass and oak table |
+| `public\images\about\about-team-meeting-1920w.webp` | 1920w | WebP | 293 KB | Minimalist agency boardroom with floor-to-ceiling glass and oak table |
+| `public\images\about\about-team-meeting-1280w.avif` | 1280w | AVIF | 175 KB | Minimalist agency boardroom with floor-to-ceiling glass and oak table |
+| `public\images\about\about-team-meeting-1280w.webp` | 1280w | WebP | 167 KB | Minimalist agency boardroom with floor-to-ceiling glass and oak table |
+| `public\images\about\about-team-meeting-768w.avif` | 768w | AVIF | 80 KB | Minimalist agency boardroom with floor-to-ceiling glass and oak table |
+| `public\images\about\about-team-meeting-768w.webp` | 768w | WebP | 78 KB | Minimalist agency boardroom with floor-to-ceiling glass and oak table |
+| `public\images\about\about-team-meeting-480w.avif` | 480w | AVIF | 37 KB | Minimalist agency boardroom with floor-to-ceiling glass and oak table |
+| `public\images\about\about-team-meeting-480w.webp` | 480w | WebP | 39 KB | Minimalist agency boardroom with floor-to-ceiling glass and oak table |
+| `public\images\about\about-team-creative-2560w.avif` | 2560w | AVIF | 911 KB | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup |
+| `public\images\about\about-team-creative-2560w.webp` | 2560w | WebP | 880 KB | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup |
+| `public\images\about\about-team-creative-1920w.avif` | 1920w | AVIF | 616 KB | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup |
+| `public\images\about\about-team-creative-1920w.webp` | 1920w | WebP | 599 KB | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup |
+| `public\images\about\about-team-creative-1280w.avif` | 1280w | AVIF | 268 KB | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup |
+| `public\images\about\about-team-creative-1280w.webp` | 1280w | WebP | 267 KB | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup |
+| `public\images\about\about-team-creative-768w.avif` | 768w | AVIF | 101 KB | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup |
+| `public\images\about\about-team-creative-768w.webp` | 768w | WebP | 104 KB | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup |
+| `public\images\about\about-team-creative-480w.avif` | 480w | AVIF | 47 KB | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup |
+| `public\images\about\about-team-creative-480w.webp` | 480w | WebP | 51 KB | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup |
+| `public\images\about\about-hero-3840w.avif` | 3840w | AVIF | 645 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-3840w.webp` | 3840w | WebP | 592 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-2560w.avif` | 2560w | AVIF | 376 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-2560w.webp` | 2560w | WebP | 315 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-1920w.avif` | 1920w | AVIF | 220 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-1920w.webp` | 1920w | WebP | 185 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-1280w.avif` | 1280w | AVIF | 85 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-1280w.webp` | 1280w | WebP | 79 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-768w.avif` | 768w | AVIF | 35 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-768w.webp` | 768w | WebP | 36 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-480w.avif` | 480w | AVIF | 18 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\about\about-hero-480w.webp` | 480w | WebP | 20 KB | Bright open-plan creative office, large factory windows, soft daylight |
+| `public\images\blog\blog-hero-3840w.avif` | 3840w | AVIF | 988 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-3840w.webp` | 3840w | WebP | 1223 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-2560w.avif` | 2560w | AVIF | 562 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-2560w.webp` | 2560w | WebP | 533 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-1920w.avif` | 1920w | AVIF | 251 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-1920w.webp` | 1920w | WebP | 224 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-1280w.avif` | 1280w | AVIF | 82 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-1280w.webp` | 1280w | WebP | 75 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-768w.avif` | 768w | AVIF | 32 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-768w.webp` | 768w | WebP | 31 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-480w.avif` | 480w | AVIF | 16 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\blog\blog-hero-480w.webp` | 480w | WebP | 17 KB | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee |
+| `public\images\home\showcase-05-luxury-residence-2560w.avif` | 2560w | AVIF | 1176 KB | Modern luxury architectural estate at dusk with glowing interior lighting |
+| `public\images\home\showcase-05-luxury-residence-2560w.webp` | 2560w | WebP | 1228 KB | Modern luxury architectural estate at dusk with glowing interior lighting |
+| `public\images\home\showcase-05-luxury-residence-1920w.avif` | 1920w | AVIF | 868 KB | Modern luxury architectural estate at dusk with glowing interior lighting |
+| `public\images\home\showcase-05-luxury-residence-1920w.webp` | 1920w | WebP | 929 KB | Modern luxury architectural estate at dusk with glowing interior lighting |
+| `public\images\home\showcase-05-luxury-residence-1280w.avif` | 1280w | AVIF | 445 KB | Modern luxury architectural estate at dusk with glowing interior lighting |
+| `public\images\home\showcase-05-luxury-residence-1280w.webp` | 1280w | WebP | 470 KB | Modern luxury architectural estate at dusk with glowing interior lighting |
+| `public\images\home\showcase-05-luxury-residence-768w.avif` | 768w | AVIF | 173 KB | Modern luxury architectural estate at dusk with glowing interior lighting |
+| `public\images\home\showcase-05-luxury-residence-768w.webp` | 768w | WebP | 184 KB | Modern luxury architectural estate at dusk with glowing interior lighting |
+| `public\images\home\showcase-05-luxury-residence-480w.avif` | 480w | AVIF | 72 KB | Modern luxury architectural estate at dusk with glowing interior lighting |
+| `public\images\home\showcase-05-luxury-residence-480w.webp` | 480w | WebP | 79 KB | Modern luxury architectural estate at dusk with glowing interior lighting |
+| `public\images\home\showcase-06-botanical-brand-2560w.avif` | 2560w | AVIF | 498 KB | Minimalist organic botanical serum bottle on textured stone in natural light |
+| `public\images\home\showcase-06-botanical-brand-2560w.webp` | 2560w | WebP | 484 KB | Minimalist organic botanical serum bottle on textured stone in natural light |
+| `public\images\home\showcase-06-botanical-brand-1920w.avif` | 1920w | AVIF | 273 KB | Minimalist organic botanical serum bottle on textured stone in natural light |
+| `public\images\home\showcase-06-botanical-brand-1920w.webp` | 1920w | WebP | 264 KB | Minimalist organic botanical serum bottle on textured stone in natural light |
+| `public\images\home\showcase-06-botanical-brand-1280w.avif` | 1280w | AVIF | 93 KB | Minimalist organic botanical serum bottle on textured stone in natural light |
+| `public\images\home\showcase-06-botanical-brand-1280w.webp` | 1280w | WebP | 89 KB | Minimalist organic botanical serum bottle on textured stone in natural light |
+| `public\images\home\showcase-06-botanical-brand-768w.avif` | 768w | AVIF | 27 KB | Minimalist organic botanical serum bottle on textured stone in natural light |
+| `public\images\home\showcase-06-botanical-brand-768w.webp` | 768w | WebP | 27 KB | Minimalist organic botanical serum bottle on textured stone in natural light |
+| `public\images\home\showcase-06-botanical-brand-480w.avif` | 480w | AVIF | 11 KB | Minimalist organic botanical serum bottle on textured stone in natural light |
+| `public\images\home\showcase-06-botanical-brand-480w.webp` | 480w | WebP | 12 KB | Minimalist organic botanical serum bottle on textured stone in natural light |
+| `public\images\home\showcase-07-apparel-editorial-2560w.avif` | 2560w | AVIF | 986 KB | Tactile wool and linen apparel editorial photograph in warm morning sun |
+| `public\images\home\showcase-07-apparel-editorial-2560w.webp` | 2560w | WebP | 971 KB | Tactile wool and linen apparel editorial photograph in warm morning sun |
+| `public\images\home\showcase-07-apparel-editorial-1920w.avif` | 1920w | AVIF | 707 KB | Tactile wool and linen apparel editorial photograph in warm morning sun |
+| `public\images\home\showcase-07-apparel-editorial-1920w.webp` | 1920w | WebP | 684 KB | Tactile wool and linen apparel editorial photograph in warm morning sun |
+| `public\images\home\showcase-07-apparel-editorial-1280w.avif` | 1280w | AVIF | 293 KB | Tactile wool and linen apparel editorial photograph in warm morning sun |
+| `public\images\home\showcase-07-apparel-editorial-1280w.webp` | 1280w | WebP | 268 KB | Tactile wool and linen apparel editorial photograph in warm morning sun |
+| `public\images\home\showcase-07-apparel-editorial-768w.avif` | 768w | AVIF | 83 KB | Tactile wool and linen apparel editorial photograph in warm morning sun |
+| `public\images\home\showcase-07-apparel-editorial-768w.webp` | 768w | WebP | 80 KB | Tactile wool and linen apparel editorial photograph in warm morning sun |
+| `public\images\home\showcase-07-apparel-editorial-480w.avif` | 480w | AVIF | 37 KB | Tactile wool and linen apparel editorial photograph in warm morning sun |
+| `public\images\home\showcase-07-apparel-editorial-480w.webp` | 480w | WebP | 38 KB | Tactile wool and linen apparel editorial photograph in warm morning sun |
+| `public\images\home\showcase-08-roaster-coffee-2560w.avif` | 2560w | AVIF | 1119 KB | Artisanal single-origin coffee beans and ceramic cup in moody warm light |
+| `public\images\home\showcase-08-roaster-coffee-2560w.webp` | 2560w | WebP | 1016 KB | Artisanal single-origin coffee beans and ceramic cup in moody warm light |
+| `public\images\home\showcase-08-roaster-coffee-1920w.avif` | 1920w | AVIF | 771 KB | Artisanal single-origin coffee beans and ceramic cup in moody warm light |
+| `public\images\home\showcase-08-roaster-coffee-1920w.webp` | 1920w | WebP | 696 KB | Artisanal single-origin coffee beans and ceramic cup in moody warm light |
+| `public\images\home\showcase-08-roaster-coffee-1280w.avif` | 1280w | AVIF | 325 KB | Artisanal single-origin coffee beans and ceramic cup in moody warm light |
+| `public\images\home\showcase-08-roaster-coffee-1280w.webp` | 1280w | WebP | 287 KB | Artisanal single-origin coffee beans and ceramic cup in moody warm light |
+| `public\images\home\showcase-08-roaster-coffee-768w.avif` | 768w | AVIF | 109 KB | Artisanal single-origin coffee beans and ceramic cup in moody warm light |
+| `public\images\home\showcase-08-roaster-coffee-768w.webp` | 768w | WebP | 101 KB | Artisanal single-origin coffee beans and ceramic cup in moody warm light |
+| `public\images\home\showcase-08-roaster-coffee-480w.avif` | 480w | AVIF | 46 KB | Artisanal single-origin coffee beans and ceramic cup in moody warm light |
+| `public\images\home\showcase-08-roaster-coffee-480w.webp` | 480w | WebP | 47 KB | Artisanal single-origin coffee beans and ceramic cup in moody warm light |
+| `public\images\services\cylinder-strategy-session-3840w.avif` | 3840w | AVIF | 782 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-3840w.webp` | 3840w | WebP | 930 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-2560w.avif` | 2560w | AVIF | 594 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-2560w.webp` | 2560w | WebP | 569 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-1920w.avif` | 1920w | AVIF | 421 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-1920w.webp` | 1920w | WebP | 415 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-1280w.avif` | 1280w | AVIF | 229 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-1280w.webp` | 1280w | WebP | 206 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-768w.avif` | 768w | AVIF | 91 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-768w.webp` | 768w | WebP | 86 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-480w.avif` | 480w | AVIF | 46 KB | Executive digital strategy sprint in warm architectural boardroom |
+| `public\images\services\cylinder-strategy-session-480w.webp` | 480w | WebP | 46 KB | Executive digital strategy sprint in warm architectural boardroom |

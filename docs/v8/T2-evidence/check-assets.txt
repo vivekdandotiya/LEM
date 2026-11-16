@@ -1,0 +1,43 @@
+=====================================================
+LEAD EDGE MARKETING — V8 ASSET VERIFICATION SUITE
+=====================================================
+Checking routes on: http://localhost:3000
+
+Checking route: /...
+  Found 54 images on /
+  Found 0 videos on /
+Checking route: /about...
+  Found 5 images on /about
+  Found 0 videos on /about
+Checking route: /services...
+  Found 6 images on /services
+  Found 0 videos on /services
+Checking route: /services/seo...
+  Found 8 images on /services/seo
+  Found 2 videos on /services/seo
+Checking route: /services/ppc...
+  Found 8 images on /services/ppc
+  Found 2 videos on /services/ppc
+Checking route: /services/social-media...
+  Found 8 images on /services/social-media
+  Found 2 videos on /services/social-media
+Checking route: /services/web-development...
+  Found 8 images on /services/web-development
+  Found 2 videos on /services/web-development
+Checking route: /services/video-photo...
+  Found 8 images on /services/video-photo
+  Found 2 videos on /services/video-photo
+Checking route: /blog...
+  Found 7 images on /blog
+  Found 0 videos on /blog
+Checking route: /contact...
+  Found 3 images on /contact
+  Found 0 videos on /contact
+
+=====================================================
+AUDIT SUMMARY
+=====================================================
+Total unique assets checked across routes: 50
+Total asset failures detected: 0
+
+✅ ALL ASSETS PASSED: 0 broken images, 0 404s, all naturalWidth > 0!

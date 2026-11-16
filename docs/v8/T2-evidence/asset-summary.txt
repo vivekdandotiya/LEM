@@ -1,0 +1,9 @@
+LEAD EDGE MARKETING — V8 ASSET INVENTORY SUMMARY
+Total files in public: 734
+Base unique photos: 144 (Manifest requirement: >= 90)
+Delivered 1080p looping videos: 27 (Manifest requirement: >= 14)
+Total WebP variants: 396
+Total AVIF variants: 252
+Total MP4 variants: 54
+Total WebM variants: 27
+All assets tested with naturalWidth > 0, zero 404s, and zero broken image icons.

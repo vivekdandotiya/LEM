@@ -349,6 +349,82 @@ export const confirmedServices: ServiceItem[] = [
       },
     ],
   },
+  {
+    id: "video-photo",
+    slug: "video-photo",
+    number: "05",
+    title: "Video Editing & Photo Creation",
+    shortTitle: "Video & Photo",
+    heroHeadline: "CINEMATIC VISUAL STORYTELLING THAT CAPTIVATES AND converts.",
+    tagline: "High-impact video and photography crafted to elevate brand authority.",
+    shortDescription:
+      "High-impact video and photography crafted to elevate brand authority.",
+    fullDescription:
+      "From dynamic short-form reels to high-end commercial campaign photography, we direct, shoot, and edit visual assets engineered to stop scrolls, establish emotional connection, and command market leadership.",
+    deliverables: [
+      "Storyboard & Direction",
+      "Studio & Location Capture",
+      "Editorial Narrative Pacing",
+      "Cinematic Color Grading",
+      "Multi-Platform Delivery",
+    ],
+    features: [
+      {
+        title: "Editorial Craft & Narrative Pacing",
+        description:
+          "Cinematic framing, rhythm-matched cuts, and sound design tailored to create an emotional connection and reinforce brand authority.",
+      },
+      {
+        title: "Multi-Platform Asset Delivery",
+        description:
+          "Exported in native aspect ratios from 9:16 vertical reels to 16:9 4K widescreen commercial masters, ready for cross-channel distribution.",
+      },
+    ],
+    processSteps: [
+      {
+        number: "01",
+        title: "Storyboard & Creative Concept",
+        description: "We map visual hooks, pacing storyboards, and moodboards aligned with your brand voice.",
+      },
+      {
+        number: "02",
+        title: "On-Location & Studio Shoot",
+        description: "We capture high-resolution cinema footage and studio lighting photography.",
+      },
+      {
+        number: "03",
+        title: "Editorial Cut & Narrative Pacing",
+        description: "We sculpt narrative rhythm, sound design, and motion graphics into seamless edits.",
+      },
+      {
+        number: "04",
+        title: "Color Grading & Film Finish",
+        description: "We balance tones, contrast, and film emulation to produce an elevated editorial look.",
+      },
+      {
+        number: "05",
+        title: "Multi-Platform Master Delivery",
+        description: "We package and deliver final high-resolution assets optimized for web, social, and broadcast.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What types of video production do you handle?",
+        answer:
+          "We handle brand documentary films, high-converting product ad spots, executive interviews, social vertical reels, and architectural walkthroughs.",
+      },
+      {
+        question: "Can you edit raw video footage we provide?",
+        answer:
+          "Yes. Our post-production team can ingest your existing raw 4K footage, re-cut the narrative, color-grade, and polish motion graphics for maximum engagement.",
+      },
+      {
+        question: "What delivery formats do you supply?",
+        answer:
+          "We provide 4K and 1080p ProRes masters, web-optimized MP4 and WebM exports, and custom vertical (9:16) versions for social channels.",
+      },
+    ],
+  },
 ];
 
 export const placeholderServices: ServiceItem[] = [];
@@ -360,6 +436,9 @@ export function getActiveServices(includePlaceholders = false): ServiceItem[] {
 export function getServiceBySlug(slug: string): ServiceItem | undefined {
   if (slug === 'meta-ads') {
     return confirmedServices.find((s) => s.slug === 'ppc');
+  }
+  if (slug === 'video-editing' || slug === 'video-editing-photo-creation') {
+    return confirmedServices.find((s) => s.slug === 'video-photo');
   }
   return confirmedServices.find((s) => s.slug === slug);
 }

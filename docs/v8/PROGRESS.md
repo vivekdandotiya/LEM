@@ -70,7 +70,44 @@ Tracking execution of tasks **T0 through T10** in accordance with the V8 Master 
 ---
 
 ## Task T2: Asset Production and Recovery
-- **Status:** NOT STARTED
+- **Status:** COMPLETED ✅
+- **Date:** 2026-11-16
+- **Summary:**
+  - Audited and generated complete asset pipeline for 144 base unique photographs and 27 delivered 1080p looping videos under 2.5 MB.
+  - Sourced and processed high-resolution commercial photography across all missing slots:
+    - 24 Hero Creatives (`public/images/hero/hero-01` through `hero-24`).
+    - 5th Service: "Video Editing & Photo Creation" assets (`public/images/services/video-photo/`): `video-photo-hero`, `concept`, `shoot`, `edit`, `color`, `delivery`, `circle`, `cylinder`.
+    - About Team editorial photography (`public/images/about/`): `about-team-table`, `whiteboard`, `meeting`, `creative`.
+    - Home Showcase photography (`public/images/home/`): `showcase-05-luxury-residence`, `showcase-06-botanical-brand`, `showcase-07-apparel-editorial`, `showcase-08-roaster-coffee`.
+    - Services cylinder strategy photo (`public/images/services/cylinder-strategy-session`).
+  - Built multi-format responsive pipeline generating 3840w, 2560w, 1920w, 1280w, 768w, 480w in both AVIF and WebP with warm-editorial grading.
+  - Encoded 11 new video sets (1080p MP4, WebM VP9, 720p Mobile MP4, 1280w/768w AVIF & WebP posters) with ffmpeg, all verified under 2.5 MB (range 800KB - 1.6MB).
+  - Built typed media catalog `src/data/media.ts` providing responsive picture attributes and video manifests for all routes.
+  - Added 5th service ("Video Editing & Photo Creation", slug: `video-photo`) to `src/data/services.ts`.
+  - Updated `docs/IMAGE-LOG.md` (+200 responsive entries) and `docs/ASSET-LICENSES.md` (+19 commercial entries).
+  - Built automated Playwright test suite `tools/check-assets.ts` verifying all routes for 0 broken images, 0 404s, and naturalWidth > 0.
+  - Generated visual contact sheet at `docs/v8/T2-evidence/contact-sheet.png` and summary report at `docs/v8/T2-evidence/asset-summary.txt`.
+- **Files Touched:**
+  - `docs/ASSET-LICENSES.md`
+  - `docs/IMAGE-LOG.md`
+  - `docs/v8/PROGRESS.md`
+  - `docs/v8/T2-evidence/asset-summary.txt`
+  - `docs/v8/T2-evidence/check-assets.txt`
+  - `docs/v8/T2-evidence/contact-sheet.html`
+  - `docs/v8/T2-evidence/contact-sheet.png`
+  - `next.config.mjs`
+  - `public/images/` (multi-res AVIF & WebP sets)
+  - `public/videos/` (MP4, WebM, 720p, posters)
+  - `src/components/hero/AdCard.tsx`
+  - `src/data/media.ts`
+  - `src/data/services.ts`
+  - `tools/check-assets.ts`
+  - `tools/download-and-process-assets.ts`
+  - `tools/generate-t2-evidence.mjs`
+  - `tools/generate-videos.ts`
+  - `tools/process-asset-pipeline.mjs`
+- **Evidence Path:** `/docs/v8/T2-evidence/`
+- **Git Commit:** `T2: assets`
 
 ---
 

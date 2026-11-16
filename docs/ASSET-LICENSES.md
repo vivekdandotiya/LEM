@@ -50,3 +50,28 @@ All editorial images are licensed under the Unsplash Commercial License (free fo
 - `TheDripPageTransition.jsx`
 - `InkThatReveals.jsx`
 - **License:** Licensed for use in this client project according to `LICENSE-animorio.txt`. Not for resale or redistribution as a standalone code collection.
+
+
+## V8 Additional Commercial Assets
+
+| Folder | File Name | Aspect Ratio | Description | Source | License |
+|---|---|---|---|---|---|
+| **video-photo** | `video-photo-hero.webp` | 16:9 | High-end cinema camera on dark oak desk beside curved color-grading monitor | Antigravity Image Generator | Proprietary Commercial Asset |
+| **video-photo** | `video-photo-concept.webp` | 16:9 | Storyboard sketches, drafting pencils, warm gold swatch cards | Antigravity Image Generator | Proprietary Commercial Asset |
+| **video-photo** | `video-photo-shoot.webp` | 16:9 | Studio video production set with cinema camera, tripod, parabolic lighting | Antigravity Image Generator | Proprietary Commercial Asset |
+| **video-photo** | `video-photo-edit.webp` | 16:9 | Dual display editing suite with timeline waveforms and color console | Antigravity Image Generator | Proprietary Commercial Asset |
+| **video-photo** | `video-photo-color.webp` | 16:9 | Color grading reference suite with cinematic footage stills and backlighting | Unsplash (photo-1574717024653-61fd2cf4d44d) | Unsplash Commercial License (Free) |
+| **video-photo** | `video-photo-delivery.webp` | 16:9 | Linen box presentation prints, laptop client review on honed stone desk | Unsplash (photo-1544717305-2782549b5136) | Unsplash Commercial License (Free) |
+| **video-photo** | `video-photo-circle.webp` | 1:1 | High-end cinema prime lens on dark charcoal background with warm gold glass glint | Unsplash (photo-1617042375876-a13e36732a04) | Unsplash Commercial License (Free) |
+| **video-photo** | `video-photo-cylinder.webp` | 3:4 | Professional cinematic camera rig and prime lens in portrait orientation | Unsplash (photo-1512790182412-b19e6d62bc39) | Unsplash Commercial License (Free) |
+| **about** | `about-team-table.webp` | 4:5 | Collaborative strategy desk with laptops, notebooks, coffee in daylight | Unsplash (photo-1522071820081-009f0129c71c) | Unsplash Commercial License (Free) |
+| **about** | `about-team-whiteboard.webp` | 4:5 | Hands sketching architecture flows on glass whiteboard with markers | Unsplash (photo-1531403009284-440f080d1e12) | Unsplash Commercial License (Free) |
+| **about** | `about-team-meeting.webp` | 4:5 | Minimalist agency boardroom with floor-to-ceiling glass and oak table | Unsplash (photo-1497366811353-6870744d04b2) | Unsplash Commercial License (Free) |
+| **about** | `about-team-creative.webp` | 4:5 | Creative desk with mirrorless camera, prime lens, linen notebook, espresso cup | Unsplash (photo-1452587925148-ce544e77e70d) | Unsplash Commercial License (Free) |
+| **about** | `about-hero.webp` | 16:9 | Bright open-plan creative office, large factory windows, soft daylight | Unsplash (photo-1497366754035-f200968a6e72) | Unsplash Commercial License (Free) |
+| **blog** | `blog-hero.webp` | 16:9 | Editorial writer desk with sleek keyboard, fountain pen, notebook, coffee | Unsplash (photo-1499750310107-5fef28a66643) | Unsplash Commercial License (Free) |
+| **home** | `showcase-05-luxury-residence.webp` | 4:5 | Modern luxury architectural estate at dusk with glowing interior lighting | Unsplash (photo-1600585154340-be6161a56a0c) | Unsplash Commercial License (Free) |
+| **home** | `showcase-06-botanical-brand.webp` | 4:5 | Minimalist organic botanical serum bottle on textured stone in natural light | Unsplash (photo-1556228720-195a672e8a03) | Unsplash Commercial License (Free) |
+| **home** | `showcase-07-apparel-editorial.webp` | 4:5 | Tactile wool and linen apparel editorial photograph in warm morning sun | Unsplash (photo-1490481651871-ab68de25d43d) | Unsplash Commercial License (Free) |
+| **home** | `showcase-08-roaster-coffee.webp` | 4:5 | Artisanal single-origin coffee beans and ceramic cup in moody warm light | Unsplash (photo-1514432324607-a09d9b4aefdd) | Unsplash Commercial License (Free) |
+| **services** | `cylinder-strategy-session.webp` | 3:4 | Executive digital strategy sprint in warm architectural boardroom | Unsplash (photo-1531482615713-2afd69097998) | Unsplash Commercial License (Free) |

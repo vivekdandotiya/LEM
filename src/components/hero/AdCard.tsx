@@ -34,7 +34,7 @@ export function AdCard({
       {/* Background Image */}
       <Image
         src={creative.image}
-        alt={isDecorative ? '' : `${creative.brand} — ${creative.category}`}
+        alt={`${creative.brand} — ${creative.category}`}
         fill
         sizes="(max-width: 640px) 280px, 360px"
         priority={priority}
