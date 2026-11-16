@@ -112,7 +112,45 @@ Tracking execution of tasks **T0 through T10** in accordance with the V8 Master 
 ---
 
 ## Task T3: Navbar and Footer
-- **Status:** NOT STARTED
+- **Status:** COMPLETED ✅
+- **Date:** 2026-11-16
+- **Summary:**
+  - Restored floating pill navbar (B1) centered at `top: 16px` with progressive scroll transitions:
+    - Default hero state: Semi-transparent glass pill (`max-w-6xl`, blur 14px, subtle line border).
+    - Scrolled state (>60px): Narrows to `max-w-4xl` with rich ivory glass (`rgba(246, 243, 236, 0.92)`), blur 20px, and soft elevation shadow.
+    - Directional scroll: Hides on downward scroll past 140px (`translate-y-[-100%]`), reveals smoothly on upward scroll (350ms duration).
+    - Gold scroll progress line (2px brushed gold `#B08D57`) hugging bottom curvature of pill.
+  - Logo: Official emblem (`/logo/lead-edge-logo.png`) fitted at 40px with brand typography.
+  - Desktop Navigation: Exactly 5 links (Home, Services, About, Blog, Contact). Active state indicated by 2px brushed gold accent bar.
+  - Services Dropdown Menu:
+    - Hover/tap card featuring all 5 core disciplines:
+      1. Search Engine Optimization ("Discoverability")
+      2. Pay-Per-Click Advertising ("Immediate Traction")
+      3. Social Media Marketing ("Brand Gravity")
+      4. Web Development ("Architectural Rigor")
+      5. Video Editing & Photo Creation ("Visual Cinematic")
+    - 36px circular badges with gold rims and arrow indicators.
+  - Mobile Drawer (`MobileMenu.tsx`): Warm ivory background (`#F6F3EC/98`), focus trap, ESC listener, and expandable services accordion.
+  - Monumental Letterpress Footer (B2):
+    - Block 1 (Social Platform Cards): 5 rounded white cards for Instagram (`@leadedge_marketing`), Facebook, LinkedIn, YouTube, and X (`@leadedge_mktg`) with hover lift (-4px) and gold glyph shift.
+    - Block 2 (Giant Name & Directory): 4 utility columns including client tagline verbatim ("WE DON'T JUST RANK WEBSITES. WE SCALE REVENUE.") and full-width monumental letterpress wordmark "LEAD EDGE MARKETING" with white shadow relief (`0 3px 0 #fff, 0 8px 18px rgba(255,255,255,.75)`).
+  - Tested 1440 and 390 viewports with Playwright; zero blue, zero lime, and 0 copy leaks verified.
+- **Files Touched:**
+  - `docs/v8/PROGRESS.md`
+  - `docs/v8/T3-evidence/footer-1440.png`
+  - `docs/v8/T3-evidence/footer-mobile-390.png`
+  - `docs/v8/T3-evidence/mobile-menu-drawer-390.png`
+  - `docs/v8/T3-evidence/navbar-dropdown-1440.png`
+  - `docs/v8/T3-evidence/navbar-footer-audit.txt`
+  - `docs/v8/T3-evidence/navbar-hero-1440.png`
+  - `docs/v8/T3-evidence/navbar-mobile-390.png`
+  - `docs/v8/T3-evidence/navbar-scrolled-1440.png`
+  - `src/components/layout/Footer.tsx`
+  - `src/components/layout/MobileMenu.tsx`
+  - `src/components/layout/Navbar.tsx`
+  - `tools/generate-t3-evidence.mjs`
+- **Evidence Path:** `/docs/v8/T3-evidence/`
+- **Git Commit:** `T3: navbar and footer`
 
 ---
 

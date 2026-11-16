@@ -1,0 +1,32 @@
+LEAD EDGE MARKETING — V8 TASK T3 AUDIT REPORT (NAVBAR & FOOTER)
+================================================================================
+Timestamp: 2026-11-16T09:33:37.561Z
+
+1. FLOATING PILL NAVBAR (PART B1):
+- Placement: Fixed at top 16px, centered horizontally.
+- Dimensions: Full pill (rounded-full), h-16 (64px desktop) / h-14 (56px mobile).
+- Max-Width Transition: Starts at 1180px over hero, narrows to 896px (max-w-4xl) after 60px scroll.
+- Background States:
+  - Hero / Unscrolled: Semi-transparent glass with 14px blur and subtle line border.
+  - Scrolled (>60px): Rich ivory glass (0.92 alpha) with 20px blur and soft shadow.
+  - Dark Sections: Charcoal glass (0.90 alpha) with light text and gold accents.
+- Directional Scroll: Hides with translateY(-100%) on downward scroll past 140px; reveals smoothly on upward scroll.
+- Gold Scroll Progress: 2px brushed gold (#B08D57) line hugging the bottom curvature of the pill.
+- Navigation Links: Exactly 5 items (Home, Services, About, Blog, Contact). Active link marked with 2px gold bar.
+- Services Dropdown Menu:
+  - Triggers on hover or click.
+  - Features 5 core disciplines: Search Engine Optimization, Pay-Per-Click Advertising, Social Media Marketing, Web Development, Video Editing & Photo Creation.
+  - Each item displays a 36px gold-rimmed icon badge, bold title, and one-word cue.
+- Mobile Drawer: Warm ivory drawer with focus trap, ESC listener, and expandable services accordion.
+
+2. MONUMENTAL LETTERPRESS FOOTER (PART B2):
+- Block 1 (Social Platform Cards):
+  - 5 cards: Instagram, Facebook, LinkedIn, YouTube, X (Twitter).
+  - Each card includes handle, description, action link, and circular icon badge.
+  - Interactive hover state: lifts -4px, border shifts to gold, glyph turns brushed gold.
+- Block 2 (Giant Name & Directory):
+  - 4 utility columns: Logo & verbatim client tagline ("WE DON'T JUST RANK WEBSITES. WE SCALE REVENUE."), Services directory, Company navigation, Perspective newsletter with honest integration notice.
+  - Giant Name: "LEAD EDGE MARKETING" spanning full width with white letterpress shadow relief (0 3px 0 #fff, 0 8px 18px rgba(255,255,255,.75)).
+  - Copyright line: current year, privacy, terms, and verified architecture credit.
+
+All acceptance criteria for Task T3 verified and passing!
