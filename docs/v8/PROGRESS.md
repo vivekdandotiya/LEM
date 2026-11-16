@@ -155,7 +155,37 @@ Tracking execution of tasks **T0 through T10** in accordance with the V8 Master 
 ---
 
 ## Task T4: Shared Components
-- **Status:** NOT STARTED
+- **Status:** COMPLETED ✅
+- **Date:** 2026-11-16
+- **Summary:**
+  - Built suite of 8 core shared components in `src/components/shared/`:
+    1. `VideoHero.tsx`: Full-bleed ambient video background with multi-format WebM, MP4, 720p sources, AVIF/WebP picture poster fallbacks, atmospheric veil, and `prefers-reduced-motion` compliance.
+    2. `PhotoWall.tsx`: Continuous slow drift marquee displaying 24 high-resolution creatives across 3 alternating rows with hover pause and warm-editorial grading.
+    3. `WorkCard.tsx` & `Lightbox.tsx`: Clean white cards with 4:5, 16:9, and 1:1 aspect ratios, hover lift (-4px), and modal lightbox preview with ESC key dismiss and focus trap.
+    4. `CircleServiceRow.tsx`: Alternating left/right rows with circular masked photography, SVG brushed gold drawing ring (animated stroke-dashoffset on viewport scroll), and client copy.
+    5. `CylinderGallery.tsx`: CSS 3D perspective 1400px rotating cylinder featuring the 5 core disciplines with continuous auto-rotation, pause on hover, and pointer dragging.
+    6. `Testimonials.tsx`: Honest client feedback slider with 4 review cards, explicit "Sample Feedback Drafts" and `verified: false` badges, and zero fabricated metrics.
+    7. `StepPhotoSection.tsx`: 5 unique transition styles (lens, feed, stories, browser, iris) for service process roadmaps.
+    8. `HeroTextAnimation.tsx`: 5 distinct headline entry animations (split-reveal, kinetic-counter, blur-dissolve, wipe-up, iris-fade).
+  - Verified clean TypeScript compilation (`npx tsc --noEmit`).
+  - Captured component gallery evidence to `docs/v8/T4-evidence/shared-components-gallery.png`.
+- **Files Touched:**
+  - `docs/v8/PROGRESS.md`
+  - `docs/v8/T4-evidence/component-audit.txt`
+  - `docs/v8/T4-evidence/gallery.html`
+  - `docs/v8/T4-evidence/shared-components-gallery.png`
+  - `src/components/shared/CircleServiceRow.tsx`
+  - `src/components/shared/CylinderGallery.tsx`
+  - `src/components/shared/HeroTextAnimation.tsx`
+  - `src/components/shared/Lightbox.tsx`
+  - `src/components/shared/PhotoWall.tsx`
+  - `src/components/shared/StepPhotoSection.tsx`
+  - `src/components/shared/Testimonials.tsx`
+  - `src/components/shared/VideoHero.tsx`
+  - `src/components/shared/WorkCard.tsx`
+  - `tools/generate-t4-evidence.mjs`
+- **Evidence Path:** `/docs/v8/T4-evidence/`
+- **Git Commit:** `T4: shared components`
 
 ---
 
