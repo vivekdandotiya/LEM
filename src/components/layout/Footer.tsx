@@ -1,167 +1,135 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { siteConfig } from '@/data/site';
-import { primaryNavItems } from '@/data/nav';
-import { DripLink } from '@/components/animorio/drip/DripLink';
 import {
   Instagram,
-  Facebook,
   Linkedin,
+  Facebook,
   Youtube,
-  Twitter,
-  ArrowUpRight,
-  Sparkles,
+  ArrowRight,
+  Check,
 } from 'lucide-react';
+import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
 
-interface SocialPlatform {
-  name: string;
-  handle: string;
-  desc: string;
-  action: string;
-  href: string;
-  icon: React.ComponentType<{ className?: string }>;
+// Custom X (Twitter) Icon
+function XIcon({ className = 'w-4 h-4' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
 }
 
-const SOCIAL_PLATFORMS: SocialPlatform[] = [
-  {
-    name: 'Instagram',
-    handle: '@leadedge_marketing',
-    desc: 'Visual creative & campaign archives',
-    action: 'Follow on Instagram',
-    href: 'https://instagram.com/leadedge_marketing',
-    icon: Instagram,
-  },
-  {
-    name: 'Facebook',
-    handle: 'Lead Edge Marketing',
-    desc: 'Case studies & community updates',
-    action: 'Join Community',
-    href: 'https://facebook.com/leadedge_marketing',
-    icon: Facebook,
-  },
-  {
-    name: 'LinkedIn',
-    handle: 'Lead Edge Marketing',
-    desc: 'Growth essays & market commentary',
-    action: 'Connect on LinkedIn',
-    href: 'https://linkedin.com/company/lead-edge-marketing',
-    icon: Linkedin,
-  },
-  {
-    name: 'YouTube',
-    handle: '@LeadEdgeMarketing',
-    desc: 'Funnel teardowns & creative strategy',
-    action: 'Subscribe to Channel',
-    href: 'https://youtube.com/@LeadEdgeMarketing',
-    icon: Youtube,
-  },
-  {
-    name: 'X (Twitter)',
-    handle: '@leadedge_mktg',
-    desc: 'Live media & real-time ad data',
-    action: 'Follow on X',
-    href: 'https://x.com/leadedge_mktg',
-    icon: Twitter,
-  },
-];
+// Custom Behance Icon
+function BehanceIcon({ className = 'w-4 h-4' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M7.8 12.8c1.3 0 2.2-.6 2.2-1.8 0-1-.7-1.6-1.8-1.6H4.6v3.4h3.2zm.2 4.4c1.5 0 2.6-.7 2.6-2.1 0-1.3-.9-2-2.4-2H4.6v4.1h3.4zm10-5.7c-2 0-3.3 1.5-3.3 3.5 0 2.1 1.4 3.5 3.5 3.5 1.5 0 2.7-.8 3.1-2.1h-1.6c-.3.5-.8.7-1.4.7-1.1 0-1.8-.7-1.9-1.8h5c.1-.4.1-.7.1-1 0-1.8-1.3-2.8-3.5-2.8zm-1.7 2.5c.1-.8.7-1.4 1.7-1.4 1 0 1.6.6 1.7 1.4h-3.4zM2.5 7h5.8c2.4 0 4 1.3 4 3.2 0 1.2-.6 2.1-1.6 2.7 1.3.5 2 1.6 2 3.1 0 2.3-1.8 3.8-4.4 3.8H2.5V7zm13.7-2h4v1.2h-4V5z" />
+    </svg>
+  );
+}
 
-const FOOTER_SERVICES = [
-  { title: 'Search Engine Optimization', href: '/services/seo' },
-  { title: 'Pay-Per-Click Advertising', href: '/services/ppc' },
-  { title: 'Social Media Marketing', href: '/services/social-media' },
-  { title: 'Web Development', href: '/services/web-development' },
-  { title: 'Video Editing & Photo Creation', href: '/services/video-photo' },
+const FOOTER_COLUMNS = [
+  {
+    title: 'Company',
+    links: [
+      { label: '/ HOME', href: '/', isAccent: true },
+      { label: 'WORK', href: '/work' },
+      { label: 'METHOD', href: '/services' },
+      { label: 'STUDIO', href: '/about' },
+      { label: 'CONTACT', href: '/contact' },
+    ],
+  },
+  {
+    title: 'Services',
+    links: [
+      { label: 'OVERVIEW', href: '/services' },
+      { label: 'SEO & SEARCH', href: '/services/seo' },
+      { label: 'PAID PERFORMANCE', href: '/services/ppc' },
+      { label: 'WEB & COMMERCE', href: '/services/web-development' },
+      { label: 'VIDEO & PHOTO', href: '/services/video-photo' },
+      { label: 'SOCIAL MEDIA', href: '/services/social-media' },
+    ],
+  },
+  {
+    title: 'Programs',
+    links: [
+      { label: 'OVERVIEW', href: '/services' },
+      { label: 'FOUNDATION', href: '/services/seo' },
+      { label: 'REVENUE SCALE', href: '/services/ppc' },
+      { label: 'GLOBAL LAUNCH', href: '/about' },
+      { label: 'DIGITAL RESET', href: '/services/web-development' },
+      { label: 'PRODUCT DISCOVERY', href: '/services/social-media' },
+    ],
+  },
+  {
+    title: 'Discover',
+    links: [
+      { label: 'IMPACT', href: '/work' },
+      { label: 'CASE STUDIES', href: '/work' },
+      { label: 'AWARDS', href: '/about' },
+      { label: 'ARCHIVE', href: '/work' },
+    ],
+  },
+  {
+    title: 'Learn',
+    links: [
+      { label: 'INSIGHTS', href: '/blog' },
+      { label: 'TESTIMONIALS', href: '/#testimonials' },
+      { label: 'FAQS', href: '/#faqs' },
+      { label: 'CLIENTS', href: '/work' },
+      { label: 'CAREERS', href: '/contact' },
+    ],
+  },
 ];
 
 export function Footer() {
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'notice'>('idle');
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newsletterEmail || !newsletterEmail.includes('@')) return;
-    setNewsletterStatus('notice');
+    if (!email || !email.includes('@')) return;
+    setSubscribed(true);
+    setEmail('');
   };
 
-  const currentYear = new Date().getFullYear();
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <footer className="w-full bg-[#EFEBE2] text-ink border-t border-ink/10 relative overflow-hidden select-none">
-      {/* =========================================================================
-          BLOCK 1: SOCIAL PLATFORM CARDS
-          ========================================================================= */}
-      <section className="py-16 sm:py-20 border-b border-ink/10 bg-[#F6F3EC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+    <footer className="w-full bg-[#050607] text-white border-t border-white/10 select-none relative overflow-hidden font-sans">
+      {/* Ambient background grid / radial glow */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-25"
+        style={{
+          background: 'radial-gradient(circle 800px at 20% 0%, rgba(176,141,87,0.06), transparent 70%)',
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 pt-16 sm:pt-24 pb-12">
+        {/* =========================================================================
+            TOP SECTION: Brand Column + 5 Nav Link Columns
+            ========================================================================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
+          {/* Left Brand & Newsletter Column (Spans 4 columns) */}
+          <div className="lg:col-span-4 flex flex-col justify-between max-w-sm">
             <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
-                <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
-                  OUR CHANNELS
+              {/* Brand Logo & Title: . /leadedge.studio */}
+              <div className="flex items-center gap-2.5 mb-6 group cursor-pointer" onClick={scrollToTop}>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#2EE6A8] animate-pulse" aria-hidden="true" />
+                <span className="text-2xl sm:text-3xl font-display font-extrabold tracking-tight text-white flex items-center">
+                  <span className="text-white/40 mr-1.5 font-mono">/</span>leadedge<span className="text-white/50">.agency</span>
                 </span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-display font-extrabold tracking-tight text-ink">
-                Connect across platforms.
-              </h2>
-            </div>
-            <p className="text-xs sm:text-sm font-sans text-stone max-w-xs leading-relaxed">
-              Real-time campaign experiments, breakdowns, and creative work published weekly.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {SOCIAL_PLATFORMS.map((platform) => {
-              const Icon = platform.icon;
-              return (
-                <a
-                  key={platform.name}
-                  href={platform.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative p-5 rounded-[22px] bg-white border border-ink/10 shadow-soft-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-soft-md flex flex-col justify-between min-h-[170px]"
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="w-10 h-10 rounded-full border border-gold/40 bg-gold/10 flex items-center justify-center text-gold group-hover:scale-110 group-hover:border-gold transition-all duration-300">
-                      <Icon className="w-5 h-5 text-gold group-hover:text-gold-deep transition-colors" />
-                    </div>
-                    <ArrowUpRight className="w-4 h-4 text-stone group-hover:text-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
-
-                  <div className="pt-4">
-                    <div className="font-display font-bold text-sm text-ink group-hover:text-gold-deep transition-colors">
-                      {platform.name}
-                    </div>
-                    <div className="font-mono text-[11px] text-stone truncate mt-0.5">
-                      {platform.handle}
-                    </div>
-                    <div className="text-[11px] font-sans text-stone/80 line-clamp-1 mt-1">
-                      {platform.desc}
-                    </div>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          BLOCK 2: GIANT NAME FOOTER & UTILITY DIRECTORY
-          ========================================================================= */}
-      <section className="pt-16 sm:pt-20 pb-10 bg-[#EFEBE2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          {/* 4 Utility Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-16 border-b border-ink/10">
-            {/* Col 1: Brand & Tagline */}
-            <div className="lg:col-span-4 flex flex-col gap-4">
-              <DripLink
-                href="/"
-                className="flex items-center gap-3 group w-fit"
-                aria-label="Lead Edge Marketing - Home"
-              >
-                <div className="relative w-10 h-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+              {/* Agency Emblem / Avatar Circle */}
+              <div className="w-10 h-10 rounded-full bg-[#18191C] border border-white/15 p-1.5 mb-6 flex items-center justify-center shadow-inner">
+                <div className="relative w-full h-full">
                   <Image
                     src="/logo/lead-edge-logo.png"
                     alt="Lead Edge Logo"
@@ -170,134 +138,211 @@ export function Footer() {
                     className="object-contain"
                   />
                 </div>
-                <div>
-                  <span className="font-display font-extrabold tracking-tight text-ink text-base block leading-none">
-                    LEAD EDGE
-                  </span>
-                  <span className="text-[9px] font-mono uppercase tracking-widest text-stone block mt-1">
-                    MARKETING
-                  </span>
-                </div>
-              </DripLink>
-
-              {/* Client Tagline Verbatim */}
-              <p className="text-xs sm:text-sm font-sans font-semibold text-ink leading-relaxed max-w-sm pt-2">
-                WE DON&apos;T JUST RANK WEBSITES. WE SCALE REVENUE.
-              </p>
-
-              <div className="flex flex-col gap-1 text-xs font-mono text-stone pt-2">
-                <span className="text-ink font-medium">Direct: {siteConfig.contact.email}</span>
-                <span>Studio: {siteConfig.contact.phone}</span>
-                <span>Hours: {siteConfig.contact.hours}</span>
               </div>
-            </div>
 
-            {/* Col 2: Services Directory */}
-            <div className="lg:col-span-3 flex flex-col gap-3">
-              <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
-                Services
-              </span>
-              <ul className="flex flex-col gap-2.5 text-xs font-sans">
-                {FOOTER_SERVICES.map((srv) => (
-                  <li key={srv.href}>
-                    <DripLink
-                      href={srv.href}
-                      className="text-stone hover:text-ink transition-colors duration-200"
-                    >
-                      {srv.title}
-                    </DripLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Col 3: Company Navigation */}
-            <div className="lg:col-span-2 flex flex-col gap-3">
-              <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
-                Company
-              </span>
-              <ul className="flex flex-col gap-2.5 text-xs font-sans">
-                {primaryNavItems.map((item) => (
-                  <li key={item.title}>
-                    <DripLink
-                      href={item.href}
-                      className="text-stone hover:text-ink transition-colors duration-200"
-                    >
-                      {item.title}
-                    </DripLink>
-                  </li>
-                ))}
-                <li>
-                  <DripLink
-                    href="/services"
-                    className="text-stone hover:text-ink transition-colors duration-200"
-                  >
-                    Disciplines Overview
-                  </DripLink>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 4: Perspective Newsletter */}
-            <div className="lg:col-span-3 flex flex-col gap-3">
-              <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-gold" />
-                Perspective
-              </span>
-              <p className="text-xs font-sans text-stone leading-relaxed">
-                Bi-weekly dispatch on algorithmic search changes, paid acquisition angles, and creative production.
+              {/* Manifesto Copy Verbatim from reference style */}
+              <p className="text-xs sm:text-[13px] font-sans text-stone/90 leading-relaxed mb-8">
+                Every two weeks, we take you behind the scenes. Around 1,000 words on search architecture, creative media performance, and what we&apos;re learning through our work.
               </p>
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2 pt-1">
-                <div className="flex gap-2">
-                  <input
-                    type="email"
-                    required
-                    value={newsletterEmail}
-                    onChange={(e) => {
-                      setNewsletterEmail(e.target.value);
-                      if (newsletterStatus === 'notice') setNewsletterStatus('idle');
-                    }}
-                    placeholder="name@business.com"
-                    className="w-full px-3 py-2 text-xs rounded-full bg-white border border-ink/10 text-ink placeholder-stone/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-                  />
-                  <button
-                    type="submit"
-                    className="px-4 py-2 text-xs font-semibold rounded-full bg-ink text-ivory hover:bg-gold hover:text-ink transition-colors whitespace-nowrap"
-                  >
-                    Join
-                  </button>
-                </div>
-
-                {newsletterStatus === 'notice' && (
-                  <div className="p-2.5 rounded-xl bg-white border border-ink/10 text-[11px] text-stone">
-                    <span className="font-bold text-gold-deep block mb-0.5">Integration Notice:</span>
-                    Newsletter platform pending client integration. No data recorded.
-                  </div>
-                )}
-              </form>
             </div>
+
+            {/* Newsletter Input with Underline Style & Arrow Submit */}
+            <form onSubmit={handleSubmit} className="w-full">
+              <div className="relative flex items-center border-b border-white/30 hover:border-white/60 focus-within:border-white transition-colors pb-2">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (subscribed) setSubscribed(false);
+                  }}
+                  placeholder="YOUR EMAIL HERE"
+                  aria-label="Your email address"
+                  className="w-full bg-transparent text-xs font-mono tracking-[0.2em] uppercase text-white placeholder-white/40 focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  aria-label="Submit newsletter subscription"
+                  className="pl-3 text-white/70 hover:text-white transition-colors group flex items-center"
+                >
+                  {subscribed ? (
+                    <Check className="w-4 h-4 text-[#2EE6A8]" />
+                  ) : (
+                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                  )}
+                </button>
+              </div>
+
+              {/* Disclaimer */}
+              <p className="text-[11px] font-sans text-stone/70 mt-3 leading-relaxed">
+                {subscribed ? (
+                  <span className="text-[#2EE6A8] font-mono">✓ You are subscribed to /leadedge dispatches.</span>
+                ) : (
+                  <>
+                    We&apos;ll only email you about /leadedge. Read our{' '}
+                    <Link href="/privacy" className="underline hover:text-white transition-colors">
+                      Privacy Policy
+                    </Link>
+                    . Unsubscribe at any time.
+                  </>
+                )}
+              </p>
+            </form>
           </div>
 
-          {/* Monumental Wordmark Footer */}
-          <div className="pt-10 sm:pt-14 pb-8 sm:pb-12 text-center">
-            <h1 className="giant-name-footer select-none uppercase leading-[0.88] tracking-tighter text-[clamp(2.75rem,11.2vw,9.5rem)] text-charcoal">
-              LEAD EDGE MARKETING
-            </h1>
+          {/* Right Navigation Directory (Spans 8 columns: 5 clean columns) */}
+          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 lg:gap-4 pt-2">
+            {FOOTER_COLUMNS.map((col) => (
+              <div key={col.title} className="flex flex-col gap-4">
+                <span className="text-xs font-display font-extrabold text-white tracking-wider uppercase">
+                  {col.title}
+                </span>
+                <ul className="flex flex-col gap-3">
+                  {col.links.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className={`text-xs font-mono tracking-wider transition-colors duration-200 block ${
+                          link.isAccent
+                            ? 'text-[#2EE6A8] font-bold hover:text-white'
+                            : 'text-stone hover:text-white'
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* Legal / Copyright Bar */}
-          <div className="pt-6 border-t border-ink/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone font-mono">
-            <p>© {currentYear} Lead Edge Marketing. All rights reserved.</p>
-            <div className="flex items-center gap-4 text-[11px]">
-              <span>Privacy Policy</span>
-              <span>·</span>
-              <span>Terms of Engagement</span>
-              <span>·</span>
-              <span className="text-gold-deep font-semibold">Verified Architecture</span>
+        {/* =========================================================================
+            MIDDLE SECTION: Industry Partnerships & Social Row + ENG Dropdown
+            ========================================================================= */}
+        <div className="pt-10 pb-8 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/5">
+          {/* Members / Partner Accreditation Statement */}
+          <p className="text-xs font-sans text-stone/80 text-center md:text-left">
+            Proud partners with Google Premier Partner, Meta Business Partner, Shopify Plus, HubSpot, and Awwwards.
+          </p>
+
+          {/* Social Icons & Language Badge */}
+          <div className="flex items-center gap-5 sm:gap-6 text-stone">
+            {/* W. (Wikipedia / Web Directory) */}
+            <a
+              href="https://leadedge.agency"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Lead Edge Directory"
+              className="text-xs font-bold font-serif hover:text-white transition-colors"
+            >
+              W.
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://instagram.com/leadedge_marketing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Lead Edge on Instagram"
+              className="hover:text-white transition-colors"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://linkedin.com/company/lead-edge-marketing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Lead Edge on LinkedIn"
+              className="hover:text-white transition-colors"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
+
+            {/* X / Twitter */}
+            <a
+              href="https://x.com/leadedge_mktg"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Lead Edge on X"
+              className="hover:text-white transition-colors"
+            >
+              <XIcon className="w-4 h-4" />
+            </a>
+
+            {/* Behance */}
+            <a
+              href="https://behance.net/leadedge"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Lead Edge on Behance"
+              className="hover:text-white transition-colors"
+            >
+              <BehanceIcon className="w-4 h-4" />
+            </a>
+
+            {/* Facebook */}
+            <a
+              href="https://facebook.com/leadedge_marketing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Lead Edge on Facebook"
+              className="hover:text-white transition-colors"
+            >
+              <Facebook className="w-4 h-4" />
+            </a>
+
+            {/* YouTube */}
+            <a
+              href="https://youtube.com/@LeadEdgeMarketing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Lead Edge on YouTube"
+              className="hover:text-white transition-colors"
+            >
+              <Youtube className="w-4 h-4" />
+            </a>
+
+            {/* ENG Dropdown Badge */}
+            <div className="flex items-center gap-1 px-2.5 py-1 rounded bg-[#16171A] border border-white/10 text-[11px] font-mono text-white/90 hover:border-white/30 transition-colors cursor-pointer ml-2">
+              <span className="font-bold">ENG</span>
+              <span className="text-[10px] text-stone">↓</span>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* =========================================================================
+            BOTTOM SECTION: Minimal Copyright Line
+            ========================================================================= */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-stone/60">
+          <p>© 2006–2026 All rights reserved. Privacy. Legal. Quality.</p>
+          <div className="flex items-center gap-4 text-[11px]">
+            <Link href="/privacy" className="hover:text-stone transition-colors">
+              Privacy Notice
+            </Link>
+            <span>·</span>
+            <Link href="/terms" className="hover:text-stone transition-colors">
+              Terms of Engagement
+            </Link>
+            <span>·</span>
+            <span className="text-[#D9C29A]">Lead Edge Studio UK</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Accent Star Widget (Right Margin, matching reference screenshot) */}
+      <button
+        onClick={scrollToTop}
+        title="Scroll to Top"
+        aria-label="Scroll to top"
+        className="fixed bottom-6 right-6 z-40 hidden sm:flex items-center justify-center w-10 h-10 rounded-xl bg-[#0F1012] border border-white/15 text-[#B08D57] hover:text-white hover:border-[#B08D57] transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.7)] group"
+      >
+        <SparkleGlyph size={18} spin={true} />
+      </button>
     </footer>
   );
 }

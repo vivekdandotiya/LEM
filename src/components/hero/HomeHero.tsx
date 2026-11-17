@@ -5,7 +5,6 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HeroWall } from './HeroWall';
-import { HeroGlobalClocks } from './HeroGlobalClocks';
 import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
 import { Magnetic } from '@/motion/Magnetic';
 import { HERO_DATA } from '@/data/hero';
@@ -108,7 +107,7 @@ export function HomeHero() {
   }, []);
 
   const scrollToNext = () => {
-    const nextSec = document.getElementById('services-grid') || document.getElementById('what-we-do');
+    const nextSec = document.getElementById('global-clocks') || document.getElementById('services-grid') || document.getElementById('what-we-do');
     if (nextSec) {
       nextSec.scrollIntoView({ behavior: 'smooth' });
     }
@@ -227,23 +226,20 @@ export function HomeHero() {
         </div>
       </div>
 
-      {/* 4. Hero Bottom Area: Global Studio Clocks & Smooth Scroll */}
-      <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-12 pb-6 pt-2 flex flex-col md:flex-row items-center justify-between gap-5">
-        <div className="hidden lg:flex items-center gap-2 w-40 text-left">
+      {/* 4. Hero Bottom Area: Active Global Signal & Smooth Scroll */}
+      <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-12 pb-6 pt-2 flex items-center justify-between gap-5">
+        <div className="flex items-center gap-2.5">
           <span className="w-2 h-2 rounded-full bg-[#B08D57] animate-pulse" />
-          <span className="font-mono text-[11px] uppercase tracking-wider text-white/70">
-            24/7 Global Studios
+          <span className="font-mono text-xs uppercase tracking-wider text-white/80 font-medium">
+            Active Desks: London · Singapore · New York
           </span>
         </div>
-
-        {/* 3 Flip Clocks: Europe (London), Asia (Singapore), Americas (New York) */}
-        <HeroGlobalClocks />
 
         <div className="flex items-center gap-3">
           <button
             onClick={scrollToNext}
             className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-charcoal/90 hover:bg-charcoal border border-white/20 text-gold transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-            aria-label="Scroll to services"
+            aria-label="Scroll to global clocks and services"
           >
             <span className="text-xs font-mono font-bold tracking-wider uppercase text-white/90 group-hover:text-gold transition-colors">
               Scroll

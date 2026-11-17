@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { siteConfig } from "@/data/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { BrandFloodIntro } from "@/components/intro/BrandFloodIntro";
+import { StartupIntro } from "@/components/intro/StartupIntro";
 import SmoothScroll from "@/motion/SmoothScroll";
 import { DripTransitionProvider } from "@/components/animorio/drip/DripTransitionProvider";
 import CustomCursor from "@/motion/CustomCursor";
@@ -77,8 +77,8 @@ export default function RootLayout({
         {/* Custom cursor */}
         <CustomCursor />
 
-        {/* Brand Name Flood Intro (Plays once per session, ?intro=1 forces replay) */}
-        <BrandFloodIntro />
+        {/* Startup Intro: 4 Buildings + Climbing Arrow + Curtain Reveal */}
+        <StartupIntro />
 
         {/* WCAG 2.2 Skip-To-Content Link */}
         <a
