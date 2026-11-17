@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ServiceItem } from '@/data/services';
 import { HeroTextAnimation, HeroAnimationVariant } from '@/components/shared/HeroTextAnimation';
 import { StepPhotoSection, StepTransitionStyle, StepItem } from '@/components/shared/StepPhotoSection';
+import { ServicePackagesSection } from '@/components/services/ServicePackagesSection';
 import { WorkCard } from '@/components/shared/WorkCard';
 import { Lightbox, LightboxItem } from '@/components/shared/Lightbox';
 import { ArrowRight, CheckCircle2, ChevronDown, Sparkles } from 'lucide-react';
@@ -566,7 +567,13 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         steps={config.steps}
       />
 
-      {/* 4. Three Selected Concept Work Cards */}
+      {/* 4. What We Do Differently (Tiered Deliverables Breakdown) */}
+      <ServicePackagesSection
+        serviceSlug={service.slug}
+        serviceTitle={service.title}
+      />
+
+      {/* 5. Three Selected Concept Work Cards */}
       <section className="py-20 sm:py-28 bg-[#F6F3EC] border-b border-ink/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-8 border-b border-ink/10 mb-12">
