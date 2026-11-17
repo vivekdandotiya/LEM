@@ -459,6 +459,53 @@ section[data-cv="auto"],
   contain-intrinsic-size: 1px 900px;
 }
 
+/* Hero Background Endless Slow Moving Wall */
+@keyframes wall-scroll-up {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes wall-scroll-down {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes wall-up {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes wall-down {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.wall-col-up {
+  animation: wall-scroll-up linear infinite !important;
+  will-change: transform;
+}
+
+.wall-col-down {
+  animation: wall-scroll-down linear infinite !important;
+  will-change: transform;
+}
+
 /* Reduced motion overrides */
 @media (prefers-reduced-motion: reduce) {
   *,

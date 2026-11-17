@@ -69,7 +69,7 @@ export function AdCard({
         {/* Category Tag */}
         <div className="flex items-center gap-1.5">
           {showConceptBadge && (
-            <span className="sticker-badge text-[10px] py-0.5 px-2">Concept</span>
+            <span className="text-[10px] py-0.5 px-2 rounded-full bg-gold/20 text-gold border border-gold/30 font-mono">Concept</span>
           )}
           <span className="px-2.5 py-1 rounded bg-charcoal/90 border border-white/10 text-[10px] font-mono tracking-wider uppercase text-white/90">
             {creative.category}
@@ -85,7 +85,7 @@ export function AdCard({
 
         {/* Hairline divider & CTA */}
         <div className="pt-2.5 border-t border-white/15 flex items-center justify-between text-xs font-mono">
-          <span className="text-lime group-hover:text-lime-soft transition-colors flex items-center gap-1 font-sans font-bold">
+          <span className="text-gold group-hover:text-gold-soft transition-colors flex items-center gap-1 font-sans font-bold">
             {creative.cta} <span aria-hidden="true">→</span>
           </span>
           <span className="text-white/60 font-mono tracking-widest text-[11px]">

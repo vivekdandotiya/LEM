@@ -43,14 +43,12 @@ export function HeroWall() {
     // 2. Entrance Animation after Preloader
     const handlePreloaderDone = () => {
       gsap.fromTo(
-        wall.querySelectorAll('.wall-col'),
-        { opacity: 0, scale: 0.92, y: 30 },
+        wall,
+        { opacity: 0, scale: 0.95 },
         {
           opacity: 1,
           scale: 1,
-          y: 0,
           duration: 1.2,
-          stagger: 0.05,
           ease: 'power3.out',
         }
       );
@@ -86,14 +84,14 @@ export function HeroWall() {
     };
   }, []);
 
-  // Organize creatives into 6 columns capped to visible viewport + 1 buffer (3 per col, duplicated once to 6 per col)
+  // Organize creatives into 6 columns capped to visible viewport (4 per col, duplicated once to 8 per col)
   const columns: { creatives: HeroCreative[]; dur: number; dir: 'up' | 'down' }[] = [
-    { creatives: [HERO_CREATIVES[0], HERO_CREATIVES[6], HERO_CREATIVES[12]], dur: 85, dir: 'up' },
-    { creatives: [HERO_CREATIVES[1], HERO_CREATIVES[7], HERO_CREATIVES[13]], dur: 105, dir: 'down' },
-    { creatives: [HERO_CREATIVES[2], HERO_CREATIVES[8], HERO_CREATIVES[14]], dur: 75, dir: 'up' },
-    { creatives: [HERO_CREATIVES[3], HERO_CREATIVES[9], HERO_CREATIVES[15]], dur: 95, dir: 'down' },
-    { creatives: [HERO_CREATIVES[4], HERO_CREATIVES[10], HERO_CREATIVES[16]], dur: 80, dir: 'up' },
-    { creatives: [HERO_CREATIVES[5], HERO_CREATIVES[11], HERO_CREATIVES[17]], dur: 110, dir: 'down' },
+    { creatives: [HERO_CREATIVES[0], HERO_CREATIVES[1], HERO_CREATIVES[2], HERO_CREATIVES[3]], dur: 38, dir: 'up' },
+    { creatives: [HERO_CREATIVES[4], HERO_CREATIVES[5], HERO_CREATIVES[6], HERO_CREATIVES[7]], dur: 46, dir: 'down' },
+    { creatives: [HERO_CREATIVES[8], HERO_CREATIVES[9], HERO_CREATIVES[10], HERO_CREATIVES[11]], dur: 34, dir: 'up' },
+    { creatives: [HERO_CREATIVES[12], HERO_CREATIVES[13], HERO_CREATIVES[14], HERO_CREATIVES[15]], dur: 44, dir: 'down' },
+    { creatives: [HERO_CREATIVES[16], HERO_CREATIVES[17], HERO_CREATIVES[18], HERO_CREATIVES[19]], dur: 36, dir: 'up' },
+    { creatives: [HERO_CREATIVES[20], HERO_CREATIVES[21], HERO_CREATIVES[22], HERO_CREATIVES[23]], dur: 48, dir: 'down' },
   ];
 
   return (
@@ -110,13 +108,13 @@ export function HeroWall() {
           <div
             key={colIdx}
             className={`wall-col flex flex-col gap-3 sm:gap-4 ${
-              colIdx >= 3 ? 'hidden md:flex' : ''
-            } ${colIdx >= 4 ? 'md:hidden lg:flex' : ''}`}
+              col.dir === 'up' ? 'wall-col-up' : 'wall-col-down'
+            } ${colIdx >= 3 ? 'hidden md:flex' : ''} ${colIdx >= 4 ? 'md:hidden lg:flex' : ''}`}
             style={{
-              animationName: col.dir === 'up' ? 'wall-up' : 'wall-down',
               animationDuration: `${col.dur}s`,
               animationTimingFunction: 'linear',
               animationIterationCount: 'infinite',
+              animationPlayState: 'running',
               willChange: 'transform',
             }}
           >
