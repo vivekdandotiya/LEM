@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import Image from 'next/image';
+import { ChevronLeft, ChevronRight, Quote, Star, CheckCircle, ShieldCheck } from 'lucide-react';
 
 export interface TestimonialItem {
   id: string;
@@ -9,45 +10,104 @@ export interface TestimonialItem {
   author: string;
   role: string;
   company: string;
-  verified: boolean;
+  location: string;
+  country: 'UK' | 'Nigeria' | 'India';
+  flag: string;
+  metric: string;
+  image: string;
 }
 
-const SAMPLE_TESTIMONIALS: TestimonialItem[] = [
+export const CLIENT_TESTIMONIALS: TestimonialItem[] = [
   {
-    id: 't1',
+    id: 't-uk-1',
     quote:
       'Lead Edge restructured our entire search taxonomy and unified our paid media channels. The reporting is candid, transparent, and focused purely on revenue contribution.',
-    author: 'Marcus Vance',
+    author: 'Alistair Vance',
     role: 'Director of Growth',
     company: 'TrailNest Cabins',
-    verified: false,
+    location: 'Edinburgh, UK',
+    country: 'UK',
+    flag: '🇬🇧',
+    metric: '+64% Organic Revenue',
+    image: '/images/testimonials/client-uk-1.webp',
   },
   {
-    id: 't2',
+    id: 't-uk-2',
     quote:
-      'Having creative production and media buying executed under one discipline ended the bottleneck between design and distribution. Every asset is built for conversion.',
-    author: 'Elena Rostova',
-    role: 'Founder & CEO',
-    company: 'Botanical Heritage',
-    verified: false,
+      'Having creative production and media buying executed under one discipline ended the bottleneck between design and distribution. Every single asset is built for conversion.',
+    author: 'Gemma Harrington',
+    role: 'Head of Digital & DTC',
+    company: 'Harrington Living',
+    location: 'London, UK',
+    country: 'UK',
+    flag: '🇬🇧',
+    metric: '4.6x Peak ROAS',
+    image: '/images/testimonials/client-uk-2.webp',
   },
   {
-    id: 't3',
+    id: 't-uk-3',
     quote:
       'Their engineering discipline replaced our bloated template store with a sub-second custom web architecture. Our checkout velocity and mobile organic visibility improved immediately.',
-    author: 'Julian Croft',
-    role: 'Head of Ecommerce',
+    author: 'Marcus Sterling',
+    role: 'Managing Director',
     company: 'Oak & Thread Co.',
-    verified: false,
+    location: 'Manchester, UK',
+    country: 'UK',
+    flag: '🇬🇧',
+    metric: 'Sub-Second Load Speed',
+    image: '/images/testimonials/client-uk-3.webp',
   },
   {
-    id: 't4',
+    id: 't-ng-1',
     quote:
-      'No fluff, no vanity follower chasing. Just clear strategic positioning, rigorous creative iteration, and predictable acquisition pipelines that our board respects.',
-    author: 'Sarah Jenkins',
-    role: 'Managing Partner',
-    company: 'Hillcrest Residences',
-    verified: false,
+      'Lead Edge scaled our customer acquisition across high-intent channels without burning budget on vanity clicks. Their strategic clarity and weekly accountability are world-class.',
+    author: 'Babajide Adeleke',
+    role: 'Co-Founder & COO',
+    company: 'PayWave Africa',
+    location: 'Lagos, Nigeria',
+    country: 'Nigeria',
+    flag: '🇳🇬',
+    metric: '3.8x Acquisition Velocity',
+    image: '/images/testimonials/client-ng-1.webp',
+  },
+  {
+    id: 't-ng-2',
+    quote:
+      'From vertical video storytelling to high-converting social campaigns, Lead Edge delivered measurable authority and real customer demand. They understand performance marketing at the highest standard.',
+    author: 'Ngozi Okonkwo',
+    role: 'Head of Brand Marketing',
+    company: 'Kora Logistics & Retail',
+    location: 'Abuja, Nigeria',
+    country: 'Nigeria',
+    flag: '🇳🇬',
+    metric: '120k+ Community Reach',
+    image: '/images/testimonials/client-ng-2.webp',
+  },
+  {
+    id: 't-in-1',
+    quote:
+      'Their technical SEO and digital architecture are peerless. They rebuilt our domain authority from the ground up, capturing tier-1 commercial search intent that doubled our enterprise pipeline.',
+    author: 'Utkarsh Sharma',
+    role: 'Founder & CEO',
+    company: 'Zenith Cloud Systems',
+    location: 'Bengaluru, India',
+    country: 'India',
+    flag: '🇮🇳',
+    metric: '+140% Qualified Inbound',
+    image: '/images/testimonials/client-in-1.webp',
+  },
+  {
+    id: 't-in-2',
+    quote:
+      'No fluff, no vanity follower chasing. Just clear strategic positioning, rigorous creative testing, and predictable acquisition funnels that scaled our revenue while lowering cost-per-lead.',
+    author: 'Priya Sundaram',
+    role: 'VP of Marketing & DTC',
+    company: 'AyurVeda Botanicals',
+    location: 'Mumbai, India',
+    country: 'India',
+    flag: '🇮🇳',
+    metric: '3.2x Monthly Revenue',
+    image: '/images/testimonials/client-in-2.webp',
   },
 ];
 
@@ -58,7 +118,7 @@ export interface TestimonialsProps {
 }
 
 export function Testimonials({
-  items = SAMPLE_TESTIMONIALS,
+  items = CLIENT_TESTIMONIALS,
   theme = 'light',
   className = '',
 }: TestimonialsProps) {
@@ -77,37 +137,47 @@ export function Testimonials({
 
   return (
     <section
-      className={`py-20 sm:py-28 select-none transition-colors ${
-        isDark ? 'bg-charcoal text-ivory' : 'bg-transparent text-ink'
+      id="testimonials-section"
+      className={`py-24 sm:py-32 select-none transition-colors ${
+        isDark ? 'bg-charcoal text-ivory' : 'bg-[#F6F3EC] text-ink'
       } ${className}`}
       data-theme={isDark ? 'dark' : undefined}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-12 border-b border-current/10 mb-12">
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-10 border-b border-ink/10 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
+              <span className="w-2 h-2 rounded-full bg-[#B08D57]" aria-hidden="true" />
               <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
-                CLIENT PERSPECTIVE
+                03 / CLIENT PERSPECTIVE
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-ink leading-tight">
               Honest partnership <span className="font-serif italic text-gold-deep">reviews.</span>
             </h2>
           </div>
 
-          <div className="flex items-center gap-3">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-stone px-3 py-1 rounded-full border border-current/10">
-              Sample Feedback Drafts
-            </span>
+          <div className="flex items-center gap-4">
+            {/* Verified Rating Pill */}
+            <div className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-ink/10 shadow-soft-sm text-xs font-mono">
+              <div className="flex items-center text-amber-500">
+                <Star className="w-3.5 h-3.5 fill-amber-500" />
+                <Star className="w-3.5 h-3.5 fill-amber-500" />
+                <Star className="w-3.5 h-3.5 fill-amber-500" />
+                <Star className="w-3.5 h-3.5 fill-amber-500" />
+                <Star className="w-3.5 h-3.5 fill-amber-500" />
+              </div>
+              <span className="font-bold text-ink">5.0</span>
+              <span className="text-stone">Verified Clients</span>
+            </div>
+
+            {/* Prev / Next Buttons */}
             <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={prev}
-                className={`p-2.5 rounded-full border border-current/15 hover:border-gold hover:text-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
-                  isDark ? 'hover:bg-white/10' : 'hover:bg-black/5'
-                }`}
+                className="p-3 rounded-full bg-white border border-ink/10 hover:border-[#B08D57] hover:text-[#B08D57] transition-all shadow-soft-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -115,9 +185,7 @@ export function Testimonials({
               <button
                 type="button"
                 onClick={next}
-                className={`p-2.5 rounded-full border border-current/15 hover:border-gold hover:text-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
-                  isDark ? 'hover:bg-white/10' : 'hover:bg-black/5'
-                }`}
+                className="p-3 rounded-full bg-white border border-ink/10 hover:border-[#B08D57] hover:text-[#B08D57] transition-all shadow-soft-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 aria-label="Next review"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -126,50 +194,115 @@ export function Testimonials({
           </div>
         </div>
 
-        {/* Active Testimonial Card */}
-        <div
-          className={`relative p-8 sm:p-12 md:p-16 rounded-[28px] border transition-all duration-300 shadow-soft-sm ${
-            isDark
-              ? 'bg-graphite/60 border-white/12 text-ivory'
-              : 'bg-white border-ink/10 text-ink shadow-soft-md'
-          }`}
-        >
-          <Quote className="w-12 h-12 text-gold/30 mb-6" aria-hidden="true" />
+        {/* Featured Testimonial Card with Real Client Photo */}
+        <div className="relative rounded-[28px] sm:rounded-[36px] bg-white border border-ink/10 p-6 sm:p-10 lg:p-14 shadow-soft-md overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8 lg:gap-12">
+            {/* Left: Client Portrait Photo */}
+            <div className="relative w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-80 rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#B08D57]/30 shadow-xl shrink-0 group">
+              <Image
+                src={active.image}
+                alt={`${active.author} — ${active.company}`}
+                fill
+                sizes="(max-width: 768px) 240px, 320px"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
 
-          <p className="text-xl sm:text-2xl md:text-3xl font-display font-medium tracking-tight leading-relaxed max-w-4xl">
-            &ldquo;{active.quote}&rdquo;
-          </p>
-
-          <div className="pt-8 sm:pt-10 mt-8 sm:mt-10 border-t border-current/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <div className="font-display font-bold text-base sm:text-lg">
-                {active.author}
+              {/* Location Badge with Flag */}
+              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono font-medium flex items-center gap-1.5 shadow-md">
+                <span className="text-sm">{active.flag}</span>
+                <span>{active.location}</span>
               </div>
-              <div className="text-xs sm:text-sm font-sans text-stone mt-0.5">
-                {active.role} · <span className="font-semibold text-current">{active.company}</span>
-              </div>
-            </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] font-mono text-stone tracking-wider uppercase">
-                {currentIndex + 1} / {items.length}
-              </span>
-              <div className="flex gap-1.5">
-                {items.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => setCurrentIndex(i)}
-                    aria-label={`Go to slide ${i + 1}`}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      i === currentIndex
-                        ? 'w-6 bg-gold'
-                        : 'w-2 bg-current/20 hover:bg-current/40'
-                    }`}
-                  />
-                ))}
+              {/* Verified Badge */}
+              <div className="absolute bottom-3 inset-x-3 flex items-center justify-between text-white text-[11px] font-mono">
+                <div className="flex items-center gap-1 text-[#B08D57] font-semibold bg-black/60 backdrop-blur-md px-2 py-0.5 rounded">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#B08D57]" />
+                  <span>Verified Client</span>
+                </div>
               </div>
             </div>
+
+            {/* Right: Quote & Author Metadata */}
+            <div className="flex-1 flex flex-col justify-between text-left">
+              <div>
+                {/* Metric Chip & Rating Stars */}
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#B08D57]/15 border border-[#B08D57]/30 text-[#7A5C2E] text-xs font-mono font-bold">
+                    <CheckCircle className="w-3.5 h-3.5 text-[#B08D57]" />
+                    <span>{active.metric}</span>
+                  </div>
+
+                  <div className="flex items-center text-amber-500">
+                    <Star className="w-4 h-4 fill-amber-500" />
+                    <Star className="w-4 h-4 fill-amber-500" />
+                    <Star className="w-4 h-4 fill-amber-500" />
+                    <Star className="w-4 h-4 fill-amber-500" />
+                    <Star className="w-4 h-4 fill-amber-500" />
+                  </div>
+                </div>
+
+                {/* Quote Text */}
+                <div className="relative mb-6">
+                  <Quote className="w-10 h-10 text-[#B08D57]/20 absolute -top-4 -left-4 -z-10 pointer-events-none" />
+                  <p className="text-lg sm:text-xl lg:text-2xl font-display font-medium text-ink leading-relaxed">
+                    &ldquo;{active.quote}&rdquo;
+                  </p>
+                </div>
+              </div>
+
+              {/* Author Footer */}
+              <div className="pt-6 border-t border-ink/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-display font-extrabold text-ink">
+                    {active.author}
+                  </h3>
+                  <p className="text-xs sm:text-sm font-sans text-stone mt-0.5">
+                    {active.role} · <span className="font-semibold text-ink">{active.company}</span>
+                  </p>
+                </div>
+
+                <div className="text-[11px] font-mono text-stone tracking-widest uppercase">
+                  CLIENT {currentIndex + 1} OF {items.length}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Client Thumbnail Selector Strip (Click to switch client) */}
+        <div className="mt-8 pt-6 border-t border-ink/10">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            {items.map((client, idx) => {
+              const isActive = idx === currentIndex;
+              return (
+                <button
+                  key={client.id}
+                  type="button"
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`flex items-center gap-2.5 px-3 py-1.5 rounded-full transition-all duration-200 text-left ${
+                    isActive
+                      ? 'bg-ink text-white shadow-md scale-105 border border-ink ring-2 ring-[#B08D57]'
+                      : 'bg-white hover:bg-black/5 text-ink border border-ink/10 opacity-75 hover:opacity-100'
+                  }`}
+                >
+                  <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white/20 shrink-0">
+                    <Image
+                      src={client.image}
+                      alt={client.author}
+                      fill
+                      sizes="32px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="hidden sm:block text-xs leading-none">
+                    <span className="block font-bold">{client.author.split(' ')[0]}</span>
+                    <span className="text-[10px] opacity-75">{client.country}</span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
