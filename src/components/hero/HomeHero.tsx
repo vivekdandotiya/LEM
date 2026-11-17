@@ -5,6 +5,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HeroWall } from './HeroWall';
+import { HeroGlobalClocks } from './HeroGlobalClocks';
 import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
 import { Magnetic } from '@/motion/Magnetic';
 import { HERO_DATA } from '@/data/hero';
@@ -107,7 +108,7 @@ export function HomeHero() {
   }, []);
 
   const scrollToNext = () => {
-    const nextSec = document.getElementById('what-we-do');
+    const nextSec = document.getElementById('services-grid') || document.getElementById('what-we-do');
     if (nextSec) {
       nextSec.scrollIntoView({ behavior: 'smooth' });
     }
@@ -226,21 +227,30 @@ export function HomeHero() {
         </div>
       </div>
 
-      {/* 4. Hero Bottom Row: Honesty Line & Smooth Scroll Sparkle Button */}
-      <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-12 pb-6 flex items-center justify-between text-left">
-        <div className="hidden sm:block w-14" />
+      {/* 4. Hero Bottom Area: Global Studio Clocks & Smooth Scroll */}
+      <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-12 pb-6 pt-2 flex flex-col md:flex-row items-center justify-between gap-5">
+        <div className="hidden lg:flex items-center gap-2 w-40 text-left">
+          <span className="w-2 h-2 rounded-full bg-[#B08D57] animate-pulse" />
+          <span className="font-mono text-[11px] uppercase tracking-wider text-white/70">
+            24/7 Global Studios
+          </span>
+        </div>
 
-        <p className="font-mono text-[11px] uppercase tracking-wider text-white/60 text-center mx-auto">
-          Concept creatives shown for illustration.
-        </p>
+        {/* 3 Flip Clocks: Europe (London), Asia (Singapore), Americas (New York) */}
+        <HeroGlobalClocks />
 
-        <button
-          onClick={scrollToNext}
-          className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-charcoal/90 hover:bg-charcoal border border-white/20 flex items-center justify-center text-gold transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-          aria-label="Scroll to next section"
-        >
-          <SparkleGlyph size={22} spin={true} />
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={scrollToNext}
+            className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-charcoal/90 hover:bg-charcoal border border-white/20 text-gold transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            aria-label="Scroll to services"
+          >
+            <span className="text-xs font-mono font-bold tracking-wider uppercase text-white/90 group-hover:text-gold transition-colors">
+              Scroll
+            </span>
+            <SparkleGlyph size={18} spin={true} />
+          </button>
+        </div>
       </div>
     </section>
   );
