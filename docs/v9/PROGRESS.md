@@ -16,7 +16,7 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 | **F5: Video and Page Speed** | **COMPLETED** | `F5: video and speed optimization` | Re-encoded hero & showcase videos to strict budget (showcase-04 down to 774 KB from 1.09 MB; hero 1080p 1.04 MB <= 1.8 MB); poster-first LCP architecture with deferred idle attachment; network/data-saver consciousness (`saveData`, `2g/3g`, `prefers-reduced-motion`); `IntersectionObserver` & tab visibility pause controls; immutable caching & byte-range streaming headers in `next.config.mjs`; video transfer before load reduced from 1,646 KB to 0 KB on About page (`docs/v9/F5-evidence/speed-before-after.md`). |
 | **F6: Sitemap and Robots** | **COMPLETED** | `F6: sitemap and robots` | Single source of truth in `src/data/routes.ts` defining all 14 indexable routes & exclusions; dynamic `sitemap.ts` with correct metadata & priorities; `robots.ts` with production allow + crawler rules (`GPTBot`, `Google-Extended`) and preview block-all (`Disallow: /`); canonical tags aligned across all routes; created `tools/check-seo-files.ts` (`npm run check:seo`); documented `docs/GO-LIVE-CHECKLIST.md`. |
 | **F7: LLMs.txt** | **COMPLETED** | `F7: llms.txt` | Standard `/llms.txt` and `/llms-full.txt` built strictly with client copy; Next.js route handlers (`src/app/llms.txt/route.ts` & `src/app/llms-full.txt/route.ts`) + static generator `scripts/generate-llms.ts`; created automated test `tools/check-llms.ts` (`npm run check:llms`); all markdown links verified 200 OK (`docs/v9/F7-evidence/llms-verification.md`). |
-| **F8: Social Media Content Readiness** | Pending | - | Isolate copy in typed data file with `awaitingClientContent: true`; how-to update guide. |
+| **F8: Social Media Content Readiness** | **COMPLETED** | `F8: social media content readiness` | Isolated all `/services/social-media` copy into typed module `src/data/content/social-media.ts` with `awaitingClientContent: true`; documented 3-minute copy swap guide in `docs/HOW-TO-UPDATE-SOCIAL-MEDIA.md`; tracked as `CIR-16` in `docs/CLIENT-INFO-REQUIRED.md`; screenshots & verification in `docs/v9/F8-evidence/`. |
 | **F9: Responsiveness Matrix** | Pending | - | 16 viewports across Chromium, WebKit, Firefox; zero overflow / overlap / clipping; contact sheets. |
 | **F10: Final Regression & Report** | Pending | - | Full test pass; speed re-measurement; final report; STOP. |
 
@@ -143,3 +143,14 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
   - Created `tools/check-llms.ts` testing endpoint status (200 OK), text/plain headers, standard markdown headers/blockquotes, and verifying that every markdown URL resolves to a 200 OK live route.
   - Added `"check:llms": "tsx tools/check-llms.ts"` to `package.json` and integrated into `npm run check`.
 - **Evidence:** Verification report in `docs/v9/F7-evidence/llms-verification.md`.
+
+### F8: Social Media Content Readiness
+- **Content Isolation (`src/data/content/social-media.ts`):**
+  - Isolated the entire page copy (headline, tagline, short/full descriptions, deliverables, features, process roadmaps) into a typed schema.
+  - Flagged clearly with `status: { awaitingClientContent: true, lastUpdated: '2026-11-19' }`.
+  - Wired into `src/data/services.ts` so that updating this single module automatically reflects across the page, meta headers, and `llms.txt`.
+- **Client Update Guide (`docs/HOW-TO-UPDATE-SOCIAL-MEDIA.md`):**
+  - Wrote a 3-minute copy paste guide with exact field mappings, verification commands (`npm run check && npm run build`), and testing instructions.
+- **Tracker Update (`docs/CLIENT-INFO-REQUIRED.md`):**
+  - Logged `CIR-16` as `AWAITING CONTENT: Revised Social Media Services content`.
+- **Evidence:** Report and full-page screenshots at 1440 and 390 in `docs/v9/F8-evidence/`.

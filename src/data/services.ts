@@ -1,3 +1,5 @@
+import { socialMediaContent } from "@/data/content/social-media";
+
 export interface ServiceStep {
   number: string;
   title: string;
@@ -193,63 +195,13 @@ export const confirmedServices: ServiceItem[] = [
     number: "03",
     title: "Social Media Services",
     shortTitle: "Social Media",
-    heroHeadline: "CULTIVATE AN ENGAGED AUDIENCE THAT ADVOCATES FOR YOUR BRAND.",
-    tagline: "Content built to build loyal brand communities.",
-    shortDescription:
-      "Scale your brand reach with Lead Edge Marketers. We craft targeted social media marketing campaigns that drive engagement, build authority, and generate high-converting leads across all platforms.",
-    fullDescription:
-      "Content built to build loyal brand communities. Scale your brand reach with Lead Edge Marketers. We craft targeted social media marketing campaigns that drive engagement, build authority, and generate high-converting leads across all platforms.",
-    deliverables: [
-      "Editorial Content Calendars",
-      "High-Retention Vertical Video",
-      "Distinct Brand Voice",
-      "Proactive Community Care",
-      "Organic Demand Attribution",
-    ],
-    features: [
-      {
-        title: "Editorial Brand Aesthetic",
-        description:
-          "Curating an elevated, cohesive visual feed that commands respect, reinforces credibility, and aligns with your luxury or corporate identity.",
-      },
-      {
-        title: "Short-Form Video Mastery",
-        description:
-          "Producing trend-aware, high-retention vertical reels designed to capture organic algorithmic distribution across modern social feeds.",
-      },
-      {
-        title: "Authentic Community Engagement",
-        description:
-          "Active community stewardship, initiating thoughtful discussions with industry peers and responding to prospect inquiries promptly.",
-      },
-      {
-        title: "Influence & Partnership Mapping",
-        description:
-          "Identifying aligned industry creators and collaborators to organically amplify brand reach without compromising brand tone.",
-      },
-    ],
-    processSteps: [
-      {
-        number: "01",
-        title: "Brand Voice & Visual Pillar Workshop",
-        description: "We define your social aesthetic pillars, core messaging themes, audience personas, and content tonality.",
-      },
-      {
-        number: "02",
-        title: "Monthly Content Batching & Pre-Approvals",
-        description: "We produce copy, carousels, and video concepts one month in advance via a frictionless client preview portal.",
-      },
-      {
-        number: "03",
-        title: "Publishing, Story Management & Community Care",
-        description: "We handle timed publishing across peak engagement windows, real-time comment moderation, and story interaction.",
-      },
-      {
-        number: "04",
-        title: "Analytics Review & Format Refinement",
-        description: "We analyze saves, shares, and watch time to double down on formats generating the highest organic traction.",
-      },
-    ],
+    heroHeadline: socialMediaContent.hero.headline,
+    tagline: socialMediaContent.hero.tagline,
+    shortDescription: socialMediaContent.hero.shortDescription,
+    fullDescription: socialMediaContent.hero.fullDescription,
+    deliverables: socialMediaContent.deliverables,
+    features: socialMediaContent.features,
+    processSteps: socialMediaContent.processSteps,
     faqs: [
       {
         question: "Which social media platforms do you manage?",
