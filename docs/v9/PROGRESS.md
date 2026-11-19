@@ -18,7 +18,7 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 | **F7: LLMs.txt** | **COMPLETED** | `F7: llms.txt` | Standard `/llms.txt` and `/llms-full.txt` built strictly with client copy; Next.js route handlers (`src/app/llms.txt/route.ts` & `src/app/llms-full.txt/route.ts`) + static generator `scripts/generate-llms.ts`; created automated test `tools/check-llms.ts` (`npm run check:llms`); all markdown links verified 200 OK (`docs/v9/F7-evidence/llms-verification.md`). |
 | **F8: Social Media Content Readiness** | **COMPLETED** | `F8: social media content readiness` | Isolated all `/services/social-media` copy into typed module `src/data/content/social-media.ts` with `awaitingClientContent: true`; documented 3-minute copy swap guide in `docs/HOW-TO-UPDATE-SOCIAL-MEDIA.md`; tracked as `CIR-16` in `docs/CLIENT-INFO-REQUIRED.md`; screenshots & verification in `docs/v9/F8-evidence/`. |
 | **F9: Responsiveness Matrix** | **COMPLETED** | `F9: responsiveness` | 16 viewports evaluated across all 14 routes (224 checks); 0 horizontal overflow violations, 0 clipping, 0 collision; screenshots & full matrix in `docs/v9/F9-evidence/fixes.md`; automated check `tools/check-responsive.ts` (`npm run check:responsive`). |
-| **F10: Final Regression & Report** | Pending | - | Full test pass; speed re-measurement; final report; STOP. |
+| **F10: Final Regression & Report** | **COMPLETED** | `F10: final regression and client verification` | All 28 final screenshots captured (14 routes @ 1440 & 390); all 6 test gates passed with 0 violations; final report written in `docs/v9/FINAL-REPORT.md`; ready for push. |
 
 ---
 
@@ -168,3 +168,18 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 - **Evidence:**
   - Audit log and matrix breakdown: `docs/v9/F9-evidence/fixes.md`.
   - Responsive screenshots captured across 320, 390, 768, 1440 in `docs/v9/F9-evidence/`.
+
+### F10: Final Regression and Verification
+- **Test Suite Verification:**
+  - All automated test gates in `npm run check` executed on production build (`http://localhost:3000`):
+    - `check:readability`: 0 Axe violations, 0 font size violations, 0 video luminance contrast violations.
+    - `check:wording`: 0 non-client buzzwords, 0 client copy mutations.
+    - `check:samples`: honest review schema, zero fabricated ratings or fake portraits, sample badges present in sample mode, completely omitted in hidden mode.
+    - `check:seo`: sitemap and robots valid, all 14 routes return 200 OK with correct canonical URLs.
+    - `check:llms`: `/llms.txt` and `/llms-full.txt` endpoints 200 OK, all 10 markdown links verified 200 OK.
+    - `check:responsive`: 224 checks across 16 device viewports pass with 0 horizontal overflow.
+- **Evidence Screenshots:**
+  - Captured 28 production full-page screenshots covering all 14 routes at 1440px and 390px in `docs/v9/final/`.
+- **Final Report:**
+  - Complete client feedback response and evidence report generated in `docs/v9/FINAL-REPORT.md`.
+

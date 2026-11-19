@@ -173,7 +173,8 @@ export function BlogListingView() {
               >
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="rounded-[24px] bg-white border border-ink/10 p-6 flex flex-col justify-between group h-full shadow-soft-sm hover:shadow-soft-md hover:border-gold/50 transition-all duration-300"
+                  data-surface="light"
+                  className="rounded-[24px] bg-white border border-ink/10 p-6 flex flex-col justify-between group h-full text-ink shadow-soft-sm hover:shadow-soft-md hover:border-gold/50 transition-all duration-300"
                 >
                   <div>
                     {/* Thumbnail Frame */}
@@ -185,13 +186,13 @@ export function BlogListingView() {
                         sizes="(max-width: 768px) 100vw, 400px"
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
-                      <div className="absolute top-2.5 left-2.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-mono font-semibold text-ink tracking-wider uppercase border border-ink/5">
+                      <div className="absolute top-2.5 left-2.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-xs font-mono font-semibold text-ink tracking-wider uppercase border border-ink/10">
                         {post.category}
                       </div>
                     </div>
 
                     {/* Metadata */}
-                    <div className="flex items-center gap-2 text-xs font-mono text-stone uppercase tracking-wider mb-2">
+                    <div className="flex items-center gap-2 text-xs font-mono text-ink/80 uppercase tracking-wider mb-2 font-medium">
                       <span>{post.author}</span>
                       <span>·</span>
                       <span>{post.readTime}</span>
@@ -203,7 +204,7 @@ export function BlogListingView() {
                     </h3>
 
                     {/* Excerpt */}
-                    <p className="text-xs sm:text-sm font-sans text-stone leading-relaxed">
+                    <p className="text-xs sm:text-sm font-sans text-ink/85 leading-relaxed">
                       {shortInfo.excerpt}
                     </p>
                   </div>
@@ -212,7 +213,7 @@ export function BlogListingView() {
                     <span className="text-ink font-bold flex items-center gap-1 group-hover:text-gold-deep transition-colors">
                       Read Piece →
                     </span>
-                    <span className="text-xs text-stone font-mono">{post.date}</span>
+                    <span className="text-xs text-ink/80 font-mono font-medium">{post.date}</span>
                   </div>
                 </Link>
               </motion.div>

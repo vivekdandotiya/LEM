@@ -61,7 +61,7 @@ async function run() {
 
       const url = `http://localhost:3000${route}?skip_loader=1`;
       await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 }).catch((e) => console.error(`Nav error: ${e.message}`));
-      await page.waitForTimeout(500);
+      await page.waitForTimeout(800);
 
       // 1. Run Axe Color Contrast
       try {
@@ -242,7 +242,7 @@ async function run() {
     // About Hero
     await p.goto('http://localhost:3000/about?skip_loader=1', { waitUntil: 'domcontentloaded', timeout: 15000 });
     await p.waitForTimeout(500);
-    const aboutHero = p.locator('main > section').first();
+    const aboutHero = p.locator('[data-surface="media"], main > section').first();
     await aboutHero.screenshot({ path: path.join(outDir, `after-about-hero-${width}.png`) });
 
     // Reviews Section (Testimonials)
