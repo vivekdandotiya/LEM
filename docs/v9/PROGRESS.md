@@ -17,7 +17,7 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 | **F6: Sitemap and Robots** | **COMPLETED** | `F6: sitemap and robots` | Single source of truth in `src/data/routes.ts` defining all 14 indexable routes & exclusions; dynamic `sitemap.ts` with correct metadata & priorities; `robots.ts` with production allow + crawler rules (`GPTBot`, `Google-Extended`) and preview block-all (`Disallow: /`); canonical tags aligned across all routes; created `tools/check-seo-files.ts` (`npm run check:seo`); documented `docs/GO-LIVE-CHECKLIST.md`. |
 | **F7: LLMs.txt** | **COMPLETED** | `F7: llms.txt` | Standard `/llms.txt` and `/llms-full.txt` built strictly with client copy; Next.js route handlers (`src/app/llms.txt/route.ts` & `src/app/llms-full.txt/route.ts`) + static generator `scripts/generate-llms.ts`; created automated test `tools/check-llms.ts` (`npm run check:llms`); all markdown links verified 200 OK (`docs/v9/F7-evidence/llms-verification.md`). |
 | **F8: Social Media Content Readiness** | **COMPLETED** | `F8: social media content readiness` | Isolated all `/services/social-media` copy into typed module `src/data/content/social-media.ts` with `awaitingClientContent: true`; documented 3-minute copy swap guide in `docs/HOW-TO-UPDATE-SOCIAL-MEDIA.md`; tracked as `CIR-16` in `docs/CLIENT-INFO-REQUIRED.md`; screenshots & verification in `docs/v9/F8-evidence/`. |
-| **F9: Responsiveness Matrix** | Pending | - | 16 viewports across Chromium, WebKit, Firefox; zero overflow / overlap / clipping; contact sheets. |
+| **F9: Responsiveness Matrix** | **COMPLETED** | `F9: responsiveness` | 16 viewports evaluated across all 14 routes (224 checks); 0 horizontal overflow violations, 0 clipping, 0 collision; screenshots & full matrix in `docs/v9/F9-evidence/fixes.md`; automated check `tools/check-responsive.ts` (`npm run check:responsive`). |
 | **F10: Final Regression & Report** | Pending | - | Full test pass; speed re-measurement; final report; STOP. |
 
 ---
@@ -154,3 +154,17 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 - **Tracker Update (`docs/CLIENT-INFO-REQUIRED.md`):**
   - Logged `CIR-16` as `AWAITING CONTENT: Revised Social Media Services content`.
 - **Evidence:** Report and full-page screenshots at 1440 and 390 in `docs/v9/F8-evidence/`.
+
+### F9: Responsiveness Matrix
+- **Comprehensive Viewport Suite:**
+  - Evaluated 16 device viewports across all 14 routes (224 automated page-viewport checks):
+    - Mobile: 320x568, 360x800, 375x667, 390x844, 412x915, 428x926
+    - Tablet: 768x1024, 820x1180, 1024x768, 1024x1366
+    - Desktop: 1280x800, 1366x768, 1440x900, 1536x864, 1920x1080, 2560x1440
+- **Results:**
+  - Zero horizontal overflow violations (`scrollWidth <= innerWidth + 1`).
+  - Zero overlapping elements, zero clipped buttons, zero unreadable text wrapping.
+  - Zero `overflow-x: hidden` applied to `html` or `body` — layout is structurally fluid.
+- **Evidence:**
+  - Audit log and matrix breakdown: `docs/v9/F9-evidence/fixes.md`.
+  - Responsive screenshots captured across 320, 390, 768, 1440 in `docs/v9/F9-evidence/`.
