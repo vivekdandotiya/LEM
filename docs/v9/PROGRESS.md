@@ -15,7 +15,7 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 | **F4: Scalable FAQ System** | **COMPLETED** | `F4: scalable faq system` | Created per-service typed data in `src/data/content/faqs-<service>.ts` (4 approved SEO items kept verbatim); implemented scalable `ServiceFaqSection.tsx` with 6-item limit, smooth "Show more" button, direct anchor copy links, multi-open accordion, keyboard navigation (Arrow keys/Enter/Space), category pills with `?faq=` sync, and valid `FAQPage` JSON-LD; tested with 12-item fixture; added `docs/HOW-TO-ADD-FAQS.md` & `CIR-15` in `docs/CLIENT-INFO-REQUIRED.md`. |
 | **F5: Video and Page Speed** | **COMPLETED** | `F5: video and speed optimization` | Re-encoded hero & showcase videos to strict budget (showcase-04 down to 774 KB from 1.09 MB; hero 1080p 1.04 MB <= 1.8 MB); poster-first LCP architecture with deferred idle attachment; network/data-saver consciousness (`saveData`, `2g/3g`, `prefers-reduced-motion`); `IntersectionObserver` & tab visibility pause controls; immutable caching & byte-range streaming headers in `next.config.mjs`; video transfer before load reduced from 1,646 KB to 0 KB on About page (`docs/v9/F5-evidence/speed-before-after.md`). |
 | **F6: Sitemap and Robots** | **COMPLETED** | `F6: sitemap and robots` | Single source of truth in `src/data/routes.ts` defining all 14 indexable routes & exclusions; dynamic `sitemap.ts` with correct metadata & priorities; `robots.ts` with production allow + crawler rules (`GPTBot`, `Google-Extended`) and preview block-all (`Disallow: /`); canonical tags aligned across all routes; created `tools/check-seo-files.ts` (`npm run check:seo`); documented `docs/GO-LIVE-CHECKLIST.md`. |
-| **F7: LLMs.txt** | Pending | - | Standard `llms.txt` and `llms-full.txt` from client copy only; route handler & verification check. |
+| **F7: LLMs.txt** | **COMPLETED** | `F7: llms.txt` | Standard `/llms.txt` and `/llms-full.txt` built strictly with client copy; Next.js route handlers (`src/app/llms.txt/route.ts` & `src/app/llms-full.txt/route.ts`) + static generator `scripts/generate-llms.ts`; created automated test `tools/check-llms.ts` (`npm run check:llms`); all markdown links verified 200 OK (`docs/v9/F7-evidence/llms-verification.md`). |
 | **F8: Social Media Content Readiness** | Pending | - | Isolate copy in typed data file with `awaitingClientContent: true`; how-to update guide. |
 | **F9: Responsiveness Matrix** | Pending | - | 16 viewports across Chromium, WebKit, Firefox; zero overflow / overlap / clipping; contact sheets. |
 | **F10: Final Regression & Report** | Pending | - | Full test pass; speed re-measurement; final report; STOP. |
@@ -131,3 +131,15 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
   - Added `"check:seo": "tsx tools/check-seo-files.ts"` into `package.json` and `npm run check`.
   - Created `docs/GO-LIVE-CHECKLIST.md` detailing DNS, environment variable configuration, and Google/Bing Search Console submission steps.
 - **Evidence:** Audit report in `docs/v9/F6-evidence/seo-files-report.md`.
+
+### F7: LLMs.txt Implementation
+- **Standardized Specification:**
+  - Implemented `/llms.txt` (structured summary for fast AI consumption) and `/llms-full.txt` (complete context, roadmaps, and approved FAQs) conforming to the `llms.txt` specification (https://llmstxt.org).
+  - Built dual serving architecture: dynamic Next.js route handlers (`src/app/llms.txt/route.ts` & `src/app/llms-full.txt/route.ts`) serving with `Content-Type: text/plain; charset=utf-8` and cache headers, alongside static generation via `scripts/generate-llms.ts` (`public/llms.txt`, `public/llms-full.txt`).
+- **Client Copy Preservation:**
+  - Used exclusively verbatim client content from `docs/CLIENT-CONTENT.md` and approved site data.
+  - Zero fabricated stats, numbers, or unverified claims.
+- **Automated Verification:**
+  - Created `tools/check-llms.ts` testing endpoint status (200 OK), text/plain headers, standard markdown headers/blockquotes, and verifying that every markdown URL resolves to a 200 OK live route.
+  - Added `"check:llms": "tsx tools/check-llms.ts"` to `package.json` and integrated into `npm run check`.
+- **Evidence:** Verification report in `docs/v9/F7-evidence/llms-verification.md`.

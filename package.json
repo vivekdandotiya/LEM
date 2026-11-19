@@ -11,7 +11,8 @@
     "check:wording": "tsx tools/check-wording.ts",
     "check:samples": "tsx tools/check-samples.ts",
     "check:seo": "tsx tools/check-seo-files.ts",
-    "check": "npm run check:readability && npm run check:wording && npm run check:samples && npm run check:seo"
+    "check:llms": "tsx tools/check-llms.ts",
+    "check": "npm run check:readability && npm run check:wording && npm run check:samples && npm run check:seo && npm run check:llms"
   },
   "dependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",
