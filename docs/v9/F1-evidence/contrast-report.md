@@ -1,6 +1,6 @@
 # Automated Readability & Contrast Report (F1 Gate)
 
-**Execution Date:** 2026-11-19T10:19:56.410Z
+**Execution Date:** 2026-11-19T10:38:19.203Z
 **Scope:** All 14 public pages @ 1440px and 390px viewports
 **Standards Enforced:** WCAG 2.2 AA (4.5:1 normal text, 3:1 large text), 12px absolute minimum font size, Video Scrim 5th-Percentile Luminance Gate.
 
@@ -18,8 +18,8 @@
 | Route / Viewport | Element / Target | Test Type | Measured Value | Minimum Required | Status |
 |---|---|---|---|---|---|
 | /about (1440px) | `Media Text: main h1` | Media Video Scrim | 13.58:1 | 3:1 | **PASS** |
-| /about (1440px) | `Media Text: main h1 + p, main p.text-lg, main p.text-stone, main p.text-\[\#F6F3EC\]` | Media Video Scrim | 15.68:1 | 3:1 | **PASS** |
-| /about (1440px) | `Media Text: a[href="#our-description"]` | Media Video Scrim | 15.09:1 | 3:1 | **PASS** |
+| /about (1440px) | `Media Text: main h1 + p, main p.text-lg, main p.text-stone, main p.text-\[\#F6F3EC\]` | Media Video Scrim | 15.69:1 | 3:1 | **PASS** |
+| /about (1440px) | `Media Text: a[href="#our-description"]` | Media Video Scrim | 15.11:1 | 3:1 | **PASS** |
 
 ---
 

@@ -189,7 +189,7 @@ export function StageVideo({
               <button
                 type="button"
                 onClick={() => setUserWantsPlay(true)}
-                className="px-4 py-2 rounded-full bg-lime text-ink font-mono text-xs font-bold flex items-center gap-2 shadow-xl hover:scale-105 transition-transform"
+                className="px-4 py-2 rounded-full bg-gold text-charcoal font-mono text-xs font-bold flex items-center gap-2 shadow-xl hover:scale-105 transition-transform"
                 aria-label="Play animated phase preview"
               >
                 <Play className="w-3.5 h-3.5 fill-ink" />

@@ -13,7 +13,7 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 | **F2: Plain-Language Pass** | **COMPLETED** | `F2: plain wording` | Changed button to "Our story ↓" with smooth-scroll; replaced 74 instances of generated/buzzword phrasing across 21 files; created `src/data/ui-strings.ts` and automated scanner `tools/check-wording.ts` (`npm run check:wording`); 0 client copy modifications. |
 | **F3: Reviews Section: Honest Content** | **COMPLETED** | `F3: honest reviews` | Centralized typed data in `src/data/testimonials.ts`; unverified items use transparent placeholders; removed fabricated reviewer names, company names, portraits (monogram circle avatars used), star rating badge, percentage tags, and review structured data; sample vs hidden mode verified with Playwright screenshots at 1440 & 390; `npm run check:samples` passed. |
 | **F4: Scalable FAQ System** | **COMPLETED** | `F4: scalable faq system` | Created per-service typed data in `src/data/content/faqs-<service>.ts` (4 approved SEO items kept verbatim); implemented scalable `ServiceFaqSection.tsx` with 6-item limit, smooth "Show more" button, direct anchor copy links, multi-open accordion, keyboard navigation (Arrow keys/Enter/Space), category pills with `?faq=` sync, and valid `FAQPage` JSON-LD; tested with 12-item fixture; added `docs/HOW-TO-ADD-FAQS.md` & `CIR-15` in `docs/CLIENT-INFO-REQUIRED.md`. |
-| **F5: Video and Page Speed** | Pending | - | Re-encode videos under budget; poster-first loading; lazy IntersectionObserver; caching headers. |
+| **F5: Video and Page Speed** | **COMPLETED** | `F5: video and speed optimization` | Re-encoded hero & showcase videos to strict budget (showcase-04 down to 774 KB from 1.09 MB; hero 1080p 1.04 MB <= 1.8 MB); poster-first LCP architecture with deferred idle attachment; network/data-saver consciousness (`saveData`, `2g/3g`, `prefers-reduced-motion`); `IntersectionObserver` & tab visibility pause controls; immutable caching & byte-range streaming headers in `next.config.mjs`; video transfer before load reduced from 1,646 KB to 0 KB on About page (`docs/v9/F5-evidence/speed-before-after.md`). |
 | **F6: Sitemap and Robots** | Pending | - | Single route source; production allow / preview block-all; canonical match. |
 | **F7: LLMs.txt** | Pending | - | Standard `llms.txt` and `llms-full.txt` from client copy only; route handler & verification check. |
 | **F8: Social Media Content Readiness** | Pending | - | Isolate copy in typed data file with `awaitingClientContent: true`; how-to update guide. |
@@ -86,3 +86,29 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
   - Fixture cleanly deleted after verification.
   - Captured screenshots in `docs/v9/F4-evidence/`: `seo-faq-real-1440.png`, `seo-faq-real-390.png`, `fixture-faq-12items-1440.png`, `fixture-faq-12items-390.png`.
   - Generated `docs/v9/F4-evidence/faq-verification-report.md`.
+
+### F5: Video and Page Speed
+- **Video Re-Encoding & Budget Verification:**
+  - Audited all Home and About page videos with `tools/audit-videos.mjs` against strict V9 budgets.
+  - Re-encoded `public/videos/home/showcase-04-behind-the-scenes.mp4` with `ffmpeg-static` (`crf=28`, `-movflags +faststart`) from 1.09 MB down to **773.6 KB** (well under the 900 KB threshold).
+  - All 11 video assets verified under budget (`about-hero.mp4` 1.04 MB <= 1.8 MB; `about-hero-720p.mp4` 435 KB <= 1.0 MB; showcase clips 80 KB - 774 KB <= 900 KB).
+- **Poster-First Hero Architecture (`VideoHero.tsx`):**
+  - Instant high-priority static poster render with `fetchpriority="high"` and Next.js `priority`.
+  - Looping ambient video sources attached only after window `load` / `requestIdleCallback` fires.
+  - Respects user battery and network preferences: suppresses video attachments if `saveData` is active, cellular connection is `slow-2g`, `2g`, or `3g`, or `prefers-reduced-motion` is detected.
+  - Integrated 3-second watchdog timer: gracefully falls back to static poster if video playback or decoding fails.
+  - `IntersectionObserver` (0.15 threshold) and `visibilitychange` listeners pause playback when off-screen or tab is backgrounded.
+- **Lazy-Loaded Portfolio Cards (`WorkShowcase.tsx`):**
+  - Replaced eager `<video autoPlay>` on cards with `ShowcaseCardItem`.
+  - Posters render instantly with explicit `aspect-[4/5]` containers (zero CLS).
+  - Cards attach video elements only when within 120px viewport margin (`rootMargin: '120px'`).
+- **HTTP Caching & Byte-Range Streaming (`next.config.mjs`):**
+  - Configured `Cache-Control: public, max-age=31536000, immutable` for `/videos/:path*`, `/images/:path*`, and `/_next/static/:path*`.
+  - Configured `Accept-Ranges: bytes` for `/videos/:path*` enabling seamless chunk-by-chunk media streaming without full-file rebuffering.
+- **Speed & Bandwidth Measurements:**
+  - On `/about`: Reduced video transfer before load from **1,646 KB down to 0.0 KB** (-100% video bandwidth contention before page load).
+  - On `/about`: Load event time dropped from **721 ms down to 302 ms**; DOM Complete dropped from **707 ms down to 292 ms**.
+  - All automated readability and contrast gates passed with 0 violations.
+- **Evidence:**
+  - Technical specs and asset inventory: `docs/v9/F5-evidence/video-audit.md`.
+  - Mobile speed before & after comparison: `docs/v9/F5-evidence/speed-before-after.md`.

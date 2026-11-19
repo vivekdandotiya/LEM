@@ -22,53 +22,149 @@ export function VideoHero({
   children,
   heightClass = 'min-h-[85svh] lg:min-h-svh',
 }: VideoHeroProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
 
+  const [shouldAttachVideo, setShouldAttachVideo] = useState(false);
+  const [videoPlaying, setVideoPlaying] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  // 1. Connection & reduced-motion inspection + delayed source attachment
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
+    // Check reduced motion
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (motionQuery.matches) {
+      return;
+    }
 
-    const handleChange = () => setPrefersReducedMotion(mediaQuery.matches);
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    // Check Network Information API (saveData / slow connection)
+    const nav = navigator as Navigator & {
+      connection?: {
+        saveData?: boolean;
+        effectiveType?: string;
+      };
+    };
+    if (nav.connection?.saveData === true) {
+      return;
+    }
+    if (nav.connection?.effectiveType && ['slow-2g', '2g', '3g'].includes(nav.connection.effectiveType)) {
+      return;
+    }
+
+    // Attach video sources only after window load or idle callback to protect LCP & TBT
+    const scheduleAttach = () => {
+      if ('requestIdleCallback' in window) {
+        (window as Window & { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(() => {
+          setShouldAttachVideo(true);
+        });
+      } else {
+        setTimeout(() => setShouldAttachVideo(true), 200);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      scheduleAttach();
+    } else {
+      window.addEventListener('load', scheduleAttach, { once: true });
+    }
   }, []);
+
+  // 2. Watchdog timer: If video does not start playing within 3 seconds of being attached, preserve poster
+  useEffect(() => {
+    if (!shouldAttachVideo || videoPlaying || hasError) return;
+
+    const timer = setTimeout(() => {
+      if (!videoPlaying) {
+        setHasError(true);
+      }
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [shouldAttachVideo, videoPlaying, hasError]);
+
+  // 3. IntersectionObserver & Tab Visibility management: pause when hidden/offscreen, resume when visible
+  useEffect(() => {
+    const video = videoRef.current;
+    const container = containerRef.current;
+    if (!video || !container || !shouldAttachVideo || hasError) return;
+
+    let isIntersecting = true;
+    let isTabVisible = document.visibilityState === 'visible';
+
+    const updatePlayback = () => {
+      if (isIntersecting && isTabVisible) {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => setVideoPlaying(true))
+            .catch(() => {
+              // Autoplay policy or stall
+            });
+        }
+      } else {
+        video.pause();
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isIntersecting = entry.isIntersecting;
+        updatePlayback();
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(container);
+
+    const handleVisibilityChange = () => {
+      isTabVisible = document.visibilityState === 'visible';
+      updatePlayback();
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [shouldAttachVideo, hasError]);
 
   return (
     <div
+      ref={containerRef}
       data-surface="media"
       className={`relative w-full ${heightClass} flex items-center justify-center overflow-hidden bg-charcoal ${className}`}
     >
-      {/* Fallback Static Poster Image */}
+      {/* High Priority Static Poster Image (Fast LCP) */}
       <Image
         src={posterSrc}
         alt={posterAlt}
         fill
         priority
         sizes="100vw"
-        className={`object-cover object-center transition-opacity duration-1000 ${
-          videoLoaded && !prefersReducedMotion ? 'opacity-0' : 'opacity-100'
+        className={`object-cover object-center transition-opacity duration-700 ease-out ${
+          videoPlaying && !hasError ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
       />
 
-      {/* Looping Ambient Video */}
-      {!prefersReducedMotion && (
+      {/* Looping Ambient Video: Poster-first, lazy sources, watchdog safety */}
+      {shouldAttachVideo && !hasError && (
         <video
           ref={videoRef}
-          autoPlay
           muted
           loop
           playsInline
+          preload="none"
           aria-hidden="true"
-          onCanPlay={() => setVideoLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            videoLoaded ? 'opacity-100' : 'opacity-0'
+          onPlaying={() => setVideoPlaying(true)}
+          onError={() => setHasError(true)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out ${
+            videoPlaying ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <source src={`${videoBase}.webm`} type="video/webm" />
+          <source src={`${videoBase}-720p.mp4`} type="video/mp4" media="(max-width: 767px)" />
           <source src={`${videoBase}.mp4`} type="video/mp4" />
-          <source src={`${videoBase}-720p.mp4`} type="video/mp4" media="(max-width: 768px)" />
         </video>
       )}
 
