@@ -11,7 +11,7 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 | **F0: Setup and Reproduction** | **COMPLETED** | `F0: baseline and reproduction` | Branch `v9-client-feedback` created; 12 before screenshots captured at 1440 & 390 for local & preview; all routes verified 200 OK; baseline metrics in `/docs/v9/BASELINE.md`. |
 | **F1: Text Visibility and Readability** | **COMPLETED** | `F1: text visibility and readability` | Fixed About hero contrast (dual gradient scrim + radial backing, >13:1 to 15:1 over video loop), reviews heading & card contrast, FAQ labels & sizing; surface tokens `[data-surface]`; site-wide >= 12px font size enforcement; Axe + sharp video luminance test passed with 0 violations (`docs/v9/F1-evidence/contrast-report.md`). |
 | **F2: Plain-Language Pass** | **COMPLETED** | `F2: plain wording` | Changed button to "Our story ↓" with smooth-scroll; replaced 74 instances of generated/buzzword phrasing across 21 files; created `src/data/ui-strings.ts` and automated scanner `tools/check-wording.ts` (`npm run check:wording`); 0 client copy modifications. |
-| **F3: Reviews Section: Honest Content** | Pending | - | Honest client pattern; remove fabricated reviews/ratings; sample mode check. |
+| **F3: Reviews Section: Honest Content** | **COMPLETED** | `F3: honest reviews` | Centralized typed data in `src/data/testimonials.ts`; unverified items use transparent placeholders; removed fabricated reviewer names, company names, portraits (monogram circle avatars used), star rating badge, percentage tags, and review structured data; sample vs hidden mode verified with Playwright screenshots at 1440 & 390; `npm run check:samples` passed. |
 | **F4: Scalable FAQ System** | Pending | - | Scalable accordion; category filters; anchor copy links; valid FAQPage JSON-LD. |
 | **F5: Video and Page Speed** | Pending | - | Re-encode videos under budget; poster-first loading; lazy IntersectionObserver; caching headers. |
 | **F6: Sitemap and Robots** | Pending | - | Single route source; production allow / preview block-all; canonical match. |
@@ -49,3 +49,19 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 - **Client Copy Preservation:** Audited against `docs/CLIENT-CONTENT.md`; 0 client copy modifications were made. Verified in `docs/v9/F2-evidence/client-copy-flags.md`.
 - **Automated Check:** Created `tools/check-wording.ts` (`npm run check:wording`) and `tools/check-copy.ts`. Both tests pass with 0 violations.
 - **Evidence:** Complete audit diff saved in `docs/v9/F2-evidence/wording-changes.md`.
+
+### F3: Reviews Section: Honest Content
+- **Data Centralization:** Extracted all testimonial items into typed data file `src/data/testimonials.ts` implementing schema `{ id, quote, name, company, service, role, verified, source }`.
+- **Honest Review Pattern:** With zero testimonials supplied in `docs/CLIENT-CONTENT.md`, all entries are strictly flagged as `verified: false` with explicit placeholder text ("Client feedback goes here. Replace with an approved quote." / "Client Name, Company").
+- **Removed Fabrications:**
+  - **Portraits Removed:** Replaced stock/AI portrait photos with clean monogram circle avatars displaying initials (e.g. `CN`) in gold/ivory borders.
+  - **Ratings Removed:** Stripped all star rating icons, "5.0" rating pills, and "Verified Clients" badges.
+  - **Metrics Removed:** Eliminated fabricated metric tags (e.g. "+64% Organic Revenue", "4.6x Peak ROAS").
+  - **Structured Data Audit:** Confirmed zero `aggregateRating` or `Review` schema markup in JSON-LD.
+- **Sample Mode vs Hidden Mode:**
+  - In SAMPLE mode (`NEXT_PUBLIC_SHOW_SAMPLES=true` / preview default), clear `SAMPLE FEEDBACK DRAFTS` and `SAMPLE` badges are visibly displayed on each review card.
+  - In HIDDEN mode (`NEXT_PUBLIC_SHOW_SAMPLES=false` or `?samples=false`), because zero verified client testimonials exist, the section returns `null` and is completely omitted from the DOM.
+- **Automated Check & Evidence:**
+  - Created `tools/check-samples.ts` (`npm run check:samples`) added to `npm run check`.
+  - Captured screenshots in `docs/v9/F3-evidence/`: `reviews-sample-1440.png`, `reviews-sample-390.png`, `reviews-hidden-1440.png`, `reviews-hidden-390.png`.
+  - Generated `docs/v9/F3-evidence/honest-reviews-report.md`.
