@@ -28,7 +28,7 @@ export function ServicePackagesSection({
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-[#B08D57]" aria-hidden="true" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
+              <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
                 04 / PACKAGES &amp; DELIVERABLES
               </span>
             </div>
@@ -51,7 +51,7 @@ export function ServicePackagesSection({
             <div>
               {/* Header */}
               <div className="flex items-center justify-between gap-4 mb-4">
-                <span className="px-3 py-1 rounded-full bg-black/5 text-[10px] font-mono font-bold uppercase tracking-wider text-stone">
+                <span className="px-3 py-1 rounded-full bg-black/5 text-xs font-mono font-bold uppercase tracking-wider text-stone">
                   FOUNDATION SCOPE
                 </span>
                 <span className="text-xs font-mono font-semibold text-stone">
@@ -81,7 +81,7 @@ export function ServicePackagesSection({
                         {pillar.title}
                       </h4>
                       {pillar.badge && (
-                        <span className="text-[9px] font-mono font-bold uppercase px-1.5 py-0.5 rounded bg-black/5 text-stone">
+                        <span className="text-xs font-mono font-bold uppercase px-1.5 py-0.5 rounded bg-black/5 text-stone">
                           {pillar.badge}
                         </span>
                       )}
@@ -115,7 +115,7 @@ export function ServicePackagesSection({
           <div className="relative rounded-[28px] sm:rounded-[36px] bg-[#121315] border-2 border-[#B08D57] p-6 sm:p-10 shadow-2xl text-ivory flex flex-col justify-between group overflow-hidden">
             {/* Top Right Floating Badge */}
             <div className="absolute top-6 right-6 z-20">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#B08D57] text-[#0F1011] text-[10px] font-mono font-black uppercase tracking-wider shadow-lg">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#B08D57] text-[#0F1011] text-xs font-mono font-black uppercase tracking-wider shadow-lg">
                 <Sparkles className="w-3 h-3 text-[#0F1011]" />
                 <span>MOST POPULAR</span>
               </span>
@@ -130,7 +130,7 @@ export function ServicePackagesSection({
             <div className="relative z-10">
               {/* Header */}
               <div className="flex items-center justify-between gap-4 mb-4">
-                <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-[10px] font-mono font-bold uppercase tracking-wider text-[#B08D57]">
+                <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-xs font-mono font-bold uppercase tracking-wider text-[#B08D57]">
                   FULL-SCALE DOMINANCE
                 </span>
                 <span className="text-xs font-mono font-semibold text-white/50 mr-28 sm:mr-32">
@@ -160,7 +160,7 @@ export function ServicePackagesSection({
                         {pillar.title}
                       </h4>
                       {pillar.badge && (
-                        <span className="text-[9px] font-mono font-bold uppercase px-1.5 py-0.5 rounded bg-white/10 text-[#D9C29A] border border-white/10">
+                        <span className="text-xs font-mono font-bold uppercase px-1.5 py-0.5 rounded bg-white/10 text-[#D9C29A] border border-white/10">
                           {pillar.badge}
                         </span>
                       )}

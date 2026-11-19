@@ -70,7 +70,7 @@ export function SelectedWork() {
 
                   {/* Overlaid details */}
                   <div className="relative z-10 flex items-center justify-between p-4">
-                    <span className="px-2.5 py-1 rounded-md bg-black/85 text-[10px] font-mono tracking-wider uppercase text-warmgray-200 border border-white/10">
+                    <span className="px-2.5 py-1 rounded-md bg-black/85 text-xs font-mono tracking-wider uppercase text-warmgray-200 border border-white/10">
                       {project.category}
                     </span>
                     <span className="text-xs font-mono text-warmgray-300 bg-black/75 px-2 py-0.5 rounded">
@@ -79,7 +79,7 @@ export function SelectedWork() {
                   </div>
 
                   <div className="relative z-10 p-4 mt-auto">
-                    <span className="text-[11px] font-mono text-accent block mb-0.5">
+                    <span className="text-xs font-mono text-accent block mb-0.5">
                       {project.client}
                     </span>
                     <h3 className="text-xl sm:text-2xl font-display font-medium text-white group-hover:text-accent-tint transition-colors">

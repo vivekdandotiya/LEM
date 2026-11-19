@@ -227,7 +227,7 @@ export function Navbar() {
               <span className="font-display font-extrabold tracking-tight text-sm sm:text-base leading-none">
                 LEAD EDGE
               </span>
-              <span className="text-[9px] font-mono uppercase tracking-widest opacity-60 mt-0.5 leading-none">
+              <span className="text-xs font-mono uppercase tracking-widest opacity-60 mt-0.5 leading-none">
                 MARKETING
               </span>
             </div>
@@ -291,12 +291,12 @@ export function Navbar() {
                       }`}
                     >
                       <div className="px-3 pt-2 pb-1.5 border-b border-current/10 flex items-center justify-between">
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-stone font-semibold">
+                        <span className="text-xs font-mono uppercase tracking-widest text-stone font-semibold">
                           5 Core Disciplines
                         </span>
                         <DripLink
                           href="/services"
-                          className="text-[11px] font-mono text-gold hover:underline flex items-center gap-1 font-semibold"
+                          className="text-xs font-mono text-gold hover:underline flex items-center gap-1 font-semibold"
                         >
                           All Services →
                         </DripLink>
@@ -328,7 +328,7 @@ export function Navbar() {
                                 <div className="text-xs font-bold leading-tight truncate">
                                   {srv.title}
                                 </div>
-                                <div className="text-[10px] font-mono uppercase tracking-wider text-stone mt-0.5">
+                                <div className="text-xs font-mono uppercase tracking-wider text-stone mt-0.5">
                                   {srv.cue}
                                 </div>
                               </div>

@@ -492,7 +492,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
 
               {/* Deliverable Tags (Warm Ivory Pills) */}
               <div className="pt-2">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-stone block mb-3 font-semibold">
+                <span className="text-xs font-mono uppercase tracking-widest text-stone block mb-3 font-semibold">
                   Core Deliverables
                 </span>
                 <div className="flex flex-wrap gap-2.5">
@@ -608,13 +608,13 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
 
       {/* 5. Discipline-Specific FAQs */}
       {serviceFaqs.length > 0 && (
-        <section className="py-20 sm:py-28 bg-[#EFEBE2] border-b border-ink/10">
+        <section id="faq-section" data-surface="light" className="py-20 sm:py-28 bg-[#EFEBE2] border-b border-ink/10">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center pb-12">
-              <span className="text-xs font-mono uppercase tracking-widest text-stone block mb-3 font-semibold">
-                Discipline FAQ
+              <span className="inline-block px-3.5 py-1 rounded-full bg-white border border-ink/15 text-xs font-mono uppercase tracking-widest text-[#0F1011] font-bold mb-3 shadow-2xs">
+                FAQ
               </span>
-              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-ink tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#0F1011] tracking-tight">
                 Common questions, clear answers.
               </h2>
             </div>
@@ -630,20 +630,20 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                     <button
                       type="button"
                       onClick={() => setOpenFaq(isOpen ? null : idx)}
-                      className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 font-display font-bold text-lg text-ink hover:text-gold-deep transition-colors"
+                      className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 font-display font-bold text-[17px] sm:text-lg text-[#0F1011] hover:text-gold-deep transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                       aria-expanded={isOpen}
                     >
                       <span>{faq.question}</span>
                       <span
                         className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border border-ink/10 transition-transform duration-300 ${
-                          isOpen ? 'rotate-180 bg-gold text-ink' : 'bg-ivory text-stone'
+                          isOpen ? 'rotate-180 bg-gold text-white' : 'bg-ivory text-stone'
                         }`}
                       >
                         <ChevronDown className="w-4 h-4" />
                       </span>
                     </button>
                     {isOpen && (
-                      <div className="px-6 sm:px-8 pb-6 pt-1 text-sm sm:text-base font-sans text-stone border-t border-ink/5 leading-relaxed">
+                      <div className="px-6 sm:px-8 pb-6 pt-2 text-base font-sans text-[#3A3835] border-t border-ink/10 leading-relaxed">
                         {faq.answer}
                       </div>
                     )}
@@ -656,18 +656,18 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
       )}
 
       {/* 6. Final CTA Banner */}
-      <section className="py-24 sm:py-32 bg-charcoal text-ivory relative overflow-hidden">
+      <section className="py-24 sm:py-32 bg-charcoal text-ivory relative overflow-hidden" data-surface="dark">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-xs font-mono uppercase tracking-widest text-gold mb-6 border border-white/10">
-            <Sparkles className="w-3.5 h-3.5 text-gold" />
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-xs font-mono uppercase tracking-widest text-[#D9C29A] mb-6 border border-white/15">
+            <Sparkles className="w-3.5 h-3.5 text-[#D9C29A]" />
             <span>Next Steps</span>
           </span>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight mb-6">
-            Ready to scale your <span className="font-serif italic text-gold">growth?</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight mb-6 text-[#F6F3EC]">
+            Ready to scale your <span className="font-serif italic text-[#D9C29A]">growth?</span>
           </h2>
 
-          <p className="text-stone text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-[#D6D3D1] text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
             Schedule a confidential 30-minute growth architecture session with our directors.
           </p>
 

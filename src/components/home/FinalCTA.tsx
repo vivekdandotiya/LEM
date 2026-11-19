@@ -113,7 +113,7 @@ export function FinalCTA() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex flex-col items-center">
         {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-mono tracking-widest uppercase text-white/90 mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-mono tracking-widest uppercase text-white/90 mb-6">
           <span className="w-2 h-2 rounded-sm bg-lime" />
           <span>08 / NEXT STEP</span>
         </div>

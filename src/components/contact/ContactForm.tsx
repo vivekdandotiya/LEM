@@ -182,7 +182,7 @@ export function ContactForm() {
                   className="text-xs font-mono tracking-wider uppercase text-ink flex items-center justify-between font-semibold"
                 >
                   <span>Full Name</span>
-                  <span className="text-[10px] text-stone font-normal">(Required)</span>
+                  <span className="text-xs text-stone font-normal">(Required)</span>
                 </label>
                 <input
                   id="fullName"
@@ -212,7 +212,7 @@ export function ContactForm() {
                   className="text-xs font-mono tracking-wider uppercase text-ink flex items-center justify-between font-semibold"
                 >
                   <span>Business Email</span>
-                  <span className="text-[10px] text-stone font-normal">(Required)</span>
+                  <span className="text-xs text-stone font-normal">(Required)</span>
                 </label>
                 <input
                   id="email"
@@ -245,7 +245,7 @@ export function ContactForm() {
                 className="text-xs font-mono tracking-wider uppercase text-ink flex items-center justify-between font-semibold"
               >
                 <span>Company or Website</span>
-                <span className="text-[10px] text-stone font-normal">(Optional)</span>
+                <span className="text-xs text-stone font-normal">(Optional)</span>
               </label>
               <input
                 id="companyOrWebsite"
@@ -290,7 +290,7 @@ export function ContactForm() {
                   className="text-xs font-mono tracking-wider uppercase text-ink flex items-center justify-between font-semibold"
                 >
                   <span>Project Budget</span>
-                  <span className="text-[10px] text-stone font-normal">(Optional)</span>
+                  <span className="text-xs text-stone font-normal">(Optional)</span>
                 </label>
                 <select
                   id="budgetRange"
@@ -315,7 +315,7 @@ export function ContactForm() {
                 className="text-xs font-mono tracking-wider uppercase text-ink flex items-center justify-between font-semibold"
               >
                 <span>Project Objectives & Context</span>
-                <span className="text-[10px] text-stone font-normal">(Required)</span>
+                <span className="text-xs text-stone font-normal">(Required)</span>
               </label>
               <textarea
                 id="projectDetails"

@@ -242,7 +242,7 @@ export function StartupIntro() {
         {/* Skip [ESC] Button Top Right */}
         <button
           onClick={handleSkip}
-          className="absolute top-6 right-6 z-20 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-[11px] font-mono tracking-widest uppercase text-white/60 hover:text-white transition-all duration-200"
+          className="absolute top-6 right-6 z-20 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-xs font-mono tracking-widest uppercase text-white/60 hover:text-white transition-all duration-200"
           aria-label="Skip intro animation"
         >
           Skip [ESC]

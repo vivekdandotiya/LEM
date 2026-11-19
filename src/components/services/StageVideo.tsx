@@ -165,7 +165,7 @@ export function StageVideo({
         </div>
 
         {/* Permanent Corner "ILLUSTRATIVE" Sticker */}
-        <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink/95 border border-white/10 text-[10px] font-mono tracking-widest uppercase text-lime shadow-md">
+        <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink/95 border border-white/10 text-xs font-mono tracking-widest uppercase text-lime shadow-md">
           <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
           ILLUSTRATIVE
         </div>
@@ -243,7 +243,7 @@ export function StageVideo({
       </div>
 
       {/* Stage Footer (HTML Overlays, No Invented Metrics) */}
-      <div className="relative z-20 flex items-center justify-between p-4 sm:p-5 border-t border-white/10 bg-gradient-to-t from-[#080A0B]/90 to-transparent font-mono text-[10px] text-grey-3">
+      <div className="relative z-20 flex items-center justify-between p-4 sm:p-5 border-t border-white/10 bg-gradient-to-t from-[#080A0B]/90 to-transparent font-mono text-xs text-grey-3">
         <span>STAGE ENGINE: ACTIVE</span>
         <span className="text-lime font-bold uppercase">
           WORKFLOW: {phaseTitle}

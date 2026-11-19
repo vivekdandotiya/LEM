@@ -123,7 +123,7 @@ export function Footer() {
               <div className="flex items-center gap-2.5 mb-6 group cursor-pointer" onClick={scrollToTop}>
                 <span className="w-2.5 h-2.5 rounded-full bg-[#2EE6A8] animate-pulse" aria-hidden="true" />
                 <span className="text-2xl sm:text-3xl font-display font-extrabold tracking-tight text-white flex items-center">
-                  <span className="text-white/40 mr-1.5 font-mono">/</span>leadedge<span className="text-white/50">.agency</span>
+                  <span className="text-white/70 mr-1.5 font-mono">/</span>leadedge<span className="text-white/80">.agency</span>
                 </span>
               </div>
 
@@ -141,7 +141,7 @@ export function Footer() {
               </div>
 
               {/* Manifesto Copy Verbatim from reference style */}
-              <p className="text-xs sm:text-[13px] font-sans text-stone/90 leading-relaxed mb-8">
+              <p className="text-sm font-sans text-[#E7E5E4] leading-relaxed mb-8">
                 Every two weeks, we take you behind the scenes. Around 1,000 words on search architecture, creative media performance, and what we&apos;re learning through our work.
               </p>
             </div>
@@ -159,12 +159,12 @@ export function Footer() {
                   }}
                   placeholder="YOUR EMAIL HERE"
                   aria-label="Your email address"
-                  className="w-full bg-transparent text-xs font-mono tracking-[0.2em] uppercase text-white placeholder-white/40 focus:outline-none"
+                  className="w-full bg-transparent text-xs font-mono tracking-[0.2em] uppercase text-white placeholder-white/50 focus:outline-none"
                 />
                 <button
                   type="submit"
                   aria-label="Submit newsletter subscription"
-                  className="pl-3 text-white/70 hover:text-white transition-colors group flex items-center"
+                  className="pl-3 text-white hover:text-[#2EE6A8] transition-colors group flex items-center"
                 >
                   {subscribed ? (
                     <Check className="w-4 h-4 text-[#2EE6A8]" />
@@ -175,7 +175,7 @@ export function Footer() {
               </div>
 
               {/* Disclaimer */}
-              <p className="text-[11px] font-sans text-stone/70 mt-3 leading-relaxed">
+              <p className="text-xs font-sans text-[#D6D3D1] mt-3 leading-relaxed">
                 {subscribed ? (
                   <span className="text-[#2EE6A8] font-mono">✓ You are subscribed to /leadedge dispatches.</span>
                 ) : (
@@ -206,7 +206,7 @@ export function Footer() {
                         className={`text-xs font-mono tracking-wider transition-colors duration-200 block ${
                           link.isAccent
                             ? 'text-[#2EE6A8] font-bold hover:text-white'
-                            : 'text-stone hover:text-white'
+                            : 'text-[#D6D3D1] hover:text-white'
                         }`}
                       >
                         {link.label}
@@ -222,14 +222,14 @@ export function Footer() {
         {/* =========================================================================
             MIDDLE SECTION: Industry Partnerships & Social Row + ENG Dropdown
             ========================================================================= */}
-        <div className="pt-10 pb-8 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/5">
+        <div className="pt-10 pb-8 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/10">
           {/* Members / Partner Accreditation Statement */}
-          <p className="text-xs font-sans text-stone/80 text-center md:text-left">
+          <p className="text-xs font-sans text-[#D6D3D1] text-center md:text-left">
             Proud partners with Google Premier Partner, Meta Business Partner, Shopify Plus, HubSpot, and Awwwards.
           </p>
 
           {/* Social Icons & Language Badge */}
-          <div className="flex items-center gap-5 sm:gap-6 text-stone">
+          <div className="flex items-center gap-5 sm:gap-6 text-[#D6D3D1]">
             {/* W. (Wikipedia / Web Directory) */}
             <a
               href="https://leadedge.agency"
@@ -308,9 +308,9 @@ export function Footer() {
             </a>
 
             {/* ENG Dropdown Badge */}
-            <div className="flex items-center gap-1 px-2.5 py-1 rounded bg-[#16171A] border border-white/10 text-[11px] font-mono text-white/90 hover:border-white/30 transition-colors cursor-pointer ml-2">
+            <div className="flex items-center gap-1 px-2.5 py-1 rounded bg-[#16171A] border border-white/10 text-xs font-mono text-white/90 hover:border-white/30 transition-colors cursor-pointer ml-2">
               <span className="font-bold">ENG</span>
-              <span className="text-[10px] text-stone">↓</span>
+              <span className="text-xs text-[#D6D3D1]">↓</span>
             </div>
           </div>
         </div>
@@ -318,14 +318,14 @@ export function Footer() {
         {/* =========================================================================
             BOTTOM SECTION: Minimal Copyright Line
             ========================================================================= */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-stone/60">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#A8A29E]">
           <p>© 2006–2026 All rights reserved. Privacy. Legal. Quality.</p>
-          <div className="flex items-center gap-4 text-[11px]">
-            <Link href="/privacy" className="hover:text-stone transition-colors">
+          <div className="flex items-center gap-4 text-xs">
+            <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Notice
             </Link>
             <span>·</span>
-            <Link href="/terms" className="hover:text-stone transition-colors">
+            <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Engagement
             </Link>
             <span>·</span>

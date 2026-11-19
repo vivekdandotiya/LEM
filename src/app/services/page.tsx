@@ -178,7 +178,7 @@ export default function ServicesPage() {
       {/* 4. Final CTA Banner */}
       <section className="py-20 sm:py-28 bg-[#EFEBE2] border-t border-ink/10 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-gold-deep font-semibold block mb-3">
+          <span className="text-xs font-mono uppercase tracking-widest text-gold-deep font-semibold block mb-3">
             START YOUR CAMPAIGN
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-ink tracking-tight mb-4">

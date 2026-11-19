@@ -186,7 +186,7 @@ export function HomeHero() {
 
           {/* Accessible Rotation Controls (WCAG 2.2.2) */}
           <div className="flex items-center justify-center gap-3 mt-4">
-            <span className="text-[11px] font-mono tracking-widest text-white/50 uppercase">
+            <span className="text-xs font-mono tracking-widest text-[#E7E5E4] uppercase">
               0{currentIndex + 1} / 0{activeHeadlines.length}
             </span>
             <button

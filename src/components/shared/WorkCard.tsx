@@ -44,7 +44,7 @@ export function WorkCard({
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
         {/* Category Pill Tag */}
-        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-semibold tracking-wider uppercase text-ink border border-ink/5">
+        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-mono font-semibold tracking-wider uppercase text-ink border border-ink/5">
           {item.category}
         </div>
 
@@ -57,7 +57,7 @@ export function WorkCard({
       {/* Meta Content */}
       <div className="p-5 flex flex-col justify-between flex-1 bg-white">
         <div>
-          <div className="text-[11px] font-mono text-stone tracking-wider uppercase mb-1">
+          <div className="text-xs font-mono text-stone tracking-wider uppercase mb-1">
             {item.brand}
           </div>
           <h3 className="text-base sm:text-lg font-display font-bold text-ink group-hover:text-gold-deep transition-colors leading-snug">

@@ -84,7 +84,7 @@ export function MobileMenu({ isOpen, onClose, navItems, currentPath }: MobileMen
           <span className="font-display font-extrabold text-lg tracking-tight text-ink">
             LEAD EDGE
           </span>
-          <span className="text-[10px] font-mono uppercase tracking-widest text-stone">
+          <span className="text-xs font-mono uppercase tracking-widest text-stone">
             MARKETING
           </span>
         </div>

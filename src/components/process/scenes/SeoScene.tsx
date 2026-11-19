@@ -25,11 +25,11 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
       <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-3">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-          <span className="font-mono text-[11px] uppercase tracking-wider text-grey-2">
+          <span className="font-mono text-xs uppercase tracking-wider text-grey-2">
             SEO ENGINE // TELEMETRY
           </span>
         </div>
-        <div className="font-mono text-[11px] text-lime font-bold">
+        <div className="font-mono text-xs text-lime font-bold">
           PHASE 0{activePhase + 1} ACTIVE
         </div>
       </div>
@@ -76,21 +76,21 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
 
             {/* Diagnostic Flags */}
             <div className="absolute inset-0 p-4 flex flex-col justify-around pointer-events-none">
-              <div className="self-end px-2.5 py-1 rounded bg-ink/90 border border-lime/60 text-[10px] font-mono text-lime flex items-center gap-1.5 shadow-lg">
+              <div className="self-end px-2.5 py-1 rounded bg-ink/90 border border-lime/60 text-xs font-mono text-lime flex items-center gap-1.5 shadow-lg">
                 <CheckCircle2 className="w-3 h-3 text-lime" />
                 <span>CRAWL PATH: AUDIT</span>
               </div>
-              <div className="self-start px-2.5 py-1 rounded bg-ink/90 border border-lime/60 text-[10px] font-mono text-lime flex items-center gap-1.5 shadow-lg">
+              <div className="self-start px-2.5 py-1 rounded bg-ink/90 border border-lime/60 text-xs font-mono text-lime flex items-center gap-1.5 shadow-lg">
                 <CheckCircle2 className="w-3 h-3 text-lime" />
                 <span>CANONICAL ARCHITECTURE: MAPPING</span>
               </div>
-              <div className="self-end px-2.5 py-1 rounded bg-ink/90 border border-lime/60 text-[10px] font-mono text-lime flex items-center gap-1.5 shadow-lg">
+              <div className="self-end px-2.5 py-1 rounded bg-ink/90 border border-lime/60 text-xs font-mono text-lime flex items-center gap-1.5 shadow-lg">
                 <Zap className="w-3 h-3 text-lime" />
                 <span>INDEXING TELEMETRY: ACTIVE</span>
               </div>
             </div>
           </div>
-          <div className="text-center mt-3 font-mono text-[11px] text-grey-2">
+          <div className="text-center mt-3 font-mono text-xs text-grey-2">
             [SEARCH TELEMETRY CRAWL: AUDIT COMPLETE]
           </div>
         </div>
@@ -105,10 +105,10 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Sitemap Tree Hierarchy SVG */}
             <div className="bg-[#0E1012] rounded-xl border border-white/10 p-4">
               <div className="flex items-center justify-between mb-2">
-                <span className="font-mono text-[10px] text-grey-3 uppercase tracking-wider">
+                <span className="font-mono text-xs text-grey-3 uppercase tracking-wider">
                   TOPICAL ENTITY CLUSTERING
                 </span>
-                <span className="text-[10px] font-mono text-lime">SCHEMA ENTITY</span>
+                <span className="text-xs font-mono text-lime">SCHEMA ENTITY</span>
               </div>
               <svg className="w-full h-24" viewBox="0 0 320 80">
                 {/* Connecting Paths */}
@@ -140,17 +140,17 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Zero-Blue Google SERP Snippet Preview */}
             <div className="bg-[#0E1012] rounded-xl border border-white/15 p-4 shadow-xl">
               <div className="flex items-center gap-2 mb-1.5">
-                <span className="w-4 h-4 rounded-full bg-lime/20 flex items-center justify-center text-[9px] font-bold text-lime">
+                <span className="w-4 h-4 rounded-full bg-lime/20 flex items-center justify-center text-xs font-bold text-lime">
                   ✓
                 </span>
-                <span className="font-mono text-[11px] text-lime truncate">
+                <span className="font-mono text-xs text-lime truncate">
                   https://leadedge.agency › growth-engine
                 </span>
               </div>
               <h4 className="font-display font-bold text-white text-sm hover:underline cursor-pointer mb-1">
                 High-Performance Digital Growth Studio | Lead Edge
               </h4>
-              <div className="flex items-center gap-2 text-[11px] font-mono text-grey-2 mb-1.5">
+              <div className="flex items-center gap-2 text-xs font-mono text-grey-2 mb-1.5">
                 <span className="text-lime font-bold">STRUCTURED ENTITY</span>
                 <span className="text-grey-3">•</span>
                 <span>Commercial Search Architecture</span>
@@ -176,27 +176,27 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Central Domain Core */}
             <div className="relative z-10 w-24 h-24 rounded-full bg-[#1C1D1F] border-2 border-lime flex flex-col items-center justify-center shadow-lime-glow">
               <Globe className="w-5 h-5 text-lime mb-1" />
-              <span className="font-mono font-bold text-[10px] text-lime">LEAD EDGE</span>
-              <span className="font-mono text-[8px] text-white/70">CORE DOMAIN</span>
+              <span className="font-mono font-bold text-xs text-lime">LEAD EDGE</span>
+              <span className="font-mono text-xs text-white/70">CORE DOMAIN</span>
             </div>
 
             {/* Orbiting Authority Domain Nodes */}
-            <div className="absolute top-2 left-6 px-2.5 py-1 rounded bg-[#0E1012] border border-white/20 text-[10px] font-mono text-white flex items-center gap-1 shadow-lg">
+            <div className="absolute top-2 left-6 px-2.5 py-1 rounded bg-[#0E1012] border border-white/20 text-xs font-mono text-white flex items-center gap-1 shadow-lg">
               <span className="w-1.5 h-1.5 rounded-full bg-lime" />
               <span>Editorial Placement</span>
             </div>
 
-            <div className="absolute top-4 right-4 px-2.5 py-1 rounded bg-[#0E1012] border border-white/20 text-[10px] font-mono text-white flex items-center gap-1 shadow-lg">
+            <div className="absolute top-4 right-4 px-2.5 py-1 rounded bg-[#0E1012] border border-white/20 text-xs font-mono text-white flex items-center gap-1 shadow-lg">
               <span className="w-1.5 h-1.5 rounded-full bg-lime" />
               <span>Industry Publication</span>
             </div>
 
-            <div className="absolute bottom-6 left-4 px-2.5 py-1 rounded bg-[#0E1012] border border-white/20 text-[10px] font-mono text-white flex items-center gap-1 shadow-lg">
+            <div className="absolute bottom-6 left-4 px-2.5 py-1 rounded bg-[#0E1012] border border-white/20 text-xs font-mono text-white flex items-center gap-1 shadow-lg">
               <span className="w-1.5 h-1.5 rounded-full bg-lime" />
               <span>Digital Journal</span>
             </div>
 
-            <div className="absolute bottom-4 right-8 px-2.5 py-1 rounded bg-[#0E1012] border border-white/20 text-[10px] font-mono text-white flex items-center gap-1 shadow-lg">
+            <div className="absolute bottom-4 right-8 px-2.5 py-1 rounded bg-[#0E1012] border border-white/20 text-xs font-mono text-white flex items-center gap-1 shadow-lg">
               <span className="w-1.5 h-1.5 rounded-full bg-lime" />
               <span>Partner Network</span>
             </div>
@@ -209,7 +209,7 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
               <path d="M240 260 Q 150 200 150 150" stroke="#B08D57" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
             </svg>
           </div>
-          <div className="text-center mt-2 font-mono text-[11px] text-grey-2">
+          <div className="text-center mt-2 font-mono text-xs text-grey-2">
             [EDITORIAL BACKLINK GRAPH: STRUCTURED LINKS]
           </div>
         </div>
@@ -240,10 +240,10 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
                     <h5 className="font-display font-bold text-white text-xs sm:text-sm">
                       Lead Edge Marketing — Digital Growth Studio
                     </h5>
-                    <span className="font-mono text-[10px] text-lime">leadedge.agency</span>
+                    <span className="font-mono text-xs text-lime">leadedge.agency</span>
                   </div>
                 </div>
-                <div className="px-2 py-1 rounded bg-lime/20 border border-lime/40 text-[9px] font-mono text-lime font-bold">
+                <div className="px-2 py-1 rounded bg-lime/20 border border-lime/40 text-xs font-mono text-lime font-bold">
                   ORGANIC TARGET
                 </div>
               </div>
@@ -259,7 +259,7 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
                     <div className="w-20 h-2 rounded bg-white/10" />
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-grey-3">Competitor Alpha</span>
+                <span className="text-xs font-mono text-grey-3">Competitor Alpha</span>
               </div>
 
               {/* Competitor 3 */}
@@ -273,18 +273,18 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
                     <div className="w-16 h-2 rounded bg-white/10" />
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-grey-3">Competitor Beta</span>
+                <span className="text-xs font-mono text-grey-3">Competitor Beta</span>
               </div>
             </div>
           </div>
-          <div className="text-center mt-3 font-mono text-[11px] text-lime">
+          <div className="text-center mt-3 font-mono text-xs text-lime">
             [SEARCH POSITIONING: ORGANIC VISIBILITY]
           </div>
         </div>
       </div>
 
       {/* Stage Bottom Bar */}
-      <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-3 text-[10px] font-mono text-grey-3">
+      <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-3 text-xs font-mono text-grey-3">
         <span>STAGE ENGINE: ACTIVE</span>
         <span className="text-lime">SEARCH ARCHITECTURE WORKFLOW</span>
       </div>

@@ -37,6 +37,7 @@ export function VideoHero({
 
   return (
     <div
+      data-surface="media"
       className={`relative w-full ${heightClass} flex items-center justify-center overflow-hidden bg-charcoal ${className}`}
     >
       {/* Fallback Static Poster Image */}
@@ -71,16 +72,31 @@ export function VideoHero({
         </video>
       )}
 
-      {/* Atmospheric Vignette & Tint Veil */}
+      {/* Atmospheric Vignette & Tuned Contrast Gradient Scrim (V9 F1.1) */}
       <div
         className={`absolute inset-0 pointer-events-none transition-colors ${overlayClass}`}
       />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(8,10,11,0.72) 0%, rgba(8,10,11,0.48) 40%, rgba(8,10,11,0.85) 100%)',
+        }}
+      />
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-charcoal via-transparent to-charcoal/40" />
 
-      {/* Content Layer */}
+      {/* Content Layer with Local Dark Radial Scrim */}
       {children && (
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-24 sm:py-32">
-          {children}
+          <div
+            className="rounded-3xl p-4 sm:p-8"
+            style={{
+              background:
+                'radial-gradient(ellipse 95% 85% at 50% 50%, rgba(8,10,11,0.65) 0%, rgba(8,10,11,0.30) 65%, transparent 100%)',
+            }}
+          >
+            {children}
+          </div>
         </div>
       )}
     </div>

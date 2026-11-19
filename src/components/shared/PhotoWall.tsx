@@ -50,7 +50,7 @@ export function PhotoWall({
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition-opacity" />
 
         <div className="absolute bottom-4 left-4 right-4 text-white">
-          <div className="text-[10px] font-mono tracking-wider uppercase text-gold-soft">
+          <div className="text-xs font-mono tracking-wider uppercase text-gold-soft">
             {c.category}
           </div>
           <div className="text-sm font-display font-bold leading-tight mt-0.5">

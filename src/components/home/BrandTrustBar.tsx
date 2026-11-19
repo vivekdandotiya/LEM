@@ -19,11 +19,11 @@ export function BrandTrustBar() {
         </h2>
 
         {/* Brand Logos Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-10 items-center justify-items-center opacity-85 hover:opacity-100 transition-opacity">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-10 items-center justify-items-center transition-opacity">
           {/* 1. Watches & Crystals */}
           <div className="flex items-center gap-2.5 text-stone-700 hover:text-ink transition-colors group">
             <svg
-              className="w-8 h-8 text-[#B08D57] group-hover:scale-105 transition-transform"
+              className="w-8 h-8 text-[#7A5C2E] group-hover:scale-105 transition-transform"
               viewBox="0 0 40 40"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -33,10 +33,10 @@ export function BrandTrustBar() {
               <path d="M20 11L22 15H18L20 11Z" fill="currentColor" />
             </svg>
             <div className="text-left leading-none">
-              <span className="block text-[11px] sm:text-xs font-serif font-bold tracking-wider uppercase text-ink">
+              <span className="block text-xs font-serif font-bold tracking-wider uppercase text-ink">
                 WATCHES
               </span>
-              <span className="block text-[10px] sm:text-[11px] font-sans font-light tracking-widest text-stone-500">
+              <span className="block text-xs font-sans font-medium tracking-widest text-stone-700">
                 &amp; CRYSTALS
               </span>
             </div>
@@ -44,13 +44,13 @@ export function BrandTrustBar() {
 
           {/* 2. Tapioca Express */}
           <div className="flex items-center gap-1.5 text-stone-700 hover:text-ink transition-colors group">
-            <span className="text-base sm:text-lg font-serif italic font-bold text-[#C87D32] group-hover:scale-105 transition-transform">
+            <span className="text-base sm:text-lg font-serif italic font-bold text-[#5C4018] group-hover:scale-105 transition-transform">
               Tapioca
             </span>
             <span className="text-xs sm:text-sm font-sans font-extrabold tracking-tight text-ink uppercase">
               Express
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#B08D57]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#7A5C2E]" />
           </div>
 
           {/* 3. Watch Pilot */}
@@ -65,7 +65,7 @@ export function BrandTrustBar() {
               <path d="M16 10V22M10 16H22" stroke="currentColor" strokeWidth="2" />
             </svg>
             <div className="text-left font-display font-black tracking-widest text-xs sm:text-sm uppercase text-ink">
-              WATCH <span className="text-stone-500">PILOT</span>
+              WATCH <span className="text-stone-700">PILOT</span>
             </div>
           </div>
 
@@ -74,7 +74,7 @@ export function BrandTrustBar() {
             <span className="text-base sm:text-lg font-display font-black tracking-tighter text-[#1C2C42] group-hover:text-ink transition-colors leading-none">
               PROSPER
             </span>
-            <span className="text-[9px] font-mono tracking-widest uppercase text-stone-500 font-semibold mt-0.5">
+            <span className="text-xs font-mono tracking-widest uppercase text-stone-700 font-semibold mt-0.5">
               BUSINESS CREDIT
             </span>
           </div>
@@ -84,7 +84,7 @@ export function BrandTrustBar() {
             <span className="font-serif italic text-base sm:text-lg font-extrabold text-ink group-hover:text-[#B08D57] transition-colors">
               Gameday
             </span>
-            <span className="font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase px-1.5 py-0.5 rounded bg-black/5 text-ink">
+            <span className="font-mono text-xs font-bold tracking-widest uppercase px-1.5 py-0.5 rounded bg-black/5 text-ink">
               SOCIAL
             </span>
           </div>
@@ -92,7 +92,7 @@ export function BrandTrustBar() {
           {/* 6. Glen Park Senior Living */}
           <div className="flex items-center gap-2 group">
             <svg
-              className="w-7 h-7 text-[#586E50] group-hover:scale-105 transition-transform"
+              className="w-7 h-7 text-[#3D5237] group-hover:scale-105 transition-transform"
               viewBox="0 0 32 32"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
@@ -100,10 +100,10 @@ export function BrandTrustBar() {
               <path d="M16 4C11.58 4 8 7.58 8 12C8 16.42 16 28 16 28C16 28 24 16.42 24 12C24 7.58 20.42 4 16 4ZM16 14C14.9 14 14 13.1 14 12C14 10.9 14.9 10 16 10C17.1 10 18 10.9 18 12C18 13.1 17.1 14 16 14Z" />
             </svg>
             <div className="text-left leading-tight">
-              <span className="block text-[10px] sm:text-[11px] font-serif font-bold uppercase tracking-wider text-ink">
+              <span className="block text-xs font-serif font-bold uppercase tracking-wider text-ink">
                 GLEN PARK
               </span>
-              <span className="block text-[8px] sm:text-[9px] font-sans text-stone-500 tracking-tight">
+              <span className="block text-xs font-sans text-stone-700 tracking-tight font-medium">
                 SENIOR LIVING
               </span>
             </div>

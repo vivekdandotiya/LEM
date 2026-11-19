@@ -63,7 +63,7 @@ export function StepPhotoSection({
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
+              <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
                 HOW WE DELIVER
               </span>
             </div>
@@ -136,7 +136,7 @@ export function StepPhotoSection({
                     className="object-cover transition-transform duration-700 ease-out scale-100 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-bold text-ink uppercase tracking-wider">
+                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-mono font-bold text-ink uppercase tracking-wider">
                     Focal Scan Active
                   </div>
                 </div>
@@ -153,7 +153,7 @@ export function StepPhotoSection({
                     className="object-cover transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-bold text-ink uppercase tracking-wider">
+                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-mono font-bold text-ink uppercase tracking-wider">
                     Paid Creative Stream
                   </div>
                 </div>
@@ -191,7 +191,7 @@ export function StepPhotoSection({
                     <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                     <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                     <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                    <div className="mx-auto px-4 py-0.5 rounded-md bg-white/10 text-[10px] font-mono text-white/60">
+                    <div className="mx-auto px-4 py-0.5 rounded-md bg-white/10 text-xs font-mono text-white/60">
                       leadedge.marketing/{current.number}
                     </div>
                   </div>
@@ -218,7 +218,7 @@ export function StepPhotoSection({
                     className="object-cover transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-bold text-ink uppercase tracking-wider flex items-center gap-1.5">
+                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-mono font-bold text-ink uppercase tracking-wider flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-gold" />
                     Editorial Aperture
                   </div>
@@ -228,7 +228,7 @@ export function StepPhotoSection({
               {/* Overlay Metadata Bar */}
               <div className="p-5 sm:p-6 bg-white border-t border-ink/10 flex items-center justify-between">
                 <div>
-                  <div className="text-[10px] font-mono text-stone uppercase tracking-widest">
+                  <div className="text-xs font-mono text-stone uppercase tracking-widest">
                     Step Output
                   </div>
                   <div className="text-sm font-display font-bold text-ink mt-0.5">

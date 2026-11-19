@@ -142,15 +142,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* End of Article CTA Box */}
-        <div className="my-16 p-8 sm:p-12 rounded-[28px] bg-charcoal text-ivory flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 shadow-soft-lg">
+        <div className="my-16 p-8 sm:p-12 rounded-[28px] bg-charcoal text-ivory flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 shadow-soft-lg" data-surface="dark">
           <div>
-            <span className="text-xs font-mono tracking-widest uppercase text-gold block mb-2 font-semibold">
+            <span className="text-xs font-mono tracking-widest uppercase text-[#D9C29A] block mb-2 font-semibold">
               Commercial Alignment
             </span>
-            <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-ivory mb-2">
+            <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-[#F6F3EC] mb-2">
               Scale Your Digital Momentum
             </h3>
-            <p className="text-sm text-stone max-w-md leading-relaxed">
+            <p className="text-sm text-[#D6D3D1] max-w-md leading-relaxed">
               Speak directly with our senior growth architects to evaluate your search visibility and creative performance.
             </p>
           </div>
@@ -176,7 +176,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 className="p-6 rounded-[22px] bg-white border border-ink/10 shadow-soft-sm hover:shadow-soft-md hover:border-gold/50 transition-all group flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-gold-deep block mb-2 font-semibold">
+                  <span className="text-xs font-mono uppercase tracking-wider text-gold-deep block mb-2 font-semibold">
                     {related.category}
                   </span>
                   <h4 className="text-lg font-display font-bold text-ink group-hover:text-gold-deep transition-colors leading-snug mb-2">

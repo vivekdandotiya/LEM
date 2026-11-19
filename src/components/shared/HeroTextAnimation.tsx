@@ -49,7 +49,7 @@ export function HeroTextAnimation({
                   }}
                 >
                   {word === italicWord ? (
-                    <span className="font-serif italic font-normal text-gold-deep pr-1">
+                    <span className="font-serif italic font-normal text-[#5C4018] pr-1">
                       {word}
                     </span>
                   ) : (
@@ -66,15 +66,14 @@ export function HeroTextAnimation({
             {words.map((word, i) => (
               <React.Fragment key={i}>
                 <span
-                  className="inline-block transition-all duration-600 ease-editorial"
+                  className="inline-block transition-transform duration-300 ease-editorial"
                   style={{
-                    transitionDelay: `${i * 75}ms`,
-                    opacity: mounted ? 1 : 0,
-                    transform: mounted ? 'scale(1)' : 'scale(0.85) translateY(20px)',
+                    transitionDelay: `${i * 40}ms`,
+                    transform: mounted ? 'scale(1)' : 'scale(0.92) translateY(8px)',
                   }}
                 >
                   {word === italicWord ? (
-                    <span className="font-serif italic font-normal text-gold-deep pr-1">
+                    <span className="font-serif italic font-normal text-[#5C4018] pr-1">
                       {word}
                     </span>
                   ) : (
@@ -88,17 +87,15 @@ export function HeroTextAnimation({
 
         {variant === 'blur-dissolve' && (
           <span
-            className="inline-block transition-all duration-1000 ease-out"
+            className="inline-block transition-all duration-300 ease-out"
             style={{
-              filter: mounted ? 'blur(0px)' : 'blur(12px)',
-              opacity: mounted ? 1 : 0,
               letterSpacing: mounted ? '-0.02em' : '0.04em',
             }}
           >
             {words.map((word, i) => (
               <React.Fragment key={i}>
                 {word === italicWord ? (
-                  <span className="font-serif italic font-normal text-gold-deep pr-1">
+                  <span className="font-serif italic font-normal text-[#5C4018] pr-1">
                     {word}
                   </span>
                 ) : (
@@ -112,7 +109,7 @@ export function HeroTextAnimation({
         {variant === 'wipe-up' && (
           <span className="inline-block relative overflow-hidden">
             <span
-              className="inline-block transition-transform duration-800 ease-editorial"
+              className="inline-block transition-transform duration-500 ease-editorial"
               style={{
                 transform: mounted ? 'translateY(0)' : 'translateY(100%)',
               }}
@@ -120,7 +117,7 @@ export function HeroTextAnimation({
               {words.map((word, i) => (
                 <React.Fragment key={i}>
                   {word === italicWord ? (
-                    <span className="font-serif italic font-normal text-gold-deep pr-1">
+                    <span className="font-serif italic font-normal text-[#5C4018] pr-1">
                       {word}
                     </span>
                   ) : (
@@ -134,10 +131,9 @@ export function HeroTextAnimation({
 
         {variant === 'iris-fade' && (
           <span
-            className="inline-block transition-all duration-1000 ease-out"
+            className="inline-block transition-transform duration-300 ease-out"
             style={{
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? 'translateY(0)' : 'translateY(24px)',
+              transform: mounted ? 'translateY(0)' : 'translateY(12px)',
             }}
           >
             {words.map((word, i) => (

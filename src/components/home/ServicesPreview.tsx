@@ -41,7 +41,7 @@ export function ServicesPreview() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
+              <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
                 02 / SERVICES
               </span>
             </div>
@@ -86,7 +86,7 @@ export function ServicesPreview() {
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
                           className="transition-transform duration-700 ease-out group-hover:scale-105"
                         />
-                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ink/90 text-[10px] font-mono text-white tracking-widest uppercase border border-white/10 z-10">
+                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ink/90 text-xs font-mono text-white tracking-widest uppercase border border-white/10 z-10">
                           {service.label}
                         </div>
                       </div>

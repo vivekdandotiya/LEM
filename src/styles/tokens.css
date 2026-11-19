@@ -66,3 +66,31 @@
   --radius-lg: 20px;
   --radius-pill: 9999px;
 }
+
+/* Surface Tokens (V9 F1.2) */
+[data-surface="light"] {
+  --bg: #F6F3EC;
+  --fg: #0F1011;
+  --fg-muted: #57534E;
+  --fg-faint: #6F6A60;
+  --line: rgba(15, 16, 17, 0.12);
+  --card-bg: #FFFFFF;
+}
+
+[data-surface="dark"] {
+  --bg: #1C1D1F;
+  --fg: #F6F3EC;
+  --fg-muted: #E7E5E4;
+  --fg-faint: #D6D3D1;
+  --line: rgba(255, 255, 255, 0.16);
+  --card-bg: #141518;
+}
+
+[data-surface="media"] {
+  --bg: #080A0B;
+  --fg: #FFFFFF;
+  --fg-muted: #F6F3EC;
+  --fg-faint: #E7E5E4;
+  --line: rgba(255, 255, 255, 0.22);
+  --card-bg: rgba(16, 18, 20, 0.88);
+}

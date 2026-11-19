@@ -88,11 +88,11 @@ export function Lightbox({ item, isOpen, onClose }: LightboxProps) {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2 h-2 rounded-full bg-gold" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
+              <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
                 {item.category}
               </span>
               {item.year && (
-                <span className="text-[11px] font-mono text-stone">· {item.year}</span>
+                <span className="text-xs font-mono text-stone">· {item.year}</span>
               )}
             </div>
             <h3 className="text-xl font-display font-bold text-ink">

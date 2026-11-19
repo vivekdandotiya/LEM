@@ -84,7 +84,7 @@ export function AboutJourney() {
         <div className="card-glass-elevated bg-paper-2 p-2 rounded-full border border-ink/10 flex items-center justify-between shadow-soft-sm">
           <div className="flex items-center gap-2 pl-3">
             <SparkleGlyph size={14} className="text-lime" spin={true} />
-            <span className="text-[11px] font-mono uppercase tracking-wider text-grey-3 font-semibold hidden sm:inline">
+            <span className="text-xs font-mono uppercase tracking-wider text-grey-3 font-semibold hidden sm:inline">
               Story
             </span>
           </div>
@@ -116,7 +116,7 @@ export function AboutJourney() {
         <div className="flex items-center gap-3 mb-4">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-            <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
+            <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
               01 / ORIGIN
             </span>
           </div>
@@ -148,7 +148,7 @@ export function AboutJourney() {
           {/* Right Text Column: max words */}
           <div className="lg:col-span-4 flex flex-col gap-4">
             <div className="p-6 sm:p-7 rounded-[20px] bg-paper-2 border border-ink/10 card-glass-elevated">
-              <span className="text-[11px] font-mono uppercase text-grey-2 tracking-wider block mb-2">
+              <span className="text-xs font-mono uppercase text-grey-2 tracking-wider block mb-2">
                 Mission
               </span>
               <h3 className="text-xl font-display font-bold text-ink mb-2">
@@ -159,7 +159,7 @@ export function AboutJourney() {
               </p>
             </div>
             <div className="p-6 sm:p-7 rounded-[20px] bg-paper-2 border border-ink/10 card-glass-elevated">
-              <span className="text-[11px] font-mono uppercase text-grey-2 tracking-wider block mb-2">
+              <span className="text-xs font-mono uppercase text-grey-2 tracking-wider block mb-2">
                 Promise
               </span>
               <h3 className="text-xl font-display font-bold text-ink mb-2">
@@ -178,7 +178,7 @@ export function AboutJourney() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-            <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
+            <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
               02 / MANIFESTO
             </span>
           </div>
@@ -212,7 +212,7 @@ export function AboutJourney() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
+              <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
                 03 / CRAFT
               </span>
             </div>
@@ -237,7 +237,7 @@ export function AboutJourney() {
         <div className="pb-10 border-b border-ink/10 mb-10">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-            <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
+            <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
               04 / WHY US
             </span>
           </div>

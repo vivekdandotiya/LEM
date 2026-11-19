@@ -82,7 +82,7 @@ function FlipCard({ value, period }: FlipCardProps) {
 
       {/* AM/PM Tag on Hour Card */}
       {period && (
-        <span className="absolute top-2 left-2.5 text-[9px] sm:text-[10px] font-mono font-bold tracking-wider text-[#D9C29A] uppercase select-none">
+        <span className="absolute top-2 left-2.5 text-xs sm:text-xs font-mono font-bold tracking-wider text-[#D9C29A] uppercase select-none">
           {period}
         </span>
       )}
@@ -162,7 +162,7 @@ export function GlobalStudioClocksSection() {
         {/* Section Top Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-10 border-b border-white/10 mb-12 sm:mb-14">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono tracking-widest uppercase text-[#D9C29A] mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono tracking-widest uppercase text-[#D9C29A] mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#B08D57] animate-pulse" />
               <span>LIVE STUDIO TIMEZONES</span>
             </div>
@@ -194,10 +194,10 @@ export function GlobalStudioClocksSection() {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[10px] font-mono text-[#D9C29A] font-semibold">
+                    <span className="px-2.5 py-1 rounded-md bg-white/10 border border-white/15 text-xs font-mono text-[#D9C29A] font-bold">
                       {clock.code}
                     </span>
-                    <span className="text-[11px] font-mono text-stone uppercase tracking-wider">
+                    <span className="text-xs font-mono text-[#D6D3D1] uppercase tracking-wider font-medium">
                       {clock.region}
                     </span>
                   </div>
@@ -206,14 +206,14 @@ export function GlobalStudioClocksSection() {
                 {/* Flip Tiles: Dual Split-Flap Boxes */}
                 <div className="py-6 flex items-center gap-2.5 sm:gap-3">
                   <FlipCard value={t.hour} period={t.period} />
-                  <span className="text-2xl font-mono text-white/30 font-bold select-none">:</span>
+                  <span className="text-2xl font-mono text-white/70 font-bold select-none">:</span>
                   <FlipCard value={t.minute} />
                 </div>
 
                 {/* Footer Tagline: Studio Desk Assignment */}
-                <div className="w-full pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-stone">
-                  <span className="text-white/80 font-medium">{clock.desk}</span>
-                  <span className="text-[10px] uppercase text-[#B08D57] font-semibold">Online</span>
+                <div className="w-full pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#D6D3D1]">
+                  <span className="text-white font-medium">{clock.desk}</span>
+                  <span className="text-xs uppercase text-[#D9C29A] font-bold">Online</span>
                 </div>
               </div>
             );

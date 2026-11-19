@@ -93,7 +93,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
           <div className="mb-12">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
+              <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
                 {processData.eyebrow}
               </span>
             </div>
@@ -109,7 +109,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
               <div key={phase.id} className="p-6 rounded-[24px] bg-paper-2 border border-ink/10 flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs text-lime font-bold">{phase.monoLabel}</span>
-                  <span className="font-mono text-[10px] text-grey-3">ILLUSTRATIVE</span>
+                  <span className="font-mono text-xs text-grey-3">ILLUSTRATIVE</span>
                 </div>
                 <h3 className="font-display font-bold text-xl text-ink">{phase.headline}</h3>
                 <p className="font-sans text-sm text-grey-3">{phase.body}</p>
@@ -143,7 +143,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-                <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
+                <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
                   {processData.eyebrow}
                 </span>
               </div>
@@ -188,15 +188,15 @@ export function ProcessStage({ slug }: ProcessStageProps) {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-lime" />
                     )}
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-mono text-[10px] tracking-wider uppercase font-bold text-ink">
+                      <span className="font-mono text-xs tracking-wider uppercase font-bold text-ink">
                         {phase.monoLabel}
                       </span>
                       {isActive ? (
-                        <span className="text-[10px] font-mono font-bold text-ink bg-lime px-2 py-0.5 rounded">
+                        <span className="text-xs font-mono font-bold text-ink bg-lime px-2 py-0.5 rounded">
                           ACTIVE
                         </span>
                       ) : (
-                        <span className="text-[10px] font-mono text-grey-3">
+                        <span className="text-xs font-mono text-grey-3">
                           PHASE 0{idx + 1}
                         </span>
                       )}
@@ -204,7 +204,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
                     <h4 className="font-display font-bold text-ink text-sm sm:text-base leading-tight line-clamp-1">
                       {phase.headline}
                     </h4>
-                    <p className="font-sans text-[11px] text-grey-3 truncate">
+                    <p className="font-sans text-xs text-grey-3 truncate">
                       {phase.deliverables.join(' · ')}
                     </p>
                   </button>
@@ -222,7 +222,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
                     style={{ width: '0%' }}
                   />
                 </div>
-                <span ref={progressTextRef} className="font-mono text-[11px] text-grey-3 font-semibold">
+                <span ref={progressTextRef} className="font-mono text-xs text-grey-3 font-semibold">
                   0%
                 </span>
               </div>
@@ -258,7 +258,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-            <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
+            <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
               {processData.eyebrow}
             </span>
           </div>
@@ -277,7 +277,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs text-ink font-bold">{phase.monoLabel}</span>
-                <span className="font-mono text-[9px] text-lime bg-ink px-2 py-0.5 rounded font-bold">
+                <span className="font-mono text-xs text-lime bg-ink px-2 py-0.5 rounded font-bold">
                   ILLUSTRATIVE
                 </span>
               </div>
@@ -289,7 +289,7 @@ export function ProcessStage({ slug }: ProcessStageProps) {
                 {phase.deliverables.map((item, dIdx) => (
                   <span
                     key={dIdx}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/60 border border-ink/10 text-[10px] font-mono text-ink"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/60 border border-ink/10 text-xs font-mono text-ink"
                   >
                     <CheckCircle2 className="w-3 h-3 text-lime" />
                     <span>{item}</span>

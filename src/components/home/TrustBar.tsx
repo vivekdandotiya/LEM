@@ -20,13 +20,13 @@ export function TrustBar() {
     <section className="border-b border-ink/10 py-6 overflow-hidden select-none bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-3 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 flex items-center gap-2">
+          <span className="text-xs font-mono tracking-widest uppercase text-grey-3 flex items-center gap-2">
             <span className="w-2 h-2 rounded-sm bg-lime" />
             01 / Standards
           </span>
           <PlaceholderBadge label="CIR-05 Industry Validation Pending" />
         </div>
-        <span className="text-[11px] font-mono text-grey-2 hidden sm:inline">
+        <span className="text-xs font-mono text-grey-2 hidden sm:inline">
           Velocity-Reactive Strip
         </span>
       </div>

@@ -69,9 +69,9 @@ export function AdCard({
         {/* Category Tag */}
         <div className="flex items-center gap-1.5">
           {showConceptBadge && (
-            <span className="text-[10px] py-0.5 px-2 rounded-full bg-gold/20 text-gold border border-gold/30 font-mono">Concept</span>
+            <span className="text-xs py-0.5 px-2 rounded-full bg-gold/20 text-gold border border-gold/30 font-mono">Concept</span>
           )}
-          <span className="px-2.5 py-1 rounded bg-charcoal/90 border border-white/10 text-[10px] font-mono tracking-wider uppercase text-white/90">
+          <span className="px-2.5 py-1 rounded bg-charcoal/90 border border-white/10 text-xs font-mono tracking-wider uppercase text-white/90">
             {creative.category}
           </span>
         </div>
@@ -88,7 +88,7 @@ export function AdCard({
           <span className="text-gold group-hover:text-gold-soft transition-colors flex items-center gap-1 font-sans font-bold">
             {creative.cta} <span aria-hidden="true">→</span>
           </span>
-          <span className="text-white/60 font-mono tracking-widest text-[11px]">
+          <span className="text-white/60 font-mono tracking-widest text-xs">
             {creative.ratio}
           </span>
         </div>

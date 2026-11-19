@@ -21,11 +21,11 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
             <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
             <span className="w-2.5 h-2.5 rounded-full bg-lime animate-pulse" />
           </div>
-          <span className="font-mono text-[11px] uppercase tracking-wider text-grey-2 ml-2">
+          <span className="font-mono text-xs uppercase tracking-wider text-grey-2 ml-2">
             WEB ENGINE // BESPOKE NEXT.JS 15
           </span>
         </div>
-        <div className="font-mono text-[11px] text-lime font-bold">
+        <div className="font-mono text-xs text-lime font-bold">
           PHASE 0{activePhase + 1} ACTIVE
         </div>
       </div>
@@ -75,7 +75,7 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
               <text x="280" y="80" fill="#B08D57" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">/contact</text>
             </svg>
           </div>
-          <div className="text-center mt-3 font-mono text-[11px] text-grey-2">
+          <div className="text-center mt-3 font-mono text-xs text-grey-2">
             [CONVERSION FUNNEL STRUCTURED // ZERO ORPHANED ROUTES]
           </div>
         </div>
@@ -89,35 +89,35 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
           <div className="w-full max-w-md mx-auto grid grid-cols-2 gap-3">
             {/* Low-Fi Wireframe State */}
             <div className="p-3.5 rounded-xl bg-[#0E1012] border border-white/10 flex flex-col justify-between aspect-[4/3] opacity-50">
-              <span className="font-mono text-[10px] text-grey-3">01 / WIREFRAME</span>
+              <span className="font-mono text-xs text-grey-3">01 / WIREFRAME</span>
               <div className="space-y-2">
                 <div className="w-full h-8 rounded border border-dashed border-white/20 bg-white/5" />
                 <div className="w-2/3 h-2.5 rounded bg-white/15" />
                 <div className="w-1/2 h-2.5 rounded bg-white/10" />
               </div>
-              <span className="text-[9px] font-mono text-grey-3">Structure Approved</span>
+              <span className="text-xs font-mono text-grey-3">Structure Approved</span>
             </div>
 
             {/* High-Fi Finished UI State */}
             <div className="p-3.5 rounded-xl bg-[#1C1D1F] border-2 border-lime shadow-lime-glow flex flex-col justify-between aspect-[4/3]">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] text-lime font-bold">02 / CRAFTED UI</span>
+                <span className="font-mono text-xs text-lime font-bold">02 / CRAFTED UI</span>
                 <span className="w-2 h-2 rounded-full bg-lime" />
               </div>
               <div className="space-y-2">
                 <div className="w-full p-2 rounded-lg bg-ink border border-lime/30 flex items-center justify-between">
                   <span className="font-display font-bold text-xs text-white">Momentum Engine</span>
-                  <span className="px-1.5 py-0.5 rounded bg-lime text-ink font-mono font-bold text-[8px]">
+                  <span className="px-1.5 py-0.5 rounded bg-lime text-ink font-mono font-bold text-xs">
                     CTA →
                   </span>
                 </div>
                 <div className="w-full h-2 rounded bg-lime/40" />
                 <div className="w-3/4 h-2 rounded bg-white/30" />
               </div>
-              <span className="text-[9px] font-mono text-lime font-bold">Commercial Polish</span>
+              <span className="text-xs font-mono text-lime font-bold">Commercial Polish</span>
             </div>
           </div>
-          <div className="text-center mt-3 font-mono text-[11px] text-lime">
+          <div className="text-center mt-3 font-mono text-xs text-lime">
             [FLUID MORPH: WIREFRAME TO POLISHED INTERFACE]
           </div>
         </div>
@@ -130,7 +130,7 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
         >
           <div className="w-full max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
             {/* Clean Code Editor */}
-            <div className="p-3.5 rounded-xl bg-[#0E1012] border border-white/10 font-mono text-[10px] space-y-1 text-grey-2 shadow-inner">
+            <div className="p-3.5 rounded-xl bg-[#0E1012] border border-white/10 font-mono text-xs space-y-1 text-grey-2 shadow-inner">
               <div className="flex items-center justify-between text-grey-3 border-b border-white/10 pb-1 mb-2">
                 <span>HeroSection.tsx</span>
                 <span className="text-lime">TSX</span>
@@ -149,31 +149,31 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
             {/* Viewport Resize Mode Display */}
             <div className="p-3.5 rounded-xl bg-[#17191B] border border-white/15 flex flex-col justify-between">
               <div className="flex items-center justify-between border-b border-white/10 pb-2">
-                <span className="font-mono text-[10px] text-grey-3">VIEWPORT ENGINE</span>
-                <span className="font-mono text-[10px] text-lime font-bold">FLUID GEOMETRY</span>
+                <span className="font-mono text-xs text-grey-3">VIEWPORT ENGINE</span>
+                <span className="font-mono text-xs text-lime font-bold">FLUID GEOMETRY</span>
               </div>
 
               <div className="flex items-center justify-around my-2">
                 <div className="flex flex-col items-center gap-1 text-white">
                   <Monitor className="w-5 h-5 text-lime" />
-                  <span className="font-mono text-[8px]">1440px</span>
+                  <span className="font-mono text-xs">1440px</span>
                 </div>
                 <div className="flex flex-col items-center gap-1 text-white/70">
                   <Tablet className="w-5 h-5" />
-                  <span className="font-mono text-[8px]">768px</span>
+                  <span className="font-mono text-xs">768px</span>
                 </div>
                 <div className="flex flex-col items-center gap-1 text-white/70">
                   <Smartphone className="w-5 h-5" />
-                  <span className="font-mono text-[8px]">375px</span>
+                  <span className="font-mono text-xs">375px</span>
                 </div>
               </div>
 
-              <div className="p-1.5 rounded bg-white/5 border border-white/10 text-center font-mono text-[9px] text-grey-2">
+              <div className="p-1.5 rounded bg-white/5 border border-white/10 text-center font-mono text-xs text-grey-2">
                 NO HORIZONTAL OVERFLOW
               </div>
             </div>
           </div>
-          <div className="text-center mt-3 font-mono text-[11px] text-grey-2">
+          <div className="text-center mt-3 font-mono text-xs text-grey-2">
             [ZERO TEMPLATE BLOAT // HANDCRAFTED TYPESCRIPT ARCHITECTURE]
           </div>
         </div>
@@ -191,26 +191,26 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
                 <div className="w-12 h-12 rounded-full border-2 border-lime flex items-center justify-center mb-1">
                   <span className="font-mono font-bold text-xs text-lime">FAST</span>
                 </div>
-                <span className="font-mono text-[9px] text-white">PERFORMANCE</span>
+                <span className="font-mono text-xs text-white">PERFORMANCE</span>
               </div>
 
               <div className="p-3 rounded-xl bg-[#1C1D1F] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
                 <div className="w-12 h-12 rounded-full border-2 border-lime flex items-center justify-center mb-1">
                   <span className="font-mono font-bold text-xs text-lime">WCAG</span>
                 </div>
-                <span className="font-mono text-[9px] text-white">ACCESSIBILITY</span>
+                <span className="font-mono text-xs text-white">ACCESSIBILITY</span>
               </div>
 
               <div className="p-3 rounded-xl bg-[#1C1D1F] border border-lime/50 flex flex-col items-center justify-center shadow-lime-glow">
                 <div className="w-12 h-12 rounded-full border-2 border-lime flex items-center justify-center mb-1">
                   <span className="font-mono font-bold text-xs text-lime">CLEAN</span>
                 </div>
-                <span className="font-mono text-[9px] text-white">BEST PRACTICES</span>
+                <span className="font-mono text-xs text-white">BEST PRACTICES</span>
               </div>
             </div>
 
             {/* Pre-Flight Checklist */}
-            <div className="p-3 rounded-xl bg-[#0E1012] border border-white/10 space-y-1.5 text-[10px] font-mono">
+            <div className="p-3 rounded-xl bg-[#0E1012] border border-white/10 space-y-1.5 text-xs font-mono">
               <div className="flex items-center justify-between text-lime">
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-lime" />
@@ -234,7 +234,7 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
               </div>
             </div>
           </div>
-          <div className="text-center mt-3 font-mono text-[11px] text-lime flex items-center justify-center gap-1.5">
+          <div className="text-center mt-3 font-mono text-xs text-lime flex items-center justify-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-lime" />
             <span>[PRE-FLIGHT PROTOCOL: PRODUCTION DEPLOYMENT]</span>
           </div>
@@ -242,7 +242,7 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
       </div>
 
       {/* Stage Bottom Bar */}
-      <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-3 text-[10px] font-mono text-grey-3">
+      <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-3 text-xs font-mono text-grey-3">
         <span>RUNTIME ENGINE: NEXT.JS 15 APP ROUTER</span>
         <span className="text-lime">HANDCRAFTED TYPESCRIPT</span>
       </div>

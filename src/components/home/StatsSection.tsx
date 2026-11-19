@@ -38,7 +38,7 @@ export function StatsSection() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-sm bg-ink" aria-hidden="true" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-lime-ink font-bold">
+              <span className="text-xs font-mono tracking-widest uppercase text-lime-ink font-bold">
                 06 / STANDARDS
               </span>
             </div>
@@ -80,8 +80,8 @@ export function StatsSection() {
 
               {/* Honesty Badge */}
               <div className="mt-6 pt-4 border-t border-ink/10 flex items-center justify-between">
-                <span className="text-[10px] font-mono text-grey-2 uppercase">Status</span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-lime text-ink font-bold border border-ink/20">
+                <span className="text-xs font-mono text-grey-2 uppercase">Status</span>
+                <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-lime text-ink font-bold border border-ink/20">
                   {stat.badge}
                 </span>
               </div>

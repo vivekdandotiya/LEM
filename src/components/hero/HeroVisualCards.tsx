@@ -14,11 +14,11 @@ export function CardWebDev() {
           <div className="w-2.5 h-2.5 rounded-full bg-[#7E7A73]/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-[#7E7A73]/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-[#7E7A73]/60" />
-          <span className="ml-3 text-[11px] font-mono tracking-wider text-warmgray-400">
+          <span className="ml-3 text-xs font-mono tracking-wider text-warmgray-400">
             preview.leadedge.agency/aura
           </span>
         </div>
-        <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-accent/20 text-accent-tint text-[10px] font-mono">
+        <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-accent/20 text-accent-tint text-xs font-mono">
           <Sparkles className="w-3 h-3" />
           <span>Performance Standards</span>
         </div>
@@ -34,7 +34,7 @@ export function CardWebDev() {
           sizes="(max-width: 768px) 100vw, 550px"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/85 via-charcoal-900/20 to-transparent" />
-        <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[11px] font-mono">
+        <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-xs font-mono">
           <span className="text-white font-medium">Aura Spatial Flagship</span>
           <span className="text-accent-tint font-mono">Responsive Geometry</span>
         </div>
@@ -43,10 +43,10 @@ export function CardWebDev() {
       {/* Mockup Canvas */}
       <div className="flex flex-col gap-1.5">
         <div className="flex items-center justify-between">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-titanium">
+          <span className="text-xs font-mono uppercase tracking-widest text-titanium">
             Digital Flagship
           </span>
-          <span className="text-[10px] font-mono text-warmgray-400">Next.js · Edge Delivery</span>
+          <span className="text-xs font-mono text-warmgray-400">Next.js · Edge Delivery</span>
         </div>
         <p className="text-xs text-warmgray-300 leading-relaxed line-clamp-2">
           Sub-second editorial web experience crafted for ambitious brands, featuring fluid micro-interactions and zero layout shift.
@@ -54,10 +54,10 @@ export function CardWebDev() {
 
         {/* Feature Tags */}
         <div className="flex flex-wrap gap-1.5 pt-1">
-          <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] text-warmgray-300 font-mono">
+          <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-xs text-warmgray-300 font-mono">
             WCAG 2.2 AA
           </span>
-          <span className="px-2 py-0.5 rounded bg-accent/15 border border-accent/30 text-[10px] text-accent-tint font-mono">
+          <span className="px-2 py-0.5 rounded bg-accent/15 border border-accent/30 text-xs text-accent-tint font-mono">
             +64% Inquiry Lift
           </span>
         </div>
@@ -65,7 +65,7 @@ export function CardWebDev() {
 
       {/* Bottom Status */}
       <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-warmgray-400">
-        <span className="font-mono text-[11px]">Disc: Web Development</span>
+        <span className="font-mono text-xs">Disc: Web Development</span>
         <span className="text-white flex items-center gap-1 font-medium text-xs">
           Explore Architecture <ArrowUpRight className="w-3.5 h-3.5 text-accent" />
         </span>
@@ -83,15 +83,15 @@ export function CardSocial() {
       {/* Header */}
       <div className="flex items-center justify-between pb-3 border-b border-white/10">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-accent to-accent-tint flex items-center justify-center text-[10px] font-bold text-charcoal-900">
+          <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-accent to-accent-tint flex items-center justify-center text-xs font-bold text-charcoal-900">
             LE
           </div>
           <div>
             <span className="text-xs font-semibold text-white block leading-none">leadedge.creative</span>
-            <span className="text-[9px] font-mono text-warmgray-400">Editorial Feed</span>
+            <span className="text-xs font-mono text-warmgray-400">Editorial Feed</span>
           </div>
         </div>
-        <span className="px-2 py-0.5 rounded-full bg-white/10 text-[10px] text-warmgray-300 font-mono">
+        <span className="px-2 py-0.5 rounded-full bg-white/10 text-xs text-warmgray-300 font-mono">
           9:16 Cinematic
         </span>
       </div>
@@ -106,7 +106,7 @@ export function CardSocial() {
           sizes="(max-width: 768px) 100vw, 550px"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/85 via-charcoal-900/20 to-transparent" />
-        <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/85 text-[10px] text-warmgray-300 font-mono">
+        <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/85 text-xs text-warmgray-300 font-mono">
           0:15 / 4K
         </div>
         <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between">
@@ -118,17 +118,17 @@ export function CardSocial() {
 
       {/* Details */}
       <div className="flex items-center justify-between text-xs text-warmgray-300 pt-1">
-        <span className="flex items-center gap-1.5 text-[11px] font-mono text-accent-tint">
+        <span className="flex items-center gap-1.5 text-xs font-mono text-accent-tint">
           <Eye className="w-3.5 h-3.5" /> High Retention
         </span>
-        <span className="text-[11px] font-mono text-warmgray-400">
+        <span className="text-xs font-mono text-warmgray-400">
           Editorial Pacing
         </span>
       </div>
 
       {/* Bottom Bar */}
       <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-warmgray-400">
-        <span className="font-mono text-[11px]">Disc: Social Media Strategy</span>
+        <span className="font-mono text-xs">Disc: Social Media Strategy</span>
         <span className="text-white flex items-center gap-1 font-medium text-xs">
           Creative Systems <ArrowUpRight className="w-3.5 h-3.5 text-accent" />
         </span>
@@ -149,7 +149,7 @@ export function CardMetaAds() {
           <div className="w-2 h-2 rounded-full bg-accent animate-ping" />
           <span className="text-xs font-mono font-medium text-white">Campaign Attribution Engine</span>
         </div>
-        <span className="px-2 py-0.5 rounded-full bg-accent/20 text-accent-tint text-[10px] font-mono">
+        <span className="px-2 py-0.5 rounded-full bg-accent/20 text-accent-tint text-xs font-mono">
           CAPI Active
         </span>
       </div>
@@ -165,33 +165,33 @@ export function CardMetaAds() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/85 via-charcoal-900/20 to-transparent" />
         <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between">
-          <span className="text-[11px] font-mono text-accent-tint">Attribution Engine Active</span>
-          <span className="text-[10px] font-mono text-warmgray-300">Live Telemetry</span>
+          <span className="text-xs font-mono text-accent-tint">Attribution Engine Active</span>
+          <span className="text-xs font-mono text-warmgray-300">Live Telemetry</span>
         </div>
       </div>
 
       {/* Key Metric Blocks */}
       <div className="grid grid-cols-2 gap-2.5">
         <div className="p-2.5 rounded-lg bg-charcoal-800/80 border border-white/10">
-          <span className="text-[10px] font-mono uppercase tracking-wider text-warmgray-400 block mb-0.5">
+          <span className="text-xs font-mono uppercase tracking-wider text-warmgray-400 block mb-0.5">
             Attribution Engine
           </span>
           <span className="text-xl sm:text-2xl font-display font-bold text-accent-tint">
             ACTIVE
           </span>
-          <span className="text-[10px] font-mono text-warmgray-400 mt-0.5 flex items-center gap-1">
+          <span className="text-xs font-mono text-warmgray-400 mt-0.5 flex items-center gap-1">
             <TrendingUp className="w-3 h-3 text-accent" /> Algorithmic Modeling
           </span>
         </div>
 
         <div className="p-2.5 rounded-lg bg-charcoal-800/80 border border-white/10">
-          <span className="text-[10px] font-mono uppercase tracking-wider text-warmgray-400 block mb-0.5">
+          <span className="text-xs font-mono uppercase tracking-wider text-warmgray-400 block mb-0.5">
             Bidding Engine
           </span>
           <span className="text-xl sm:text-2xl font-display font-bold text-white">
             SCALED
           </span>
-          <span className="text-[10px] font-mono text-warmgray-400 mt-0.5 flex items-center gap-1">
+          <span className="text-xs font-mono text-warmgray-400 mt-0.5 flex items-center gap-1">
             <CheckCircle2 className="w-3 h-3 text-titanium" /> Margin Aligned
           </span>
         </div>
@@ -199,7 +199,7 @@ export function CardMetaAds() {
 
       {/* Bottom Bar */}
       <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-warmgray-400">
-        <span className="font-mono text-[11px]">Disc: Paid Meta Acquisition</span>
+        <span className="font-mono text-xs">Disc: Paid Meta Acquisition</span>
         <span className="text-white flex items-center gap-1 font-medium text-xs">
           View Mechanics <ArrowUpRight className="w-3.5 h-3.5 text-accent" />
         </span>
@@ -220,7 +220,7 @@ export function CardSEO() {
           <ShieldCheck className="w-4 h-4 text-accent" />
           <span className="text-xs font-mono font-medium text-white">Topical Graph Engine</span>
         </div>
-        <span className="px-2 py-0.5 rounded-full bg-white/10 text-[10px] text-warmgray-300 font-mono">
+        <span className="px-2 py-0.5 rounded-full bg-white/10 text-xs text-warmgray-300 font-mono">
           Organic Search
         </span>
       </div>
@@ -236,21 +236,21 @@ export function CardSEO() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/85 via-charcoal-900/20 to-transparent" />
         <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between">
-          <span className="text-[11px] font-mono text-accent-tint">Commercial Search Target</span>
-          <span className="text-[10px] font-mono text-warmgray-300">Topical Graph</span>
+          <span className="text-xs font-mono text-accent-tint">Commercial Search Target</span>
+          <span className="text-xs font-mono text-warmgray-300">Topical Graph</span>
         </div>
       </div>
 
       {/* Trajectory visualization */}
       <div className="p-2.5 rounded-lg bg-charcoal-800/80 border border-white/10 space-y-1.5">
-        <div className="flex justify-between text-[11px]">
+        <div className="flex justify-between text-xs">
           <span className="text-warmgray-300">Commercial Intent Queries</span>
           <span className="font-mono text-accent">Search Mapped</span>
         </div>
         <div className="h-1.5 w-full bg-charcoal-700 rounded-full overflow-hidden">
           <div className="h-full bg-gradient-to-r from-accent to-accent-tint w-[92%]" />
         </div>
-        <div className="flex justify-between text-[11px]">
+        <div className="flex justify-between text-xs">
           <span className="text-warmgray-300">Domain Authority Graph</span>
           <span className="font-mono text-white">Entity Structured</span>
         </div>
@@ -258,7 +258,7 @@ export function CardSEO() {
 
       {/* Bottom Bar */}
       <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-warmgray-400">
-        <span className="font-mono text-[11px]">Disc: Technical SEO</span>
+        <span className="font-mono text-xs">Disc: Technical SEO</span>
         <span className="text-white flex items-center gap-1 font-medium text-xs">
           Explore SEO System <ArrowUpRight className="w-3.5 h-3.5 text-accent" />
         </span>

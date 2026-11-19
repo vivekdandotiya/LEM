@@ -58,7 +58,7 @@ export function HomeServicesTeaser() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-gold-soft font-semibold">
+              <span className="text-xs font-mono tracking-widest uppercase text-gold-soft font-semibold">
                 03 / CORE CAPABILITIES
               </span>
             </div>
@@ -96,7 +96,7 @@ export function HomeServicesTeaser() {
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
               </div>
 
-              <div className="text-[10px] font-mono tracking-widest text-gold-soft uppercase mb-1">
+              <div className="text-xs font-mono tracking-widest text-gold-soft uppercase mb-1">
                 {srv.number} · {srv.cue}
               </div>
 
@@ -108,7 +108,7 @@ export function HomeServicesTeaser() {
                 {srv.description}
               </p>
 
-              <div className="mt-4 pt-3 border-t border-white/10 w-full flex items-center justify-center gap-1 text-[11px] font-mono text-gold opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="mt-4 pt-3 border-t border-white/10 w-full flex items-center justify-center gap-1 text-xs font-mono text-gold opacity-0 group-hover:opacity-100 transition-opacity">
                 <span>Explore</span>
                 <ArrowRight className="w-3 h-3" />
               </div>

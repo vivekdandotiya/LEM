@@ -81,7 +81,7 @@ export function HomeServicesCards() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-[#B08D57]" aria-hidden="true" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
+              <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
                 02 / CORE DISCIPLINES
               </span>
             </div>
@@ -128,11 +128,11 @@ export function HomeServicesCards() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#121315] via-transparent to-black/30" />
                     {/* Floating Metrics Chips */}
-                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#B08D57]/40 text-[#B08D57] text-[11px] font-mono font-bold flex items-center gap-1.5 shadow-lg">
+                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#B08D57]/40 text-[#B08D57] text-xs font-mono font-bold flex items-center gap-1.5 shadow-lg">
                       <TrendingUp className="w-3.5 h-3.5 text-[#B08D57]" />
                       <span>+42% CVR</span>
                     </div>
-                    <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono font-medium flex items-center gap-1.5 shadow-lg">
+                    <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white text-xs font-mono font-medium flex items-center gap-1.5 shadow-lg">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#B08D57]" />
                       <span>4.8x ROAS Target</span>
                     </div>
@@ -162,7 +162,7 @@ export function HomeServicesCards() {
                           className="object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                        <span className="absolute bottom-2 inset-x-2 text-center text-[10px] font-mono font-bold text-white bg-black/60 backdrop-blur-sm py-0.5 rounded">
+                        <span className="absolute bottom-2 inset-x-2 text-center text-xs font-mono font-bold text-white bg-black/60 backdrop-blur-sm py-0.5 rounded">
                           @LEADEDGE
                         </span>
                       </div>
@@ -178,10 +178,10 @@ export function HomeServicesCards() {
                     </div>
                     {/* Floating Social Badges */}
                     <div className="absolute top-3 left-4 w-7 h-7 rounded-full bg-gradient-to-tr from-[#FD1D1D] via-[#E1306C] to-[#C13584] flex items-center justify-center shadow-lg border border-white/20">
-                      <span className="text-[11px] font-bold text-white">IG</span>
+                      <span className="text-xs font-bold text-white">IG</span>
                     </div>
                     <div className="absolute bottom-3 right-4 w-7 h-7 rounded-full bg-[#1877F2] flex items-center justify-center shadow-lg border border-white/20">
-                      <span className="text-[11px] font-bold text-white">f</span>
+                      <span className="text-xs font-bold text-white">f</span>
                     </div>
                   </div>
                 )}
@@ -209,7 +209,7 @@ export function HomeServicesCards() {
                         className="object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                      <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-white/90">
+                      <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-xs font-mono text-white/90">
                         <span>NEXT.JS 15</span>
                         <span className="text-[#B08D57] font-semibold">100 LIGHTHOUSE</span>
                       </div>
@@ -230,14 +230,14 @@ export function HomeServicesCards() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#121315] via-black/40 to-black/30" />
                     {/* Stylized ADVERTISING Tag */}
                     <div className="absolute top-4 inset-x-4 flex items-center justify-between">
-                      <span className="px-2.5 py-0.5 rounded bg-black/75 border border-white/20 text-[10px] font-mono font-bold tracking-wider text-white uppercase">
+                      <span className="px-2.5 py-0.5 rounded bg-black/75 border border-white/20 text-xs font-mono font-bold tracking-wider text-white uppercase">
                         SPONSORED CAMPAIGN
                       </span>
-                      <span className="text-[11px] font-serif italic text-[#B08D57]">New Creative</span>
+                      <span className="text-xs font-serif italic text-[#B08D57]">New Creative</span>
                     </div>
                     <div className="absolute bottom-3 inset-x-4 flex items-center justify-between">
                       <div className="text-white text-xs font-display font-bold">META & GOOGLE ADS</div>
-                      <div className="px-2.5 py-0.5 rounded bg-[#B08D57]/90 text-black text-[10px] font-mono font-extrabold">
+                      <div className="px-2.5 py-0.5 rounded bg-[#B08D57]/90 text-black text-xs font-mono font-extrabold">
                         HIGH ROAS
                       </div>
                     </div>
@@ -256,16 +256,16 @@ export function HomeServicesCards() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#121315] via-transparent to-black/40" />
                     {/* Recording indicator */}
-                    <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-sm border border-white/15 text-white text-[10px] font-mono flex items-center gap-1.5">
+                    <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-sm border border-white/15 text-white text-xs font-mono flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                       <span>REC</span>
                     </div>
-                    <div className="absolute top-3 right-3 px-2 py-0.5 rounded bg-black/70 border border-white/15 text-[#B08D57] text-[10px] font-mono font-bold">
+                    <div className="absolute top-3 right-3 px-2 py-0.5 rounded bg-black/70 border border-white/15 text-[#B08D57] text-xs font-mono font-bold">
                       4K 60FPS
                     </div>
                     <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-white/90 text-xs font-sans">
                       <Video className="w-3.5 h-3.5 text-[#B08D57]" />
-                      <span className="font-medium text-[11px]">Studio Production</span>
+                      <span className="font-medium text-xs">Studio Production</span>
                     </div>
                   </div>
                 )}
@@ -288,17 +288,17 @@ export function HomeServicesCards() {
                           <MapPin className="w-3.5 h-3.5 text-[#B08D57]" />
                           <span className="text-white text-xs font-display font-bold">Local 3-Pack</span>
                         </div>
-                        <span className="px-2 py-0.5 rounded bg-[#B08D57]/20 border border-[#B08D57]/50 text-[#B08D57] text-[10px] font-mono font-bold">
+                        <span className="px-2 py-0.5 rounded bg-[#B08D57]/20 border border-[#B08D57]/50 text-[#B08D57] text-xs font-mono font-bold">
                           #1 RANKING
                         </span>
                       </div>
-                      <div className="flex items-center gap-1 text-[11px] text-amber-400">
+                      <div className="flex items-center gap-1 text-xs text-amber-400">
                         <Star className="w-3 h-3 fill-amber-400" />
                         <Star className="w-3 h-3 fill-amber-400" />
                         <Star className="w-3 h-3 fill-amber-400" />
                         <Star className="w-3 h-3 fill-amber-400" />
                         <Star className="w-3 h-3 fill-amber-400" />
-                        <span className="text-white/80 font-mono text-[10px] ml-1">4.9 (180+ Reviews)</span>
+                        <span className="text-white/80 font-mono text-xs ml-1">4.9 (180+ Reviews)</span>
                       </div>
                     </div>
                   </div>

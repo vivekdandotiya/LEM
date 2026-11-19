@@ -153,7 +153,7 @@ export function CylinderGallery({
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent" />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-bold uppercase text-ink">
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-mono font-bold uppercase text-ink">
                   0{idx + 1}
                 </div>
               </div>
@@ -161,7 +161,7 @@ export function CylinderGallery({
               {/* Card Content */}
               <div className="p-5 flex flex-col justify-between flex-1 bg-white">
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-gold-deep font-semibold block mb-1">
+                  <span className="text-xs font-mono uppercase tracking-widest text-gold-deep font-semibold block mb-1">
                     {card.tagline}
                   </span>
                   <h4 className="text-base font-display font-bold text-ink leading-snug">

@@ -53,7 +53,7 @@ export function HowWeWorkTimeline({ steps, serviceTitle }: HowWeWorkTimelineProp
         <div className="pb-12 border-b border-white/10">
           <div className="flex items-center gap-2 mb-3">
             <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-            <span className="text-[11px] font-mono tracking-widest uppercase text-grey-2 font-semibold">
+            <span className="text-xs font-mono tracking-widest uppercase text-grey-2 font-semibold">
               EXECUTION ROADMAP
             </span>
           </div>
@@ -81,7 +81,7 @@ export function HowWeWorkTimeline({ steps, serviceTitle }: HowWeWorkTimelineProp
                       <span className="text-4xl sm:text-5xl font-display font-extrabold text-outline-dark group-hover:text-lime transition-colors">
                         {step.number}
                       </span>
-                      <span className="text-[10px] font-mono text-grey-2 uppercase px-2.5 py-1 rounded-full bg-white/10">
+                      <span className="text-xs font-mono text-grey-2 uppercase px-2.5 py-1 rounded-full bg-white/10">
                         Step {step.number}
                       </span>
                     </div>

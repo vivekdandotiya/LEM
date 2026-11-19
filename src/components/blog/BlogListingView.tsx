@@ -85,7 +85,7 @@ export function BlogListingView() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent lg:hidden" />
               <div className="absolute top-4 left-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono uppercase tracking-widest text-ink font-semibold border border-ink/5 shadow-2xs">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-mono uppercase tracking-widest text-ink font-semibold border border-ink/5 shadow-2xs">
                   <Sparkles className="w-3 h-3 text-gold" />
                   <span>Featured Analysis</span>
                 </span>
@@ -95,7 +95,7 @@ export function BlogListingView() {
             {/* Content Column */}
             <div className="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-ink/10 bg-white">
               <div>
-                <div className="flex items-center gap-2 text-[11px] font-mono text-stone uppercase tracking-wider mb-4">
+                <div className="flex items-center gap-2 text-xs font-mono text-stone uppercase tracking-wider mb-4">
                   <span className="text-gold-deep font-bold">{featuredPost.category}</span>
                   <span>·</span>
                   <span>{featuredPost.author}</span>
@@ -117,7 +117,7 @@ export function BlogListingView() {
                   <span>Read Analysis</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
-                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-ivory border border-ink/10 text-stone">
+                <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-ivory border border-ink/10 text-stone">
                   {featuredPost.date}
                 </span>
               </div>
@@ -185,13 +185,13 @@ export function BlogListingView() {
                         sizes="(max-width: 768px) 100vw, 400px"
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
-                      <div className="absolute top-2.5 left-2.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-semibold text-ink tracking-wider uppercase border border-ink/5">
+                      <div className="absolute top-2.5 left-2.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-mono font-semibold text-ink tracking-wider uppercase border border-ink/5">
                         {post.category}
                       </div>
                     </div>
 
                     {/* Metadata */}
-                    <div className="flex items-center gap-2 text-[10px] font-mono text-stone uppercase tracking-wider mb-2">
+                    <div className="flex items-center gap-2 text-xs font-mono text-stone uppercase tracking-wider mb-2">
                       <span>{post.author}</span>
                       <span>·</span>
                       <span>{post.readTime}</span>
@@ -212,7 +212,7 @@ export function BlogListingView() {
                     <span className="text-ink font-bold flex items-center gap-1 group-hover:text-gold-deep transition-colors">
                       Read Piece →
                     </span>
-                    <span className="text-[10px] text-stone font-mono">{post.date}</span>
+                    <span className="text-xs text-stone font-mono">{post.date}</span>
                   </div>
                 </Link>
               </motion.div>

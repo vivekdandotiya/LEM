@@ -51,7 +51,7 @@ export function AboutTeamCards() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
+              <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
                 HOW OUR TEAM WORKS
               </span>
             </div>
@@ -85,7 +85,7 @@ export function AboutTeamCards() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition-opacity" />
 
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-bold uppercase text-ink">
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-mono font-bold uppercase text-ink">
                   {step.number}
                 </div>
               </div>
@@ -101,7 +101,7 @@ export function AboutTeamCards() {
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-ink/8 text-[10px] font-mono text-stone uppercase tracking-wider flex items-center justify-between">
+                <div className="pt-4 mt-4 border-t border-ink/8 text-xs font-mono text-stone uppercase tracking-wider flex items-center justify-between">
                   <span>DISCIPLINE 0{idx + 1}</span>
                   <span className="text-gold-deep font-semibold">ACTIVE</span>
                 </div>

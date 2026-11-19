@@ -31,7 +31,7 @@ export function ProcessSteps() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-              <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
+              <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
                 05 / PROCESS
               </span>
             </div>
@@ -73,7 +73,7 @@ export function ProcessSteps() {
                       sizes="(max-width: 1024px) 100vw, 300px"
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
-                    <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-ink/90 text-[10px] font-mono text-white font-bold">
+                    <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-ink/90 text-xs font-mono text-white font-bold">
                       {p.step}
                     </div>
                   </div>
@@ -95,7 +95,7 @@ export function ProcessSteps() {
                 </div>
 
                 {/* Bottom Step Indicator */}
-                <div className="pt-3 border-t border-ink/8 flex items-center justify-between font-mono text-[10px] text-grey-3">
+                <div className="pt-3 border-t border-ink/8 flex items-center justify-between font-mono text-xs text-grey-3">
                   <span>STEP {p.step}</span>
                   <span className={isActive ? 'text-lime font-bold' : ''}>
                     {isActive ? 'IN PROGRESS' : 'ROADMAP'}

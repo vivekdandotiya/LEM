@@ -24,7 +24,7 @@ export function HomeInkSection() {
         <div>
           <div className="flex items-center gap-2 mb-2">
             <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
-            <span className="text-[11px] font-mono tracking-widest uppercase text-grey-3 font-semibold">
+            <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
               04 / MOMENTUM
             </span>
           </div>

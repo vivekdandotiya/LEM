@@ -31,7 +31,7 @@ export function WorkShowcase() {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
-                <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
+                <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
                   02 / WORK SHOWCASE
                 </span>
               </div>
@@ -82,7 +82,7 @@ export function WorkShowcase() {
                     <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
                     {/* Badge */}
-                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-bold tracking-wider uppercase text-ink flex items-center gap-1.5">
+                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-mono font-bold tracking-wider uppercase text-ink flex items-center gap-1.5">
                       {isVideo && <Play className="w-2.5 h-2.5 fill-current text-gold" />}
                       <span>{c.category}</span>
                     </div>
@@ -95,7 +95,7 @@ export function WorkShowcase() {
                   {/* Caption */}
                   <div className="p-4 bg-white flex items-center justify-between">
                     <div>
-                      <div className="text-[10px] font-mono uppercase text-stone">
+                      <div className="text-xs font-mono uppercase text-stone">
                         0{idx + 1}
                       </div>
                       <h3 className="text-sm font-display font-bold text-ink group-hover:text-gold-deep transition-colors truncate">

@@ -25,7 +25,7 @@ export function FAQSection() {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-[#F6F3EC] select-none border-b border-ink/10" id="faq">
+    <section className="py-24 sm:py-32 bg-[#F6F3EC] select-none border-b border-ink/10" id="faq" data-surface="light">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -36,14 +36,14 @@ export function FAQSection() {
         <div className="text-center pb-12">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
-            <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
+            <span className="text-xs font-mono tracking-widest uppercase text-[#57534E] font-bold">
               05 / FREQUENTLY ASKED QUESTIONS
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-ink tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-[#0F1011] tracking-tight leading-tight">
             Answers before you ask.
           </h2>
-          <p className="text-xs sm:text-sm font-sans text-stone max-w-sm mx-auto mt-3">
+          <p className="text-sm font-sans text-[#57534E] max-w-sm mx-auto mt-3">
             Clear, candid details about our commercial agreements, delivery timelines, and performance focus.
           </p>
         </div>
@@ -60,7 +60,7 @@ export function FAQSection() {
               >
                 <button
                   onClick={() => toggleItem(faq.id)}
-                  className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 font-display font-bold text-[17px] sm:text-lg text-[#0F1011] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   aria-expanded={isOpen}
                 >
                   <span>{faq.question}</span>
@@ -76,7 +76,7 @@ export function FAQSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 sm:px-8 pb-6 pt-1 text-xs sm:text-sm font-sans text-stone leading-relaxed border-t border-ink/8">
+                  <div className="px-6 sm:px-8 pb-6 pt-2 text-base font-sans text-[#3A3835] leading-relaxed border-t border-ink/10">
                     {faq.answer}
                   </div>
                 )}

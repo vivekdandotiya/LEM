@@ -22,26 +22,26 @@ export default function AboutPage() {
         posterSrc="/images/about/about-hero.webp"
         posterAlt="Lead Edge Agency Studio in natural daylight"
         heightClass="min-h-[100svh]"
-        overlayClass="bg-charcoal/50"
+        overlayClass="bg-charcoal/65"
       >
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono uppercase tracking-widest text-gold-soft mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#101214]/90 backdrop-blur-md border border-[#B08D57]/40 text-xs font-mono uppercase tracking-widest text-[#D9C29A] mb-6 font-semibold shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-gold" />
             <span>STUDIO MANIFESTO</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-white tracking-tight leading-[0.94] mb-6">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-[#F6F3EC] tracking-tight leading-[0.94] mb-6 drop-shadow-md">
             Built on rigorous engineering and{' '}
-            <span className="font-serif italic font-normal text-gold-soft">conviction.</span>
+            <span className="font-serif italic font-normal text-[#D9C29A]">conviction.</span>
           </h1>
 
-          <p className="text-base sm:text-xl font-sans text-stone max-w-2xl leading-relaxed mb-8">
+          <p className="text-lg sm:text-xl font-sans text-[#F6F3EC] max-w-2xl leading-[1.6] mb-8 font-normal drop-shadow-sm">
             We engineer full-funnel digital momentum where search, creative, and code unite.
           </p>
 
           <a
             href="#our-description"
-            className="btn-primary text-xs px-6 py-3 rounded-full font-semibold"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#F6F3EC] text-[#0F1011] hover:bg-[#B08D57] hover:text-white transition-all text-[15px] font-semibold shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B08D57]"
           >
             Explore Our Philosophy ↓
           </a>
@@ -56,7 +56,7 @@ export default function AboutPage() {
             <div className="lg:col-span-7 flex flex-col justify-center">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
-                <span className="text-[11px] font-mono tracking-widest uppercase text-stone font-semibold">
+                <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
                   01 / PHILOSOPHY
                 </span>
               </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-[18px] bg-white/90 backdrop-blur-md border border-ink/5">
-                  <div className="text-[10px] font-mono uppercase text-stone tracking-wider">
+                  <div className="text-xs font-mono uppercase text-stone tracking-wider">
                     Studio Working Method
                   </div>
                   <div className="text-xs font-display font-bold text-ink mt-0.5">
@@ -126,7 +126,7 @@ export default function AboutPage() {
       {/* 5. Final CTA Banner */}
       <section className="py-20 sm:py-28 bg-[#EFEBE2] border-t border-ink/10 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-gold-deep font-semibold block mb-3">
+          <span className="text-xs font-mono uppercase tracking-widest text-gold-deep font-semibold block mb-3">
             NEXT STEPS
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-ink tracking-tight mb-4">

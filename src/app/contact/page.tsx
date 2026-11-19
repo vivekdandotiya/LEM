@@ -61,7 +61,7 @@ export default function ContactPage() {
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-stone block font-semibold">
+                  <span className="text-xs font-mono uppercase tracking-widest text-stone block font-semibold">
                     Inquiries & RFPs
                   </span>
                   <a
@@ -78,7 +78,7 @@ export default function ContactPage() {
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-stone block font-semibold">
+                  <span className="text-xs font-mono uppercase tracking-widest text-stone block font-semibold">
                     Direct Line
                   </span>
                   <a
@@ -95,7 +95,7 @@ export default function ContactPage() {
                   <Clock className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-stone block font-semibold">
+                  <span className="text-xs font-mono uppercase tracking-widest text-stone block font-semibold">
                     Studio Availability
                   </span>
                   <span className="text-sm font-mono font-bold text-ink">

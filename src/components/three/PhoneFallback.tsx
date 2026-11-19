@@ -43,7 +43,7 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
 
       {/* Floating Tactical Annotation Cards (Anchored to screen plane) */}
       <div className="hidden sm:block absolute -left-12 top-24 z-20 bg-charcoal-900 border border-white/15 p-3 rounded-xl shadow-glass text-white max-w-[190px] animate-pulse">
-        <div className="flex items-center gap-1.5 text-accent-tint text-[10px] font-mono mb-1">
+        <div className="flex items-center gap-1.5 text-accent-tint text-xs font-mono mb-1">
           <Sparkles className="w-3 h-3" />
           <span>Real-Time Engagement</span>
         </div>
@@ -53,7 +53,7 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
       </div>
 
       <div className="hidden sm:block absolute -right-10 bottom-28 z-20 bg-charcoal-900 border border-white/15 p-3 rounded-xl shadow-glass text-white max-w-[180px]">
-        <div className="flex items-center gap-1.5 text-titanium text-[10px] font-mono mb-1">
+        <div className="flex items-center gap-1.5 text-titanium text-xs font-mono mb-1">
           <Eye className="w-3 h-3 text-accent" />
           <span>Audience Retention</span>
         </div>
@@ -95,7 +95,7 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
             <div className="pt-7 flex items-center justify-between text-xs text-warmgray-300">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
-                <span className="font-mono text-[11px] tracking-wider uppercase text-white font-semibold">
+                <span className="font-mono text-xs tracking-wider uppercase text-white font-semibold">
                   Lead Edge / Reel
                 </span>
               </div>
@@ -106,13 +106,13 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
 
             {/* Video Body Narrative */}
             <div className="my-auto text-center py-6 px-2">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-accent-tint block mb-2">
+              <span className="text-xs font-mono tracking-widest uppercase text-accent-tint block mb-2">
                 Creative Direction
               </span>
               <h5 className="text-xl sm:text-2xl font-display font-medium text-white leading-snug tracking-tight drop-shadow-md">
                 “Momentum is not accidental. It is engineered.”
               </h5>
-              <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 border border-white/15 text-white text-[11px] font-mono">
+              <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 border border-white/15 text-white text-xs font-mono">
                 <span>Campaign Phase 04</span>
               </div>
             </div>
@@ -122,12 +122,12 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
               {/* Creator Info & Caption */}
               <div className="flex flex-col gap-1 max-w-[170px]">
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-accent flex items-center justify-center font-bold text-[9px] text-black">
+                  <div className="w-6 h-6 rounded-full bg-accent flex items-center justify-center font-bold text-xs text-black">
                     LE
                   </div>
                   <span className="text-xs font-semibold text-white">leadedge.marketing</span>
                 </div>
-                <p className="text-[11px] text-warmgray-200 leading-tight drop-shadow">
+                <p className="text-xs text-warmgray-200 leading-tight drop-shadow">
                   High-retention creative systems that turn attention into qualified pipeline.
                 </p>
               </div>
@@ -147,7 +147,7 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
                   >
                     <Heart className={`w-4 h-4 ${isLiked ? "fill-current" : ""}`} />
                   </div>
-                  <span className="text-[10px] font-mono text-warmgray-300">
+                  <span className="text-xs font-mono text-warmgray-300">
                     {likeCount.toLocaleString()}
                   </span>
                 </button>
@@ -156,14 +156,14 @@ export function PhoneFallback({ className = "", isVisible = true }: PhoneFallbac
                   <div className="w-9 h-9 rounded-full bg-black/80 border border-white/15 flex items-center justify-center text-white">
                     <MessageCircle className="w-4 h-4" />
                   </div>
-                  <span className="text-[10px] font-mono text-warmgray-300">492</span>
+                  <span className="text-xs font-mono text-warmgray-300">492</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-0.5">
                   <div className="w-9 h-9 rounded-full bg-black/80 border border-white/15 flex items-center justify-center text-white">
                     <Share2 className="w-4 h-4" />
                   </div>
-                  <span className="text-[10px] font-mono text-warmgray-300">Share</span>
+                  <span className="text-xs font-mono text-warmgray-300">Share</span>
                 </div>
               </div>
             </div>

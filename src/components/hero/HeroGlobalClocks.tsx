@@ -77,7 +77,7 @@ function FlipCard({ value, period }: FlipCardProps) {
 
       {/* AM/PM Tag on Hour Card */}
       {period && (
-        <span className="absolute top-1.5 left-2 text-[8px] sm:text-[9px] font-mono font-bold tracking-wider text-white/50 uppercase select-none">
+        <span className="absolute top-1.5 left-2 text-xs sm:text-xs font-mono font-bold tracking-wider text-white/50 uppercase select-none">
           {period}
         </span>
       )}
@@ -160,7 +160,7 @@ export function HeroGlobalClocks() {
                   <span className="font-display font-extrabold text-xs sm:text-[13px] text-white tracking-wide uppercase">
                     {clock.city}
                   </span>
-                  <span className="text-[10px] font-mono text-stone tracking-wider uppercase">
+                  <span className="text-xs font-mono text-stone tracking-wider uppercase">
                     · {clock.region}
                   </span>
                 </div>
