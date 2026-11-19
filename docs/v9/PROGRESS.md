@@ -12,7 +12,7 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 | **F1: Text Visibility and Readability** | **COMPLETED** | `F1: text visibility and readability` | Fixed About hero contrast (dual gradient scrim + radial backing, >13:1 to 15:1 over video loop), reviews heading & card contrast, FAQ labels & sizing; surface tokens `[data-surface]`; site-wide >= 12px font size enforcement; Axe + sharp video luminance test passed with 0 violations (`docs/v9/F1-evidence/contrast-report.md`). |
 | **F2: Plain-Language Pass** | **COMPLETED** | `F2: plain wording` | Changed button to "Our story ↓" with smooth-scroll; replaced 74 instances of generated/buzzword phrasing across 21 files; created `src/data/ui-strings.ts` and automated scanner `tools/check-wording.ts` (`npm run check:wording`); 0 client copy modifications. |
 | **F3: Reviews Section: Honest Content** | **COMPLETED** | `F3: honest reviews` | Centralized typed data in `src/data/testimonials.ts`; unverified items use transparent placeholders; removed fabricated reviewer names, company names, portraits (monogram circle avatars used), star rating badge, percentage tags, and review structured data; sample vs hidden mode verified with Playwright screenshots at 1440 & 390; `npm run check:samples` passed. |
-| **F4: Scalable FAQ System** | Pending | - | Scalable accordion; category filters; anchor copy links; valid FAQPage JSON-LD. |
+| **F4: Scalable FAQ System** | **COMPLETED** | `F4: scalable faq system` | Created per-service typed data in `src/data/content/faqs-<service>.ts` (4 approved SEO items kept verbatim); implemented scalable `ServiceFaqSection.tsx` with 6-item limit, smooth "Show more" button, direct anchor copy links, multi-open accordion, keyboard navigation (Arrow keys/Enter/Space), category pills with `?faq=` sync, and valid `FAQPage` JSON-LD; tested with 12-item fixture; added `docs/HOW-TO-ADD-FAQS.md` & `CIR-15` in `docs/CLIENT-INFO-REQUIRED.md`. |
 | **F5: Video and Page Speed** | Pending | - | Re-encode videos under budget; poster-first loading; lazy IntersectionObserver; caching headers. |
 | **F6: Sitemap and Robots** | Pending | - | Single route source; production allow / preview block-all; canonical match. |
 | **F7: LLMs.txt** | Pending | - | Standard `llms.txt` and `llms-full.txt` from client copy only; route handler & verification check. |
@@ -65,3 +65,24 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
   - Created `tools/check-samples.ts` (`npm run check:samples`) added to `npm run check`.
   - Captured screenshots in `docs/v9/F3-evidence/`: `reviews-sample-1440.png`, `reviews-sample-390.png`, `reviews-hidden-1440.png`, `reviews-hidden-390.png`.
   - Generated `docs/v9/F3-evidence/honest-reviews-report.md`.
+
+### F4: Scalable FAQ System
+- **Per-Service Typed Data:** Extracted and isolated FAQ data per service into `src/data/content/`:
+  - `faqs-seo.ts` (4 client-approved SEO items preserved 100% verbatim).
+  - `faqs-ppc.ts`, `faqs-social-media.ts`, `faqs-web-development.ts`, `faqs-video-photo.ts`.
+  - Central getter `getServiceFaqs(slug)` in `src/data/content/faqs.ts`.
+- **Scalable Accordion Architecture (\`ServiceFaqSection.tsx\`):**
+  - **Threshold Limit & Show More:** First 6 items displayed initially; smooth "Show more questions" button reveals remainder with accessible live region screen-reader announcement.
+  - **Multi-Open Support:** Permits several questions to remain open simultaneously.
+  - **Anchors & Copy Affordance:** Each item features `#faq-<slug>` with an inline one-click copy-link button. Deep linking directly opens and scrolls to target item.
+  - **Category Filter Pills:** Conditionally rendered with `?faq=<category>` URL synchronization when categories exist; cleanly omitted when items have no categories.
+  - **Keyboard Navigation:** Full ArrowUp / ArrowDown / Home / End / Enter / Space navigation.
+  - **Structured Data:** Generates valid `FAQPage` JSON-LD matching only the visible, real items of that page.
+- **Client Instructions & Tracking:**
+  - Added `docs/HOW-TO-ADD-FAQS.md` providing step-by-step instructions for client copy additions.
+  - Logged `CIR-15` in `docs/CLIENT-INFO-REQUIRED.md` as "AWAITING CONTENT: more FAQs for SEO (and any other service)".
+- **Fixture Verification & Evidence:**
+  - Verified with 12-item temporary test fixture at `test-faq-fixture`, proving 6-limit initial render, show-more expansion to 12, category filtering to 5, keyboard navigation, and mobile viewports.
+  - Fixture cleanly deleted after verification.
+  - Captured screenshots in `docs/v9/F4-evidence/`: `seo-faq-real-1440.png`, `seo-faq-real-390.png`, `fixture-faq-12items-1440.png`, `fixture-faq-12items-390.png`.
+  - Generated `docs/v9/F4-evidence/faq-verification-report.md`.

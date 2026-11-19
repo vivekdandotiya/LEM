@@ -20,6 +20,7 @@ This document tracks all unverified facts, required client inputs, and strategic
 | **CIR-12** | Brand Spelling ("Marketing" vs "Marketers") | Site-wide Brand Name, Meta, Logo | Logo reads "LEAD EDGE MARKETING"; Google Doc title & text use "Lead Edge Marketers". Controlled via `BRAND_NAME` in `src/data/site.ts`. | Client confirmation: Keep logo spelling ("Lead Edge Marketing") or switch to document spelling ("Lead Edge Marketers"). | Awaiting Client Decision |
 | **CIR-13** | Hero Rotating Headline vs Single Choice | Homepage Hero H1 | Implemented as accessible rotating pair (6s interval): "WE SCALE revenue" & "WE BUILD authority." with pause button. | Client confirmation: Keep rotating pair or select one permanently. | Implemented & Awaiting Choice |
 | **CIR-14** | PPC Services vs Meta Ads Scope | Service Navigation & PPC Page | Renamed to "PPC Services" per Doc Card 2 with 308 redirect from `/services/meta-ads` to `/services/ppc`. Page covers Facebook & Instagram ads. | Client confirmation if Google Search Ads should also be explicitly featured on this page. | Implemented per Doc |
+| **CIR-15** | More FAQs for SEO & Other Services | Service pages (`/services/seo`, etc.) | Scalable FAQ architecture live; 4 approved SEO FAQs live. | Client to supply revised / expanded FAQ questions and answers. | AWAITING CONTENT: more FAQs for SEO (and any other service) |
 
 ## 2. Configuration Control Flag
 In `/src/data/site.ts`, all placeholders are governed by:

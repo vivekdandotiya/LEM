@@ -9,7 +9,9 @@ import { StepPhotoSection, StepTransitionStyle, StepItem } from '@/components/sh
 import { ServicePackagesSection } from '@/components/services/ServicePackagesSection';
 import { WorkCard } from '@/components/shared/WorkCard';
 import { Lightbox, LightboxItem } from '@/components/shared/Lightbox';
-import { ArrowRight, CheckCircle2, ChevronDown, Sparkles } from 'lucide-react';
+import { ServiceFaqSection } from '@/components/services/ServiceFaqSection';
+import { getServiceFaqs } from '@/data/content/faqs';
+import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 
 interface ServicePageTemplateProps {
   service: ServiceItem;
@@ -452,7 +454,6 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
 };
 
 export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [lightboxItem, setLightboxItem] = useState<LightboxItem | null>(null);
 
   const config =
@@ -463,8 +464,6 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
     service.deliverables && service.deliverables.length > 0
       ? service.deliverables.slice(0, 5)
       : ['Strategy', 'Execution', 'Optimization', 'Analytics', 'Reporting'];
-
-  const serviceFaqs = service.faqs && service.faqs.length > 0 ? service.faqs.slice(0, 4) : [];
 
   return (
     <main className="overflow-hidden bg-[#F6F3EC] text-ink select-none">
@@ -606,54 +605,19 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         </div>
       </section>
 
-      {/* 5. Discipline-Specific FAQs */}
-      {serviceFaqs.length > 0 && (
-        <section id="faq-section" data-surface="light" className="py-20 sm:py-28 bg-[#EFEBE2] border-b border-ink/10">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center pb-12">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-white border border-ink/15 text-xs font-mono uppercase tracking-widest text-[#0F1011] font-bold mb-3 shadow-2xs">
-                FAQ
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#0F1011] tracking-tight">
-                Common questions, clear answers.
-              </h2>
-            </div>
-
-            <div className="flex flex-col gap-3">
-              {serviceFaqs.map((faq, idx) => {
-                const isOpen = openFaq === idx;
-                return (
-                  <div
-                    key={idx}
-                    className="rounded-[20px] bg-white border border-ink/10 overflow-hidden shadow-2xs transition-all duration-300"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(isOpen ? null : idx)}
-                      className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 font-display font-bold text-[17px] sm:text-lg text-[#0F1011] hover:text-gold-deep transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-                      aria-expanded={isOpen}
-                    >
-                      <span>{faq.question}</span>
-                      <span
-                        className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border border-ink/10 transition-transform duration-300 ${
-                          isOpen ? 'rotate-180 bg-gold text-white' : 'bg-ivory text-stone'
-                        }`}
-                      >
-                        <ChevronDown className="w-4 h-4" />
-                      </span>
-                    </button>
-                    {isOpen && (
-                      <div className="px-6 sm:px-8 pb-6 pt-2 text-base font-sans text-[#3A3835] border-t border-ink/10 leading-relaxed">
-                        {faq.answer}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* 5. Scalable FAQs Section */}
+      <ServiceFaqSection
+        items={
+          getServiceFaqs(service.slug).length > 0
+            ? getServiceFaqs(service.slug)
+            : (service.faqs || []).map((f, i) => ({
+                id: `${service.slug}-${i + 1}`,
+                question: f.question,
+                answer: f.answer,
+              }))
+        }
+        serviceTitle={service.title}
+      />
 
       {/* 6. Final CTA Banner */}
       <section className="py-24 sm:py-32 bg-charcoal text-ivory relative overflow-hidden" data-surface="dark">
