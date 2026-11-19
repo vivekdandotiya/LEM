@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Contact & Strategic Consultation — Start A Project',
   description:
     'Initiate a strategic consultation with Lead Edge Marketing. We review inbound briefs within 24 business hours.',
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 export default function ContactPage() {

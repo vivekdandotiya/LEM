@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: 'About Us — Lead Edge Marketing',
   description:
     'We build practical digital growth where search, creative media, and web development work together.',
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {

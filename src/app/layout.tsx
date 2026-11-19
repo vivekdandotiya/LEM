@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { siteConfig } from "@/data/site";
+import { getBaseUrl } from "@/data/routes";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { StartupIntro } from "@/components/intro/StartupIntro";
@@ -11,7 +12,10 @@ import { LimeScrollProgress } from "@/components/ui/LimeScrollProgress";
 import { DotGridPointerListener } from "@/components/ui/DotGridPointerListener";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(getBaseUrl()),
+  alternates: {
+    canonical: './',
+  },
   title: {
     default: `${siteConfig.name} — Premium Digital Marketing Agency`,
     template: `%s | ${siteConfig.name}`,

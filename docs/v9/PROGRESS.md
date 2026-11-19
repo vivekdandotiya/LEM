@@ -14,7 +14,7 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 | **F3: Reviews Section: Honest Content** | **COMPLETED** | `F3: honest reviews` | Centralized typed data in `src/data/testimonials.ts`; unverified items use transparent placeholders; removed fabricated reviewer names, company names, portraits (monogram circle avatars used), star rating badge, percentage tags, and review structured data; sample vs hidden mode verified with Playwright screenshots at 1440 & 390; `npm run check:samples` passed. |
 | **F4: Scalable FAQ System** | **COMPLETED** | `F4: scalable faq system` | Created per-service typed data in `src/data/content/faqs-<service>.ts` (4 approved SEO items kept verbatim); implemented scalable `ServiceFaqSection.tsx` with 6-item limit, smooth "Show more" button, direct anchor copy links, multi-open accordion, keyboard navigation (Arrow keys/Enter/Space), category pills with `?faq=` sync, and valid `FAQPage` JSON-LD; tested with 12-item fixture; added `docs/HOW-TO-ADD-FAQS.md` & `CIR-15` in `docs/CLIENT-INFO-REQUIRED.md`. |
 | **F5: Video and Page Speed** | **COMPLETED** | `F5: video and speed optimization` | Re-encoded hero & showcase videos to strict budget (showcase-04 down to 774 KB from 1.09 MB; hero 1080p 1.04 MB <= 1.8 MB); poster-first LCP architecture with deferred idle attachment; network/data-saver consciousness (`saveData`, `2g/3g`, `prefers-reduced-motion`); `IntersectionObserver` & tab visibility pause controls; immutable caching & byte-range streaming headers in `next.config.mjs`; video transfer before load reduced from 1,646 KB to 0 KB on About page (`docs/v9/F5-evidence/speed-before-after.md`). |
-| **F6: Sitemap and Robots** | Pending | - | Single route source; production allow / preview block-all; canonical match. |
+| **F6: Sitemap and Robots** | **COMPLETED** | `F6: sitemap and robots` | Single source of truth in `src/data/routes.ts` defining all 14 indexable routes & exclusions; dynamic `sitemap.ts` with correct metadata & priorities; `robots.ts` with production allow + crawler rules (`GPTBot`, `Google-Extended`) and preview block-all (`Disallow: /`); canonical tags aligned across all routes; created `tools/check-seo-files.ts` (`npm run check:seo`); documented `docs/GO-LIVE-CHECKLIST.md`. |
 | **F7: LLMs.txt** | Pending | - | Standard `llms.txt` and `llms-full.txt` from client copy only; route handler & verification check. |
 | **F8: Social Media Content Readiness** | Pending | - | Isolate copy in typed data file with `awaitingClientContent: true`; how-to update guide. |
 | **F9: Responsiveness Matrix** | Pending | - | 16 viewports across Chromium, WebKit, Firefox; zero overflow / overlap / clipping; contact sheets. |
@@ -112,3 +112,22 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 - **Evidence:**
   - Technical specs and asset inventory: `docs/v9/F5-evidence/video-audit.md`.
   - Mobile speed before & after comparison: `docs/v9/F5-evidence/speed-before-after.md`.
+
+### F6: Sitemap and Robots
+- **Central Route Registry (`src/data/routes.ts`):**
+  - Created single source of truth defining all 14 indexable public routes, change frequencies, priorities, and non-indexable endpoint exclusions (`/api/*`, `/__scene/*`).
+  - Added centralized environment-aware `getBaseUrl()` resolving to `https://leadedge.agency` in production.
+- **Dynamic Sitemap (`src/app/sitemap.ts`):**
+  - Implemented dynamic sitemap generator providing exact URL, fixed last-modified ISO dates, change frequencies, and relative priorities.
+  - Generates valid XML conforming to Sitemap 0.9 schema.
+- **Crawl Policy Directives (`src/app/robots.ts`):**
+  - Eliminated conflicting `/blog/*` disallow directive.
+  - Production mode: grants crawl access to search engines and AI agents (`User-agent: *`, `GPTBot`, `Google-Extended`) while protecting `/api/` and `/__scene/`. Points cleanly to `${baseUrl}/sitemap.xml`.
+  - Staging/Preview mode: automatically blocks crawlers with `Disallow: /` when `VERCEL_ENV === 'preview'` or `NEXT_PUBLIC_BLOCK_INDEXING === 'true'`.
+- **Canonical URL Alignment:**
+  - Standardized `<link rel="canonical" ...>` across all 14 routes to match sitemap URLs.
+- **Automated Audit & Documentation:**
+  - Created `tools/check-seo-files.ts` verifying `/sitemap.xml` (valid XML, all 14 routes present, 0 exclusions leaked), `/robots.txt` (directives & sitemap pointer), and HTTP 200 + canonical headers for all routes.
+  - Added `"check:seo": "tsx tools/check-seo-files.ts"` into `package.json` and `npm run check`.
+  - Created `docs/GO-LIVE-CHECKLIST.md` detailing DNS, environment variable configuration, and Google/Bing Search Console submission steps.
+- **Evidence:** Audit report in `docs/v9/F6-evidence/seo-files-report.md`.

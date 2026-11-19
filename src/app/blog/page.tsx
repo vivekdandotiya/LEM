@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Perspective & Publications — Growth Field Notes',
   description:
     'Technical breakdowns, algorithmic shifts, and creative frameworks distilled from active deployments.',
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 export default function BlogPage() {

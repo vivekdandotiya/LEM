@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'Services — Five Integrated Growth Disciplines',
   description:
     'Explore our 5 core disciplines: SEO, PPC Advertising, Social Media Marketing, Web Development, and Video & Photo Production.',
+  alternates: {
+    canonical: '/services',
+  },
 };
 
 const SERVICES_DATA = [

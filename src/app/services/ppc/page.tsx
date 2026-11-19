@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "PPC Services — Precision Paid Search & Social Acquisition",
   description:
     "Targeted Facebook, Instagram, and search ads engineered to drive instant leads and max ROAS with algorithmic audience modeling.",
+  alternates: {
+    canonical: "/services/ppc",
+  },
   openGraph: {
     title: "PPC Services | Lead Edge Marketing",
     description:

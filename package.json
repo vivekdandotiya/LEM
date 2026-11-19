@@ -10,7 +10,8 @@
     "check:readability": "node tools/check-readability.mjs",
     "check:wording": "tsx tools/check-wording.ts",
     "check:samples": "tsx tools/check-samples.ts",
-    "check": "npm run check:readability && npm run check:wording && npm run check:samples"
+    "check:seo": "tsx tools/check-seo-files.ts",
+    "check": "npm run check:readability && npm run check:wording && npm run check:samples && npm run check:seo"
   },
   "dependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",

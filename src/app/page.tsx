@@ -1,10 +1,20 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import { HomeHero } from '@/components/hero/HomeHero';
 import { GlobalStudioClocksSection } from '@/components/home/GlobalStudioClocksSection';
 import { HomeServicesCards } from '@/components/home/HomeServicesCards';
 import { Testimonials } from '@/components/shared/Testimonials';
 import { BrandTrustBar } from '@/components/home/BrandTrustBar';
 import { FAQSection } from '@/components/home/FAQSection';
+
+export const metadata: Metadata = {
+  title: 'Lead Edge Marketing — Digital Growth Studio',
+  description:
+    'Full-funnel digital growth unifying organic search, performance media, and custom web architecture.',
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function HomePage() {
   return (
