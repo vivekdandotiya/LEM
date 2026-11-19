@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </h2>
 
           <p className="leading-relaxed">
-            The transition from disconnected ad-hoc testing to a rigorous, documented growth model requires cultural discipline across your leadership team. When every creative iteration is tested systematically against unit margins, marketing ceases to be an expense and transforms into a predictable capital deployment engine.
+            The transition from disconnected ad-hoc testing to a consistent, documented growth model requires clear focus across your leadership team. When every creative iteration is tested systematically against unit margins, marketing ceases to be an expense and transforms into a predictable growth engine.
           </p>
         </div>
 

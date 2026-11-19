@@ -149,10 +149,10 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       {
         number: '03',
         name: 'Bid & Budget Optimization',
-        description: 'Automated bidding scripts and dynamic budget allocation scaling high-performing ad sets.',
+        description: 'Automated bidding rules and flexible budget allocation scaling high-performing ad sets.',
         image: {
           src: '/images/services/meta-ads/meta-scaling.webp',
-          alt: 'Dynamic budget allocation and bidding rules',
+          alt: 'Flexible budget allocation and bidding rules',
         },
         deliverable: 'Bidding Engine Rules',
       },
@@ -171,10 +171,10 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       {
         id: 'w-ppc-1',
         brand: 'StrideFit Athletic',
-        title: 'High-Retention Dynamic Video Ad',
+        title: 'High-Retention Vertical Video Ad',
         category: 'PPC / Paid Social',
         image: '/images/services/meta-ads/meta-creative.webp',
-        description: 'Algorithmic Meta campaign driving qualified customer acquisition at scale.',
+        description: 'Targeted Meta campaign driving qualified customer acquisition at scale.',
         year: '2026',
       },
       {
@@ -223,7 +223,7 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       {
         number: '02',
         name: 'High-Retention Vertical Video',
-        description: 'Cinematic 9:16 reels engineered with strong hooks and dynamic pacing.',
+        description: 'Cinematic 9:16 reels engineered with strong hooks and engaging pacing.',
         image: {
           src: '/images/services/social-media/social-production.webp',
           alt: 'Vertical reel production workflow',
@@ -287,12 +287,12 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
     stepTransitionStyle: 'browser',
     heroHeadline: 'Sub-second speed engineered for modern digital',
     heroItalicWord: 'conversion.',
-    heroTagline: 'Bespoke Next.js web applications delivering sub-second load times and frictionless geometry.',
+    heroTagline: 'Custom Next.js web applications delivering sub-second load times and fluid geometry.',
     heroImage: '/images/services/web-development/web-hero.webp',
-    heroImageAlt: 'Next.js bespoke engineering workspace',
+    heroImageAlt: 'Next.js custom engineering workspace',
     statementHeading: 'Engineered performance is the greatest conversion lever.',
     statementText:
-      'Bespoke, high-performance web applications built on Next.js. Engineered for sub-second load times, fluid device geometry, and frictionless conversion funnels.',
+      'Custom, high-performance web applications built on Next.js. Engineered for sub-second load times, fluid device geometry, and clean conversion funnels.',
     steps: [
       {
         number: '01',
@@ -371,7 +371,7 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
     stepTransitionStyle: 'iris',
     heroHeadline: 'Cinematic visual storytelling that commands customer',
     heroItalicWord: 'attention.',
-    heroTagline: 'High-impact video and photography crafted to elevate brand authority and conversions.',
+    heroTagline: 'High-impact video and photography crafted to build brand trust and conversions.',
     heroImage: '/images/services/video-photo/video-photo-hero.webp',
     heroImageAlt: 'Cinema camera rig with precision prime lens in production studio',
     statementHeading: 'Visual craft commands attention in crowded markets.',
@@ -476,7 +476,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
             <div className="lg:col-span-7 flex flex-col gap-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-ink/10 text-xs font-mono uppercase tracking-widest text-stone w-fit shadow-2xs">
                 <Sparkles className="w-3.5 h-3.5 text-gold" />
-                <span>Discipline · {service.number}</span>
+                <span>Service · {service.number}</span>
               </div>
 
               {/* Dynamic Animated Headline */}

@@ -35,8 +35,8 @@ const SERVICE_TEASERS = [
     slug: 'web-development',
     number: '04',
     title: 'Web Development',
-    cue: 'Architectural Rigor',
-    description: 'Bespoke, high-performance web applications engineered for sub-second page loads, clean architecture, and conversion.',
+    cue: 'Clean Code',
+    description: 'Custom, high-performance web applications built for fast page loads, clean structure, and clear conversion.',
     image: media.home.servicesTeaser[3].image.src,
   },
   {

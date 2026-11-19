@@ -22,7 +22,7 @@ export function WebScene({ activePhase, isStatic = false }: SceneProps) {
             <span className="w-2.5 h-2.5 rounded-full bg-lime animate-pulse" />
           </div>
           <span className="font-mono text-xs uppercase tracking-wider text-grey-2 ml-2">
-            WEB ENGINE // BESPOKE NEXT.JS 15
+            WEB ENGINE // CUSTOM NEXT.JS 15
           </span>
         </div>
         <div className="font-mono text-xs text-lime font-bold">

@@ -46,16 +46,16 @@ const SERVICES_DATA = [
       'Transparent ROAS Attribution',
     ],
     imageSrc: '/images/hero/hero-04-stridefit-runner-4x5.webp',
-    imageAlt: 'Dynamic performance paid media creative',
+    imageAlt: 'Targeted paid media creative',
     reversed: true,
   },
   {
     index: 3,
     slug: 'social-media',
     title: 'Social Media Marketing',
-    tagline: 'Brand Gravity & Organic Resonance',
+    tagline: 'Brand Reach & Community Growth',
     description:
-      'Transform passive scrollers into loyal brand advocates through structured editorial calendars, high-retention vertical video, and proactive community engagement.',
+      'Turn casual scrollers into loyal customers through structured content calendars, high-retention vertical video, and active community engagement.',
     deliverables: [
       'Editorial Content Calendars',
       'High-Retention Vertical Reels',
@@ -71,12 +71,12 @@ const SERVICES_DATA = [
     index: 4,
     slug: 'web-development',
     title: 'Web Development',
-    tagline: 'Engineered Conversion & Architecture',
+    tagline: 'Fast Load Times & Clear Conversion',
     description:
-      'Bespoke, high-performance web applications built on Next.js. Engineered for sub-second load times, fluid device geometry, and frictionless conversion funnels.',
+      'Custom, high-performance web applications built on Next.js. Built for sub-second load times, fluid device layouts, and clean conversion paths.',
     deliverables: [
       'Sub-Second Core Web Vitals',
-      'Bespoke Next.js Architecture',
+      'Custom Next.js Architecture',
       'Fluid Multi-Device Layouts',
       'Zero Template Bloat',
       'High-Conversion Funnels',
@@ -125,14 +125,14 @@ export default function ServicesPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-ink tracking-tight leading-[0.96] mb-6">
-                Five integrated disciplines.{' '}
+                Five core services.{' '}
                 <span className="font-serif italic font-normal text-gold-deep">
                   Zero fragmentation.
                 </span>
               </h1>
 
               <p className="text-base sm:text-lg font-sans text-stone leading-relaxed mb-8 max-w-lg">
-                Unified organic search, performance acquisition, bespoke web engineering, and cinematic visual production under one roof.
+                Unified organic search, performance acquisition, custom web development, and video production under one roof.
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
@@ -140,13 +140,13 @@ export default function ServicesPage() {
                   href="#services-list"
                   className="btn-primary text-xs px-6 py-3 rounded-full font-semibold"
                 >
-                  Explore Disciplines ↓
+                  View services ↓
                 </a>
                 <Link
                   href="/contact"
                   className="btn-secondary text-xs px-6 py-3 rounded-full font-semibold"
                 >
-                  Book Strategy Call
+                  Book a call
                 </Link>
               </div>
             </div>
@@ -185,13 +185,13 @@ export default function ServicesPage() {
             Unite your growth channels today.
           </h2>
           <p className="text-sm sm:text-base font-sans text-stone max-w-lg mx-auto mb-8 leading-relaxed">
-            Talk directly with our discipline leads to audit your existing media, search, and web funnels.
+            Talk directly with our team to audit your existing media, search, and web funnels.
           </p>
           <Link
             href="/contact"
             className="btn-primary inline-flex items-center gap-2 text-xs px-7 py-3.5 rounded-full font-semibold group"
           >
-            <span>Book Strategy Call</span>
+            <span>Book a call</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

@@ -141,7 +141,7 @@ export function CircleServiceRow({
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
               <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
-                0{index} / CORE DISCIPLINE
+                0{index} / CORE SERVICE
               </span>
             </div>
 

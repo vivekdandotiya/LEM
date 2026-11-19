@@ -94,7 +94,7 @@ export function SocialScene({ activePhase, isStatic = false }: SceneProps) {
               <div>
                 <h6 className="font-display font-bold text-white text-sm">04 / AUTHORITY</h6>
                 <p className="text-xs font-sans text-grey-2 leading-tight mt-0.5">
-                  Behind-the-scenes standards & conviction
+                  Behind-the-scenes standards & craft
                 </p>
               </div>
             </div>

@@ -236,7 +236,7 @@ export const media = {
       {
         slug: 'ppc',
         title: 'PPC Services',
-        image: makeResponsiveImage('/images/home/service-meta', 'Dynamic golden motion ad visual', '1:1'),
+        image: makeResponsiveImage('/images/home/service-meta', 'Targeted golden motion ad visual', '1:1'),
       },
       {
         slug: 'social-media',
@@ -331,7 +331,7 @@ export const media = {
       {
         slug: 'ppc',
         title: 'PPC Services',
-        image: makeResponsiveImage('/images/home/service-meta', 'Dynamic ad performance graphic', '1:1'),
+        image: makeResponsiveImage('/images/home/service-meta', 'Targeted ad performance graphic', '1:1'),
       },
       {
         slug: 'social-media',
@@ -438,9 +438,9 @@ export const media = {
         },
         {
           number: '04',
-          title: 'Dynamic Efficiency Scaling',
+          title: 'Active Efficiency Scaling',
           image: makeResponsiveImage('/images/services/meta-ads/meta-scaling', 'Budget allocation curves and CPA threshold monitoring', '16:9'),
-          video: makeVideoAsset('/videos/services/ppc-phase-3', '/videos/services/ppc-phase-3-poster', 'Dynamic Scaling'),
+          video: makeVideoAsset('/videos/services/ppc-phase-3', '/videos/services/ppc-phase-3-poster', 'Active Scaling'),
         },
         {
           number: '05',
@@ -532,7 +532,7 @@ export const media = {
         },
         {
           number: '04',
-          title: 'Rigorous QA, Audit & Launch',
+          title: 'Thorough QA, Audit & Launch',
           image: makeResponsiveImage('/images/services/web-development/web-vitals', 'Sub-second Core Web Vitals diagnostic verification', '16:9'),
           video: makeVideoAsset('/videos/services/web-development-phase-3', '/videos/services/web-development-phase-3-poster', 'Audit & QA'),
         },

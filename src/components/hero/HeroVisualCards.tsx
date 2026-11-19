@@ -28,7 +28,7 @@ export function CardWebDev() {
       <div className="relative w-full h-36 sm:h-44 rounded-lg overflow-hidden border border-white/10 my-2 group">
         <Image
           src="/images/home/hero-1.webp"
-          alt="Bespoke luxury web experience crafted by Lead Edge Marketing"
+          alt="Custom modern web experience crafted by Lead Edge Marketing"
           fill
           className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
           sizes="(max-width: 768px) 100vw, 550px"

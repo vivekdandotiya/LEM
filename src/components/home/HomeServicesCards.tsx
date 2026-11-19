@@ -55,7 +55,7 @@ const SERVICES_DATA: ServiceCardData[] = [
   {
     id: 'video-photo',
     title: 'Video Editing & Photo Creation',
-    description: 'High-impact video and photography crafted to captivate audiences and elevate brand authority.',
+    description: 'High-impact video and photography crafted to engage audiences and build brand trust.',
     href: '/services/video-photo',
     badge: 'CINEMATIC',
     visualType: 'video',

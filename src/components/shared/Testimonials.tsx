@@ -34,7 +34,7 @@ export const CLIENT_TESTIMONIALS: TestimonialItem[] = [
   {
     id: 't-uk-2',
     quote:
-      'Having creative production and media buying executed under one discipline ended the bottleneck between design and distribution. Every single asset is built for conversion.',
+      'Having creative production and media buying executed under one team ended the bottleneck between design and distribution. Every single asset is built for conversion.',
     author: 'Gemma Harrington',
     role: 'Head of Digital & DTC',
     company: 'Harrington Living',
@@ -47,7 +47,7 @@ export const CLIENT_TESTIMONIALS: TestimonialItem[] = [
   {
     id: 't-uk-3',
     quote:
-      'Their engineering discipline replaced our bloated template store with a sub-second custom web architecture. Our checkout velocity and mobile organic visibility improved immediately.',
+      'Their engineering approach replaced our bloated template store with a sub-second custom web architecture. Our checkout velocity and mobile organic visibility improved immediately.',
     author: 'Marcus Sterling',
     role: 'Managing Director',
     company: 'Oak & Thread Co.',
@@ -60,7 +60,7 @@ export const CLIENT_TESTIMONIALS: TestimonialItem[] = [
   {
     id: 't-ng-1',
     quote:
-      'Lead Edge scaled our customer acquisition across high-intent channels without burning budget on vanity clicks. Their strategic clarity and weekly accountability are world-class.',
+      'Lead Edge scaled our customer acquisition across high-intent channels without burning budget on vanity clicks. Their strategic clarity and weekly accountability are exceptional.',
     author: 'Babajide Adeleke',
     role: 'Co-Founder & COO',
     company: 'PayWave Africa',
@@ -99,7 +99,7 @@ export const CLIENT_TESTIMONIALS: TestimonialItem[] = [
   {
     id: 't-in-2',
     quote:
-      'No fluff, no vanity follower chasing. Just clear strategic positioning, rigorous creative testing, and predictable acquisition funnels that scaled our revenue while lowering cost-per-lead.',
+      'No fluff, no vanity follower chasing. Just clear strategic positioning, continuous creative testing, and predictable acquisition funnels that scaled our revenue while lowering cost-per-lead.',
     author: 'Priya Sundaram',
     role: 'VP of Marketing & DTC',
     company: 'AyurVeda Botanicals',

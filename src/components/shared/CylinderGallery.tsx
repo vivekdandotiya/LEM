@@ -173,7 +173,7 @@ export function CylinderGallery({
                   href={`/services/${card.slug}`}
                   className="text-xs font-mono text-ink font-semibold flex items-center justify-between pt-2 border-t border-ink/8 hover:text-gold transition-colors"
                 >
-                  <span>Explore discipline</span>
+                  <span>View service</span>
                   <span>→</span>
                 </Link>
               </div>

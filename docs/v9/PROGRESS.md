@@ -10,7 +10,7 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 |---|---|---|---|
 | **F0: Setup and Reproduction** | **COMPLETED** | `F0: baseline and reproduction` | Branch `v9-client-feedback` created; 12 before screenshots captured at 1440 & 390 for local & preview; all routes verified 200 OK; baseline metrics in `/docs/v9/BASELINE.md`. |
 | **F1: Text Visibility and Readability** | **COMPLETED** | `F1: text visibility and readability` | Fixed About hero contrast (dual gradient scrim + radial backing, >13:1 to 15:1 over video loop), reviews heading & card contrast, FAQ labels & sizing; surface tokens `[data-surface]`; site-wide >= 12px font size enforcement; Axe + sharp video luminance test passed with 0 violations (`docs/v9/F1-evidence/contrast-report.md`). |
-| **F2: Plain-Language Pass** | Pending | - | Change button to "Our story"; scan & rewrite generated-sounding wording; preserve client copy verbatim. |
+| **F2: Plain-Language Pass** | **COMPLETED** | `F2: plain wording` | Changed button to "Our story ↓" with smooth-scroll; replaced 74 instances of generated/buzzword phrasing across 21 files; created `src/data/ui-strings.ts` and automated scanner `tools/check-wording.ts` (`npm run check:wording`); 0 client copy modifications. |
 | **F3: Reviews Section: Honest Content** | Pending | - | Honest client pattern; remove fabricated reviews/ratings; sample mode check. |
 | **F4: Scalable FAQ System** | Pending | - | Scalable accordion; category filters; anchor copy links; valid FAQPage JSON-LD. |
 | **F5: Video and Page Speed** | Pending | - | Re-encode videos under budget; poster-first loading; lazy IntersectionObserver; caching headers. |
@@ -41,3 +41,11 @@ This file tracks the execution of each task (F0 to F10) according to the strict 
 - **Site-Wide Font Size Upgrade:** Upgraded all sub-12px elements across 48 files to strict minimum 12px (`text-xs`).
 - **Automated Readability & Contrast Gate:** Created `tools/check-readability.mjs` running Playwright + Axe-core across all 14 routes at 1440px and 390px viewports, plus sharp frame-by-frame media luminance contrast sampling over video loops. Verified 0 Axe violations, 0 font-size violations, and 0 media contrast violations.
 - **Evidence:** 6 after screenshots captured and saved to `docs/v9/F1-evidence/` (`after-about-hero-1440.png`, `after-about-hero-390.png`, `after-reviews-1440.png`, `after-reviews-390.png`, `after-seo-faq-1440.png`, `after-seo-faq-390.png`), alongside `docs/v9/F1-evidence/contrast-report.md`.
+
+### F2: Plain-Language Pass
+- **About Hero Button:** Updated button from "Explore Our Philosophy" to "Our story ↓" with smooth-scroll linking to `#our-description` (`src/app/about/page.tsx`).
+- **UI Strings Centralization:** Created `src/data/ui-strings.ts` centralizing standardized button labels, section tags, search tags, and aria labels.
+- **Buzzword Elimination:** Cleaned 74 occurrences of 26 forbidden buzzwords (such as *bespoke, elevate, leverage, synergy, seamless, dynamic, next-gen, rigorous, conviction, disciplines, holistic, world-class*) across 21 components and data files.
+- **Client Copy Preservation:** Audited against `docs/CLIENT-CONTENT.md`; 0 client copy modifications were made. Verified in `docs/v9/F2-evidence/client-copy-flags.md`.
+- **Automated Check:** Created `tools/check-wording.ts` (`npm run check:wording`) and `tools/check-copy.ts`. Both tests pass with 0 violations.
+- **Evidence:** Complete audit diff saved in `docs/v9/F2-evidence/wording-changes.md`.

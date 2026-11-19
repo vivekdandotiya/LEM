@@ -51,12 +51,12 @@ export function ServiceCardInteractive({ service, index }: ServiceCardInteractiv
         />
 
         {/* Top Meta */}
-        <div className="flex items-center justify-between pb-6 border-b border-charcoal-900/10 relative z-10">
+        <div className="flex items-center justify-between pb-6 border-charcoal-900/10 relative z-10">
           <span className="text-sm font-mono tracking-widest text-accent font-bold">
-            0{index + 1} / Discipline
+            0{index + 1} / Service
           </span>
           <span className="text-xs font-mono uppercase tracking-wider text-warmgray-400">
-            Full-Stack Practice
+            Full-Service Practice
           </span>
         </div>
 
@@ -97,7 +97,7 @@ export function ServiceCardInteractive({ service, index }: ServiceCardInteractiv
         {/* Card Action Link with DripLink */}
         <div className="pt-6 border-t border-charcoal-900/10 flex items-center justify-between relative z-10">
           <span className="text-xs font-mono text-warmgray-500">
-            Bespoke Strategy & Execution
+            Custom Strategy & Execution
           </span>
           <DripLink
             href={`/services/${service.slug}`}

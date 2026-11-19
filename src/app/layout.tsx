@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Meta Ads Management",
     "Paid Social Acquisition",
     "Social Media Creative Direction",
-    "Bespoke Web Development",
+    "Custom Web Development",
     "High Performance Growth",
   ],
   authors: [{ name: siteConfig.name }],

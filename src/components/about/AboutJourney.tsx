@@ -16,7 +16,7 @@ export function AboutJourney() {
 
   const chapters = [
     { id: 1, label: '01 / Origin' },
-    { id: 2, label: '02 / Manifesto' },
+    { id: 2, label: '02 / Mission' },
     { id: 3, label: '03 / 3D Craft' },
     { id: 4, label: '04 / Why Us' },
   ];
@@ -51,8 +51,8 @@ export function AboutJourney() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const manifestoText =
-    "Ambitious brands do not need bloated agencies executing fragmented tactics. They need an integrated growth partner uniting bold design craft with algorithmic media discipline. Every channel pulls the same way. Less noise. More momentum.";
+  const missionText =
+    "Ambitious brands do not need bloated agencies executing fragmented tactics. They need an integrated growth partner uniting bold design craft with focused media execution. Every channel pulls the same way. Less noise. More momentum.";
 
   const whyUsChips = [
     {
@@ -179,13 +179,13 @@ export function AboutJourney() {
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="w-2 h-2 rounded-sm bg-lime" aria-hidden="true" />
             <span className="text-xs font-mono tracking-widest uppercase text-grey-3 font-semibold">
-              02 / MANIFESTO
+              02 / MISSION
             </span>
           </div>
 
-          {/* Word-by-Word Manifesto Scroll Highlight (34 words total) */}
+          {/* Word-by-Word Mission Scroll Highlight (34 words total) */}
           <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-ink leading-tight mb-12">
-            <WordHighlight text={manifestoText} />
+            <WordHighlight text={missionText} />
           </div>
 
           {/* Workshop photo P10 */}

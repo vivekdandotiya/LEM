@@ -259,14 +259,14 @@ export function ContactForm() {
               />
             </div>
 
-            {/* Row 3: Discipline & Budget */}
+            {/* Row 3: Service & Budget */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
                 <label
                   htmlFor="serviceRequired"
                   className="text-xs font-mono tracking-wider uppercase text-ink font-semibold"
                 >
-                  Primary Discipline
+                  Primary Service
                 </label>
                 <select
                   id="serviceRequired"

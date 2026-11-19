@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "check:readability": "node tools/check-readability.mjs"
+    "check:readability": "node tools/check-readability.mjs",
+    "check:wording": "tsx tools/check-wording.ts"
   },
   "dependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",
@@ -42,6 +43,7 @@
     "postcss": "^8.5.2",
     "sharp": "^0.35.5",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.23.15",
     "typescript": "^5.7.3"
   }
 }

@@ -8,7 +8,7 @@ import ImageReveal from "@/motion/ImageReveal";
 import Tilt3D from "@/motion/Tilt3D";
 
 export function AboutPhilosophy() {
-  const manifesto =
+  const statement =
     "True authority in modern marketing cannot be bought with vanity spend or fabricated through hollow trends. It is earned through obsessive technical craft, editorial restraint, and compounding commercial impact.";
 
   const pillars = [
@@ -16,7 +16,7 @@ export function AboutPhilosophy() {
       icon: <Sparkles className="w-5 h-5 text-accent" />,
       title: "Restraint Over Noise",
       description:
-        "The market is saturated with loud, commoditized marketing noise. We build brands that command authority through editorial polish, disciplined typography, and elevated aesthetics that convey unquestioned market leadership.",
+        "The market is saturated with loud, commoditized marketing noise. We build brands that command authority through editorial polish, clean typography, and refined aesthetics that convey unquestioned market leadership.",
     },
     {
       icon: <Cpu className="w-5 h-5 text-accent" />,
@@ -38,7 +38,7 @@ export function AboutPhilosophy() {
         {/* Section Header */}
         <div className="pb-16 border-b border-charcoal-900/10">
           <span className="text-xs font-mono tracking-widest uppercase text-accent font-semibold block mb-3">
-            01 / Guiding Philosophy
+            01 / Guiding Principles
           </span>
           <SplitHeading
             as="h2"
@@ -48,13 +48,13 @@ export function AboutPhilosophy() {
           </SplitHeading>
         </div>
 
-        {/* Word-by-Word Scrubbed Highlight Manifesto */}
+        {/* Word-by-Word Scrubbed Highlight Statement */}
         <div className="py-16 sm:py-20 border-b border-charcoal-900/10 max-w-4xl">
           <span className="text-xs font-mono uppercase tracking-widest text-warmgray-500 block mb-4">
-            Agency Manifesto
+            Agency Standards
           </span>
           <WordHighlight
-            text={manifesto}
+            text={statement}
             className="text-2xl sm:text-4xl md:text-5xl font-display font-medium text-charcoal-900 leading-[1.2] tracking-tight"
           />
         </div>

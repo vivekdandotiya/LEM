@@ -5,12 +5,13 @@ import Link from 'next/link';
 import { VideoHero } from '@/components/shared/VideoHero';
 import { AboutTeamCards } from '@/components/about/AboutTeamCards';
 import { Testimonials } from '@/components/shared/Testimonials';
+import { UI_STRINGS } from '@/data/ui-strings';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us — Discipline & Conviction',
+  title: 'About Us — Lead Edge Marketing',
   description:
-    'We engineer full-funnel digital momentum where search, creative, and code unite under one roof.',
+    'We build practical digital growth where search, creative media, and web development work together.',
 };
 
 export default function AboutPage() {
@@ -27,23 +28,23 @@ export default function AboutPage() {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#101214]/90 backdrop-blur-md border border-[#B08D57]/40 text-xs font-mono uppercase tracking-widest text-[#D9C29A] mb-6 font-semibold shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-gold" />
-            <span>STUDIO MANIFESTO</span>
+            <span>WHO WE ARE</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-[#F6F3EC] tracking-tight leading-[0.94] mb-6 drop-shadow-md">
-            Built on rigorous engineering and{' '}
-            <span className="font-serif italic font-normal text-[#D9C29A]">conviction.</span>
+            Built on solid engineering and{' '}
+            <span className="font-serif italic font-normal text-[#D9C29A]">focus.</span>
           </h1>
 
           <p className="text-lg sm:text-xl font-sans text-[#F6F3EC] max-w-2xl leading-[1.6] mb-8 font-normal drop-shadow-sm">
-            We engineer full-funnel digital momentum where search, creative, and code unite.
+            We build digital growth where search, creative media, and code work together.
           </p>
 
           <a
             href="#our-description"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#F6F3EC] text-[#0F1011] hover:bg-[#B08D57] hover:text-white transition-all text-[15px] font-semibold shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B08D57]"
           >
-            Explore Our Philosophy ↓
+            {UI_STRINGS.buttons.ourStory}
           </a>
         </div>
       </VideoHero>
@@ -57,7 +58,7 @@ export default function AboutPage() {
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
                 <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
-                  01 / PHILOSOPHY
+                  01 / OUR APPROACH
                 </span>
               </div>
 
@@ -77,7 +78,7 @@ export default function AboutPage() {
               <div className="pt-8 flex items-center gap-6">
                 <div>
                   <div className="font-display font-extrabold text-2xl text-ink">5</div>
-                  <div className="font-mono text-xs text-stone uppercase tracking-wider">Disciplines</div>
+                  <div className="font-mono text-xs text-stone uppercase tracking-wider">Services</div>
                 </div>
                 <div className="w-px h-10 bg-ink/10" />
                 <div>
@@ -105,10 +106,10 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-[18px] bg-white/90 backdrop-blur-md border border-ink/5">
                   <div className="text-xs font-mono uppercase text-stone tracking-wider">
-                    Studio Working Method
+                    How We Work
                   </div>
                   <div className="text-xs font-display font-bold text-ink mt-0.5">
-                    Cross-functional architecture session
+                    Cross-functional planning session
                   </div>
                 </div>
               </div>
@@ -130,7 +131,7 @@ export default function AboutPage() {
             NEXT STEPS
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-ink tracking-tight mb-4">
-            Ready to compound your digital momentum?
+            Ready to grow your digital presence?
           </h2>
           <p className="text-sm sm:text-base font-sans text-stone max-w-lg mx-auto mb-8 leading-relaxed">
             Schedule a confidential technical audit and commercial strategy consultation.
@@ -139,7 +140,7 @@ export default function AboutPage() {
             href="/contact"
             className="btn-primary inline-flex items-center gap-2 text-xs px-7 py-3.5 rounded-full font-semibold group"
           >
-            <span>Book Strategy Call</span>
+            <span>{UI_STRINGS.buttons.bookCall}</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

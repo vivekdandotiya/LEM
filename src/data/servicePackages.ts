@@ -28,7 +28,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
       id: 'social-basic',
       name: 'Growth Foundation',
       scopeTag: 'Channels: Any 2 Selected Networks',
-      description: 'Ideal for emerging brands looking to establish an authoritative organic presence on their two highest-leverage channels.',
+      description: 'Ideal for emerging brands looking to establish an authoritative organic presence on their two primary channels.',
       isPopular: false,
       pillars: [
         {
@@ -159,7 +159,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
           items: [
             'Title Tags, Meta Descriptions & H1-H3 Hierarchy',
             'Internal Linking Anchor Text Distribution',
-            'Image Compression & WebP Next-Gen Format Setup',
+            'Image Compression & WebP / AVIF Format Setup',
             'Top 20 High-Intent Revenue Pages Optimized',
             'Search Intent & Keyword Cannibalization Cleanup',
           ],
@@ -200,7 +200,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
           badge: 'ENTERPRISE TECH',
           items: [
             'Everything in Foundation SEO',
-            'JavaScript Hydration & Dynamic Rendering Audits',
+            'JavaScript Hydration & Client-Side Rendering Audits',
             'Multi-Region & International Hreflang Configuration',
             'Automated 24/7 Crawl Anomaly Monitoring',
             'Sub-second Edge Caching & Asset Optimization',
@@ -214,7 +214,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
             'Full Domain On-Page Overhaul (up to 60 pages)',
             'Programmatic Landing Page Template Architecture',
             'Conversion Rate Optimization (CRO) on Landing Pages',
-            'Dynamic User Intent Internal Link Routing',
+            'Intent-Based Internal Link Routing',
           ],
         },
         {
@@ -271,7 +271,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
             '6 High-Conversion Static & Motion Ad Creatives / Mo',
             '3 Distinct Direct-Response Copy Hook Angles',
             'Custom Headline & CTA Variant Split Testing',
-            'Dynamic Product Feed Integration & Catalog Ads',
+            'Automated Product Feed Integration & Catalog Ads',
             'Brand Asset Harmonization across Formats',
           ],
         },
@@ -336,7 +336,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
             'Smart Bidding Multi-Variable Testing Matrix',
             'Competitor Search Term Conquesting & Domination',
             'Automated Rule-Based Budget Redistribution',
-            'Dynamic Creative Optimization (DCO) at Scale',
+            'Multi-Variant Creative Testing at Scale',
           ],
         },
         {
@@ -390,7 +390,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
           title: 'SEO & Tracking Prep',
           badge: 'SEARCH READY',
           items: [
-            'Automated XML Sitemap, Robots.txt & Dynamic Metadata',
+            'Automated XML Sitemap, Robots.txt & Metadata',
             'Schema.org JSON-LD Rich Snippet Integration',
             'Automated Next/Image WebP/AVIF Compression Pipeline',
             'Google Tag Manager, GA4 & Meta CAPI Event Webhooks',
@@ -414,7 +414,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
       id: 'web-enterprise',
       name: 'Enterprise Commerce',
       scopeTag: 'Architecture: Headless Shopify / Full Web App',
-      description: 'Full-scale digital flagship with custom checkout funnels, dynamic inventory sync, and complex API integrations.',
+      description: 'Full-scale digital flagship with custom checkout funnels, real-time inventory sync, and complex API integrations.',
       isPopular: true,
       pillars: [
         {
@@ -423,7 +423,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
           items: [
             'Everything in Growth Web Engine',
             'Headless Shopify Plus / Custom Commerce Engine',
-            'Complex Database & Dynamic Server Actions Architecture',
+            'Complex Database & Fast Server Actions Architecture',
             'Multi-Currency & International Region Routing',
             'Real-Time Inventory, CRM & ERP Webhook Integration',
           ],
@@ -433,7 +433,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
           badge: 'IMMERSIVE UX',
           items: [
             'Everything in Growth Web Engine',
-            'Frictionless 1-Click Checkout & Dynamic Slide-Out Cart',
+            'Frictionless 1-Click Checkout & Slide-Out Cart',
             'Advanced Product Filtering & Instant Search (<50ms)',
             'Custom WebGL / 3D Product Mockup Visuals',
             'Personalized Customer Account Portals & Subscriptions',
@@ -447,7 +447,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
             'Programmatic Landing Page Engine for 500+ Category Pages',
             'Advanced Heatmap Tracking & Conversion Funnel Analytics',
             'A/B Testing Framework Integration (PostHog / Statsig)',
-            'Dynamic Personalization Based on Traffic Source',
+            'Page Personalization Based on Traffic Source',
           ],
         },
         {
@@ -467,7 +467,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
 
   'video-photo': {
     serviceSlug: 'video-photo',
-    sectionSubtitle: 'Studio-grade video production and commercial photography engineered to captivate audiences and elevate brand authority.',
+    sectionSubtitle: 'Studio-grade video production and commercial photography engineered to captivate audiences and build brand authority.',
     tier1: {
       id: 'video-retainer',
       name: 'Studio Content Retainer',
@@ -480,7 +480,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
           badge: 'VERTICAL 9:16',
           items: [
             '8 High-Retention Vertical Videos / Mo (Reels/TikTok/Shorts)',
-            'Dynamic Captions, Typography & Sound Design',
+            'Engaging Captions, Typography & Sound Design',
             '3-Second Hook Angle Variations per Concept',
             'Cinematic Color Grading & 4K 60FPS Master Exports',
             'Platform Aspect Ratio Exports (9:16, 4:5, 1:1)',
@@ -557,7 +557,7 @@ export const SERVICE_PACKAGES_DATA: Record<string, ServicePackagesData> = {
             'Everything in Studio Content Retainer',
             'End-to-End Cinematic Scriptwriting & Scene Boarding',
             'Professional Voiceover Casting & Audio Mastering',
-            'Soundtrack Composition & Bespoke SFX Mixing',
+            'Soundtrack Composition & Custom SFX Mixing',
             'Omnichannel Creative Strategy Sync with Media Buyers',
           ],
         },

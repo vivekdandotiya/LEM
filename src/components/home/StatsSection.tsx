@@ -11,7 +11,7 @@ interface StatBlock {
 const stats: StatBlock[] = [
   {
     metric: '100%',
-    label: 'Bespoke code',
+    label: 'Custom code',
     subtext: 'Zero bloated templates or generic theme overhead.',
     badge: 'CIR-02 Engineering Metric',
   },
@@ -23,7 +23,7 @@ const stats: StatBlock[] = [
   },
   {
     metric: '4-in-1',
-    label: 'Unified disciplines',
+    label: 'Integrated services',
     subtext: 'Creative, ads, search, and web combined.',
     badge: 'CIR-02 Service Model',
   },

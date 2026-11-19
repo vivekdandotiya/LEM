@@ -119,7 +119,7 @@ export const confirmedServices: ServiceItem[] = [
     tagline: "Targeted Facebook & Instagram ads engineered to drive instant leads and max ROAS.",
     shortDescription: "Targeted Facebook & Instagram ads engineered to drive instant leads and max ROAS.",
     fullDescription:
-      "Targeted Facebook and Instagram ads engineered to drive instant leads and max ROAS. By uniting bespoke visual assets with advanced audience modeling and first-party conversion tracking (Conversions API), we scale profitability while eliminating ad fatigue.",
+      "Targeted Facebook and Instagram ads engineered to drive instant leads and max ROAS. By uniting custom visual assets with advanced audience modeling and first-party conversion tracking (Conversions API), we scale profitability while eliminating ad fatigue.",
     deliverables: [
       "Creative Hook Diversity",
       "Active Practice",
@@ -155,7 +155,7 @@ export const confirmedServices: ServiceItem[] = [
       },
       {
         number: "04",
-        title: "Dynamic Efficiency Scaling",
+        title: "Active Efficiency Scaling",
         description: "Scaling daily budgets profitably on validated creatives while maintaining target CPA thresholds and healthy margins.",
       },
     ],
@@ -254,7 +254,7 @@ export const confirmedServices: ServiceItem[] = [
       {
         question: "Which social media platforms do you manage?",
         answer:
-          "We specialize in Instagram, LinkedIn, and TikTok, tailored to whether your primary target audience is B2B executive decision-makers or direct-to-consumer buyers.",
+          "We specialize in Instagram, LinkedIn, and TikTok, focused on whether your primary target audience is B2B executive decision-makers or direct-to-consumer buyers.",
       },
       {
         question: "Do we get to approve content before it goes live?",
@@ -282,7 +282,7 @@ export const confirmedServices: ServiceItem[] = [
       "High-speed sites engineered to turn clicks into clients. Build high-converting, lightning-fast websites with Lead Edge Marketers. Our SEO-first web development creates sub-second speed sites engineered to capture search traffic and scale revenue.",
     deliverables: [
       "Sub-Second Core Vitals",
-      "Bespoke Next.js Engine",
+      "Custom Next.js Engine",
       "Fluid Device Geometry",
       "Zero Theme Bloat",
       "Conversion-Focused Funnels",
@@ -327,7 +327,7 @@ export const confirmedServices: ServiceItem[] = [
       },
       {
         number: "04",
-        title: "Rigorous QA, Audit & Launch",
+        title: "Thorough QA, Audit & Launch",
         description: "We test accessibility, performance on 4G throttling, cross-browser compatibility, and form integrations before deployment.",
       },
     ],
@@ -356,11 +356,11 @@ export const confirmedServices: ServiceItem[] = [
     title: "Video Editing & Photo Creation",
     shortTitle: "Video & Photo",
     heroHeadline: "CINEMATIC VISUAL STORYTELLING THAT CAPTIVATES AND converts.",
-    tagline: "High-impact video and photography crafted to elevate brand authority.",
+    tagline: "High-impact video and photography crafted to build brand trust.",
     shortDescription:
-      "High-impact video and photography crafted to elevate brand authority.",
+      "High-impact video and photography crafted to build brand trust.",
     fullDescription:
-      "From dynamic short-form reels to high-end commercial campaign photography, we direct, shoot, and edit visual assets engineered to stop scrolls, establish emotional connection, and command market leadership.",
+      "From engaging short-form video to high-end commercial campaign photography, we direct, shoot, and edit visual assets engineered to stop scrolls, establish emotional connection, and command market leadership.",
     deliverables: [
       "Storyboard & Direction",
       "Studio & Location Capture",
@@ -372,7 +372,7 @@ export const confirmedServices: ServiceItem[] = [
       {
         title: "Editorial Craft & Narrative Pacing",
         description:
-          "Cinematic framing, rhythm-matched cuts, and sound design tailored to create an emotional connection and reinforce brand authority.",
+          "Cinematic framing, rhythm-matched cuts, and sound design crafted to create an emotional connection and reinforce brand authority.",
       },
       {
         title: "Multi-Platform Asset Delivery",
@@ -394,7 +394,7 @@ export const confirmedServices: ServiceItem[] = [
       {
         number: "03",
         title: "Editorial Cut & Narrative Pacing",
-        description: "We sculpt narrative rhythm, sound design, and motion graphics into seamless edits.",
+        description: "We sculpt narrative rhythm, sound design, and motion graphics into polished, engaging edits.",
       },
       {
         number: "04",
