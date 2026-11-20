@@ -5,6 +5,7 @@ import { HomeServicesCards } from '@/components/home/HomeServicesCards';
 import { Testimonials } from '@/components/shared/Testimonials';
 import { BrandTrustBar } from '@/components/home/BrandTrustBar';
 import { FAQSection } from '@/components/home/FAQSection';
+import { ConversionCTA } from '@/components/home/ConversionCTA';
 
 export const metadata: Metadata = {
   title: 'Lead Edge Marketers — Digital Growth Studio',
@@ -32,6 +33,9 @@ export default function HomePage() {
 
       {/* 5. Frequently Asked Questions (Client Q&As Verbatim) */}
       <FAQSection />
+
+      {/* 6. High-Conversion Growth Strategy Call CTA */}
+      <ConversionCTA />
     </main>
   );
 }

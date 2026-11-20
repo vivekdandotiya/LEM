@@ -205,7 +205,7 @@ export function Footer() {
                         href={link.href}
                         className={`text-xs font-mono tracking-wider transition-colors duration-200 block ${
                           link.isAccent
-                            ? 'text-[#2EE6A8] font-bold hover:text-white'
+                            ? 'text-[#D9C29A] font-bold hover:text-white'
                             : 'text-[#D6D3D1] hover:text-white'
                         }`}
                       >

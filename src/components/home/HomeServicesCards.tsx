@@ -11,6 +11,7 @@ interface ServiceCardData {
   description: string;
   href: string;
   badge?: string;
+  emoji: string;
   visualType: 'growth' | 'social' | 'ecommerce' | 'ads' | 'video' | 'seo';
   image: string;
 }
@@ -22,6 +23,7 @@ const SERVICES_DATA: ServiceCardData[] = [
     description: 'Full-funnel digital campaigns combining organic search, paid media, and analytics to acquire high-value customers and lower acquisition costs.',
     href: '/contact',
     badge: 'FULL FUNNEL',
+    emoji: '📈',
     visualType: 'growth',
     image: '/images/services/cylinder-strategy-session.webp',
   },
@@ -31,6 +33,7 @@ const SERVICES_DATA: ServiceCardData[] = [
     description: 'Strategic content creation, reels production, and daily audience engagement across Instagram, Facebook & LinkedIn to build brand authority and repeat buyers.',
     href: '/services/social-media',
     badge: 'COMMUNITY',
+    emoji: '🔥',
     visualType: 'social',
     image: '/images/services/social-media/social-calendar.webp',
   },
@@ -40,6 +43,7 @@ const SERVICES_DATA: ServiceCardData[] = [
     description: 'Custom, fast-loading websites built with Next.js and optimized for mobile screens, instant load speeds, and maximum checkout conversions.',
     href: '/services/web-development',
     badge: 'SUB-SECOND',
+    emoji: '⚡',
     visualType: 'ecommerce',
     image: '/images/pages/P08-services-web-devices-16x9.webp',
   },
@@ -49,6 +53,7 @@ const SERVICES_DATA: ServiceCardData[] = [
     description: 'High-ROI Google, Meta & Instagram ad campaigns with high-converting creative testing and precise targeting to maximize your return on ad spend.',
     href: '/services/ppc',
     badge: 'SCALE',
+    emoji: '🎯',
     visualType: 'ads',
     image: '/images/services/meta-ads/meta-creative.webp',
   },
@@ -58,6 +63,7 @@ const SERVICES_DATA: ServiceCardData[] = [
     description: 'Cinematic commercial video production and professional product photography engineered to grab attention, build trust, and increase sales.',
     href: '/services/video-photo',
     badge: 'CINEMATIC',
+    emoji: '🎬',
     visualType: 'video',
     image: '/images/services/video-photo/video-photo-hero.webp',
   },
@@ -67,6 +73,7 @@ const SERVICES_DATA: ServiceCardData[] = [
     description: 'Google Map Pack optimization, local keyword rankings, and technical SEO architecture to put your business at the top when local customers search.',
     href: '/services/seo',
     badge: 'ORGANIC',
+    emoji: '📍',
     visualType: 'seo',
     image: '/images/services/seo/seo-audit.webp',
   },
@@ -107,11 +114,20 @@ export function HomeServicesCards() {
                 aria-hidden="true"
               />
 
-              {/* Top Title */}
-              <div className="relative z-10">
+              {/* Top Title & Floating Designer Emoji */}
+              <div className="relative z-10 flex items-start justify-between gap-4">
                 <h3 className="text-xl sm:text-2xl font-display font-extrabold text-white tracking-tight leading-snug">
                   {card.title}
                 </h3>
+                {/* Designer Emoji floating badge */}
+                <div
+                  className="shrink-0 w-11 h-11 rounded-2xl bg-white/[0.08] backdrop-blur-md border border-white/20 flex items-center justify-center text-xl shadow-lg group-hover:scale-115 group-hover:rotate-6 group-hover:border-[#B08D57]/50 group-hover:bg-[#B08D57]/20 transition-all duration-300"
+                  aria-hidden="true"
+                >
+                  <span role="img" aria-label={card.title} className="transform transition-transform">
+                    {card.emoji}
+                  </span>
+                </div>
               </div>
 
               {/* Centered Visual Stage */}

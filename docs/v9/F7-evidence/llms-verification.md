@@ -12,7 +12,7 @@
 ### `/llms.txt`
 - **Status:** HTTP 200 OK
 - **Content-Type:** `text/plain; charset=UTF-8`
-- **Size:** 2230 bytes
+- **Size:** 2253 bytes
 - **Header:** `# Lead Edge Marketing`
 - **Summary Blockquote:** Present
 - **Linked Routes:** All 10 links return HTTP 200 OK.
@@ -47,7 +47,7 @@
 
 ### `/llms-full.txt`
 - **Status:** HTTP 200 OK
-- **Size:** 6325 bytes
+- **Size:** 6441 bytes
 - **Includes:** Comprehensive service deliverables, process roadmaps (phases), full verified FAQs verbatim, and contact details.
 
 ---

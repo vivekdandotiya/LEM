@@ -1,15 +1,13 @@
 'use client';
 
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HeroWall } from './HeroWall';
+import { HeroStudioBackground } from './HeroStudioBackground';
 import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
 import { Magnetic } from '@/motion/Magnetic';
-import { HERO_DATA } from '@/data/hero';
-import { Pause, Play } from 'lucide-react';
-import { InkDripText } from '@/motion/InkDrip';
+import { ArrowUpRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,14 +15,8 @@ export function HomeHero() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const swashRef = useRef<SVGPathElement>(null);
-  const headlineRef = useRef<HTMLHeadingElement>(null);
 
-  const activeHeadlines = HERO_DATA.headlines.filter((h) => h.enabled);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-
-  // Animate swash on index change or mount
+  // Animate gold swash underline on mount
   useEffect(() => {
     const swash = swashRef.current;
     if (!swash) return;
@@ -36,45 +28,9 @@ export function HomeHero() {
     gsap.fromTo(
       swash,
       { strokeDasharray: len, strokeDashoffset: len },
-      { strokeDashoffset: 0, duration: 1.0, delay: 0.15, ease: 'power3.out' }
+      { strokeDashoffset: 0, duration: 1.1, delay: 0.2, ease: 'power3.out' }
     );
-  }, [currentIndex]);
-
-  const nextHeadline = useCallback(() => {
-    if (activeHeadlines.length <= 1) return;
-    const headline = headlineRef.current;
-    if (!headline) {
-      setCurrentIndex((prev) => (prev + 1) % activeHeadlines.length);
-      return;
-    }
-
-    gsap.to(headline, {
-      opacity: 0,
-      y: -18,
-      duration: 0.45,
-      ease: 'power2.in',
-      onComplete: () => {
-        setCurrentIndex((prev) => (prev + 1) % activeHeadlines.length);
-        gsap.fromTo(
-          headline,
-          { opacity: 0, y: 22 },
-          { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out' }
-        );
-      },
-    });
-  }, [activeHeadlines.length]);
-
-  // 6-second rotation timer (WCAG 2.2.2 pause on hover/focus/button)
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion || isPaused || isHovered || activeHeadlines.length <= 1) return;
-
-    const interval = setInterval(() => {
-      nextHeadline();
-    }, HERO_DATA.intervalMs || 6000);
-
-    return () => clearInterval(interval);
-  }, [isPaused, isHovered, nextHeadline, activeHeadlines.length]);
+  }, []);
 
   // ScrollTrigger parallax
   useEffect(() => {
@@ -94,8 +50,8 @@ export function HomeHero() {
         const p = self.progress;
         if (content) {
           gsap.set(content, {
-            opacity: 1 - p * 1.2,
-            y: p * 80,
+            opacity: 1 - p * 1.3,
+            y: p * 70,
           });
         }
       },
@@ -113,64 +69,43 @@ export function HomeHero() {
     }
   };
 
-  const currentHeadline = activeHeadlines[currentIndex] || activeHeadlines[0];
-
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100svh] w-full flex flex-col justify-between overflow-hidden bg-ink text-white border-b border-white/10 select-none dark-dots"
+      className="relative min-h-[96svh] sm:min-h-[100svh] w-full flex flex-col justify-between overflow-hidden bg-[#08090C] text-white border-b border-white/10 select-none"
       data-theme="dark"
+      data-surface="dark"
     >
-      {/* 1. Endless Scrolling Wall of Ad Creative Cards */}
-      <HeroWall />
-
-      {/* 2. Legibility Veil over Wall */}
-      <div
-        className="absolute inset-0 pointer-events-none z-10"
-        style={{
-          background: `
-            radial-gradient(ellipse 65% 60% at 50% 46%, rgba(8,10,11,0.90) 0%, rgba(8,10,11,0.68) 55%, rgba(8,10,11,0.42) 100%),
-            linear-gradient(180deg, rgba(8,10,11,0.65) 0%, transparent 25%, transparent 75%, rgba(8,10,11,0.85) 100%)
-          `,
-        }}
-        aria-hidden="true"
-      />
+      {/* 1. Ultra-Premium Studio Ambient Background (Replacing Image Gallery) */}
+      <HeroStudioBackground />
 
       {/* Spacer for Floating Navbar */}
       <div className="h-28 sm:h-32 pointer-events-none" />
 
-      {/* 3. Hero Centred Foreground */}
+      {/* 2. Hero Centered Foreground: Short, Punchy, High-Impact Typography */}
       <div
         ref={contentRef}
-        className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center py-8 my-auto"
+        className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center py-6 sm:py-10 my-auto"
       >
-        {/* Eyebrow Label */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-charcoal/90 border border-white/15 text-xs font-mono tracking-widest uppercase text-white/90 mb-6 shadow-sm">
-          <SparkleGlyph size={14} spin={true} />
-          <span>{HERO_DATA.eyebrow}</span>
+        {/* Eyebrow Badge */}
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.07] backdrop-blur-md border border-white/15 text-xs font-mono tracking-widest uppercase text-[#F6F3EC] mb-6 shadow-md">
+          <SparkleGlyph size={13} spin={true} />
+          <span>DIGITAL GROWTH STUDIO • SEARCH • MEDIA • WEB</span>
         </div>
 
-        {/* H1 Display with 6-second rotating headline pair */}
-        <div
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onFocus={() => setIsHovered(true)}
-          onBlur={() => setIsHovered(false)}
-          className="relative max-w-4xl mx-auto mb-6 px-2"
-        >
+        {/* Short, Punchy, High-Contrast Headline */}
+        <div className="relative max-w-4xl mx-auto mb-6 px-2">
           <h1
-            ref={headlineRef}
-            aria-live="polite"
-            className="text-[clamp(1.95rem,5.2vw,4.25rem)] font-display font-extrabold uppercase leading-[1.08] sm:leading-[0.98] tracking-tight sm:tracking-[-0.03em] text-white"
+            className="text-[clamp(2.35rem,6.8vw,4.75rem)] font-display font-extrabold uppercase leading-[1.04] sm:leading-[0.98] tracking-tight sm:tracking-[-0.03em] text-[#F6F3EC]"
           >
-            <InkDripText text={currentHeadline.prefix} color="#F6F3EC" maxDrips={1} />{' '}
+            WE SCALE{' '}
             <span className="relative inline-block font-serif lowercase italic text-[#D9C29A] font-normal tracking-normal mx-1">
-              {currentHeadline.italicWord}
+              revenue.
               {/* Hand-drawn swash underline in gold */}
               <svg
                 viewBox="0 0 280 24"
                 fill="none"
-                className="absolute -bottom-2.5 left-0 w-full text-[#B08D57] pointer-events-none"
+                className="absolute -bottom-2 sm:-bottom-2.5 left-0 w-full text-[#B08D57] pointer-events-none"
                 aria-hidden="true"
               >
                 <path
@@ -183,54 +118,40 @@ export function HomeHero() {
               </svg>
             </span>
           </h1>
-
-          {/* Accessible Rotation Controls (WCAG 2.2.2) */}
-          <div className="flex items-center justify-center gap-3 mt-4">
-            <span className="text-xs font-mono tracking-widest text-[#E7E5E4] uppercase">
-              0{currentIndex + 1} / 0{activeHeadlines.length}
-            </span>
-            <button
-              onClick={() => setIsPaused((prev) => !prev)}
-              aria-label={isPaused ? 'Resume rotating headlines' : 'Pause rotating headlines'}
-              className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white/80 hover:text-gold transition-colors"
-            >
-              {isPaused ? <Play className="w-3 h-3 fill-current" /> : <Pause className="w-3 h-3 fill-current" />}
-            </button>
-          </div>
         </div>
 
-        {/* Support line with high contrast */}
-        <p className="font-sans text-base sm:text-lg md:text-xl text-[#F6F3EC] max-w-2xl mx-auto mb-10 leading-relaxed font-normal drop-shadow-sm opacity-95">
-          {HERO_DATA.subheadline}
+        {/* Short, Concise, Crystal-Clear Subheadline */}
+        <p className="font-sans text-base sm:text-lg md:text-xl text-[#F6F3EC] max-w-xl mx-auto mb-10 leading-relaxed font-normal opacity-95">
+          Full-funnel digital marketing engineered to turn traffic into enterprise revenue.
         </p>
 
         {/* CTA Button Row */}
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
           <Magnetic strength={0.25}>
             <Link
-              href={HERO_DATA.primaryCta.href}
+              href="/contact"
               className="btn-primary"
             >
-              {HERO_DATA.primaryCta.label}
+              Book Strategy Call →
             </Link>
           </Magnetic>
 
           <Magnetic strength={0.25}>
-            <a
-              href={HERO_DATA.secondaryCta.href}
+            <button
+              onClick={scrollToNext}
               className="btn-secondary"
             >
-              {HERO_DATA.secondaryCta.label}
-            </a>
+              Explore Our Work
+            </button>
           </Magnetic>
         </div>
       </div>
 
-      {/* 4. Hero Bottom Area: Active Global Signal & Smooth Scroll */}
+      {/* 3. Hero Bottom Area: Active Desks & Smooth Scroll */}
       <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-12 pb-6 pt-2 flex items-center justify-between gap-5">
         <div className="flex items-center gap-2.5">
           <span className="w-2 h-2 rounded-full bg-[#B08D57] animate-pulse" />
-          <span className="font-mono text-xs uppercase tracking-wider text-white/80 font-medium">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#D6D3D1] font-medium">
             Active Desks: London · Singapore · New York
           </span>
         </div>
@@ -238,13 +159,13 @@ export function HomeHero() {
         <div className="flex items-center gap-3">
           <button
             onClick={scrollToNext}
-            className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-charcoal/90 hover:bg-charcoal border border-white/20 text-gold transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/[0.08] hover:bg-white/[0.14] backdrop-blur-md border border-white/20 text-[#D9C29A] transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
             aria-label="Scroll to services"
           >
             <span className="text-xs font-mono font-bold tracking-wider uppercase text-white/90 group-hover:text-gold transition-colors">
               Scroll
             </span>
-            <SparkleGlyph size={18} spin={true} />
+            <SparkleGlyph size={16} spin={true} />
           </button>
         </div>
       </div>

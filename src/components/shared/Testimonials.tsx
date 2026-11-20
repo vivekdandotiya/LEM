@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { TESTIMONIALS, TestimonialItem } from '@/data/testimonials';
 
@@ -20,7 +20,7 @@ export function Testimonials({
   // If NEXT_PUBLIC_SHOW_SAMPLES is 'false' (or URL ?samples=false), hide unverified placeholder items
   const [samplesParam, setSamplesParam] = useState<boolean | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get('samples') === 'false') {
@@ -38,14 +38,12 @@ export function Testimonials({
   const displayItems = verifiedItems.length > 0 ? verifiedItems : (showSamples ? items : []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   // If no items to display (e.g. showSamples is false and no verified items), hide section completely
   if (displayItems.length === 0) {
     return null;
   }
-
-  const safeIndex = currentIndex >= displayItems.length ? 0 : currentIndex;
-  const active = displayItems[safeIndex];
 
   const prev = () => {
     setCurrentIndex((prevIdx) => (prevIdx === 0 ? displayItems.length - 1 : prevIdx - 1));
@@ -71,7 +69,7 @@ export function Testimonials({
       id="testimonials-section"
       data-testid="testimonials"
       data-surface={isDark ? 'dark' : 'light'}
-      className={`py-24 sm:py-32 select-none transition-colors relative ${
+      className={`py-24 sm:py-32 select-none transition-colors relative overflow-hidden ${
         isDark ? 'bg-charcoal text-ivory' : 'bg-[#F6F3EC] text-ink'
       } ${className}`}
       data-theme={isDark ? 'dark' : undefined}
@@ -109,21 +107,19 @@ export function Testimonials({
 
           <div className="flex items-center gap-4">
             {/* Sample Indicator Pill */}
-            {!active.verified && (
-              <div
-                className={`hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold border ${
-                  isDark
-                    ? 'border-[#B08D57]/40 bg-[#B08D57]/10 text-[#D9C29A]'
-                    : 'border-[#B08D57]/40 bg-[#B08D57]/10 text-[#5C4018]'
-                }`}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#B08D57]" aria-hidden="true" />
-                <span>SAMPLE FEEDBACK DRAFTS</span>
-              </div>
-            )}
+            <div
+              className={`hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold border ${
+                isDark
+                  ? 'border-[#B08D57]/40 bg-[#B08D57]/10 text-[#D9C29A]'
+                  : 'border-[#B08D57]/40 bg-[#B08D57]/10 text-[#5C4018]'
+              }`}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B08D57]" aria-hidden="true" />
+              <span>SAMPLE FEEDBACK DRAFTS</span>
+            </div>
 
-            {/* Prev / Next Controls */}
-            <div className="flex items-center gap-1.5">
+            {/* Prev / Next Controls for Sliding Cards */}
+            <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={prev}
@@ -152,163 +148,153 @@ export function Testimonials({
           </div>
         </div>
 
-        {/* Featured Testimonial Card */}
-        <div
-          className={`relative rounded-[28px] sm:rounded-[36px] p-6 sm:p-10 lg:p-14 shadow-soft-md overflow-hidden border ${
-            isDark ? 'bg-[#141518] border-white/15 text-[#F6F3EC]' : 'bg-white border-ink/10 text-ink'
-          }`}
-        >
-          <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8 lg:gap-12">
-            {/* Left: Initials in Clean Circle Avatar */}
-            <div className="flex flex-col items-center justify-center shrink-0">
+        {/* Sliding Cards Carousel Track */}
+        <div className="relative overflow-hidden w-full py-2">
+          <div
+            ref={trackRef}
+            className="flex transition-transform duration-500 ease-out gap-6"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            {displayItems.map((item, idx) => (
               <div
-                className={`w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full flex flex-col items-center justify-center border-2 shadow-lg transition-transform ${
-                  isDark
-                    ? 'bg-[#1C1D1F] border-[#B08D57]/40 text-[#D9C29A]'
-                    : 'bg-[#F6F3EC] border-[#B08D57]/40 text-[#5C4018]'
-                }`}
+                key={item.id}
+                className="w-full shrink-0"
               >
-                <span className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold tracking-wider">
-                  {getInitials(active.name)}
-                </span>
-                {!active.verified && (
-                  <span
-                    className={`mt-2 text-xs font-mono font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full border ${
-                      isDark
-                        ? 'bg-[#B08D57]/20 border-[#B08D57]/40 text-[#D9C29A]'
-                        : 'bg-[#B08D57]/15 border-[#B08D57]/30 text-[#5C4018]'
-                    }`}
-                  >
-                    SAMPLE
-                  </span>
-                )}
-              </div>
-            </div>
-
-            {/* Right: Quote & Details */}
-            <div className="flex-1 flex flex-col justify-between text-left">
-              <div>
-                {/* Service Tag & Sample Flag */}
-                <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-                  <div
-                    className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full border text-xs font-mono font-bold ${
-                      isDark
-                        ? 'bg-[#B08D57]/20 border-[#B08D57]/40 text-[#D9C29A]'
-                        : 'bg-[#B08D57]/15 border-[#B08D57]/30 text-[#5C4018]'
-                    }`}
-                  >
-                    <span>{active.service}</span>
-                  </div>
-
-                  {!active.verified && (
-                    <span
-                      className={`text-xs font-mono font-semibold tracking-wider uppercase px-2.5 py-1 rounded border ${
-                        isDark
-                          ? 'border-white/10 bg-white/5 text-stone-300'
-                          : 'border-ink/10 bg-black/5 text-[#57534E]'
-                      }`}
-                    >
-                      SAMPLE DRAFT
-                    </span>
-                  )}
-                </div>
-
-                {/* Quote Text */}
-                <div className="relative mb-6">
-                  <Quote className="w-10 h-10 text-[#B08D57]/20 absolute -top-4 -left-4 -z-10 pointer-events-none" />
-                  <p
-                    className={`text-lg sm:text-xl lg:text-2xl font-serif font-medium leading-relaxed ${
-                      isDark ? 'text-[#F6F3EC]' : 'text-[#0F1011]'
-                    }`}
-                  >
-                    &ldquo;{active.quote}&rdquo;
-                  </p>
-                </div>
-              </div>
-
-              {/* Author Footer */}
-              <div
-                className={`pt-6 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
-                  isDark ? 'border-white/10' : 'border-ink/10'
-                }`}
-              >
-                <div>
-                  <h3
-                    className={`text-xl sm:text-2xl font-display font-extrabold ${
-                      isDark ? 'text-white' : 'text-[#0F1011]'
-                    }`}
-                  >
-                    {active.name}
-                  </h3>
-                  <p
-                    className={`text-xs sm:text-sm font-sans mt-0.5 ${
-                      isDark ? 'text-stone-300' : 'text-[#57534E]'
-                    }`}
-                  >
-                    {active.role ? `${active.role} · ` : ''}
-                    <span className={`font-semibold ${isDark ? 'text-white' : 'text-[#0F1011]'}`}>
-                      {active.company}
-                    </span>
-                  </p>
-                </div>
-
                 <div
-                  className={`text-xs font-mono tracking-widest uppercase font-semibold ${
-                    isDark ? 'text-stone-300' : 'text-[#57534E]'
+                  className={`relative rounded-[28px] sm:rounded-[36px] p-6 sm:p-10 lg:p-14 shadow-soft-md overflow-hidden border transition-all duration-300 ${
+                    isDark ? 'bg-[#141518] border-white/15 text-[#F6F3EC]' : 'bg-white border-ink/10 text-ink'
                   }`}
                 >
-                  CLIENT {safeIndex + 1} OF {displayItems.length}
+                  <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8 lg:gap-12">
+                    {/* Left: Initials Monogram in Designer Circle Avatar */}
+                    <div className="flex flex-col items-center justify-center shrink-0">
+                      <div
+                        className={`w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full flex flex-col items-center justify-center border-2 shadow-lg transition-transform ${
+                          isDark
+                            ? 'bg-[#1C1D1F] border-[#B08D57]/40 text-[#D9C29A]'
+                            : 'bg-[#F6F3EC] border-[#B08D57]/40 text-[#5C4018]'
+                        }`}
+                      >
+                        <span className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold tracking-wider">
+                          {getInitials(item.name)}
+                        </span>
+                        {!item.verified && (
+                          <span
+                            className={`mt-2 text-xs font-mono font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full border ${
+                              isDark
+                                ? 'bg-[#B08D57]/20 border-[#B08D57]/40 text-[#D9C29A]'
+                                : 'bg-[#B08D57]/15 border-[#B08D57]/30 text-[#5C4018]'
+                            }`}
+                          >
+                            SAMPLE
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Right: Quote & Details */}
+                    <div className="flex-1 flex flex-col justify-between text-left">
+                      <div>
+                        {/* Service Tag & Sample Flag */}
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                          <div
+                            className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full border text-xs font-mono font-bold ${
+                              isDark
+                                ? 'bg-[#B08D57]/20 border-[#B08D57]/40 text-[#D9C29A]'
+                                : 'bg-[#B08D57]/15 border-[#B08D57]/30 text-[#5C4018]'
+                            }`}
+                          >
+                            <span>{item.service}</span>
+                          </div>
+
+                          {!item.verified && (
+                            <span
+                              className={`text-xs font-mono font-semibold tracking-wider uppercase px-2.5 py-1 rounded border ${
+                                isDark
+                                  ? 'border-white/10 bg-white/5 text-stone-300'
+                                  : 'border-ink/10 bg-black/5 text-[#57534E]'
+                              }`}
+                            >
+                              SAMPLE DRAFT
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Quote Text */}
+                        <div className="relative mb-6">
+                          <Quote className="w-10 h-10 text-[#B08D57]/20 absolute -top-4 -left-4 -z-10 pointer-events-none" />
+                          <p
+                            className={`text-lg sm:text-xl lg:text-2xl font-serif font-medium leading-relaxed ${
+                              isDark ? 'text-[#F6F3EC]' : 'text-[#0F1011]'
+                            }`}
+                          >
+                            &ldquo;{item.quote}&rdquo;
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Author Footer */}
+                      <div
+                        className={`pt-6 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
+                          isDark ? 'border-white/10' : 'border-ink/10'
+                        }`}
+                      >
+                        <div>
+                          <h3
+                            className={`text-xl sm:text-2xl font-display font-extrabold ${
+                              isDark ? 'text-white' : 'text-[#0F1011]'
+                            }`}
+                          >
+                            {item.name}
+                          </h3>
+                          <p
+                            className={`text-xs sm:text-sm font-sans mt-0.5 ${
+                              isDark ? 'text-stone-300' : 'text-[#57534E]'
+                            }`}
+                          >
+                            {item.role ? `${item.role} · ` : ''}
+                            <span className={`font-semibold ${isDark ? 'text-white' : 'text-[#0F1011]'}`}>
+                              {item.company}
+                            </span>
+                          </p>
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                          <span
+                            className={`text-xs font-mono tracking-widest uppercase font-semibold ${
+                              isDark ? 'text-stone-300' : 'text-[#57534E]'
+                            }`}
+                          >
+                            0{idx + 1} / 0{displayItems.length}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Client Thumbnail Selector Strip */}
-        <div className={`mt-8 pt-6 border-t ${isDark ? 'border-white/10' : 'border-ink/10'}`}>
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-            {displayItems.map((client, idx) => {
-              const isActive = idx === safeIndex;
-              const initials = getInitials(client.name);
-              return (
-                <button
-                  key={client.id}
-                  type="button"
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`flex items-center gap-2.5 px-3.5 py-1.5 rounded-full transition-all duration-200 text-left ${
-                    isActive
-                      ? isDark
-                        ? 'bg-[#B08D57] text-[#0F1011] shadow-md scale-105 border border-[#B08D57] font-bold'
-                        : 'bg-ink text-white shadow-md scale-105 border border-ink ring-2 ring-[#B08D57]'
-                      : isDark
-                      ? 'bg-[#141518] text-[#E7E5E4] border border-white/15 hover:border-[#B08D57]'
-                      : 'bg-white hover:bg-black/5 text-ink border border-ink/10 opacity-75 hover:opacity-100'
-                  }`}
-                  aria-label={`Select ${client.name} review`}
-                >
-                  <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-mono font-bold shrink-0 border ${
-                      isActive
-                        ? isDark
-                          ? 'bg-[#0F1011] text-[#D9C29A] border-[#0F1011]'
-                          : 'bg-white text-ink border-white'
-                        : isDark
-                        ? 'bg-white/10 text-stone-300 border-white/20'
-                        : 'bg-black/5 text-ink border-ink/10'
-                    }`}
-                  >
-                    {initials}
-                  </div>
-                  <div className="text-xs leading-none">
-                    <span className="block font-bold">
-                      {client.name} {idx + 1}
-                    </span>
-                    <span className="text-xs opacity-80">{client.service.split(' ')[0]}</span>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
+        {/* Carousel Slide Indicators / Dots */}
+        <div className="flex items-center justify-center gap-2 mt-8">
+          {displayItems.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                currentIndex === idx
+                  ? 'w-8 bg-[#B08D57]'
+                  : isDark
+                  ? 'w-2 bg-white/20 hover:bg-white/40'
+                  : 'w-2 bg-black/20 hover:bg-black/40'
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
