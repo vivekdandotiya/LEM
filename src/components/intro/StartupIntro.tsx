@@ -223,7 +223,7 @@ export function StartupIntro() {
       className="fixed inset-0 z-[10000] select-none pointer-events-auto"
       role="dialog"
       aria-modal="true"
-      aria-label="Loading Lead Edge Marketing"
+      aria-label="Loading Lead Edge Marketers"
     >
       {/* Black Curtain Overlay */}
       <div

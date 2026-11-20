@@ -18,10 +18,10 @@ async function checkLlms() {
   }
   const summaryText = await resSummary.text();
 
-  if (!summaryText.startsWith('# Lead Edge Marketing')) {
-    errors.push('/llms.txt does not begin with H1 "# Lead Edge Marketing".');
+  if (!summaryText.startsWith('# Lead Edge Marketers')) {
+    errors.push('/llms.txt does not begin with H1 "# Lead Edge Marketers".');
   }
-  if (!summaryText.includes('> Lead Edge Marketing is')) {
+  if (!summaryText.includes('> Lead Edge Marketers is')) {
     errors.push('/llms.txt missing standard blockquote summary.');
   }
   if (!summaryText.includes('llms-full.txt')) {
@@ -35,7 +35,7 @@ async function checkLlms() {
     errors.push(`Failed to fetch /llms-full.txt: status ${resFull.status}`);
   }
   const fullText = await resFull.text();
-  if (!fullText.includes('# Lead Edge Marketing — Complete Overview')) {
+  if (!fullText.includes('# Lead Edge Marketers — Complete Overview')) {
     errors.push('/llms-full.txt missing expected header.');
   }
 

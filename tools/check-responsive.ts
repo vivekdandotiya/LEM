@@ -48,14 +48,9 @@ interface OverflowViolation {
 
 async function runResponsiveAudit() {
   console.log('=== Running 16-Viewport Responsiveness & Overflow Matrix (F9) ===\n');
-  const baseUrl = 'http://localhost:3000';
+  const baseUrl = 'http://127.0.0.1:3000';
 
-  let browser;
-  try {
-    browser = await chromium.launch({ headless: true, channel: 'chrome' });
-  } catch (e) {
-    browser = await chromium.launch({ headless: true, channel: 'msedge' });
-  }
+  const browser = await chromium.launch({ headless: true, channel: 'msedge' });
 
   const evidenceDir = path.resolve(process.cwd(), 'docs/v9/F9-evidence');
   fs.mkdirSync(evidenceDir, { recursive: true });
@@ -72,7 +67,7 @@ async function runResponsiveAudit() {
 
     for (const route of ROUTES) {
       totalChecked++;
-      const url = `${baseUrl}${route}`;
+      const url = `${baseUrl}${route}?skip_loader=1`;
       try {
         await page.goto(url, { waitUntil: 'domcontentloaded' });
         await page.waitForTimeout(100);
@@ -126,9 +121,11 @@ async function runResponsiveAudit() {
 
     // Capture representative screenshots for 320, 390, 768, 1440
     if (['mobile-320', 'mobile-390', 'tablet-768', 'desktop-1440'].includes(vp.name)) {
-      await page.goto(`${baseUrl}/`, { waitUntil: 'networkidle' });
+      await page.goto(`${baseUrl}/?skip_loader=1`, { waitUntil: 'domcontentloaded' });
+      await page.waitForTimeout(400);
       await page.screenshot({ path: path.join(evidenceDir, `home-${vp.name}.png`), fullPage: false });
-      await page.goto(`${baseUrl}/about`, { waitUntil: 'networkidle' });
+      await page.goto(`${baseUrl}/about?skip_loader=1`, { waitUntil: 'domcontentloaded' });
+      await page.waitForTimeout(400);
       await page.screenshot({ path: path.join(evidenceDir, `about-${vp.name}.png`), fullPage: false });
     }
 

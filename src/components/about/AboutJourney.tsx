@@ -134,7 +134,7 @@ export function AboutJourney() {
           <div className="lg:col-span-8 relative aspect-[16/10] sm:aspect-[16/9] rounded-[24px] overflow-hidden card-glass-elevated border border-ink/10 shadow-soft-md">
             <ResponsiveCardImage
               src="/images/pages/P09-about-hero-4x5.webp"
-              alt="Lead Edge Studio Headquarters"
+              alt="Lead Edge Marketers Headquarters"
               priority
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
             />

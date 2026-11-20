@@ -19,7 +19,7 @@ const SERVICES_DATA: ServiceCardData[] = [
   {
     id: 'digital-marketing',
     title: 'Data-Driven Digital Marketing',
-    description: 'Shine Bright Online, Captivate Audiences, and Convert Clicks into Loyal Fans Fast.',
+    description: 'Full-funnel digital campaigns combining organic search, paid media, and analytics to acquire high-value customers and lower acquisition costs.',
     href: '/contact',
     badge: 'FULL FUNNEL',
     visualType: 'growth',
@@ -28,7 +28,7 @@ const SERVICES_DATA: ServiceCardData[] = [
   {
     id: 'social-media',
     title: 'High-Impact Social Media Marketing',
-    description: 'Turn Heads, Ignite Engagement, Build Buzz, and Make Your Brand Unforgettable.',
+    description: 'Strategic content creation, reels production, and daily audience engagement across Instagram, Facebook & LinkedIn to build brand authority and repeat buyers.',
     href: '/services/social-media',
     badge: 'COMMUNITY',
     visualType: 'social',
@@ -37,7 +37,7 @@ const SERVICES_DATA: ServiceCardData[] = [
   {
     id: 'web-development',
     title: 'Revenue-Converting Web Development',
-    description: 'Turn Browsers into Buyers with Proven Strategies That Drive Sales and Growth.',
+    description: 'Custom, fast-loading websites built with Next.js and optimized for mobile screens, instant load speeds, and maximum checkout conversions.',
     href: '/services/web-development',
     badge: 'SUB-SECOND',
     visualType: 'ecommerce',
@@ -46,7 +46,7 @@ const SERVICES_DATA: ServiceCardData[] = [
   {
     id: 'ppc-advertising',
     title: 'Performance-Focused Paid Advertising',
-    description: 'Targeted Facebook, Instagram & Google ads engineered to drive instant leads and max ROAS.',
+    description: 'High-ROI Google, Meta & Instagram ad campaigns with high-converting creative testing and precise targeting to maximize your return on ad spend.',
     href: '/services/ppc',
     badge: 'SCALE',
     visualType: 'ads',
@@ -55,7 +55,7 @@ const SERVICES_DATA: ServiceCardData[] = [
   {
     id: 'video-photo',
     title: 'Video Editing & Photo Creation',
-    description: 'High-impact video and photography crafted to engage audiences and build brand trust.',
+    description: 'Cinematic commercial video production and professional product photography engineered to grab attention, build trust, and increase sales.',
     href: '/services/video-photo',
     badge: 'CINEMATIC',
     visualType: 'video',
@@ -64,7 +64,7 @@ const SERVICES_DATA: ServiceCardData[] = [
   {
     id: 'seo-search',
     title: 'Local SEO That Wins the Map Pack',
-    description: 'Be the answer when buyers search. Dominate search rankings and capture high-intent organic traffic.',
+    description: 'Google Map Pack optimization, local keyword rankings, and technical SEO architecture to put your business at the top when local customers search.',
     href: '/services/seo',
     badge: 'ORGANIC',
     visualType: 'seo',

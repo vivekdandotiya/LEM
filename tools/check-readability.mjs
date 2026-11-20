@@ -43,9 +43,7 @@ function getContrast(l1, l2) {
 
 async function run() {
   console.log('=== Running Automated Readability & Contrast Gate ===');
-  const browser = await chromium.launch({ headless: true, channel: 'chrome' }).catch(() =>
-    chromium.launch({ headless: true, channel: 'msedge' })
-  );
+  const browser = await chromium.launch({ headless: true, channel: 'msedge' });
 
   const reportRows = [];
   let totalViolations = 0;
@@ -59,7 +57,7 @@ async function run() {
       const context = await browser.newContext({ viewport: { width, height } });
       const page = await context.newPage();
 
-      const url = `http://localhost:3000${route}?skip_loader=1`;
+      const url = `http://127.0.0.1:3000${route}?skip_loader=1`;
       await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 }).catch((e) => console.error(`Nav error: ${e.message}`));
       await page.waitForTimeout(800);
 
@@ -140,7 +138,7 @@ async function run() {
   console.log('=== Checking Text Contrast Over Video Media across Loop ===');
   const videoContext = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const videoPage = await videoContext.newPage();
-  await videoPage.goto('http://localhost:3000/about?skip_loader=1', { waitUntil: 'domcontentloaded', timeout: 15000 });
+  await videoPage.goto('http://127.0.0.1:3000/about?skip_loader=1', { waitUntil: 'domcontentloaded', timeout: 15000 });
   await videoPage.waitForTimeout(1000);
 
   const videoHandle = await videoPage.$('video');
@@ -230,9 +228,7 @@ async function run() {
 
   // 4. Capture "After" Screenshots for F1 Evidence
   console.log('=== Capturing After Screenshots for F1 Evidence ===');
-  const afterBrowser = await chromium.launch({ headless: true, channel: 'chrome' }).catch(() =>
-    chromium.launch({ headless: true, channel: 'msedge' })
-  );
+  const afterBrowser = await chromium.launch({ headless: true, channel: 'msedge' });
 
   for (const width of [1440, 390]) {
     const height = width === 1440 ? 900 : 844;
@@ -240,13 +236,13 @@ async function run() {
     const p = await ctx.newPage();
 
     // About Hero
-    await p.goto('http://localhost:3000/about?skip_loader=1', { waitUntil: 'domcontentloaded', timeout: 15000 });
+    await p.goto('http://127.0.0.1:3000/about?skip_loader=1', { waitUntil: 'domcontentloaded', timeout: 15000 });
     await p.waitForTimeout(500);
     const aboutHero = p.locator('[data-surface="media"], main > section').first();
     await aboutHero.screenshot({ path: path.join(outDir, `after-about-hero-${width}.png`) });
 
     // Reviews Section (Testimonials)
-    await p.goto('http://localhost:3000/?skip_loader=1', { waitUntil: 'domcontentloaded', timeout: 15000 });
+    await p.goto('http://127.0.0.1:3000/?skip_loader=1', { waitUntil: 'domcontentloaded', timeout: 15000 });
     await p.waitForTimeout(500);
     const reviewsSec = p.locator('#testimonials-section').first();
     await reviewsSec.scrollIntoViewIfNeeded();
@@ -254,7 +250,7 @@ async function run() {
     await reviewsSec.screenshot({ path: path.join(outDir, `after-reviews-${width}.png`) });
 
     // SEO FAQ Section
-    await p.goto('http://localhost:3000/services/seo?skip_loader=1', { waitUntil: 'domcontentloaded', timeout: 15000 });
+    await p.goto('http://127.0.0.1:3000/services/seo?skip_loader=1', { waitUntil: 'domcontentloaded', timeout: 15000 });
     await p.waitForTimeout(500);
     const faqSec = p.locator('#faq-section').first();
     await faqSec.scrollIntoViewIfNeeded();

@@ -13,6 +13,14 @@ export function BrandTrustBar() {
   return (
     <section className="py-16 sm:py-20 bg-[#F6F3EC] border-b border-ink/10 select-none overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+        {/* Eyebrow: 04 / BRAND PARTNERS */}
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <span className="w-2 h-2 rounded-full bg-[#B08D57]" aria-hidden="true" />
+          <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
+            04 / BRAND PARTNERS
+          </span>
+        </div>
+
         {/* Headline matching user reference image */}
         <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-extrabold text-ink tracking-tight max-w-3xl mx-auto mb-12 sm:mb-16 leading-tight">
           Proudly Partnering With Brands That Demand Results, Not Just Deliverables.

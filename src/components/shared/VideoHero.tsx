@@ -4,13 +4,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 export interface VideoHeroProps {
-  videoBase: string; // e.g. "/videos/about/about-hero"
+  videoBase?: string; // e.g. "/videos/about/about-hero"
   posterSrc: string; // e.g. "/images/about/about-hero.webp"
   posterAlt: string;
   className?: string;
   overlayClass?: string;
   children?: React.ReactNode;
   heightClass?: string;
+  staticOnly?: boolean; // When true, displays rock-solid pristine photo without video zoompan jitter
 }
 
 export function VideoHero({
@@ -21,6 +22,7 @@ export function VideoHero({
   overlayClass = 'bg-charcoal/60',
   children,
   heightClass = 'min-h-[85svh] lg:min-h-svh',
+  staticOnly = false,
 }: VideoHeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -31,6 +33,8 @@ export function VideoHero({
 
   // 1. Connection & reduced-motion inspection + delayed source attachment
   useEffect(() => {
+    if (staticOnly || !videoBase) return;
+
     // Check reduced motion
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (motionQuery.matches) {
@@ -135,7 +139,7 @@ export function VideoHero({
       data-surface="media"
       className={`relative w-full ${heightClass} flex items-center justify-center overflow-hidden bg-charcoal ${className}`}
     >
-      {/* High Priority Static Poster Image (Fast LCP) */}
+      {/* High Priority Static Poster Image (Fast LCP & Rock-Solid Stability) */}
       <Image
         src={posterSrc}
         alt={posterAlt}
@@ -143,12 +147,12 @@ export function VideoHero({
         priority
         sizes="100vw"
         className={`object-cover object-center transition-opacity duration-700 ease-out ${
-          videoPlaying && !hasError ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          !staticOnly && videoPlaying && !hasError ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
       />
 
-      {/* Looping Ambient Video: Poster-first, lazy sources, watchdog safety */}
-      {shouldAttachVideo && !hasError && (
+      {/* Looping Ambient Video: Poster-first, lazy sources, watchdog safety (skipped in staticOnly mode) */}
+      {!staticOnly && shouldAttachVideo && !hasError && videoBase && (
         <video
           ref={videoRef}
           muted

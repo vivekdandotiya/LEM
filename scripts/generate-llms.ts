@@ -5,8 +5,8 @@ import { getBaseUrl } from '../src/data/routes';
 export function generateLlmsText(): { summary: string; full: string } {
   const baseUrl = getBaseUrl();
 
-  const summary = `# Lead Edge Marketing
-> Lead Edge Marketing is a premier digital growth studio delivering strategic SEO, PPC advertising, social media marketing, high-speed web development, and video & photography production. We focus on measurable revenue growth and business momentum rather than vanity metrics.
+  const summary = `# Lead Edge Marketers
+> Lead Edge Marketers is a premier digital growth studio delivering strategic SEO, PPC advertising, social media marketing, high-speed web development, and video & photography production. We focus on measurable revenue growth and business momentum rather than vanity metrics.
 
 ## Core Growth Disciplines
 - [Search Engine Optimization (SEO)](${baseUrl}/services/seo): Dominate search rankings and capture high-intent organic traffic with technical audits, topical entity maps, and organic growth architecture.
@@ -17,7 +17,7 @@ export function generateLlmsText(): { summary: string; full: string } {
 
 ## Key Information
 - [About Us](${baseUrl}/about): Our background, methodology, and philosophy of integrating organic search, paid media, and engineering.
-- [Services Hub](${baseUrl}/services): Overview of our five integrated digital growth disciplines.
+- [Services Hub](${baseUrl}/services): Overview of our six integrated digital growth disciplines.
 - [Case Studies & Insights](${baseUrl}/blog): Technical breakdowns, algorithmic shifts, and performance frameworks.
 - [Contact & Consultation](${baseUrl}/contact): Direct consultation with our team. Inbound briefs reviewed within 24 business hours.
 
@@ -30,12 +30,12 @@ export function generateLlmsText(): { summary: string; full: string } {
 - [Comprehensive Overview & Full FAQs](${baseUrl}/llms-full.txt): Complete details including service deliverables, process roadmaps, and full FAQs.
 `;
 
-  const full = `# Lead Edge Marketing — Complete Overview
+  const full = `# Lead Edge Marketers — Complete Overview
 
-> Lead Edge Marketing is a digital growth studio delivering strategic SEO, PPC advertising, social media marketing, high-speed web development, and video & photo production. We unite organic search, performance media, and custom web architecture to scale business revenue.
+> Lead Edge Marketers is a digital growth studio delivering strategic SEO, PPC advertising, social media marketing, high-speed web development, and video & photo production. We unite organic search, performance media, and custom web architecture to scale business revenue.
 
 ## 1. Agency Overview
-- **Name:** Lead Edge Marketing
+- **Name:** Lead Edge Marketers
 - **Headquarters:** 100 Bishopsgate, London EC2N 4AG
 - **Website:** ${baseUrl}
 - **Contact:** hello@leadedge.agency | +44 (0) 20 7946 0921
@@ -116,7 +116,7 @@ export function generateLlmsText(): { summary: string; full: string } {
 6. **How quickly can I expect to see results?**
    Paid advertising can drive leads almost immediately, while organic SEO and content strategies typically show noticeable growth and rankings within 3 to 6 months.
 
-7. **What makes Lead Edge Marketing different from other agencies?**
+7. **What makes Lead Edge Marketers different from other agencies?**
    We focus purely on measurable revenue growth and momentum rather than vanity metrics, offering dedicated support, transparent reporting, and proven white-hat strategies.
 
 ### SEO FAQs
@@ -130,7 +130,7 @@ export function generateLlmsText(): { summary: string; full: string } {
    We track transparent, revenue-driving KPIs including organic keyword rankings, monthly organic traffic growth, domain authority, click-through rates (CTR), conversion rates, and total leads generated. You receive detailed monthly reports demonstrating clear campaign ROI.
 
 4. **What is the difference between an SEO agency and an SEO consultant?**
-   An SEO consultant primarily provides strategic advice, site audits, and recommendations for your internal team to execute. Lead Edge Marketing operates as a full-service SEO agency, handling strategy, technical fixes, content creation, and ongoing optimization from start to finish.
+   An SEO consultant primarily provides strategic advice, site audits, and recommendations for your internal team to execute. Lead Edge Marketers operates as a full-service SEO agency, handling strategy, technical fixes, content creation, and ongoing optimization from start to finish.
 
 ---
 

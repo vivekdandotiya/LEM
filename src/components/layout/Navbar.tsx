@@ -15,6 +15,7 @@ import {
   Code,
   Film,
   ArrowRight,
+  TrendingUp,
 } from 'lucide-react';
 
 interface ServiceDropdownItem {
@@ -25,6 +26,12 @@ interface ServiceDropdownItem {
 }
 
 const SERVICES_MENU_ITEMS: ServiceDropdownItem[] = [
+  {
+    title: 'Data-Driven Digital Marketing',
+    cue: 'Full-Funnel Growth',
+    href: '/services',
+    icon: TrendingUp,
+  },
   {
     title: 'Search Engine Optimization',
     cue: 'Discoverability',
@@ -211,12 +218,12 @@ export function Navbar() {
           <DripLink
             href="/"
             className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-full pr-2 select-none"
-            aria-label="Lead Edge Marketing - Home"
+            aria-label="Lead Edge Marketers - Home"
           >
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/logo/lead-edge-logo.png"
-                alt="Lead Edge Logo"
+                alt="Lead Edge Marketers Logo"
                 fill
                 priority
                 sizes="40px"
@@ -227,8 +234,8 @@ export function Navbar() {
               <span className="font-display font-extrabold tracking-tight text-sm sm:text-base leading-none">
                 LEAD EDGE
               </span>
-              <span className="text-xs font-mono uppercase tracking-widest opacity-60 mt-0.5 leading-none">
-                MARKETING
+              <span className="text-xs font-mono uppercase tracking-widest opacity-70 mt-0.5 leading-none font-semibold">
+                MARKETERS
               </span>
             </div>
           </DripLink>
@@ -292,7 +299,7 @@ export function Navbar() {
                     >
                       <div className="px-3 pt-2 pb-1.5 border-b border-current/10 flex items-center justify-between">
                         <span className="text-xs font-mono uppercase tracking-widest text-stone font-semibold">
-                          5 Core Disciplines
+                          6 Core Disciplines
                         </span>
                         <DripLink
                           href="/services"

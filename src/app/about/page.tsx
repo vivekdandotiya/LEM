@@ -9,7 +9,7 @@ import { UI_STRINGS } from '@/data/ui-strings';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us — Lead Edge Marketing',
+  title: 'About Us — Lead Edge Marketers',
   description:
     'We build practical digital growth where search, creative media, and web development work together.',
   alternates: {
@@ -20,13 +20,13 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="overflow-hidden bg-[#F6F3EC] text-ink select-none">
-      {/* 1. Full-Bleed Office Video Hero (100svh) */}
+      {/* 1. Full-Bleed Office Photo Hero (100svh, Rock-Solid Stable) */}
       <VideoHero
-        videoBase="/videos/about/about-hero"
         posterSrc="/images/about/about-hero.webp"
-        posterAlt="Lead Edge Agency Studio in natural daylight"
+        posterAlt="Lead Edge Marketers Studio in natural daylight"
         heightClass="min-h-[100svh]"
         overlayClass="bg-charcoal/65"
+        staticOnly={true}
       >
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#101214]/90 backdrop-blur-md border border-[#B08D57]/40 text-xs font-mono uppercase tracking-widest text-[#D9C29A] mb-6 font-semibold shadow-sm">
@@ -80,7 +80,7 @@ export default function AboutPage() {
 
               <div className="pt-8 flex items-center gap-6">
                 <div>
-                  <div className="font-display font-extrabold text-2xl text-ink">5</div>
+                  <div className="font-display font-extrabold text-2xl text-ink">6</div>
                   <div className="font-mono text-xs text-stone uppercase tracking-wider">Services</div>
                 </div>
                 <div className="w-px h-10 bg-ink/10" />

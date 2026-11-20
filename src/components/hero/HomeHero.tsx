@@ -107,7 +107,7 @@ export function HomeHero() {
   }, []);
 
   const scrollToNext = () => {
-    const nextSec = document.getElementById('global-clocks') || document.getElementById('services-grid') || document.getElementById('what-we-do');
+    const nextSec = document.getElementById('services-grid') || document.getElementById('what-we-do');
     if (nextSec) {
       nextSec.scrollIntoView({ behavior: 'smooth' });
     }
@@ -156,12 +156,12 @@ export function HomeHero() {
           onMouseLeave={() => setIsHovered(false)}
           onFocus={() => setIsHovered(true)}
           onBlur={() => setIsHovered(false)}
-          className="relative max-w-5xl mb-6"
+          className="relative max-w-4xl mx-auto mb-6 px-2"
         >
           <h1
             ref={headlineRef}
             aria-live="polite"
-            className="text-[clamp(2.75rem,8.5vw,7.8rem)] font-display font-extrabold uppercase leading-[0.88] tracking-[-0.04em] text-white"
+            className="text-[clamp(1.95rem,5.2vw,4.25rem)] font-display font-extrabold uppercase leading-[1.08] sm:leading-[0.98] tracking-tight sm:tracking-[-0.03em] text-white"
           >
             <InkDripText text={currentHeadline.prefix} color="#F6F3EC" maxDrips={1} />{' '}
             <span className="relative inline-block font-serif lowercase italic text-[#D9C29A] font-normal tracking-normal mx-1">
@@ -170,14 +170,14 @@ export function HomeHero() {
               <svg
                 viewBox="0 0 280 24"
                 fill="none"
-                className="absolute -bottom-3 left-0 w-full text-[#B08D57] pointer-events-none"
+                className="absolute -bottom-2.5 left-0 w-full text-[#B08D57] pointer-events-none"
                 aria-hidden="true"
               >
                 <path
                   ref={swashRef}
                   d="M4 14C60 6 160 4 274 18"
                   stroke="currentColor"
-                  strokeWidth="4"
+                  strokeWidth="3.5"
                   strokeLinecap="round"
                 />
               </svg>
@@ -199,8 +199,8 @@ export function HomeHero() {
           </div>
         </div>
 
-        {/* Support line */}
-        <p className="font-sans text-base sm:text-xl text-stone max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+        {/* Support line with high contrast */}
+        <p className="font-sans text-base sm:text-lg md:text-xl text-[#F6F3EC] max-w-2xl mx-auto mb-10 leading-relaxed font-normal drop-shadow-sm opacity-95">
           {HERO_DATA.subheadline}
         </p>
 
@@ -239,7 +239,7 @@ export function HomeHero() {
           <button
             onClick={scrollToNext}
             className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-charcoal/90 hover:bg-charcoal border border-white/20 text-gold transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-            aria-label="Scroll to global clocks and services"
+            aria-label="Scroll to services"
           >
             <span className="text-xs font-mono font-bold tracking-wider uppercase text-white/90 group-hover:text-gold transition-colors">
               Scroll

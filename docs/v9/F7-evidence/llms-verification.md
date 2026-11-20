@@ -12,14 +12,14 @@
 ### `/llms.txt`
 - **Status:** HTTP 200 OK
 - **Content-Type:** `text/plain; charset=UTF-8`
-- **Size:** 2231 bytes
+- **Size:** 2230 bytes
 - **Header:** `# Lead Edge Marketing`
 - **Summary Blockquote:** Present
 - **Linked Routes:** All 10 links return HTTP 200 OK.
 
 ```markdown
-# Lead Edge Marketing
-> Lead Edge Marketing is a premier digital growth studio delivering strategic SEO, PPC advertising, social media marketing, high-speed web development, and video & photography production. We focus on measurable revenue growth and business momentum rather than vanity metrics.
+# Lead Edge Marketers
+> Lead Edge Marketers is a premier digital growth studio delivering strategic SEO, PPC advertising, social media marketing, high-speed web development, and video & photography production. We focus on measurable revenue growth and business momentum rather than vanity metrics.
 
 ## Core Growth Disciplines
 - [Search Engine Optimization (SEO)](https://leadedge.agency/services/seo): Dominate search rankings and capture high-intent organic traffic with technical audits, topical entity maps, and organic growth architecture.
@@ -30,7 +30,7 @@
 
 ## Key Information
 - [About Us](https://leadedge.agency/about): Our background, methodology, and philosophy of integrating organic search, paid media, and engineering.
-- [Services Hub](https://leadedge.agency/services): Overview of our five integrated digital growth disciplines.
+- [Services Hub](https://leadedge.agency/services): Overview of our six integrated digital growth disciplines.
 - [Case Studies & Insights](https://leadedge.agency/blog): Technical breakdowns, algorithmic shifts, and performance frameworks.
 - [Contact & Consultation](https://leadedge.agency/contact): Direct consultation with our team. Inbound briefs reviewed within 24 business hours.
 

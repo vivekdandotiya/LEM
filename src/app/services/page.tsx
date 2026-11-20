@@ -7,9 +7,9 @@ import { Testimonials } from '@/components/shared/Testimonials';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Services — Five Integrated Growth Disciplines',
+  title: 'Services — Six Integrated Growth Disciplines',
   description:
-    'Explore our 5 core disciplines: SEO, PPC Advertising, Social Media Marketing, Web Development, and Video & Photo Production.',
+    'Explore our 6 core disciplines: SEO, PPC Advertising, Social Media Marketing, Web Development, Video & Photo Production, and Full-Funnel Digital Growth.',
   alternates: {
     canonical: '/services',
   },
@@ -124,11 +124,11 @@ export default function ServicesPage() {
             <div className="lg:col-span-6 flex flex-col justify-center">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-ink/10 text-xs font-mono uppercase tracking-widest text-stone mb-6 w-fit shadow-2xs">
                 <Sparkles className="w-3.5 h-3.5 text-gold" />
-                <span>Our Five Disciplines</span>
+                <span>Our Six Disciplines</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-ink tracking-tight leading-[0.96] mb-6">
-                Five core services.{' '}
+                Six core services.{' '}
                 <span className="font-serif italic font-normal text-gold-deep">
                   Zero fragmentation.
                 </span>

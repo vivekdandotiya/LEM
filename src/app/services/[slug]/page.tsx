@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       canonical: `/services/${slug}`,
     },
     openGraph: {
-      title: `${service.title} | Lead Edge Marketing`,
+      title: `${service.title} | Lead Edge Marketers`,
       description: service.shortDescription,
     },
   };

@@ -119,28 +119,28 @@ export function Footer() {
           {/* Left Brand & Newsletter Column (Spans 4 columns) */}
           <div className="lg:col-span-4 flex flex-col justify-between max-w-sm">
             <div>
-              {/* Brand Logo & Title: . /leadedge.studio */}
-              <div className="flex items-center gap-2.5 mb-6 group cursor-pointer" onClick={scrollToTop}>
-                <span className="w-2.5 h-2.5 rounded-full bg-[#2EE6A8] animate-pulse" aria-hidden="true" />
-                <span className="text-2xl sm:text-3xl font-display font-extrabold tracking-tight text-white flex items-center">
-                  <span className="text-white/70 mr-1.5 font-mono">/</span>leadedge<span className="text-white/80">.agency</span>
-                </span>
-              </div>
-
-              {/* Agency Emblem / Avatar Circle */}
-              <div className="w-10 h-10 rounded-full bg-[#18191C] border border-white/15 p-1.5 mb-6 flex items-center justify-center shadow-inner">
-                <div className="relative w-full h-full">
+              {/* Brand Logo & Title: Consistent with Header */}
+              <div className="flex items-center gap-3.5 mb-6 group cursor-pointer" onClick={scrollToTop}>
+                <div className="relative w-11 h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
                   <Image
                     src="/logo/lead-edge-logo.png"
-                    alt="Lead Edge Logo"
+                    alt="Lead Edge Marketers Logo"
                     fill
-                    sizes="40px"
+                    sizes="44px"
                     className="object-contain"
                   />
                 </div>
+                <div className="flex flex-col">
+                  <span className="font-display font-extrabold tracking-tight text-xl sm:text-2xl leading-none text-white">
+                    LEAD EDGE
+                  </span>
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#D9C29A] mt-1 leading-none font-semibold">
+                    MARKETERS
+                  </span>
+                </div>
               </div>
 
-              {/* Manifesto Copy Verbatim from reference style */}
+              {/* Manifesto Copy */}
               <p className="text-sm font-sans text-[#E7E5E4] leading-relaxed mb-8">
                 Every two weeks, we take you behind the scenes. Around 1,000 words on search architecture, creative media performance, and what we&apos;re learning through our work.
               </p>
@@ -164,10 +164,10 @@ export function Footer() {
                 <button
                   type="submit"
                   aria-label="Submit newsletter subscription"
-                  className="pl-3 text-white hover:text-[#2EE6A8] transition-colors group flex items-center"
+                  className="pl-3 text-white hover:text-[#B08D57] transition-colors group flex items-center"
                 >
                   {subscribed ? (
-                    <Check className="w-4 h-4 text-[#2EE6A8]" />
+                    <Check className="w-4 h-4 text-[#B08D57]" />
                   ) : (
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                   )}
@@ -177,10 +177,10 @@ export function Footer() {
               {/* Disclaimer */}
               <p className="text-xs font-sans text-[#D6D3D1] mt-3 leading-relaxed">
                 {subscribed ? (
-                  <span className="text-[#2EE6A8] font-mono">✓ You are subscribed to /leadedge dispatches.</span>
+                  <span className="text-[#D9C29A] font-mono">✓ You are subscribed to Lead Edge Marketers dispatches.</span>
                 ) : (
                   <>
-                    We&apos;ll only email you about /leadedge. Read our{' '}
+                    We&apos;ll only email you about Lead Edge Marketers. Read our{' '}
                     <Link href="/privacy" className="underline hover:text-white transition-colors">
                       Privacy Policy
                     </Link>
@@ -329,7 +329,7 @@ export function Footer() {
               Terms of Engagement
             </Link>
             <span>·</span>
-            <span className="text-[#D9C29A]">Lead Edge Studio UK</span>
+            <span className="text-[#D9C29A]">Lead Edge Marketers</span>
           </div>
         </div>
       </div>

@@ -265,7 +265,7 @@ export const media = {
     heroVideo: makeVideoAsset(
       '/videos/about/about-hero',
       '/videos/about/about-hero-poster',
-      'Lead Edge Agency Studio',
+      'Lead Edge Marketers Studio',
       '16:9',
       10
     ),

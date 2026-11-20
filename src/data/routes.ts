@@ -51,7 +51,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 1.0,
     changeFrequency: 'weekly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Lead Edge Marketing — Digital Growth Studio',
+    title: 'Lead Edge Marketers — Digital Growth Studio',
   },
   {
     path: '/about',
@@ -59,7 +59,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.8,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'About Us — Lead Edge Marketing',
+    title: 'About Us — Lead Edge Marketers',
   },
   {
     path: '/services',
@@ -67,7 +67,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.9,
     changeFrequency: 'weekly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Services & Growth Disciplines — Lead Edge Marketing',
+    title: 'Services & Growth Disciplines — Lead Edge Marketers',
   },
   {
     path: '/contact',
@@ -75,7 +75,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.8,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Contact Our Growth Studio — Lead Edge Marketing',
+    title: 'Contact Our Growth Studio — Lead Edge Marketers',
   },
 
   // Service Detail Pages
@@ -85,7 +85,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.85,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Search Engine Optimization (SEO) — Lead Edge Marketing',
+    title: 'Search Engine Optimization (SEO) — Lead Edge Marketers',
   },
   {
     path: '/services/ppc',
@@ -93,7 +93,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.85,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'PPC Services & Paid Search — Lead Edge Marketing',
+    title: 'PPC Services & Paid Search — Lead Edge Marketers',
   },
   {
     path: '/services/social-media',
@@ -101,7 +101,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.85,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Social Media Marketing — Lead Edge Marketing',
+    title: 'Social Media Marketing — Lead Edge Marketers',
   },
   {
     path: '/services/web-development',
@@ -109,7 +109,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.85,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Custom Web Development — Lead Edge Marketing',
+    title: 'Custom Web Development — Lead Edge Marketers',
   },
   {
     path: '/services/video-photo',
@@ -117,7 +117,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.85,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Video & Photography Production — Lead Edge Marketing',
+    title: 'Video & Photography Production — Lead Edge Marketers',
   },
 
   // Blog Hub & Articles
@@ -127,7 +127,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.8,
     changeFrequency: 'weekly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Perspectives & Industry Insights — Lead Edge Marketing',
+    title: 'Perspectives & Industry Insights — Lead Edge Marketers',
   },
   {
     path: '/blog/modern-organic-search-architecture',
@@ -135,7 +135,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.7,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Modern Organic Search Architecture — Lead Edge Marketing',
+    title: 'Modern Organic Search Architecture — Lead Edge Marketers',
   },
   {
     path: '/blog/meta-creative-diversity-strategy',
@@ -143,7 +143,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.7,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Meta Creative Diversity Strategy — Lead Edge Marketing',
+    title: 'Meta Creative Diversity Strategy — Lead Edge Marketers',
   },
   {
     path: '/blog/editorial-social-brand-equity',
@@ -151,7 +151,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.7,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Editorial Social & Brand Equity — Lead Edge Marketing',
+    title: 'Editorial Social & Brand Equity — Lead Edge Marketers',
   },
   {
     path: '/blog/engineering-performance-first-web-experiences',
@@ -159,7 +159,7 @@ export const APP_ROUTES: AppRoute[] = [
     priority: 0.7,
     changeFrequency: 'monthly',
     lastModified: LAST_MODIFIED_DATE,
-    title: 'Engineering Performance-First Web Experiences — Lead Edge Marketing',
+    title: 'Engineering Performance-First Web Experiences — Lead Edge Marketers',
   },
 
   // Non-Indexable Internal Endpoints

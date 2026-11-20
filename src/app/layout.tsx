@@ -44,7 +44,7 @@ export const metadata: Metadata = {
         url: "/logo/lead-edge-logo.png",
         width: 1024,
         height: 1024,
-        alt: "Lead Edge Marketing Emblem",
+        alt: "Lead Edge Marketers Emblem",
       },
     ],
   },

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "/services/ppc",
   },
   openGraph: {
-    title: "PPC Services | Lead Edge Marketing",
+    title: "PPC Services | Lead Edge Marketers",
     description:
       "Targeted Facebook, Instagram, and search ads engineered to drive instant leads and max ROAS.",
   },

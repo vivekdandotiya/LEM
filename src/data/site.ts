@@ -6,7 +6,7 @@ export interface ClientConfig {
   enableMarquee: boolean;
 }
 
-export const BRAND_NAME = "Lead Edge Marketing";
+export const BRAND_NAME = "Lead Edge Marketers";
 export const BRAND_NAME_DOC = "Lead Edge Marketers";
 
 export const clientConfig: ClientConfig = {
@@ -22,7 +22,7 @@ export const siteConfig = {
   shortName: "Lead Edge",
   tagline: "We Don't Just Rank Websites. We Scale Revenue.",
   description:
-    "Lead Edge Marketing is a premier digital growth studio delivering strategic SEO, PPC Services, social media marketing, and high-speed web development.",
+    "Lead Edge Marketers is a premier digital growth studio delivering strategic SEO, PPC Services, social media marketing, and high-speed web development.",
   url: "https://leadedge.agency",
   ogImage: "/logo/lead-edge-logo.png",
   contact: {
