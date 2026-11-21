@@ -96,7 +96,7 @@ export function HomeHero() {
         {/* Short, Punchy, High-Contrast Headline */}
         <div className="relative max-w-4xl mx-auto mb-6 px-2">
           <h1
-            className="text-[clamp(2.35rem,6.8vw,4.75rem)] font-display font-extrabold uppercase leading-[1.04] sm:leading-[0.98] tracking-tight sm:tracking-[-0.03em] text-[#F6F3EC]"
+            className="text-[clamp(2.35rem,6.8vw,4.75rem)] font-display font-extrabold uppercase leading-[1.04] sm:leading-[0.98] tracking-tight sm:tracking-[-0.03em] text-[#F6F3EC] drop-shadow-[0_4px_20px_rgba(0,0,0,0.85)]"
           >
             WE SCALE{' '}
             <span className="relative inline-block font-serif lowercase italic text-[#D9C29A] font-normal tracking-normal mx-1">
@@ -121,7 +121,7 @@ export function HomeHero() {
         </div>
 
         {/* Short, Concise, Crystal-Clear Subheadline */}
-        <p className="font-sans text-base sm:text-lg md:text-xl text-[#F6F3EC] max-w-xl mx-auto mb-10 leading-relaxed font-normal opacity-95">
+        <p className="font-sans text-base sm:text-lg md:text-xl text-[#F6F3EC] max-w-xl mx-auto mb-10 leading-relaxed font-normal opacity-95 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
           Full-funnel digital marketing engineered to turn traffic into enterprise revenue.
         </p>
 

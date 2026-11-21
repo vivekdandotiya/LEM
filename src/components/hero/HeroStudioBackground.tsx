@@ -1,47 +1,41 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 
 export function HeroStudioBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const orb1Ref = useRef<HTMLDivElement>(null);
-  const orb2Ref = useRef<HTMLDivElement>(null);
-  const orb3Ref = useRef<HTMLDivElement>(null);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const orbRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
-    // Slow, organic floating motion for luxury ambient light orbs
+    // Slow, subtle, cinematic floating movement for the background image (moving slowly slowly)
     const ctx = gsap.context(() => {
-      if (orb1Ref.current) {
-        gsap.to(orb1Ref.current, {
-          x: '+=40',
-          y: '-=30',
-          duration: 9,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-        });
+      if (imageWrapperRef.current) {
+        gsap.fromTo(
+          imageWrapperRef.current,
+          { scale: 1.04, x: -10, y: -8 },
+          {
+            scale: 1.12,
+            x: 10,
+            y: 8,
+            duration: 18,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+          }
+        );
       }
 
-      if (orb2Ref.current) {
-        gsap.to(orb2Ref.current, {
-          x: '-=50',
-          y: '+=35',
-          duration: 12,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-        });
-      }
-
-      if (orb3Ref.current) {
-        gsap.to(orb3Ref.current, {
-          scale: 1.15,
-          opacity: 0.22,
-          duration: 8,
+      if (orbRef.current) {
+        gsap.to(orbRef.current, {
+          opacity: 0.35,
+          scale: 1.1,
+          duration: 7,
           repeat: -1,
           yoyo: true,
           ease: 'sine.inOut',
@@ -55,51 +49,48 @@ export function HeroStudioBackground() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 pointer-events-none overflow-hidden select-none bg-[#08090C]"
+      className="absolute inset-0 pointer-events-none overflow-hidden select-none bg-[#07080A]"
       aria-hidden="true"
     >
-      {/* 1. Subtle Precision Engineering Grid Lines */}
+      {/* 1. Cinematic Background Image (Slow, Smooth Pan & Drift) */}
       <div
-        className="absolute inset-0 opacity-[0.14]"
+        ref={imageWrapperRef}
+        className="absolute inset-[-40px] will-change-transform"
+      >
+        <Image
+          src="/images/home/hero-2.webp"
+          alt="Lead Edge Corporate Architectural Headquarters"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-70 brightness-95 contrast-110"
+        />
+      </div>
+
+      {/* 2. Precision Technical Grid Lines */}
+      <div
+        className="absolute inset-0 opacity-[0.16]"
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)
           `,
-          backgroundSize: '80px 80px',
+          backgroundSize: '72px 72px',
         }}
       />
 
-      {/* 2. Top-Center Ambient Champagne Gold Glow */}
+      {/* 3. Ambient Warm Gold & Amber Studio Lighting Orb */}
       <div
-        ref={orb1Ref}
-        className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] h-[500px] rounded-full blur-[120px] opacity-25"
+        ref={orbRef}
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[450px] rounded-full blur-[130px] opacity-25"
         style={{
           background: 'radial-gradient(ellipse at center, rgba(200, 169, 126, 0.45) 0%, rgba(176, 141, 87, 0.18) 50%, transparent 80%)',
         }}
       />
 
-      {/* 3. Bottom-Left Soft Amber Glow */}
-      <div
-        ref={orb2Ref}
-        className="absolute -bottom-[15%] -left-[10%] w-[500px] sm:w-[650px] h-[450px] rounded-full blur-[140px] opacity-20"
-        style={{
-          background: 'radial-gradient(circle at center, rgba(176, 141, 87, 0.35) 0%, rgba(138, 107, 60, 0.1) 60%, transparent 80%)',
-        }}
-      />
-
-      {/* 4. Center Growth Radiance */}
-      <div
-        ref={orb3Ref}
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[100px] opacity-15"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(217, 194, 154, 0.3) 0%, transparent 70%)',
-        }}
-      />
-
-      {/* 5. Sleek Architectural Geometric Vector Curves (Subtle Growth Trajectory) */}
+      {/* 4. Subtle Architectural Geometric Vector Curves */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-[0.09]"
+        className="absolute inset-0 w-full h-full opacity-[0.12]"
         viewBox="0 0 1440 900"
         fill="none"
         preserveAspectRatio="xMidYMid slice"
@@ -111,23 +102,18 @@ export function HeroStudioBackground() {
           strokeWidth="1.5"
           strokeDasharray="4 4"
         />
-        <path
-          d="M-100 780 C 350 720, 700 520, 1100 340 C 1300 250, 1450 170, 1600 120"
-          stroke="#FFFFFF"
-          strokeWidth="1"
-          strokeOpacity="0.4"
-        />
-        {/* Subtle grid coordinate points */}
         <circle cx="600" cy="480" r="3" fill="#C8A97E" />
         <circle cx="1000" cy="320" r="4" fill="#C8A97E" />
-        <circle cx="1100" cy="340" r="3" fill="#FFFFFF" />
       </svg>
 
-      {/* 6. Vignette overlay for focused center legibility */}
+      {/* 5. Balanced Cinematic Dark Scrim Over Image for 100% Crisp Text Visibility */}
       <div
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 75% 65% at 50% 50%, transparent 40%, rgba(8, 9, 12, 0.75) 100%)',
+          background: `
+            radial-gradient(ellipse 70% 60% at 50% 50%, rgba(7, 8, 10, 0.45) 0%, rgba(7, 8, 10, 0.68) 75%, rgba(7, 8, 10, 0.90) 100%),
+            linear-gradient(180deg, rgba(7, 8, 10, 0.65) 0%, rgba(7, 8, 10, 0.25) 30%, rgba(7, 8, 10, 0.40) 65%, rgba(7, 8, 10, 0.95) 100%)
+          `,
         }}
       />
     </div>

@@ -1,6 +1,6 @@
 # Automated Readability & Contrast Report (F1 Gate)
 
-**Execution Date:** 2026-11-20T22:32:53.856Z
+**Execution Date:** 2026-11-21T20:59:49.158Z
 **Scope:** All 14 public pages @ 1440px and 390px viewports
 **Standards Enforced:** WCAG 2.2 AA (4.5:1 normal text, 3:1 large text), 12px absolute minimum font size, Video Scrim 5th-Percentile Luminance Gate.
 

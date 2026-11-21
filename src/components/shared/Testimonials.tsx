@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { TESTIMONIALS, TestimonialItem } from '@/data/testimonials';
 
 export type { TestimonialItem };
@@ -17,51 +18,21 @@ export function Testimonials({
   theme = 'light',
   className = '',
 }: TestimonialsProps) {
-  // If NEXT_PUBLIC_SHOW_SAMPLES is 'false' (or URL ?samples=false), hide unverified placeholder items
-  const [samplesParam, setSamplesParam] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get('samples') === 'false') {
-        setSamplesParam(false);
-      } else if (urlParams.get('samples') === 'true') {
-        setSamplesParam(true);
-      }
-    }
-  }, []);
-
-  const envShowSamples = process.env.NEXT_PUBLIC_SHOW_SAMPLES !== 'false';
-  const showSamples = samplesParam !== null ? samplesParam : envShowSamples;
-
-  const verifiedItems = items.filter((item) => item.verified);
-  const displayItems = verifiedItems.length > 0 ? verifiedItems : (showSamples ? items : []);
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  // If no items to display (e.g. showSamples is false and no verified items), hide section completely
-  if (displayItems.length === 0) {
-    return null;
-  }
-
-  const prev = () => {
-    setCurrentIndex((prevIdx) => (prevIdx === 0 ? displayItems.length - 1 : prevIdx - 1));
-  };
-
-  const next = () => {
-    setCurrentIndex((prevIdx) => (prevIdx === displayItems.length - 1 ? 0 : prevIdx + 1));
-  };
-
   const isDark = theme === 'dark';
+  // Duplicate items for continuous marquee loop
+  const displayItems = [...items, ...items];
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Compute clean initials for circle avatar
-  const getInitials = (nameStr: string) => {
-    const parts = nameStr.trim().split(/\s+/);
-    if (parts.length >= 2) {
-      return (parts[0][0] + parts[1][0]).toUpperCase();
+  const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: -360, behavior: 'smooth' });
     }
-    return (parts[0] || 'LE').slice(0, 2).toUpperCase();
+  };
+
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: 360, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -75,10 +46,32 @@ export function Testimonials({
       data-theme={isDark ? 'dark' : undefined}
     >
       <div id="testimonials" className="absolute -top-24 left-0 pointer-events-none" aria-hidden="true" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+
+      <style>{`
+        @keyframes autoSlideReviews {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .reviews-slider-track {
+          display: flex;
+          gap: 1.5rem;
+          width: max-content;
+          animation: autoSlideReviews 42s linear infinite;
+        }
+        .reviews-slider-track:hover {
+          animation-play-state: paused;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .reviews-slider-track {
+            animation: none;
+          }
+        }
+      `}</style>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-10">
         {/* Section Header */}
         <div
-          className={`flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-10 border-b mb-12 ${
+          className={`flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-8 border-b ${
             isDark ? 'border-white/10' : 'border-ink/10'
           }`}
         >
@@ -106,194 +99,124 @@ export function Testimonials({
           </div>
 
           <div className="flex items-center gap-4">
-            {/* Sample Indicator Pill */}
+            {/* Auto-sliding Indicator */}
             <div
-              className={`hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold border ${
+              className={`hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-mono font-semibold ${
                 isDark
-                  ? 'border-[#B08D57]/40 bg-[#B08D57]/10 text-[#D9C29A]'
-                  : 'border-[#B08D57]/40 bg-[#B08D57]/10 text-[#5C4018]'
+                  ? 'bg-white/10 border-white/20 text-[#F6F3EC]'
+                  : 'bg-black/5 border-ink/10 text-[#3E3835]'
               }`}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#B08D57]" aria-hidden="true" />
-              <span>SAMPLE FEEDBACK DRAFTS</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>AUTO-SLIDING CLIENT REVIEWS</span>
             </div>
 
-            {/* Prev / Next Controls for Sliding Cards */}
+            {/* Manual Navigation Controls */}
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                onClick={prev}
-                className={`p-3 rounded-full transition-all shadow-soft-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold border ${
+                onClick={scrollLeft}
+                className={`p-3 rounded-full border transition-all shadow-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                   isDark
-                    ? 'bg-[#141518] border-white/15 text-white hover:border-[#B08D57] hover:text-[#B08D57]'
+                    ? 'bg-[#1C1D1F] border-white/20 text-[#F6F3EC] hover:border-[#D9C29A] hover:text-[#D9C29A]'
                     : 'bg-white border-ink/10 text-ink hover:border-[#B08D57] hover:text-[#B08D57]'
                 }`}
-                aria-label="Previous review"
+                aria-label="Previous reviews"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 type="button"
-                onClick={next}
-                className={`p-3 rounded-full transition-all shadow-soft-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold border ${
+                onClick={scrollRight}
+                className={`p-3 rounded-full border transition-all shadow-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                   isDark
-                    ? 'bg-[#141518] border-white/15 text-white hover:border-[#B08D57] hover:text-[#B08D57]'
+                    ? 'bg-[#1C1D1F] border-white/20 text-[#F6F3EC] hover:border-[#D9C29A] hover:text-[#D9C29A]'
                     : 'bg-white border-ink/10 text-ink hover:border-[#B08D57] hover:text-[#B08D57]'
                 }`}
-                aria-label="Next review"
+                aria-label="Next reviews"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Sliding Cards Carousel Track */}
-        <div className="relative overflow-hidden w-full py-2">
-          <div
-            ref={trackRef}
-            className="flex transition-transform duration-500 ease-out gap-6"
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-            }}
-          >
-            {displayItems.map((item, idx) => (
-              <div
-                key={item.id}
-                className="w-full shrink-0"
-              >
-                <div
-                  className={`relative rounded-[28px] sm:rounded-[36px] p-6 sm:p-10 lg:p-14 shadow-soft-md overflow-hidden border transition-all duration-300 ${
-                    isDark ? 'bg-[#141518] border-white/15 text-[#F6F3EC]' : 'bg-white border-ink/10 text-ink'
-                  }`}
-                >
-                  <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8 lg:gap-12">
-                    {/* Left: Initials Monogram in Designer Circle Avatar */}
-                    <div className="flex flex-col items-center justify-center shrink-0">
-                      <div
-                        className={`w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full flex flex-col items-center justify-center border-2 shadow-lg transition-transform ${
-                          isDark
-                            ? 'bg-[#1C1D1F] border-[#B08D57]/40 text-[#D9C29A]'
-                            : 'bg-[#F6F3EC] border-[#B08D57]/40 text-[#5C4018]'
-                        }`}
-                      >
-                        <span className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold tracking-wider">
-                          {getInitials(item.name)}
-                        </span>
-                        {!item.verified && (
-                          <span
-                            className={`mt-2 text-xs font-mono font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full border ${
-                              isDark
-                                ? 'bg-[#B08D57]/20 border-[#B08D57]/40 text-[#D9C29A]'
-                                : 'bg-[#B08D57]/15 border-[#B08D57]/30 text-[#5C4018]'
-                            }`}
-                          >
-                            SAMPLE
-                          </span>
-                        )}
-                      </div>
+      {/* Auto-Sliding Small Cards Container */}
+      <div
+        ref={containerRef}
+        className="w-full overflow-hidden py-3"
+      >
+        <div className="reviews-slider-track px-4 sm:px-8">
+          {displayItems.map((item, idx) => (
+            <div
+              key={`${item.id}-${idx}`}
+              className="w-[330px] sm:w-[370px] shrink-0 rounded-[24px] bg-white border border-stone-200/90 p-6 sm:p-7 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)] hover:border-[#B08D57]/60 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                {/* Top Row: 5 Gold Stars & Service Pill */}
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  {/* 5 Solid Gold Stars + Rating */}
+                  <div className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-1 text-[#F59E0B]" aria-label="5 out of 5 stars">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
                     </div>
+                    <span className="text-xs font-mono font-bold text-stone-900">5.0</span>
+                  </div>
 
-                    {/* Right: Quote & Details */}
-                    <div className="flex-1 flex flex-col justify-between text-left">
-                      <div>
-                        {/* Service Tag & Sample Flag */}
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-                          <div
-                            className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full border text-xs font-mono font-bold ${
-                              isDark
-                                ? 'bg-[#B08D57]/20 border-[#B08D57]/40 text-[#D9C29A]'
-                                : 'bg-[#B08D57]/15 border-[#B08D57]/30 text-[#5C4018]'
-                            }`}
-                          >
-                            <span>{item.service}</span>
-                          </div>
+                  {/* Discipline Tag */}
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#B08D57]/15 border border-[#B08D57]/30 text-xs font-mono font-bold text-[#6F4E1E] uppercase">
+                    {item.service.split(' ')[0]}
+                  </span>
+                </div>
 
-                          {!item.verified && (
-                            <span
-                              className={`text-xs font-mono font-semibold tracking-wider uppercase px-2.5 py-1 rounded border ${
-                                isDark
-                                  ? 'border-white/10 bg-white/5 text-stone-300'
-                                  : 'border-ink/10 bg-black/5 text-[#57534E]'
-                              }`}
-                            >
-                              SAMPLE DRAFT
-                            </span>
-                          )}
-                        </div>
+                {/* Review Quote Text: Deep Black, Crisp, High Contrast & Ultra-Legible */}
+                <p className="text-[#09090B] font-sans font-medium text-[15.5px] sm:text-[16px] leading-[1.6] mb-6">
+                  &ldquo;{item.quote}&rdquo;
+                </p>
+              </div>
 
-                        {/* Quote Text */}
-                        <div className="relative mb-6">
-                          <Quote className="w-10 h-10 text-[#B08D57]/20 absolute -top-4 -left-4 -z-10 pointer-events-none" />
-                          <p
-                            className={`text-lg sm:text-xl lg:text-2xl font-serif font-medium leading-relaxed ${
-                              isDark ? 'text-[#F6F3EC]' : 'text-[#0F1011]'
-                            }`}
-                          >
-                            &ldquo;{item.quote}&rdquo;
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Author Footer */}
-                      <div
-                        className={`pt-6 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
-                          isDark ? 'border-white/10' : 'border-ink/10'
-                        }`}
-                      >
-                        <div>
-                          <h3
-                            className={`text-xl sm:text-2xl font-display font-extrabold ${
-                              isDark ? 'text-white' : 'text-[#0F1011]'
-                            }`}
-                          >
-                            {item.name}
-                          </h3>
-                          <p
-                            className={`text-xs sm:text-sm font-sans mt-0.5 ${
-                              isDark ? 'text-stone-300' : 'text-[#57534E]'
-                            }`}
-                          >
-                            {item.role ? `${item.role} · ` : ''}
-                            <span className={`font-semibold ${isDark ? 'text-white' : 'text-[#0F1011]'}`}>
-                              {item.company}
-                            </span>
-                          </p>
-                        </div>
-
-                        <div className="flex items-center gap-3">
-                          <span
-                            className={`text-xs font-mono tracking-widest uppercase font-semibold ${
-                              isDark ? 'text-stone-300' : 'text-[#57534E]'
-                            }`}
-                          >
-                            0{idx + 1} / 0{displayItems.length}
-                          </span>
-                        </div>
-                      </div>
+              {/* Bottom Client Row: Real Photo + Details */}
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  {item.image ? (
+                    <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-[#B08D57]/50 shadow-sm shrink-0">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        sizes="44px"
+                        className="object-cover"
+                      />
                     </div>
+                  ) : (
+                    <div className="w-11 h-11 rounded-full bg-[#1C1D1F] border border-[#B08D57]/50 text-[#D9C29A] flex items-center justify-center font-mono font-bold text-sm shrink-0">
+                      {item.name.slice(0, 2).toUpperCase()}
+                    </div>
+                  )}
+
+                  <div className="text-left">
+                    <h4 className="font-display font-extrabold text-[15px] text-[#09090B] leading-snug">
+                      {item.name}
+                    </h4>
+                    <p className="text-xs text-[#52525B] font-sans font-normal">
+                      {item.role} · <span className="font-bold text-[#09090B]">{item.company}</span>
+                    </p>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Carousel Slide Indicators / Dots */}
-        <div className="flex items-center justify-center gap-2 mt-8">
-          {displayItems.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                currentIndex === idx
-                  ? 'w-8 bg-[#B08D57]'
-                  : isDark
-                  ? 'w-2 bg-white/20 hover:bg-white/40'
-                  : 'w-2 bg-black/20 hover:bg-black/40'
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
+                {/* Location Badge */}
+                {item.location && (
+                  <span className="text-xs font-mono font-semibold text-stone-700 bg-stone-100 border border-stone-200/80 px-2.5 py-1 rounded-full shrink-0">
+                    {item.location.split(',')[1]?.trim() || item.location}
+                  </span>
+                )}
+              </div>
+            </div>
           ))}
         </div>
       </div>
