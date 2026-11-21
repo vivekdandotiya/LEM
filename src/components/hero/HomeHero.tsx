@@ -1,172 +1,160 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HeroStudioBackground } from './HeroStudioBackground';
+import { PhoneMockup } from '@/components/ui/PhoneMockup';
 import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
-import { Magnetic } from '@/motion/Magnetic';
-import { ArrowUpRight } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export function HomeHero() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const swashRef = useRef<SVGPathElement>(null);
+  const [url, setUrl] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
-  // Animate gold swash underline on mount
-  useEffect(() => {
-    const swash = swashRef.current;
-    if (!swash) return;
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
-    const len = swash.getTotalLength ? swash.getTotalLength() : 300;
-    gsap.fromTo(
-      swash,
-      { strokeDasharray: len, strokeDashoffset: len },
-      { strokeDashoffset: 0, duration: 1.1, delay: 0.2, ease: 'power3.out' }
-    );
-  }, []);
-
-  // ScrollTrigger parallax
-  useEffect(() => {
-    const section = sectionRef.current;
-    const content = contentRef.current;
-    if (!section || !content) return;
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
-    const st = ScrollTrigger.create({
-      trigger: section,
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true,
-      onUpdate: (self) => {
-        const p = self.progress;
-        if (content) {
-          gsap.set(content, {
-            opacity: 1 - p * 1.3,
-            y: p * 70,
-          });
-        }
-      },
-    });
-
-    return () => {
-      st.kill();
-    };
-  }, []);
-
-  const scrollToNext = () => {
-    const nextSec = document.getElementById('services-grid') || document.getElementById('what-we-do');
-    if (nextSec) {
-      nextSec.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!url) return;
+    setSubmitted(true);
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative min-h-[96svh] sm:min-h-[100svh] w-full flex flex-col justify-between overflow-hidden bg-[#08090C] text-white border-b border-white/10 select-none"
-      data-theme="dark"
-      data-surface="dark"
-    >
-      {/* 1. Ultra-Premium Studio Ambient Background (Replacing Image Gallery) */}
-      <HeroStudioBackground />
+    <section className="relative w-full pt-28 sm:pt-36 pb-20 bg-white text-[#161514] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* =========================================================================
+              LEFT COLUMN: Editorial Headline & Free Rebuild URL Submission Form
+              ========================================================================= */}
+          <div className="lg:col-span-6 flex flex-col justify-center text-left">
+            {/* Main Headline (BDOG Style: Huge, balanced, bold sans) */}
+            <h1 className="text-[clamp(2.75rem,5.5vw,4.5rem)] font-display font-extrabold tracking-tight leading-[1.05] text-[#161514] mb-6">
+              See your new homepage tomorrow. Built to get you booked.
+            </h1>
 
-      {/* Spacer for Floating Navbar */}
-      <div className="h-28 sm:h-32 pointer-events-none" />
+            {/* Subtitle / Value Proposition */}
+            <p className="font-sans text-lg sm:text-xl text-[#5d5a55] leading-relaxed max-w-xl mb-8 font-normal">
+              Send your web address. Lead Edge rebuilds your homepage from scratch and walks you through it on a 15-minute call.
+            </p>
 
-      {/* 2. Hero Centered Foreground: Short, Punchy, High-Impact Typography */}
-      <div
-        ref={contentRef}
-        className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center py-6 sm:py-10 my-auto"
-      >
-        {/* Eyebrow Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.07] backdrop-blur-md border border-white/15 text-xs font-mono tracking-widest uppercase text-[#F6F3EC] mb-6 shadow-md">
-          <SparkleGlyph size={13} spin={true} />
-          <span>DIGITAL GROWTH STUDIO • SEARCH • MEDIA • WEB</span>
-        </div>
-
-        {/* Short, Punchy, High-Contrast Headline */}
-        <div className="relative max-w-4xl mx-auto mb-6 px-2">
-          <h1
-            className="text-[clamp(2.35rem,6.8vw,4.75rem)] font-display font-extrabold uppercase leading-[1.04] sm:leading-[0.98] tracking-tight sm:tracking-[-0.03em] text-[#F6F3EC] drop-shadow-[0_4px_20px_rgba(0,0,0,0.85)]"
-          >
-            WE SCALE{' '}
-            <span className="relative inline-block font-serif lowercase italic text-[#D9C29A] font-normal tracking-normal mx-1">
-              revenue.
-              {/* Hand-drawn swash underline in gold */}
-              <svg
-                viewBox="0 0 280 24"
-                fill="none"
-                className="absolute -bottom-2 sm:-bottom-2.5 left-0 w-full text-[#B08D57] pointer-events-none"
-                aria-hidden="true"
-              >
-                <path
-                  ref={swashRef}
-                  d="M4 14C60 6 160 4 274 18"
-                  stroke="currentColor"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
+            {/* URL Input Bar Form (Rounded Pill with Orange Button) */}
+            <form onSubmit={handleSubmit} className="w-full max-w-lg mb-4">
+              <div className="relative flex items-center p-1.5 rounded-full border border-[#d9d6d1] bg-white shadow-sm hover:border-[#8f8a82] focus-within:border-[#161514] transition-all">
+                <input
+                  type="text"
+                  required
+                  placeholder="yourbusiness.com.au"
+                  value={url}
+                  onChange={(e) => {
+                    setUrl(e.target.value);
+                    if (submitted) setSubmitted(false);
+                  }}
+                  className="w-full px-5 py-3 bg-transparent text-sm sm:text-base font-sans text-[#161514] placeholder-[#8f8a82] focus:outline-none"
+                  aria-label="Your website address"
                 />
-              </svg>
-            </span>
-          </h1>
-        </div>
+                <button
+                  type="submit"
+                  className="shrink-0 px-6 sm:px-7 py-3 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-xs sm:text-sm tracking-tight transition-all duration-150 active:scale-95 shadow-sm"
+                >
+                  {submitted ? 'Submitted ✓' : 'Get a Free Rebuild'}
+                </button>
+              </div>
+            </form>
 
-        {/* Short, Concise, Crystal-Clear Subheadline */}
-        <p className="font-sans text-base sm:text-lg md:text-xl text-[#F6F3EC] max-w-xl mx-auto mb-10 leading-relaxed font-normal opacity-95 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-          Full-funnel digital marketing engineered to turn traffic into enterprise revenue.
-        </p>
+            {/* Reassurance Copy */}
+            <div className="flex items-center gap-2 text-xs font-sans text-[#5d5a55]">
+              <span className="w-2 h-2 rounded-full bg-[#1f7a37]" />
+              <span>The review costs nothing. No lock-in, no sales pressure.</span>
+            </div>
 
-        {/* CTA Button Row */}
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
-          <Magnetic strength={0.25}>
-            <Link
-              href="/contact"
-              className="btn-primary"
-            >
-              Book Strategy Call →
-            </Link>
-          </Magnetic>
+            {/* 3 Step Quick Timeline */}
+            <div className="grid grid-cols-3 gap-4 pt-10 mt-8 border-t border-[#f4f3f1]">
+              <div>
+                <span className="text-xs font-mono font-bold text-[#b45309] uppercase block mb-1">
+                  1. Today (Free)
+                </span>
+                <p className="text-xs font-sans text-[#5d5a55] leading-snug">
+                  Send your website link or business name.
+                </p>
+              </div>
+              <div>
+                <span className="text-xs font-mono font-bold text-[#b45309] uppercase block mb-1">
+                  2. Tomorrow (Free)
+                </span>
+                <p className="text-xs font-sans text-[#5d5a55] leading-snug">
+                  15-min call to see your new homepage live.
+                </p>
+              </div>
+              <div>
+                <span className="text-xs font-mono font-bold text-[#1f7a37] uppercase block mb-1">
+                  3. In 14 Days
+                </span>
+                <p className="text-xs font-sans text-[#5d5a55] leading-snug">
+                  Full site live, or your first month back.
+                </p>
+              </div>
+            </div>
+          </div>
 
-          <Magnetic strength={0.25}>
-            <button
-              onClick={scrollToNext}
-              className="btn-secondary"
-            >
-              Explore Our Work
-            </button>
-          </Magnetic>
-        </div>
-      </div>
+          {/* =========================================================================
+              RIGHT COLUMN: Staggered Floating Mobile Phones Showcase Collage
+              ========================================================================= */}
+          <div aria-hidden="true" className="lg:col-span-6 relative flex items-center justify-center min-h-[520px] sm:min-h-[580px] select-none">
+            {/* Background Soft Glow */}
+            <div className="absolute w-[450px] h-[450px] rounded-full bg-[#f7ac4f]/10 blur-[100px] pointer-events-none" />
 
-      {/* 3. Hero Bottom Area: Active Desks & Smooth Scroll */}
-      <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-12 pb-6 pt-2 flex items-center justify-between gap-5">
-        <div className="flex items-center gap-2.5">
-          <span className="w-2 h-2 rounded-full bg-[#B08D57] animate-pulse" />
-          <span className="font-mono text-xs uppercase tracking-wider text-[#D6D3D1] font-medium">
-            Active Desks: London · Singapore · New York
-          </span>
-        </div>
+            {/* Staggered Phone Layout (Matching Reference Images 1 & 2) */}
+            <div className="relative w-full flex items-center justify-center gap-4 sm:gap-6">
+              
+              {/* Phone 1: Corella Bookkeeping (Dark Theme, tilted slightly left) */}
+              <div className="hidden sm:block transform -rotate-3 hover:rotate-0 transition-transform duration-500 hover:z-30">
+                <PhoneMockup
+                  appName="Corella Bookkeeping"
+                  categoryBadge="BAS & Payroll"
+                  badgeColor="#f7ac4f"
+                  headline="Caught up, then kept up."
+                  subheadline="Books, payroll and BAS for Toowoomba businesses in Xero or MYOB. Run by Kylie Brandt."
+                  ctaText="Book a file review"
+                  ctaColor="#5c3b8a"
+                  callPhone="(07) 5550 0794"
+                  theme="dark"
+                  rating="5.0 ★★★★★ 94 reviews"
+                />
+              </div>
 
-        <div className="flex items-center gap-3">
-          <button
-            onClick={scrollToNext}
-            className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/[0.08] hover:bg-white/[0.14] backdrop-blur-md border border-white/20 text-[#D9C29A] transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-            aria-label="Scroll to services"
-          >
-            <span className="text-xs font-mono font-bold tracking-wider uppercase text-white/90 group-hover:text-gold transition-colors">
-              Scroll
-            </span>
-            <SparkleGlyph size={16} spin={true} />
-          </button>
+              {/* Phone 2: Quollhill Plumbing (Light Clean Theme, Center & Elevated) */}
+              <div className="transform hover:scale-105 transition-transform duration-500 z-20">
+                <PhoneMockup
+                  appName="Quollhill Plumbing"
+                  categoryBadge="Urgent 24/7"
+                  badgeColor="#2563eb"
+                  headline="The leak fixed, at the price you agreed first."
+                  subheadline="Urgent jobs taken 6am to 10pm, 7 days. $99 call-out, waived with the repair."
+                  ctaText="Book online now"
+                  ctaColor="#1f7a37"
+                  callPhone="(02) 5550 0163"
+                  theme="light"
+                  rating="4.9 ★★★★★ 163 reviews"
+                />
+              </div>
+
+              {/* Phone 3: Wattlebend Health (Soft Sage Theme, tilted right) */}
+              <div className="hidden md:block transform rotate-3 hover:rotate-0 transition-transform duration-500 hover:z-30">
+                <PhoneMockup
+                  appName="Wattlebend Health"
+                  categoryBadge="Camden Allied"
+                  badgeColor="#1f7a37"
+                  headline="Help at home, across Camden."
+                  subheadline="We come to your home for showering, cleaning, shopping and clinical nursing."
+                  ctaText="Call (02) 5550 0679"
+                  ctaColor="#b45309"
+                  callPhone="(02) 5550 0679"
+                  theme="sage"
+                  rating="5.0 ★★★★★ 112 reviews"
+                />
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

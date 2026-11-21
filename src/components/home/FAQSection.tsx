@@ -25,7 +25,7 @@ export function FAQSection() {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-[#F6F3EC] select-none border-b border-ink/10" id="faq" data-surface="light">
+    <section className="py-24 sm:py-32 bg-[#FAF8F5] select-none border-t border-[#e8e6e2]" id="faq" data-surface="light">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -34,17 +34,14 @@ export function FAQSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center pb-12">
-          <div className="inline-flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
-            <span className="text-xs font-mono tracking-widest uppercase text-[#57534E] font-bold">
-              05 / FREQUENTLY ASKED QUESTIONS
-            </span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-[#0F1011] tracking-tight leading-tight">
+          <span className="text-xs sm:text-sm font-sans font-bold text-[#161514] uppercase tracking-wider mb-2 block">
+            Frequently Asked Questions
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-[#161514] tracking-tight leading-tight">
             Answers before you ask.
           </h2>
-          <p className="text-sm font-sans text-[#57534E] max-w-sm mx-auto mt-3">
-            Clear, candid details about our commercial agreements, delivery timelines, and performance focus.
+          <p className="text-sm font-sans text-[#5d5a55] max-w-md mx-auto mt-3">
+            Clear, plain-English details about how our rebuilds, pricing, and 14-day delivery work.
           </p>
         </div>
 
@@ -56,19 +53,19 @@ export function FAQSection() {
             return (
               <div
                 key={faq.id}
-                className="rounded-[20px] bg-white border border-ink/10 overflow-hidden shadow-soft-sm transition-all duration-300"
+                className="rounded-[20px] bg-white border border-[#e8e6e2] overflow-hidden shadow-sm transition-all duration-200"
               >
                 <button
                   onClick={() => toggleItem(faq.id)}
-                  className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 font-display font-bold text-[17px] sm:text-lg text-[#0F1011] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 font-display font-bold text-[17px] sm:text-lg text-[#161514] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f7ac4f]"
                   aria-expanded={isOpen}
                 >
                   <span>{faq.question}</span>
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 ${
                       isOpen
-                        ? 'bg-gold text-white rotate-45'
-                        : 'bg-ivory-2 text-stone hover:text-ink'
+                        ? 'bg-[#f7ac4f] text-[#161514] rotate-45'
+                        : 'bg-[#f4f3f1] text-[#5d5a55] hover:text-[#161514]'
                     }`}
                   >
                     <Plus className="w-4 h-4" />
@@ -76,7 +73,7 @@ export function FAQSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 sm:px-8 pb-6 pt-2 text-base font-sans text-[#3A3835] leading-relaxed border-t border-ink/10">
+                  <div className="px-6 sm:px-8 pb-6 pt-2 text-base font-sans text-[#5d5a55] leading-relaxed border-t border-[#f4f3f1]">
                     {faq.answer}
                   </div>
                 )}

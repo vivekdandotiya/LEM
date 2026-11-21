@@ -36,9 +36,10 @@ const FOOTER_COLUMNS = [
     title: 'Company',
     links: [
       { label: '/ HOME', href: '/', isAccent: true },
-      { label: 'WORK', href: '/work' },
-      { label: 'METHOD', href: '/services' },
-      { label: 'STUDIO', href: '/about' },
+      { label: 'HOW IT WORKS', href: '/how-it-works' },
+      { label: 'PRICING', href: '/pricing' },
+      { label: 'MARKETING', href: '/marketing' },
+      { label: 'ABOUT STUDIO', href: '/about' },
       { label: 'CONTACT', href: '/contact' },
     ],
   },
@@ -46,41 +47,39 @@ const FOOTER_COLUMNS = [
     title: 'Services',
     links: [
       { label: 'OVERVIEW', href: '/services' },
-      { label: 'SEO & SEARCH', href: '/services/seo' },
-      { label: 'PAID PERFORMANCE', href: '/services/ppc' },
-      { label: 'WEB & COMMERCE', href: '/services/web-development' },
+      { label: 'SEARCH & SEO', href: '/services/seo' },
+      { label: 'PAID ADS', href: '/services/ppc' },
+      { label: 'WEB ARCHITECTURE', href: '/services/web-development' },
       { label: 'VIDEO & PHOTO', href: '/services/video-photo' },
       { label: 'SOCIAL MEDIA', href: '/services/social-media' },
     ],
   },
   {
-    title: 'Programs',
+    title: 'Disciplines',
     links: [
-      { label: 'OVERVIEW', href: '/services' },
-      { label: 'FOUNDATION', href: '/services/seo' },
-      { label: 'REVENUE SCALE', href: '/services/ppc' },
-      { label: 'GLOBAL LAUNCH', href: '/about' },
-      { label: 'DIGITAL RESET', href: '/services/web-development' },
-      { label: 'PRODUCT DISCOVERY', href: '/services/social-media' },
+      { label: 'HEALTHCARE WEBSITES', href: '/services/seo' },
+      { label: 'PROFESSIONAL SERVICES', href: '/services/ppc' },
+      { label: 'EDUCATION & CARE', href: '/services/social-media' },
+      { label: 'TRADES & COMMERCE', href: '/services/web-development' },
+      { label: 'REVENUE AUDIT', href: '/contact' },
     ],
   },
   {
-    title: 'Discover',
+    title: 'Resources',
     links: [
-      { label: 'IMPACT', href: '/work' },
-      { label: 'CASE STUDIES', href: '/work' },
-      { label: 'AWARDS', href: '/about' },
-      { label: 'ARCHIVE', href: '/work' },
+      { label: 'GUIDES & INSIGHTS', href: '/blog' },
+      { label: 'CLIENT REVIEWS', href: '/#testimonials' },
+      { label: 'FREQUENT QUESTIONS', href: '/#faq' },
+      { label: 'PRICING INCLUSIONS', href: '/pricing' },
     ],
   },
   {
-    title: 'Learn',
+    title: 'Contact',
     links: [
-      { label: 'INSIGHTS', href: '/blog' },
-      { label: 'TESTIMONIALS', href: '/#testimonials' },
-      { label: 'FAQS', href: '/#faqs' },
-      { label: 'CLIENTS', href: '/work' },
-      { label: 'CAREERS', href: '/contact' },
+      { label: 'CALL 0452 424 845', href: 'tel:0452424845' },
+      { label: 'GET FREE REBUILD', href: '/contact' },
+      { label: 'SUPPORT DESK', href: '/contact' },
+      { label: 'TERMS OF ENGAGEMENT', href: '/terms' },
     ],
   },
 ];
@@ -134,7 +133,7 @@ export function Footer() {
                   <span className="font-display font-extrabold tracking-tight text-xl sm:text-2xl leading-none text-white">
                     LEAD EDGE
                   </span>
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#D9C29A] mt-1 leading-none font-semibold">
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#f7ac4f] mt-1 leading-none font-semibold">
                     MARKETERS
                   </span>
                 </div>
@@ -167,7 +166,7 @@ export function Footer() {
                   className="pl-3 text-white hover:text-[#B08D57] transition-colors group flex items-center"
                 >
                   {subscribed ? (
-                    <Check className="w-4 h-4 text-[#B08D57]" />
+                    <Check className="w-4 h-4 text-[#f7ac4f]" />
                   ) : (
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                   )}
@@ -177,7 +176,7 @@ export function Footer() {
               {/* Disclaimer */}
               <p className="text-xs font-sans text-[#D6D3D1] mt-3 leading-relaxed">
                 {subscribed ? (
-                  <span className="text-[#D9C29A] font-mono">✓ You are subscribed to Lead Edge Marketers dispatches.</span>
+                  <span className="text-[#f7ac4f] font-mono">✓ You are subscribed to Lead Edge Marketers dispatches.</span>
                 ) : (
                   <>
                     We&apos;ll only email you about Lead Edge Marketers. Read our{' '}
@@ -205,7 +204,7 @@ export function Footer() {
                         href={link.href}
                         className={`text-xs font-mono tracking-wider transition-colors duration-200 block ${
                           link.isAccent
-                            ? 'text-[#D9C29A] font-bold hover:text-white'
+                            ? 'text-[#f7ac4f] font-bold hover:text-white'
                             : 'text-[#D6D3D1] hover:text-white'
                         }`}
                       >
@@ -329,17 +328,17 @@ export function Footer() {
               Terms of Engagement
             </Link>
             <span>·</span>
-            <span className="text-[#D9C29A]">Lead Edge Marketers</span>
+            <span className="text-[#f7ac4f]">Lead Edge Marketers</span>
           </div>
         </div>
       </div>
 
-      {/* Floating Accent Star Widget (Right Margin, matching reference screenshot) */}
+      {/* Floating Accent Star Widget (Right Margin) */}
       <button
         onClick={scrollToTop}
         title="Scroll to Top"
         aria-label="Scroll to top"
-        className="fixed bottom-6 right-6 z-40 hidden sm:flex items-center justify-center w-10 h-10 rounded-xl bg-[#0F1012] border border-white/15 text-[#B08D57] hover:text-white hover:border-[#B08D57] transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.7)] group"
+        className="fixed bottom-6 right-6 z-40 hidden sm:flex items-center justify-center w-10 h-10 rounded-xl bg-[#0F1012] border border-white/15 text-[#f7ac4f] hover:text-white hover:border-[#f7ac4f] transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.7)] group"
       >
         <SparkleGlyph size={18} spin={true} />
       </button>

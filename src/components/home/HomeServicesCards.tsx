@@ -1,340 +1,152 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, Star, TrendingUp, CheckCircle, Video, MapPin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-interface ServiceCardData {
+interface IndustryGroup {
   id: string;
+  count: string;
   title: string;
-  description: string;
+  examples: string;
   href: string;
-  badge?: string;
-  emoji: string;
-  visualType: 'growth' | 'social' | 'ecommerce' | 'ads' | 'video' | 'seo';
-  image: string;
+  bgColor: string;
+  borderColor: string;
+  phones: {
+    title: string;
+    tag: string;
+    theme: string;
+  }[];
 }
 
-const SERVICES_DATA: ServiceCardData[] = [
+const INDUSTRY_GROUPS: IndustryGroup[] = [
   {
-    id: 'digital-marketing',
-    title: 'Data-Driven Digital Marketing',
-    description: 'Full-funnel digital campaigns combining organic search, paid media, and analytics to acquire high-value customers and lower acquisition costs.',
-    href: '/contact',
-    badge: 'FULL FUNNEL',
-    emoji: '📈',
-    visualType: 'growth',
-    image: '/images/services/cylinder-strategy-session.webp',
-  },
-  {
-    id: 'social-media',
-    title: 'High-Impact Social Media Marketing',
-    description: 'Strategic content creation, reels production, and daily audience engagement across Instagram, Facebook & LinkedIn to build brand authority and repeat buyers.',
-    href: '/services/social-media',
-    badge: 'COMMUNITY',
-    emoji: '🔥',
-    visualType: 'social',
-    image: '/images/services/social-media/social-calendar.webp',
-  },
-  {
-    id: 'web-development',
-    title: 'Revenue-Converting Web Development',
-    description: 'Custom, fast-loading websites built with Next.js and optimized for mobile screens, instant load speeds, and maximum checkout conversions.',
-    href: '/services/web-development',
-    badge: 'SUB-SECOND',
-    emoji: '⚡',
-    visualType: 'ecommerce',
-    image: '/images/pages/P08-services-web-devices-16x9.webp',
-  },
-  {
-    id: 'ppc-advertising',
-    title: 'Performance-Focused Paid Advertising',
-    description: 'High-ROI Google, Meta & Instagram ad campaigns with high-converting creative testing and precise targeting to maximize your return on ad spend.',
-    href: '/services/ppc',
-    badge: 'SCALE',
-    emoji: '🎯',
-    visualType: 'ads',
-    image: '/images/services/meta-ads/meta-creative.webp',
-  },
-  {
-    id: 'video-photo',
-    title: 'Video Editing & Photo Creation',
-    description: 'Cinematic commercial video production and professional product photography engineered to grab attention, build trust, and increase sales.',
-    href: '/services/video-photo',
-    badge: 'CINEMATIC',
-    emoji: '🎬',
-    visualType: 'video',
-    image: '/images/services/video-photo/video-photo-hero.webp',
-  },
-  {
-    id: 'seo-search',
-    title: 'Local SEO That Wins the Map Pack',
-    description: 'Google Map Pack optimization, local keyword rankings, and technical SEO architecture to put your business at the top when local customers search.',
+    id: 'health',
+    count: '23 industries',
+    title: 'Health & Clinical Care',
+    examples: 'Dental, Physio, Psychology, Vet and 19 more.',
     href: '/services/seo',
-    badge: 'ORGANIC',
-    emoji: '📍',
-    visualType: 'seo',
-    image: '/images/services/seo/seo-audit.webp',
+    bgColor: 'bg-[#EAF1ED]',
+    borderColor: 'border-[#D2E2D8]',
+    phones: [
+      { title: 'Hearing care without hard sell', tag: 'Audiology', theme: 'bg-emerald-950 text-white' },
+      { title: 'Help at home across Camden', tag: 'Allied Care', theme: 'bg-[#FAF8F5] text-[#161514]' },
+      { title: 'Straight teeth, your colours', tag: 'Orthodontics', theme: 'bg-white text-[#161514]' },
+    ],
+  },
+  {
+    id: 'professional',
+    count: '21 industries',
+    title: 'Professional Services',
+    examples: 'Accountants, Law firms, Real estate, SaaS and 17 more.',
+    href: '/services/ppc',
+    bgColor: 'bg-[#F4F1EA]',
+    borderColor: 'border-[#E2DDD1]',
+    phones: [
+      { title: 'Wills & Estates fixed fee', tag: 'Legal', theme: 'bg-stone-900 text-white' },
+      { title: 'Caught up, then kept up', tag: 'Bookkeeping', theme: 'bg-[#1b1c1e] text-white' },
+      { title: 'Commercial lease advisory', tag: 'Property', theme: 'bg-amber-100/60 text-[#161514]' },
+    ],
+  },
+  {
+    id: 'education',
+    count: '12 industries',
+    title: 'Education and Care',
+    examples: 'Childcare, Tutoring, Swim schools, Dance and 8 more.',
+    href: '/services/social-media',
+    bgColor: 'bg-[#F8EDED]',
+    borderColor: 'border-[#EED4D4]',
+    phones: [
+      { title: 'Ballet, Jazz, Contemporary', tag: 'Dance Studio', theme: 'bg-rose-950 text-white' },
+      { title: 'Early learning in Marsden Park', tag: 'Childcare', theme: 'bg-[#FFFDF9] text-[#161514]' },
+      { title: 'VCE & HSC selective tutoring', tag: 'Colleges', theme: 'bg-blue-950 text-white' },
+    ],
+  },
+  {
+    id: 'trades',
+    count: '15 industries',
+    title: 'Trades & Commerce',
+    examples: 'Builders, Plumbers, Electricians, DTC and 11 more.',
+    href: '/services/web-development',
+    bgColor: 'bg-[#FCF4EA]',
+    borderColor: 'border-[#F3DEC4]',
+    phones: [
+      { title: 'The leak fixed agreed first', tag: 'Plumbing', theme: 'bg-white text-[#161514]' },
+      { title: 'Stay in the street you love', tag: 'Builders', theme: 'bg-[#FAF7F2] text-[#161514]' },
+      { title: 'Direct-to-consumer luxury', tag: 'E-Commerce', theme: 'bg-[#141517] text-white' },
+    ],
   },
 ];
 
 export function HomeServicesCards() {
   return (
-    <section id="services-grid" className="py-24 sm:py-32 bg-[#F6F3EC] select-none border-b border-ink/10">
+    <section className="py-20 sm:py-28 bg-white text-[#161514] select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-10 border-b border-ink/10 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full bg-[#B08D57]" aria-hidden="true" />
-              <span className="text-xs font-mono tracking-widest uppercase text-stone font-semibold">
-                02 / CORE DISCIPLINES
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-ink tracking-tight leading-tight">
-              Engineered to scale.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-[#161514] leading-[1.08]">
+              Find your kind of business.
             </h2>
+            <p className="font-sans text-base sm:text-lg text-[#5d5a55] mt-3 max-w-2xl leading-relaxed">
+              Small business websites for 71 industries, in four groups. Each has its own page, with an example built for it.
+            </p>
           </div>
-          <p className="text-xs sm:text-sm font-sans text-stone max-w-sm leading-relaxed">
-            Six high-performance disciplines engineered to dominate search rankings, scale paid media, and convert clicks into revenue.
-          </p>
         </div>
 
-        {/* 6-Card Editorial Grid Styled After Reference */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {SERVICES_DATA.map((card) => (
-            <div
-              key={card.id}
-              className="group relative rounded-[28px] sm:rounded-[32px] bg-[#121315] border border-white/[0.09] p-6 sm:p-8 flex flex-col justify-between overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.3)] hover:border-[#B08D57]/60 hover:shadow-[0_24px_60px_rgba(0,0,0,0.5)] transition-all duration-300"
+        {/* 4 Large Rounded Pastel Cards (Matching Reference Image 3) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+          {INDUSTRY_GROUPS.map((group) => (
+            <Link
+              key={group.id}
+              href={group.href}
+              className={`group rounded-[28px] ${group.bgColor} border ${group.borderColor} p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_16px_36px_-8px_rgba(22,21,20,0.12)] hover:-translate-y-1`}
             >
-              {/* Subtle Ambient Radial Highlight */}
-              <div
-                className="absolute -top-24 -right-24 w-60 h-60 rounded-full bg-[#B08D57]/[0.06] blur-3xl pointer-events-none group-hover:bg-[#B08D57]/[0.12] transition-colors duration-500"
-                aria-hidden="true"
-              />
-
-              {/* Top Title & Floating Designer Emoji */}
-              <div className="relative z-10 flex items-start justify-between gap-4">
-                <h3 className="text-xl sm:text-2xl font-display font-extrabold text-white tracking-tight leading-snug">
-                  {card.title}
-                </h3>
-                {/* Designer Emoji floating badge */}
-                <div
-                  className="shrink-0 w-11 h-11 rounded-2xl bg-white/[0.08] backdrop-blur-md border border-white/20 flex items-center justify-center text-xl shadow-lg group-hover:scale-115 group-hover:rotate-6 group-hover:border-[#B08D57]/50 group-hover:bg-[#B08D57]/20 transition-all duration-300"
-                  aria-hidden="true"
-                >
-                  <span role="img" aria-label={card.title} className="transform transition-transform">
-                    {card.emoji}
-                  </span>
+              <div>
+                {/* Embedded Mini Mobile Showcase Mockups */}
+                <div aria-hidden="true" className="relative h-44 sm:h-48 mb-6 overflow-hidden rounded-[20px] bg-white/40 border border-black/5 p-3 flex items-center justify-center gap-2">
+                  {group.phones.map((phone, idx) => (
+                    <div
+                      key={phone.title}
+                      className={`w-28 sm:w-32 h-44 rounded-[18px] p-2.5 border border-black/10 shadow-sm flex flex-col justify-between shrink-0 transform ${
+                        idx === 0
+                          ? '-translate-x-3 rotate-[-4deg]'
+                          : idx === 1
+                          ? 'z-10 scale-105'
+                          : 'translate-x-3 rotate-[4deg]'
+                      } ${phone.theme} transition-transform duration-300 group-hover:scale-100`}
+                    >
+                      <div>
+                        <span className="text-[8px] font-mono uppercase tracking-wider block mb-1 font-bold">
+                          {phone.tag}
+                        </span>
+                        <h4 className="text-[10px] font-display font-bold leading-tight line-clamp-2">
+                          {phone.title}
+                        </h4>
+                      </div>
+                      <div className="h-1.5 w-8 rounded-full bg-current opacity-30 mt-auto" />
+                    </div>
+                  ))}
                 </div>
-              </div>
 
-              {/* Centered Visual Stage */}
-              <div className="relative z-10 my-6 w-full h-[220px] sm:h-[235px] rounded-2xl bg-[#17191C] border border-white/[0.07] overflow-hidden flex items-center justify-center p-3 select-none group-hover:border-white/15 transition-all duration-300">
-                {/* Visual Stage 1: Data-Driven Digital Marketing */}
-                {card.visualType === 'growth' && (
-                  <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-xl">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 380px"
-                      className="object-cover opacity-85 group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#121315] via-transparent to-black/30" />
-                    {/* Floating Metrics Chips */}
-                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#B08D57]/40 text-[#B08D57] text-xs font-mono font-bold flex items-center gap-1.5 shadow-lg">
-                      <TrendingUp className="w-3.5 h-3.5 text-[#B08D57]" />
-                      <span>+42% CVR</span>
-                    </div>
-                    <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white text-xs font-mono font-medium flex items-center gap-1.5 shadow-lg">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#B08D57]" />
-                      <span>4.8x ROAS Target</span>
-                    </div>
-                  </div>
-                )}
-
-                {/* Visual Stage 2: High-Impact Social Media Marketing */}
-                {card.visualType === 'social' && (
-                  <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-[#1E2024] to-[#121315]">
-                    {/* 3 Phone / Story Tiles */}
-                    <div className="relative flex items-center justify-center gap-2 w-full h-full py-2">
-                      <div className="relative w-24 h-36 rounded-xl overflow-hidden border border-white/15 shadow-md -rotate-6 scale-90 opacity-70">
-                        <Image
-                          src="/images/services/social-media/social-community.webp"
-                          alt="Social Feed"
-                          fill
-                          sizes="100px"
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="relative w-28 h-44 rounded-xl overflow-hidden border-2 border-[#B08D57]/60 shadow-xl z-10 group-hover:scale-105 transition-transform duration-500">
-                        <Image
-                          src={card.image}
-                          alt="Social Creator"
-                          fill
-                          sizes="120px"
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                        <span className="absolute bottom-2 inset-x-2 text-center text-xs font-mono font-bold text-white bg-black/60 backdrop-blur-sm py-0.5 rounded">
-                          @LEADEDGE
-                        </span>
-                      </div>
-                      <div className="relative w-24 h-36 rounded-xl overflow-hidden border border-white/15 shadow-md rotate-6 scale-90 opacity-70">
-                        <Image
-                          src="/images/services/social-media/social-production.webp"
-                          alt="Social Post"
-                          fill
-                          sizes="100px"
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                    {/* Floating Social Badges */}
-                    <div className="absolute top-3 left-4 w-7 h-7 rounded-full bg-gradient-to-tr from-[#FD1D1D] via-[#E1306C] to-[#C13584] flex items-center justify-center shadow-lg border border-white/20">
-                      <span className="text-xs font-bold text-white">IG</span>
-                    </div>
-                    <div className="absolute bottom-3 right-4 w-7 h-7 rounded-full bg-[#1877F2] flex items-center justify-center shadow-lg border border-white/20">
-                      <span className="text-xs font-bold text-white">f</span>
-                    </div>
-                  </div>
-                )}
-
-                {/* Visual Stage 3: Revenue-Converting Web Development with Taped Corners */}
-                {card.visualType === 'ecommerce' && (
-                  <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-[#1C1D21] to-[#141517] p-2">
-                    {/* Taped Photo Card */}
-                    <div className="relative w-[90%] h-[85%] rounded-lg overflow-hidden border border-white/20 shadow-2xl rotate-[-1.5deg] group-hover:rotate-0 transition-transform duration-500 bg-[#0F1011]">
-                      {/* Top-Right Masking Tape */}
-                      <div
-                        className="absolute -top-1.5 -right-3 w-12 h-4 bg-[#F6F3EC]/90 shadow-sm rotate-12 z-20 pointer-events-none rounded-[1px]"
-                        aria-hidden="true"
-                      />
-                      {/* Bottom-Left Masking Tape */}
-                      <div
-                        className="absolute -bottom-1.5 -left-3 w-12 h-4 bg-[#F6F3EC]/90 shadow-sm rotate-12 z-20 pointer-events-none rounded-[1px]"
-                        aria-hidden="true"
-                      />
-                      <Image
-                        src={card.image}
-                        alt="E-commerce web architecture"
-                        fill
-                        sizes="(max-width: 768px) 100vw, 380px"
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                      <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-xs font-mono text-white/90">
-                        <span>NEXT.JS 15</span>
-                        <span className="text-[#B08D57] font-semibold">100 LIGHTHOUSE</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Visual Stage 4: Performance-Focused Paid Advertising */}
-                {card.visualType === 'ads' && (
-                  <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-xl">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 380px"
-                      className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#121315] via-black/40 to-black/30" />
-                    {/* Stylized ADVERTISING Tag */}
-                    <div className="absolute top-4 inset-x-4 flex items-center justify-between">
-                      <span className="px-2.5 py-0.5 rounded bg-black/75 border border-white/20 text-xs font-mono font-bold tracking-wider text-white uppercase">
-                        SPONSORED CAMPAIGN
-                      </span>
-                      <span className="text-xs font-serif italic text-[#B08D57]">New Creative</span>
-                    </div>
-                    <div className="absolute bottom-3 inset-x-4 flex items-center justify-between">
-                      <div className="text-white text-xs font-display font-bold">META & GOOGLE ADS</div>
-                      <div className="px-2.5 py-0.5 rounded bg-[#B08D57]/90 text-black text-xs font-mono font-extrabold">
-                        HIGH ROAS
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Visual Stage 5: Video Editing & Photo Creation */}
-                {card.visualType === 'video' && (
-                  <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-xl">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 380px"
-                      className="object-cover opacity-85 group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#121315] via-transparent to-black/40" />
-                    {/* Recording indicator */}
-                    <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-sm border border-white/15 text-white text-xs font-mono flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                      <span>REC</span>
-                    </div>
-                    <div className="absolute top-3 right-3 px-2 py-0.5 rounded bg-black/70 border border-white/15 text-[#B08D57] text-xs font-mono font-bold">
-                      4K 60FPS
-                    </div>
-                    <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-white/90 text-xs font-sans">
-                      <Video className="w-3.5 h-3.5 text-[#B08D57]" />
-                      <span className="font-medium text-xs">Studio Production</span>
-                    </div>
-                  </div>
-                )}
-
-                {/* Visual Stage 6: Local SEO That Wins the Map Pack */}
-                {card.visualType === 'seo' && (
-                  <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-xl bg-[#1A1C20] p-3">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 380px"
-                      className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#121315] via-black/30 to-black/40" />
-                    {/* Google Map Pack Mockup */}
-                    <div className="relative z-10 w-full p-3 rounded-xl bg-black/80 backdrop-blur-md border border-white/15 shadow-xl">
-                      <div className="flex items-center justify-between mb-1.5">
-                        <div className="flex items-center gap-1.5">
-                          <MapPin className="w-3.5 h-3.5 text-[#B08D57]" />
-                          <span className="text-white text-xs font-display font-bold">Local 3-Pack</span>
-                        </div>
-                        <span className="px-2 py-0.5 rounded bg-[#B08D57]/20 border border-[#B08D57]/50 text-[#B08D57] text-xs font-mono font-bold">
-                          #1 RANKING
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1 text-xs text-amber-400">
-                        <Star className="w-3 h-3 fill-amber-400" />
-                        <Star className="w-3 h-3 fill-amber-400" />
-                        <Star className="w-3 h-3 fill-amber-400" />
-                        <Star className="w-3 h-3 fill-amber-400" />
-                        <Star className="w-3 h-3 fill-amber-400" />
-                        <span className="text-white/80 font-mono text-xs ml-1">4.9 (180+ Reviews)</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Bottom Flex Row: Description on Left, "Get Started" Pill Button on Right */}
-              <div className="relative z-10 pt-4 border-t border-white/[0.08] flex items-center justify-between gap-4">
-                <p className="text-stone-300 text-xs sm:text-[13px] leading-relaxed max-w-[62%] font-normal">
-                  {card.description}
+                {/* Card Meta & Title */}
+                <span className="text-xs font-mono font-medium text-[#5d5a55] block mb-1">
+                  {group.count}
+                </span>
+                <h3 className="text-xl sm:text-2xl font-display font-extrabold text-[#161514] mb-2 leading-snug">
+                  {group.title}
+                </h3>
+                <p className="text-xs font-sans text-[#5d5a55] leading-relaxed mb-4">
+                  {group.examples}
                 </p>
-
-                <Link
-                  href={card.href}
-                  className="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#B08D57] hover:bg-[#C5A065] text-[#0F1011] text-xs sm:text-sm font-semibold tracking-tight transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 shrink-0"
-                >
-                  Get Started
-                </Link>
               </div>
-            </div>
+
+              {/* Action Link Arrow */}
+              <div className="pt-3 border-t border-black/5 flex items-center justify-between text-xs font-bold text-[#161514]">
+                <span>Explore websites</span>
+                <ArrowRight className="w-4 h-4 text-[#f7ac4f] transform group-hover:translate-x-1.5 transition-transform" />
+              </div>
+            </Link>
           ))}
         </div>
       </div>

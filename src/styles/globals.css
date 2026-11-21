@@ -221,27 +221,27 @@
   user-select: none;
 }
 
-/* V8 Buttons Specification (A1) */
+/* BDOG Button Styling: Warm apricot-orange pill with bold dark text */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 12px 28px;
   border-radius: 9999px;
-  background: var(--ink);
-  color: var(--ivory);
-  font-family: 'Inter Variable', sans-serif;
+  background: var(--brand, #f7ac4f);
+  color: var(--on-brand, #161514);
+  font-family: 'Inter Variable', -apple-system, sans-serif;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
   transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 0 2px 8px rgba(15, 16, 17, 0.08);
+  box-shadow: 0 2px 8px rgba(247, 172, 79, 0.25);
 }
 .btn-primary:hover {
-  background: var(--gold);
-  color: var(--ink);
+  background: var(--brand-hover, #f29a2e);
+  color: #161514;
   transform: scale(1.02);
-  box-shadow: 0 8px 24px -4px rgba(176, 141, 87, 0.45);
+  box-shadow: 0 8px 24px -4px rgba(247, 172, 79, 0.45);
 }
 .btn-primary:active {
   transform: scale(0.97);
@@ -253,17 +253,19 @@
   justify-content: center;
   padding: 12px 28px;
   border-radius: 9999px;
-  background: transparent;
-  color: var(--ink);
-  border: 1px solid var(--ink);
-  font-family: 'Inter Variable', sans-serif;
+  background: #ffffff;
+  color: #161514;
+  border: 1px solid rgba(22, 21, 20, 0.18);
+  font-family: 'Inter Variable', -apple-system, sans-serif;
   font-size: 15px;
   font-weight: 600;
   transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 .btn-secondary:hover {
-  background: var(--ink);
-  color: var(--ivory);
+  background: #f4f3f1;
+  border-color: #161514;
+  color: #161514;
   transform: scale(1.02);
 }
 .btn-secondary:active {
@@ -273,24 +275,26 @@
 /* Dark section button overrides */
 [data-theme="dark"] .btn-primary,
 .dark-section .btn-primary {
-  background: var(--ivory);
-  color: var(--ink);
+  background: var(--brand, #f7ac4f);
+  color: #161514;
 }
 [data-theme="dark"] .btn-primary:hover,
 .dark-section .btn-primary:hover {
-  background: var(--gold);
-  color: var(--ink);
+  background: var(--brand-hover, #f29a2e);
+  color: #161514;
 }
 
 [data-theme="dark"] .btn-secondary,
 .dark-section .btn-secondary {
-  border-color: var(--ivory);
-  color: var(--ivory);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
 }
 [data-theme="dark"] .btn-secondary:hover,
 .dark-section .btn-secondary:hover {
-  background: var(--ivory);
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
 }
 
 /* Navbar glass floating pill styling per V8 B1 */

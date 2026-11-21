@@ -3,8 +3,8 @@
 ## Audit Overview
 - **Verification Date:** 2026-11-19
 - **Domain Configured:** `https://leadedge.agency`
-- **Total Registered Routes:** 15
-- **Indexable Public Routes:** 14
+- **Total Registered Routes:** 18
+- **Indexable Public Routes:** 17
 - **Non-Indexable Excluded Paths:** 1
 
 ---
@@ -12,11 +12,14 @@
 ## Sitemap Details (`/sitemap.xml`)
 - **Status:** HTTP 200 OK
 - **Format:** Valid XML 0.9 schema (`<urlset>`)
-- **URL Count:** 14
+- **URL Count:** 17
 - **URL Verification:** All 14 routes return HTTP 200 OK with valid `rel="canonical"` tags.
 
 ### Included Routes:
 - `/` (priority: 1, freq: weekly)
+- `/how-it-works` (priority: 0.9, freq: weekly)
+- `/pricing` (priority: 0.9, freq: weekly)
+- `/marketing` (priority: 0.9, freq: weekly)
 - `/about` (priority: 0.8, freq: monthly)
 - `/services` (priority: 0.9, freq: weekly)
 - `/contact` (priority: 0.8, freq: monthly)

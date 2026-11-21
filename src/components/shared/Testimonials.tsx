@@ -41,7 +41,7 @@ export function Testimonials({
       data-testid="testimonials"
       data-surface={isDark ? 'dark' : 'light'}
       className={`py-24 sm:py-32 select-none transition-colors relative overflow-hidden ${
-        isDark ? 'bg-charcoal text-ivory' : 'bg-[#F6F3EC] text-ink'
+        isDark ? 'bg-[#161514] text-white' : 'bg-white text-[#161514]'
       } ${className}`}
       data-theme={isDark ? 'dark' : undefined}
     >
@@ -77,10 +77,10 @@ export function Testimonials({
         >
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full bg-[#B08D57]" aria-hidden="true" />
+              <span className="w-2 h-2 rounded-full bg-[#f7ac4f]" aria-hidden="true" />
               <span
                 className={`text-xs font-mono tracking-widest uppercase font-semibold ${
-                  isDark ? 'text-[#D9C29A]' : 'text-[#57534E]'
+                  isDark ? 'text-[#f7ac4f]' : 'text-[#5d5a55]'
                 }`}
               >
                 03 / CLIENT PERSPECTIVE
@@ -88,11 +88,11 @@ export function Testimonials({
             </div>
             <h2
               className={`text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-tight ${
-                isDark ? 'text-[#F6F3EC]' : 'text-[#0F1011]'
+                isDark ? 'text-white' : 'text-[#161514]'
               }`}
             >
               Honest partnership{' '}
-              <span className={`font-serif italic ${isDark ? 'text-[#D9C29A]' : 'text-[#5C4018]'}`}>
+              <span className={`font-serif italic ${isDark ? 'text-[#f7ac4f]' : 'text-[#b45309]'}`}>
                 reviews.
               </span>
             </h2>

@@ -1,96 +1,102 @@
 :root {
-  /* V8 Professional System Tokens (Sampled from Logo & Tested WCAG AA/AAA) */
-  --ivory: #F6F3EC;              /* Main page background */
-  --ivory-2: #EFEBE2;            /* Alternate sections, footer */
-  --white: #FFFFFF;              /* Cards on ivory, highlights */
-  --ink: #0F1011;                /* Primary text, primary buttons */
-  --charcoal: #1C1D1F;           /* Dark sections */
-  --graphite: #2B2D30;           /* Dark cards, borders on dark */
-  --stone: #6F6A60;              /* Secondary text on ivory (4.85:1 WCAG AA) */
-  --line: rgba(15, 16, 17, 0.12);          /* Hairlines on ivory */
-  --line-dark: rgba(246, 243, 236, 0.16);  /* Hairlines on dark */
-  --gold: #B08D57;               /* Accent: hairlines, icons, hover fills, progress */
-  --gold-soft: #D9C29A;          /* Tints, subtle fills */
-  --gold-deep: #7A5C2E;          /* Gold used as TEXT on ivory (5.58:1 WCAG AA) */
+  /* BDOG Inspired Design System Tokens */
+  --brand: #f7ac4f;              /* Warm apricot-orange primary brand accent */
+  --brand-hover: #f29a2e;        /* Deeper warm amber-orange hover state */
+  --on-brand: #161514;           /* High-contrast dark charcoal text on brand orange */
+
+  /* Backgrounds */
+  --bg-canvas: #ffffff;          /* Pure white base canvas */
+  --bg-warm: #f4f3f1;            /* Warm off-white / linen background */
+  --bg-border: #e8e6e2;          /* Light warm grey divider border */
+  --bg-dark: #161514;            /* Obsidian dark sections */
+  --bg-dark-surface: #22201d;    /* Elevated obsidian surface */
+
+  /* Pastel Category Card Backgrounds */
+  --tint-sage: #EAF1ED;          /* Sage green tint (Health / Clinics) */
+  --tint-sage-border: #D2E2D8;
+  --tint-stone: #F4F1EA;         /* Warm stone tint (Professional Services) */
+  --tint-stone-border: #E2DDD1;
+  --tint-blush: #F8EDED;         /* Blush rose tint (Education & Care) */
+  --tint-blush-border: #EED4D4;
+  --tint-amber: #FCF4EA;         /* Soft amber tint (E-Commerce / DTC) */
+  --tint-amber-border: #F3DEC4;
+
+  /* Typography Colors */
+  --text-main: #161514;          /* Warm obsidian primary headline and body text */
+  --text-muted: #5d5a55;         /* Warm slate secondary text */
+  --text-faint: #8f8a82;         /* Tertiary / subtle meta labels */
+  --text-inverse: #ffffff;       /* Pure white on dark backgrounds */
+  --text-inverse-muted: #d9d6d1; /* Soft off-white on dark backgrounds */
+
+  /* System Compatibility Tokens */
+  --ivory: #ffffff;
+  --ivory-2: #f4f3f1;
+  --white: #ffffff;
+  --ink: #161514;
+  --charcoal: #161514;
+  --graphite: #22201d;
+  --stone: #5d5a55;
+  --line: rgba(22, 21, 20, 0.12);
+  --line-dark: rgba(255, 255, 255, 0.14);
+  --gold: #f7ac4f;
+  --gold-soft: #f7ac4f;
+  --gold-deep: #161514;
 
   /* System Aliases */
-  --bg-base: var(--ivory);
-  --bg-warm: var(--ivory);
-  --bg-muted: var(--ivory-2);
-  --bg-dark: var(--charcoal);
-  --bg-dark-surface: var(--graphite);
-  --text-primary: var(--ink);
-  --text-secondary: var(--stone);
-  --text-muted: var(--stone);
-  --text-inverse-primary: var(--ivory);
-  --text-inverse-secondary: var(--gold-soft);
+  --bg-base: var(--bg-canvas);
+  --bg-muted: var(--bg-warm);
+  --text-primary: var(--text-main);
+  --text-secondary: var(--text-muted);
   --border-light: var(--line);
-  --border-card: var(--line);
+  --border-card: var(--bg-border);
   --border-dark: var(--line-dark);
-  --accent-primary: var(--gold);
-  --accent-tint: var(--gold-soft);
-  --accent-shade: var(--gold-deep);
-  --accent-subtle: rgba(176, 141, 87, 0.15);
+  --accent-primary: var(--brand);
+  --accent-tint: var(--brand);
+  --accent-shade: var(--brand-hover);
+  --accent-subtle: rgba(247, 172, 79, 0.15);
 
-  /* Dot Grid Tokens */
-  --dot-gap: 24px;
-  --dot-r: 1.2px;
-  --dot-light: rgba(15, 16, 17, 0.11);
-  --dot-dark: rgba(246, 243, 236, 0.09);
-
-  /* Typographic Hierarchy (V8 A2) */
-  --fs-hero: clamp(2.6rem, 6vw, 5.75rem);
-  --fs-h2: clamp(2rem, 4vw, 3.5rem);
-  --fs-h3: clamp(1.25rem, 2vw, 1.6rem);
+  /* Typographic Scale (bdog-style) */
+  --fs-hero: clamp(2.75rem, 2rem + 3.2vw, 4.5rem);
+  --fs-h2: clamp(2.25rem, 1.75rem + 2.25vw, 3.5rem);
+  --fs-h3: clamp(1.35rem, 1.25rem + 0.5vw, 1.75rem);
   --fs-body: 1.0625rem; /* 17px */
-  --fs-small: 0.75rem;  /* 12px */
+  --fs-small: 0.8125rem; /* 13px */
 
-  /* Shadows (Restrained, Subdued) */
-  --shadow-sm: 0 2px 8px -1px rgba(15, 16, 17, 0.06);
-  --shadow-md: 0 8px 24px -4px rgba(15, 16, 17, 0.08);
-  --shadow-lg: 0 16px 36px -6px rgba(15, 16, 17, 0.10);
-  --shadow-glass: 0 12px 32px -4px rgba(15, 16, 17, 0.12);
-
-  /* Motion Timing Tokens */
-  --dur-micro: 180ms;
-  --dur-ui: 320ms;
-  --dur-reveal: 600ms;
-  --dur-scene: 900ms;
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
-
-  /* Radii (Consistent: Cards 20px, Images 20px, Buttons Pill) */
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
+  /* Radii */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
   --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-float: 0 1px 3px rgba(22, 21, 20, 0.08), 0 12px 32px -8px rgba(22, 21, 20, 0.14);
+  --shadow-modal: 0 4px 16px rgba(0, 0, 0, 0.10), 0 32px 80px -16px rgba(0, 0, 0, 0.28);
 }
 
-/* Surface Tokens (V9 F1.2) */
 [data-surface="light"] {
-  --bg: #F6F3EC;
-  --fg: #0F1011;
-  --fg-muted: #57534E;
-  --fg-faint: #6F6A60;
-  --line: rgba(15, 16, 17, 0.12);
-  --card-bg: #FFFFFF;
+  --bg: #ffffff;
+  --fg: #161514;
+  --fg-muted: #5d5a55;
+  --fg-faint: #8f8a82;
+  --line: rgba(22, 21, 20, 0.12);
+  --card-bg: #ffffff;
 }
 
 [data-surface="dark"] {
-  --bg: #1C1D1F;
-  --fg: #F6F3EC;
-  --fg-muted: #E7E5E4;
-  --fg-faint: #D6D3D1;
-  --line: rgba(255, 255, 255, 0.16);
-  --card-bg: #141518;
+  --bg: #161514;
+  --fg: #ffffff;
+  --fg-muted: #d9d6d1;
+  --fg-faint: #8f8a82;
+  --line: rgba(255, 255, 255, 0.14);
+  --card-bg: #22201d;
 }
 
 [data-surface="media"] {
-  --bg: #080A0B;
-  --fg: #FFFFFF;
-  --fg-muted: #F6F3EC;
-  --fg-faint: #E7E5E4;
-  --line: rgba(255, 255, 255, 0.22);
-  --card-bg: rgba(16, 18, 20, 0.88);
+  --bg: #161514;
+  --fg: #ffffff;
+  --fg-muted: #d9d6d1;
+  --fg-faint: #8f8a82;
+  --line: rgba(255, 255, 255, 0.18);
+  --card-bg: rgba(22, 21, 20, 0.92);
 }
