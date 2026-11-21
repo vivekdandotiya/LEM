@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { PhoneMockup } from '@/components/ui/PhoneMockup';
+import { HeroSlidingWall } from '@/components/hero/HeroSlidingWall';
 import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -95,64 +95,10 @@ export function HomeHero() {
           </div>
 
           {/* =========================================================================
-              RIGHT COLUMN: Staggered Floating Mobile Phones Showcase Collage
+              RIGHT COLUMN: 3-Column Auto-Sliding Phone Screen Showcase (bdog-style)
               ========================================================================= */}
-          <div aria-hidden="true" className="lg:col-span-6 relative flex items-center justify-center min-h-[520px] sm:min-h-[580px] select-none">
-            {/* Background Soft Glow */}
-            <div className="absolute w-[450px] h-[450px] rounded-full bg-[#f7ac4f]/10 blur-[100px] pointer-events-none" />
-
-            {/* Staggered Phone Layout (Matching Reference Images 1 & 2) */}
-            <div className="relative w-full flex items-center justify-center gap-4 sm:gap-6">
-              
-              {/* Phone 1: Corella Bookkeeping (Dark Theme, tilted slightly left) */}
-              <div className="hidden sm:block transform -rotate-3 hover:rotate-0 transition-transform duration-500 hover:z-30">
-                <PhoneMockup
-                  appName="Corella Bookkeeping"
-                  categoryBadge="BAS & Payroll"
-                  badgeColor="#f7ac4f"
-                  headline="Caught up, then kept up."
-                  subheadline="Books, payroll and BAS for Toowoomba businesses in Xero or MYOB. Run by Kylie Brandt."
-                  ctaText="Book a file review"
-                  ctaColor="#5c3b8a"
-                  callPhone="(07) 5550 0794"
-                  theme="dark"
-                  rating="5.0 ★★★★★ 94 reviews"
-                />
-              </div>
-
-              {/* Phone 2: Quollhill Plumbing (Light Clean Theme, Center & Elevated) */}
-              <div className="transform hover:scale-105 transition-transform duration-500 z-20">
-                <PhoneMockup
-                  appName="Quollhill Plumbing"
-                  categoryBadge="Urgent 24/7"
-                  badgeColor="#2563eb"
-                  headline="The leak fixed, at the price you agreed first."
-                  subheadline="Urgent jobs taken 6am to 10pm, 7 days. $99 call-out, waived with the repair."
-                  ctaText="Book online now"
-                  ctaColor="#1f7a37"
-                  callPhone="(02) 5550 0163"
-                  theme="light"
-                  rating="4.9 ★★★★★ 163 reviews"
-                />
-              </div>
-
-              {/* Phone 3: Wattlebend Health (Soft Sage Theme, tilted right) */}
-              <div className="hidden md:block transform rotate-3 hover:rotate-0 transition-transform duration-500 hover:z-30">
-                <PhoneMockup
-                  appName="Wattlebend Health"
-                  categoryBadge="Camden Allied"
-                  badgeColor="#1f7a37"
-                  headline="Help at home, across Camden."
-                  subheadline="We come to your home for showering, cleaning, shopping and clinical nursing."
-                  ctaText="Call (02) 5550 0679"
-                  ctaColor="#b45309"
-                  callPhone="(02) 5550 0679"
-                  theme="sage"
-                  rating="5.0 ★★★★★ 112 reviews"
-                />
-              </div>
-
-            </div>
+          <div aria-hidden="true" className="lg:col-span-6 relative w-full flex items-center justify-center select-none overflow-hidden">
+            <HeroSlidingWall />
           </div>
 
         </div>
