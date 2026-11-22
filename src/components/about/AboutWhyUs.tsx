@@ -77,7 +77,7 @@ export function AboutWhyUs() {
           <div className="h-72 sm:h-96 w-full rounded-card overflow-hidden">
             <ImageReveal
               src="/images/about/team-1.webp"
-              alt="Lead Edge Marketing multidisciplinary strategy session"
+              alt="Lead Edge Marketers multidisciplinary strategy session"
               fill
               rounded="rounded-card"
               className="h-full w-full"

@@ -30,7 +30,7 @@ export function AboutHero() {
           </SplitHeading>
 
           <p className="text-lg sm:text-xl text-warmgray-700 leading-relaxed max-w-3xl">
-            Lead Edge Marketing was founded on a simple premise: ambitious businesses do not need another bloated agency executing fragmented tactics. They need an integrated growth partner that unites design craft with clear media execution.
+            Lead Edge Marketers was founded on a simple premise: ambitious businesses do not need another bloated agency executing fragmented tactics. They need an integrated growth partner that unites design craft with clear media execution.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export function AboutHero() {
         <div className="w-full h-72 sm:h-[460px] relative rounded-card overflow-hidden shadow-soft-lg border border-charcoal-900/10">
           <ImageReveal
             src="/images/about/about-hero.webp"
-            alt="Lead Edge Marketing multidisciplinary studio workspace"
+            alt="Lead Edge Marketers multidisciplinary studio workspace"
             fill
             priority
             rounded="rounded-card"

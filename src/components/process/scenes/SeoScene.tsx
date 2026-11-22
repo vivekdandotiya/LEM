@@ -238,7 +238,7 @@ export function SeoScene({ activePhase, isStatic = false }: SceneProps) {
                   </div>
                   <div>
                     <h5 className="font-display font-bold text-white text-xs sm:text-sm">
-                      Lead Edge Marketing — Digital Growth Studio
+                      Lead Edge Marketers — Digital Growth Studio
                     </h5>
                     <span className="font-mono text-xs text-lime">leadedge.agency</span>
                   </div>

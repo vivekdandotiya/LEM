@@ -62,9 +62,9 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'We dismantle chaotic keyword spreadsheets into structured, semantic topical clusters. Every commercial query maps to a purpose-built landing page designed to capture qualified buyers, eliminate internal cannibalization, and win category dominance.',
     heroVideo: {
-      mp4: '/videos/services/seo-hero.mp4',
-      webm: '/videos/services/seo-hero.webm',
-      poster: '/videos/services/seo-hero-poster.webp',
+      mp4: '/videos/services/seo-phase-0.mp4',
+      webm: '/videos/services/seo-phase-0.webm',
+      poster: '/videos/services/seo-phase-0-poster.webp',
     },
     heroImage: '/images/screens/audiology/poster-480.webp',
     statPill: {
@@ -181,7 +181,7 @@ export const SUBSERVICES: SubService[] = [
     heroVideo: {
       mp4: '/videos/services/seo-phase-1.mp4',
       webm: '/videos/services/seo-phase-1.webm',
-      poster: '/videos/services/seo-hero-poster.webp',
+      poster: '/videos/services/seo-phase-1-poster.webp',
     },
     heroImage: '/images/screens/builder/poster-480.webp',
     statPill: {
@@ -298,7 +298,7 @@ export const SUBSERVICES: SubService[] = [
     heroVideo: {
       mp4: '/videos/services/seo-phase-2.mp4',
       webm: '/videos/services/seo-phase-2.webm',
-      poster: '/videos/services/seo-hero-poster.webp',
+      poster: '/videos/services/seo-phase-2-poster.webp',
     },
     heroImage: '/images/screens/conveyancer/poster-480.webp',
     statPill: {
@@ -399,7 +399,7 @@ export const SUBSERVICES: SubService[] = [
     heroVideo: {
       mp4: '/videos/services/seo-phase-3.mp4',
       webm: '/videos/services/seo-phase-3.webm',
-      poster: '/videos/services/seo-hero-poster.webp',
+      poster: '/videos/services/seo-phase-3-poster.webp',
     },
     heroImage: '/images/screens/plumber/poster-480.webp',
     statPill: {
@@ -501,9 +501,9 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'We engineer Google Ads campaigns with exact-match negative keyword scrubbing, Single-Theme Ad Groups (STAGs), and value-based bidding. Every ad dollar is routed strictly to high-value prospects actively looking to buy.',
     heroVideo: {
-      mp4: '/videos/services/ppc-hero.mp4',
-      webm: '/videos/services/ppc-hero.webm',
-      poster: '/videos/services/ppc-hero-poster.webp',
+      mp4: '/videos/services/ppc-phase-0.mp4',
+      webm: '/videos/services/ppc-phase-0.webm',
+      poster: '/videos/services/ppc-phase-0-poster.webp',
     },
     heroImage: '/images/screens/naturopath/poster-480.webp',
     statPill: {
@@ -604,7 +604,7 @@ export const SUBSERVICES: SubService[] = [
     heroVideo: {
       mp4: '/videos/services/ppc-phase-1.mp4',
       webm: '/videos/services/ppc-phase-1.webm',
-      poster: '/videos/services/ppc-hero-poster.webp',
+      poster: '/videos/services/ppc-phase-1-poster.webp',
     },
     heroImage: '/images/screens/dance-studio/poster-480.webp',
     statPill: {
@@ -706,9 +706,9 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'We replace bloated, slow WordPress templates with hand-crafted Next.js 15 applications. Compiled statically at the edge for 0.4s load times, perfect 100 Lighthouse performance, and conversion-engineered user interfaces.',
     heroVideo: {
-      mp4: '/videos/services/web-development-hero.mp4',
-      webm: '/videos/services/web-development-hero.webm',
-      poster: '/videos/services/web-development-hero-poster.webp',
+      mp4: '/videos/services/web-development-phase-0.mp4',
+      webm: '/videos/services/web-development-phase-0.webm',
+      poster: '/videos/services/web-development-phase-0-poster.webp',
     },
     heroImage: '/images/screens/electrician/poster-480.webp',
     statPill: {

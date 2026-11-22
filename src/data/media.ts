@@ -1,5 +1,5 @@
 /**
- * Lead Edge Marketing — Central Media & Asset Catalog (V8)
+ * Lead Edge Marketers — Central Media & Asset Catalog (V8)
  *
  * Single source of truth for all image and video asset paths.
  * Components must import from this file and never hard-code strings.

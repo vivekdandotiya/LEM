@@ -1,5 +1,5 @@
 /**
- * Lead Edge Marketing — Brand & Business Source of Truth
+ * Lead Edge Marketers — Brand & Business Source of Truth
  * Updated to Client Source of Truth (Google Doc V5)
  */
 
@@ -39,7 +39,7 @@ export interface BusinessData {
 }
 
 export const business: BusinessData = {
-  name: "Lead Edge Marketing",
+  name: "Lead Edge Marketers",
   shortName: "Lead Edge",
   type: "Digital growth studio",
   tagline: "Creative, ads, search and web under one roof.",

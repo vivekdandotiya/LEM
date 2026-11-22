@@ -44,13 +44,13 @@ export interface SocialMediaContent {
 export const socialMediaContent: SocialMediaContent = {
   status: {
     awaitingClientContent: true,
-    sourceDocument: 'Waiting for revised document from client as noted in Website Suggestions | Lead Edge Marketing (Item 3)',
+    sourceDocument: 'Waiting for revised document from client as noted in Website Suggestions | Lead Edge Marketers (Item 3)',
     note: 'The current content serves as an active placeholder until the client provides the revised copy.',
     lastUpdated: '2026-11-19',
   },
 
   meta: {
-    title: 'Social Media Marketing — Lead Edge Marketing',
+    title: 'Social Media Marketing — Lead Edge Marketers',
     description:
       'We craft targeted social media marketing campaigns that drive engagement, build authority, and generate high-converting leads across all platforms.',
   },

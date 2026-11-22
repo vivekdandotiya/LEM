@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin, Clock, Sparkles, CheckCircle2 } from 'lucide-react
 export const metadata: Metadata = {
   title: 'Contact & Strategic Consultation — Start A Project',
   description:
-    'Initiate a strategic consultation with Lead Edge Marketing. We review inbound briefs within 24 business hours.',
+    'Initiate a strategic consultation with Lead Edge Marketers. We review inbound briefs within 24 business hours.',
   alternates: {
     canonical: '/contact',
   },

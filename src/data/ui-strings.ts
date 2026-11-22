@@ -1,5 +1,5 @@
 /**
- * Lead Edge Marketing — Centralized UI Strings
+ * Lead Edge Marketers — Centralized UI Strings
  * Single source of truth for generic buttons, section eyebrows, tags, badges, and aria labels.
  * Client copy remains verbatim in client content files.
  */

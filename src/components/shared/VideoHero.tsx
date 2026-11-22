@@ -19,7 +19,7 @@ export function VideoHero({
   posterSrc,
   posterAlt,
   className = '',
-  overlayClass = 'bg-charcoal/60',
+  overlayClass = 'bg-black/30',
   children,
   heightClass = 'min-h-[85svh] lg:min-h-svh',
   staticOnly = false,
@@ -31,7 +31,7 @@ export function VideoHero({
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  // 1. Connection & reduced-motion inspection + delayed source attachment
+  // 1. Connection & reduced-motion inspection + eager source attachment
   useEffect(() => {
     if (staticOnly || !videoBase) return;
 
@@ -51,42 +51,14 @@ export function VideoHero({
     if (nav.connection?.saveData === true) {
       return;
     }
-    if (nav.connection?.effectiveType && ['slow-2g', '2g', '3g'].includes(nav.connection.effectiveType)) {
+    if (nav.connection?.effectiveType && ['slow-2g', '2g'].includes(nav.connection.effectiveType)) {
       return;
     }
 
-    // Attach video sources only after window load or idle callback to protect LCP & TBT
-    const scheduleAttach = () => {
-      if ('requestIdleCallback' in window) {
-        (window as Window & { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(() => {
-          setShouldAttachVideo(true);
-        });
-      } else {
-        setTimeout(() => setShouldAttachVideo(true), 200);
-      }
-    };
+    setShouldAttachVideo(true);
+  }, [staticOnly, videoBase]);
 
-    if (document.readyState === 'complete') {
-      scheduleAttach();
-    } else {
-      window.addEventListener('load', scheduleAttach, { once: true });
-    }
-  }, []);
-
-  // 2. Watchdog timer: If video does not start playing within 3 seconds of being attached, preserve poster
-  useEffect(() => {
-    if (!shouldAttachVideo || videoPlaying || hasError) return;
-
-    const timer = setTimeout(() => {
-      if (!videoPlaying) {
-        setHasError(true);
-      }
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, [shouldAttachVideo, videoPlaying, hasError]);
-
-  // 3. IntersectionObserver & Tab Visibility management: pause when hidden/offscreen, resume when visible
+  // 2. IntersectionObserver & Tab Visibility management: pause when hidden/offscreen, resume when visible
   useEffect(() => {
     const video = videoRef.current;
     const container = containerRef.current;
@@ -137,28 +109,27 @@ export function VideoHero({
     <div
       ref={containerRef}
       data-surface="media"
-      className={`relative w-full ${heightClass} flex items-center justify-center overflow-hidden bg-charcoal ${className}`}
+      className={`relative w-full ${heightClass} flex items-center justify-center overflow-hidden bg-[#0c0c0d] ${className}`}
     >
-      {/* High Priority Static Poster Image (Fast LCP & Rock-Solid Stability) */}
+      {/* High Priority Static Poster Image (Always visible as foundation, never black) */}
       <Image
         src={posterSrc}
         alt={posterAlt}
         fill
         priority
         sizes="100vw"
-        className={`object-cover object-center transition-opacity duration-700 ease-out ${
-          !staticOnly && videoPlaying && !hasError ? 'opacity-0 pointer-events-none' : 'opacity-100'
-        }`}
+        className="object-cover object-center"
       />
 
-      {/* Looping Ambient Video: Poster-first, lazy sources, watchdog safety (skipped in staticOnly mode) */}
+      {/* Looping Ambient Video: Mounted gracefully over poster */}
       {!staticOnly && shouldAttachVideo && !hasError && videoBase && (
         <video
           ref={videoRef}
+          autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           aria-hidden="true"
           onPlaying={() => setVideoPlaying(true)}
           onError={() => setHasError(true)}
@@ -172,7 +143,7 @@ export function VideoHero({
         </video>
       )}
 
-      {/* Atmospheric Vignette & Tuned Contrast Gradient Scrim (V9 F1.1) */}
+      {/* Balanced, Transparent Scrim: Ensures White Text Readability without Drowning Imagery */}
       <div
         className={`absolute inset-0 pointer-events-none transition-colors ${overlayClass}`}
       />
@@ -180,19 +151,18 @@ export function VideoHero({
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(180deg, rgba(8,10,11,0.72) 0%, rgba(8,10,11,0.48) 40%, rgba(8,10,11,0.85) 100%)',
+            'linear-gradient(180deg, rgba(8,10,11,0.35) 0%, rgba(8,10,11,0.15) 40%, rgba(8,10,11,0.55) 100%)',
         }}
       />
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-charcoal via-transparent to-charcoal/40" />
 
-      {/* Content Layer with Local Dark Radial Scrim */}
+      {/* Content Layer with Soft Vignette for Text Contrast */}
       {children && (
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-24 sm:py-32">
           <div
             className="rounded-3xl p-4 sm:p-8"
             style={{
               background:
-                'radial-gradient(ellipse 95% 85% at 50% 50%, rgba(8,10,11,0.65) 0%, rgba(8,10,11,0.30) 65%, transparent 100%)',
+                'radial-gradient(ellipse 95% 85% at 50% 50%, rgba(8,10,11,0.40) 0%, rgba(8,10,11,0.10) 65%, transparent 100%)',
             }}
           >
             {children}

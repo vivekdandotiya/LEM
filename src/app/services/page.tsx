@@ -106,6 +106,24 @@ const SERVICES_DATA = [
     imageAlt: 'Cinematic cinema camera setup with prime lens',
     reversed: false,
   },
+  {
+    index: 6,
+    slug: 'digital-marketing',
+    title: 'Full-Funnel Digital Growth',
+    tagline: 'End-to-End Attribution & Revenue Scaling',
+    description:
+      'We combine organic search, performance acquisition, high-converting web architecture, and cinematic creative into a unified revenue engine. Every dollar spent is directly attributed to closed business pipeline.',
+    deliverables: [
+      'Multi-Touch Revenue Attribution',
+      'Unified Growth Dashboards',
+      'Omnichannel Campaign Orchestration',
+      'Lifecycle Retention Loops',
+      'Senior Strategist Oversight',
+    ],
+    imageSrc: '/images/hero/hero-01-trailnest-cabin-4x5.webp',
+    imageAlt: 'Integrated full-funnel digital marketing growth engine',
+    reversed: true,
+  },
 ];
 
 export default function ServicesPage() {
