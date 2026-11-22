@@ -37,7 +37,6 @@ const FOOTER_COLUMNS = [
     links: [
       { label: '/ HOME', href: '/', isAccent: true },
       { label: 'HOW IT WORKS', href: '/how-it-works' },
-      { label: 'PRICING', href: '/pricing' },
       { label: 'MARKETING', href: '/marketing' },
       { label: 'ABOUT STUDIO', href: '/about' },
       { label: 'CONTACT', href: '/contact' },
@@ -70,7 +69,7 @@ const FOOTER_COLUMNS = [
       { label: 'GUIDES & INSIGHTS', href: '/blog' },
       { label: 'CLIENT REVIEWS', href: '/#testimonials' },
       { label: 'FREQUENT QUESTIONS', href: '/#faq' },
-      { label: 'PRICING INCLUSIONS', href: '/pricing' },
+      { label: 'GROWTH BLUEPRINT', href: '/contact' },
     ],
   },
   {

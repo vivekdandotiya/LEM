@@ -62,14 +62,6 @@ export const APP_ROUTES: AppRoute[] = [
     title: 'How It Works — Lead Edge Marketers',
   },
   {
-    path: '/pricing',
-    indexable: true,
-    priority: 0.9,
-    changeFrequency: 'weekly',
-    lastModified: LAST_MODIFIED_DATE,
-    title: 'Pricing — Lead Edge Marketers',
-  },
-  {
     path: '/marketing',
     indexable: true,
     priority: 0.9,
