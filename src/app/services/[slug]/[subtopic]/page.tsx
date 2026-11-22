@@ -354,7 +354,7 @@ export async function generateMetadata({ params }: SubtopicPageProps): Promise<M
   const data = resolveSubService(slug, subtopic);
 
   return {
-    title: `${data.title} | ${data.serviceCategoryName} | Lead Edge Marketers`,
+    title: `${data.title} — ${data.serviceCategoryName}`,
     description: data.heroSubheadline,
     alternates: {
       canonical: `https://leadedge.agency/services/${slug}/${subtopic}`,
