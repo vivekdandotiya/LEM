@@ -211,17 +211,8 @@ export function Navbar() {
             })}
           </div>
 
-          {/* 3. Right Phone & CTA Button */}
+          {/* 3. Right CTA Button */}
           <div className="flex items-center gap-3 sm:gap-4">
-            {/* Phone Link (Hidden on small mobile) */}
-            <a
-              href="tel:0452424845"
-              className="hidden sm:inline-flex items-center gap-1.5 text-xs sm:text-sm font-sans font-medium text-[#161514] hover:text-[#f29a2e] transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#5d5a55]" />
-              <span>0452 424 845</span>
-            </a>
-
             {/* BDOG Style Warm Apricot Pill Button */}
             <Link
               href="/contact"
@@ -260,20 +251,12 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Quick Phone & Rebuild CTA */}
+            {/* Rebuild CTA */}
             <div className="flex flex-col gap-3 pt-2">
-              <a
-                href="tel:0452424845"
-                className="flex items-center gap-2 text-sm font-sans font-medium text-[#5d5a55]"
-              >
-                <Phone className="w-4 h-4 text-[#f7ac4f]" />
-                <span>Call 0452 424 845</span>
-              </a>
-
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full text-center py-3 rounded-full bg-[#f7ac4f] text-[#161514] font-bold text-base shadow-sm"
+                className="w-full text-center py-3.5 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-bold text-base shadow-sm active:scale-95 transition-all"
               >
                 Get a Free Blueprint
               </Link>

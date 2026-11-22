@@ -2,12 +2,22 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ContactForm } from '@/components/contact/ContactForm';
-import { Mail, Phone, MapPin, Clock, Sparkles, CheckCircle2 } from 'lucide-react';
+import {
+  Mail,
+  MapPin,
+  Clock,
+  Sparkles,
+  CheckCircle2,
+  ShieldCheck,
+  Calendar,
+  ArrowRight,
+  Zap,
+} from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact & Strategic Consultation — Start A Project',
+  title: 'Contact & Executive Consultation — Lead Edge Marketers',
   description:
-    'Initiate a strategic consultation with Lead Edge Marketers. We review inbound briefs within 24 business hours.',
+    'Initiate a strategic consultation with Lead Edge Marketers. Senior partners evaluate your search rankings, ad funnels, and web architecture within 24 business hours.',
   alternates: {
     canonical: '/contact',
   },
@@ -15,117 +25,183 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="pt-28 sm:pt-36 pb-24 sm:pb-32 bg-[#F6F3EC] text-ink min-h-screen select-none">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Direct Consultation Details & Studio Image */}
-          <div className="lg:col-span-5 flex flex-col gap-8">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-ink/10 text-xs font-mono uppercase tracking-widest text-stone w-fit shadow-2xs mb-6">
-                <Sparkles className="w-3.5 h-3.5 text-gold" />
-                <span>Direct Consultation</span>
-              </div>
+    <main className="pt-28 sm:pt-36 pb-24 sm:pb-32 bg-[#FAF8F5] text-[#161514] min-h-screen select-none border-b border-[#e8e6e2] relative overflow-hidden">
+      {/* Background Subtle Tech Dot Matrix */}
+      <div
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
+        style={{
+          backgroundImage:
+            'radial-gradient(#161514 1px, transparent 1px), radial-gradient(#161514 1px, #FAF8F5 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
 
-              {/* H1 max 8 words */}
-              <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-ink tracking-tight leading-[0.96] mb-5">
-                Let&apos;s build steady{' '}
-                <span className="font-serif italic font-normal text-gold-deep">
-                  momentum.
-                </span>
-              </h1>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        
+        {/* =========================================================================
+            HEADER ROW
+            ========================================================================= */}
+        <div className="max-w-3xl mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f7ac4f]/15 border border-[#f7ac4f]/30 text-xs font-mono font-bold uppercase tracking-wider text-[#b45309] mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#f7ac4f] animate-pulse" />
+            <span>Direct Partner Access · 24-Hour Evaluation</span>
+          </div>
 
-              {/* Supporting Line max 14 words */}
-              <p className="text-base sm:text-lg font-sans text-stone leading-relaxed">
-                Senior partners evaluate every inbound inquiry within 24 business hours.
-              </p>
-            </div>
+          <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-[#161514] tracking-tight leading-[1.04] mb-5">
+            Start your strategic growth consultation.
+          </h1>
 
-            {/* Studio Photography */}
-            <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-ink/10 shadow-soft-md bg-charcoal">
+          <p className="text-base sm:text-xl font-sans text-[#5d5a55] leading-relaxed">
+            Senior partners evaluate every inbound brief within 24 business hours. No junior sales reps calling you. Receive an objective growth blueprint before committing a single dollar.
+          </p>
+        </div>
+
+        {/* =========================================================================
+            TWO-COLUMN WORKSPACE:
+            Left: Senior Partner Assurances, Australian Desks, Calendar Walkthrough
+            Right: Upgraded Luxury Consultation Brief Form
+            ========================================================================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          
+          {/* =========================================================================
+              LEFT 5 COLS: Senior Assurances & Direct Agency Details
+              ========================================================================= */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            
+            {/* Studio Photography Card with Luxury HUD */}
+            <div className="relative w-full aspect-[4/3] rounded-[28px] overflow-hidden border border-[#e8e6e2] shadow-sm bg-[#161514]">
               <Image
                 src="/images/pages/P11-contact-hero-4x5.webp"
                 alt="Lead Edge executive advisory consultation suite"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 500px"
-                className="object-cover"
+                className="object-cover opacity-90"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between text-ivory text-xs font-mono">
-                <span className="uppercase tracking-widest">Consultation Suite</span>
-                <span className="text-gold font-semibold">Active Practice</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+              
+              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white text-xs font-mono">
+                <div>
+                  <span className="text-[10px] text-[#f7ac4f] uppercase block font-bold">
+                    STRATEGY ADVISORY
+                  </span>
+                  <span className="font-display font-bold text-sm text-white">
+                    Sydney · Melbourne · Brisbane
+                  </span>
+                </div>
+                <span className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-white/90 border border-white/20">
+                  Active Practice
+                </span>
               </div>
             </div>
 
-            {/* Direct Contact Cards */}
+            {/* Direct Channel Cards (No phone numbers) */}
             <div className="space-y-3">
-              <div className="p-4 rounded-[20px] bg-white border border-ink/10 shadow-2xs flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-ivory border border-ink/10 flex items-center justify-center shrink-0 text-gold-deep">
-                  <Mail className="w-4 h-4" />
+              {/* Partner Inquiries Email */}
+              <div className="p-5 rounded-[24px] bg-white border border-[#e8e6e2] shadow-xs flex items-center gap-4">
+                <div className="w-11 h-11 rounded-2xl bg-[#FAF8F5] border border-[#e8e6e2] flex items-center justify-center shrink-0 text-[#b45309]">
+                  <Mail className="w-5 h-5 text-[#f7ac4f]" />
                 </div>
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-stone block font-semibold">
-                    Inquiries & RFPs
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#787570] block font-bold">
+                    Direct Partner Desk
                   </span>
                   <a
                     href="mailto:hello@leadedge.agency"
-                    className="text-sm font-mono font-bold text-ink hover:text-gold-deep transition-colors"
+                    className="text-sm sm:text-base font-sans font-bold text-[#161514] hover:text-[#b45309] transition-colors"
                   >
                     hello@leadedge.agency
                   </a>
                 </div>
               </div>
 
-              <div className="p-4 rounded-[20px] bg-white border border-ink/10 shadow-2xs flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-ivory border border-ink/10 flex items-center justify-center shrink-0 text-gold-deep">
-                  <Phone className="w-4 h-4" />
+              {/* Australian Working Hours */}
+              <div className="p-5 rounded-[24px] bg-white border border-[#e8e6e2] shadow-xs flex items-center gap-4">
+                <div className="w-11 h-11 rounded-2xl bg-[#FAF8F5] border border-[#e8e6e2] flex items-center justify-center shrink-0 text-[#b45309]">
+                  <Clock className="w-5 h-5 text-[#f7ac4f]" />
                 </div>
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-stone block font-semibold">
-                    Direct Line
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#787570] block font-bold">
+                    Evaluation SLA & Availability
                   </span>
-                  <a
-                    href="tel:+442079460912"
-                    className="text-sm font-mono font-bold text-ink hover:text-gold-deep transition-colors"
-                  >
-                    +44 (0) 20 7946 0912
-                  </a>
+                  <span className="text-sm font-sans font-bold text-[#161514]">
+                    Mon – Fri, 08:30 – 18:00 AEST (24h Review)
+                  </span>
                 </div>
               </div>
 
-              <div className="p-4 rounded-[20px] bg-white border border-ink/10 shadow-2xs flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-ivory border border-ink/10 flex items-center justify-center shrink-0 text-gold-deep">
-                  <Clock className="w-4 h-4" />
+              {/* Australian Physical Locations */}
+              <div className="p-5 rounded-[24px] bg-white border border-[#e8e6e2] shadow-xs flex items-center gap-4">
+                <div className="w-11 h-11 rounded-2xl bg-[#FAF8F5] border border-[#e8e6e2] flex items-center justify-center shrink-0 text-[#b45309]">
+                  <MapPin className="w-5 h-5 text-[#f7ac4f]" />
                 </div>
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-stone block font-semibold">
-                    Studio Availability
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#787570] block font-bold">
+                    Australian Presence
                   </span>
-                  <span className="text-sm font-mono font-bold text-ink">
-                    Mon – Fri, 09:00 – 18:00 GMT
+                  <span className="text-sm font-sans font-bold text-[#161514]">
+                    Barangaroo, Sydney · Collins St, Melbourne
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* SLA Commitment */}
-            <div className="p-5 rounded-[20px] bg-[#EFEBE2] border border-ink/10 shadow-2xs flex items-start gap-3.5">
-              <CheckCircle2 className="w-5 h-5 text-gold-deep shrink-0 mt-0.5" />
-              <div>
-                <h4 className="text-sm font-display font-bold text-ink mb-1">
-                  Direct Senior Evaluation
-                </h4>
-                <p className="text-xs font-sans text-stone leading-relaxed">
-                  Every inquiry receives a senior partner review. We assess technical scope and feasibility prior to initiating a discovery sprint.
-                </p>
+            {/* 3 Core Client Guarantees Box */}
+            <div className="p-6 rounded-[28px] bg-[#161514] text-white shadow-xl relative overflow-hidden">
+              <div className="relative z-10 space-y-4">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-[#f7ac4f]" />
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#f7ac4f]">
+                    Our Consultation Standards
+                  </span>
+                </div>
+
+                <div className="space-y-3 text-xs font-sans">
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#1f7a37] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-white block">100% Unconditional Ownership</span>
+                      <span className="text-[#d9d6d1]">
+                        All audit findings, competitor data, and keyword taxonomies remain yours to keep.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#1f7a37] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-white block">Zero Sales Rep Call Pressure</span>
+                      <span className="text-[#d9d6d1]">
+                        You communicate directly with senior growth practitioners, never commissioned telemarketers.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#1f7a37] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-white block">Rapid 14-Day Delivery Speed</span>
+                      <span className="text-[#d9d6d1]">
+                        When approved, your campaigns and web infrastructure go live in two weeks flat.
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              {/* Ambient Glow */}
+              <div className="absolute -bottom-16 -right-16 w-44 h-44 rounded-full bg-[#f7ac4f]/15 blur-3xl pointer-events-none" />
             </div>
+
           </div>
 
-          {/* Right Column: Accessible Zod Form */}
+          {/* =========================================================================
+              RIGHT 7 COLS: The Upgraded Interactive Consultation Brief
+              ========================================================================= */}
           <div className="lg:col-span-7">
             <ContactForm />
           </div>
+
         </div>
       </div>
     </main>

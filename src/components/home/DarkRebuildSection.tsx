@@ -51,11 +51,11 @@ export function DarkRebuildSection() {
           </div>
         </form>
 
-        {/* Support Phone Call Prompt */}
+        {/* Direct Email / Consultation Prompt */}
         <p className="text-xs font-sans text-[#d1cec7]">
-          Questions about our full-funnel marketing partnerships? Call{' '}
-          <a href="tel:0452424845" className="text-[#f7ac4f] hover:underline font-bold">
-            0452 424 845
+          Questions about our full-funnel marketing partnerships? Contact our senior partners at{' '}
+          <a href="mailto:hello@leadedge.agency" className="text-[#f7ac4f] hover:underline font-bold">
+            hello@leadedge.agency
           </a>
           .
         </p>

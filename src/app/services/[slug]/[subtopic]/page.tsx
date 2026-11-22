@@ -443,14 +443,6 @@ export default async function SubtopicPage({ params }: SubtopicPageProps) {
                     <span>Get a Free Strategy Blueprint</span>
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
-
-                  <a
-                    href="tel:0452424845"
-                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-sans font-bold text-[#161514] hover:text-[#b45309] transition-colors"
-                  >
-                    <Phone className="w-4 h-4 text-[#f7ac4f]" />
-                    <span>Call 0452 424 845</span>
-                  </a>
                 </div>
 
                 {/* Stat Highlight Card */}
@@ -676,12 +668,12 @@ export default async function SubtopicPage({ params }: SubtopicPageProps) {
               >
                 Claim Your Free Strategy Blueprint
               </Link>
-              <a
-                href="tel:0452424845"
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#f4f3f1] hover:bg-[#e8e6e2] text-[#161514] font-sans font-bold text-base tracking-tight transition-all duration-150"
+              <Link
+                href="/how-it-works"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#f4f3f1] hover:bg-[#e8e6e2] text-[#161514] font-sans font-bold text-base tracking-tight transition-all duration-150 text-center"
               >
-                Call 0452 424 845
-              </a>
+                How It Works
+              </Link>
             </div>
           </div>
         </section>

@@ -76,7 +76,7 @@ const FOOTER_COLUMNS = [
   {
     title: 'Contact',
     links: [
-      { label: 'CALL 0452 424 845', href: 'tel:0452424845' },
+      { label: 'SCHEDULE A CONSULTATION', href: '/contact' },
       { label: 'GET FREE BLUEPRINT', href: '/contact' },
       { label: 'SUPPORT DESK', href: '/contact' },
       { label: 'TERMS OF ENGAGEMENT', href: '/terms' },

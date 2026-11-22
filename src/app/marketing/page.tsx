@@ -62,13 +62,12 @@ export default function MarketingPage() {
           </div>
 
           <p className="text-xs font-sans text-[#d1cec7] flex items-center justify-center gap-2">
-            <span>Prefer to speak directly? Call our Sydney desk at</span>
+            <span>Direct partner review · Confidential briefs transmitted to</span>
             <a
-              href="tel:0452424845"
+              href="mailto:hello@leadedge.agency"
               className="text-[#f7ac4f] hover:underline font-bold inline-flex items-center gap-1"
             >
-              <Phone className="w-3.5 h-3.5" />
-              <span>0452 424 845</span>
+              <span>hello@leadedge.agency</span>
             </a>
           </p>
         </div>
