@@ -123,6 +123,7 @@ export function SubServiceVideoPlayer({
             setHasStarted(true);
           }}
           onPause={() => setIsPlaying(false)}
+          onError={() => setIsPlaying(false)}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out ${
             isPlaying || hasStarted ? 'opacity-100' : 'opacity-0'
           }`}

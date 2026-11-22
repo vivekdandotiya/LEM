@@ -86,71 +86,44 @@ export async function generateStaticParams() {
   return params;
 }
 
-// Deterministically assign authentic, verified video and poster assets
-function getCategoryMedia(categorySlug: string, subtopicSlug: string) {
+// Deterministically assign authentic, verified video and poster assets from the 60 bespoke catalog assets
+function getCategoryMedia(categorySlug: string, subtopicSlug: string): {
+  video: {
+    mp4: string;
+    webm?: string;
+    poster: string;
+  };
+  image: string;
+} {
   let hash = 0;
   for (let i = 0; i < subtopicSlug.length; i++) {
     hash = (hash << 5) - hash + subtopicSlug.charCodeAt(i);
     hash |= 0;
   }
-  const phaseIdx = Math.abs(hash) % 4; // 0, 1, 2, 3
+  const videoIdx = (Math.abs(hash) % 12) + 1;
+  const formattedIdx = String(videoIdx).padStart(2, '0');
 
-  switch (categorySlug) {
-    case 'seo':
-      return {
-        video: {
-          mp4: `/videos/services/seo-phase-${phaseIdx}.mp4`,
-          webm: `/videos/services/seo-phase-${phaseIdx}.webm`,
-          poster: `/videos/services/seo-phase-${phaseIdx}-poster.webp`,
-        },
-        image: `/videos/services/seo-phase-${phaseIdx}-poster.webp`,
-      };
-    case 'ppc':
-      return {
-        video: {
-          mp4: `/videos/services/ppc-phase-${phaseIdx}.mp4`,
-          webm: `/videos/services/ppc-phase-${phaseIdx}.webm`,
-          poster: `/videos/services/ppc-phase-${phaseIdx}-poster.webp`,
-        },
-        image: `/videos/services/ppc-phase-${phaseIdx}-poster.webp`,
-      };
-    case 'web-development':
-      return {
-        video: {
-          mp4: `/videos/services/web-development-phase-${phaseIdx}.mp4`,
-          webm: `/videos/services/web-development-phase-${phaseIdx}.webm`,
-          poster: `/videos/services/web-development-phase-${phaseIdx}-poster.webp`,
-        },
-        image: `/videos/services/web-development-phase-${phaseIdx}-poster.webp`,
-      };
-    case 'social-media':
-      return {
-        video: {
-          mp4: `/videos/services/social-media-phase-${phaseIdx}.mp4`,
-          webm: `/videos/services/social-media-phase-${phaseIdx}.webm`,
-          poster: `/videos/services/social-media-phase-${phaseIdx}-poster.webp`,
-        },
-        image: `/videos/services/social-media-phase-${phaseIdx}-poster.webp`,
-      };
-    case 'video-photo':
-      return {
-        video: {
-          mp4: phaseIdx === 0 ? '/videos/services/video-photo-hero.mp4' : `/videos/services/video-photo-phase-${phaseIdx}.mp4`,
-          webm: phaseIdx === 0 ? '/videos/services/video-photo-hero.webm' : `/videos/services/video-photo-phase-${phaseIdx}.webm`,
-          poster: phaseIdx === 0 ? '/videos/services/video-photo-hero-poster.webp' : `/videos/services/video-photo-phase-${phaseIdx}-poster.webp`,
-        },
-        image: phaseIdx === 0 ? '/videos/services/video-photo-hero-poster.webp' : `/videos/services/video-photo-phase-${phaseIdx}-poster.webp`,
-      };
-    default:
-      return {
-        video: {
-          mp4: '/videos/home/showcase-01-product-ad.mp4',
-          webm: '/videos/home/showcase-01-product-ad.webm',
-          poster: '/videos/home/showcase-01-product-ad-poster.webp',
-        },
-        image: '/videos/home/showcase-01-product-ad-poster.webp',
-      };
+  let folder = 'seo';
+  if (categorySlug === 'ppc') {
+    folder = 'ppc';
+  } else if (categorySlug === 'web-development' || categorySlug === 'web') {
+    folder = 'web-development';
+  } else if (categorySlug === 'social-media' || categorySlug === 'social') {
+    folder = 'social-media';
+  } else if (categorySlug === 'video-photo') {
+    folder = 'video-photo';
   }
+
+  const mp4Path = `/videos/catalog/${folder}/video-${formattedIdx}.mp4`;
+  const posterPath = `/videos/catalog/${folder}/video-${formattedIdx}-poster.webp`;
+
+  return {
+    video: {
+      mp4: mp4Path,
+      poster: posterPath,
+    },
+    image: posterPath,
+  };
 }
 
 // Find or dynamically synthesize a rich SubService model

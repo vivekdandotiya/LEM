@@ -17,7 +17,7 @@ export interface SubService {
   heroSubheadline: string;
   heroVideo?: {
     mp4: string;
-    webm: string;
+    webm?: string;
     poster: string;
   };
   heroImage: string;
@@ -62,11 +62,10 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'We dismantle chaotic keyword spreadsheets into structured, semantic topical clusters. Every commercial query maps to a purpose-built landing page designed to capture qualified buyers, eliminate internal cannibalization, and win category dominance.',
     heroVideo: {
-      mp4: '/videos/services/seo-phase-0.mp4',
-      webm: '/videos/services/seo-phase-0.webm',
-      poster: '/videos/services/seo-phase-0-poster.webp',
+      mp4: '/videos/catalog/seo/video-01.mp4',
+      poster: '/videos/catalog/seo/video-01-poster.webp',
     },
-    heroImage: '/images/screens/audiology/poster-480.webp',
+    heroImage: '/videos/catalog/seo/video-01-poster.webp',
     statPill: {
       label: 'Average Non-Brand Organic Growth',
       value: '+184%',
@@ -179,11 +178,10 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'Capture thousands of qualified long-tail search queries with programmatic, data-backed landing page engines. Built on Next.js 15 static generation with unique localized content, verified schema, and zero duplicate content penalties.',
     heroVideo: {
-      mp4: '/videos/services/seo-phase-1.mp4',
-      webm: '/videos/services/seo-phase-1.webm',
-      poster: '/videos/services/seo-phase-1-poster.webp',
+      mp4: '/videos/catalog/seo/video-02.mp4',
+      poster: '/videos/catalog/seo/video-02-poster.webp',
     },
-    heroImage: '/images/screens/builder/poster-480.webp',
+    heroImage: '/videos/catalog/seo/video-02-poster.webp',
     statPill: {
       label: 'Long-Tail Keyword Coverage',
       value: '2,400+ Pages',
@@ -296,11 +294,10 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'Search engines can’t rank pages they can’t efficiently crawl or render. We inspect your server response headers, JavaScript hydration, crawl budget, canonical chains, and core web vitals to unlock full organic visibility.',
     heroVideo: {
-      mp4: '/videos/services/seo-phase-2.mp4',
-      webm: '/videos/services/seo-phase-2.webm',
-      poster: '/videos/services/seo-phase-2-poster.webp',
+      mp4: '/videos/catalog/seo/video-03.mp4',
+      poster: '/videos/catalog/seo/video-03-poster.webp',
     },
-    heroImage: '/images/screens/conveyancer/poster-480.webp',
+    heroImage: '/videos/catalog/seo/video-03-poster.webp',
     statPill: {
       label: 'Crawl Efficiency Increase',
       value: '3.4x Faster',
@@ -397,11 +394,10 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'Over 70% of local phone calls and appointments originate in Google’s Map 3-pack. We optimize your Google Business Profile, synchronize NAP citations across 50+ directories, and deploy geo-targeted location pages that cement top map rankings.',
     heroVideo: {
-      mp4: '/videos/services/seo-phase-3.mp4',
-      webm: '/videos/services/seo-phase-3.webm',
-      poster: '/videos/services/seo-phase-3-poster.webp',
+      mp4: '/videos/catalog/seo/video-04.mp4',
+      poster: '/videos/catalog/seo/video-04-poster.webp',
     },
-    heroImage: '/images/screens/plumber/poster-480.webp',
+    heroImage: '/videos/catalog/seo/video-04-poster.webp',
     statPill: {
       label: 'Local Map Inquiries Increase',
       value: '+210%',
@@ -501,11 +497,10 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'We engineer Google Ads campaigns with exact-match negative keyword scrubbing, Single-Theme Ad Groups (STAGs), and value-based bidding. Every ad dollar is routed strictly to high-value prospects actively looking to buy.',
     heroVideo: {
-      mp4: '/videos/services/ppc-phase-0.mp4',
-      webm: '/videos/services/ppc-phase-0.webm',
-      poster: '/videos/services/ppc-phase-0-poster.webp',
+      mp4: '/videos/catalog/ppc/video-01.mp4',
+      poster: '/videos/catalog/ppc/video-01-poster.webp',
     },
-    heroImage: '/images/screens/naturopath/poster-480.webp',
+    heroImage: '/videos/catalog/ppc/video-01-poster.webp',
     statPill: {
       label: 'Average ROAS on Ad Spend',
       value: '5.2x Verified',
@@ -602,11 +597,10 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'We combine rapid creative hook iteration, first-party Conversions API (CAPI) tracking, and custom video storyboards to scale customer acquisition on Instagram and Facebook profitably.',
     heroVideo: {
-      mp4: '/videos/services/ppc-phase-1.mp4',
-      webm: '/videos/services/ppc-phase-1.webm',
-      poster: '/videos/services/ppc-phase-1-poster.webp',
+      mp4: '/videos/catalog/ppc/video-02.mp4',
+      poster: '/videos/catalog/ppc/video-02-poster.webp',
     },
-    heroImage: '/images/screens/dance-studio/poster-480.webp',
+    heroImage: '/videos/catalog/ppc/video-02-poster.webp',
     statPill: {
       label: 'Average Customer Acquisition Cost',
       value: '-38% Reduction',
@@ -706,11 +700,10 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'We replace bloated, slow WordPress templates with hand-crafted Next.js 15 applications. Compiled statically at the edge for 0.4s load times, perfect 100 Lighthouse performance, and conversion-engineered user interfaces.',
     heroVideo: {
-      mp4: '/videos/services/web-development-phase-0.mp4',
-      webm: '/videos/services/web-development-phase-0.webm',
-      poster: '/videos/services/web-development-phase-0-poster.webp',
+      mp4: '/videos/catalog/web-development/video-01.mp4',
+      poster: '/videos/catalog/web-development/video-01-poster.webp',
     },
-    heroImage: '/images/screens/electrician/poster-480.webp',
+    heroImage: '/videos/catalog/web-development/video-01-poster.webp',
     statPill: {
       label: 'Average Mobile Load Time',
       value: '0.4 Seconds',
@@ -810,11 +803,10 @@ export const SUBSERVICES: SubService[] = [
     heroSubheadline:
       'We shoot and produce broadcast-grade cinematic videos, founder story documentaries, and high-converting short-form Reels and TikToks designed to position your brand as the undisputed authority in your market.',
     heroVideo: {
-      mp4: '/videos/services/video-photo-hero.mp4',
-      webm: '/videos/services/video-photo-hero.webm',
-      poster: '/videos/services/video-photo-hero-poster.webp',
+      mp4: '/videos/catalog/video-photo/video-01.mp4',
+      poster: '/videos/catalog/video-photo/video-01-poster.webp',
     },
-    heroImage: '/images/screens/childcare/poster-480.webp',
+    heroImage: '/videos/catalog/video-photo/video-01-poster.webp',
     statPill: {
       label: 'Average Engagement Lift',
       value: '3.6x Higher',

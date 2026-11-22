@@ -190,21 +190,6 @@ export function Navbar() {
                           </div>
                         ))}
                       </div>
-
-                      {/* Bottom Footer: Accent Link + Count Pill */}
-                      <div className="pt-4 flex items-center justify-between text-xs">
-                        <Link
-                          href={activeTab.footerLink.href}
-                          onClick={() => setIsServicesOpen(false)}
-                          className="font-bold text-[#161514] hover:text-[#f29a2e] transition-colors border-b-2 border-[#f7ac4f] pb-0.5 inline-flex items-center gap-1.5"
-                        >
-                          <span>{activeTab.footerLink.label}</span>
-                          <span className="text-[#f7ac4f] font-bold">→</span>
-                        </Link>
-                        <span className="text-xs font-mono font-medium text-[#8f8a82] bg-[#f4f3f1] px-2.5 py-0.5 rounded-full">
-                          {activeTab.countBadge}
-                        </span>
-                      </div>
                     </div>
                   </div>
                 );
