@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { HomeHero } from '@/components/hero/HomeHero';
 import { HomeServicesCards } from '@/components/home/HomeServicesCards';
 import { DarkRebuildSection } from '@/components/home/DarkRebuildSection';
-import { MarketingBreakdownSection } from '@/components/home/MarketingBreakdownSection';
 import { PricingSection } from '@/components/home/PricingSection';
 import { Testimonials } from '@/components/shared/Testimonials';
 import { FAQSection } from '@/components/home/FAQSection';
@@ -20,25 +19,22 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="overflow-hidden bg-white text-[#161514]">
-      {/* 1. Split Hero (URL Rebuild Form & Floating Device Showcase) */}
+      {/* 1. Split Hero (Clear Copywriting & 2-Column Floating Phone Showcase) */}
       <HomeHero />
 
-      {/* 2. Find Your Kind of Business (4 Pastel Industry Group Cards with Phone Mockups) */}
+      {/* 2. Industry Growth Specializations (4 Clean Pastel Cards with Properly Framed Phones) */}
       <HomeServicesCards />
 
-      {/* 3. Obsidian Dark Section ("See your homepage rebuilt, free." with "Yours" Phone Collage) */}
+      {/* 3. Obsidian Dark Section ("See your digital marketing roadmap, free.") */}
       <DarkRebuildSection />
 
-      {/* 4. Small Business Marketing (Google Search Mockup with 1, 2, 3, 4 Steps) */}
-      <MarketingBreakdownSection />
-
-      {/* 5. Simple, Transparent Monthly Pricing ($249/mo Inclusions vs Ongoing) */}
+      {/* 4. Simple, Transparent Monthly Pricing ($249/mo Inclusions vs Ongoing) */}
       <PricingSection />
 
-      {/* 6. Honest Partnership Client Reviews (Auto-Sliding 5-Star Cards) */}
+      {/* 5. Honest Partnership Client Reviews (Auto-Sliding 5-Star Cards) */}
       <Testimonials theme="light" />
 
-      {/* 7. Frequently Asked Questions */}
+      {/* 6. Frequently Asked Questions */}
       <FAQSection />
     </main>
   );

@@ -27,24 +27,24 @@ export function HomeHero() {
           <div className="lg:col-span-6 flex flex-col justify-center text-left">
             {/* Category Pill */}
             <div className="flex items-center gap-2 mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#f7ac4f] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#1f7a37] animate-pulse" />
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#b45309]">
-                Full-Funnel Digital Marketing Agency
+                Digital Marketing Agency · Australia
               </span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-[clamp(2.75rem,5.5vw,4.5rem)] font-display font-extrabold tracking-tight leading-[1.05] text-[#161514] mb-6">
-              See your digital growth roadmap tomorrow. Built to scale your revenue.
+            {/* Main Headline - Punchy & Clear */}
+            <h1 className="text-[clamp(2.5rem,5vw,4.25rem)] font-display font-extrabold tracking-tight leading-[1.05] text-[#161514] mb-5">
+              More traffic. More calls. Built to scale your revenue.
             </h1>
 
-            {/* Subtitle / Value Proposition */}
-            <p className="font-sans text-lg sm:text-xl text-[#5d5a55] leading-relaxed max-w-xl mb-8 font-normal">
-              Send your website address or ad accounts. Lead Edge analyzes your SEO search rankings, Meta ad funnels, and conversion bottlenecks — and walks you through a tailored digital marketing blueprint on a 15-minute call.
+            {/* Subtitle - Short & Direct about what we do */}
+            <p className="font-sans text-base sm:text-lg text-[#5d5a55] leading-relaxed max-w-lg mb-7 font-normal">
+              We scale Australian businesses through high-intent Google Ads, Meta paid social, local SEO, and sub-second websites. Send your website to see our growth blueprint tomorrow.
             </p>
 
             {/* URL Input Bar Form (Rounded Pill with Orange Button) */}
-            <form onSubmit={handleSubmit} className="w-full max-w-lg mb-4">
+            <form onSubmit={handleSubmit} className="w-full max-w-lg mb-3">
               <div className="relative flex items-center p-1.5 rounded-full border border-[#d9d6d1] bg-white shadow-sm hover:border-[#8f8a82] focus-within:border-[#161514] transition-all">
                 <input
                   type="text"
@@ -70,11 +70,11 @@ export function HomeHero() {
             {/* Reassurance Copy */}
             <div className="flex items-center gap-2 text-xs font-sans text-[#5d5a55]">
               <span className="w-2 h-2 rounded-full bg-[#1f7a37]" />
-              <span>The strategy audit costs nothing. No lock-in, no sales pressure.</span>
+              <span>Free strategy roadmap · No lock-in contracts · Zero sales pressure</span>
             </div>
 
             {/* 3 Step Quick Timeline */}
-            <div className="grid grid-cols-3 gap-4 pt-10 mt-8 border-t border-[#f4f3f1]">
+            <div className="grid grid-cols-3 gap-4 pt-8 mt-6 border-t border-[#f4f3f1]">
               <div>
                 <span className="text-xs font-mono font-bold text-[#b45309] uppercase block mb-1">
                   1. Today (Free)
@@ -88,7 +88,7 @@ export function HomeHero() {
                   2. Tomorrow (Free)
                 </span>
                 <p className="text-xs font-sans text-[#5d5a55] leading-snug">
-                  15-min call to review your bespoke growth blueprint.
+                  15-min call to review your growth blueprint.
                 </p>
               </div>
               <div>
@@ -96,7 +96,7 @@ export function HomeHero() {
                   3. In 14 Days
                 </span>
                 <p className="text-xs font-sans text-[#5d5a55] leading-snug">
-                  Live campaigns scaling on Google, Meta, and Search.
+                  Live campaigns scaling on Google and Meta.
                 </p>
               </div>
             </div>
