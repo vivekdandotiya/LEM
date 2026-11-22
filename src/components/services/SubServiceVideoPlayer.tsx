@@ -88,6 +88,7 @@ export function SubServiceVideoPlayer({
       {/* Screen Frame with Video & Underlying Guaranteed Poster */}
       <div
         className="relative aspect-[4/3] rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[#0c0c0d] cursor-pointer"
+        style={{ transform: 'translateZ(0)', isolation: 'isolate' }}
         onClick={togglePlay}
         role="button"
         tabIndex={0}
@@ -106,25 +107,29 @@ export function SubServiceVideoPlayer({
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 600px"
-          className="object-cover object-center"
+          className="object-cover object-center pointer-events-none"
         />
 
-        {/* Ambient Video on Top with Smooth Crossfade */}
+        {/* Ambient Video on Top with Hardware-Accelerated Smooth Playback */}
         <video
           ref={videoRef}
           autoPlay
           loop
           muted={isMuted}
           playsInline
-          preload="metadata"
+          preload="auto"
           poster={poster}
           onPlaying={() => {
             setIsPlaying(true);
             setHasStarted(true);
           }}
-          onPause={() => setIsPlaying(false)}
           onError={() => setIsPlaying(false)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out ${
+          style={{
+            transform: 'translate3d(0, 0, 0)',
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden',
+          }}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out ${
             isPlaying || hasStarted ? 'opacity-100' : 'opacity-0'
           }`}
         >
