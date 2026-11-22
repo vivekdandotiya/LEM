@@ -22,17 +22,25 @@ export function HomeHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* =========================================================================
-              LEFT COLUMN: Editorial Headline & Free Rebuild URL Submission Form
+              LEFT COLUMN: Editorial Headline & Free Growth Blueprint Submission Form
               ========================================================================= */}
           <div className="lg:col-span-6 flex flex-col justify-center text-left">
-            {/* Main Headline (BDOG Style: Huge, balanced, bold sans) */}
+            {/* Category Pill */}
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-2 h-2 rounded-full bg-[#f7ac4f] animate-pulse" />
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#b45309]">
+                Full-Funnel Digital Marketing Agency
+              </span>
+            </div>
+
+            {/* Main Headline */}
             <h1 className="text-[clamp(2.75rem,5.5vw,4.5rem)] font-display font-extrabold tracking-tight leading-[1.05] text-[#161514] mb-6">
-              See your new homepage tomorrow. Built to get you booked.
+              See your digital growth roadmap tomorrow. Built to scale your revenue.
             </h1>
 
             {/* Subtitle / Value Proposition */}
             <p className="font-sans text-lg sm:text-xl text-[#5d5a55] leading-relaxed max-w-xl mb-8 font-normal">
-              Send your web address. Lead Edge rebuilds your homepage from scratch and walks you through it on a 15-minute call.
+              Send your website address or ad accounts. Lead Edge analyzes your SEO search rankings, Meta ad funnels, and conversion bottlenecks — and walks you through a tailored digital marketing blueprint on a 15-minute call.
             </p>
 
             {/* URL Input Bar Form (Rounded Pill with Orange Button) */}
@@ -54,7 +62,7 @@ export function HomeHero() {
                   type="submit"
                   className="shrink-0 px-6 sm:px-7 py-3 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-xs sm:text-sm tracking-tight transition-all duration-150 active:scale-95 shadow-sm"
                 >
-                  {submitted ? 'Submitted ✓' : 'Get a Free Rebuild'}
+                  {submitted ? 'Submitted ✓' : 'Get a Free Blueprint'}
                 </button>
               </div>
             </form>
@@ -62,7 +70,7 @@ export function HomeHero() {
             {/* Reassurance Copy */}
             <div className="flex items-center gap-2 text-xs font-sans text-[#5d5a55]">
               <span className="w-2 h-2 rounded-full bg-[#1f7a37]" />
-              <span>The review costs nothing. No lock-in, no sales pressure.</span>
+              <span>The strategy audit costs nothing. No lock-in, no sales pressure.</span>
             </div>
 
             {/* 3 Step Quick Timeline */}
@@ -80,7 +88,7 @@ export function HomeHero() {
                   2. Tomorrow (Free)
                 </span>
                 <p className="text-xs font-sans text-[#5d5a55] leading-snug">
-                  15-min call to see your new homepage live.
+                  15-min call to review your bespoke growth blueprint.
                 </p>
               </div>
               <div>
@@ -88,14 +96,14 @@ export function HomeHero() {
                   3. In 14 Days
                 </span>
                 <p className="text-xs font-sans text-[#5d5a55] leading-snug">
-                  Full site live, or your first month back.
+                  Live campaigns scaling on Google, Meta, and Search.
                 </p>
               </div>
             </div>
           </div>
 
           {/* =========================================================================
-              RIGHT COLUMN: 3-Column Auto-Sliding Phone Screen Showcase (bdog-style)
+              RIGHT COLUMN: 3-Column Auto-Sliding Phone Screen Showcase
               ========================================================================= */}
           <div aria-hidden="true" className="lg:col-span-6 relative w-full flex items-center justify-center select-none overflow-hidden">
             <HeroSlidingWall />

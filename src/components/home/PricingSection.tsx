@@ -32,10 +32,10 @@ export function PricingSection() {
                   All-Inclusive Service
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-[#161514] leading-tight mb-3">
-                  Website Design, Hosting & Edits
+                  Full-Funnel Digital Marketing Partnership
                 </h3>
                 <p className="text-sm font-sans text-[#5d5a55] leading-relaxed mb-6">
-                  About $8 a day. If your new website brings in just one extra client or customer a month, it has paid for itself.
+                  About $8 a day. If our SEO search authority, high-ROAS Meta & Google ads, and conversion architecture bring in just one extra client a month, it has paid for itself.
                 </p>
 
                 <div className="flex items-baseline gap-2 mb-2">
@@ -47,7 +47,7 @@ export function PricingSection() {
                   </span>
                 </div>
                 <span className="text-xs font-mono text-[#5d5a55] block mb-8">
-                  No upfront cost · Review free before deciding
+                  No upfront agency retainer · Review strategy free before deciding
                 </span>
               </div>
 
@@ -56,11 +56,11 @@ export function PricingSection() {
                   href="/contact"
                   className="w-full text-center py-4 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-base tracking-tight transition-all duration-150 shadow-sm block active:scale-95"
                 >
-                  Get a Free Rebuild First
+                  Get a Free Strategy Blueprint First
                 </Link>
                 <div className="flex items-center justify-center gap-1.5 text-xs font-sans text-[#5d5a55] mt-3">
                   <ShieldCheck className="w-4 h-4 text-[#1f7a37]" />
-                  <span>14-day live turnaround or your first month refunded</span>
+                  <span>14-day campaign turnaround or your first month refunded</span>
                 </div>
               </div>
             </div>
@@ -71,28 +71,28 @@ export function PricingSection() {
               <div>
                 <h4 className="text-xs font-mono font-bold text-[#161514] uppercase tracking-wider pb-3 border-b border-black/10 mb-4 flex items-center gap-2">
                   <Zap className="w-3.5 h-3.5 text-[#f7ac4f]" />
-                  <span>When it goes live</span>
+                  <span>When campaigns go live</span>
                 </h4>
                 <ul className="flex flex-col gap-3 text-xs sm:text-sm font-sans text-[#5d5a55]">
                   <li className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 text-[#1f7a37] shrink-0 mt-0.5" />
-                    <span>Free homepage rebuild mockup</span>
+                    <span>Free digital marketing & SEO audit</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 text-[#1f7a37] shrink-0 mt-0.5" />
-                    <span>Copywritten for your approval</span>
+                    <span>Targeted ad copy & creative for approval</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 text-[#1f7a37] shrink-0 mt-0.5" />
-                    <span>Booking & CRM integration</span>
+                    <span>Booking & CRM conversion integration</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 text-[#1f7a37] shrink-0 mt-0.5" />
-                    <span>Domain, SSL & DNS configuration</span>
+                    <span>Google & Meta Conversions API (CAPI) sync</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 text-[#1f7a37] shrink-0 mt-0.5" />
-                    <span>Live in 14 days guaranteed</span>
+                    <span>Live campaigns in 14 days guaranteed</span>
                   </li>
                 </ul>
               </div>

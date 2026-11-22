@@ -227,7 +227,7 @@ export function Navbar() {
               href="/contact"
               className="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-xs sm:text-sm tracking-tight transition-all duration-150 shadow-sm active:scale-95"
             >
-              Get a Free Rebuild
+              Get a Free Blueprint
             </Link>
 
             {/* Mobile Hamburger Toggle */}
@@ -275,7 +275,7 @@ export function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="w-full text-center py-3 rounded-full bg-[#f7ac4f] text-[#161514] font-bold text-base shadow-sm"
               >
-                Get a Free Rebuild
+                Get a Free Blueprint
               </Link>
             </div>
           </div>

@@ -87,7 +87,7 @@ export default function PricingPage() {
               href="/contact"
               className="shrink-0 px-6 py-2.5 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-sm shadow-sm"
             >
-              Get a Free Rebuild
+              Get a Free Blueprint
             </Link>
           </div>
         </div>

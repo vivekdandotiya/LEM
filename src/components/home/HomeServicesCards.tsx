@@ -156,11 +156,14 @@ export function HomeServicesCards() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div>
+            <span className="text-xs font-mono font-bold text-[#b45309] uppercase tracking-wider block mb-2">
+              Industry Growth Specializations
+            </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-[#161514] leading-[1.08]">
-              Find your kind of business.
+              Full-funnel digital marketing across key industries.
             </h2>
             <p className="font-sans text-base sm:text-lg text-[#5d5a55] mt-3 max-w-2xl leading-relaxed">
-              Small business websites for 71 industries, in four groups. Each has its own page, with an example built for it.
+              Specialized search engine optimization, high-ROAS Meta and Google ad campaigns, and conversion-engineered web architecture tailored to your commercial market.
             </p>
           </div>
         </div>
@@ -231,7 +234,7 @@ export function HomeServicesCards() {
 
               {/* Action Link Arrow */}
               <div className="pt-3 border-t border-black/5 flex items-center justify-between text-xs font-bold text-[#161514]">
-                <span>Explore websites</span>
+                <span>Explore growth strategies</span>
                 <ArrowRight className="w-4 h-4 text-[#b45309] transform group-hover:translate-x-1.5 transition-transform" />
               </div>
             </Link>

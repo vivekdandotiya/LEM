@@ -9,9 +9,9 @@ import { Testimonials } from '@/components/shared/Testimonials';
 import { FAQSection } from '@/components/home/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Lead Edge Marketers — See your new homepage tomorrow. Built to get you booked.',
+  title: 'Lead Edge Marketers — Full-Funnel Digital Marketing Agency | SEO, Meta Ads & Web',
   description:
-    'Custom small business websites built without generic templates. Free homepage rebuild mockup before you commit. From $249 a month + GST.',
+    'Full-funnel digital marketing engineered to turn traffic into enterprise revenue. Search engine optimization, high-ROAS Meta & Google ads, and conversion web architecture. Free strategy blueprint.',
   alternates: {
     canonical: '/',
   },

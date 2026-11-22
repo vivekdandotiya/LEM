@@ -666,7 +666,7 @@ export default async function SubtopicPage({ params }: SubtopicPageProps) {
               Ready to scale your {data.title.toLowerCase()}?
             </h2>
             <p className="text-base sm:text-lg font-sans text-[#5d5a55] max-w-xl mx-auto mb-8 leading-relaxed">
-              Send your website address. We rebuild your strategy from scratch and walk you through every optimization on a 15-minute call tomorrow.
+              Send your website address. We analyze your growth opportunities from scratch and walk you through every optimization on a 15-minute call tomorrow.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -674,7 +674,7 @@ export default async function SubtopicPage({ params }: SubtopicPageProps) {
                 href="/contact"
                 className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-base tracking-tight transition-all duration-150 shadow-sm active:scale-95"
               >
-                Claim Your Free Strategy Rebuild
+                Claim Your Free Strategy Blueprint
               </Link>
               <a
                 href="tel:0452424845"

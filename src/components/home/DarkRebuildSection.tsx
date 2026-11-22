@@ -19,12 +19,12 @@ export function DarkRebuildSection() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
         {/* Main Center Headline Covering All Services */}
         <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.06] mb-4">
-          See your homepage & growth engine rebuilt, free.
+          See your full-funnel digital marketing roadmap, free.
         </h2>
 
         {/* Subtitle covering SEO, Ads, and Web Architecture */}
         <p className="font-sans text-base sm:text-lg text-[#d9d6d1] max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
-          Send your web address. Lead Edge Marketers audits your SEO keyword taxonomy, ad funnels, and mobile web architecture — free on a 15-minute call tomorrow.
+          Send your website address. Lead Edge Marketers audits your SEO keyword taxonomy, Meta & Google ad funnels, and conversion architecture — free on a 15-minute call tomorrow.
         </p>
 
         {/* Input Pill Bar */}
@@ -46,14 +46,14 @@ export function DarkRebuildSection() {
               type="submit"
               className="shrink-0 px-6 py-3 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-xs sm:text-sm tracking-tight transition-all duration-150 active:scale-95 shadow-sm"
             >
-              {submitted ? 'Submitted ✓' : 'Get a Free Rebuild'}
+              {submitted ? 'Submitted ✓' : 'Get a Free Blueprint'}
             </button>
           </div>
         </form>
 
         {/* Support Phone Call Prompt */}
         <p className="text-xs font-sans text-[#d1cec7]">
-          Questions about our full-service rebuilds? Call{' '}
+          Questions about our full-funnel marketing partnerships? Call{' '}
           <a href="tel:0452424845" className="text-[#f7ac4f] hover:underline font-bold">
             0452 424 845
           </a>
@@ -102,7 +102,7 @@ export function DarkRebuildSection() {
           <div className="relative z-20 flex flex-col items-center">
             {/* The "Yours" Label in Orange */}
             <span className="text-xs sm:text-sm font-sans font-extrabold text-[#f7ac4f] tracking-wider uppercase mb-2 animate-bounce">
-              Yours: Full-Funnel Rebuild
+              Yours: Full-Funnel Growth Blueprint
             </span>
 
             <div className="w-[260px] sm:w-[290px] h-[500px] sm:h-[530px] rounded-[38px] p-3 border-4 border-[#f7ac4f] bg-[#161514] shadow-[0_0_50px_rgba(247,172,79,0.5)] flex flex-col justify-between">
@@ -126,7 +126,7 @@ export function DarkRebuildSection() {
                       ALL-IN-ONE GROWTH
                     </span>
                     <p className="text-xs font-bold text-[#161514]">
-                      SEO + High-ROAS Ads + Web Rebuild
+                      SEO + High-ROAS Meta Ads + Conversion Engine
                     </p>
                   </div>
 
