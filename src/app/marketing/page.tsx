@@ -1,13 +1,17 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { MarketingBreakdownSection } from '@/components/home/MarketingBreakdownSection';
-import { Search, MapPin, BarChart3, ShieldCheck } from 'lucide-react';
+import { Phone, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { MarketingHeroSimulator } from '@/components/marketing/MarketingHeroSimulator';
+import { MarketingRoasCalculator } from '@/components/marketing/MarketingRoasCalculator';
+import { MarketingChannelPillars } from '@/components/marketing/MarketingChannelPillars';
+import { MarketingPricingPlans } from '@/components/marketing/MarketingPricingPlans';
+import { MarketingFaqSection } from '@/components/marketing/MarketingFaqSection';
 
 export const metadata: Metadata = {
-  title: 'Small Business Marketing — Lead Edge Marketers',
+  title: 'Small Business Marketing — Google Ads, Meta Paid Social & Local SEO | Lead Edge Marketers',
   description:
-    'More of the right customers finding you. Transparent Google Ads, Google Business Profile, SEO, and AI Search for Australian small businesses.',
+    'More of the right customers finding, choosing, and booking you. Transparent Google Ads STAG campaigns, Meta Paid Social Reels, Google Maps Local 3-Pack, and Server-Side CAPI tracking. Flat fee, 0% ad spend markup.',
   alternates: {
     canonical: '/marketing',
   },
@@ -15,58 +19,63 @@ export const metadata: Metadata = {
 
 export default function MarketingPage() {
   return (
-    <main className="pt-28 pb-20 bg-white text-[#161514] select-none">
-      {/* Interactive Marketing Breakdown Section */}
-      <MarketingBreakdownSection />
+    <main className="bg-white text-[#161514] select-none">
+      {/* 1. Interactive Multi-Channel Simulator Hero (Matching Reference Screen with Dynamic Tabs) */}
+      <MarketingHeroSimulator />
 
-      {/* Transparent Ad Spend Policy */}
-      <section className="py-16 sm:py-24 bg-white border-t border-[#e8e6e2]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <span className="text-xs font-mono font-bold text-[#b45309] uppercase tracking-wider bg-[#f7ac4f]/15 px-3 py-1 rounded-full inline-block mb-3">
-                Transparent Ad Spend
-              </span>
-              <h3 className="text-2xl sm:text-4xl font-display font-extrabold text-[#161514] tracking-tight leading-tight mb-4">
-                You pay Google directly. We never take a cut of ad spend.
-              </h3>
-              <p className="font-sans text-sm sm:text-base text-[#5d5a55] leading-relaxed mb-4">
-                Many agencies mark up ad spend or hide management fees inside bundled invoices. With Lead Edge, your credit card is linked directly to Google, and you pay a clear flat fee for our strategy and management.
-              </p>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-[#161514] font-medium">
-                <li className="flex items-center gap-2">
-                  <span className="text-[#1f7a37]">✓</span> 100% account ownership remains yours
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#1f7a37]">✓</span> Real-time live dashboard tracking calls & bookings
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#1f7a37]">✓</span> Monthly review calls with actionable suggestions
-                </li>
-              </ul>
-            </div>
+      {/* 2. Interactive Return on Ad Spend (ROAS) & Revenue Growth Calculator */}
+      <MarketingRoasCalculator />
 
-            <div className="p-8 rounded-[32px] bg-[#FAF8F5] border border-[#e8e6e2] text-center">
-              <span className="text-xs font-mono text-[#5d5a55] uppercase block mb-1">
-                Digital Marketing Plans
-              </span>
-              <div className="text-4xl font-display font-black text-[#161514] mb-2">
-                From $449
-                <span className="text-sm font-sans font-normal text-[#5d5a55]"> / mo + GST</span>
-              </div>
-              <p className="text-xs text-[#5d5a55] mb-6">
-                Tailored based on your target service area and competitive density.
-              </p>
+      {/* 3. The 4 Full-Funnel Acquisition Engines Breakdown */}
+      <MarketingChannelPillars />
 
-              <Link
-                href="/contact"
-                className="w-full py-3.5 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-bold text-sm block shadow-sm active:scale-95 transition-all"
-              >
-                Book a 15-Minute Strategy Call
-              </Link>
-            </div>
+      {/* 4. Transparent Flat-Fee Retainers (0% Ad Spend Markup) */}
+      <MarketingPricingPlans />
+
+      {/* 5. Frequently Asked Questions */}
+      <MarketingFaqSection />
+
+      {/* 6. Bottom Strategy Consultation Blueprint Banner */}
+      <section className="py-20 sm:py-28 bg-[#161514] text-white select-none relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white/90 text-xs font-mono font-bold uppercase mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#f7ac4f] animate-pulse" />
+            <span>Free 15-Minute Strategy Review · Zero Obligation</span>
           </div>
+
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.06] mb-4">
+            Ready to capture more high-intent customers?
+          </h2>
+
+          <p className="font-sans text-base sm:text-lg text-[#d9d6d1] max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+            Send your current website address or Google Business profile. We audit your search presence, competitor ads, and booking friction, then present a tailored growth roadmap on a 15-minute call tomorrow.
+          </p>
+
+          <div className="max-w-md mx-auto mb-6">
+            <Link
+              href="/contact"
+              className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-base transition-transform active:scale-95 shadow-lg"
+            >
+              <span>Book Your Free 15-Minute Strategy Call</span>
+              <ArrowRight className="w-5 h-5 text-[#161514]" />
+            </Link>
+          </div>
+
+          <p className="text-xs font-sans text-[#d1cec7] flex items-center justify-center gap-2">
+            <span>Prefer to speak directly? Call our Sydney desk at</span>
+            <a
+              href="tel:0452424845"
+              className="text-[#f7ac4f] hover:underline font-bold inline-flex items-center gap-1"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              <span>0452 424 845</span>
+            </a>
+          </p>
         </div>
+
+        {/* Ambient Glow */}
+        <div className="absolute top-1/2 -left-24 -translate-y-1/2 w-72 h-72 rounded-full bg-[#f7ac4f]/10 blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 -right-24 -translate-y-1/2 w-72 h-72 rounded-full bg-[#2563eb]/10 blur-3xl pointer-events-none" />
       </section>
     </main>
   );
