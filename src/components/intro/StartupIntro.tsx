@@ -31,8 +31,7 @@ export function StartupIntro() {
     if (timelineRef.current) {
       timelineRef.current.kill();
     }
-    
-    // Quick emergency smooth open
+
     const top = topShutterRef.current;
     const bottom = bottomShutterRef.current;
     const center = centerContentRef.current;
@@ -43,12 +42,12 @@ export function StartupIntro() {
       if (beam) gsap.to(beam, { opacity: 0, duration: 0.2 });
       gsap.to(top, {
         yPercent: -100,
-        duration: 0.65,
+        duration: 0.7,
         ease: 'power3.inOut',
       });
       gsap.to(bottom, {
         yPercent: 100,
-        duration: 0.65,
+        duration: 0.7,
         ease: 'power3.inOut',
         onComplete: finishIntro,
       });
@@ -91,9 +90,10 @@ export function StartupIntro() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [mounted, isCompleted, handleSkip]);
 
-  // Main Motion Graphic Animation:
-  // 1. Black Screen holds with "LeadEdge Marketing" for 1.5s
-  // 2. Horizontal split from middle: Top half glides UP, Bottom half glides DOWN smoothly
+  // Soft, Cinematic Motion Graphic:
+  // 1. Pure black screen with ONLY "LeadEdge Marketing" in white
+  // 2. Holds softly for 1.5s
+  // 3. Butter-smooth middle horizontal split (Top slides UP, Bottom slides DOWN)
   useEffect(() => {
     if (!mounted || isCompleted) return;
 
@@ -110,9 +110,9 @@ export function StartupIntro() {
       return;
     }
 
-    // Set initial shutter and center states
+    // Initial states
     gsap.set([top, bottom], { yPercent: 0 });
-    gsap.set(center, { opacity: 0, y: 15, scale: 0.96 });
+    gsap.set(center, { opacity: 0, y: 10, scale: 0.98 });
     gsap.set(beam, { opacity: 0, scaleX: 0 });
 
     const tl = gsap.timeline({
@@ -120,72 +120,69 @@ export function StartupIntro() {
     });
     timelineRef.current = tl;
 
-    // Step 1: Smooth fade & gentle drift-in of "LeadEdge Marketing" (0.0s - 0.5s)
+    // Phase 1: Soft, silky fade-in of the white agency name (0.0s - 0.7s)
     tl.to(center, {
       opacity: 1,
       y: 0,
       scale: 1,
-      duration: 0.6,
-      ease: 'power3.out',
+      duration: 0.75,
+      ease: 'power2.out',
     });
 
-    // Step 2: Hold steady on the black screen (0.6s - 1.5s)
-    // The name is fully readable in the middle for 1.5 seconds as requested!
+    // Phase 2: Holds steady and calm on pure black for 1.5 seconds
 
-    // Step 3: At 1.5s, luminous gold seam laser beam flashes horizontally across center line
+    // Phase 3: At 1.5s, soft luminous center horizon line breathes across the middle seam
     tl.to(
       beam,
       {
-        opacity: 1,
+        opacity: 0.85,
         scaleX: 1,
-        duration: 0.25,
-        ease: 'power2.in',
+        duration: 0.35,
+        ease: 'sine.inOut',
       },
-      '+=0.85' // Reaches ~1.45s - 1.5s mark
+      '+=0.75' // Arrives at 1.5s mark
     );
 
-    // Step 4: Text gently expands and dissolves as shutters split
+    // Phase 4: Agency name dissolves with a delicate, soft fade
     tl.to(
       center,
       {
         opacity: 0,
-        scale: 1.05,
-        y: -4,
-        duration: 0.35,
+        scale: 1.03,
+        duration: 0.45,
         ease: 'power2.inOut',
       },
       '<'
     );
 
-    // Step 5: SILK-SMOOTH SPLIT OPENING (1.55s - 2.8s)
-    // Top half glides UP (-100%), Bottom half glides DOWN (+100%)
-    // Uses cinematic luxury motion curve (power4.inOut)
+    // Phase 5: Feather-soft split opening (Top half UP, Bottom half DOWN)
+    // Silky, luxury easing for an ultra-smooth motion graphic feel
     tl.to(
       top,
       {
         yPercent: -100,
-        duration: 1.25,
-        ease: 'power4.inOut',
+        duration: 1.35,
+        ease: 'power3.inOut',
       },
-      '-=0.08'
+      '-=0.15'
     );
 
     tl.to(
       bottom,
       {
         yPercent: 100,
-        duration: 1.25,
-        ease: 'power4.inOut',
+        duration: 1.35,
+        ease: 'power3.inOut',
       },
       '<'
     );
 
-    // Fade beam line as shutters separate
+    // Softly fade horizon beam as the shutters part
     tl.to(
       beam,
       {
         opacity: 0,
-        duration: 0.35,
+        duration: 0.4,
         ease: 'power2.out',
       },
       '<'
@@ -205,85 +202,55 @@ export function StartupIntro() {
       onClick={handleSkip}
       role="dialog"
       aria-modal="true"
-      aria-label="LeadEdge Marketing Intro"
+      aria-label="LeadEdge Marketing"
     >
       {/* =========================================================================
-          1. TOP SHUTTER (Upper 50% of screen - slides UP)
+          1. TOP SHUTTER (Upper 50% - glides UP smoothly)
           ========================================================================= */}
       <div
         ref={topShutterRef}
-        className="absolute top-0 left-0 right-0 h-[50vh] bg-[#070809] border-b border-[#f7ac4f]/25 will-change-transform flex flex-col justify-end items-center overflow-hidden"
+        className="absolute top-0 left-0 right-0 h-[50vh] bg-[#050505] border-b border-white/10 will-change-transform flex flex-col justify-end items-center overflow-hidden"
         style={{ transform: 'translate3d(0, 0, 0)' }}
       >
-        {/* Subtle radial ambient illumination */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,#141619_0%,#070809_75%)] pointer-events-none" />
-        
-        {/* Subtle top ambient gold shimmer */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-32 bg-[#f7ac4f]/5 rounded-full blur-[60px] pointer-events-none" />
+        {/* Soft, deep ambient gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,#141416_0%,#050505_70%)] pointer-events-none" />
       </div>
 
       {/* =========================================================================
-          2. BOTTOM SHUTTER (Lower 50% of screen - slides DOWN)
+          2. BOTTOM SHUTTER (Lower 50% - glides DOWN smoothly)
           ========================================================================= */}
       <div
         ref={bottomShutterRef}
-        className="absolute bottom-0 left-0 right-0 h-[50vh] bg-[#070809] border-t border-[#f7ac4f]/25 will-change-transform flex flex-col justify-start items-center overflow-hidden"
+        className="absolute bottom-0 left-0 right-0 h-[50vh] bg-[#050505] border-t border-white/10 will-change-transform flex flex-col justify-start items-center overflow-hidden"
         style={{ transform: 'translate3d(0, 0, 0)' }}
       >
-        {/* Subtle radial ambient illumination */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#141619_0%,#070809_75%)] pointer-events-none" />
-        
-        {/* Subtle bottom ambient gold shimmer */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-32 bg-[#f7ac4f]/5 rounded-full blur-[60px] pointer-events-none" />
+        {/* Soft, deep ambient gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#141416_0%,#050505_70%)] pointer-events-none" />
       </div>
 
       {/* =========================================================================
-          3. CENTER HORIZON LASER SEAM (Flashes across the split line at 1.5s)
+          3. SOFT CENTER HORIZON SEAM (Illuminates subtly at 1.5s)
           ========================================================================= */}
       <div
         ref={beamRef}
-        className="absolute top-1/2 left-0 right-0 h-[2px] -translate-y-1/2 z-30 pointer-events-none"
+        className="absolute top-1/2 left-0 right-0 h-[1.5px] -translate-y-1/2 z-30 pointer-events-none"
         style={{
-          background: 'linear-gradient(90deg, transparent 0%, rgba(247,172,79,0.2) 20%, #f7ac4f 50%, rgba(247,172,79,0.2) 80%, transparent 100%)',
-          boxShadow: '0 0 25px 3px rgba(247,172,79,0.8), 0 0 50px 8px rgba(247,172,79,0.3)',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.15) 80%, transparent 100%)',
+          boxShadow: '0 0 25px 2px rgba(255,255,255,0.6), 0 0 50px 6px rgba(255,255,255,0.2)',
         }}
       />
 
       {/* =========================================================================
-          4. CENTER BRAND CONTENT: "LeadEdge Marketing"
+          4. AGENCY NAME ONLY (In pure, pristine white with soft luxury kerning)
           ========================================================================= */}
       <div
         ref={centerContentRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 text-center pointer-events-none flex flex-col items-center justify-center will-change-transform px-4 w-full max-w-4xl"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 text-center pointer-events-none flex flex-col items-center justify-center will-change-transform px-6 w-full max-w-4xl"
       >
-        {/* Small Luxury Crown / Sparkle Accent */}
-        <div className="flex items-center gap-2 mb-4">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#f7ac4f] animate-ping" />
-          <span className="text-[10px] font-mono font-bold tracking-[0.35em] uppercase text-[#f7ac4f]/90">
-            Digital Growth Studio
-          </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#f7ac4f] animate-ping" />
-        </div>
-
-        {/* Main Brand Title: "LeadEdge Marketing" */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-none text-white drop-shadow-md">
-          <span className="text-white tracking-[0.16em] sm:tracking-[0.2em]">
-            LeadEdge
-          </span>
-          <span className="text-[#f7ac4f] font-light tracking-[0.18em] sm:tracking-[0.22em] ml-2.5 sm:ml-4">
-            Marketing
-          </span>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-medium text-white tracking-[0.16em] sm:tracking-[0.22em] drop-shadow-[0_0_35px_rgba(255,255,255,0.25)] select-none leading-none">
+          <span className="font-extrabold text-white">LeadEdge</span>
+          <span className="font-light text-white ml-2.5 sm:ml-4">Marketing</span>
         </h1>
-
-        {/* Minimal Monospace Architecture Subtitle */}
-        <p className="text-[10px] sm:text-xs font-mono tracking-[0.4em] uppercase text-[#8e8d8a] mt-4 font-medium">
-          SEO · Performance Ads · Web Architecture
-        </p>
-
-        {/* Subtle Click or ESC prompt */}
-        <span className="text-[9px] font-mono text-white/30 tracking-widest uppercase mt-8">
-          Click anywhere or press Esc to skip
-        </span>
       </div>
     </div>
   );
