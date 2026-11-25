@@ -538,6 +538,264 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         </div>
       </section>
 
+      {/* 2. Key Value Highlights 3-Column Strip */}
+      {service.features && service.features.length >= 3 && (
+        <section className="py-12 sm:py-16 bg-white border-b border-ink/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+              {service.features.map((feat, idx) => (
+                <div
+                  key={idx}
+                  className="p-6 sm:p-7 rounded-[24px] bg-[#FAF8F5] border border-[#e8e6e2] shadow-xs flex flex-col justify-between hover:border-[#f7ac4f] transition-colors"
+                >
+                  <div>
+                    <div className="w-9 h-9 rounded-full bg-[#f7ac4f] flex items-center justify-center text-xs font-mono font-black text-[#161514] mb-4 shadow-2xs">
+                      0{idx + 1}
+                    </div>
+                    <h3 className="text-xl font-display font-black text-[#161514] mb-2 leading-snug">
+                      {feat.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm font-sans text-[#5d5a55] leading-relaxed">
+                      {feat.description}
+                    </p>
+                  </div>
+                  {feat.metric && (
+                    <div className="mt-4 pt-3 border-t border-black/5 text-[11px] font-mono font-bold text-[#b45309]">
+                      {feat.metric}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 2b. Core Subservices Grid (Direct Links to Detailed Subpages) */}
+      {service.processSteps && service.processSteps.length > 0 && (
+        <section className="py-16 sm:py-24 bg-[#F6F3EC] border-b border-ink/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-6 border-b border-ink/10">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-widest text-stone block mb-2 font-bold">
+                  Dedicated Sub-Disciplines
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-display font-extrabold text-[#161514] tracking-tight">
+                  Types of {service.shortTitle} Services We Offer
+                </h2>
+              </div>
+              <span className="text-xs font-mono text-[#b45309] font-bold">
+                4 Core Sub-Pages Available →
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {service.processSteps.map((step, idx) => {
+                // Determine clean subpage link
+                const subSlugs: Record<string, string[]> = {
+                  seo: ['on-page-seo', 'off-page-seo', 'local-seo', 'technical-seo'],
+                  ppc: ['campaign-strategy', 'ad-creative-copy', 'tracking-pixel-capi', 'budget-scaling'],
+                  'social-media': [
+                    'account-profile-management',
+                    'content-planning-adaptation',
+                    'community-engagement-inbox',
+                    'performance-tracking-adjustments',
+                  ],
+                  'email-marketing': [
+                    'targeted-email-campaigns',
+                    'automated-email-flows',
+                    'template-design-testing',
+                    'platform-setup-deliverability',
+                  ],
+                  'web-development': [
+                    'nextjs-15-applications',
+                    'conversion-rate-optimization',
+                    'speed-edge-infrastructure',
+                    'custom-booking-funnels',
+                  ],
+                };
+                const currentSlugs = subSlugs[service.slug] || ['on-page-seo', 'off-page-seo', 'local-seo', 'technical-seo'];
+                const targetSlug = currentSlugs[idx % currentSlugs.length];
+                const href = `/services/${service.slug}/${targetSlug}`;
+
+                return (
+                  <Link
+                    key={idx}
+                    href={href}
+                    className="group p-6 sm:p-8 rounded-[28px] bg-white border border-[#e8e6e2] shadow-xs hover:shadow-md hover:border-[#f7ac4f] transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-xs font-mono font-bold text-[#b45309] uppercase tracking-wider">
+                          Phase 0{idx + 1}
+                        </span>
+                        <div className="w-7 h-7 rounded-full bg-[#f4f3f1] flex items-center justify-center text-[#161514] group-hover:bg-[#f7ac4f] transition-colors">
+                          <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-display font-extrabold text-[#161514] mb-3 leading-snug group-hover:text-[#b45309] transition-colors">
+                        {step.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm font-sans text-[#5d5a55] leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+
+                    <div className="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-xs font-bold text-[#161514]">
+                      <span>View full subpage & video breakdown</span>
+                      <span className="text-[#b45309] font-mono">Explore →</span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 2c. Dedicated Fit Comparison Table for PPC / Email Marketing */}
+      {service.slug === 'ppc' && (
+        <section className="py-16 sm:py-20 bg-white border-b border-ink/10">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <span className="text-xs font-mono font-bold text-[#b45309] uppercase tracking-wider block mb-2">
+                Strategic Fit Matrix
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-display font-extrabold text-[#161514] tracking-tight">
+                Which Meta Ads Setup Fits Your Business?
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-[24px] bg-[#FAF8F5] border border-[#e8e6e2] flex flex-col justify-between">
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-white border border-black/10 text-[10px] font-mono font-bold text-[#161514] uppercase mb-3 inline-block">
+                    Option 01
+                  </span>
+                  <h3 className="text-lg font-display font-bold text-[#161514] mb-2">
+                    Lead Generation & Calls
+                  </h3>
+                  <p className="text-xs text-[#5d5a55] leading-relaxed mb-4">
+                    Best for clinics, accountants, contractors, and local services wanting qualified inbound inquiries directly into CRM.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-black/5 text-xs font-mono font-semibold text-[#1f7a37]">
+                  Target: High-Intent Inquiries
+                </div>
+              </div>
+
+              <div className="p-6 rounded-[24px] bg-[#FAF8F5] border-2 border-[#f7ac4f] shadow-sm flex flex-col justify-between relative">
+                <span className="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-[#f7ac4f] text-[10px] font-mono font-black text-[#161514] uppercase">
+                  Most Popular
+                </span>
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-white border border-black/10 text-[10px] font-mono font-bold text-[#161514] uppercase mb-3 inline-block">
+                    Option 02
+                  </span>
+                  <h3 className="text-lg font-display font-bold text-[#161514] mb-2">
+                    E-Commerce Sales & Scale
+                  </h3>
+                  <p className="text-xs text-[#5d5a55] leading-relaxed mb-4">
+                    Best for DTC brands and online retailers requiring dynamic product ads, catalog retargeting, and scalable purchase ROAS.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-black/5 text-xs font-mono font-semibold text-[#b45309]">
+                  Target: Scalable Purchase ROAS
+                </div>
+              </div>
+
+              <div className="p-6 rounded-[24px] bg-[#FAF8F5] border border-[#e8e6e2] flex flex-col justify-between">
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-white border border-black/10 text-[10px] font-mono font-bold text-[#161514] uppercase mb-3 inline-block">
+                    Option 03
+                  </span>
+                  <h3 className="text-lg font-display font-bold text-[#161514] mb-2">
+                    Event & Local Awareness
+                  </h3>
+                  <p className="text-xs text-[#5d5a55] leading-relaxed mb-4">
+                    Best for grand openings, webinars, seasonal ticket sales, and time-sensitive geographic promotions.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-black/5 text-xs font-mono font-semibold text-[#161514]">
+                  Target: Geographic Density
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {service.slug === 'email-marketing' && (
+        <section className="py-16 sm:py-20 bg-white border-b border-ink/10">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <span className="text-xs font-mono font-bold text-[#b45309] uppercase tracking-wider block mb-2">
+                Email Strategic Approach
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-display font-extrabold text-[#161514] tracking-tight">
+                Which Email Approach Fits Your Goal?
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-[24px] bg-[#FAF8F5] border border-[#e8e6e2] flex flex-col justify-between">
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-white border border-black/10 text-[10px] font-mono font-bold text-[#161514] uppercase mb-3 inline-block">
+                    Approach 01
+                  </span>
+                  <h3 className="text-lg font-display font-bold text-[#161514] mb-2">
+                    Targeted Broadcast Campaigns
+                  </h3>
+                  <p className="text-xs text-[#5d5a55] leading-relaxed mb-4">
+                    Periodic newsletters, product drops, holiday sales, and company announcements sent to curated segments.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-black/5 text-xs font-mono font-semibold text-[#1f7a37]">
+                  Deliverable: High-Impact Broadcasts
+                </div>
+              </div>
+
+              <div className="p-6 rounded-[24px] bg-[#FAF8F5] border-2 border-[#f7ac4f] shadow-sm flex flex-col justify-between relative">
+                <span className="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-[#f7ac4f] text-[10px] font-mono font-black text-[#161514] uppercase">
+                  Highest ROI
+                </span>
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-white border border-black/10 text-[10px] font-mono font-bold text-[#161514] uppercase mb-3 inline-block">
+                    Approach 02
+                  </span>
+                  <h3 className="text-lg font-display font-bold text-[#161514] mb-2">
+                    Automated Behavioral Flows
+                  </h3>
+                  <p className="text-xs text-[#5d5a55] leading-relaxed mb-4">
+                    Always-on welcome sequences, abandoned cart triggers, browse abandonment, and customer win-back flows.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-black/5 text-xs font-mono font-semibold text-[#b45309]">
+                  Deliverable: Compounding Automation
+                </div>
+              </div>
+
+              <div className="p-6 rounded-[24px] bg-[#FAF8F5] border border-[#e8e6e2] flex flex-col justify-between">
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-white border border-black/10 text-[10px] font-mono font-bold text-[#161514] uppercase mb-3 inline-block">
+                    Approach 03
+                  </span>
+                  <h3 className="text-lg font-display font-bold text-[#161514] mb-2">
+                    Full Lifecycle Retention Engine
+                  </h3>
+                  <p className="text-xs text-[#5d5a55] leading-relaxed mb-4">
+                    Complete subscriber migration, deliverability warming, VIP tiering, and ongoing conversion split testing.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-black/5 text-xs font-mono font-semibold text-[#161514]">
+                  Deliverable: End-to-End Retention
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* 2. Editorial Statement */}
       <section className="py-20 sm:py-24 bg-[#EFEBE2] border-b border-ink/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">

@@ -35,220 +35,369 @@ export interface ServiceItem {
 }
 
 export const confirmedServices: ServiceItem[] = [
+  // =========================================================================
+  // 1. SEARCH ENGINE OPTIMIZATION (SEO)
+  // =========================================================================
   {
     id: "seo",
     slug: "seo",
     number: "01",
-    title: "Search Engine Optimization",
+    title: "Search Engine Optimization (SEO)",
     shortTitle: "SEO",
-    heroHeadline: "TURN SEARCH VISIBILITY INTO SUSTAINABLE BUSINESS Growth.",
-    tagline: "Be the answer when buyers search",
-    shortDescription: "Dominate search engine rankings and capture high-intent organic traffic.",
+    heroHeadline: "TURN SEARCH VISIBILITY INTO PREDICTABLE BUSINESS GROWTH.",
+    tagline: "Be directly in front of customers actively searching for what you offer",
+    shortDescription:
+      "Search Engine Optimization (SEO) services are a strategic blend of technical engineering, high-intent content creation, and digital authority building designed to put your business directly in front of customers actively searching for what you offer.",
     fullDescription:
-      "Modern search engine optimization is no longer about isolated keywords or superficial tweaks. We build comprehensive technical foundations, architect topical authority across your entire domain, and secure reputable editorial mentions that establish lasting organic visibility.",
+      "Rather than renting attention through ads that stop working the moment your budget pauses, professional SEO builds a compounding digital asset. We align your website’s architecture, messaging, and online reputation with how modern search engines and AI-powered answer engines evaluate trust, relevance, and user experience. The goal isn’t just higher rankings or vanity traffic; it’s attracting qualified prospects ready to inquire, book, or buy.",
     deliverables: [
-      "Technical SEO",
       "On-Page SEO",
       "Off-Page SEO",
-      "Keyword Research",
-      "SEO Content Strategy",
-      "Organic Growth",
+      "Local SEO",
+      "Technical SEO (AEO & GEO)",
     ],
     features: [
       {
-        title: "Strategic SEO Architecture",
+        title: "Intent-Driven Traffic",
         description:
-          "Build SEO strategies around keyword research, search intent, and competitor analysis to reach the right audience and identify growth opportunities.",
+          "Capture buyers at the exact moment they are searching for your solution, filtering for qualified prospects ready to inquire, book, or buy.",
       },
       {
-        title: "Continuous Refinement & Impact",
+        title: "Compounding ROI",
         description:
-          "Refine website performance, content, and search visibility through ongoing analysis, technical improvements, and measurable SEO actions.",
+          "Build long-term organic visibility that lowers customer acquisition costs over time and acts as an enduring digital asset.",
+      },
+      {
+        title: "Future-Ready Search Presence",
+        description:
+          "Optimize for both traditional Google search results and AI-generated answer engines like ChatGPT, Google AI Overviews, and Perplexity.",
       },
     ],
     processSteps: [
       {
         number: "01",
-        title: "We uncover opportunities others overlook.",
-        description: "Analyze your website, competitors, and search performance to identify technical issues and opportunities for organic growth.",
+        title: "1. On-Page SEO",
+        description:
+          "Making every page on your website clear, helpful, and easy to find through search term research, engaging copy, better search headlines, and intuitive layouts.",
       },
       {
         number: "02",
-        title: "We align your content with search intent.",
-        description: "Discover relevant keywords and develop a content strategy that connects your business with the right audience.",
+        title: "2. Off-Page SEO",
+        description:
+          "Building your reputation, authority, and brand visibility across the internet through high-quality backlinks, guest posting, Reddit discussions, and competitor research.",
       },
       {
         number: "03",
-        title: "We build a stronger search foundation.",
-        description: "Improve website structure, crawlability, indexing, and backlink quality to strengthen your website's search engine performance.",
+        title: "3. Local SEO",
+        description:
+          "Helping nearby customers find, trust, and choose you first in your area with Google Business Profile setup, optimization, regular GBP posts, and citation reviews.",
       },
       {
         number: "04",
-        title: "We turn rankings into meaningful results.",
-        description: "Monitor keyword rankings, organic traffic, and conversions while continuously optimizing your SEO strategy for long-term growth.",
+        title: "4. Technical SEO (AEO & GEO)",
+        description:
+          "Making sure your website runs fast, works smoothly, and speaks the language of Google and AI with custom schema, robots.txt, and llms.txt implementation.",
       },
     ],
     faqs: [
       {
-        question: "1. What do SEO services include?",
+        question: "What is the difference between On-Page and Off-Page SEO?",
         answer:
-          "Lead Edge Marketers provides technical SEO audits, keyword research, on-page optimization, backlink building, and local SEO services. We structure your site to earn high search rankings and drive consistent organic traffic.",
+          "On-page SEO improves the words, headings, and layout on your actual web pages so search engines and visitors immediately understand your offers. Off-page SEO focuses on external trust signals—such as high-quality backlinks, media features, and community mentions—that prove to search engines your business is credible and worth ranking first.",
       },
       {
-        question: "2. How long does SEO take to work?",
+        question: "How do AEO and GEO (Answer & Generative Engine Optimization) work?",
         answer:
-          "Professional SEO is a long-term campaign that typically delivers noticeable keyword ranking gains and traffic growth within 3 to 6 months. Initial technical site fixes provide early traction, but lasting search engine authority builds over time.",
+          "Beyond traditional keyword indexing, we implement structured schema markup and llms.txt files so AI search engines like Google AI Overviews, ChatGPT Search, and Perplexity can ingest your verified business data and cite your brand in conversational AI answers.",
       },
       {
-        question: "3. Which SEO metrics do you report on?",
+        question: "How long does professional SEO take to compound results?",
         answer:
-          "We track transparent, revenue-driving KPIs including organic keyword rankings, monthly organic traffic growth, domain authority, click-through rates (CTR), conversion rates, and total leads generated. You receive detailed monthly reports demonstrating clear campaign ROI.",
+          "Unlike paid ads that stop the moment spend pauses, SEO builds lasting asset equity. Initial technical crawling fixes and local map pack updates show traction within weeks, with compounding organic rankings and qualified inbound inquiries accelerating over 3 to 6 months.",
       },
       {
-        question: "4. What is the difference between an SEO agency and an SEO consultant?",
+        question: "Do you guarantee #1 rankings on Google?",
         answer:
-          "An SEO consultant primarily provides strategic advice, site audits, and recommendations for your internal team to execute. Lead Edge Marketers operates as a full-service SEO agency, handling strategy, technical fixes, content creation, and ongoing optimization from start to finish.",
+          "No ethical agency can guarantee specific algorithmic positions, but we guarantee transparent execution: technical health, high-intent content, authoritative backlinks, and clear monthly revenue attribution tracking.",
       },
     ],
   },
+
+  // =========================================================================
+  // 2. META & PAID ADS (PPC)
+  // =========================================================================
   {
     id: "ppc",
     slug: "ppc",
     number: "02",
-    title: "PPC Services",
-    shortTitle: "PPC",
-    heroHeadline: "DATA-DRIVEN META ADS THAT TURN TARGET AUDIENCES INTO customers.",
-    tagline: "Targeted Facebook & Instagram ads engineered to drive instant leads and max ROAS.",
-    shortDescription: "Targeted Facebook & Instagram ads engineered to drive instant leads and max ROAS.",
+    title: "Meta Ads & Paid Social Advertising",
+    shortTitle: "Meta Ads",
+    heroHeadline: "TURN FACEBOOK & INSTAGRAM ADS INTO A PREDICTABLE PIPELINE OF BUYERS.",
+    tagline: "Planned, launched, tested, and scaled around real business outcomes",
+    shortDescription:
+      "Running paid social ads shouldn’t feel like guessing with your budget or watching clicks go nowhere. We plan, launch, test, and scale high-performing Facebook and Instagram campaigns designed around real business outcomes—qualified leads, booked calls, and profitable sales.",
     fullDescription:
-      "Targeted Facebook and Instagram ads engineered to drive instant leads and max ROAS. By uniting custom visual assets with advanced audience modeling and first-party conversion tracking (Conversions API), we scale profitability while eliminating ad fatigue.",
+      "Every campaign runs inside your own ad account with clear tracking, disciplined budget controls, and fresh creative variations built to stop the scroll without burning out your audience. We combine broad and AI-assisted delivery with warm retargeting and customer lookalikes to capture ready buyers.",
     deliverables: [
-      "Creative Hook Diversity",
-      "Active Practice",
-      "Algorithmic Audience Modeling",
+      "Campaign Strategy & Funnel Alignment",
+      "Scroll-Stopping Ad Creative & Copy",
+      "Tracking, Pixel & Conversions API Setup",
+      "Budget Control, Optimization & Scaling",
     ],
     features: [
       {
-        title: "Visibility Without Delay",
+        title: "Account Ownership",
         description:
-          "Strategic campaigns and targeted technical fixes designed to strengthen your search presence and accelerate organic growth.",
+          "Your Business Manager, ad account, and data stay yours always. You pay Meta directly with zero ad spend markup.",
       },
       {
-        title: "Precision That Performs",
+        title: "Conversion-First Tracking",
         description:
-          "From search-focused content to on-page optimization, every detail is refined to improve rankings, build trust, and attract the right audience.",
+          "Pixel and Conversions API (CAPI) setup ensures optimization follows real leads and purchases rather than vanity clicks.",
+      },
+      {
+        title: "Ongoing Creative Refresh",
+        description:
+          "New visual hooks, vertical Reels, and messaging angles are tested systematically to fight ad fatigue and scale profit.",
       },
     ],
     processSteps: [
       {
         number: "01",
-        title: "3-Tier Funnel Architecture",
-        description: "Segmenting cold discovery, mid-funnel consideration, and high-intent checkout funnels so ad spend never bleeds.",
+        title: "Campaign Strategy & Funnel Alignment",
+        description:
+          "Goal-driven setup structuring campaigns around qualified leads and purchases, combining broad AI delivery with warm retargeting and landing page fit.",
       },
       {
         number: "02",
-        title: "3x3 Creative Matrix Testing",
-        description: "Deploying modular creative variations testing visual hooks, angles, and editorial copy against strict unit metrics.",
+        title: "Scroll-Stopping Ad Creative & Copy",
+        description:
+          "Producing distinct visual hooks, vertical video Reels, carousels, and actionable copy that earns attention in the first 3 seconds.",
       },
       {
         number: "03",
-        title: "Algorithmic Audience Modeling",
-        description: "Server-side CAPI tracking and algorithmic lookalikes zeroing in on buyers with the highest lifetime purchasing intent.",
+        title: "Tracking, Pixel & Conversions API Setup",
+        description:
+          "Pairing browser and server-side tracking (CAPI) to bypass iOS cookie degradation and connect ad spend to actual inquiries and sales.",
       },
       {
         number: "04",
-        title: "Active Efficiency Scaling",
-        description: "Scaling daily budgets profitably on validated creatives while maintaining target CPA thresholds and healthy margins.",
+        title: "Budget Control, Optimization & Scaling",
+        description:
+          "Active spend and bid monitoring, trimming wasted spend early, and methodically scaling winning campaigns while protecting profit margins.",
       },
     ],
     faqs: [
       {
-        question: "1. What do Facebook marketing services include?",
+        question: "Do you take a percentage markup on our ad spend?",
         answer:
-          "Lead Edge Marketers handles custom ad creation, audience targeting, campaign setup, continuous A/B testing, and conversion tracking to ensure your Meta ads generate consistent leads and sales.",
+          "Never. You link your credit card directly to Meta and pay ad costs at cost. We charge a flat, transparent monthly management fee so our only incentive is maximizing your return on investment.",
       },
       {
-        question: "2. How long does Facebook marketing take to show results?",
+        question: "How often do you test new ad creatives?",
         answer:
-          "Meta ads start generating website traffic and lead inquiries almost immediately after launching, with full campaign optimization and steady return on ad spend achieved within the first 2 to 4 weeks.",
+          "We test fresh visual hooks, video Reels, and ad copy variations weekly. This continuous creative diversity prevents ad fatigue and keeps customer acquisition costs low as budget scales.",
       },
       {
-        question: "3. How much does a Facebook marketing agency cost?",
+        question: "How do you track conversions after Apple iOS privacy changes?",
         answer:
-          "Agency fees depend on your total monthly ad spend and project goals, with Lead Edge Marketers offering flexible performance retainers designed to maximize your profit and return on investment.",
-      },
-      {
-        question: "4. Should I use Advantage+ or manual targeting on Facebook?",
-        answer:
-          "Advantage+ uses Meta's AI algorithms to reach broad potential buyers fast, while manual targeting lets us focus on specific niche demographics; we often test both to find what delivers the lowest cost per lead.",
-      },
-      {
-        question: "5. Are Facebook Groups worth it for a small business?",
-        answer:
-          "Yes, running or participating in active Facebook Groups helps build direct community trust, though combining group engagement with targeted paid ads yields much faster lead generation.",
+          "We engineer direct server-to-server Conversions API (CAPI) pipelines that bypass browser cookie blocks, providing a 9.8/10 Event Match Quality score and reliable attribution data.",
       },
     ],
   },
+
+  // =========================================================================
+  // 3. SOCIAL MEDIA MANAGEMENT
+  // =========================================================================
   {
     id: "social-media",
     slug: "social-media",
     number: "03",
-    title: "Social Media Services",
+    title: "Social Media Management Services",
     shortTitle: "Social Media",
-    heroHeadline: socialMediaContent.hero.headline,
-    tagline: socialMediaContent.hero.tagline,
-    shortDescription: socialMediaContent.hero.shortDescription,
-    fullDescription: socialMediaContent.hero.fullDescription,
-    deliverables: socialMediaContent.deliverables,
-    features: socialMediaContent.features,
-    processSteps: socialMediaContent.processSteps,
-    faqs: [
-      {
-        question: "Which social media platforms do you manage?",
-        answer:
-          "We specialize in Instagram, LinkedIn, and TikTok, focused on whether your primary target audience is B2B executive decision-makers or direct-to-consumer buyers.",
-      },
-      {
-        question: "Do we get to approve content before it goes live?",
-        answer:
-          "Yes, absolutely. All visual assets, captions, and publication schedules are uploaded to a collaborative preview board for your review and sign-off well in advance.",
-      },
-      {
-        question: "Do you supply the video assets or do we need to film them?",
-        answer:
-          "We offer flexible workflows: we can direct and produce assets using provided raw footage, generate high-end motion graphics, or conduct on-site creative capture days.",
-      },
-    ],
-  },
-  {
-    id: "web-development",
-    slug: "web-development",
-    number: "04",
-    title: "Web Development",
-    shortTitle: "Web Dev",
-    heroHeadline: "DIGITAL EXPERIENCES ENGINEERED FOR SPEED, ELEGANCE AND CONVERSION.",
-    tagline: "High-speed sites engineered to turn clicks into clients.",
+    heroHeadline: "KEEP YOUR BRAND ACTIVE, VISIBLE, AND CONNECTED—WITHOUT LIVING ON SOCIAL MEDIA.",
+    tagline: "Tailored posts, community engagement, and clear monthly tracking",
     shortDescription:
-      "Build high-converting, lightning-fast websites with Lead Edge Marketers. Our SEO-first web development creates sub-second speed sites engineered to capture search traffic and scale revenue.",
+      "Keep your brand active, visible, and connected—without living on social media. Clean profile polish, native content planning, responsive community care, and plain-English performance insights.",
     fullDescription:
-      "High-speed sites engineered to turn clicks into clients. Build high-converting, lightning-fast websites with Lead Edge Marketers. Our SEO-first web development creates sub-second speed sites engineered to capture search traffic and scale revenue.",
+      "Consistent, platform-native social media builds lasting brand equity and warm customer trust. We manage your day-to-day accounts, plan posts in advance around your real business goals, respond warmly to comments and DMs, and continuously adjust topics based on real audience engagement.",
     deliverables: [
-      "Sub-Second Core Vitals",
-      "Custom Next.js Engine",
-      "Fluid Device Geometry",
-      "Zero Theme Bloat",
-      "Conversion-Focused Funnels",
+      "Account & Profile Management",
+      "Content Planning & Platform Adaptation",
+      "Community Engagement & Inbox Care",
+      "Performance Tracking & Monthly Adjustments",
     ],
     features: [
       {
-        title: "Flawless Performance",
+        title: "Clean Day-to-Day Account Care",
         description:
-          "Optimized static generation and modern edge caching guaranteeing near-instant page transitions, 0 layout shift, and exceptional Core Web Vitals.",
+          "Keeping handles, bios, visuals, and links aligned with current offers while working securely through proper role permissions.",
       },
       {
-        title: "Editorial Design Craft",
+        title: "Platform-Specific Formatting",
         description:
-          "Typographic balance, generous whitespace, subtle glassmorphic elements, and fluid layouts designed specifically to reflect premium authority.",
+          "Posts tailored to how people actually use each platform (Instagram, Facebook, LinkedIn, YouTube) with a clear calendar approval workflow.",
+      },
+      {
+        title: "Trust & Community Care",
+        description:
+          "Turning comments and DMs into warm leads with natural, brand-aligned responses and smart escalation to your sales team.",
+      },
+    ],
+    processSteps: [
+      {
+        number: "01",
+        title: "Account & Profile Management",
+        description:
+          "Profile and bio polish, secure role permissions so your business always retains ownership, and reliable scheduled publishing.",
+      },
+      {
+        number: "02",
+        title: "Content Planning & Platform Adaptation",
+        description:
+          "Monthly content calendar mapped around promotions and seasons, platform-specific formatting, and clear approval workflows.",
+      },
+      {
+        number: "03",
+        title: "Community Engagement & Inbox Care",
+        description:
+          "Timely, friendly replies to comments and direct messages, smart lead routing for sales inquiries, and audience connection.",
+      },
+      {
+        number: "04",
+        title: "Performance Tracking & Monthly Adjustments",
+        description:
+          "Plain-English monthly reports tracking reach, engagement, and audience growth to fine-tune topics and posting rhythm.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do we get to approve posts before they go live?",
+        answer:
+          "Yes, 100%. We map out the monthly content calendar well in advance for your review. Nothing goes live without your green light.",
+      },
+      {
+        question: "Who replies to customer direct messages and comments?",
+        answer:
+          "Our team handles daily community monitoring, answering common questions in a friendly, brand-aligned voice while instantly routing sales leads or urgent customer queries to your team.",
+      },
+      {
+        question: "Which platforms do you manage?",
+        answer:
+          "We manage Instagram, Facebook, LinkedIn, and YouTube, adapting content format, hooks, and tone to fit where your buyers spend their attention.",
+      },
+    ],
+  },
+
+  // =========================================================================
+  // 4. EMAIL MARKETING SERVICES
+  // =========================================================================
+  {
+    id: "email-marketing",
+    slug: "email-marketing",
+    number: "04",
+    title: "Email Marketing Services",
+    shortTitle: "Email Marketing",
+    heroHeadline: "TURN YOUR EMAIL LIST INTO A STEADY, HIGH-ROI REVENUE CHANNEL.",
+    tagline: "Own your customer asset with targeted sends, smart automation, and inbox deliverability",
+    shortDescription:
+      "Social algorithms change overnight and paid ads stop working the moment spend slows down—but your email list is an asset your business actually owns. Our Email Marketing Services help you stay top-of-mind, nurture leads smoothly, and turn subscribers into repeat customers without overwhelming their inbox.",
+    fullDescription:
+      "From writing high-converting campaigns and building smart automated sequences to cleaning up lists and setting up the right email platform, we handle the strategy, copy, design, and execution end to end.",
+    deliverables: [
+      "Targeted Email Campaigns",
+      "Automated Email Flows",
+      "Template Design & Conversion Testing",
+      "Platform Setup, Migration & List Growth",
+    ],
+    features: [
+      {
+        title: "Audience-First Sends",
+        description:
+          "Targeted messages based on customer behavior, purchase history, and buyer stage—not one-size-fits-all blasts.",
+      },
+      {
+        title: "Always-On Automation",
+        description:
+          "Timely triggered email flows that welcome new subscribers, recover abandoned browse/carts, and drive repeat orders.",
+      },
+      {
+        title: "Inbox & Deliverability Care",
+        description:
+          "Clean list hygiene, hard bounce pruning, and proper SPF/DKIM authentication so your emails land in the primary inbox, not spam.",
+      },
+    ],
+    processSteps: [
+      {
+        number: "01",
+        title: "Targeted Email Campaigns",
+        description:
+          "Audience segmentation, natural and engaging copywriting, and planned editorial and seasonal launch calendars.",
+      },
+      {
+        number: "02",
+        title: "Automated Email Flows",
+        description:
+          "Welcome series, abandoned cart and browse follow-ups, and post-purchase win-back sequences sent at the exact right moment.",
+      },
+      {
+        number: "03",
+        title: "Template Design & Conversion Testing",
+        description:
+          "Clean, mobile-responsive brand templates and A/B testing of subject lines, preview text, and calls-to-action.",
+      },
+      {
+        number: "04",
+        title: "Platform Setup, Migration & List Growth",
+        description:
+          "Tool configuration on Klaviyo, Mailchimp, or ActiveCampaign, high-converting lead capture opt-ins, and deliverability protection.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which email platforms do you work with?",
+        answer:
+          "We configure, migrate, and manage lists across all major platforms including Klaviyo, Mailchimp, ActiveCampaign, HubSpot, and Omnisend.",
+      },
+      {
+        question: "How do automated email flows generate revenue?",
+        answer:
+          "Automations trigger dynamically when a prospect takes action—like joining your list or abandoning a checkout. They deliver timely, relevant value without requiring manual effort, consistently recovering lost sales 24/7.",
+      },
+      {
+        question: "How do you protect sender reputation and prevent emails from landing in spam?",
+        answer:
+          "We set up proper DNS records (SPF, DKIM, DMARC), implement double opt-in safeguards, regularly prune unengaged contacts, and maintain healthy sending frequencies to protect inbox deliverability.",
+      },
+    ],
+  },
+
+  // =========================================================================
+  // 5. WEB DEVELOPMENT
+  // =========================================================================
+  {
+    id: "web-development",
+    slug: "web-development",
+    number: "05",
+    title: "Web Development & Architecture",
+    shortTitle: "Web Dev",
+    heroHeadline: "DIGITAL EXPERIENCES ENGINEERED FOR SPEED, ELEGANCE AND CONVERSION.",
+    tagline: "High-speed sites engineered to turn clicks into booked clients",
+    shortDescription:
+      "Build high-converting, lightning-fast websites with Lead Edge Marketers. Our SEO-first web development creates sub-second speed sites engineered to capture search traffic and scale revenue.",
+    fullDescription:
+      "High-speed sites engineered to turn clicks into clients. We build bespoke Next.js 15 web applications compiled at the global edge for instantaneous 0.4s mobile loads, perfect 100 Lighthouse scores, and friction-free inquiry funnels.",
+    deliverables: [
+      "Sub-Second Core Vitals (0.4s)",
+      "Custom Next.js 15 Engine",
+      "Conversion-Focused Funnels",
+      "Global Edge CDN Caching",
+    ],
+    features: [
+      {
+        title: "Flawless Speed & Core Vitals",
+        description:
+          "Optimized static generation and modern edge caching guaranteeing near-instant page transitions, 0 layout shift, and 100 Lighthouse performance.",
       },
       {
         title: "Conversion-Led Architecture",
@@ -258,7 +407,7 @@ export const confirmedServices: ServiceItem[] = [
       {
         title: "Responsive Perfection",
         description:
-          "Meticulously tested across all viewports from 320px mobile screens to 4K displays, ensuring zero horizontal overflow and native touch feel.",
+          "Tested across all viewports from 320px mobile screens to 4K displays, ensuring zero horizontal overflow and native touch feel.",
       },
     ],
     processSteps: [
@@ -287,93 +436,12 @@ export const confirmedServices: ServiceItem[] = [
       {
         question: "What technology stack do you build websites with?",
         answer:
-          "We primarily build with Next.js, React, TypeScript, and Tailwind CSS, backed by headless CMS platforms or modern serverless edge architecture.",
-      },
-      {
-        question: "Can our internal team easily update text and blog posts after launch?",
-        answer:
-          "Yes. We configure intuitive content management systems so your team can publish articles, update case studies, and modify copy without writing code.",
+          "We primarily build with Next.js 15, React 19, TypeScript, and Tailwind CSS, backed by global serverless edge architecture on Cloudflare or Vercel.",
       },
       {
         question: "How do you ensure the website is fast on mobile devices?",
         answer:
           "We employ modern image formats (AVIF/WebP), responsive image srcsets, code splitting, minimal JavaScript execution, and strict font metrics optimization.",
-      },
-    ],
-  },
-  {
-    id: "video-photo",
-    slug: "video-photo",
-    number: "05",
-    title: "Video Editing & Photo Creation",
-    shortTitle: "Video & Photo",
-    heroHeadline: "CINEMATIC VISUAL STORYTELLING THAT CAPTIVATES AND converts.",
-    tagline: "High-impact video and photography crafted to build brand trust.",
-    shortDescription:
-      "High-impact video and photography crafted to build brand trust.",
-    fullDescription:
-      "From engaging short-form video to high-end commercial campaign photography, we direct, shoot, and edit visual assets engineered to stop scrolls, establish emotional connection, and command market leadership.",
-    deliverables: [
-      "Storyboard & Direction",
-      "Studio & Location Capture",
-      "Editorial Narrative Pacing",
-      "Cinematic Color Grading",
-      "Multi-Platform Delivery",
-    ],
-    features: [
-      {
-        title: "Editorial Craft & Narrative Pacing",
-        description:
-          "Cinematic framing, rhythm-matched cuts, and sound design crafted to create an emotional connection and reinforce brand authority.",
-      },
-      {
-        title: "Multi-Platform Asset Delivery",
-        description:
-          "Exported in native aspect ratios from 9:16 vertical reels to 16:9 4K widescreen commercial masters, ready for cross-channel distribution.",
-      },
-    ],
-    processSteps: [
-      {
-        number: "01",
-        title: "Storyboard & Creative Concept",
-        description: "We map visual hooks, pacing storyboards, and moodboards aligned with your brand voice.",
-      },
-      {
-        number: "02",
-        title: "On-Location & Studio Shoot",
-        description: "We capture high-resolution cinema footage and studio lighting photography.",
-      },
-      {
-        number: "03",
-        title: "Editorial Cut & Narrative Pacing",
-        description: "We sculpt narrative rhythm, sound design, and motion graphics into polished, engaging edits.",
-      },
-      {
-        number: "04",
-        title: "Color Grading & Film Finish",
-        description: "We balance tones, contrast, and film emulation to produce an elevated editorial look.",
-      },
-      {
-        number: "05",
-        title: "Multi-Platform Master Delivery",
-        description: "We package and deliver final high-resolution assets optimized for web, social, and broadcast.",
-      },
-    ],
-    faqs: [
-      {
-        question: "What types of video production do you handle?",
-        answer:
-          "We handle brand documentary films, high-converting product ad spots, executive interviews, social vertical reels, and architectural walkthroughs.",
-      },
-      {
-        question: "Can you edit raw video footage we provide?",
-        answer:
-          "Yes. Our post-production team can ingest your existing raw 4K footage, re-cut the narrative, color-grade, and polish motion graphics for maximum engagement.",
-      },
-      {
-        question: "What delivery formats do you supply?",
-        answer:
-          "We provide 4K and 1080p ProRes masters, web-optimized MP4 and WebM exports, and custom vertical (9:16) versions for social channels.",
       },
     ],
   },
@@ -389,8 +457,8 @@ export function getServiceBySlug(slug: string): ServiceItem | undefined {
   if (slug === 'meta-ads') {
     return confirmedServices.find((s) => s.slug === 'ppc');
   }
-  if (slug === 'video-editing' || slug === 'video-editing-photo-creation') {
-    return confirmedServices.find((s) => s.slug === 'video-photo');
+  if (slug === 'video-editing' || slug === 'video-editing-photo-creation' || slug === 'video-photo') {
+    return confirmedServices.find((s) => s.slug === 'social-media');
   }
   return confirmedServices.find((s) => s.slug === slug);
 }

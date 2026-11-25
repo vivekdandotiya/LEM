@@ -188,27 +188,26 @@ export function MarketingHeroSimulator() {
           </div>
 
           {/* =========================================================================
-              CENTER 4 COLS: Realistic Interactive Phone Screen Simulator
+              CENTER 4 COLS: Modern High-Converting Marketing Live Preview Window
               ========================================================================= */}
           <div className="lg:col-span-4 flex justify-center order-1 lg:order-2">
-            <div className="relative w-[300px] sm:w-[325px] h-[590px] rounded-[48px] p-3.5 border-[4px] border-[#161514] bg-[#0c0d0e] shadow-[0_24px_60px_rgba(22,21,20,0.2)] shrink-0 transition-transform duration-300">
+            <div className="relative w-[320px] sm:w-[350px] h-[590px] rounded-[24px] border border-[#d9d6d1] bg-white shadow-[0_20px_50px_rgba(22,21,20,0.12)] shrink-0 overflow-hidden flex flex-col transition-transform duration-300">
               
-              {/* Phone Dynamic Island / Speaker Notch */}
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#0c0d0e] rounded-full z-30 flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-black/60 border border-white/10" />
+              {/* Minimal App Window Header (Zero Phone Bezels) */}
+              <div className="px-4 py-2.5 bg-[#f4f3f1] border-b border-[#e8e6e2] flex items-center justify-between shrink-0">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#d9d6d1]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#d9d6d1]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#d9d6d1]" />
+                </div>
+                <div className="px-2.5 py-0.5 rounded-full bg-white border border-[#e8e6e2] text-[10px] font-mono text-[#5d5a55] flex items-center gap-1.5 shadow-2xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1f7a37] animate-pulse" />
+                  <span className="font-semibold text-[#161514]">Live Campaign Preview</span>
+                </div>
               </div>
 
-              {/* Phone Inner Display Screen */}
-              <div className="w-full h-full rounded-[38px] bg-white overflow-hidden text-[#161514] flex flex-col justify-between text-left relative">
-                
-                {/* Status Bar */}
-                <div className="pt-3 px-6 flex items-center justify-between text-[11px] font-mono text-[#161514] z-20">
-                  <span className="font-bold">9:41</span>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#1f7a37]" />
-                    <span className="text-[10px] font-bold">5G</span>
-                  </div>
-                </div>
+              {/* Inner Display Screen */}
+              <div className="w-full flex-1 bg-white overflow-hidden text-[#161514] flex flex-col justify-between text-left relative">
 
                 {/* ===================================================================
                     SCREEN 1: GOOGLE SEARCH SIMULATOR
@@ -479,9 +478,10 @@ export function MarketingHeroSimulator() {
                   </div>
                 )}
 
-                {/* Phone Bottom Home Bar */}
-                <div className="pb-2 pt-1 flex justify-center">
-                  <div className="w-28 h-1 bg-[#161514]/30 rounded-full" />
+                {/* Clean Bottom Status Bar */}
+                <div className="px-4 py-2 bg-[#f4f3f1] border-t border-[#e8e6e2] flex items-center justify-between text-[10px] font-mono text-[#5d5a55]">
+                  <span>Lead Edge Marketing Pipeline</span>
+                  <span className="text-[#1f7a37] font-semibold">Active</span>
                 </div>
               </div>
             </div>

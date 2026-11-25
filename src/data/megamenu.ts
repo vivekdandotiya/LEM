@@ -1,6 +1,6 @@
 export interface MegamenuGroup {
   category: string;
-  items: { label: string; href: string }[];
+  items: { label: string; href: string; description?: string }[];
 }
 
 export interface MegamenuTab {
@@ -16,90 +16,195 @@ export const MEGAMENU_TABS: MegamenuTab[] = [
   {
     id: 'seo',
     name: 'Search & SEO',
-    countBadge: '24 disciplines',
-    description: 'Full-funnel search engine optimization & generative AI search discoverability.',
-    footerLink: { label: 'All search & indexation disciplines', href: '/services/seo' },
+    countBadge: '4 core services',
+    description: 'Turn search visibility into predictable, compounding business growth across Google and AI answer engines.',
+    footerLink: { label: 'Explore all SEO solutions', href: '/services/seo' },
     groups: [
       {
-        category: 'Technical & Crawl',
+        category: '1. On-Page SEO',
         items: [
-          { label: 'Technical SEO Audits', href: '/services/seo/technical-seo-audits' },
-          { label: 'JavaScript & Edge Rendering', href: '/services/seo/javascript-edge-rendering' },
-          { label: 'Core Web Vitals & Speed', href: '/services/seo/core-web-vitals-speed' },
-          { label: 'Schema Architecture & JSON-LD', href: '/services/seo/schema-architecture-json-ld' },
-          { label: 'Indexation Bottleneck Recovery', href: '/services/seo/indexation-bottleneck-recovery' },
+          {
+            label: 'On-Page SEO',
+            href: '/services/seo/on-page-seo',
+            description: 'Helpful content, buyer intent keywords & high-converting layouts.',
+          },
         ],
       },
       {
-        category: 'Organic Growth',
+        category: '2. Off-Page SEO',
         items: [
-          { label: 'Keyword Taxonomy Mapping', href: '/services/seo/keyword-taxonomy-mapping' },
-          { label: 'High-Intent Non-Brand Capture', href: '/services/seo/high-intent-non-brand-capture' },
-          { label: 'Programmatic SEO Engines', href: '/services/seo/programmatic-seo-engines' },
-          { label: 'Competitive Gap Analysis', href: '/services/seo/competitive-gap-analysis' },
-          { label: 'Editorial Authority Pillars', href: '/services/seo/editorial-authority-pillars' },
+          {
+            label: 'Off-Page SEO',
+            href: '/services/seo/off-page-seo',
+            description: 'Reputable backlinks, external authority & digital PR mentions.',
+          },
         ],
       },
       {
-        category: 'Local & Maps',
+        category: '3. Local SEO',
         items: [
-          { label: 'Google Business Profile Optimization', href: '/services/seo/google-business-profile-optimization' },
-          { label: 'Local 3-Pack Dominance', href: '/services/seo/local-3-pack-dominance' },
-          { label: 'Multi-Location Citation Sync', href: '/services/seo/multi-location-citation-sync' },
-          { label: 'Review Acquisition Systems', href: '/services/seo/review-acquisition-systems' },
+          {
+            label: 'Local SEO',
+            href: '/services/seo/local-seo',
+            description: 'Google Business Profile, Google Maps 3-pack & 5-star review velocity.',
+          },
         ],
       },
       {
-        category: 'Modern AI Search (GEO)',
+        category: '4. Technical SEO',
         items: [
-          { label: 'Generative Engine Optimization (GEO)', href: '/services/seo/generative-engine-optimization-geo' },
-          { label: 'Google AI Overviews Indexing', href: '/services/seo/google-ai-overviews-indexing' },
-          { label: 'ChatGPT & Perplexity Citations', href: '/services/seo/chatgpt-perplexity-citations' },
-          { label: 'Structured LLMs.txt Deployment', href: '/services/seo/structured-llmstxt-deployment' },
+          {
+            label: 'Technical SEO (AEO & GEO)',
+            href: '/services/seo/technical-seo',
+            description: 'Speed, custom schema, robots.txt & structured llms.txt readiness.',
+          },
         ],
       },
     ],
   },
   {
     id: 'ppc',
-    name: 'Performance Ads',
-    countBadge: '18 channels',
-    description: 'High-ROAS paid media acquisition across search, social, and programmatic display.',
-    footerLink: { label: 'All paid media & advertising services', href: '/services/ppc' },
+    name: 'Meta & Paid Ads',
+    countBadge: '4 core services',
+    description: 'Turn Facebook & Instagram ads into a predictable pipeline of high-intent buyers and booked calls.',
+    footerLink: { label: 'Explore all paid advertising solutions', href: '/services/ppc' },
     groups: [
       {
-        category: 'Google Advertising',
+        category: '1. Strategy & Funnel',
         items: [
-          { label: 'High-Intent Search Campaigns', href: '/services/ppc/high-intent-search-campaigns' },
-          { label: 'Performance Max Architecture', href: '/services/ppc/performance-max-architecture' },
-          { label: 'Google Shopping & Feed Optimization', href: '/services/ppc/google-shopping-feed-optimization' },
-          { label: 'Negative Keyword & Waste Pruning', href: '/services/ppc/negative-keyword-waste-pruning' },
+          {
+            label: 'Campaign Strategy & Funnel Alignment',
+            href: '/services/ppc/campaign-strategy',
+            description: 'Target audience mapping, offer structure & customer journey design.',
+          },
         ],
       },
       {
-        category: 'Social Paid Media',
+        category: '2. Ad Creative',
         items: [
-          { label: 'Meta Ads (Instagram & Facebook)', href: '/services/ppc/meta-ads-scaling' },
-          { label: 'TikTok Direct-Response Scaling', href: '/services/ppc/tiktok-direct-response-scaling' },
-          { label: 'LinkedIn B2B Account Targeting', href: '/services/ppc/linkedin-b2b-account-targeting' },
-          { label: 'YouTube In-Stream Pre-Roll', href: '/services/ppc/youtube-in-stream-pre-roll' },
+          {
+            label: 'Scroll-Stopping Creative & Copy',
+            href: '/services/ppc/ad-creative-copy',
+            description: 'High-converting video hooks, static carousels & benefit-first copywriting.',
+          },
         ],
       },
       {
-        category: 'Retargeting & Funnels',
+        category: '3. Tracking & Telemetry',
         items: [
-          { label: 'Dynamic Catalog Remarketing', href: '/services/ppc/dynamic-catalog-remarketing' },
-          { label: 'Cart Abandonment Ad Sequencing', href: '/services/ppc/cart-abandonment-ad-sequencing' },
-          { label: 'Cross-Platform Omnichannel Retargeting', href: '/services/ppc/cross-platform-omnichannel-retargeting' },
+          {
+            label: 'Tracking, Pixel & CAPI Setup',
+            href: '/services/ppc/tracking-pixel-capi',
+            description: 'Server-side Conversions API, clean event attribution & zero signal loss.',
+          },
         ],
       },
       {
-        category: 'Creative Testing & CRO',
+        category: '4. Optimization',
         items: [
-          { label: 'Rapid Creative Hook Testing', href: '/services/ppc/rapid-creative-hook-testing' },
-          { label: 'Iterative UGC Ad Variations', href: '/services/ppc/iterative-ugc-ad-variations' },
-          { label: 'Landing Page Conversion Rate Optimization', href: '/services/ppc/landing-page-conversion-rate-optimization' },
-          { label: 'First-Party Server-Side Attribution', href: '/services/ppc/first-party-server-side-attribution' },
+          {
+            label: 'Budget Control, Optimization & Scaling',
+            href: '/services/ppc/budget-scaling',
+            description: 'Daily bid management, negative exclusions & controlled budget scaling.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'social-media',
+    name: 'Social Media',
+    countBadge: '4 core services',
+    description: 'Keep your brand active, visible, and connected—without living on social media.',
+    footerLink: { label: 'Explore all social media solutions', href: '/services/social-media' },
+    groups: [
+      {
+        category: '1. Profile Management',
+        items: [
+          {
+            label: 'Account & Profile Management',
+            href: '/services/social-media/account-profile-management',
+            description: 'Profile polish, brand aesthetics, link architecture & role ownership.',
+          },
+        ],
+      },
+      {
+        category: '2. Content Planning',
+        items: [
+          {
+            label: 'Content Planning & Platform Adaptation',
+            href: '/services/social-media/content-planning-adaptation',
+            description: 'Monthly editorial calendars tailored for Instagram, Facebook & LinkedIn.',
+          },
+        ],
+      },
+      {
+        category: '3. Community Care',
+        items: [
+          {
+            label: 'Community Engagement & Inbox Care',
+            href: '/services/social-media/community-engagement-inbox',
+            description: 'Fast friendly comment replies, DM triage & warm lead escalation.',
+          },
+        ],
+      },
+      {
+        category: '4. Analytics & Growth',
+        items: [
+          {
+            label: 'Performance Tracking & Adjustments',
+            href: '/services/social-media/performance-tracking-adjustments',
+            description: 'Clear monthly insights, audience growth data & continuous refinement.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'email-marketing',
+    name: 'Email Marketing',
+    countBadge: '4 core services',
+    description: 'Turn your email list into a steady, high-ROI revenue channel that compounds over time.',
+    footerLink: { label: 'Explore all email marketing solutions', href: '/services/email-marketing' },
+    groups: [
+      {
+        category: '1. Broadcast Campaigns',
+        items: [
+          {
+            label: 'Targeted Email Campaigns',
+            href: '/services/email-marketing/targeted-email-campaigns',
+            description: 'Promotional launches, seasonal offers, newsletters & announcements.',
+          },
+        ],
+      },
+      {
+        category: '2. Automated Flows',
+        items: [
+          {
+            label: 'Automated Email Flows',
+            href: '/services/email-marketing/automated-email-flows',
+            description: 'Welcome series, abandoned cart recovery, browse re-engagement & win-backs.',
+          },
+        ],
+      },
+      {
+        category: '3. Design & Testing',
+        items: [
+          {
+            label: 'Template Design & Conversion Testing',
+            href: '/services/email-marketing/template-design-testing',
+            description: 'Mobile-responsive layouts, subject line A/B splits & CTA optimization.',
+          },
+        ],
+      },
+      {
+        category: '4. Setup & Growth',
+        items: [
+          {
+            label: 'Platform Setup, Migration & List Growth',
+            href: '/services/email-marketing/platform-setup-deliverability',
+            description: 'Klaviyo/Mailchimp integration, clean signup popups & deliverability care.',
+          },
         ],
       },
     ],
@@ -107,125 +212,48 @@ export const MEGAMENU_TABS: MegamenuTab[] = [
   {
     id: 'web',
     name: 'Web Architecture',
-    countBadge: '16 technical solutions',
-    description: 'High-speed, conversion-engineered digital storefronts and web experiences.',
-    footerLink: { label: 'All web architecture & development solutions', href: '/services/web-development' },
+    countBadge: '4 core services',
+    description: 'Sub-second Next.js 15 web applications and commercial booking funnels engineered to convert.',
+    footerLink: { label: 'Explore all web development solutions', href: '/services/web-development' },
     groups: [
       {
-        category: 'Modern Storefronts',
+        category: '1. Core Applications',
         items: [
-          { label: 'Next.js 15 & React 19 Applications', href: '/services/web-development/nextjs-react-applications' },
-          { label: 'Headless Commerce Architecture', href: '/services/web-development/headless-commerce-architecture' },
-          { label: 'Shopify Plus Custom Storefronts', href: '/services/web-development/shopify-plus-custom-storefronts' },
-          { label: 'Custom Web Application Portals', href: '/services/web-development/custom-web-application-portals' },
+          {
+            label: 'Next.js 15 Web Applications',
+            href: '/services/web-development/nextjs-15-applications',
+            description: 'Modern TypeScript architecture, server components & edge rendering.',
+          },
         ],
       },
       {
-        category: 'Speed & Edge Infrastructure',
+        category: '2. Conversion CRO',
         items: [
-          { label: 'Sub-Second Global Edge Caching', href: '/services/web-development/sub-second-global-edge-caching' },
-          { label: 'Core Web Vitals 100 Engineering', href: '/services/web-development/core-web-vitals-100-engineering' },
-          { label: 'Zero Layout Shift (CLS) Optimization', href: '/services/web-development/zero-layout-shift-cls-optimization' },
-          { label: 'Asset Pipeline & Image CDN Delivery', href: '/services/web-development/asset-pipeline-image-cdn-delivery' },
+          {
+            label: 'Conversion Rate Optimization (CRO)',
+            href: '/services/web-development/conversion-rate-optimization',
+            description: 'Frictionless forms, tactile trust signals & UX micro-interactions.',
+          },
         ],
       },
       {
-        category: 'Conversion Mechanics',
+        category: '3. Performance & Speed',
         items: [
-          { label: 'Multi-Step Lead Funnels & Quote Calculators', href: '/services/web-development/multi-step-lead-funnels-quote-calculators' },
-          { label: 'CRM & Webhook Pipeline Integrations', href: '/services/web-development/crm-webhook-pipeline-integrations' },
-          { label: 'Custom Booking & Scheduling Engines', href: '/services/web-development/custom-booking-scheduling-engines' },
-          { label: 'Client Portal & Account Dashboards', href: '/services/web-development/client-portal-account-dashboards' },
+          {
+            label: 'Speed & Edge Infrastructure',
+            href: '/services/web-development/speed-edge-infrastructure',
+            description: '100 Lighthouse performance, sub-second TTFB & global CDN caching.',
+          },
         ],
       },
       {
-        category: 'Compliance & Accessibility',
+        category: '4. Commercial Funnels',
         items: [
-          { label: 'WCAG 2.2 AA Contrast Compliance', href: '/services/web-development/wcag-22-aa-contrast-compliance' },
-          { label: 'Bank-Grade SSL & Security Hardening', href: '/services/web-development/bank-grade-ssl-security-hardening' },
-          { label: 'Privacy Act & Cookie Consent Systems', href: '/services/web-development/privacy-act-cookie-consent-systems' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'social',
-    name: 'Social & Creative',
-    countBadge: '14 creative formats',
-    description: 'Cinematic video, commercial photography, and editorial social branding.',
-    footerLink: { label: 'All creative & production services', href: '/services/video-photo' },
-    groups: [
-      {
-        category: 'Video Production',
-        items: [
-          { label: 'Short-Form Video (Reels & TikTok)', href: '/services/video-photo/short-form-video-reels-tiktok' },
-          { label: 'Cinematic Brand Commercial Spots', href: '/services/video-photo/editorial-video-production' },
-          { label: 'Founder-Led Thought Leadership Video', href: '/services/video-photo/founder-led-thought-leadership-video' },
-        ],
-      },
-      {
-        category: 'Commercial Photography',
-        items: [
-          { label: 'High-End Commercial Product Photography', href: '/services/video-photo/high-end-commercial-product-photography' },
-          { label: 'Architectural & Interior Space Photography', href: '/services/video-photo/architectural-interior-space-photography' },
-          { label: 'Executive & Team Portrait Photography', href: '/services/video-photo/executive-team-portrait-photography' },
-        ],
-      },
-      {
-        category: 'Social Channels',
-        items: [
-          { label: 'Organic Instagram Community Growth', href: '/services/social-media/organic-instagram-community-growth' },
-          { label: 'LinkedIn B2B Thought Leadership Publishing', href: '/services/social-media/linkedin-b2b-thought-leadership-publishing' },
-        ],
-      },
-      {
-        category: 'Creative Strategy',
-        items: [
-          { label: 'Editorial Brand Voice & Narrative Guidelines', href: '/services/social-media/editorial-brand-voice-narrative-guidelines' },
-          { label: 'Active Community Management & Inbox Nurturing', href: '/services/social-media/active-community-management-inbox-nurturing' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'industries',
-    name: 'Client Industries',
-    countBadge: '71 verified sectors',
-    description: 'Tailored websites and full-funnel marketing built for specific Australian industries.',
-    footerLink: { label: 'View all 71 small business industries', href: '/services/seo' },
-    groups: [
-      {
-        category: 'Health & Care (23)',
-        items: [
-          { label: 'Dental & Orthodontic Practices', href: '/services/seo/dental-orthodontic-practices' },
-          { label: 'Physiotherapy & Sports Injury Clinics', href: '/services/seo/physiotherapy-sports-injury-clinics' },
-          { label: 'Allied Health, Psychology & NDIS Providers', href: '/services/seo/allied-health-psychology-ndis-providers' },
-          { label: 'Veterinary Hospitals & Animal Clinics', href: '/services/seo/veterinary-hospitals-animal-clinics' },
-        ],
-      },
-      {
-        category: 'Professional Services (21)',
-        items: [
-          { label: 'Commercial & Corporate Law Firms', href: '/services/ppc/commercial-corporate-law-firms' },
-          { label: 'Accounting, CPA & Wealth Management', href: '/services/ppc/accounting-cpa-wealth-management' },
-          { label: 'Real Estate Agencies & Property Advisory', href: '/services/ppc/real-estate-agencies-property-advisory' },
-          { label: 'Enterprise B2B & SaaS Technologies', href: '/services/ppc/enterprise-b2b-saas-technologies' },
-        ],
-      },
-      {
-        category: 'Trades & Construction (15)',
-        items: [
-          { label: 'Custom Home Builders & Renovators', href: '/services/web-development/custom-home-builders-renovators' },
-          { label: 'Commercial Electrical & Plumbing Contractors', href: '/services/web-development/commercial-electrical-plumbing-contractors' },
-          { label: 'Luxury DTC & E-Commerce Brands', href: '/services/web-development/luxury-dtc-e-commerce-brands' },
-        ],
-      },
-      {
-        category: 'Education & Learning (12)',
-        items: [
-          { label: 'Early Learning & Childcare Centres', href: '/services/social-media/early-learning-childcare-centres' },
-          { label: 'Private Tutoring & Selective Colleges', href: '/services/social-media/private-tutoring-selective-colleges' },
-          { label: 'Dance, Martial Arts & Performance Academies', href: '/services/social-media/dance-martial-arts-performance-academies' },
+          {
+            label: 'Custom Booking Funnels & Integrations',
+            href: '/services/web-development/custom-booking-funnels',
+            description: 'CRM syncing, automated booking calendars & custom webhook pipelines.',
+          },
         ],
       },
     ],

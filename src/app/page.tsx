@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { HomeHero } from '@/components/hero/HomeHero';
 import { HomeServicesCards } from '@/components/home/HomeServicesCards';
 import { DarkRebuildSection } from '@/components/home/DarkRebuildSection';
-import { PricingSection } from '@/components/home/PricingSection';
 import { Testimonials } from '@/components/shared/Testimonials';
 import { FAQSection } from '@/components/home/FAQSection';
 
@@ -19,22 +18,19 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="overflow-hidden bg-white text-[#161514]">
-      {/* 1. Split Hero (Clear Copywriting & 2-Column Floating Phone Showcase) */}
+      {/* 1. Split Hero (Clear Copywriting & 2-Column Floating Creative Showcase) */}
       <HomeHero />
 
-      {/* 2. Industry Growth Specializations (4 Clean Pastel Cards with Properly Framed Phones) */}
+      {/* 2. Industry Growth Specializations (4 Clean Pastel Cards) */}
       <HomeServicesCards />
 
       {/* 3. Obsidian Dark Section ("See your digital marketing roadmap, free.") */}
       <DarkRebuildSection />
 
-      {/* 4. Simple, Transparent Monthly Pricing ($249/mo Inclusions vs Ongoing) */}
-      <PricingSection />
-
-      {/* 5. Honest Partnership Client Reviews (Auto-Sliding 5-Star Cards) */}
+      {/* 4. Honest Partnership Client Reviews (Auto-Sliding 5-Star Cards) */}
       <Testimonials theme="light" />
 
-      {/* 6. Frequently Asked Questions */}
+      {/* 5. Frequently Asked Questions */}
       <FAQSection />
     </main>
   );

@@ -180,15 +180,39 @@ export function Navbar() {
                                   <Link
                                     href={subItem.href}
                                     onClick={() => setIsServicesOpen(false)}
-                                    className="text-xs text-[#5d5a55] hover:text-[#161514] hover:underline transition-colors block leading-tight font-medium"
+                                    className="group/item block p-2 -mx-2 rounded-xl hover:bg-[#f4f3f1] transition-colors"
                                   >
-                                    {subItem.label}
+                                    <span className="text-xs font-bold text-[#161514] group-hover/item:text-[#b45309] block leading-tight">
+                                      {subItem.label}
+                                    </span>
+                                    {subItem.description && (
+                                      <span className="text-[11px] text-[#5d5a55] block mt-1 leading-snug">
+                                        {subItem.description}
+                                      </span>
+                                    )}
                                   </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
                         ))}
+                      </div>
+
+                      {/* Bottom Footer Strip with Link & Clean Badge */}
+                      <div className="flex items-center justify-between pt-4">
+                        <Link
+                          href={activeTab.footerLink.href}
+                          onClick={() => setIsServicesOpen(false)}
+                          className="inline-flex items-center gap-1.5 text-xs font-sans font-bold text-[#161514] hover:text-[#b45309] transition-colors"
+                        >
+                          <span>{activeTab.footerLink.label}</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                        {activeTab.countBadge && (
+                          <span className="px-2.5 py-1 rounded-full bg-[#f4f3f1] border border-[#e8e6e2] text-[11px] font-mono font-medium text-[#5d5a55]">
+                            {activeTab.countBadge}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>

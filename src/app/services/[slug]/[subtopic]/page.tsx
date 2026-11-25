@@ -41,7 +41,7 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
-// Generate static params for all subtopics in megamenu
+// Generate static params for all subtopics in megamenu and SUBSERVICES
 export async function generateStaticParams() {
   const params: { slug: string; subtopic: string }[] = [];
 
@@ -50,8 +50,6 @@ export async function generateStaticParams() {
     const parentSlug =
       s.serviceCategory === 'web'
         ? 'web-development'
-        : s.serviceCategory === 'social'
-        ? 'video-photo'
         : s.serviceCategory;
     params.push({
       slug: parentSlug,
@@ -64,15 +62,13 @@ export async function generateStaticParams() {
     const parentSlug =
       tab.id === 'web'
         ? 'web-development'
-        : tab.id === 'social'
-        ? 'social-media'
-        : tab.id === 'industries'
-        ? 'seo'
         : tab.id;
 
     for (const group of tab.groups) {
       for (const item of group.items) {
-        const itemSlug = slugify(item.label);
+        // Extract subtopic slug from href (e.g. /services/seo/on-page-seo -> on-page-seo)
+        const parts = item.href.split('/').filter(Boolean);
+        const itemSlug = parts.length >= 3 ? parts[2] : slugify(item.label);
         if (!params.some((p) => p.slug === parentSlug && p.subtopic === itemSlug)) {
           params.push({
             slug: parentSlug,
@@ -104,7 +100,7 @@ function getCategoryMedia(categorySlug: string, subtopicSlug: string): {
   const formattedIdx = String(videoIdx).padStart(2, '0');
 
   let folder = 'seo';
-  if (categorySlug === 'ppc') {
+  if (categorySlug === 'ppc' || categorySlug === 'email-marketing') {
     folder = 'ppc';
   } else if (categorySlug === 'web-development' || categorySlug === 'web') {
     folder = 'web-development';

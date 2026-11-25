@@ -135,6 +135,14 @@ export const APP_ROUTES: AppRoute[] = [
     lastModified: LAST_MODIFIED_DATE,
     title: 'Video & Photography Production — Lead Edge Marketers',
   },
+  {
+    path: '/services/email-marketing',
+    indexable: true,
+    priority: 0.85,
+    changeFrequency: 'monthly',
+    lastModified: LAST_MODIFIED_DATE,
+    title: 'Email Marketing Services — Lead Edge Marketers',
+  },
 
   // Blog Hub & Articles
   {

@@ -7,7 +7,7 @@ export interface SubServiceGuidePhase {
 
 export interface SubService {
   slug: string;
-  serviceCategory: string; // 'seo' | 'ppc' | 'web' | 'social' | 'industries'
+  serviceCategory: string; // 'seo' | 'ppc' | 'web-development' | 'social-media' | 'email-marketing'
   serviceCategoryName: string;
   parentHref: string;
   title: string;
@@ -48,850 +48,1383 @@ export interface SubService {
 
 export const SUBSERVICES: SubService[] = [
   // =========================================================================
-  // SEARCH & SEO (Category: seo)
+  // 1. SEARCH ENGINE OPTIMIZATION (SEO) — 4 CORE DISCIPLINES
   // =========================================================================
   {
-    slug: 'keyword-taxonomy-mapping',
+    slug: 'on-page-seo',
     serviceCategory: 'seo',
     serviceCategoryName: 'Search & SEO',
     parentHref: '/services/seo',
-    title: 'Keyword Taxonomy Mapping',
-    tagline: 'Architectural Search Intent Clustering & Semantic Authority',
-    badge: 'ORGANIC GROWTH ARCHITECTURE',
-    heroHeadline: 'Turn High-Intent Search Queries into Enterprise Revenue.',
+    title: 'On-Page SEO',
+    tagline: 'Making Every Page on Your Website Clear, Helpful, and Easy to Find',
+    badge: 'ORGANIC SEARCH FOUNDATION',
+    heroHeadline: 'Align Your Web Pages with What Qualified Buyers Are Searching For.',
     heroSubheadline:
-      'We dismantle chaotic keyword spreadsheets into structured, semantic topical clusters. Every commercial query maps to a purpose-built landing page designed to capture qualified buyers, eliminate internal cannibalization, and win category dominance.',
+      'On-page SEO is all about improving the words, headings, and layout on your actual web pages. When someone searches for what you sell, Google checks your pages to see if you have the best answer. We organize your content so both your visitors and search engines immediately understand what you offer—and why they should choose you.',
     heroVideo: {
       mp4: '/videos/catalog/seo/video-01.mp4',
       poster: '/videos/catalog/seo/video-01-poster.webp',
     },
     heroImage: '/videos/catalog/seo/video-01-poster.webp',
     statPill: {
-      label: 'Average Non-Brand Organic Growth',
+      label: 'Average Non-Brand Organic Uplift',
       value: '+184%',
     },
     guideIntroduction:
-      'Search engines no longer rank standalone keywords in isolation; they evaluate topical authority across complete semantic ontologies. Our Keyword Taxonomy Mapping framework engineers an airtight hierarchy between your core pillar pages, commercial cluster pages, and supporting informational assets.',
+      'High rankings start on your actual pages. Rather than stuffing random keywords, our On-Page SEO framework creates engaging, logical content architecture that answers search intent, earns user attention, and converts traffic into direct inquiries.',
     guidePhases: [
       {
         phase: 'Phase 01',
-        title: 'Full-Spectrum Search Query Extraction',
+        title: 'Finding the Right Search Terms',
         description:
-          'We extract every relevant search query across Google Search Console, Semrush, Ahrefs, and customer search trends to unearth total category demand.',
+          'Discovering the exact commercial and high-intent phrases your prospective customers type into Google when they are actively ready to buy.',
         deliverables: [
-          'Comprehensive 2,500+ query raw database',
-          'Search intent segmentation (Commercial, Transactional, Informational)',
-          'Competitor query conquest matrix',
+          'High-intent buyer query database',
+          'Search intent segmentation (Commercial vs Informational)',
+          'Competitor keyword conquest mapping',
         ],
       },
       {
         phase: 'Phase 02',
-        title: 'Semantic Cluster & Topic Grouping',
+        title: 'Clear, Helpful Page Copy & Hierarchy',
         description:
-          'Using vector embeddings and semantic proximity algorithms, queries are grouped into parent pillars and child sub-clusters to eliminate cannibalization.',
+          'Writing and organizing your core service pages and articles so visitors stay engaged, build trust in your expertise, and take action.',
         deliverables: [
-          'Topical ontology architectural map',
-          'URL hierarchy & breadcrumb specification',
-          'Page-to-keyword 1:1 assignment matrix',
+          'H1, H2, and H3 semantic content outlines',
+          'Service-specific copy optimization',
+          'Engaging conversion-focused calls to action',
         ],
       },
       {
         phase: 'Phase 03',
-        title: 'Internal Linking & Page-Level Blueprinting',
+        title: 'Better Search Headlines & Click CTR',
         description:
-          'We specify exact anchor text distribution, contextual reciprocal links, and hub-and-spoke internal link graph architecture.',
+          'Crafting catchy, high-CTR page title tags and meta descriptions that make searchers click your link instead of your competitors in the search results.',
         deliverables: [
-          'Bidirectional internal link blueprint',
-          'Priority anchor text directory',
-          'Metadata and header hierarchy (H1-H3) wireframes',
+          '100% unique title tags and meta descriptions',
+          'OpenGraph social share preview tags',
+          'SERP snippet click-through optimization',
         ],
       },
       {
         phase: 'Phase 04',
-        title: 'Live Deployment & Ranking Trajectory Monitoring',
+        title: 'Easy-to-Read Page Layout & Internal Linking',
         description:
-          'Continuous rank verification, crawl budget audit, and click-through rate optimization via structured schema and rich snippets.',
+          'Structuring text, scannable bullet points, and internal contextual links so visitors and search engine bots can smoothly navigate your website.',
         deliverables: [
-          'Weekly ranking & impression trajectory dashboard',
-          'Google Search Console indexation health report',
-          'Commercial conversion attribution audit',
+          'Logical site hierarchy and breadcrumb paths',
+          'Topic cluster contextual internal link graph',
+          'Mobile readability and scanning improvements',
         ],
       },
     ],
     keyBenefits: [
       {
-        title: 'Eliminates Keyword Cannibalization',
-        description: 'Ensures exactly one designated canonical URL ranks for each query cluster, compounding domain authority rather than diluting it.',
+        title: 'Finding the Right Search Terms',
+        description: 'Discovering the exact words your customers type into Google when they are ready to buy.',
       },
       {
-        title: 'Captures Buyer Intent at Every Stage',
-        description: 'Routes high-intent transactional searchers directly to booking pages, while nurturing mid-funnel researchers with high-authority guides.',
+        title: 'Clear, Helpful Page Copy',
+        description: 'Writing and organizing your service pages and blogs so visitors stay engaged and take action.',
       },
       {
-        title: 'Accelerates New Page Indexation',
-        description: 'Contextual hub-and-spoke internal links allow search engine crawlers to discover and index newly published service pages within hours.',
+        title: 'Better Search Headlines',
+        description: 'Crafting catchy page titles and descriptions that make people click your link instead of competitors.',
+      },
+      {
+        title: 'Easy-to-Read Page Layout',
+        description: 'Structuring your text and internal links so visitors can smoothly navigate your site.',
       },
     ],
     review: {
-      clientName: 'Julian Sterling',
+      clientName: 'David MacIntyre',
       clientRole: 'Managing Director',
-      company: 'Aura Allied Health Group',
+      company: 'Highland Commercial Group',
       quote:
-        'Lead Edge completely restructured our organic search architecture. Within 4 months, our non-brand organic bookings increased by 184%, and we outranked legacy national health directories for our top 25 high-value clinical search terms.',
-      rating: '5.0 ★★★★★',
+        'Lead Edge reorganized our service pages and search headlines. Within 90 days, our non-brand organic search inquiries doubled without spending extra on ads.',
+      rating: '5.0 / 5.0',
       metric: '+184% Organic Inquiries',
       image: '/images/about/about-team-table.webp',
     },
     faqs: [
       {
-        question: 'What is the difference between keyword research and keyword taxonomy mapping?',
+        question: 'What is On-Page SEO?',
         answer:
-          'Keyword research simply identifies query volume and competition scores. Keyword taxonomy mapping architects those keywords into a structured, hierarchical site taxonomy with strict URL routing, parent-child relationships, and internal linking models that tell search engines your exact domain authority.',
+          'On-page SEO refers to optimizing the visible content, page titles, headings, and internal linking structure directly on your website so search engines understand your offers and rank you for relevant queries.',
       },
       {
-        question: 'How does taxonomy mapping prevent internal cannibalization?',
+        question: 'How quickly do on-page optimizations impact rankings?',
         answer:
-          'When multiple pages on your site compete for the same query, Google splits impressions and ranks neither well. Taxonomy mapping assigns a single canonical destination for every search intent and adjusts surrounding content to point to that master page.',
-      },
-      {
-        question: 'How long before we see rankings improve from taxonomy updates?',
-        answer:
-          'Most clients observe Google recrawling and re-indexing the structured hierarchy within 14 to 28 days, with meaningful keyword rank increases and organic impression surges manifesting between weeks 6 and 12.',
-      },
-      {
-        question: 'Does this apply to multi-location or e-commerce businesses?',
-        answer:
-          'Yes. We build specialized taxonomy matrices for multi-location practices (suburb-by-service matrices) and high-SKU e-commerce catalogues (attribute and category facet structures).',
+          'Once Google recrawls your updated pages (typically within 1 to 3 weeks), click-through rates and ranking improvements often begin showing visible traction.',
       },
     ],
   },
-
   {
-    slug: 'programmatic-seo-engines',
+    slug: 'off-page-seo',
     serviceCategory: 'seo',
     serviceCategoryName: 'Search & SEO',
     parentHref: '/services/seo',
-    title: 'Programmatic SEO Engines',
-    tagline: 'Algorithmic Page Generation & Long-Tail Category Capture at Scale',
-    badge: 'SCALABLE DATA ARCHITECTURE',
-    heroHeadline: 'Deploy 500+ High-Performance Landing Pages from Structured Data.',
+    title: 'Off-Page SEO',
+    tagline: 'Building Your Reputation, Authority, and Brand Visibility Across the Internet',
+    badge: 'EXTERNAL DOMAIN AUTHORITY',
+    heroHeadline: 'Build Brand Trust & Industry Authority That Search Engines Vouch For.',
     heroSubheadline:
-      'Capture thousands of qualified long-tail search queries with programmatic, data-backed landing page engines. Built on Next.js 15 static generation with unique localized content, verified schema, and zero duplicate content penalties.',
+      'Even if you have a great website, Google wants to know that real people and trustworthy websites vouch for you. Off-page SEO focuses on everything that happens outside your website to prove your business is credible, active, and worth recommending at the top of search results.',
     heroVideo: {
       mp4: '/videos/catalog/seo/video-02.mp4',
       poster: '/videos/catalog/seo/video-02-poster.webp',
     },
     heroImage: '/videos/catalog/seo/video-02-poster.webp',
     statPill: {
-      label: 'Long-Tail Keyword Coverage',
-      value: '2,400+ Pages',
+      label: 'Average Domain Authority Lift',
+      value: 'DA 48+ Boost',
     },
     guideIntroduction:
-      'Traditional manual landing page creation is too slow to capture granular search demand across hundreds of suburbs, industries, or use-cases. Our Programmatic SEO Engine builds database-driven templates that compile thousands of pristine, fast-loading, customized pages.',
+      'Google evaluates authority by seeing who recommends you. Our Off-Page SEO framework earns genuine external endorsements, digital PR features, and community discussions that transfer compounding domain trust to your business.',
     guidePhases: [
       {
         phase: 'Phase 01',
-        title: 'Structured Dataset Curation & Entity Enrichment',
+        title: 'High-Quality Backlink Creation',
         description:
-          'We compile proprietary localized data, customer statistics, suburb boundaries, and industry credentials into clean JSON databases.',
+          'Earning strong, relevant links from reputable Australian and global websites that signal authentic trust and boost your search rankings.',
         deliverables: [
-          'Sanitized structured master dataset',
-          'Dynamic variable mapping (pricing, testimonials, local statistics)',
-          'Unique content formula to guarantee 100% originality score',
+          'Strict editorial link acquisition roadmap',
+          'Zero toxic link penalty guarantees',
+          'Contextual in-content placement tracking',
         ],
       },
       {
         phase: 'Phase 02',
-        title: 'Headless Next.js Static Template Engineering',
+        title: 'Guest Posting & Editorial Features',
         description:
-          'We design an ultra-fast React template optimized for conversion, sub-second load times, and dynamic schema.',
+          'Publishing helpful, expert thought-leadership articles on established industry blogs and publications to reach new audiences and build credibility.',
         deliverables: [
-          'High-converting responsive landing page UI template',
-          'Incremental Static Regeneration (ISR) configuration',
-          'Dynamic localized Open Graph social preview cards',
+          'High-tier industry publisher outreach',
+          'Expert article ideation and editorial drafting',
+          'Permanent canonical authority placements',
         ],
       },
       {
         phase: 'Phase 03',
-        title: 'Granular Schema & Sitemap Mesh Architecture',
+        title: 'Strategic Reddit & Community Presence',
         description:
-          'Every generated page is equipped with tailored LocalBusiness or Service JSON-LD schema, verified through Google Rich Results.',
+          'Participating authentically in relevant Reddit discussions and niche communities to drive real traffic, spark brand mentions, and build trust where buyers talk.',
         deliverables: [
-          'Segmented XML sitemaps partitioned by category/region',
-          'Automated canonical tag and breadcrumb injection',
-          'Internal link mesh connecting nearby locations and related services',
+          'Subreddit keyword and intent monitoring',
+          'Helpful, non-promotional value contributions',
+          'Organic referral traffic and branded search lift',
         ],
       },
       {
         phase: 'Phase 04',
-        title: 'Controlled Rollout & Search Console Indexation Audit',
+        title: 'Competitor Authority Conquest',
         description:
-          'Staged batch deployments to safeguard domain crawl health and monitor Google indexation rates.',
+          'Checking where your top competitors are getting featured online, uncovering their link profiles, and helping you win stronger, more visible placements.',
         deliverables: [
-          'Batch indexation tracking report',
-          '404 and redirect preventive monitoring',
-          'Real-time lead and phone inquiry attribution tracking',
+          'Competitor link gap matrix',
+          'High-value target outreach pipeline',
+          'Continuous monthly authority growth reports',
         ],
       },
     ],
     keyBenefits: [
       {
-        title: 'Unrivaled Long-Tail Organic Dominance',
-        description: 'Ranks for hyper-specific searches ("emergency blocked drain Mascot") that competitors fail to target manually.',
+        title: 'High-Quality Backlink Creation',
+        description: 'Earning strong, relevant links from reputable websites that signal trust and boost rankings.',
       },
       {
-        title: 'Fraction of the Cost of Manual Copywriting',
-        description: 'Scales to 500+ URLs with one robust template and structured database rather than thousands of billable agency copywriting hours.',
+        title: 'Guest Posting (External Posting)',
+        description: 'Publishing expert articles on established industry blogs to reach new audiences and build authority.',
       },
       {
-        title: 'Sub-Second Cloud Speed & 100 Lighthouse',
-        description: 'Prerendered at the edge with Next.js static compilation, ensuring zero bounce rate from slow server response times.',
+        title: 'Strategic Reddit Posting',
+        description: 'Participating authentically in niche communities to drive real traffic and brand trust.',
+      },
+      {
+        title: 'Competitor Authority Research',
+        description: 'Auditing top competitors to systematically win their best featured online placements.',
       },
     ],
     review: {
-      clientName: 'Marcus Vance',
-      clientRole: 'Co-Founder & CEO',
-      company: 'BuildRight Group NSW',
+      clientName: 'Lachlan O’Connor',
+      clientRole: 'Principal Partner',
+      company: 'O’Connor & Vance Legal',
       quote:
-        'Lead Edge deployed a programmatic suburb engine covering 84 Sydney council areas. Our inbound building quote requests doubled in 90 days. Every single landing page feels tailored and loads in under 0.5 seconds.',
-      rating: '5.0 ★★★★★',
-      metric: '84 Suburbs Dominated',
-      image: '/images/about/about-team-creative.webp',
+        'The editorial links and Reddit community authority Lead Edge built for us took our legal practice from page 4 to #1 on Google for commercial litigation in Sydney.',
+      rating: '5.0 / 5.0',
+      metric: '#1 Legal Category Rank',
+      image: '/images/about/team-1.webp',
     },
     faqs: [
       {
-        question: 'Does Google penalize programmatic SEO pages as duplicate content?',
+        question: 'Are backlinks still important for SEO?',
         answer:
-          'Google penalizes "thin content" that has no unique value. We avoid this by injecting genuine localized data, distinct local reviews, unique FAQs, and suburb-specific metrics into every page, ensuring each URL provides real human utility.',
+          'Yes. High-quality backlinks remain one of Google’s top ranking signals. A few authoritative, relevant editorial links carry more ranking power than thousands of spam directory links.',
       },
       {
-        question: 'How fast do programmatic pages get indexed?',
+        question: 'How do you participate on Reddit safely?',
         answer:
-          'We release programmatic pages in curated batches of 50-100 with automated XML sitemaps and reciprocal cross-links, achieving rapid indexation within 2-3 weeks.',
-      },
-      {
-        question: 'Can programmatic pages have custom enquiry forms?',
-        answer:
-          'Yes. Every page features integrated inquiry forms and phone call buttons pre-populated with the user’s specific suburb or service query.',
-      },
-      {
-        question: 'What platform do you use to host programmatic SEO pages?',
-        answer:
-          'We engineer programmatic engines using Next.js 15 and deploy on global edge networks (Vercel / AWS CloudFront), ensuring instant global TTFB under 40ms.',
+          'We contribute genuine, expert insights to active discussions where prospective buyers seek help, building authentic brand credibility and organic referral traffic without spamming.',
       },
     ],
   },
-
   {
-    slug: 'technical-seo-audits',
+    slug: 'local-seo',
     serviceCategory: 'seo',
     serviceCategoryName: 'Search & SEO',
     parentHref: '/services/seo',
-    title: 'Technical SEO Audits & Crawl Recovery',
-    tagline: 'Crawl Budget Optimization, Server Response & Edge Rendering',
-    badge: 'TECHNICAL EXCELLENCE',
-    heroHeadline: 'Fix Invisible Code Errors That Sabotage Your Rankings.',
+    title: 'Local SEO',
+    tagline: 'Helping Nearby Customers Find, Trust, and Choose You First in Your Area',
+    badge: 'LOCAL PROXIMITY CONQUEST',
+    heroHeadline: 'Dominate Google Maps & Win Customers in Your Local Area.',
     heroSubheadline:
-      'Search engines can’t rank pages they can’t efficiently crawl or render. We inspect your server response headers, JavaScript hydration, crawl budget, canonical chains, and core web vitals to unlock full organic visibility.',
+      'If you serve customers in a specific city, neighborhood, or region, Local SEO is how you win local business. When people search for services "near me" or check Google Maps, we handle everything from setting up your listing to keeping it active so locals call or visit you first.',
     heroVideo: {
       mp4: '/videos/catalog/seo/video-03.mp4',
       poster: '/videos/catalog/seo/video-03-poster.webp',
     },
     heroImage: '/videos/catalog/seo/video-03-poster.webp',
     statPill: {
-      label: 'Crawl Efficiency Increase',
-      value: '3.4x Faster',
+      label: 'Local Phone Inquiries Uplift',
+      value: '+215% Local Calls',
     },
     guideIntroduction:
-      'Modern web technologies like React and headless frameworks require specialized server-side rendering configurations. Our technical audits drill into byte-level crawl logs, server status codes, and rendering pipelines to eliminate crawl bottlenecks.',
+      'Over 70% of local phone calls originate directly in Google’s Map 3-pack. Our Local SEO engine optimizes your Google Business Profile, unifies citations across Australian directories, and accelerates 5-star review velocity.',
     guidePhases: [
       {
         phase: 'Phase 01',
-        title: 'Raw Server Log Analysis & Crawl Bot Profiling',
+        title: 'Google Business Profile (GBP) Creation & Verification',
         description:
-          'We analyze your actual web server access logs to observe how Googlebot, Bingbot, and AI crawlers traverse your website.',
-        deliverables: ['Server access log report', 'Crawl frequency and waste heat map', 'Bot budget bottleneck diagnosis'],
+          'Setting up and verifying your official Google Business Profile from scratch if you don’t have one yet, or taking over and securing ownership.',
+        deliverables: [
+          'Official Google Business Profile verification',
+          'Clean ownership role configuration',
+          'Primary & secondary category assignment',
+        ],
       },
       {
         phase: 'Phase 02',
-        title: 'Client-Side vs Server-Side DOM Rendering Audit',
+        title: 'Complete GBP Optimization & Photo Polish',
         description:
-          'We compare raw HTML responses against fully rendered browser DOMs to ensure all critical links and copy are immediately visible without heavy JavaScript execution.',
-        deliverables: ['Rendering parity report', 'Hydration delay remediation plan', 'Critical CSS & script delivery overhaul'],
+          'Fine-tuning your business categories, service areas, high-resolution geotagged photos, business hours, and descriptions so you rank higher on Google Maps.',
+        deliverables: [
+          'Geotagged high-resolution facility & team photos',
+          'Custom product & service menu catalog',
+          'Service area boundary definitions',
+        ],
       },
       {
         phase: 'Phase 03',
-        title: 'Redirect Chain & Canonical Graph Cleanup',
+        title: 'Regular GMB / GBP Ongoing Posting',
         description:
-          'We eliminate multi-hop 301 redirect chains, 404 orphan pages, and conflicting canonical tags.',
-        deliverables: ['Airtight 1-to-1 redirect map', 'Self-referencing canonical validation', 'Orphan URL restoration or pruning'],
+          'Publishing ongoing weekly updates, promotional offers, fresh photos, and company news directly on your Google profile to keep customers engaged.',
+        deliverables: [
+          'Weekly Google Post content scheduling',
+          'Seasonal promotional announcements',
+          'Active business signal generation for Google’s algorithm',
+        ],
       },
       {
         phase: 'Phase 04',
-        title: 'Edge Caching & Core Web Vitals Stabilization',
+        title: 'Consistent Local Listings & 5-Star Reviews',
         description:
-          'We implement edge-level caching rules (Cloudflare / Vercel Edge) to drop Time to First Byte (TTFB) below 80ms.',
-        deliverables: ['99+ Core Web Vitals mobile benchmark', 'Edge caching policy deployment', 'Real-time uptime and crawl monitoring'],
+          'Keeping your business name, address, and phone number (NAP) 100% accurate across 50+ Australian directories while helping you earn genuine customer reviews.',
+        deliverables: [
+          '50+ Australian directory NAP synchronization',
+          'Automated SMS/Email review request funnel',
+          'Review response protocol to boost ranking signals',
+        ],
       },
     ],
     keyBenefits: [
       {
-        title: 'Instant Crawl Budget Recovery',
-        description: 'Stops search bots from wasting crawl capacity on non-indexable scripts, redirect loops, and faceted filter URLs.',
+        title: 'Google Business Profile Creation & Verification',
+        description: 'Setting up and verifying your official Google Business Profile from scratch.',
       },
       {
-        title: 'Rapid Discovery of New Content',
-        description: 'Allows fresh blog articles, service pages, and case studies to be indexed in Google within hours rather than weeks.',
+        title: 'Complete GBP Optimization',
+        description: 'Fine-tuning categories, service areas, photos, hours, and descriptions to rank higher.',
       },
       {
-        title: '100% Core Web Vitals Compliance',
-        description: 'Eliminates Largest Contentful Paint (LCP) delays and Cumulative Layout Shift (CLS) penalties across mobile devices.',
+        title: 'Regular GMB / GBP Posting',
+        description: 'Publishing weekly updates, offers, and photos directly on your profile to signal an active business.',
+      },
+      {
+        title: 'Consistent Local Listings & 5-Star Reviews',
+        description: 'Synchronizing NAP directory citations and accelerating genuine customer review collection.',
       },
     ],
     review: {
-      clientName: 'Elena Rostova',
-      clientRole: 'Head of Engineering',
-      company: 'OmniTrade Platforms',
+      clientName: 'Sarah Jenkins',
+      clientRole: 'Clinical Practice Director',
+      company: 'Harbour Allied Health',
       quote:
-        'Lead Edge diagnosed a JavaScript rendering bug that had kept 40% of our catalogue invisible to Google for 8 months. Within 3 weeks of their code deployment, our indexed pages surged by 12,000 URLs and organic revenue followed.',
-      rating: '5.0 ★★★★★',
-      metric: '+12,000 Indexed URLs',
-      image: '/images/about/about-team-meeting.webp',
+        'Since Lead Edge optimized our Google Business Profile and local citations, we consistently hold the #1 Map 3-pack spot across Sydney’s eastern suburbs. New patient calls increased by over 45%.',
+      rating: '5.0 / 5.0',
+      metric: '#1 Map 3-Pack Dominance',
+      image: '/images/about/team-1.webp',
     },
     faqs: [
       {
-        question: 'How do you perform server log analysis?',
+        question: 'Why is Google Maps ranking so critical for local businesses?',
         answer:
-          'We ingest your CDN or Apache/Nginx access logs and filter by verified Googlebot reverse DNS IPs. This reveals which pages search engines actually crawl, how often, and where crawl budget is wasted.',
+          'When users search on mobile for local services, Google shows the Map 3-pack above all organic links. More than 70% of clicks and calls go to those top 3 listings.',
       },
       {
-        question: 'Will technical fixes require my in-house developers to do extra work?',
+        question: 'How do you handle NAP citation consistency?',
         answer:
-          'We provide complete drop-in pull requests (GitHub/GitLab) with ready-to-merge code, Next.js configuration files, and edge worker scripts so your team can deploy fixes with zero friction.',
-      },
-      {
-        question: 'What is Time to First Byte (TTFB) and why does it matter?',
-        answer:
-          'TTFB is the milliseconds it takes for the browser to receive the first byte of HTML from your server. A slow TTFB delay cascades into poor LCP and signals slow server infrastructure to Google.',
-      },
-      {
-        question: 'How often should technical SEO audits be performed?',
-        answer:
-          'We recommend a foundational deep audit followed by ongoing automated monitoring with alerts whenever code updates introduce redirect chains or indexation regressions.',
+          'We synchronize your exact business Name, Address, and Phone number across 50+ reputable Australian platforms (TrueLocal, YellowPages, Apple Maps, Bing Places) to build unbreakable local credibility.',
       },
     ],
   },
-
   {
-    slug: 'local-3-pack-dominance',
+    slug: 'technical-seo',
     serviceCategory: 'seo',
     serviceCategoryName: 'Search & SEO',
     parentHref: '/services/seo',
-    title: 'Local 3-Pack Dominance & Google Maps SEO',
-    tagline: 'High-Intent Local Search Conquest for Australian Businesses',
-    badge: 'LOCAL PROXIMITY SYSTEM',
-    heroHeadline: 'Own the Top 3 Positions on Google Maps When Customers Search.',
+    title: 'Technical SEO (Including AEO & GEO Readiness)',
+    tagline: 'Making Sure Your Website Runs Fast, Works Smoothly, and Speaks the Language of Google & AI',
+    badge: 'AI & TECHNICAL CRAWL ARCHITECTURE',
+    heroHeadline: 'Prepare Your Website for Google Crawlers and AI Answer Engines.',
     heroSubheadline:
-      'Over 70% of local phone calls and appointments originate in Google’s Map 3-pack. We optimize your Google Business Profile, synchronize NAP citations across 50+ directories, and deploy geo-targeted location pages that cement top map rankings.',
+      'Technical SEO is the behind-the-scenes tune-up that keeps your website healthy and future-proof. Beyond helping traditional search engines crawl your site, we also prepare your website for Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) so AI tools like ChatGPT, Google AI Overviews, and Perplexity can accurately read, understand, and recommend your business.',
     heroVideo: {
       mp4: '/videos/catalog/seo/video-04.mp4',
       poster: '/videos/catalog/seo/video-04-poster.webp',
     },
     heroImage: '/videos/catalog/seo/video-04-poster.webp',
     statPill: {
-      label: 'Local Map Inquiries Increase',
-      value: '+210%',
+      label: 'Core Web Vitals TTFB Speed',
+      value: '0.4s Fast Load',
     },
     guideIntroduction:
-      'Local pack rankings depend on a tripartite algorithm: Relevance, Distance, and Prominence. We systematically optimize all three vectors to expand your map ranking radius far beyond your physical office doorstep.',
+      'If search engines cannot crawl or parse your site cleanly, even the best content cannot rank. Our Technical SEO framework resolves server latency, injects structured JSON-LD schema, and deploys llms.txt files for AI answer citations.',
     guidePhases: [
       {
         phase: 'Phase 01',
-        title: 'Google Business Profile (GBP) Deep Optimization',
+        title: 'Custom Schema Creation & Structured Data',
         description:
-          'We curate primary and secondary business categories, write keyword-rich service descriptions, and configure direct booking links.',
-        deliverables: ['Primary category calibration', 'Complete service menu item catalog', 'High-res geocoded photography upload'],
+          'Adding smart, behind-the-scenes JSON-LD code that helps Google display rich details like star ratings, FAQs, prices, and services directly in search results.',
+        deliverables: [
+          'LocalBusiness, Organization, and Service schema',
+          'Rich FAQ snippet and Article structured data',
+          'Google Rich Results validation testing',
+        ],
       },
       {
         phase: 'Phase 02',
-        title: 'Directory Citation Cleansing & Sync',
+        title: 'robots.txt Setup & Optimization',
         description:
-          'We lock in consistent Name, Address, and Phone (NAP) details across TrueLocal, YellowPages, Apple Maps, and industry associations.',
-        deliverables: ['50+ Australian directory synchronization', 'Duplicate listing deletion', 'Consistent schema address markup'],
+          'Configuring your robots.txt file properly so search engine bots know exactly which pages to crawl and index without wasting crawl budget on duplicate or hidden pages.',
+        deliverables: [
+          'Optimized robots.txt crawler directives',
+          'XML sitemap submission and dynamic auto-generation',
+          'Resolution of crawl bloat and server redirect chains',
+        ],
       },
       {
         phase: 'Phase 03',
-        title: 'Review Generation & Keyword Feedback Engine',
+        title: 'llms.txt Implementation for AEO & GEO',
         description:
-          'Automated SMS/Email workflows that prompt delighted clients to leave 5-star Google reviews mentioning specific service keywords.',
-        deliverables: ['Automated review request funnel', 'Keyword-rich review response templates', 'Reputation dashboard'],
+          'Creating and structuring an llms.txt file so AI models and generative search engines (ChatGPT, Google AI Overviews, Perplexity) can easily ingest your core business info and cite you in AI answers.',
+        deliverables: [
+          'Standardized /llms.txt file deployment',
+          'Entity clarification for generative search engines',
+          'AI-assisted citation and prompt recommendation readiness',
+        ],
       },
       {
         phase: 'Phase 04',
-        title: 'Hyper-Local Service Area Page Deployment',
+        title: 'Faster Speed & Mobile-First Health',
         description:
-          'Location landing pages tailored to nearby suburbs that build contextual relevance for surrounding geographic radius expansion.',
-        deliverables: ['Suburb service area landing pages', 'Embedded Google Maps route integration', 'Localized client proof cards'],
+          'Speeding up page load times, fixing broken 404 links, optimizing mobile layouts, and ensuring your site works seamlessly on every phone, tablet, and computer.',
+        deliverables: [
+          'Sub-second Time to First Byte (TTFB) optimization',
+          'Zero Cumulative Layout Shift (CLS) Core Web Vitals',
+          'Next-gen WebP/AVIF asset compression pipelines',
+        ],
       },
     ],
     keyBenefits: [
       {
-        title: 'Immediate High-Intent Phone Calls',
-        description: 'Direct "Tap to Call" actions straight from mobile Google Maps without requiring searchers to navigate complex menus.',
+        title: 'Custom Schema Creation',
+        description: 'Adding smart structured code that helps Google display rich snippets, ratings, and FAQs.',
       },
       {
-        title: 'Expanded Proximity Radius',
-        description: 'Extends your 3-pack visibility from 2km to 15km+ into affluent adjacent customer neighborhoods.',
+        title: 'robots.txt Setup & Optimization',
+        description: 'Directing search bots properly to crawl and index priority revenue pages without crawl waste.',
       },
       {
-        title: 'Dominates Competitors on Mobile',
-        description: '占据 mobile screen real estate before organic listings even start rendering.',
+        title: 'llms.txt Implementation for AEO & GEO',
+        description: 'Creating an llms.txt file so AI models (ChatGPT, Perplexity) easily read and cite your business in AI answers.',
+      },
+      {
+        title: 'Faster Speed & Mobile-First Health',
+        description: 'Speeding up page load times and ensuring flawless performance across mobile and desktop devices.',
       },
     ],
     review: {
-      clientName: 'Dr. Sarah Jenkins',
-      clientRole: 'Principal Dentist',
-      company: 'Copper Lane Dental Newtown',
+      clientName: 'Alexander Wright',
+      clientRole: 'Principal Architect',
+      company: 'Mallee Fold Studio',
       quote:
-        'We were invisible on Google Maps beyond King Street. Lead Edge restructured our Google Business Profile and local citations. We jumped to #1 for "dentist Newtown" and "emergency dental inner west", bringing 45 new patients every month.',
-      rating: '5.0 ★★★★★',
-      metric: '45 New Patients / mo',
-      image: '/images/about/about-hero.webp',
+        'Implementing technical schema and llms.txt made an immediate difference. We now appear consistently in both Google AI Overviews and traditional organic searches for modern architectural design.',
+      rating: '5.0 / 5.0',
+      metric: '100% Core Web Vitals Score',
+      image: '/images/about/about-team-table.webp',
     },
     faqs: [
       {
-        question: 'How long does it take to rank in the Google Maps 3-Pack?',
+        question: 'What is an llms.txt file and why is it important?',
         answer:
-          'Depending on the competitiveness of your local suburb and category, GBP optimization typically produces noticeable rank improvements in 30 to 60 days.',
+          'llms.txt is an emerging web standard designed specifically for Large Language Models. It provides AI search engines (like ChatGPT, Perplexity, and Google AI Overviews) with clean, structured text about your core services, making it easy for AI to cite your business.',
       },
       {
-        question: 'Does having multiple categories in Google Business Profile hurt rankings?',
+        question: 'How does mobile speed impact SEO rankings?',
         answer:
-          'Only if misaligned. Choosing the right primary category is critical for 70% of relevance weighting, while secondary categories unlock additional high-volume search clusters.',
-      },
-      {
-        question: 'How do you handle businesses that service clients at their homes rather than an office?',
-        answer:
-          'We configure verified Service Area Businesses (SAB) with defined geographic delivery radius boundaries and compliant address privacy.',
-      },
-      {
-        question: 'Do Google review responses impact SEO?',
-        answer:
-          'Yes. Timely, detailed responses that reference specific services and treatment types provide Google with semantic confirmation of your business capabilities.',
+          'Google uses Mobile-First Indexing and evaluates Core Web Vitals (Largest Contentful Paint, First Input Delay, Cumulative Layout Shift). Sites that load in under 1 second receive preferential ranking placement over slow competitors.',
       },
     ],
   },
 
   // =========================================================================
-  // PERFORMANCE ADS (Category: ppc)
+  // 2. META ADS MANAGEMENT — 4 CORE DISCIPLINES
   // =========================================================================
   {
-    slug: 'high-intent-search-campaigns',
+    slug: 'campaign-strategy-funnel-alignment',
     serviceCategory: 'ppc',
-    serviceCategoryName: 'Performance Ads',
+    serviceCategoryName: 'Meta & Paid Ads',
     parentHref: '/services/ppc',
-    title: 'High-Intent Google Search Campaigns',
-    tagline: 'Precision Search Bidding Engineered for Immediate Qualified Inquiries',
-    badge: 'PAID SEARCH ARCHITECTURE',
-    heroHeadline: 'Stop Wasting Ad Spend on Low-Intent Clicks.',
+    title: 'Campaign Strategy & Funnel Alignment',
+    tagline: 'Structuring Paid Social Around Real Leads, Bookings, and Sales',
+    badge: 'PAID SOCIAL FUNNEL ARCHITECTURE',
+    heroHeadline: 'Turn Facebook & Instagram Traffic into a Predictable Pipeline of Buyers.',
     heroSubheadline:
-      'We engineer Google Ads campaigns with exact-match negative keyword scrubbing, Single-Theme Ad Groups (STAGs), and value-based bidding. Every ad dollar is routed strictly to high-value prospects actively looking to buy.',
+      'Running paid social ads shouldn’t feel like guessing with your budget or watching clicks go nowhere. We structure your campaigns around qualified leads, booked calls, and profitable sales—never vanity engagement.',
     heroVideo: {
       mp4: '/videos/catalog/ppc/video-01.mp4',
       poster: '/videos/catalog/ppc/video-01-poster.webp',
     },
     heroImage: '/videos/catalog/ppc/video-01-poster.webp',
     statPill: {
-      label: 'Average ROAS on Ad Spend',
-      value: '5.2x Verified',
+      label: 'Average Client ROAS',
+      value: '5.2x Verified ROAS',
     },
     guideIntroduction:
-      'Most businesses waste 40% of their Google Ads budget on generic queries and automated "smart" bidding traps. We apply rigorous engineering discipline: tightly structured campaigns, aggressive negative query harvesting, and custom landing page matching.',
+      'We combine broad/AI-assisted delivery with warm retargeting and customer lookalikes so prospects see the right message at the right stage, ensuring your landing pages convert high-intent traffic.',
     guidePhases: [
       {
         phase: 'Phase 01',
-        title: 'Negative Keyword & Waste Scrubbing Audit',
-        description:
-          'We audit historical search term reports to identify and block informational queries, student searches, and competitor misclicks.',
-        deliverables: ['500+ master negative keyword library', 'Search term waste elimination report', 'Budget reallocation plan'],
+        title: 'Goal-Driven Funnel Setup',
+        description: 'Structuring campaigns around leads, purchases, messages, or bookings rather than superficial likes.',
+        deliverables: ['Custom conversion event mapping', 'CPA threshold targets', 'Funnel staging specifications'],
       },
       {
         phase: 'Phase 02',
-        title: 'Single-Theme Ad Group (STAG) Rebuild',
-        description:
-          'We organize campaigns into hyper-focused theme ad groups with 1:1 message match between search query, ad copy, and landing page.',
-        deliverables: ['STAG campaign structure', 'Responsive Search Ad (RSA) copy variations with 15 pinned headlines', 'Ad asset extensions (Callouts, Sitelinks, Structured Snippets)'],
+        title: 'Audience & Retargeting Architecture',
+        description: 'Combining broad delivery with warm retargeting and customer lookalikes for maximum efficiency.',
+        deliverables: ['Audience segmentation roadmap', 'Custom audience seed lists', 'Exclusion logic to prevent wasted spend'],
       },
       {
         phase: 'Phase 03',
-        title: 'First-Party Conversion Value Tracking',
-        description:
-          'We deploy server-side Google Tag Manager and enhanced conversions to feed offline sales data directly back into Google AI bidding.',
-        deliverables: ['Server-side Google Ads conversion tag', 'Enhanced conversions with SHA-256 hashed customer parameters', 'Call tracking integration (CallRail / Delacon)'],
-      },
-      {
-        phase: 'Phase 04',
-        title: 'Algorithmic Bid Optimization & Scaling',
-        description:
-          'Continuous Target CPA / Target ROAS tuning, device bid adjustments, and time-of-day scheduling to maximize conversion volume during business hours.',
-        deliverables: ['Bid strategy performance matrix', 'Day-parting efficiency report', 'Monthly executive revenue attribution report'],
+        title: 'Landing Page & Offer Alignment',
+        description: 'Ensuring your landing pages match ad messaging seamlessly so visitors convert immediately upon clicking.',
+        deliverables: ['Ad-to-landing-page message match audit', 'Mobile friction reduction', 'Instant booking flow triggers'],
       },
     ],
     keyBenefits: [
-      {
-        title: 'Guaranteed 40%+ Waste Elimination',
-        description: 'Stops ad spend from being eaten by irrelevant search queries and low-intent click farms.',
-      },
-      {
-        title: 'Highest Quality Score in the Auction',
-        description: 'Tightly aligned ad copy and dedicated landing pages drive 8/10 to 10/10 Quality Scores, reducing Cost Per Click (CPC) by up to 35%.',
-      },
-      {
-        title: 'Full Revenue Transparency',
-        description: 'Tracks every phone call, form inquiry, and closed deal back to the exact keyword that generated it.',
-      },
+      { title: 'Goal-Driven Setup', description: 'Structured around real revenue outcomes rather than vanity metrics.' },
+      { title: 'Audience Modeling', description: 'AI-assisted delivery combined with warm retargeting to maximize conversion.' },
+      { title: 'Offer Fit', description: 'Ensures visitors understand next steps immediately after clicking your ad.' },
     ],
     review: {
-      clientName: 'Liam O’Connor',
-      clientRole: 'Founding Partner',
-      company: 'Saltbush Conveyancing Sydney',
+      clientName: 'Marcus Chen',
+      clientRole: 'Founder',
+      company: 'Kestrel Robotics Australia',
       quote:
-        'Before working with Lead Edge, we were spending $8,000/month on Google Ads with unpredictable results. They rebuilt our campaigns from scratch. Within 60 days, our cost per lead dropped from $190 to $68, and our monthly case intake surged.',
-      rating: '5.0 ★★★★★',
-      metric: '-64% Cost Per Lead',
-      image: '/images/about/about-team-table.webp',
+        'Lead Edge structured our Meta ad funnel from cold discovery down to high-intent booking. Our cost per qualified acquisition dropped by 42% in our first month.',
+      rating: '5.0 / 5.0',
+      metric: '5.4x Verified ROAS',
+      image: '/images/about/about-team-creative.webp',
     },
     faqs: [
-      {
-        question: 'How do you prevent Google from spending money on irrelevant broad match searches?',
-        answer:
-          'We use strict phrase and exact match bidding alongside rigorous negative keyword lists updated weekly. We never allow Google automated settings to expand into non-commercial queries without validation.',
-      },
-      {
-        question: 'What is a good Quality Score and why does it reduce costs?',
-        answer:
-          'Google assigns a Quality Score from 1 to 10 based on expected CTR, ad relevance, and landing page experience. High Quality Scores (8-10) receive discounted auction prices, allowing you to outrank competitors while paying lower CPCs.',
-      },
-      {
-        question: 'Do you track phone calls generated by Google Ads?',
-        answer:
-          'Yes. We implement dynamic number insertion (DNI) that swaps website phone numbers dynamically, tracking the exact campaign, ad, and keyword that triggered the phone call.',
-      },
-      {
-        question: 'Is there a minimum monthly ad spend required?',
-        answer:
-          'We recommend a minimum media spend of $2,000 to $3,000 per month so the campaign can gather enough statistical conversion data to optimize effectively.',
-      },
+      { question: 'Do you work in our ad account?', answer: 'Yes. You retain 100% ownership of your Business Manager, ad account, and pixel data.' },
     ],
   },
-
   {
-    slug: 'meta-ads-scaling',
+    slug: 'scroll-stopping-ad-creative-copy',
     serviceCategory: 'ppc',
-    serviceCategoryName: 'Performance Ads',
+    serviceCategoryName: 'Meta & Paid Ads',
     parentHref: '/services/ppc',
-    title: 'Meta Ads (Instagram & Facebook) Scaling',
-    tagline: 'High-Converting Creative Hook Testing & Full-Funnel Paid Social',
-    badge: 'PAID SOCIAL ACQUISITION',
-    heroHeadline: 'Turn Cold Attention into Committed Inquiries on Meta.',
+    title: 'Scroll-Stopping Ad Creative & Copy',
+    tagline: 'Creative That Earns Attention in the First 3 Seconds and Drives Action',
+    badge: 'CREATIVE DIVERSITY ENGINE',
+    heroHeadline: 'Multi-Angle Creative Testing That Beats Ad Fatigue.',
     heroSubheadline:
-      'We combine rapid creative hook iteration, first-party Conversions API (CAPI) tracking, and custom video storyboards to scale customer acquisition on Instagram and Facebook profitably.',
+      'In modern social advertising, creative diversity is the primary lever for lower acquisition costs. We produce distinct hooks, vertical Reels, carousels, and actionable copy that stop the scroll and convert buyers.',
     heroVideo: {
       mp4: '/videos/catalog/ppc/video-02.mp4',
       poster: '/videos/catalog/ppc/video-02-poster.webp',
     },
     heroImage: '/videos/catalog/ppc/video-02-poster.webp',
     statPill: {
-      label: 'Average Customer Acquisition Cost',
-      value: '-38% Reduction',
+      label: 'Conversion Rate Uplift',
+      value: '+184% CVR',
     },
     guideIntroduction:
-      'After iOS 14.5, native Meta pixel tracking degraded significantly. We deploy server-side Conversions API (CAPI) with 9.0+ Event Quality Scores and test 10+ visual creative hooks per week to reliably scale ad spend.',
+      'We write clear headlines and body copy addressing buyer pain points, continuously testing new angles to prevent audience burnout and scale profitably.',
     guidePhases: [
       {
         phase: 'Phase 01',
-        title: 'CAPI & First-Party Data Architecture',
-        description:
-          'Deploy server-side Meta Conversions API via Cloudflare / AWS to restore 100% conversion attribution and bypass browser ad blockers.',
-        deliverables: ['Server-side Meta CAPI setup', '9.0+ Event Quality Match score', 'Custom offline event sync'],
+        title: 'Multi-Angle Creative Testing',
+        description: 'Producing distinct visual hooks, vertical video Reels, and static carousels testing different emotional angles.',
+        deliverables: ['Weekly 9:16 vertical video cutdowns', 'Visual hook variations', 'Carousel storyboards'],
       },
       {
         phase: 'Phase 02',
-        title: 'Modular Creative Production & Hook Testing',
-        description:
-          'We script, design, and produce high-contrast video hooks, user-generated content (UGC), and carousel graphics designed for mobile feeds.',
-        deliverables: ['Weekly batch of 8-12 creative variations', '3-second thumbstop hook analysis', 'Story and Reel 9:16 vertical video assets'],
+        title: 'Direct, Actionable Ad Copywriting',
+        description: 'Writing punchy headlines and body text addressing real customer objections and next steps.',
+        deliverables: ['High-contrast hook headlines', 'Benefit-led body copy variants', 'Targeted calls to action'],
       },
       {
         phase: 'Phase 03',
-        title: 'Broad Targeting & Dynamic Creative Funnels',
-        description:
-          'We leverage Meta Advantage+ algorithms with strict value constraints and customized excluded audiences to acquire new customers efficiently.',
-        deliverables: ['Advantage+ audience segmentation', '7-day and 30-day dynamic retargeting funnels', 'Offer & lead magnet testing'],
-      },
-      {
-        phase: 'Phase 04',
-        title: 'Fatigue Mitigation & Systematic Budget Scaling',
-        description:
-          'We rotate creative before performance drops, scaling budget by 20% increments on winning ad sets.',
-        deliverables: ['Creative fatigue radar dashboard', 'Budget scaling log', 'Blended ROAS & MER tracking report'],
+        title: 'Ad Fatigue Prevention',
+        description: 'Rotating fresh concepts systematically before frequency climbs and performance slips.',
+        deliverables: ['Creative refresh schedule', 'Winning angle iteration', 'Ad fatigue monitoring alerts'],
       },
     ],
     keyBenefits: [
-      {
-        title: 'Restored 100% Tracking Attribution',
-        description: 'Server-side CAPI ensures Meta’s algorithm receives accurate conversion feedback, lowering acquisition costs.',
-      },
-      {
-        title: 'Never Run Out of Winning Ads',
-        description: 'Weekly creative testing guarantees a continuous pipeline of fresh visual hooks that beat ad fatigue.',
-      },
-      {
-        title: 'High-Converting Mobile Funnels',
-        description: 'Direct-to-landing-page flows engineered to convert social traffic into qualified booked inquiries.',
-      },
+      { title: 'Multi-Angle Testing', description: 'Testing visual hooks, Reels, and carousels to see what truly converts.' },
+      { title: 'Direct Copy', description: 'Headlines speaking straight to customer pain points and clear next steps.' },
+      { title: 'Fatigue Prevention', description: 'Rotating fresh creative concepts systematically to maintain low acquisition costs.' },
     ],
     review: {
-      clientName: 'Chloe Sutherland',
-      clientRole: 'Creative Director',
-      company: 'Peppergum Steps Studio',
-      quote:
-        'Lead Edge transformed our social advertising. Their vertical video creative and server-side tracking doubled our student enrollment for Term 1 while cutting our cost per student acquisition by 38%.',
-      rating: '5.0 ★★★★★',
-      metric: 'Term 1 at 100% Capacity',
+      clientName: 'Julian Vance',
+      clientRole: 'Marketing Director',
+      company: 'StrideFit Activewear',
+      quote: 'The weekly hook testing machine Lead Edge built keeps our Meta ads converting consistently month after month without burning out.',
+      rating: '5.0 / 5.0',
+      metric: '+184% CVR Uplift',
+      image: '/images/about/about-team-table.webp',
+    },
+    faqs: [
+      { question: 'What formats do you test?', answer: 'We test 9:16 vertical video Reels, square carousels, problem-solution statics, and customer testimonial formats.' },
+    ],
+  },
+  {
+    slug: 'tracking-pixel-conversions-api',
+    serviceCategory: 'ppc',
+    serviceCategoryName: 'Meta & Paid Ads',
+    parentHref: '/services/ppc',
+    title: 'Tracking, Pixel & Conversions API Setup',
+    tagline: 'Pairing Browser and Server-Side Tracking for Unbreakable Attribution',
+    badge: 'FIRST-PARTY DATA TELEMETRY',
+    heroHeadline: 'Zero Data Loss from iOS 14+ Tracking Blocks with Server-Side CAPI.',
+    heroSubheadline:
+      'Browser cookies lose up to 35% of conversions. We pair browser pixel tracking with direct server-side Conversions API (CAPI) pipelines so your campaigns optimize around verified revenue and high-value leads.',
+    heroVideo: {
+      mp4: '/videos/catalog/ppc/video-03.mp4',
+      poster: '/videos/catalog/ppc/video-03-poster.webp',
+    },
+    heroImage: '/videos/catalog/ppc/video-03-poster.webp',
+    statPill: {
+      label: 'Event Match Quality Score',
+      value: '9.8 / 10 Match',
+    },
+    guideIntroduction:
+      'We link ad performance to actual inquiries, form submissions, and verified purchases rather than superficial clicks, feeding Meta’s AI pristine data.',
+    guidePhases: [
+      {
+        phase: 'Phase 01',
+        title: 'Pixel + CAPI Alignment',
+        description: 'Deploying cloud server-to-server CAPI on Cloudflare or AWS for maximum data reliability.',
+        deliverables: ['Server-side GTM setup', 'Conversions API event pipeline', 'Deduplication configuration'],
+      },
+      {
+        phase: 'Phase 02',
+        title: 'Funnel & Lead Quality Visibility',
+        description: 'Connecting campaigns directly to form completions, calendar bookings, and CRM revenue events.',
+        deliverables: ['Custom lead milestone events', 'CRM pipeline integration', 'Looker Studio attribution dashboards'],
+      },
+    ],
+    keyBenefits: [
+      { title: 'Pixel + CAPI Alignment', description: 'Pairs browser and server tracking to reliably capture conversions.' },
+      { title: 'Lead Quality Visibility', description: 'Connects ad performance to actual inquiries and sales.' },
+    ],
+    review: {
+      clientName: 'David MacIntyre',
+      clientRole: 'Managing Director',
+      company: 'Highland Commercial Group',
+      quote: 'Setting up server-side CAPI recovered over 30% of our untracked phone calls and form leads in Meta Ads Manager.',
+      rating: '5.0 / 5.0',
+      metric: '9.8 / 10 Match Quality',
+      image: '/images/about/about-team-table.webp',
+    },
+    faqs: [
+      { question: 'Why is CAPI necessary?', answer: 'Browser cookies are blocked by Safari and ad-blockers; CAPI sends encrypted conversion data directly from your server to Meta for accurate attribution.' },
+    ],
+  },
+  {
+    slug: 'budget-control-optimization-scaling',
+    serviceCategory: 'ppc',
+    serviceCategoryName: 'Meta & Paid Ads',
+    parentHref: '/services/ppc',
+    title: 'Budget Control, Optimization & Scaling',
+    tagline: 'Trimming Waste Early and Methodically Scaling Winning Campaigns',
+    badge: 'DISCIPLINED PROFIT SCALING',
+    heroHeadline: 'Scale Daily Ad Budgets While Protecting Profit Margins.',
+    heroSubheadline:
+      'Scaling ad spend shouldn’t mean blowing up your cost per lead. We actively monitor bids, placements, and early performance indicators to pause losers quickly and scale proven winners.',
+    heroVideo: {
+      mp4: '/videos/catalog/ppc/video-04.mp4',
+      poster: '/videos/catalog/ppc/video-04-poster.webp',
+    },
+    heroImage: '/videos/catalog/ppc/video-04-poster.webp',
+    statPill: {
+      label: 'Average Client Spend Scaling',
+      value: '+310% Profitable Scale',
+    },
+    guideIntroduction:
+      'We protect your profitability with disciplined scaling protocols and provide plain-English monthly reviews showing exactly what worked and what we are testing next.',
+    guidePhases: [
+      {
+        phase: 'Phase 01',
+        title: 'Active Spend & Placement Monitoring',
+        description: 'Watching cost per result, device efficiency, and negative warning signs before budgets bleed.',
+        deliverables: ['Daily bid management', 'Placement pruning', 'Automated budget safeguard rules'],
+      },
+      {
+        phase: 'Phase 02',
+        title: 'Methodical Budget Scaling',
+        description: 'Incrementally increasing spend on validated campaigns to protect cost per acquisition.',
+        deliverables: ['Horizontal scaling across lookalikes', 'Vertical budget ramp-up schedules', 'Margin protection thresholds'],
+      },
+    ],
+    keyBenefits: [
+      { title: 'Spend Monitoring', description: 'Trims waste before budgets are lost.' },
+      { title: 'Smart Scaling', description: 'Increases budget on proven ads while protecting margins.' },
+    ],
+    review: {
+      clientName: 'Marcus Chen',
+      clientRole: 'CEO',
+      company: 'Kestrel Robotics',
+      quote: 'We scaled our monthly ad spend 4x while maintaining our target acquisition cost. Exceptional discipline.',
+      rating: '5.0 / 5.0',
+      metric: '4.8x ROAS Target Maintained',
       image: '/images/about/about-team-creative.webp',
     },
     faqs: [
-      {
-        question: 'Why is server-side Meta CAPI necessary?',
-        answer:
-          'Traditional browser tracking pixels lose 20-30% of conversions due to iOS privacy controls and browser ad-blockers. Conversions API transmits event data directly from your server to Meta, ensuring complete data accuracy.',
-      },
-      {
-        question: 'Who produces the video and image creative for our ads?',
-        answer:
-          'Our in-house creative team writes the scripts, edits the footage, designs the overlays, and delivers completed 9:16 vertical and 4:5 feed formats ready for launch.',
-      },
-      {
-        question: 'How often do you refresh ad creative?',
-        answer:
-          'We refresh and test new creative weekly or bi-weekly to prevent ad fatigue and keep Click-Through Rates (CTR) high.',
-      },
-      {
-        question: 'Can Meta ads work for B2B or professional services?',
-        answer:
-          'Yes. We use executive thought-leadership hooks, case study carousel breakdowns, and targeted lead forms to acquire high-value B2B clients on Instagram and Facebook.',
-      },
+      { question: 'How do you prevent CPA spikes when scaling?', answer: 'We scale budgets incrementally (15–20% every few days) and duplicate winning creatives into fresh broad audience buckets.' },
     ],
   },
 
   // =========================================================================
-  // WEB ARCHITECTURE (Category: web)
+  // 3. SOCIAL MEDIA MANAGEMENT — 4 CORE DISCIPLINES
+  // =========================================================================
+  {
+    slug: 'account-profile-management',
+    serviceCategory: 'social-media',
+    serviceCategoryName: 'Social Media',
+    parentHref: '/services/social-media',
+    title: 'Account & Profile Management',
+    tagline: 'Clean, Up-to-Date Profiles and Smooth Day-to-Day Account Care',
+    badge: 'BRAND REPUTATION POLISH',
+    heroHeadline: 'Keep Your Social Profiles Polished, Secure, and Active.',
+    heroSubheadline:
+      'Clean day-to-day profile care. We keep your handles, bios, visuals, links, and highlights aligned with your offers, ensuring your business always retains full ownership and never goes dark.',
+    heroVideo: {
+      mp4: '/videos/catalog/social-media/video-01.mp4',
+      poster: '/videos/catalog/social-media/video-01-poster.webp',
+    },
+    heroImage: '/videos/catalog/social-media/video-01-poster.webp',
+    statPill: {
+      label: 'Brand Consistency Score',
+      value: '100% Up-To-Date',
+    },
+    guideIntroduction:
+      'Your social profile is often the first place prospects look before booking. We maintain complete visual and messaging polish across all channels.',
+    guidePhases: [
+      {
+        phase: 'Phase 01',
+        title: 'Profile & Bio Optimization',
+        description: 'Keeping bio links, highlight covers, banners, and call-to-actions aligned with current business campaigns.',
+        deliverables: ['Custom bio copywriting', 'Highlight category covers', 'Link-in-bio funnel optimization'],
+      },
+      {
+        phase: 'Phase 02',
+        title: 'Secure Access & Role Management',
+        description: 'Configuring safe permissions so your business retains permanent ownership without password sharing.',
+        deliverables: ['Business Manager partner access', 'Two-factor security audit', 'Role access specifications'],
+      },
+    ],
+    keyBenefits: [
+      { title: 'Profile Polish', description: 'Bios, visuals, and links always aligned with your offers.' },
+      { title: 'Safe Access', description: 'Your business retains 100% ownership of every account.' },
+      { title: 'Consistent Publishing', description: 'Scheduled reliably so your brand never goes dark.' },
+    ],
+    review: {
+      clientName: 'Fiona Gallagher',
+      clientRole: 'Operations Director',
+      company: 'Redgum Care Centres',
+      quote: 'Our social channels now look like a Fortune 500 company. Clean, active, and professional across Instagram and Facebook.',
+      rating: '5.0 / 5.0',
+      metric: '100% Brand Alignment',
+      image: '/images/about/about-hero.webp',
+    },
+    faqs: [
+      { question: 'Do I share my passwords with you?', answer: 'No. We request agency partner permissions through Meta Business Suite and LinkedIn Page Roles so your passwords remain private.' },
+    ],
+  },
+  {
+    slug: 'content-planning-platform-adaptation',
+    serviceCategory: 'social-media',
+    serviceCategoryName: 'Social Media',
+    parentHref: '/services/social-media',
+    title: 'Content Planning & Platform Adaptation',
+    tagline: 'Posts Tailored to How People Actually Use Each Platform—Not Lazy Copy-Pasting',
+    badge: 'NATIVE CONTENT ARCHITECTURE',
+    heroHeadline: 'Platform-Native Content Mapped to Your Business Goals.',
+    heroSubheadline:
+      'We adapt captions, visuals, hooks, and formats for Instagram, Facebook, LinkedIn, and YouTube so each post feels native, supported by a clear monthly calendar approval workflow.',
+    heroVideo: {
+      mp4: '/videos/catalog/social-media/video-02.mp4',
+      poster: '/videos/catalog/social-media/video-02-poster.webp',
+    },
+    heroImage: '/videos/catalog/social-media/video-02-poster.webp',
+    statPill: {
+      label: 'Audience Engagement Growth',
+      value: '3.6x Lift',
+    },
+    guideIntroduction:
+      'We plan posts around your seasonal promotions, launches, and service priorities, ensuring nothing goes live without your advance sign-off.',
+    guidePhases: [
+      {
+        phase: 'Phase 01',
+        title: 'Monthly Content Planning',
+        description: 'Mapping upcoming posts around your key offers, client testimonials, and industry trends.',
+        deliverables: ['30-day interactive calendar preview', 'Topic theme segmentation', 'Asset staging board'],
+      },
+      {
+        phase: 'Phase 02',
+        title: 'Platform-Specific Content Design',
+        description: 'Formatting 9:16 vertical Reels for Instagram, executive articles for LinkedIn, and community posts for Facebook.',
+        deliverables: ['Native platform formatting', 'High-retention video hooks', 'Custom graphic assets'],
+      },
+    ],
+    keyBenefits: [
+      { title: 'Monthly Calendar', description: 'Planned in advance around your seasonal goals.' },
+      { title: 'Platform-Specific Formats', description: 'Tailored for Instagram, LinkedIn, and Facebook.' },
+      { title: 'Approval Workflow', description: 'Review everything in one place with your green light.' },
+    ],
+    review: {
+      clientName: 'Alexander Wright',
+      clientRole: 'Principal Architect',
+      company: 'Mallee Fold Studio',
+      quote: 'We review the month’s posts in 10 minutes, click approve, and our Instagram and LinkedIn run on autopilot.',
+      rating: '5.0 / 5.0',
+      metric: '3.6x Engagement Growth',
+      image: '/images/about/about-team-table.webp',
+    },
+    faqs: [
+      { question: 'Can we suggest post topics?', answer: 'Yes! We collaborate directly with your team and integrate your project updates or photos seamlessly into the calendar.' },
+    ],
+  },
+  {
+    slug: 'community-engagement-inbox-care',
+    serviceCategory: 'social-media',
+    serviceCategoryName: 'Social Media',
+    parentHref: '/services/social-media',
+    title: 'Community Engagement & Inbox Care',
+    tagline: 'Turning Comments and Direct Messages into Trust and Warm Inquiries',
+    badge: 'ACTIVE COMMUNITY NURTURE',
+    heroHeadline: 'Never Leave Customer Comments or Inquiries Unanswered.',
+    heroSubheadline:
+      'We reply promptly to comments and direct messages in a friendly, natural tone that matches your brand, while smartly routing qualified sales leads and urgent questions to your team.',
+    heroVideo: {
+      mp4: '/videos/catalog/social-media/video-03.mp4',
+      poster: '/videos/catalog/social-media/video-03-poster.webp',
+    },
+    heroImage: '/videos/catalog/social-media/video-03-poster.webp',
+    statPill: {
+      label: 'Average Response Speed',
+      value: '< 15 Mins Response',
+    },
+    guideIntroduction:
+      'Social media is a two-way conversation. We spot recurring audience questions so we can create future content around what your buyers care about most.',
+    guidePhases: [
+      {
+        phase: 'Phase 01',
+        title: 'Timely Daily Replies',
+        description: 'Monitoring and responding to post comments and messages with brand-aligned warmth.',
+        deliverables: ['Daily comment response protocol', 'Spam and troll filtering', 'Brand voice guidelines compliance'],
+      },
+      {
+        phase: 'Phase 02',
+        title: 'Smart Lead & Escalation Routing',
+        description: 'Flagging genuine commercial inquiries, price questions, and service bookings for your team.',
+        deliverables: ['Direct message lead capture funnel', 'Urgent issue escalation protocols', 'Audience question extraction'],
+      },
+    ],
+    keyBenefits: [
+      { title: 'Timely Replies', description: 'Warm, brand-aligned responses that build customer trust.' },
+      { title: 'Smart Lead Routing', description: 'Sales inquiries flagged immediately for your team.' },
+      { title: 'Audience Insights', description: 'Extracts real questions to guide future marketing.' },
+    ],
+    review: {
+      clientName: 'Sarah Jenkins',
+      clientRole: 'Director',
+      company: 'Harbour Allied Health',
+      quote: 'Lead Edge handles all our clinic’s Instagram DMs and comments. We’ve booked dozens of patients who simply asked a question in our inbox.',
+      rating: '5.0 / 5.0',
+      metric: '< 15m Response Time',
+      image: '/images/about/team-1.webp',
+    },
+    faqs: [
+      { question: 'What happens when someone asks a technical or price question?', answer: 'We use pre-approved response scripts for common queries, and immediately flag complex or high-intent inquiries to your internal staff.' },
+    ],
+  },
+  {
+    slug: 'performance-tracking-monthly-adjustments',
+    serviceCategory: 'social-media',
+    serviceCategoryName: 'Social Media',
+    parentHref: '/services/social-media',
+    title: 'Performance Tracking & Monthly Adjustments',
+    tagline: 'Clear Monthly Insights That Guide Smarter Content Next Month',
+    badge: 'PLAIN-ENGLISH REPORTING',
+    heroHeadline: 'Track Reach, Audience Growth, and Lead Generation Without Confusion.',
+    heroSubheadline:
+      'We provide plain-English monthly reports tracking reach, engagement, top-performing posts, and response speed without confusing fluff, using real data to fine-tune topics and rhythm.',
+    heroVideo: {
+      mp4: '/videos/catalog/social-media/video-04.mp4',
+      poster: '/videos/catalog/social-media/video-04-poster.webp',
+    },
+    heroImage: '/videos/catalog/social-media/video-04-poster.webp',
+    statPill: {
+      label: 'Audience Growth Rate',
+      value: '+312% Growth',
+    },
+    guideIntroduction:
+      'We analyze what worked and what didn’t to continuously improve your social reach, audience growth, and direct conversion velocity every 30 days.',
+    guidePhases: [
+      {
+        phase: 'Phase 01',
+        title: 'Plain-English Performance Review',
+        description: 'Tracking audience growth, profile clicks, and engagement benchmarks in an easy-to-read monthly summary.',
+        deliverables: ['Executive monthly summary report', 'Top 5 performing content breakdown', 'Audience demographic shifts'],
+      },
+      {
+        phase: 'Phase 02',
+        title: 'Continuous Strategy Refinement',
+        description: 'Using real engagement data and competitor activity to adjust content topics and posting rhythm.',
+        deliverables: ['Next-month strategy adjustments', 'Topic expansion recommendations', 'Format experimentation roadmap'],
+      },
+    ],
+    keyBenefits: [
+      { title: 'Plain-English Reports', description: 'Clear insights on reach and audience growth without fluff.' },
+      { title: 'Continuous Refinement', description: 'Fine-tunes topics and formats each month based on real data.' },
+    ],
+    review: {
+      clientName: 'Fiona Gallagher',
+      clientRole: 'Operations Director',
+      company: 'Redgum Care Centres',
+      quote: 'Their monthly reports actually make sense. We see which posts drove calls and where our audience is growing.',
+      rating: '5.0 / 5.0',
+      metric: '+312% Reach Expansion',
+      image: '/images/about/about-hero.webp',
+    },
+    faqs: [
+      { question: 'What metrics do you track?', answer: 'We track net audience growth, reach, post saves, profile visits, link clicks, and direct inquiry counts.' },
+    ],
+  },
+
+  // =========================================================================
+  // 4. EMAIL MARKETING SERVICES — 4 CORE DISCIPLINES
+  // =========================================================================
+  {
+    slug: 'targeted-email-campaigns',
+    serviceCategory: 'email-marketing',
+    serviceCategoryName: 'Email Marketing',
+    parentHref: '/services/email-marketing',
+    title: 'Targeted Email Campaigns',
+    tagline: 'Relevant, Well-Timed Campaigns Built Around Launches, Offers, and Real Needs',
+    badge: 'SUBSCRIBER REVENUE ENGINE',
+    heroHeadline: 'Turn Your Email List into an Asset Your Business Actually Owns.',
+    heroSubheadline:
+      'Social algorithms change overnight and ads stop working when spend pauses—but your email list is an asset you own. We write, design, and send segmented campaigns that keep you top of mind and drive steady sales.',
+    heroVideo: {
+      mp4: '/videos/catalog/ppc/video-01.mp4',
+      poster: '/videos/catalog/ppc/video-01-poster.webp',
+    },
+    heroImage: '/videos/catalog/ppc/video-01-poster.webp',
+    statPill: {
+      label: 'Average Open Rate Achieved',
+      value: '44.8% Open Rate',
+    },
+    guideIntroduction:
+      'Rather than sending one-size-fits-all blasts, we segment your subscribers by behavior and interest, crafting engaging copy with focused calls-to-action.',
+    guidePhases: [
+      {
+        phase: 'Phase 01',
+        title: 'Audience Segmentation',
+        description: 'Grouping subscribers by purchase history, service interest, and engagement level so every email feels relevant.',
+        deliverables: ['High-intent customer segments', 'VIP buyer lists', 'Inactive contact filters'],
+      },
+      {
+        phase: 'Phase 02',
+        title: 'Engaging Copywriting & Visual Design',
+        description: 'Writing natural, engaging emails with compelling subject lines, clear hooks, and focused calls-to-action.',
+        deliverables: ['Mobile-optimized responsive layouts', 'High-CTR subject line tests', 'Engaging brand copy'],
+      },
+      {
+        phase: 'Phase 03',
+        title: 'Editorial & Launch Calendars',
+        description: 'Planning regular newsletters, seasonal promotions, and service announcements ahead of time.',
+        deliverables: ['Quarterly campaign calendar', 'Seasonal offer sequences', 'Product/service launch roadmaps'],
+      },
+    ],
+    keyBenefits: [
+      { title: 'Audience Segmentation', description: 'Grouping subscribers so every email feels relevant.' },
+      { title: 'Engaging Copy', description: 'Clear, natural writing with strong hooks and focused CTAs.' },
+      { title: 'Launch Calendars', description: 'Regular newsletters and seasonal promotions planned ahead.' },
+    ],
+    review: {
+      clientName: 'David MacIntyre',
+      clientRole: 'Managing Director',
+      company: 'Highland Group',
+      quote: 'Our monthly email newsletter drives more repeat commercial consulting engagements than all our social channels combined.',
+      rating: '5.0 / 5.0',
+      metric: '44.8% Open Rate',
+      image: '/images/about/about-team-table.webp',
+    },
+    faqs: [
+      { question: 'How often should we send emails?', answer: 'For most service and local businesses, 2 to 4 high-value emails per month keeps you top of mind without fatiguing subscribers.' },
+    ],
+  },
+  {
+    slug: 'automated-email-flows',
+    serviceCategory: 'email-marketing',
+    serviceCategoryName: 'Email Marketing',
+    parentHref: '/services/email-marketing',
+    title: 'Automated Email Flows',
+    tagline: 'The Right Message Sent Automatically at the Exact Moment a Subscriber Acts',
+    badge: 'ALWAYS-ON REVENUE AUTOMATION',
+    heroHeadline: 'Recover Inquiries and Drive Repeat Orders on Autopilot.',
+    heroSubheadline:
+      'Automated email flows trigger dynamically when a prospect takes action. We build welcome series, abandoned cart follow-ups, and post-purchase win-back sequences that nurture leads 24/7.',
+    heroVideo: {
+      mp4: '/videos/catalog/ppc/video-02.mp4',
+      poster: '/videos/catalog/ppc/video-02-poster.webp',
+    },
+    heroImage: '/videos/catalog/ppc/video-02-poster.webp',
+    statPill: {
+      label: 'Automated Revenue Share',
+      value: '+38% Flow Revenue',
+    },
+    guideIntroduction:
+      'Automated sequences catch high-intent prospects who showed interest but did not finish booking, nurturing them gently without aggressive discounting.',
+    guidePhases: [
+      {
+        phase: 'Phase 01',
+        title: 'Welcome Series & Brand Introduction',
+        description: 'Greeting new subscribers, sharing your brand story, setting expectations, and introducing your core solutions.',
+        deliverables: ['3-part welcome automation sequence', 'Core offer introduction', 'Trust-building founder story email'],
+      },
+      {
+        phase: 'Phase 02',
+        title: 'Abandoned Cart & Inquiry Follow-Ups',
+        description: 'Gently reminding shoppers or prospects who left items or booking forms behind without unnecessary discounting.',
+        deliverables: ['Timed browse and cart abandonment triggers', 'Objection-clearing email copy', 'Urgency reminders'],
+      },
+      {
+        phase: 'Phase 03',
+        title: 'Post-Purchase & Re-Engagement Sequences',
+        description: 'Driving repeat purchases, requesting genuine reviews, and re-engaging subscribers who have gone quiet.',
+        deliverables: ['Review request automation', 'Cross-sell and repeat order triggers', 'Sunset unengaged contact flows'],
+      },
+    ],
+    keyBenefits: [
+      { title: 'Welcome Series', description: 'Greets new subscribers and introduces your brand story.' },
+      { title: 'Abandoned Inquiries', description: 'Recovers high-intent prospects who did not finish booking.' },
+      { title: 'Post-Purchase Flows', description: 'Drives repeat orders, reviews, and customer re-engagement.' },
+    ],
+    review: {
+      clientName: 'Marcus Chen',
+      clientRole: 'CEO',
+      company: 'Kestrel Robotics',
+      quote: 'The automated welcome and nurture sequence Lead Edge installed converts cold leads into qualified sales calls around the clock.',
+      rating: '5.0 / 5.0',
+      metric: '+38% Flow Revenue',
+      image: '/images/about/about-team-creative.webp',
+    },
+    faqs: [
+      { question: 'What is the most profitable email flow?', answer: 'The Welcome Series and the Abandoned Browse/Cart sequences typically generate the highest return per recipient.' },
+    ],
+  },
+  {
+    slug: 'template-design-conversion-testing',
+    serviceCategory: 'email-marketing',
+    serviceCategoryName: 'Email Marketing',
+    parentHref: '/services/email-marketing',
+    title: 'Template Design & Conversion Testing',
+    tagline: 'Clean, Mobile-Friendly Emails Tested to Earn More Clicks and Actions',
+    badge: 'HIGH-CONVERTING TEMPLATES',
+    heroHeadline: 'Emails That Look Sharp on Every Phone and Desktop.',
+    heroSubheadline:
+      'We design responsive brand email templates that look clean, load instantly, and read effortlessly. We A/B test subject lines, send times, and button placements to steadily lift click-through rates.',
+    heroVideo: {
+      mp4: '/videos/catalog/ppc/video-03.mp4',
+      poster: '/videos/catalog/ppc/video-03-poster.webp',
+    },
+    heroImage: '/videos/catalog/ppc/video-03-poster.webp',
+    statPill: {
+      label: 'Click-Through Rate Uplift',
+      value: '+42% CTR Lift',
+    },
+    guideIntroduction:
+      'Over 65% of emails are opened on mobile devices. We engineer responsive, accessible templates that look editorial and convert clicks into bookings.',
+    guidePhases: [
+      {
+        phase: 'Phase 01',
+        title: 'Responsive Brand Template System',
+        description: 'Designing custom layouts matching your brand typography, colors, and button styles in Klaviyo or Mailchimp.',
+        deliverables: ['Mobile-first modular templates', 'Dark-mode email compatibility', 'Reusable content blocks'],
+      },
+      {
+        phase: 'Phase 02',
+        title: 'A/B Testing & Optimization',
+        description: 'Experimenting with subject lines, preview text, send timing, and call-to-action placement to lift performance.',
+        deliverables: ['Subject line test framework', 'Send-time optimization', 'CTR heat-mapping analysis'],
+      },
+    ],
+    keyBenefits: [
+      { title: 'Responsive Templates', description: 'Sharp, effortless reading on phones and desktops.' },
+      { title: 'A/B Testing', description: 'Tests subject lines and CTAs to continuously lift performance.' },
+    ],
+    review: {
+      clientName: 'Julian Vance',
+      clientRole: 'Marketing Director',
+      company: 'StrideFit',
+      quote: 'Their mobile email templates increased our click-through rate by 42%. Clean, readable, and highly effective.',
+      rating: '5.0 / 5.0',
+      metric: '+42% CTR Lift',
+      image: '/images/about/about-team-table.webp',
+    },
+    faqs: [
+      { question: 'Do you test dark mode?', answer: 'Yes. All our email templates are tested across Apple Mail, Gmail, and Outlook in both light and dark mode.' },
+    ],
+  },
+  {
+    slug: 'platform-setup-migration-list-growth',
+    serviceCategory: 'email-marketing',
+    serviceCategoryName: 'Email Marketing',
+    parentHref: '/services/email-marketing',
+    title: 'Platform Setup, Migration & List Growth',
+    tagline: 'The Right Tools, Healthy Subscriber Lists, and Reliable Inbox Placement',
+    badge: 'DELIVERABILITY & HYGIENE',
+    heroHeadline: 'Protect Sender Reputation and Land in the Primary Inbox.',
+    heroSubheadline:
+      'We configure or migrate lists, templates, and automations across platforms like Klaviyo, Mailchimp, and ActiveCampaign. We build high-converting sign-up opt-ins and ensure SPF/DKIM authentication protects deliverability.',
+    heroVideo: {
+      mp4: '/videos/catalog/ppc/video-04.mp4',
+      poster: '/videos/catalog/ppc/video-04-poster.webp',
+    },
+    heroImage: '/videos/catalog/ppc/video-04-poster.webp',
+    statPill: {
+      label: 'Inbox Placement Rate',
+      value: '99.4% Deliverability',
+    },
+    guideIntroduction:
+      'Clean hygiene avoids spam traps. We remove hard bounces and inactive addresses, verifying DNS authentication to keep your deliverability pristine.',
+    guidePhases: [
+      {
+        phase: 'Phase 01',
+        title: 'Platform Tool Setup & Migration',
+        description: 'Configuring or safely migrating subscriber lists, tags, and flows across platforms without data loss.',
+        deliverables: ['Platform migration roadmap', 'Segment and tag mapping', 'Historical data verification'],
+      },
+      {
+        phase: 'Phase 02',
+        title: 'Website Lead Capture & Opt-Ins',
+        description: 'Turning website visitors into subscribers with non-intrusive, relevant sign-up forms and lead magnets.',
+        deliverables: ['Custom lead capture forms', 'Exit-intent opt-in modals', 'Lead magnet delivery automations'],
+      },
+      {
+        phase: 'Phase 03',
+        title: 'List Hygiene & SPF/DKIM Deliverability',
+        description: 'Pruning hard bounces, verifying SPF, DKIM, and DMARC alignment to ensure emails reach the primary inbox.',
+        deliverables: ['DNS authentication setup (SPF/DKIM/DMARC)', 'Inactive contact pruning', 'Deliverability health check'],
+      },
+    ],
+    keyBenefits: [
+      { title: 'Tool Setup & Migration', description: 'Safely moves lists and flows across Klaviyo, Mailchimp, or ActiveCampaign.' },
+      { title: 'Lead Capture', description: 'Converts website visitors into subscribers with clean sign-up forms.' },
+      { title: 'Deliverability Care', description: 'Prunes bounces and aligns SPF/DKIM to land in the inbox.' },
+    ],
+    review: {
+      clientName: 'Alexander Wright',
+      clientRole: 'Principal Architect',
+      company: 'Mallee Fold Studio',
+      quote: 'Migrating our list to Klaviyo and setting up SPF/DKIM authentication took our inbox deliverability to 99.4%. No more spam folder issues.',
+      rating: '5.0 / 5.0',
+      metric: '99.4% Deliverability',
+      image: '/images/about/about-team-table.webp',
+    },
+    faqs: [
+      { question: 'What is SPF, DKIM, and DMARC?', answer: 'These are DNS security records that verify you actually sent the email, preventing spoofing and ensuring Gmail and Yahoo deliver your messages to the inbox.' },
+    ],
+  },
+
+  // =========================================================================
+  // 5. WEB DEVELOPMENT & ARCHITECTURE — 4 CORE DISCIPLINES
   // =========================================================================
   {
     slug: 'nextjs-react-applications',
-    serviceCategory: 'web',
-    serviceCategoryName: 'Web Architecture',
+    serviceCategory: 'web-development',
+    serviceCategoryName: 'Web Development',
     parentHref: '/services/web-development',
-    title: 'Next.js 15 & React 19 Applications',
-    tagline: 'High-Performance Edge Architecture & 100 Lighthouse Mobile Engineering',
-    badge: 'MODERN WEB ENGINEERING',
-    heroHeadline: 'Sub-Second Page Loads. Zero Lag. Built to Get You Booked.',
+    title: 'Next.js 15 & React Applications',
+    tagline: 'High-Performance React Server Components Compiled at the Global Edge',
+    badge: 'EDGE SERVER ARCHITECTURE',
+    heroHeadline: 'Sub-Second Web Applications Built with Next.js 15.',
     heroSubheadline:
-      'We replace bloated, slow WordPress templates with hand-crafted Next.js 15 applications. Compiled statically at the edge for 0.4s load times, perfect 100 Lighthouse performance, and conversion-engineered user interfaces.',
+      'We replace slow WordPress and template websites with bespoke Next.js 15 applications statically generated and edge-cached for instant 0.4s loads and 100 Lighthouse performance.',
     heroVideo: {
       mp4: '/videos/catalog/web-development/video-01.mp4',
       poster: '/videos/catalog/web-development/video-01-poster.webp',
     },
     heroImage: '/videos/catalog/web-development/video-01-poster.webp',
     statPill: {
-      label: 'Average Mobile Load Time',
-      value: '0.4 Seconds',
+      label: 'Mobile Page Speed Benchmark',
+      value: '0.4s Load Speed',
     },
     guideIntroduction:
-      'A 1-second delay in page load time reduces mobile conversion rates by up to 20%. Our Next.js 15 architecture pairs React Server Components with global edge caching to deliver instantaneous web experiences.',
+      'Every 100ms of latency costs conversions. We build modern, clean React architectures that deliver instant navigation and frictionless user experiences.',
     guidePhases: [
       {
         phase: 'Phase 01',
-        title: 'Information Architecture & Conversion UX Wireframing',
-        description:
-          'We design every page layout for maximum mobile readability, clear visual hierarchy, and frictionless inquiry pathways.',
-        deliverables: ['Figma mobile & desktop prototype', 'High-contrast design system with WCAG AA compliance', 'Click-to-book user flow'],
-      },
-      {
-        phase: 'Phase 02',
-        title: 'React 19 Server Components & Clean Code Build',
-        description:
-          'We write lightweight TypeScript code with minimal dependencies, utilizing server components to send zero unused JavaScript to the client.',
-        deliverables: ['Next.js 15 code repository', 'Tailwind CSS utility styling', 'Responsive modular component library'],
-      },
-      {
-        phase: 'Phase 03',
-        title: 'Global Edge Caching & Asset Pipeline Optimization',
-        description:
-          'Images are automatically compressed into modern WebP/AVIF formats and delivered through global CDNs with sub-40ms TTFB.',
-        deliverables: ['Automated image optimization pipeline', 'Edge caching headers configuration', '100% Core Web Vitals score'],
-      },
-      {
-        phase: 'Phase 04',
-        title: 'CRM, Analytics & Conversion Webhook Integration',
-        description:
-          'Direct integration with your booking calendar, Stripe checkout, CRM (HubSpot, Salesforce, Cliniko), and analytics tools.',
-        deliverables: ['Automated inquiry webhook pipeline', 'Google Analytics 4 & Tag Manager setup', 'Enterprise security SSL & DNS configuration'],
+        title: 'React Server Components & SSR',
+        description: 'Rendering content at the global edge to achieve near-instant initial paint and eliminate layout shift.',
+        deliverables: ['Next.js 15 App Router architecture', 'Server-side rendering (SSR)', 'Dynamic edge caching'],
       },
     ],
     keyBenefits: [
-      {
-        title: '0.4s Instant Mobile Load Speeds',
-        description: 'Pages render instantly on mobile 4G networks, keeping bounce rates under 15% and boosting conversion rates.',
-      },
-      {
-        title: '100 Lighthouse Performance Score',
-        description: 'Achieves perfect marks across Performance, Accessibility, Best Practices, and SEO in Google audits.',
-      },
-      {
-        title: 'Zero Plugin Bloat & Bank-Grade Security',
-        description: 'No fragile WordPress plugins, database vulnerabilities, or malicious script injection vectors.',
-      },
+      { title: 'Sub-Second Speed', description: '0.4s load speed on mobile devices.' },
+      { title: '100 Lighthouse', description: 'Perfect performance, accessibility, and SEO audit scores.' },
     ],
     review: {
-      clientName: 'Harrison Cole',
+      clientName: 'David MacIntyre',
       clientRole: 'Managing Director',
-      company: 'Earthpin Electrical Systems',
-      quote:
-        'Moving our site from WordPress to Lead Edge’s Next.js platform was like going from a tractor to a Porsche. Our site loads in 0.4 seconds, our Google Ads Quality Score jumped to 10/10, and our lead conversion rate shot up by 42%.',
-      rating: '5.0 ★★★★★',
-      metric: '0.4s Instant Load Time',
-      image: '/images/about/about-hero.webp',
+      company: 'Highland Commercial',
+      quote: 'Our new Next.js site loads instantly. Bounce rates dropped by 34% immediately after launch.',
+      rating: '5.0 / 5.0',
+      metric: '0.4s Load Time',
+      image: '/images/about/about-team-table.webp',
     },
     faqs: [
-      {
-        question: 'Why is Next.js superior to WordPress for small business websites?',
-        answer:
-          'WordPress relies on heavy database calls and dozens of third-party plugins that cause slow loading, security exploits, and plugin conflicts. Next.js prerenders static pages at the edge, loading in 0.4 seconds with zero maintenance overhead.',
-      },
-      {
-        question: 'How do we make text and photo edits after the site goes live?',
-        answer:
-          'With our $249/mo all-inclusive plan, we handle unlimited text, photo, and price updates on 24-hour turnaround. You simply email or message us what you need changed.',
-      },
-      {
-        question: 'Do you provide website hosting?',
-        answer:
-          'Yes. Ultra-fast, global edge cloud hosting with SSL certificates, daily backups, and 99.99% uptime monitoring is fully included.',
-      },
-      {
-        question: 'Can you integrate our existing booking or scheduling software?',
-        answer:
-          'Yes. We seamlessly embed and integrate all major scheduling tools including Cliniko, Calendly, Acuity, Timely, ServiceM8, and custom CRM webhooks.',
-      },
+      { question: 'Why use Next.js over WordPress?', answer: 'Next.js produces pre-rendered static code with zero database bloat, making it 5x to 10x faster and immune to standard WordPress security vulnerabilities.' },
     ],
   },
-
-  // =========================================================================
-  // SOCIAL & CREATIVE (Category: social)
-  // =========================================================================
   {
-    slug: 'editorial-video-production',
-    serviceCategory: 'social',
-    serviceCategoryName: 'Social & Creative',
-    parentHref: '/services/video-photo',
-    title: 'Editorial & Brand Commercial Video Production',
-    tagline: 'Cinematic Storytelling & Short-Form Video Engineered to Build Trust',
-    badge: 'CREATIVE STUDIO',
-    heroHeadline: 'Video Content That Commands Attention and Closes Clients.',
+    slug: 'conversion-rate-optimization',
+    serviceCategory: 'web-development',
+    serviceCategoryName: 'Web Development',
+    parentHref: '/services/web-development',
+    title: 'Conversion Rate Optimization (CRO)',
+    tagline: 'Turning Passive Traffic into Confirmed Inquiries, Calls, and Bookings',
+    badge: 'CONVERSION FUNNEL UX',
+    heroHeadline: 'Friction-Free Buyer Journeys Engineered for Maximum Conversion.',
     heroSubheadline:
-      'We shoot and produce broadcast-grade cinematic videos, founder story documentaries, and high-converting short-form Reels and TikToks designed to position your brand as the undisputed authority in your market.',
+      'Every layout element is placed with commercial intent. We build sticky mobile call triggers, calendar booking embeds, and multi-step inquiry funnels that convert visitors into confirmed clients.',
     heroVideo: {
-      mp4: '/videos/catalog/video-photo/video-01.mp4',
-      poster: '/videos/catalog/video-photo/video-01-poster.webp',
+      mp4: '/videos/catalog/web-development/video-02.mp4',
+      poster: '/videos/catalog/web-development/video-02-poster.webp',
     },
-    heroImage: '/videos/catalog/video-photo/video-01-poster.webp',
+    heroImage: '/videos/catalog/web-development/video-02-poster.webp',
     statPill: {
-      label: 'Average Engagement Lift',
-      value: '3.6x Higher',
+      label: 'Direct Inquiry Conversion Lift',
+      value: '+42% Form Inquiries',
     },
     guideIntroduction:
-      'In a crowded digital landscape, human connection builds immediate credibility. Our video production unit handles end-to-end creative direction: scripting, on-location cinematic filming, color grading, sound design, and multi-platform aspect ratio exports.',
+      'We eliminate decision fatigue with clear visual hierarchy, scannable value points, and single-tap inquiry actions.',
     guidePhases: [
       {
         phase: 'Phase 01',
-        title: 'Creative Storyboarding & Narrative Direction',
-        description:
-          'We craft compelling interview prompts, customer transformation story arcs, and high-impact visual shot lists.',
-        deliverables: ['Production shoot schedule', 'Scripted interview questions', 'Visual storyboard & location scouting'],
-      },
-      {
-        phase: 'Phase 02',
-        title: 'On-Location 4K Cinema Filming',
-        description:
-          'Our production crew captures cinema-grade 4K footage using cinema cameras, wireless audio microphones, and professional lighting.',
-        deliverables: ['1-day or half-day dedicated video shoot', 'Founder interview footage', 'Dynamic commercial B-roll of your facility and team'],
-      },
-      {
-        phase: 'Phase 03',
-        title: 'Editorial Editing, Color Grading & Sound Mix',
-        description:
-          'We edit with precision pacing, dynamic motion typography, commercial music licensing, and cinema color grading.',
-        deliverables: ['60-90 second flagship brand commercial', '30-second website hero background video', 'High-impact audio mix'],
-      },
-      {
-        phase: 'Phase 04',
-        title: 'Vertical Cutdowns & Social Repurposing',
-        description:
-          'We slice footage into 9:16 vertical short-form clips optimized for Instagram Reels, TikTok, and YouTube Shorts.',
-        deliverables: ['6-10 vertical short-form video clips', 'Dynamic on-screen captions & sound effects', 'Ad-ready campaign exports'],
+        title: 'Conversion Wireframe Blueprint',
+        description: 'Designing user pathways that guide prospects smoothly from discovery to confirmed consultation.',
+        deliverables: ['Conversion wireframes', 'Mobile-sticky CTA triggers', 'Form friction reduction'],
       },
     ],
     keyBenefits: [
+      { title: 'Friction-Free Funnels', description: 'Streamlined multi-step inquiry forms.' },
+      { title: '+42% Conversion', description: 'Engineered specifically to turn traffic into pipeline.' },
+    ],
+    review: {
+      clientName: 'Lachlan O’Connor',
+      clientRole: 'Partner',
+      company: 'O’Connor Legal',
+      quote: 'The inquiry form Lead Edge designed increased our qualified consultation bookings by 42%.',
+      rating: '5.0 / 5.0',
+      metric: '+42% CVR Lift',
+      image: '/images/about/team-1.webp',
+    },
+    faqs: [
+      { question: 'How do you optimize mobile conversion?', answer: 'We place thumb-friendly sticky action triggers, eliminate unnecessary form fields, and ensure instant sub-second loading.' },
+    ],
+  },
+  {
+    slug: 'speed-sub-second-edge-infrastructure',
+    serviceCategory: 'web-development',
+    serviceCategoryName: 'Web Development',
+    parentHref: '/services/web-development',
+    title: 'Speed & Global Edge Infrastructure',
+    tagline: 'Sub-Second Global Edge Caching & 100 Core Web Vitals',
+    badge: 'PERFORMANCE FIRST',
+    heroHeadline: 'Lightning-Fast Load Times Delivered Through Edge CDN Networks.',
+    heroSubheadline:
+      'We deploy assets across global edge CDN networks with next-gen image compression (WebP/AVIF) and zero layout shift, ensuring your site loads instantaneously anywhere in Australia.',
+    heroVideo: {
+      mp4: '/videos/catalog/web-development/video-03.mp4',
+      poster: '/videos/catalog/web-development/video-03-poster.webp',
+    },
+    heroImage: '/videos/catalog/web-development/video-03-poster.webp',
+    statPill: {
+      label: 'Core Web Vitals Benchmark',
+      value: '100 / 100 Score',
+    },
+    guideIntroduction:
+      'Edge infrastructure caches content geographically closest to your visitors, providing consistent sub-second speeds.',
+    guidePhases: [
       {
-        title: 'Instant Professional Credibility',
-        description: 'Demonstrates undeniable market authority that justifies premium pricing over competitors.',
+        phase: 'Phase 01',
+        title: 'Global Edge Caching',
+        description: 'Routing requests to local Sydney and Melbourne edge nodes for immediate rendering.',
+        deliverables: ['Edge caching rules', 'Asset optimization pipeline', 'Zero CLS layout stabilization'],
       },
+    ],
+    keyBenefits: [
+      { title: 'Global Edge Caching', description: 'Sub-second response times across all Australian cities.' },
+      { title: 'Asset Pipelines', description: 'Automated WebP/AVIF compression with zero quality loss.' },
+    ],
+    review: {
+      clientName: 'Sarah Jenkins',
+      clientRole: 'Director',
+      company: 'Harbour Health',
+      quote: 'Our site loads in the blink of an eye. Patients love how fast and smooth booking an appointment feels.',
+      rating: '5.0 / 5.0',
+      metric: '0.4s Global Edge Load',
+      image: '/images/about/team-1.webp',
+    },
+    faqs: [
+      { question: 'What CDN do you use?', answer: 'We deploy on Vercel and Cloudflare Edge networks with server locations in Sydney, Melbourne, and Brisbane.' },
+    ],
+  },
+  {
+    slug: 'custom-lead-booking-funnels',
+    serviceCategory: 'web-development',
+    serviceCategoryName: 'Web Development',
+    parentHref: '/services/web-development',
+    title: 'Custom Lead & Booking Funnels',
+    tagline: 'Direct Calendar Integrations, Multi-Step Intakes, and CRM Sync',
+    badge: 'AUTOMATED INQUIRY FUNNELS',
+    heroHeadline: 'Turn Website Traffic into Confirmed Appointments Automatically.',
+    heroSubheadline:
+      'We build custom multi-step quote calculators, calendar booking embeds, and webhook pipelines that feed leads directly into your CRM without manual data entry.',
+    heroVideo: {
+      mp4: '/videos/catalog/web-development/video-04.mp4',
+      poster: '/videos/catalog/web-development/video-04-poster.webp',
+    },
+    heroImage: '/videos/catalog/web-development/video-04-poster.webp',
+    statPill: {
+      label: 'Lead Capture Automation',
+      value: '100% Automated CRM Sync',
+    },
+    guideIntroduction:
+      'Automated scheduling eliminates the back-and-forth email delay, securing customer appointments while buyer intent is at its highest.',
+    guidePhases: [
       {
-        title: 'High-Converting Website Hero Videos',
-        description: 'Engages visitors within the first 3 seconds and boosts average time-on-site by over 200%.',
+        phase: 'Phase 01',
+        title: 'Interactive Booking Embeds',
+        description: 'Integrating seamless calendar scheduling with SMS reminders and automatic CRM lead creation.',
+        deliverables: ['Custom multi-step intake flow', 'Calendar scheduling engine', 'Webhook CRM synchronization'],
       },
-      {
-        title: 'Multi-Channel Social Content Engine',
-        description: 'One single production shoot provides a month’s worth of high-performing video content across all platforms.',
-      },
+    ],
+    keyBenefits: [
+      { title: 'Automated Scheduling', description: 'Book appointments directly on your site without back-and-forth.' },
+      { title: 'CRM Sync', description: 'Feeds lead data directly into HubSpot, Salesforce, or your custom CRM.' },
     ],
     review: {
       clientName: 'Alexander Wright',
-      clientRole: 'Founder & Principal',
-      company: 'Mallee Fold Architects',
-      quote:
-        'Lead Edge produced our firm’s brand film and project case study videos. The cinematography was breathtaking. Our website inquiries converted at twice our previous rate, and clients consistently cite our video as the reason they chose us.',
-      rating: '5.0 ★★★★★',
-      metric: '2x Inquiry Conversion Rate',
-      image: '/images/about/about-team-creative.webp',
+      clientRole: 'Principal Architect',
+      company: 'Mallee Fold Studio',
+      quote: 'Clients book strategy consultations right on our website. It has completely eliminated calendar phone tag.',
+      rating: '5.0 / 5.0',
+      metric: '100% Automated Intake',
+      image: '/images/about/about-team-table.webp',
     },
     faqs: [
-      {
-        question: 'Do you bring all camera, lighting, and audio gear to our location?',
-        answer:
-          'Yes. We arrive fully equipped with 4K cinema cameras, wireless lavalier microphones, softbox studio lighting, and gimbal stabilizers.',
-      },
-      {
-        question: 'What if our team is nervous on camera?',
-        answer:
-          'Our directors guide you through a comfortable conversational interview format. We never force memorized scripts; we ask thoughtful questions and edit the conversation seamlessly.',
-      },
-      {
-        question: 'How long does post-production take?',
-        answer:
-          'Initial rough cuts are typically delivered within 7 to 10 business days for your review and feedback.',
-      },
-      {
-        question: 'Are music licensing fees included?',
-        answer:
-          'Yes. All commercial music licenses for digital, web, and paid advertising usage are 100% included with no ongoing royalty costs.',
-      },
+      { question: 'Which CRMs can you integrate with?', answer: 'We integrate with HubSpot, Salesforce, ActiveCampaign, Zoho, HighLevel, and custom Webhooks via Zapier or Make.' },
     ],
   },
 ];
 
+// Helper to look up subservice by slug with backward compatibility aliases
 export function getSubServiceBySlug(slug: string): SubService | undefined {
-  return SUBSERVICES.find((s) => s.slug === slug);
+  // Direct match
+  const direct = SUBSERVICES.find((s) => s.slug === slug);
+  if (direct) return direct;
+
+  // Legacy SEO aliases
+  if (slug === 'keyword-taxonomy-mapping' || slug === 'high-intent-non-brand-capture' || slug === 'editorial-authority-pillars') {
+    return SUBSERVICES.find((s) => s.slug === 'on-page-seo');
+  }
+  if (slug === 'competitive-gap-analysis' || slug === 'programmatic-seo-engines') {
+    return SUBSERVICES.find((s) => s.slug === 'off-page-seo');
+  }
+  if (slug === 'local-3-pack-dominance' || slug === 'google-business-profile-optimization' || slug === 'multi-location-citation-sync') {
+    return SUBSERVICES.find((s) => s.slug === 'local-seo');
+  }
+  if (slug === 'technical-seo-audits' || slug === 'javascript-edge-rendering' || slug === 'schema-architecture-json-ld' || slug === 'core-web-vitals-speed' || slug === 'generative-engine-optimization-geo' || slug === 'structured-llmstxt-deployment') {
+    return SUBSERVICES.find((s) => s.slug === 'technical-seo');
+  }
+
+  // Legacy PPC aliases
+  if (slug === 'high-intent-search-campaigns' || slug === 'performance-max-architecture') {
+    return SUBSERVICES.find((s) => s.slug === 'campaign-strategy-funnel-alignment');
+  }
+  if (slug === 'meta-ads-scaling' || slug === 'rapid-creative-hook-testing' || slug === 'iterative-ugc-ad-variations') {
+    return SUBSERVICES.find((s) => s.slug === 'scroll-stopping-ad-creative-copy');
+  }
+  if (slug === 'first-party-server-side-attribution' || slug === 'google-shopping-feed-optimization') {
+    return SUBSERVICES.find((s) => s.slug === 'tracking-pixel-conversions-api');
+  }
+  if (slug === 'negative-keyword-waste-pruning' || slug === 'cross-platform-omnichannel-retargeting') {
+    return SUBSERVICES.find((s) => s.slug === 'budget-control-optimization-scaling');
+  }
+
+  // Legacy Web aliases
+  if (slug === 'headless-commerce-architecture' || slug === 'shopify-plus-custom-storefronts') {
+    return SUBSERVICES.find((s) => s.slug === 'nextjs-react-applications');
+  }
+  if (slug === 'landing-page-conversion-rate-optimization' || slug === 'multi-step-lead-funnels-quote-calculators') {
+    return SUBSERVICES.find((s) => s.slug === 'conversion-rate-optimization');
+  }
+  if (slug === 'sub-second-global-edge-caching' || slug === 'core-web-vitals-100-engineering') {
+    return SUBSERVICES.find((s) => s.slug === 'speed-sub-second-edge-infrastructure');
+  }
+  if (slug === 'custom-booking-scheduling-engines' || slug === 'crm-webhook-pipeline-integrations') {
+    return SUBSERVICES.find((s) => s.slug === 'custom-lead-booking-funnels');
+  }
+
+  // Legacy Social aliases
+  if (slug === 'short-form-video-reels-tiktok' || slug === 'editorial-video-production') {
+    return SUBSERVICES.find((s) => s.slug === 'content-planning-platform-adaptation');
+  }
+  if (slug === 'organic-instagram-community-growth' || slug === 'active-community-management-inbox-nurturing') {
+    return SUBSERVICES.find((s) => s.slug === 'community-engagement-inbox-care');
+  }
+  if (slug === 'editorial-brand-voice-narrative-guidelines' || slug === 'linkedin-b2b-thought-leadership-publishing') {
+    return SUBSERVICES.find((s) => s.slug === 'performance-tracking-monthly-adjustments');
+  }
+
+  return undefined;
 }
