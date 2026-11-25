@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ServiceItem } from '@/data/services';
 import { HeroTextAnimation, HeroAnimationVariant } from '@/components/shared/HeroTextAnimation';
 import { StepPhotoSection, StepTransitionStyle, StepItem } from '@/components/shared/StepPhotoSection';
-import { ServicePackagesSection } from '@/components/services/ServicePackagesSection';
+import { ServiceApproachSection } from '@/components/services/ServiceApproachSection';
 import { WorkCard } from '@/components/shared/WorkCard';
 import { Lightbox, LightboxItem } from '@/components/shared/Lightbox';
 import { ServiceFaqSection } from '@/components/services/ServiceFaqSection';
@@ -451,6 +451,81 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       },
     ],
   },
+
+  'email-marketing': {
+    animationVariant: 'split-reveal',
+    stepTransitionStyle: 'feed',
+    heroHeadline: 'Turn your email list into steady, predictable',
+    heroItalicWord: 'revenue.',
+    heroTagline: 'Automated email flows and targeted campaigns that turn subscribers into repeat buyers.',
+    heroImage: '/images/services/meta-ads/meta-hero.webp',
+    heroImageAlt: 'Email marketing automation and segmentation dashboard',
+    statementHeading: 'Your email list is the only marketing channel you own 100%.',
+    statementText:
+      'We create automated welcome flows, cart recovery sequences, and regular targeted campaigns that generate consistent sales without paid ad spend.',
+    steps: [
+      {
+        number: '01',
+        name: 'Account & Deliverability Setup',
+        description: 'Clean DNS configuration, domain warming, and platform migration to protect your inbox placement.',
+        image: {
+          src: '/images/services/meta-ads/meta-testing.webp',
+          alt: 'Email deliverability and DNS setup',
+        },
+        deliverable: 'Deliverability & Domain Audit',
+      },
+      {
+        number: '02',
+        name: 'Automated Revenue Flows',
+        description: 'Always-on welcome series, cart abandonment recovery, and post-purchase customer win-backs.',
+        image: {
+          src: '/images/services/meta-ads/meta-creative.webp',
+          alt: 'Automated lifecycle email flow builder',
+        },
+        deliverable: 'Core Lifecycle Flow Engine',
+      },
+      {
+        number: '03',
+        name: 'Template Design & Testing',
+        description: 'Clean, mobile-responsive email templates built to look great in Apple Mail, Gmail, and Outlook.',
+        image: {
+          src: '/images/services/meta-ads/meta-capi.webp',
+          alt: 'Mobile responsive email layout design',
+        },
+        deliverable: 'Branded Master Email Kit',
+      },
+      {
+        number: '04',
+        name: 'Targeted Broadcast Campaigns',
+        description: 'Promotional launches, product drops, and educational newsletters sent to segmented buyer lists.',
+        image: {
+          src: '/images/services/meta-ads/meta-scaling.webp',
+          alt: 'Segmented campaign revenue analytics',
+        },
+        deliverable: 'Monthly Campaign Calendar',
+      },
+    ],
+    relatedWorks: [
+      {
+        id: 'w-em-1',
+        brand: 'Lumina Home',
+        title: 'Automated Flow Revenue Engine',
+        category: 'Email / E-Commerce',
+        image: '/images/services/meta-ads/meta-hero.webp',
+        description: 'Generated 34% of total shop revenue from automated email sequences within 60 days.',
+        year: '2026',
+      },
+      {
+        id: 'w-em-2',
+        brand: 'Aura Skincare',
+        title: 'VIP Segment Retention Campaign',
+        category: 'Email / Retention',
+        image: '/images/services/meta-ads/meta-creative.webp',
+        description: 'Custom segmented product drop series delivering 6.8x revenue per recipient.',
+        year: '2026',
+      },
+    ],
+  },
 };
 
 export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
@@ -824,11 +899,8 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         steps={config.steps}
       />
 
-      {/* 4. What We Do Differently (Tiered Deliverables Breakdown) */}
-      <ServicePackagesSection
-        serviceSlug={service.slug}
-        serviceTitle={service.title}
-      />
+      {/* 4. Signature Radial Methodology Diagram (User Reference Match) */}
+      <ServiceApproachSection slug={service.slug} />
 
       {/* 5. Three Selected Concept Work Cards */}
       <section className="py-20 sm:py-28 bg-[#F6F3EC] border-b border-ink/10">

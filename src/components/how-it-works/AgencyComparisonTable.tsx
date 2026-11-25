@@ -21,10 +21,10 @@ const COMPARISON_ROWS: ComparisonRow[] = [
     isLeadEdgeSuperior: true,
   },
   {
-    dimension: 'Pricing Structure',
-    traditional: '$3,000–$8,000/mo retainer + % of ad spend markup',
-    freelancer: '$80–$150/hr with unpredictable scope creep',
-    leadEdge: '$249/mo + GST flat rate with 0% ad spend markup',
+    dimension: 'Commercial Terms',
+    traditional: 'Hidden ad spend markups & restrictive 12-month lock-ins',
+    freelancer: 'Hourly billing with unpredictable scope creep',
+    leadEdge: 'Transparent agreement with 0% ad spend markup & zero lock-ins',
     isLeadEdgeSuperior: true,
   },
   {

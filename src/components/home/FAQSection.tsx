@@ -41,7 +41,7 @@ export function FAQSection() {
             Answers before you ask.
           </h2>
           <p className="text-sm font-sans text-[#5d5a55] max-w-md mx-auto mt-3">
-            Clear, plain-English details about how our digital marketing partnerships, pricing, and campaign delivery work.
+            Clear, plain-English details about how our digital marketing partnerships and campaign delivery work.
           </p>
         </div>
 

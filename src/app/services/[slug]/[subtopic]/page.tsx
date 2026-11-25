@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SubServiceVideoPlayer } from '@/components/services/SubServiceVideoPlayer';
+import { ServiceApproachSection } from '@/components/services/ServiceApproachSection';
 import { MEGAMENU_TABS } from '@/data/megamenu';
 import { SUBSERVICES, getSubServiceBySlug, SubService } from '@/data/subservices';
 import {
@@ -351,7 +352,6 @@ export default async function SubtopicPage({ params }: SubtopicPageProps) {
       '@type': 'Organization',
       name: 'Lead Edge Marketers',
       url: 'https://leadedge.agency',
-      telephone: '+61452424845',
     },
     description: data.heroSubheadline,
     areaServed: 'Australia',
@@ -466,6 +466,11 @@ export default async function SubtopicPage({ params }: SubtopicPageProps) {
             </div>
           </div>
         </section>
+
+        {/* =========================================================================
+            2b. SIGNATURE RADIAL METHODOLOGY HUB (Client Reference Match)
+            ========================================================================= */}
+        <ServiceApproachSection slug={slug} customTitle={data.title} />
 
         {/* =========================================================================
             3. "HOW WE HELP" 4-PHASE STRATEGIC METHODOLOGY

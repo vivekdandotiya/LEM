@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CylinderGallery } from '@/components/shared/CylinderGallery';
 import { CircleServiceRow } from '@/components/shared/CircleServiceRow';
+import { ServiceApproachSection } from '@/components/services/ServiceApproachSection';
 import { Testimonials } from '@/components/shared/Testimonials';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
@@ -195,6 +196,9 @@ export default function ServicesPage() {
 
       {/* 3. Testimonials (Client Reviews Slider) */}
       <Testimonials theme="light" />
+
+      {/* 3b. Signature Radial Methodology Hub (Client Reference Match) */}
+      <ServiceApproachSection slug="seo" />
 
       {/* 4. Final CTA Banner */}
       <section className="py-20 sm:py-28 bg-[#EFEBE2] border-t border-ink/10 text-center">

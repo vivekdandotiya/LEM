@@ -1,17 +1,16 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Phone, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 import { MarketingHeroSimulator } from '@/components/marketing/MarketingHeroSimulator';
 import { MarketingRoasCalculator } from '@/components/marketing/MarketingRoasCalculator';
 import { MarketingChannelPillars } from '@/components/marketing/MarketingChannelPillars';
-import { MarketingPricingPlans } from '@/components/marketing/MarketingPricingPlans';
 import { MarketingFaqSection } from '@/components/marketing/MarketingFaqSection';
 
 export const metadata: Metadata = {
   title: 'Small Business Marketing — Google Ads, Meta Paid Social & Local SEO | Lead Edge Marketers',
   description:
-    'More of the right customers finding, choosing, and booking you. Transparent Google Ads STAG campaigns, Meta Paid Social Reels, Google Maps Local 3-Pack, and Server-Side CAPI tracking. Flat fee, 0% ad spend markup.',
+    'More of the right customers finding, choosing, and booking you. Transparent Google Ads STAG campaigns, Meta Paid Social Reels, Google Maps Local 3-Pack, and Server-Side CAPI tracking.',
   alternates: {
     canonical: '/marketing',
   },
@@ -29,13 +28,10 @@ export default function MarketingPage() {
       {/* 3. The 4 Full-Funnel Acquisition Engines Breakdown */}
       <MarketingChannelPillars />
 
-      {/* 4. Transparent Flat-Fee Retainers (0% Ad Spend Markup) */}
-      <MarketingPricingPlans />
-
-      {/* 5. Frequently Asked Questions */}
+      {/* 4. Frequently Asked Questions */}
       <MarketingFaqSection />
 
-      {/* 6. Bottom Strategy Consultation Blueprint Banner */}
+      {/* 5. Bottom Strategy Consultation Blueprint Banner */}
       <section className="py-20 sm:py-28 bg-[#161514] text-white select-none relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white/90 text-xs font-mono font-bold uppercase mb-4">

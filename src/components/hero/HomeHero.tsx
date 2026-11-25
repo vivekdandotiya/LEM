@@ -40,7 +40,7 @@ export function HomeHero() {
 
             {/* Subtitle - Short & Direct about what we do */}
             <p className="font-sans text-base sm:text-lg text-[#5d5a55] leading-relaxed max-w-lg mb-7 font-normal">
-              We scale Australian businesses through high-intent Google Ads, Meta paid social, local SEO, and sub-second websites. Send your website to see our growth blueprint tomorrow.
+              We help ambitious businesses get found on Google, run profitable Facebook and Instagram ads, and build fast websites that turn clicks into calls. Send your website link to see your growth roadmap tomorrow.
             </p>
 
             {/* URL Input Bar Form (Rounded Pill with Orange Button) */}

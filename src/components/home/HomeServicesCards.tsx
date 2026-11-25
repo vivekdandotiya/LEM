@@ -30,32 +30,32 @@ const SERVICE_CARDS: ServiceCardData[] = [
     id: 'seo',
     badgeTag: 'Search Visibility',
     title: 'Search Engine Optimization',
-    serviceType: 'On-Page, Off-Page, Local & Technical AI SEO',
-    examples: 'Dental, Physio, Medical, Legal & Local Practices.',
+    serviceType: 'Google Search & Maps Dominance',
+    examples: 'Get found at the top of Google when customers search for what you offer.',
     href: '/services/seo',
     bgColor: 'bg-[#EAF1ED]',
     borderColor: 'border-[#D2E2D8]',
     badge: {
-      label: '+42% Organic Growth',
+      label: '+42% Inbound Bookings',
       icon: <TrendingUp className="w-3 h-3 text-[#1f7a37]" />,
     },
     visual: {
       title: 'Google Search & Maps Ranking',
-      tag: 'Rank #1 · Google & AI Overviews',
+      tag: 'Rank #1 · Google & AI Search',
       image: '/images/home/service-seo.webp',
     },
   },
   {
     id: 'ppc',
-    badgeTag: 'Paid Acquisition',
-    title: 'Meta & Google Paid Ads',
-    serviceType: 'High-ROAS Facebook, Instagram & Search Campaigns',
-    examples: 'Accountants, Law firms, SaaS & E-commerce.',
+    badgeTag: 'Paid Advertising',
+    title: 'Facebook & Instagram Ads',
+    serviceType: 'High-Converting Paid Social & Google Ads',
+    examples: 'Turn paid advertising into a steady stream of qualified calls and sales.',
     href: '/services/ppc',
     bgColor: 'bg-[#F4F1EA]',
     borderColor: 'border-[#E2DDD1]',
     badge: {
-      label: '4.8x ROAS Average',
+      label: '4.8x Return on Ad Spend',
       icon: <Sparkles className="w-3 h-3 text-[#b45309]" />,
     },
     visual: {
@@ -68,13 +68,13 @@ const SERVICE_CARDS: ServiceCardData[] = [
     id: 'social',
     badgeTag: 'Brand & Content',
     title: 'Social Media Management',
-    serviceType: 'Active Content, Visual Creative & Community Care',
-    examples: 'Childcare, Tuition, Hospitality & Lifestyle Brands.',
+    serviceType: 'Active Content, Visuals & Inbox Care',
+    examples: 'Consistent posts, creative visuals, and fast replies to comments and DMs.',
     href: '/services/social-media',
     bgColor: 'bg-[#F8EDED]',
     borderColor: 'border-[#EED4D4]',
     badge: {
-      label: 'Zero Inbound Left Unanswered',
+      label: '100% Inbound Replied',
       icon: <ShieldCheck className="w-3 h-3 text-rose-700" />,
     },
     visual: {
@@ -85,15 +85,15 @@ const SERVICE_CARDS: ServiceCardData[] = [
   },
   {
     id: 'web',
-    badgeTag: 'Conversion Engines',
-    title: 'Web Architecture & CRO',
-    serviceType: 'Sub-Second Next.js 15 Websites & Booking Funnels',
-    examples: 'Builders, Trades, Commercial Contractors & DTC.',
+    badgeTag: 'Websites & Funnels',
+    title: 'High-Converting Websites',
+    serviceType: 'Fast Next.js Websites & Booking Funnels',
+    examples: 'Sub-second load speeds on every phone, built to convert visitors into customers.',
     href: '/services/web-development',
     bgColor: 'bg-[#FCF4EA]',
     borderColor: 'border-[#F3DEC4]',
     badge: {
-      label: '100 Speed Score · High Conversion',
+      label: '100 Speed · Mobile-First',
       icon: <Zap className="w-3 h-3 text-amber-700" />,
     },
     visual: {
@@ -112,13 +112,13 @@ export function HomeServicesCards() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div>
             <span className="text-xs font-mono font-bold text-[#b45309] uppercase tracking-wider block mb-2">
-              Integrated Digital Marketing Services
+              Our Core Services
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-[#161514] leading-[1.08]">
-              Full-funnel digital marketing engineered for growth.
+              Simple, transparent marketing that grows your business.
             </h2>
             <p className="font-sans text-base sm:text-lg text-[#5d5a55] mt-3 max-w-2xl leading-relaxed">
-              Targeted search engine optimization, high-ROAS Meta and Google ad campaigns, dedicated social media management, and conversion-focused web architecture.
+              We help you get found on Google, run profitable Facebook & Instagram ads, manage your social channels, and build fast websites that turn clicks into calls.
             </p>
           </div>
         </div>

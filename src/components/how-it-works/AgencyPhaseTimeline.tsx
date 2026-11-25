@@ -105,7 +105,7 @@ const PHASES: Phase[] = [
       value: '14 Days',
       label: 'From kickoff to fully live revenue generation',
     },
-    actionText: 'Explore Service Retainers',
+    actionText: 'Explore Growth Services',
   },
   {
     phase: '04',
@@ -127,10 +127,10 @@ const PHASES: Phase[] = [
       { label: 'Conversion CRO', icon: '🧪' },
     ],
     proofMetric: {
-      value: '$249/mo',
-      label: 'Flat transparent growth rate with no hidden markups',
+      value: '100% Transparency',
+      label: 'Zero hidden ad spend markups or surprise billing',
     },
-    actionText: 'See Pricing Tiers',
+    actionText: 'Explore Strategic Scope',
   },
 ];
 
