@@ -3,187 +3,353 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Sparkles, TrendingUp, Zap, ShieldCheck } from 'lucide-react';
+import {
+  TrendingUp,
+  Sparkles,
+  ArrowRight,
+  Instagram,
+  Facebook,
+  Youtube,
+  Search,
+  MapPin,
+  Mail,
+  ShoppingBag,
+  MousePointer,
+  DollarSign,
+  Lightbulb,
+} from 'lucide-react';
 
-interface ServiceCardData {
+interface CardData {
   id: string;
-  badgeTag: string;
   title: string;
-  serviceType: string;
-  examples: string;
+  description: string;
   href: string;
-  bgColor: string;
-  borderColor: string;
-  badge: {
-    label: string;
-    icon: React.ReactNode;
-  };
-  visual: {
-    title: string;
-    tag: string;
-    image: string;
-  };
+  badgeText: string;
+  renderVisual: () => React.ReactNode;
 }
 
-const SERVICE_CARDS: ServiceCardData[] = [
+const CARDS: CardData[] = [
+  // 1. Data-Driven Digital Marketing
   {
-    id: 'seo',
-    badgeTag: 'Search Visibility',
-    title: 'Search Engine Optimization',
-    serviceType: 'Google Search & Maps Dominance',
-    examples: 'Get found at the top of Google when customers search for what you offer.',
-    href: '/services/seo',
-    bgColor: 'bg-[#EAF1ED]',
-    borderColor: 'border-[#D2E2D8]',
-    badge: {
-      label: '+42% Inbound Bookings',
-      icon: <TrendingUp className="w-3 h-3 text-[#1f7a37]" />,
-    },
-    visual: {
-      title: 'Google Search & Maps Ranking',
-      tag: 'Rank #1 · Google & AI Search',
-      image: '/images/home/service-seo.webp',
-    },
+    id: 'digital-marketing',
+    title: 'Data-Driven Digital Marketing',
+    description: 'We get your business found online and turn clicks into paying customers.',
+    href: '/services',
+    badgeText: 'Get Started',
+    renderVisual: () => (
+      <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-[#111317] to-[#08090b]">
+        {/* Subtle Watermark Typography */}
+        <span className="absolute font-sans font-black text-4xl sm:text-5xl tracking-widest text-white/[0.04] uppercase select-none pointer-events-none">
+          DIGITAL
+        </span>
+
+        {/* Center Glowing Orb */}
+        <div className="absolute w-40 h-40 rounded-full bg-indigo-600/20 blur-2xl pointer-events-none" />
+
+        {/* Stylized Modern Professional & Floating Elements */}
+        <div className="relative z-10 flex flex-col items-center">
+          <div className="relative w-36 h-44 rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-slate-900">
+            <Image
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+              alt="Digital Marketing Strategist"
+              fill
+              className="object-cover"
+              sizes="150px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          </div>
+
+          {/* Floating 3D Badges */}
+          <div className="absolute -top-2 -right-4 px-3 py-1.5 rounded-full bg-[#38bdf8] text-slate-950 font-bold text-[11px] shadow-lg flex items-center gap-1 animate-bounce duration-1000">
+            <TrendingUp className="w-3.5 h-3.5" />
+            <span>+340% Traffic</span>
+          </div>
+
+          <div className="absolute top-12 -left-4 p-2 rounded-xl bg-amber-400 text-slate-950 shadow-md">
+            <Lightbulb className="w-4 h-4" />
+          </div>
+
+          <div className="absolute -bottom-2 -left-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono flex items-center gap-1.5 shadow-md">
+            <MousePointer className="w-3 h-3 text-sky-400" />
+            <span>High Intent</span>
+          </div>
+        </div>
+      </div>
+    ),
   },
+
+  // 2. High-Impact Social Media Marketing
   {
-    id: 'ppc',
-    badgeTag: 'Paid Advertising',
-    title: 'Facebook & Instagram Ads',
-    serviceType: 'High-Converting Paid Social & Google Ads',
-    examples: 'Turn paid advertising into a steady stream of qualified calls and sales.',
-    href: '/services/ppc',
-    bgColor: 'bg-[#F4F1EA]',
-    borderColor: 'border-[#E2DDD1]',
-    badge: {
-      label: '4.8x Return on Ad Spend',
-      icon: <Sparkles className="w-3 h-3 text-[#b45309]" />,
-    },
-    visual: {
-      title: 'High-Intent Ad Funnels',
-      tag: 'Meta Ads · CAPI Tracking · Scaled ROAS',
-      image: '/images/home/service-meta.webp',
-    },
-  },
-  {
-    id: 'social',
-    badgeTag: 'Brand & Content',
-    title: 'Social Media Management',
-    serviceType: 'Active Content, Visuals & Inbox Care',
-    examples: 'Consistent posts, creative visuals, and fast replies to comments and DMs.',
+    id: 'social-media',
+    title: 'High-Impact Social Media Marketing',
+    description: 'We post creative photos and videos that get attention and grow your brand.',
     href: '/services/social-media',
-    bgColor: 'bg-[#F8EDED]',
-    borderColor: 'border-[#EED4D4]',
-    badge: {
-      label: '100% Inbound Replied',
-      icon: <ShieldCheck className="w-3 h-3 text-rose-700" />,
-    },
-    visual: {
-      title: 'Curated Social Feeds',
-      tag: 'Consistent Posts · Lead DM Routing',
-      image: '/images/home/service-social.webp',
-    },
+    badgeText: 'Get Started',
+    renderVisual: () => (
+      <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-[#141217] to-[#0a080c]">
+        {/* 3 Layered Tilted Social Feed Cards */}
+        <div className="relative flex items-center justify-center w-full h-full">
+          {/* Left Card */}
+          <div className="absolute -left-1 w-24 h-36 rounded-xl overflow-hidden border border-pink-500/20 shadow-lg -rotate-12 bg-slate-900 opacity-90 transition-transform hover:scale-105">
+            <Image
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80"
+              alt="Social Story"
+              fill
+              className="object-cover"
+              sizes="100px"
+            />
+          </div>
+
+          {/* Center Main Card */}
+          <div className="relative z-10 w-28 h-44 rounded-2xl overflow-hidden border-2 border-pink-500/40 shadow-2xl bg-slate-900 transition-transform hover:scale-105">
+            <Image
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+              alt="Social Reel"
+              fill
+              className="object-cover"
+              sizes="120px"
+            />
+            <div className="absolute bottom-2 left-2 right-2 px-2 py-1 rounded bg-black/60 backdrop-blur-xs text-[10px] text-white font-medium text-center">
+              Reels & TikTok
+            </div>
+          </div>
+
+          {/* Right Card */}
+          <div className="absolute -right-1 w-24 h-36 rounded-xl overflow-hidden border border-purple-500/20 shadow-lg rotate-12 bg-slate-900 opacity-90 transition-transform hover:scale-105">
+            <Image
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80"
+              alt="Social Feed"
+              fill
+              className="object-cover"
+              sizes="100px"
+            />
+          </div>
+
+          {/* Floating 3D Social Brand Badges */}
+          <div className="absolute top-2 left-3 p-2 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white shadow-lg animate-pulse">
+            <Instagram className="w-4 h-4" />
+          </div>
+
+          <div className="absolute bottom-3 right-4 p-2 rounded-xl bg-blue-600 text-white shadow-lg">
+            <Facebook className="w-4 h-4" />
+          </div>
+
+          <div className="absolute top-4 right-6 p-2 rounded-xl bg-red-600 text-white shadow-lg">
+            <Youtube className="w-4 h-4" />
+          </div>
+        </div>
+      </div>
+    ),
   },
+
+  // 3. Revenue-Converting E-Commerce Marketing
   {
-    id: 'web',
-    badgeTag: 'Websites & Funnels',
-    title: 'High-Converting Websites',
-    serviceType: 'Fast Next.js Websites & Booking Funnels',
-    examples: 'Sub-second load speeds on every phone, built to convert visitors into customers.',
+    id: 'ecommerce',
+    title: 'Revenue-Converting E-Commerce Marketing',
+    description: 'We help online stores sell more products and get more repeat orders.',
     href: '/services/web-development',
-    bgColor: 'bg-[#FCF4EA]',
-    borderColor: 'border-[#F3DEC4]',
-    badge: {
-      label: '100 Speed · Mobile-First',
-      icon: <Zap className="w-3 h-3 text-amber-700" />,
-    },
-    visual: {
-      title: 'Next.js 15 High-Speed Platform',
-      tag: 'Sub-Second Load · Engineered to Convert',
-      image: '/images/home/service-web.webp',
-    },
+    badgeText: 'Get Started',
+    renderVisual: () => (
+      <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-[#121415] to-[#090a0b]">
+        {/* Masking Tape Polaroid Effect matching Reference Image */}
+        <div className="relative p-3 pb-8 bg-white rounded-md shadow-2xl -rotate-2 max-w-[200px] border border-slate-200">
+          {/* Top Left Yellow Masking Tape */}
+          <div className="absolute -top-3 -left-3 w-10 h-5 bg-amber-200/90 rotate-[-25deg] shadow-xs border-t border-b border-amber-300/60" />
+          {/* Bottom Right Masking Tape */}
+          <div className="absolute -bottom-3 -right-3 w-10 h-5 bg-amber-200/90 rotate-[15deg] shadow-xs border-t border-b border-amber-300/60" />
+
+          {/* Product Clothes Rack Photo */}
+          <div className="relative w-40 h-32 rounded overflow-hidden bg-slate-100">
+            <Image
+              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80"
+              alt="E-Commerce Fashion Rack"
+              fill
+              className="object-cover"
+              sizes="180px"
+            />
+          </div>
+          <div className="mt-2 text-center">
+            <span className="font-mono text-[10px] font-bold text-slate-800 tracking-wider">
+              BOUTIQUE COLLECTION
+            </span>
+          </div>
+        </div>
+
+        {/* Floating Green Shopify Style Badge */}
+        <div className="absolute bottom-3 left-4 px-3 py-1.5 rounded-full bg-emerald-500 text-slate-950 font-bold text-[11px] shadow-lg flex items-center gap-1.5">
+          <ShoppingBag className="w-3.5 h-3.5" />
+          <span>+4.8x Sales</span>
+        </div>
+      </div>
+    ),
+  },
+
+  // 4. Performance-Focused Paid Advertising
+  {
+    id: 'paid-ads',
+    title: 'Performance-Focused Paid Advertising',
+    description: 'We run Google and Facebook ads that make you more money than they cost.',
+    href: '/services/ppc',
+    badgeText: 'Get Started',
+    renderVisual: () => (
+      <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-[#141517] to-[#0a0a0c]">
+        {/* Editorial Fashion Ad Layout matching Reference Screenshot */}
+        <div className="relative w-48 h-44 rounded-xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 group-hover:scale-105 transition-transform duration-300">
+          <Image
+            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80"
+            alt="Editorial Ad Creative"
+            fill
+            className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
+            sizes="200px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+
+          {/* Bold Magazine Typography "New ADVERTISING" */}
+          <div className="absolute top-3 left-3 text-left">
+            <span className="font-serif italic text-sky-400 text-xs block">New</span>
+            <span className="font-sans font-black text-white text-base tracking-tight leading-none uppercase">
+              ADVERTISING
+            </span>
+          </div>
+
+          <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-[10px] font-mono">
+            <span className="bg-white/20 backdrop-blur-xs px-2 py-0.5 rounded">High ROAS</span>
+            <span className="text-sky-300">Meta · Google</span>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+
+  // 5. Automated Email Marketing That Converts
+  {
+    id: 'email-marketing',
+    title: 'Automated Email Marketing That Converts',
+    description: 'We send automated emails that turn one-time buyers into repeat customers.',
+    href: '/services/web-development',
+    badgeText: 'Get Started',
+    renderVisual: () => (
+      <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-[#141311] to-[#090807]">
+        {/* Subtle Watermark */}
+        <span className="absolute font-sans font-black text-4xl sm:text-5xl tracking-widest text-white/[0.04] uppercase select-none pointer-events-none">
+          FLOWS
+        </span>
+
+        {/* Vintage Mail Delivery Composition */}
+        <div className="relative flex flex-col items-center justify-center">
+          {/* Glowing Mail Envelope */}
+          <div className="relative z-10 w-28 h-20 rounded-xl bg-amber-400 text-slate-950 p-3 shadow-2xl border border-amber-300 flex items-center justify-center transform -rotate-3 hover:rotate-0 transition-transform">
+            <Mail className="w-10 h-10 text-slate-950" />
+            <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-emerald-500 text-white font-bold text-[10px] flex items-center justify-center shadow-md">
+              ✓
+            </div>
+          </div>
+
+          {/* Dotted Dialogue Bubble */}
+          <div className="mt-3 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-mono flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+            <span>99.4% Inbox Delivery</span>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+
+  // 6. Local SEO That Wins the Map Pack
+  {
+    id: 'local-seo',
+    title: 'Local SEO That Wins the Map Pack',
+    description: 'We put your business at the top of Google Maps so nearby customers call you.',
+    href: '/services/seo/local-seo',
+    badgeText: 'Get Started',
+    renderVisual: () => (
+      <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-[#111417] to-[#07090b]">
+        {/* Isometric Phone / Google Maps Showcase */}
+        <div className="relative w-48 h-44 rounded-xl border border-white/15 bg-slate-900/90 shadow-2xl p-3 flex flex-col justify-between">
+          {/* Search Bar Bar */}
+          <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white/10 border border-white/10 text-[11px] text-white">
+            <Search className="w-3.5 h-3.5 text-sky-400" />
+            <span className="text-slate-300 truncate">services near me</span>
+          </div>
+
+          {/* Google 3-Pack Result */}
+          <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-md bg-rose-500/20 text-rose-400 flex items-center justify-center">
+                <MapPin className="w-4 h-4 text-rose-500" />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-bold text-white leading-tight">Your Business</span>
+                <span className="text-[10px] text-amber-400">★★★★★ (180+ Reviews)</span>
+              </div>
+            </div>
+            <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">
+              #1
+            </span>
+          </div>
+
+          {/* Google Maps Bottom Indicator */}
+          <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 pt-1 border-t border-white/5">
+            <span>Rank #1 Map Pack</span>
+            <span className="text-sky-400 font-bold">100% Organic</span>
+          </div>
+        </div>
+      </div>
+    ),
   },
 ];
 
 export function HomeServicesCards() {
   return (
-    <section className="py-20 sm:py-28 bg-white text-[#161514] select-none border-t border-[#e8e6e2]">
+    <section className="py-20 sm:py-28 bg-[#f8fafc] text-slate-900 select-none border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
-          <div>
-            <span className="text-xs font-mono font-bold text-[#b45309] uppercase tracking-wider block mb-2">
-              Our Core Services
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-[#161514] leading-[1.08]">
-              Simple, transparent marketing that grows your business.
-            </h2>
-            <p className="font-sans text-base sm:text-lg text-[#5d5a55] mt-3 max-w-2xl leading-relaxed">
-              We help you get found on Google, run profitable Facebook & Instagram ads, manage your social channels, and build fast websites that turn clicks into calls.
-            </p>
-          </div>
+        {/* =========================================================================
+            Section Header: "Let's build something great" matching Reference Images
+            ========================================================================= */}
+        <div className="mb-14 sm:mb-16 text-left">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-[#0f172a] leading-[1.08]">
+            Let&apos;s <span className="text-[#38bdf8]">build</span> something great
+          </h2>
+          <p className="font-sans text-base sm:text-lg text-slate-600 mt-3 max-w-2xl leading-relaxed">
+            Every Lead Edge service is run by a specialist who knows the channel.
+          </p>
         </div>
 
-        {/* 4 Clean Editorial Cards (Zero Phone Bezels, Authentic Campaign Photography) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
-          {SERVICE_CARDS.map((card) => (
-            <Link
+        {/* =========================================================================
+            6 Dark Obsidian Cards Grid (Exact Uniform Size, Obsidian Black, Sky Blue CTA)
+            ========================================================================= */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {CARDS.map((card) => (
+            <div
               key={card.id}
-              href={card.href}
-              className={`group rounded-[32px] ${card.bgColor} border ${card.borderColor} p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_20px_40px_-12px_rgba(22,21,20,0.15)] hover:-translate-y-1.5`}
+              className="group rounded-[28px] bg-[#0c0d0e] border border-white/10 p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-white/20 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] h-[540px]"
             >
+              {/* 1. Top Card Title: Big, Bold, White */}
               <div>
-                {/* Metric Badge at Top of Card */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono font-bold text-[#5d5a55] uppercase tracking-wider">
-                    {card.badgeTag}
-                  </span>
-                  <div className="px-3 py-1 rounded-full bg-white/95 border border-black/10 shadow-xs flex items-center gap-1.5 text-[11px] font-mono font-bold text-[#161514] backdrop-blur-sm">
-                    {card.badge.icon}
-                    <span>{card.badge.label}</span>
-                  </div>
-                </div>
-
-                {/* Clean, Frameless Editorial Visual Canvas (NO PHONE HARDWARE / NO BLACK BEZEL) */}
-                <div
-                  aria-hidden="true"
-                  className="relative aspect-[4/3] w-full mb-6 rounded-[20px] overflow-hidden bg-white/80 border border-black/10 shadow-sm group-hover:shadow-md transition-all duration-300"
-                >
-                  <Image
-                    src={card.visual.image}
-                    alt={card.visual.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                  
-                  {/* Clean Glass Tag Strip at Bottom */}
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-semibold text-white tracking-wide truncate">
-                      {card.visual.tag}
-                    </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#f7ac4f] shrink-0" />
-                  </div>
-                </div>
-
-                {/* Card Meta & Title */}
-                <h3 className="text-xl sm:text-2xl font-display font-extrabold text-[#161514] mb-1.5 leading-snug group-hover:text-[#b45309] transition-colors">
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-white tracking-tight leading-snug">
                   {card.title}
                 </h3>
-                <p className="text-xs font-mono font-semibold text-[#b45309] uppercase tracking-wider mb-2">
-                  {card.serviceType}
-                </p>
-                <p className="text-xs sm:text-sm font-sans text-[#5d5a55] leading-relaxed mb-4">
-                  {card.examples}
-                </p>
               </div>
 
-              {/* Action Link Arrow */}
-              <div className="pt-4 border-t border-black/10 flex items-center justify-between text-xs sm:text-sm font-bold text-[#161514]">
-                <span>Explore service</span>
-                <ArrowRight className="w-4 h-4 text-[#b45309] transform group-hover:translate-x-1.5 transition-transform" />
+              {/* 2. Middle Visual Canvas: Authentic Work Artwork / Showcase */}
+              <div className="relative w-full h-[260px] my-4">
+                {card.renderVisual()}
               </div>
-            </Link>
+
+              {/* 3. Bottom Row: Plain English 2-Line Text (Left) + Sky Blue Button (Right) */}
+              <div className="flex items-end justify-between gap-4 pt-2">
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans max-w-[210px] sm:max-w-[230px]">
+                  {card.description}
+                </p>
+
+                <Link
+                  href={card.href}
+                  className="shrink-0 px-5 sm:px-6 py-2.5 rounded-full bg-[#38bdf8] hover:bg-white text-slate-950 font-sans font-bold text-xs sm:text-sm tracking-tight transition-all duration-200 shadow-sm active:scale-95"
+                >
+                  {card.badgeText}
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,3 +1,88 @@
+export interface MegamenuItem {
+  label: string;
+  href: string;
+  badge?: string;
+  isNew?: boolean;
+}
+
+export interface MegamenuColumn {
+  id: string;
+  title: string;
+  iconName: string;
+  hasTeamAvatars?: boolean;
+  items: MegamenuItem[];
+}
+
+export const MEGAMENU_COLUMNS: MegamenuColumn[] = [
+  {
+    id: 'seo',
+    title: 'SEO Services',
+    iconName: 'bar-chart',
+    items: [
+      { label: 'Local SEO', href: '/services/seo/local-seo' },
+      { label: 'Technical SEO', href: '/services/seo/technical-seo' },
+      { label: 'Link Building', href: '/services/seo/off-page-seo' },
+      { label: 'WordPress SEO', href: '/services/seo/on-page-seo' },
+      { label: 'Shopify SEO', href: '/services/seo/on-page-seo' },
+      { label: 'Google Analytics', href: '/services/seo/technical-seo' },
+    ],
+  },
+  {
+    id: 'ppc',
+    title: 'PPC and Paid Ads',
+    iconName: 'target',
+    items: [
+      { label: 'Search Engine Marketing', href: '/services/ppc/campaign-strategy' },
+      { label: 'Meta Ads', href: '/services/ppc/ad-creative-copy' },
+      { label: 'Microsoft Ads', href: '/services/ppc', isNew: true },
+      { label: 'ChatGPT Ads', href: '/services/ppc', isNew: true },
+      { label: 'Paid Social Ads', href: '/services/ppc' },
+      { label: 'CRO Services', href: '/services/ppc/bid-budget-optimization' },
+    ],
+  },
+  {
+    id: 'social',
+    title: 'Social Media',
+    iconName: 'camera',
+    items: [
+      { label: 'Social Media Management', href: '/services/social-media' },
+      { label: 'Facebook Marketing', href: '/services/social-media/account-management' },
+      { label: 'Instagram Marketing', href: '/services/social-media/content-planning' },
+      { label: 'LinkedIn Marketing', href: '/services/social-media/community-engagement' },
+      { label: 'YouTube Marketing', href: '/services/social-media' },
+      { label: 'Pinterest Marketing', href: '/services/social-media' },
+    ],
+  },
+  {
+    id: 'ecommerce',
+    title: 'E-Commerce',
+    iconName: 'shopping-bag',
+    items: [
+      { label: 'E-Commerce PPC', href: '/services/ppc' },
+      { label: 'E-Commerce SEO', href: '/services/seo' },
+      { label: 'Amazon Marketing', href: '/services/ppc' },
+      { label: 'Amazon PPC', href: '/services/ppc' },
+      { label: 'Amazon SEO', href: '/services/seo' },
+      { label: 'Email Marketing', href: '/services/web-development' },
+      { label: 'Marketing Automation', href: '/services/web-development' },
+    ],
+  },
+  {
+    id: 'team',
+    title: 'Hire a Team',
+    iconName: 'users',
+    hasTeamAvatars: true,
+    items: [
+      { label: 'SEO Experts', href: '/services/seo' },
+      { label: 'PPC Experts', href: '/services/ppc' },
+      { label: 'Social Media Managers', href: '/services/social-media' },
+      { label: 'Content Writers', href: '/services/social-media/content-planning' },
+      { label: 'Digital Marketers', href: '/services' },
+      { label: 'White Label Marketing', href: '/services' },
+    ],
+  },
+];
+
 export interface MegamenuGroup {
   category: string;
   items: { label: string; href: string; description?: string }[];

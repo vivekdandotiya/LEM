@@ -117,22 +117,42 @@ export function Footer() {
           {/* Left Brand & Newsletter Column (Spans 4 columns) */}
           <div className="lg:col-span-4 flex flex-col justify-between max-w-sm">
             <div>
-              {/* Brand Logo & Title: Consistent with Header */}
+              {/* Brand Logo & Title: High-end Geometric SVG Monogram */}
               <div className="flex items-center gap-3.5 mb-6 group cursor-pointer" onClick={scrollToTop}>
-                <div className="relative w-11 h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
-                  <Image
-                    src="/logo/lead-edge-logo.png"
-                    alt="Lead Edge Marketers Logo"
-                    fill
-                    sizes="44px"
-                    className="object-contain"
-                  />
+                <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-[#0c1f38] via-[#0284c7] to-[#38bdf8] p-0.5 shadow-md transition-transform duration-300 group-hover:scale-105 flex items-center justify-center shrink-0">
+                  <div className="w-full h-full bg-[#0a1120] rounded-[10px] flex items-center justify-center relative overflow-hidden">
+                    <svg
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 text-white"
+                    >
+                      <path
+                        d="M8 8H13V20H24V24H8V8Z"
+                        fill="url(#footer_logo_grad)"
+                      />
+                      <path
+                        d="M15 8H24V12H15V8Z"
+                        fill="#38bdf8"
+                      />
+                      <path
+                        d="M15 14H21V18H15V14Z"
+                        fill="#7dd3fc"
+                      />
+                      <defs>
+                        <linearGradient id="footer_logo_grad" x1="8" y1="8" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="#38bdf8" />
+                          <stop offset="1" stopColor="#0284c7" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-display font-extrabold tracking-tight text-xl sm:text-2xl leading-none text-white">
+                  <span className="font-display font-black tracking-tight text-xl sm:text-2xl leading-none text-white">
                     LEAD EDGE
                   </span>
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#f7ac4f] mt-1 leading-none font-semibold">
+                  <span className="text-[11px] font-mono tracking-[0.22em] text-[#38bdf8] mt-1 leading-none font-bold">
                     MARKETERS
                   </span>
                 </div>
