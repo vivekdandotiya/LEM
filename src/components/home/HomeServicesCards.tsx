@@ -50,7 +50,7 @@ const CARDS: CardData[] = [
         <div className="relative z-10 flex flex-col items-center">
           <div className="relative w-36 h-44 rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-slate-900">
             <Image
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+              src="/images/about/team-1.webp"
               alt="Digital Marketing Strategist"
               fill
               className="object-cover"
@@ -92,7 +92,7 @@ const CARDS: CardData[] = [
           {/* Left Card */}
           <div className="absolute -left-1 w-24 h-36 rounded-xl overflow-hidden border border-pink-500/20 shadow-lg -rotate-12 bg-slate-900 opacity-90 transition-transform hover:scale-105">
             <Image
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80"
+              src="/images/home/service-social.webp"
               alt="Social Story"
               fill
               className="object-cover"
@@ -103,7 +103,7 @@ const CARDS: CardData[] = [
           {/* Center Main Card */}
           <div className="relative z-10 w-28 h-44 rounded-2xl overflow-hidden border-2 border-pink-500/40 shadow-2xl bg-slate-900 transition-transform hover:scale-105">
             <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+              src="/images/home/hero-1.webp"
               alt="Social Reel"
               fill
               className="object-cover"
@@ -117,7 +117,7 @@ const CARDS: CardData[] = [
           {/* Right Card */}
           <div className="absolute -right-1 w-24 h-36 rounded-xl overflow-hidden border border-purple-500/20 shadow-lg rotate-12 bg-slate-900 opacity-90 transition-transform hover:scale-105">
             <Image
-              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80"
+              src="/images/home/hero-2.webp"
               alt="Social Feed"
               fill
               className="object-cover"
@@ -161,7 +161,7 @@ const CARDS: CardData[] = [
           {/* Product Clothes Rack Photo */}
           <div className="relative w-40 h-32 rounded overflow-hidden bg-slate-100">
             <Image
-              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80"
+              src="/images/home/showcase-07-apparel-editorial.webp"
               alt="E-Commerce Fashion Rack"
               fill
               className="object-cover"
@@ -196,7 +196,7 @@ const CARDS: CardData[] = [
         {/* Editorial Fashion Ad Layout matching Reference Screenshot */}
         <div className="relative w-48 h-44 rounded-xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 group-hover:scale-105 transition-transform duration-300">
           <Image
-            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80"
+            src="/images/home/service-meta.webp"
             alt="Editorial Ad Creative"
             fill
             className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
