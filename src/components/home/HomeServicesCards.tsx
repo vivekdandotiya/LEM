@@ -60,7 +60,7 @@ const CARDS: CardData[] = [
           </div>
 
           {/* Floating 3D Badges */}
-          <div className="absolute -top-2 -right-4 px-3 py-1.5 rounded-full bg-[#38bdf8] text-slate-950 font-bold text-[11px] shadow-lg flex items-center gap-1 animate-bounce duration-1000">
+          <div className="absolute -top-2 -right-4 px-3 py-1.5 rounded-full bg-[#f7ac4f] text-[#161514] font-bold text-[11px] shadow-lg flex items-center gap-1 animate-bounce duration-1000">
             <TrendingUp className="w-3.5 h-3.5" />
             <span>+340% Traffic</span>
           </div>
@@ -70,7 +70,7 @@ const CARDS: CardData[] = [
           </div>
 
           <div className="absolute -bottom-2 -left-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono flex items-center gap-1.5 shadow-md">
-            <MousePointer className="w-3 h-3 text-sky-400" />
+            <MousePointer className="w-3 h-3 text-[#f7ac4f]" />
             <span>High Intent</span>
           </div>
         </div>
@@ -206,7 +206,7 @@ const CARDS: CardData[] = [
 
           {/* Bold Magazine Typography "New ADVERTISING" */}
           <div className="absolute top-3 left-3 text-left">
-            <span className="font-serif italic text-sky-400 text-xs block">New</span>
+            <span className="font-serif italic text-[#f7ac4f] text-xs block">New</span>
             <span className="font-sans font-black text-white text-base tracking-tight leading-none uppercase">
               ADVERTISING
             </span>
@@ -214,7 +214,7 @@ const CARDS: CardData[] = [
 
           <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-[10px] font-mono">
             <span className="bg-white/20 backdrop-blur-xs px-2 py-0.5 rounded">High ROAS</span>
-            <span className="text-sky-300">Meta · Google</span>
+            <span className="text-[#f7ac4f]">Meta · Google</span>
           </div>
         </div>
       </div>
@@ -268,7 +268,7 @@ const CARDS: CardData[] = [
         <div className="relative w-48 h-44 rounded-xl border border-white/15 bg-slate-900/90 shadow-2xl p-3 flex flex-col justify-between">
           {/* Search Bar Bar */}
           <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white/10 border border-white/10 text-[11px] text-white">
-            <Search className="w-3.5 h-3.5 text-sky-400" />
+            <Search className="w-3.5 h-3.5 text-[#f7ac4f]" />
             <span className="text-slate-300 truncate">services near me</span>
           </div>
 
@@ -291,7 +291,7 @@ const CARDS: CardData[] = [
           {/* Google Maps Bottom Indicator */}
           <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 pt-1 border-t border-white/5">
             <span>Rank #1 Map Pack</span>
-            <span className="text-sky-400 font-bold">100% Organic</span>
+            <span className="text-[#f7ac4f] font-bold">100% Organic</span>
           </div>
         </div>
       </div>
@@ -301,22 +301,22 @@ const CARDS: CardData[] = [
 
 export function HomeServicesCards() {
   return (
-    <section className="py-20 sm:py-28 bg-[#f8fafc] text-slate-900 select-none border-t border-slate-200">
+    <section className="py-20 sm:py-28 bg-white text-[#161514] select-none border-t border-[#e8e6e2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* =========================================================================
             Section Header: "Let's build something great" matching Reference Images
             ========================================================================= */}
         <div className="mb-14 sm:mb-16 text-left">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-[#0f172a] leading-[1.08]">
-            Let&apos;s <span className="text-[#38bdf8]">build</span> something great
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-[#161514] leading-[1.08]">
+            Let&apos;s <span className="text-[#f7ac4f]">build</span> something great
           </h2>
-          <p className="font-sans text-base sm:text-lg text-slate-600 mt-3 max-w-2xl leading-relaxed">
+          <p className="font-sans text-base sm:text-lg text-[#5d5a55] mt-3 max-w-2xl leading-relaxed">
             Every Lead Edge service is run by a specialist who knows the channel.
           </p>
         </div>
 
         {/* =========================================================================
-            6 Dark Obsidian Cards Grid (Exact Uniform Size, Obsidian Black, Sky Blue CTA)
+            6 Dark Obsidian Cards Grid (Exact Uniform Size, Obsidian Black, Apricot Brand CTA)
             ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {CARDS.map((card) => (
@@ -336,7 +336,7 @@ export function HomeServicesCards() {
                 {card.renderVisual()}
               </div>
 
-              {/* 3. Bottom Row: Plain English 2-Line Text (Left) + Sky Blue Button (Right) */}
+              {/* 3. Bottom Row: Plain English 2-Line Text (Left) + Brand Apricot Button (Right) */}
               <div className="flex items-end justify-between gap-4 pt-2">
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans max-w-[210px] sm:max-w-[230px]">
                   {card.description}
@@ -344,7 +344,7 @@ export function HomeServicesCards() {
 
                 <Link
                   href={card.href}
-                  className="shrink-0 px-5 sm:px-6 py-2.5 rounded-full bg-[#38bdf8] hover:bg-white text-slate-950 font-sans font-bold text-xs sm:text-sm tracking-tight transition-all duration-200 shadow-sm active:scale-95"
+                  className="shrink-0 px-5 sm:px-6 py-2.5 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-xs sm:text-sm tracking-tight transition-all duration-200 shadow-sm active:scale-95"
                 >
                   {card.badgeText}
                 </Link>
