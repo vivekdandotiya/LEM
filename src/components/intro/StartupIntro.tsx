@@ -8,10 +8,10 @@ export function StartupIntro() {
   const [isCompleted, setIsCompleted] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const topShutterRef = useRef<HTMLDivElement>(null);
-  const bottomShutterRef = useRef<HTMLDivElement>(null);
-  const centerContentRef = useRef<HTMLDivElement>(null);
-  const beamRef = useRef<HTMLDivElement>(null);
+  const textWrapperRef = useRef<HTMLDivElement>(null);
+  const textInnerRef = useRef<HTMLDivElement>(null);
+  const mainCurtainPathRef = useRef<SVGPathElement>(null);
+  const accentCurtainPathRef = useRef<SVGPathElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
   const finishIntro = useCallback(() => {
@@ -26,34 +26,34 @@ export function StartupIntro() {
     setIsCompleted(true);
   }, []);
 
+  // Quick skip on click or ESC
   const handleSkip = useCallback(() => {
     if (isCompleted) return;
     if (timelineRef.current) {
       timelineRef.current.kill();
     }
 
-    const top = topShutterRef.current;
-    const bottom = bottomShutterRef.current;
-    const center = centerContentRef.current;
-    const beam = beamRef.current;
-
-    if (top && bottom) {
-      if (center) gsap.to(center, { opacity: 0, duration: 0.25 });
-      if (beam) gsap.to(beam, { opacity: 0, duration: 0.2 });
-      gsap.to(top, {
-        yPercent: -100,
-        duration: 0.7,
-        ease: 'power3.inOut',
-      });
-      gsap.to(bottom, {
-        yPercent: 100,
-        duration: 0.7,
-        ease: 'power3.inOut',
-        onComplete: finishIntro,
-      });
-    } else {
-      finishIntro();
+    if (textWrapperRef.current) {
+      gsap.to(textWrapperRef.current, { opacity: 0, duration: 0.2 });
     }
+
+    // Quick snap open of the liquid curtain
+    const quickState = { yCorners: 100, yCenter: 100 };
+    gsap.to(quickState, {
+      yCorners: -15,
+      yCenter: -15,
+      duration: 0.45,
+      ease: 'power3.inOut',
+      onUpdate: () => {
+        if (mainCurtainPathRef.current) {
+          mainCurtainPathRef.current.setAttribute(
+            'd',
+            `M 0 0 L 100 0 L 100 ${quickState.yCorners} Q 50 ${quickState.yCenter} 0 ${quickState.yCorners} Z`
+          );
+        }
+      },
+      onComplete: finishIntro,
+    });
   }, [finishIntro, isCompleted]);
 
   // Initial check & mounting
@@ -90,19 +90,20 @@ export function StartupIntro() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [mounted, isCompleted, handleSkip]);
 
-  // Soft, Cinematic Motion Graphic:
-  // 1. Pure black screen with ONLY "LeadEdge Marketing" in white
-  // 2. Holds softly for 1.5s
-  // 3. Butter-smooth middle horizontal split (Top slides UP, Bottom slides DOWN)
+  // Jelly Type Animation:
+  // 1. Text ("LeadEdge Marketing") floats in from left with jelly squash & stretch physics
+  // 2. Bounces elastically into the center, pauses briefly
+  // 3. Squashes in anticipation, then springs like rubber floating to the right
+  // 4. In a jelly liquid wave animation, the curtain snaps open upwards to reveal the site
   useEffect(() => {
     if (!mounted || isCompleted) return;
 
-    const top = topShutterRef.current;
-    const bottom = bottomShutterRef.current;
-    const center = centerContentRef.current;
-    const beam = beamRef.current;
+    const wrapper = textWrapperRef.current;
+    const inner = textInnerRef.current;
+    const mainPath = mainCurtainPathRef.current;
+    const accentPath = accentCurtainPathRef.current;
 
-    if (!top || !bottom || !center || !beam) return;
+    if (!wrapper || !inner || !mainPath) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
@@ -110,83 +111,175 @@ export function StartupIntro() {
       return;
     }
 
-    // Initial states
-    gsap.set([top, bottom], { yPercent: 0 });
-    gsap.set(center, { opacity: 0, y: 10, scale: 0.98 });
-    gsap.set(beam, { opacity: 0, scaleX: 0 });
+    // Liquid Curtain States (represented as 0 - 100 viewport coordinates)
+    const mainCurtain = { yCorners: 100, yCenter: 100 };
+    const accentCurtain = { yCorners: 100, yCenter: 100 };
+
+    const updateCurtains = () => {
+      if (mainPath) {
+        mainPath.setAttribute(
+          'd',
+          `M 0 0 L 100 0 L 100 ${mainCurtain.yCorners} Q 50 ${mainCurtain.yCenter} 0 ${mainCurtain.yCorners} Z`
+        );
+      }
+      if (accentPath) {
+        accentPath.setAttribute(
+          'd',
+          `M 0 0 L 100 0 L 100 ${accentCurtain.yCorners} Q 50 ${accentCurtain.yCenter} 0 ${accentCurtain.yCorners} Z`
+        );
+      }
+    };
+
+    // Initial setup
+    gsap.set(wrapper, { x: '-120vw', opacity: 1 });
+    gsap.set(inner, {
+      scaleX: 1.5,
+      scaleY: 0.65,
+      skewX: -14,
+      transformOrigin: 'center center',
+    });
+    updateCurtains();
 
     const tl = gsap.timeline({
       onComplete: finishIntro,
     });
     timelineRef.current = tl;
 
-    // Phase 1: Soft, silky fade-in of the white agency name (0.0s - 0.7s)
-    tl.to(center, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.75,
-      ease: 'power2.out',
+    // =========================================================================
+    // STEP 1: Text floats in from Left to Center with Jelly Squash & Stretch
+    // =========================================================================
+    tl.to(wrapper, {
+      x: '0vw',
+      duration: 0.85,
+      ease: 'power3.out',
     });
 
-    // Phase 2: Holds steady and calm on pure black for 1.5 seconds
-
-    // Phase 3: At 1.5s, soft luminous center horizon line breathes across the middle seam
+    // Sudden deceleration causes vertical jelly squash
     tl.to(
-      beam,
+      inner,
       {
-        opacity: 0.85,
-        scaleX: 1,
-        duration: 0.35,
-        ease: 'sine.inOut',
-      },
-      '+=0.75' // Arrives at 1.5s mark
-    );
-
-    // Phase 4: Agency name dissolves with a delicate, soft fade
-    tl.to(
-      center,
-      {
-        opacity: 0,
-        scale: 1.03,
-        duration: 0.45,
-        ease: 'power2.inOut',
-      },
-      '<'
-    );
-
-    // Phase 5: Feather-soft split opening (Top half UP, Bottom half DOWN)
-    // Silky, luxury easing for an ultra-smooth motion graphic feel
-    tl.to(
-      top,
-      {
-        yPercent: -100,
-        duration: 1.35,
-        ease: 'power3.inOut',
-      },
-      '-=0.15'
-    );
-
-    tl.to(
-      bottom,
-      {
-        yPercent: 100,
-        duration: 1.35,
-        ease: 'power3.inOut',
-      },
-      '<'
-    );
-
-    // Softly fade horizon beam as the shutters part
-    tl.to(
-      beam,
-      {
-        opacity: 0,
-        duration: 0.4,
+        scaleX: 0.8,
+        scaleY: 1.3,
+        skewX: 10,
+        duration: 0.26,
         ease: 'power2.out',
       },
+      '-=0.28'
+    );
+
+    // Rebound 1 (stretches horizontally)
+    tl.to(inner, {
+      scaleX: 1.16,
+      scaleY: 0.88,
+      skewX: -6,
+      duration: 0.22,
+      ease: 'sine.inOut',
+    });
+
+    // Rebound 2 (wobbles and settles to natural 1:1)
+    tl.to(inner, {
+      scaleX: 1,
+      scaleY: 1,
+      skewX: 0,
+      duration: 0.35,
+      ease: 'elastic.out(1.2, 0.4)',
+    });
+
+    // =========================================================================
+    // STEP 2: Gentle float in center (~0.5s pause to read clearly)
+    // =========================================================================
+    tl.to(wrapper, {
+      y: -10,
+      duration: 0.5,
+      ease: 'sine.inOut',
+    });
+
+    // =========================================================================
+    // STEP 3: Text squashes in anticipation, then springs like rubber to the RIGHT
+    // =========================================================================
+    tl.to(inner, {
+      scaleX: 0.86,
+      scaleY: 1.18,
+      skewX: -5,
+      duration: 0.18,
+      ease: 'power1.in',
+    });
+
+    // Stretches horizontally like liquid jelly and zips to the right
+    tl.to(
+      inner,
+      {
+        scaleX: 1.6,
+        scaleY: 0.6,
+        skewX: 18,
+        duration: 0.55,
+        ease: 'power3.in',
+      },
+      '<0.08'
+    );
+
+    tl.to(
+      wrapper,
+      {
+        x: '130vw',
+        duration: 0.6,
+        ease: 'power3.in',
+      },
       '<'
     );
+
+    // =========================================================================
+    // STEP 4: Jelly Type Opening of the Website (Liquid Jelly Curtain Snap)
+    // =========================================================================
+    // As the text exits right, the dark curtain lifts with an elastic liquid wave!
+    tl.to(
+      mainCurtain,
+      {
+        yCorners: -15,
+        duration: 0.85,
+        ease: 'power3.inOut',
+        onUpdate: updateCurtains,
+      },
+      '-=0.25'
+    );
+
+    // The center of the jelly curtain lags behind with heavy elasticity,
+    // creating a bouncy liquid arch that snaps open!
+    tl.to(
+      mainCurtain,
+      {
+        yCenter: -15,
+        duration: 1.15,
+        ease: 'elastic.out(1.15, 0.38)',
+        onUpdate: updateCurtains,
+      },
+      '<'
+    );
+
+    // Accent golden apricot wave trails slightly for a rich liquid rim
+    if (accentPath) {
+      tl.to(
+        accentCurtain,
+        {
+          yCorners: -15,
+          duration: 0.95,
+          ease: 'power3.inOut',
+          onUpdate: updateCurtains,
+        },
+        '<0.06'
+      );
+
+      tl.to(
+        accentCurtain,
+        {
+          yCenter: -15,
+          duration: 1.25,
+          ease: 'elastic.out(1.15, 0.38)',
+          onUpdate: updateCurtains,
+        },
+        '<'
+      );
+    }
 
     return () => {
       tl.kill();
@@ -205,52 +298,47 @@ export function StartupIntro() {
       aria-label="LeadEdge Marketing"
     >
       {/* =========================================================================
-          1. TOP SHUTTER (Upper 50% - glides UP smoothly)
+          LIQUID JELLY CURTAIN (SVG Morphing Elastic Waves)
           ========================================================================= */}
-      <div
-        ref={topShutterRef}
-        className="absolute top-0 left-0 right-0 h-[50vh] bg-[#050505] border-b border-white/10 will-change-transform flex flex-col justify-end items-center overflow-hidden"
-        style={{ transform: 'translate3d(0, 0, 0)' }}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden="true"
       >
-        {/* Soft, deep ambient gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,#141416_0%,#050505_70%)] pointer-events-none" />
-      </div>
+        {/* Layer 1: Apricot Liquid Accent Rim */}
+        <path
+          ref={accentCurtainPathRef}
+          fill="#f7ac4f"
+          d="M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z"
+        />
+
+        {/* Layer 2: Main Deep Obsidian Liquid Jelly Curtain */}
+        <path
+          ref={mainCurtainPathRef}
+          fill="#08090a"
+          d="M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z"
+        />
+      </svg>
 
       {/* =========================================================================
-          2. BOTTOM SHUTTER (Lower 50% - glides DOWN smoothly)
+          JELLY TEXT: Floats in from Left, Squashes & Bounces, Zips to Right
           ========================================================================= */}
       <div
-        ref={bottomShutterRef}
-        className="absolute bottom-0 left-0 right-0 h-[50vh] bg-[#050505] border-t border-white/10 will-change-transform flex flex-col justify-start items-center overflow-hidden"
-        style={{ transform: 'translate3d(0, 0, 0)' }}
+        ref={textWrapperRef}
+        className="absolute inset-0 flex items-center justify-center pointer-events-none z-30 px-6 will-change-transform"
       >
-        {/* Soft, deep ambient gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#141416_0%,#050505_70%)] pointer-events-none" />
-      </div>
-
-      {/* =========================================================================
-          3. SOFT CENTER HORIZON SEAM (Illuminates subtly at 1.5s)
-          ========================================================================= */}
-      <div
-        ref={beamRef}
-        className="absolute top-1/2 left-0 right-0 h-[1.5px] -translate-y-1/2 z-30 pointer-events-none"
-        style={{
-          background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.15) 80%, transparent 100%)',
-          boxShadow: '0 0 25px 2px rgba(255,255,255,0.6), 0 0 50px 6px rgba(255,255,255,0.2)',
-        }}
-      />
-
-      {/* =========================================================================
-          4. AGENCY NAME ONLY (In pure, pristine white with soft luxury kerning)
-          ========================================================================= */}
-      <div
-        ref={centerContentRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 text-center pointer-events-none flex flex-col items-center justify-center will-change-transform px-6 w-full max-w-4xl"
-      >
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-medium text-white tracking-[0.16em] sm:tracking-[0.22em] drop-shadow-[0_0_35px_rgba(255,255,255,0.25)] select-none leading-none">
-          <span className="font-extrabold text-white">LeadEdge</span>
-          <span className="font-light text-white ml-2.5 sm:ml-4">Marketing</span>
-        </h1>
+        <div
+          ref={textInnerRef}
+          className="inline-flex items-baseline will-change-transform drop-shadow-[0_0_35px_rgba(255,255,255,0.22)]"
+        >
+          <span className="font-display font-black text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight select-none">
+            LeadEdge
+          </span>
+          <span className="font-sans font-light text-white/95 text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wider ml-3 sm:ml-5 select-none">
+            Marketing
+          </span>
+        </div>
       </div>
     </div>
   );
