@@ -4,7 +4,7 @@ import { HomeHero } from '@/components/hero/HomeHero';
 import { HomeServicesCards } from '@/components/home/HomeServicesCards';
 import { Testimonials } from '@/components/shared/Testimonials';
 import { BrandPartnerMarquee } from '@/components/home/BrandPartnerMarquee';
-import { FAQSection } from '@/components/home/FAQSection';
+import { AiQuerySection } from '@/components/home/AiQuerySection';
 
 export const metadata: Metadata = {
   title: 'Lead Edge Marketers — Full-Service Digital Marketing Agency | SEO, Ads & Web',
@@ -30,8 +30,8 @@ export default function HomePage() {
       {/* 4. Auto-Sliding Brand Partners Marquee (Placed Right After Reviews) */}
       <BrandPartnerMarquee />
 
-      {/* 5. Frequently Asked Questions (Clear & Simple Answers) */}
-      <FAQSection />
+      {/* 5. "Ask anything about your query" — Interactive AI Intelligence Hub */}
+      <AiQuerySection />
     </main>
   );
 }
