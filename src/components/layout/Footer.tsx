@@ -9,7 +9,6 @@ import {
   ArrowUpRight,
   Check,
 } from 'lucide-react';
-import { SparkleGlyph } from '@/components/ui/SparkleGlyph';
 
 // Custom X (Twitter) Icon
 function XIcon({ className = 'w-4 h-4' }: { className?: string }) {
@@ -295,15 +294,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Floating Accent Star Widget (Right Margin) */}
-      <button
-        onClick={scrollToTop}
-        title="Scroll to Top"
-        aria-label="Scroll to top"
-        className="fixed bottom-6 right-6 z-40 hidden sm:flex items-center justify-center w-10 h-10 rounded-xl bg-[#0F1012] border border-white/15 text-[#f7ac4f] hover:text-white hover:border-[#f7ac4f] transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.7)] group"
-      >
-        <SparkleGlyph size={18} spin={true} />
-      </button>
+      {/* Chat widget is mounted in RootLayout */}
     </footer>
   );
 }

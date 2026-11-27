@@ -4,6 +4,7 @@ import { siteConfig } from "@/data/site";
 import { getBaseUrl } from "@/data/routes";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingChatWidget } from "@/components/chat/FloatingChatWidget";
 import { StartupIntro } from "@/components/intro/StartupIntro";
 import SmoothScroll from "@/motion/SmoothScroll";
 import { DripTransitionProvider } from "@/components/animorio/drip/DripTransitionProvider";
@@ -107,6 +108,9 @@ export default function RootLayout({
             <Footer />
           </DripTransitionProvider>
         </SmoothScroll>
+
+        {/* Floating "Hi / Ask Anything" Chat Widget */}
+        <FloatingChatWidget />
       </body>
     </html>
   );
