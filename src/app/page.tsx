@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { HomeHero } from '@/components/hero/HomeHero';
 import { HomeServicesCards } from '@/components/home/HomeServicesCards';
 import { Testimonials } from '@/components/shared/Testimonials';
+import { BrandPartnerMarquee } from '@/components/home/BrandPartnerMarquee';
 import { FAQSection } from '@/components/home/FAQSection';
 
 export const metadata: Metadata = {
@@ -26,7 +27,10 @@ export default function HomePage() {
       {/* 3. Honest Client Reviews & Feedback */}
       <Testimonials theme="light" />
 
-      {/* 4. Frequently Asked Questions (Clear & Simple Answers) */}
+      {/* 4. Auto-Sliding Brand Partners Marquee (Placed Right After Reviews) */}
+      <BrandPartnerMarquee />
+
+      {/* 5. Frequently Asked Questions (Clear & Simple Answers) */}
       <FAQSection />
     </main>
   );
