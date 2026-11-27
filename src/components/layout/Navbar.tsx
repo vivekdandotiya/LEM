@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { primaryNavItems } from '@/data/nav';
 import { MEGAMENU_COLUMNS } from '@/data/megamenu';
-import { ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react';
+import { ChevronDown, Menu, X, ArrowUpRight, Search, Zap, Sparkles, ShoppingBag, Users, ChevronRight } from 'lucide-react';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -131,131 +131,191 @@ export function Navbar() {
                       />
                     </button>
 
-                    {/* Exact 5-Column Megamenu (Structure from reference, original colors) */}
+                    {/* Elevated 5-Column Megamenu (Bespoke Design, Refined Icons & Layout) */}
                     <div
-                      className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[1140px] max-w-[94vw] rounded-[32px] bg-white border border-[#e8e6e2] shadow-[0_24px_70px_-15px_rgba(22,21,20,0.20)] p-8 sm:p-10 transition-all duration-200 z-50 ${
+                      className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[1160px] max-w-[95vw] rounded-[32px] bg-white border border-[#e8e6e2] shadow-[0_28px_80px_-15px_rgba(22,21,20,0.18)] p-7 sm:p-9 transition-all duration-200 z-50 ${
                         isServicesOpen
                           ? 'opacity-100 translate-y-0 pointer-events-auto'
                           : 'opacity-0 translate-y-3 pointer-events-none'
                       }`}
                     >
                       {/* 5 Distinct Columns Grid */}
-                      <div className="grid grid-cols-5 gap-6 xl:gap-8 pb-8">
-                        {MEGAMENU_COLUMNS.map((col) => (
-                          <div key={col.id} className="flex flex-col">
-                            {/* Column Header */}
-                            <div className="flex items-center gap-2 mb-4 pb-2 border-b border-[#f4f3f1]">
-                              {col.id === 'seo' && (
-                                <span className="w-6 h-6 rounded-md bg-[#fef3c7] text-[#b45309] flex items-center justify-center text-xs font-bold">
-                                  📊
-                                </span>
-                              )}
-                              {col.id === 'ppc' && (
-                                <span className="w-6 h-6 rounded-md bg-[#fee2e2] text-[#b91c1c] flex items-center justify-center text-xs font-bold">
-                                  🎯
-                                </span>
-                              )}
-                              {col.id === 'social' && (
-                                <span className="w-6 h-6 rounded-md bg-[#fce7f3] text-[#be185d] flex items-center justify-center text-xs font-bold">
-                                  📷
-                                </span>
-                              )}
-                              {col.id === 'ecommerce' && (
-                                <span className="w-6 h-6 rounded-md bg-[#ecfdf5] text-[#047857] flex items-center justify-center text-xs font-bold">
-                                  🛍️
-                                </span>
-                              )}
-                              {col.id === 'team' && (
-                                <div className="flex -space-x-1.5 overflow-hidden">
-                                  <div className="relative h-5 w-5 rounded-full ring-1 ring-white overflow-hidden bg-slate-200 shrink-0">
-                                    <Image
-                                      src="/images/about/team-1.webp"
-                                      alt="Team member"
-                                      fill
-                                      className="object-cover"
-                                      sizes="20px"
-                                    />
-                                  </div>
-                                  <div className="relative h-5 w-5 rounded-full ring-1 ring-white overflow-hidden bg-slate-200 shrink-0">
-                                    <Image
-                                      src="/images/about/about-team-creative.webp"
-                                      alt="Team member"
-                                      fill
-                                      className="object-cover"
-                                      sizes="20px"
-                                    />
-                                  </div>
-                                  <div className="relative h-5 w-5 rounded-full ring-1 ring-white overflow-hidden bg-slate-200 shrink-0">
-                                    <Image
-                                      src="/images/about/about-hero.webp"
-                                      alt="Team member"
-                                      fill
-                                      className="object-cover"
-                                      sizes="20px"
-                                    />
-                                  </div>
-                                </div>
-                              )}
+                      <div className="grid grid-cols-5 gap-5 xl:gap-7 pb-7">
+                        {MEGAMENU_COLUMNS.map((col) => {
+                          const isTeam = col.id === 'team';
 
-                              <h3 className="font-sans font-bold text-[#161514] text-sm tracking-tight">
-                                {col.title}
-                              </h3>
-                            </div>
-
-                            {/* Column Links List */}
-                            <ul className="flex flex-col gap-2.5">
-                              {col.items.map((item) => (
-                                <li key={item.label}>
-                                  <Link
-                                    href={item.href}
-                                    onClick={() => setIsServicesOpen(false)}
-                                    className="group/sub flex items-center justify-between text-xs sm:text-[13px] font-sans font-medium text-[#5d5a55] hover:text-[#b45309] transition-colors py-1"
-                                  >
-                                    <span className="group-hover/sub:translate-x-0.5 transition-transform">
-                                      {item.label}
+                          if (isTeam) {
+                            return (
+                              <div
+                                key={col.id}
+                                className="flex flex-col justify-between p-4 rounded-2xl bg-[#fbf9f6] border border-[#ece8df] shadow-2xs"
+                              >
+                                <div>
+                                  {/* Header with Avatars & Active Pulse */}
+                                  <div className="flex items-center justify-between mb-3">
+                                    <div className="flex -space-x-1.5 overflow-hidden">
+                                      <div className="relative h-6 w-6 rounded-full ring-2 ring-white overflow-hidden bg-slate-200 shrink-0">
+                                        <Image
+                                          src="/images/about/team-1.webp"
+                                          alt="Team member"
+                                          fill
+                                          className="object-cover"
+                                          sizes="24px"
+                                        />
+                                      </div>
+                                      <div className="relative h-6 w-6 rounded-full ring-2 ring-white overflow-hidden bg-slate-200 shrink-0">
+                                        <Image
+                                          src="/images/about/about-team-creative.webp"
+                                          alt="Team member"
+                                          fill
+                                          className="object-cover"
+                                          sizes="24px"
+                                        />
+                                      </div>
+                                      <div className="relative h-6 w-6 rounded-full ring-2 ring-white overflow-hidden bg-slate-200 shrink-0">
+                                        <Image
+                                          src="/images/about/about-hero.webp"
+                                          alt="Team member"
+                                          fill
+                                          className="object-cover"
+                                          sizes="24px"
+                                        />
+                                      </div>
+                                    </div>
+                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100/80 text-emerald-800 text-[10px] font-bold">
+                                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                      Available
                                     </span>
-                                    {item.isNew && (
-                                      <span className="px-2 py-0.5 rounded-full bg-[#f7ac4f] text-[#161514] text-[10px] font-bold tracking-tight">
-                                        New
+                                  </div>
+
+                                  <h3 className="font-sans font-bold text-[#161514] text-sm tracking-tight mb-1">
+                                    Hire a Dedicated Squad
+                                  </h3>
+                                  <p className="text-[11px] text-[#78716c] leading-relaxed mb-3">
+                                    Plug experienced growth specialists directly into your marketing workflows.
+                                  </p>
+
+                                  {/* Quick Specialist Roles */}
+                                  <ul className="flex flex-col gap-1.5">
+                                    {col.items.slice(0, 4).map((item) => (
+                                      <li key={item.label}>
+                                        <Link
+                                          href={item.href}
+                                          onClick={() => setIsServicesOpen(false)}
+                                          className="group/team flex items-center justify-between text-xs font-sans font-medium text-[#5d5a55] hover:text-[#161514] py-1 px-2 -mx-2 rounded-lg hover:bg-white transition-all"
+                                        >
+                                          <span className="group-hover/team:translate-x-0.5 transition-transform">
+                                            {item.label}
+                                          </span>
+                                          <ChevronRight className="w-3 h-3 text-[#f7ac4f] opacity-0 group-hover/team:opacity-100 transition-opacity" />
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+
+                                <Link
+                                  href="/contact"
+                                  onClick={() => setIsServicesOpen(false)}
+                                  className="mt-4 pt-3 border-t border-[#ece8df] inline-flex items-center justify-between text-xs font-bold text-[#b45309] hover:text-[#161514] transition-colors"
+                                >
+                                  <span>Request Squad Pricing</span>
+                                  <ArrowUpRight className="w-3.5 h-3.5" />
+                                </Link>
+                              </div>
+                            );
+                          }
+
+                          return (
+                            <div key={col.id} className="flex flex-col">
+                              {/* Column Header with Refined Vector Icon */}
+                              <div className="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b border-[#f0eee9]">
+                                {col.id === 'seo' && (
+                                  <span className="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 border border-amber-200/60 flex items-center justify-center shrink-0">
+                                    <Search className="w-3.5 h-3.5" />
+                                  </span>
+                                )}
+                                {col.id === 'ppc' && (
+                                  <span className="w-7 h-7 rounded-lg bg-rose-50 text-rose-600 border border-rose-200/60 flex items-center justify-center shrink-0">
+                                    <Zap className="w-3.5 h-3.5" />
+                                  </span>
+                                )}
+                                {col.id === 'social' && (
+                                  <span className="w-7 h-7 rounded-lg bg-purple-50 text-purple-600 border border-purple-200/60 flex items-center justify-center shrink-0">
+                                    <Sparkles className="w-3.5 h-3.5" />
+                                  </span>
+                                )}
+                                {col.id === 'ecommerce' && (
+                                  <span className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center shrink-0">
+                                    <ShoppingBag className="w-3.5 h-3.5" />
+                                  </span>
+                                )}
+
+                                <h3 className="font-sans font-bold text-[#161514] text-sm tracking-tight">
+                                  {col.title}
+                                </h3>
+                              </div>
+
+                              {/* Column Links List with Hover Micro-pill */}
+                              <ul className="flex flex-col gap-1.5">
+                                {col.items.map((item) => (
+                                  <li key={item.label}>
+                                    <Link
+                                      href={item.href}
+                                      onClick={() => setIsServicesOpen(false)}
+                                      className="group/sub flex items-center justify-between text-xs sm:text-[13px] font-sans font-medium text-[#5d5a55] hover:text-[#161514] hover:bg-[#161514]/[0.035] px-2.5 py-1.5 -mx-2.5 rounded-lg transition-all duration-150"
+                                    >
+                                      <span className="group-hover/sub:translate-x-0.5 transition-transform">
+                                        {item.label}
                                       </span>
-                                    )}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
+                                      {item.isNew ? (
+                                        <span className="px-2 py-0.5 rounded-full bg-[#fef3c7] text-[#92400e] text-[10px] font-bold tracking-tight">
+                                          New
+                                        </span>
+                                      ) : (
+                                        <ChevronRight className="w-3 h-3 text-[#f7ac4f] opacity-0 group-hover/sub:opacity-100 group-hover/sub:translate-x-0.5 transition-all" />
+                                      )}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          );
+                        })}
                       </div>
 
-                      {/* Bottom Strip: "Not sure where to start?" + Links + Call Button */}
-                      <div className="bg-[#fbfaf8] border-t border-[#e8e6e2] -mx-8 sm:-mx-10 -mb-8 sm:-mb-10 px-8 sm:px-10 py-4 sm:py-5 rounded-b-[32px] flex flex-col md:flex-row items-center justify-between gap-4">
-                        <div className="text-xs sm:text-sm text-[#5d5a55] text-center md:text-left">
-                          <strong className="text-[#161514] font-bold">Not sure where to start?</strong>{' '}
-                          Tell us your goal and we will suggest the right service.
+                      {/* Bottom Advisory Strip */}
+                      <div className="bg-[#faf9f6] border-t border-[#e8e6e2] -mx-7 sm:-mx-9 -mb-7 sm:-mb-9 px-7 sm:px-9 py-4 sm:py-4.5 rounded-b-[32px] flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div className="flex items-center gap-2 text-xs sm:text-sm text-[#5d5a55] text-center md:text-left">
+                          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                          <span>
+                            <strong className="text-[#161514] font-bold">Unsure what channel you need?</strong>{' '}
+                            Tell us your objective and we will recommend the highest-ROI mix.
+                          </span>
                         </div>
 
                         <div className="flex items-center gap-4 sm:gap-6 shrink-0">
                           <Link
                             href="/services"
                             onClick={() => setIsServicesOpen(false)}
-                            className="text-xs sm:text-sm font-semibold text-[#161514] hover:text-[#b45309] transition-colors"
+                            className="text-xs sm:text-sm font-semibold text-[#5d5a55] hover:text-[#161514] transition-colors"
                           >
-                            All Digital Marketing Services
+                            All Services
                           </Link>
                           <Link
                             href="/services"
                             onClick={() => setIsServicesOpen(false)}
-                            className="text-xs sm:text-sm font-semibold text-[#161514] hover:text-[#b45309] transition-colors"
+                            className="text-xs sm:text-sm font-semibold text-[#5d5a55] hover:text-[#161514] transition-colors"
                           >
                             Pricing
                           </Link>
                           <Link
                             href="/contact"
                             onClick={() => setIsServicesOpen(false)}
-                            className="inline-flex items-center gap-1.5 px-5 sm:px-6 py-2.5 rounded-full bg-[#161514] hover:bg-[#2c2b29] text-white font-bold text-xs sm:text-sm tracking-tight shadow-sm transition-all duration-150 active:scale-95"
+                            className="inline-flex items-center gap-1.5 px-5 sm:px-6 py-2.5 rounded-full bg-[#161514] hover:bg-[#2c2b29] text-white font-bold text-xs sm:text-sm tracking-tight shadow-sm transition-all duration-150 active:scale-95 group"
                           >
-                            <span>Book a Free Call</span>
-                            <ArrowUpRight className="w-3.5 h-3.5 text-[#f7ac4f]" />
+                            <span>Book Free Strategy Call</span>
+                            <ArrowUpRight className="w-3.5 h-3.5 text-[#f7ac4f] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                           </Link>
                         </div>
                       </div>
