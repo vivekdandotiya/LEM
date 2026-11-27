@@ -437,13 +437,15 @@ export function searchAiKnowledge(query: string): {
   topic: AiKnowledgeTopic;
   confidence: number;
   isExactMatch: boolean;
+  isGreeting?: boolean;
+  isCasual?: boolean;
 } {
   const cleanQuery = query.toLowerCase().trim();
   if (!cleanQuery) {
     return { topic: AI_KNOWLEDGE_BASE[0], confidence: 0, isExactMatch: false };
   }
 
-  // 1. Check Regex Intent Patterns
+  // 1. Check Regex Intent Patterns for Core Marketing Topics
   for (const topic of AI_KNOWLEDGE_BASE) {
     for (const pattern of topic.intentPatterns) {
       if (pattern.test(cleanQuery)) {
@@ -499,9 +501,107 @@ export function generateAiMarketingResponse(query: string): {
   actions: AiAction[];
   followUps: string[];
 } {
-  const match = searchAiKnowledge(query);
+  const cleanQuery = query.toLowerCase().trim();
 
-  // If confidence is good, return deep-dive topic
+  // 1. Conversational Greeting Handler (Hi, Hello, Hey, etc.)
+  const isGreeting = /^(hi|hello|hey|hey\s*there|howdy|yo|sup|what'?s\s*up|good\s*(morning|afternoon|evening)|hola|namaste|greetings)[\s!.]*$/i.test(cleanQuery) ||
+    cleanQuery === 'hi' || cleanQuery === 'hello' || cleanQuery === 'hey';
+
+  if (isGreeting) {
+    return {
+      headline: '👋 Hello & Welcome!',
+      executiveSummary: "Hey there! Great to connect with you. I'm your dedicated Lead Edge AI growth advisor, trained on over 500+ digital marketing, SEO, paid media, and revenue scaling playbooks.\n\nWhether you're looking to scale Google search traffic, improve ad ROAS, build a high-converting website, or want a free audit of your current marketing, I'm here to give you fast, senior-level answers. What can I help you with today?",
+      bullets: [
+        'Search Engine Optimization (SEO): Local 3-Pack rankings, technical health, and compounding organic traffic.',
+        'High-Return Paid Ads (PPC): High-intent Google Search, Shopping/PMax, and Meta (Instagram & Facebook) paid social.',
+        'Web Architecture & CRO: Blazing-fast Next.js websites built specifically to convert visitors into paying clients.',
+        '100% Free Strategy Blueprint: A 15-minute diagnostic audit uncovering your top 3 highest-ROI growth opportunities.'
+      ],
+      benchmarks: 'Client Portfolio Average: 3.8x Blended ROAS · 94.8% Client Retention Rate.',
+      actions: [
+        { label: 'Claim Free Strategy Blueprint', href: '/contact', isPrimary: true },
+        { label: 'Explore Our Services', href: '/services', isPrimary: false },
+        { label: 'Book 15-Min Strategy Call', href: '/contact', isPrimary: false }
+      ],
+      followUps: [
+        'How does your pricing and retainer work?',
+        'How long does SEO take to produce revenue?',
+        'What is included in the Free Blueprint?',
+        'Why no long-term lock-in contracts?'
+      ]
+    };
+  }
+
+  // 2. Casual Gratitude & Politeness (Thanks, Thank you, Great, Awesome)
+  const isThanks = /^(thanks|thank\s*you|thx|awesome|great|cool|perfect|good\s*job|appreciate\s*it)[\s!.]*$/i.test(cleanQuery);
+  if (isThanks) {
+    return {
+      headline: "✨ You're Very Welcome!",
+      executiveSummary: "Glad that was helpful! Our focus is always transparent, high-impact growth. If you'd like our senior directors to personally inspect your website, keywords, and ad accounts, we offer a 100% free 15-minute Strategy Blueprint with zero sales pressure.",
+      bullets: [
+        'We inspect your competitor keyword gaps and Google visibility.',
+        'We uncover wasted budget and tracking leaks in your ad accounts.',
+        'We deliver an actionable 90-day growth roadmap for your business.'
+      ],
+      benchmarks: 'Zero obligations. You keep the complete blueprint analysis even if we don\'t partner.',
+      actions: [
+        { label: 'Claim Free Strategy Blueprint', href: '/contact', isPrimary: true },
+        { label: 'Book a 15-Min Strategy Call', href: '/contact', isPrimary: false }
+      ],
+      followUps: [
+        'How do we get started?',
+        'What details do you need for the audit?',
+        'How does pricing work?'
+      ]
+    };
+  }
+
+  // 3. Casual Identity / Capability (Who are you, what can you do)
+  const isIdentity = /^(who\s*(are\s*you|made\s*you)|what\s*(can\s*you\s*do|is\s*this)|help|menu)[\s!.]*$/i.test(cleanQuery);
+  if (isIdentity) {
+    return {
+      headline: '🤖 Lead Edge Senior AI Advisor',
+      executiveSummary: "I am Lead Edge Marketers' senior digital marketing intelligence assistant, trained across 500+ proven agency frameworks, technical SEO models, paid media strategies, and client growth audits. You can ask me any question about marketing strategy, cost estimates, timelines, or agency deliverables.",
+      bullets: [
+        'Transparent Pricing: Monthly retainers, deliverables, and zero lock-ins.',
+        'SEO & Local Maps: Timeline expectations, Core Web Vitals, and 3-Pack rankings.',
+        'Paid Advertising: Google Ads vs Meta Ads, minimum budgets, and ROAS calculations.',
+        'Agency vs In-House: Cost comparisons, specialist squads, and onboarding speed.'
+      ],
+      actions: [
+        { label: 'Claim Free Strategy Blueprint', href: '/contact', isPrimary: true },
+        { label: 'Speak With Our Team', href: '/contact', isPrimary: false }
+      ],
+      followUps: [
+        'How does pricing work?',
+        'How long does SEO take to produce revenue?',
+        'What is included in the Free Strategy Blueprint?'
+      ]
+    };
+  }
+
+  // 4. Farewell / Goodbyes
+  const isFarewell = /^(bye|goodbye|see\s*ya|cya|have\s*a\s*good\s*day|later)[\s!.]*$/i.test(cleanQuery);
+  if (isFarewell) {
+    return {
+      headline: '👋 Take Care & Talk Soon!',
+      executiveSummary: "Thanks for dropping by Lead Edge Marketers! Whenever you're ready to scale your organic search presence, launch profitable ads, or rebuild your website, our team is right here to help. Have a productive week ahead!",
+      bullets: [
+        'Direct Desk Email: hello@leadedge.agency',
+        'Office Hours: Monday – Friday, 9:00 AM – 6:00 PM AEST',
+        'Headquarters: Sydney, Australia & Remote Worldwide'
+      ],
+      actions: [
+        { label: 'Book a Call When Ready', href: '/contact', isPrimary: true }
+      ],
+      followUps: [
+        'Book 15-Min Discovery Call'
+      ]
+    };
+  }
+
+  // 5. Match Structured Knowledge Base
+  const match = searchAiKnowledge(query);
   if (match.isExactMatch || match.confidence > 0.25) {
     return {
       headline: match.topic.title,
@@ -513,15 +613,15 @@ export function generateAiMarketingResponse(query: string): {
     };
   }
 
-  // Fallback: Intelligent Strategic Synthesis for arbitrary or complex inquiries
+  // 6. Fallback: Intelligent Strategic Synthesis for arbitrary or complex inquiries
   return {
-    headline: `Strategic Growth Analysis: "${query.slice(0, 45)}${query.length > 45 ? '...' : ''}"`,
-    executiveSummary: `At Lead Edge Marketers, we approach "${query}" through our senior performance framework: combining high-intent customer acquisition, conversion-optimized architecture, and clean attribution measurement.`,
+    headline: `Strategic Growth Blueprint: "${query.slice(0, 40)}${query.length > 40 ? '...' : ''}"`,
+    executiveSummary: `Here is how our senior agency directors evaluate "${query}": by combining high-intent customer acquisition, conversion-optimized architecture, and clean attribution measurement.`,
     bullets: [
-      `Search & Intent Alignment: We ensure your business is positioned directly in front of buyers actively searching for solutions related to "${query.slice(0, 30)}".`,
-      'Conversion Architecture: We audit and eliminate friction in your customer journey to maximize conversion efficiency and lower acquisition cost.',
-      'Unit Economics & Scalability: We focus on driving measurable, compounding ROI with predictable gross margin and transparent reporting.',
-      'Senior Execution: Our directors personally engineer your strategic roadmap—no junior account managers or generic AI templates.'
+      `High-Intent Buyer Capture: Positioning your brand directly in front of active decision-makers searching for "${query.slice(0, 25)}".`,
+      'Conversion Architecture: Eliminating friction points across your landing pages to ensure visitor traffic turns into paying clients.',
+      'Unit Economics & Scalability: Focusing strictly on compounding ROI, gross profit margins, and transparent bi-weekly reporting.',
+      'Senior Execution: Direct specialist management from experienced growth directors—never handed off to junior interns.'
     ],
     benchmarks: 'Across our portfolio, systematic multi-channel optimization averages a 3.8x blended ROAS and 94.8% client retention.',
     actions: [

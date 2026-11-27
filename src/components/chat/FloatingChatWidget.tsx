@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import {
   X,
@@ -8,13 +8,10 @@ import {
   ArrowUpRight,
   RotateCcw,
   Sparkles,
-  Bot,
-  Flame,
-  CheckCircle,
-  HelpCircle,
   TrendingUp,
 } from 'lucide-react';
 import { generateAiMarketingResponse, AiAction } from '@/lib/ai-marketing-brain';
+import { AiNeuralLogo } from '@/components/ui/AiNeuralLogo';
 
 interface ChatMessage {
   id: string;
@@ -26,41 +23,6 @@ interface ChatMessage {
   actions?: AiAction[];
   followUps?: string[];
   timestamp: string;
-}
-
-// Custom Illuminated Neural AI Spark Logo
-function AiNeuralLogo({ className = 'w-5 h-5' }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <defs>
-        <linearGradient id="aiGlowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#FFC876" />
-          <stop offset="50%" stopColor="#FFAD49" />
-          <stop offset="100%" stopColor="#E08316" />
-        </linearGradient>
-      </defs>
-      {/* Outer Neural Core Diamond */}
-      <path
-        d="M12 2L20.5 7.5V16.5L12 22L3.5 16.5V7.5L12 2Z"
-        stroke="url(#aiGlowGrad)"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      {/* Inner Intelligence 4-Point Star */}
-      <path
-        d="M12 6C12 9.3 14.7 12 18 12C14.7 12 12 14.7 12 18C12 14.7 9.3 12 6 12C9.3 12 12 9.3 12 6Z"
-        fill="url(#aiGlowGrad)"
-      />
-      {/* Center Sparkle Node */}
-      <circle cx="12" cy="12" r="1.5" fill="#161514" />
-    </svg>
-  );
 }
 
 const POPULAR_QUERIES = [
@@ -88,47 +50,7 @@ export function FloatingChatWidget() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Initial welcome message
-  useEffect(() => {
-    setMessages([
-      {
-        id: 'welcome-1',
-        sender: 'bot',
-        headline: 'Lead Edge Neural AI · v5.0',
-        text: 'Hello! I am the Lead Edge Senior Marketing AI, trained on 500+ digital marketing, SEO, PPC, and revenue scaling frameworks.\n\nAsk me anything about scaling your traffic, Google Maps 3-Pack rankings, paid acquisition ROAS, website conversion audits, or our transparent pricing.',
-        followUps: [
-          'How does your pricing work?',
-          'What is included in the Free Blueprint?',
-          'How do you rank in Google Maps 3-Pack?',
-          'Why no long-term lock-ins?'
-        ],
-        timestamp: getCurrentTime(),
-      },
-    ]);
-
-    const popupTimer = setTimeout(() => {
-      setShowPopup(true);
-    }, 2000);
-
-    return () => clearTimeout(popupTimer);
-  }, []);
-
-  // Auto-scroll on new messages
-  useEffect(() => {
-    if (isOpen) {
-      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [messages, isTyping, isOpen]);
-
-  // Focus input on open
-  useEffect(() => {
-    if (isOpen) {
-      setShowPopup(false);
-      setTimeout(() => inputRef.current?.focus(), 250);
-    }
-  }, [isOpen]);
-
-  const processQuery = (queryText: string) => {
+  const processQuery = useCallback((queryText: string) => {
     const clean = queryText.trim();
     if (!clean) return;
 
@@ -143,7 +65,7 @@ export function FloatingChatWidget() {
     setMessages((prev) => [...prev, userMsg]);
     setIsTyping(true);
 
-    // Call the 500+ Knowledge AI Brain
+    // Call the 500+ Knowledge AI Brain with natural conversation support
     setTimeout(() => {
       const response = generateAiMarketingResponse(clean);
 
@@ -161,8 +83,63 @@ export function FloatingChatWidget() {
 
       setMessages((prev) => [...prev, botMsg]);
       setIsTyping(false);
-    }, 600);
-  };
+    }, 450);
+  }, []);
+
+  // Initial welcome message
+  useEffect(() => {
+    setMessages([
+      {
+        id: 'welcome-1',
+        sender: 'bot',
+        headline: 'Lead Edge Neural AI · v5.0',
+        text: "👋 Hey there! Welcome to Lead Edge Marketers. I'm your senior AI growth advisor, trained on over 500+ digital marketing, SEO, PPC, and revenue scaling playbooks.\n\nWhether you're looking to scale organic search rankings, improve paid ad ROAS, build a high-converting website, or want a free audit of your current marketing, I'm here to help. What are you looking to achieve today?",
+        followUps: [
+          'How does your pricing work?',
+          'What is included in the Free Blueprint?',
+          'How long does SEO take to see results?',
+          'Why no long-term lock-ins?'
+        ],
+        timestamp: getCurrentTime(),
+      },
+    ]);
+
+    const popupTimer = setTimeout(() => {
+      setShowPopup(true);
+    }, 2000);
+
+    return () => clearTimeout(popupTimer);
+  }, []);
+
+  // Listen for open events triggered from the "Ask anything" page section
+  useEffect(() => {
+    const handleOpenAi = (e: Event) => {
+      const customEvent = e as CustomEvent<{ query?: string }>;
+      setIsOpen(true);
+      setShowPopup(false);
+      if (customEvent.detail?.query) {
+        processQuery(customEvent.detail.query);
+      }
+    };
+
+    window.addEventListener('open-lead-edge-ai', handleOpenAi);
+    return () => window.removeEventListener('open-lead-edge-ai', handleOpenAi);
+  }, [processQuery]);
+
+  // Auto-scroll on new messages
+  useEffect(() => {
+    if (isOpen) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages, isTyping, isOpen]);
+
+  // Focus input on open
+  useEffect(() => {
+    if (isOpen) {
+      setShowPopup(false);
+      setTimeout(() => inputRef.current?.focus(), 250);
+    }
+  }, [isOpen]);
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
@@ -178,7 +155,7 @@ export function FloatingChatWidget() {
         id: `reset-${Date.now()}`,
         sender: 'bot',
         headline: 'Lead Edge Neural AI',
-        text: 'Chat history cleared. What digital marketing question or business goal can I help you analyze next?',
+        text: 'Chat history reset. How can I assist you with your marketing strategy or business goals next?',
         followUps: [
           'How does your pricing work?',
           'How long does SEO take to produce revenue?',
@@ -199,29 +176,29 @@ export function FloatingChatWidget() {
           role="dialog"
           aria-label="Lead Edge AI Marketing Assistant"
           data-lenis-prevent="true"
-          className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[420px] max-h-[640px] h-[580px] flex flex-col rounded-[28px] bg-white/98 backdrop-blur-2xl border border-[#e8e5de] shadow-[0_30px_90px_-15px_rgba(20,20,20,0.25),0_0_0_1px_rgba(0,0,0,0.05)] overflow-hidden font-sans text-[#161514] animate-in fade-in slide-in-from-bottom-4 duration-200"
+          className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[430px] max-h-[640px] h-[590px] flex flex-col rounded-[28px] bg-white/98 backdrop-blur-2xl border border-[#e8e5de] shadow-[0_30px_90px_-15px_rgba(20,20,20,0.28),0_0_0_1px_rgba(0,0,0,0.06)] overflow-hidden font-sans text-[#161514] animate-in fade-in slide-in-from-bottom-4 duration-200"
           style={{ overscrollBehavior: 'contain' }}
         >
-          {/* AI Header with Neural Branding */}
-          <div className="flex items-center justify-between px-5 py-3.5 bg-[#161514] text-white select-none shrink-0 border-b border-white/10">
+          {/* AI Header with Best-in-Class Neural Branding */}
+          <div className="flex items-center justify-between px-5 py-4 bg-[#161514] text-white select-none shrink-0 border-b border-white/10 shadow-sm">
             <div className="flex items-center gap-3">
-              {/* Custom Neural Core Logo with Ambient Glow */}
-              <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-[#2a2927] to-[#161514] border border-[#FFAD49]/40 flex items-center justify-center shadow-[0_0_15px_rgba(255,173,73,0.25)] shrink-0">
-                <AiNeuralLogo className="w-5 h-5" />
+              {/* Premium 3D Glowing Neural Logo */}
+              <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-[#262420] to-[#12110e] border border-[#FFAD49]/50 flex items-center justify-center shadow-[0_0_20px_rgba(255,173,73,0.35)] shrink-0">
+                <AiNeuralLogo className="w-6 h-6" size={24} glow={true} />
                 <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-[#161514] animate-pulse" />
               </div>
 
               {/* Title & Neural Status */}
               <div className="flex flex-col text-left">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-sans font-bold text-sm tracking-tight text-white leading-tight">
+                  <span className="font-sans font-bold text-sm sm:text-base tracking-tight text-white leading-tight">
                     Lead Edge AI Core
                   </span>
                   <span className="px-1.5 py-0.2 rounded-full bg-[#FFAD49]/20 text-[#FFAD49] text-[9px] font-mono font-bold">
                     v5.0
                   </span>
                 </div>
-                <span className="text-[11px] text-emerald-400 font-medium tracking-wide flex items-center gap-1.5 leading-none mt-0.5">
+                <span className="text-[11px] text-emerald-400 font-medium tracking-wide flex items-center gap-1.5 leading-none mt-1">
                   500+ Marketing Frameworks Trained
                 </span>
               </div>
@@ -347,7 +324,7 @@ export function FloatingChatWidget() {
             {/* Typing Indicator */}
             {isTyping && (
               <div className="flex items-center gap-2 bg-white border border-[#e8e5dc] rounded-2xl px-4 py-2.5 w-fit shadow-xs">
-                <AiNeuralLogo className="w-3.5 h-3.5 animate-spin" />
+                <AiNeuralLogo className="w-3.5 h-3.5 animate-spin" size={14} glow={false} />
                 <span className="text-xs text-[#78716c] font-medium">Synthesizing strategy...</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FFAD49] animate-bounce" />
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FFAD49] animate-bounce [animation-delay:0.15s]" />
@@ -395,7 +372,7 @@ export function FloatingChatWidget() {
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Ask any marketing or strategy question..."
+                placeholder="Ask any question (e.g. 'hi' or 'how does pricing work?')..."
                 className="w-full bg-transparent text-xs sm:text-[13px] text-[#161514] placeholder-[#8c887f] focus:outline-none"
               />
             </div>
@@ -420,10 +397,10 @@ export function FloatingChatWidget() {
           onClick={() => setIsOpen(true)}
           className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-40 cursor-pointer animate-in fade-in slide-in-from-bottom-2 duration-300 select-none"
         >
-          <div className="relative flex items-center gap-3 bg-[#161514] text-white border border-[#FFAD49]/40 px-4 py-2.5 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.35)] hover:border-[#FFAD49] transition-all group">
+          <div className="relative flex items-center gap-3 bg-[#161514] text-white border border-[#FFAD49]/50 px-4 py-2.5 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.35)] hover:border-[#FFAD49] transition-all group">
             {/* Custom Glowing Neural Core Mini Icon */}
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#2a2927] to-[#161514] border border-[#FFAD49]/50 flex items-center justify-center shrink-0">
-              <AiNeuralLogo className="w-3.5 h-3.5" />
+            <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-[#2a2927] to-[#161514] border border-[#FFAD49]/60 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(255,173,73,0.3)]">
+              <AiNeuralLogo className="w-4 h-4" size={18} glow={false} />
             </div>
 
             {/* Popover Copy */}
@@ -451,7 +428,7 @@ export function FloatingChatWidget() {
             </button>
 
             {/* Triangular Notch */}
-            <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-[#161514] border-r border-b border-[#FFAD49]/40 rotate-45" />
+            <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-[#161514] border-r border-b border-[#FFAD49]/50 rotate-45" />
           </div>
         </div>
       )}
@@ -463,17 +440,17 @@ export function FloatingChatWidget() {
         onClick={() => setIsOpen((prev) => !prev)}
         title={isOpen ? 'Close AI Assistant' : 'Ask Lead Edge Neural AI (500+ Frameworks)'}
         aria-label={isOpen ? 'Close AI Assistant' : 'Open AI Assistant'}
-        className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#161514] text-white hover:bg-[#242320] border-2 border-[#FFAD49]/50 shadow-[0_12px_35px_rgba(0,0,0,0.35),0_0_20px_rgba(255,173,73,0.2)] transition-all duration-300 hover:scale-105 active:scale-95 group select-none"
+        className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#161514] text-white hover:bg-[#242320] border-2 border-[#FFAD49]/60 shadow-[0_12px_35px_rgba(0,0,0,0.4),0_0_25px_rgba(255,173,73,0.3)] transition-all duration-300 hover:scale-105 active:scale-95 group select-none"
       >
         {isOpen ? (
           <X className="w-5 h-5 text-white group-hover:rotate-90 transition-transform duration-200" />
         ) : (
           <div className="relative flex items-center justify-center">
-            {/* Custom Glowing Neural AI Icon */}
-            <AiNeuralLogo className="w-6 h-6 transition-transform group-hover:scale-110 duration-200" />
+            {/* Custom 3D Glowing Neural AI Icon */}
+            <AiNeuralLogo className="w-7 h-7 transition-transform group-hover:scale-110 duration-200" size={28} glow={true} />
 
             {/* "AI ✨" pill badge floating on top-right */}
-            <span className="absolute -top-3.5 -right-3.5 px-2 py-0.5 rounded-full bg-[#FFAD49] text-[#161514] font-black text-[9px] font-sans tracking-tight leading-none shadow-sm flex items-center gap-0.5 border border-black/20">
+            <span className="absolute -top-3.5 -right-3.5 px-2 py-0.5 rounded-full bg-gradient-to-r from-[#FFC876] to-[#FFAD49] text-[#161514] font-black text-[9px] font-sans tracking-tight leading-none shadow-md flex items-center gap-0.5 border border-black/20">
               <span>AI</span>
               <Sparkles className="w-2.5 h-2.5 text-black" />
             </span>
