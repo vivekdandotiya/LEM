@@ -2,16 +2,13 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { primaryNavItems } from '@/data/nav';
 import { MEGAMENU_COLUMNS } from '@/data/megamenu';
-import { ChevronDown, Menu, X, ArrowUpRight, Search, Zap, Sparkles, ShoppingBag, Users, ChevronRight } from 'lucide-react';
-import { WaterRippleCanvas } from '@/components/layout/WaterRippleCanvas';
+import { ChevronDown, Menu, X, Search, Zap, Sparkles, ShoppingBag, ChevronRight } from 'lucide-react';
 
 export function Navbar() {
   const pathname = usePathname();
-  const navRef = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -60,6 +57,9 @@ export function Navbar() {
     }, 220);
   };
 
+  // 4 Core Service Columns (team column removed per user request)
+  const serviceColumns = MEGAMENU_COLUMNS.filter((col) => col.id !== 'team');
+
   return (
     <>
       <header
@@ -68,42 +68,36 @@ export function Navbar() {
         }`}
       >
         <nav
-          ref={navRef}
           aria-label="Main Navigation"
           className={`pointer-events-auto relative w-full transition-all duration-300 rounded-full h-16 sm:h-20 px-5 sm:px-8 flex items-center justify-between bg-white/95 backdrop-blur-md border border-[#e8e6e2] shadow-[0_4px_24px_rgba(22,21,20,0.06)] ${
             isScrolled ? 'max-w-5xl' : 'max-w-6xl'
           }`}
         >
-          {/* Interactive Liquid Water Ripple Canvas on Navbar Hover (Clipped to Pill) */}
-          <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none z-0">
-            <WaterRippleCanvas parentRef={navRef} />
-          </div>
-
           {/* =========================================================================
-              1. Brand Logo (Original Logo as Before: Amber LE Badge + Original Colors)
+              1. Brand Logo (Amber LE Badge + Interactive Text Hover)
               ========================================================================= */}
           <Link
             href="/"
-            className="relative z-10 flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f7ac4f] rounded-full select-none"
+            className="group flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded-full select-none"
             aria-label="Lead Edge Marketers - Home"
           >
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#f7ac4f] flex items-center justify-center text-[#161514] font-black font-sans text-xs sm:text-sm shadow-sm transition-transform duration-200 group-hover:scale-105 shrink-0">
               LE
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-sans font-bold tracking-tight text-sm sm:text-base leading-none text-[#161514]">
+              <span className="font-sans font-bold tracking-tight text-sm sm:text-base leading-none text-[#161514] transition-all duration-200 ease-out group-hover:text-red-600 group-hover:scale-105 origin-left">
                 LEAD EDGE
               </span>
-              <span className="text-xs font-mono tracking-widest text-[#5d5a55] mt-0.5 leading-none font-semibold">
+              <span className="text-xs font-mono tracking-widest text-[#5d5a55] mt-0.5 leading-none font-semibold transition-all duration-200 ease-out group-hover:text-red-500">
                 MARKETERS
               </span>
             </div>
           </Link>
 
           {/* =========================================================================
-              2. Desktop Navigation Links & 5-Column Megamenu
+              2. Desktop Navigation Links (Red + Slightly Bigger on Hover)
               ========================================================================= */}
-          <div className="relative z-10 hidden lg:flex items-center gap-1.5 xl:gap-2">
+          <div className="hidden lg:flex items-center gap-1.5 xl:gap-2">
             {primaryNavItems.map((item) => {
               const isServices = item.hasDropdown;
               const isActive =
@@ -119,199 +113,81 @@ export function Navbar() {
                     onMouseEnter={handleServicesMouseEnter}
                     onMouseLeave={handleServicesMouseLeave}
                   >
-                    {/* Services Pill Button (Design from reference, original brand colors) */}
+                    {/* Services Pill Button: Turns Red & Scales on Hover */}
                     <button
                       type="button"
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
                       aria-expanded={isServicesOpen}
                       aria-haspopup="true"
-                      className={`flex items-center gap-1.5 px-4 sm:px-5 py-2 text-sm font-sans font-bold tracking-tight rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f7ac4f] ${
+                      className={`group/btn flex items-center gap-1.5 px-4 sm:px-5 py-2 text-sm font-sans font-bold tracking-tight rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 hover:bg-[#f4f3f1] ${
                         isServicesOpen || isActive
                           ? 'bg-[#f4f3f1] text-[#161514] shadow-xs'
-                          : 'text-[#5d5a55] hover:text-[#161514] hover:bg-[#f4f3f1]'
+                          : 'text-[#5d5a55]'
                       }`}
                     >
-                      <span>{item.title}</span>
+                      <span className="inline-block transition-all duration-200 ease-out origin-center group-hover/btn:text-red-600 group-hover/btn:scale-110">
+                        {item.title}
+                      </span>
                       <ChevronDown
-                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                          isServicesOpen ? 'rotate-180 text-[#f7ac4f]' : 'text-[#8f8a82]'
+                        className={`w-3.5 h-3.5 transition-all duration-200 origin-center ${
+                          isServicesOpen
+                            ? 'rotate-180 text-red-600'
+                            : 'text-[#8f8a82] group-hover/btn:text-red-600 group-hover/btn:scale-110'
                         }`}
                       />
                     </button>
 
-                    {/* Elevated 5-Column Megamenu (Bespoke Design, Refined Icons & Layout) */}
+                    {/* Elevated 4-Column Megamenu (Squad & Advisory Strip Removed) */}
                     <div
-                      className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[1160px] max-w-[95vw] rounded-[32px] bg-white border border-[#e8e6e2] shadow-[0_28px_80px_-15px_rgba(22,21,20,0.18)] p-7 sm:p-9 transition-all duration-200 z-50 ${
+                      className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[920px] max-w-[95vw] rounded-[28px] bg-white border border-[#e8e6e2] shadow-[0_28px_80px_-15px_rgba(22,21,20,0.18)] p-6 sm:p-8 transition-all duration-200 z-50 ${
                         isServicesOpen
                           ? 'opacity-100 translate-y-0 pointer-events-auto'
                           : 'opacity-0 translate-y-3 pointer-events-none'
                       }`}
                     >
-                      {/* 5 Distinct Columns Grid */}
-                      <div className="grid grid-cols-5 gap-5 xl:gap-7 pb-7">
-                        {MEGAMENU_COLUMNS.map((col) => {
-                          const isTeam = col.id === 'team';
+                      {/* Clean 4-Column Grid */}
+                      <div className="grid grid-cols-4 gap-6 xl:gap-7">
+                        {serviceColumns.map((col) => (
+                          <div key={col.id} className="flex flex-col">
+                            {/* Column Header */}
+                            <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[#f0eee9]">
+                              <span className="w-6 h-6 rounded-md bg-[#161514] text-[#f7ac4f] flex items-center justify-center shrink-0 shadow-xs">
+                                {col.id === 'seo' && <Search className="w-3 h-3" />}
+                                {col.id === 'ppc' && <Zap className="w-3 h-3" />}
+                                {col.id === 'social' && <Sparkles className="w-3 h-3" />}
+                                {col.id === 'ecommerce' && <ShoppingBag className="w-3 h-3" />}
+                              </span>
 
-                          if (isTeam) {
-                            return (
-                              <div
-                                key={col.id}
-                                className="flex flex-col justify-between p-4 rounded-2xl bg-[#fbf9f6] border border-[#ece8df] shadow-2xs"
-                              >
-                                <div>
-                                  {/* Header with Avatars & Active Pulse */}
-                                  <div className="flex items-center justify-between mb-3">
-                                    <div className="flex -space-x-1.5 overflow-hidden">
-                                      <div className="relative h-6 w-6 rounded-full ring-2 ring-white overflow-hidden bg-slate-200 shrink-0">
-                                        <Image
-                                          src="/images/about/team-1.webp"
-                                          alt="Team member"
-                                          fill
-                                          className="object-cover"
-                                          sizes="24px"
-                                        />
-                                      </div>
-                                      <div className="relative h-6 w-6 rounded-full ring-2 ring-white overflow-hidden bg-slate-200 shrink-0">
-                                        <Image
-                                          src="/images/about/about-team-creative.webp"
-                                          alt="Team member"
-                                          fill
-                                          className="object-cover"
-                                          sizes="24px"
-                                        />
-                                      </div>
-                                      <div className="relative h-6 w-6 rounded-full ring-2 ring-white overflow-hidden bg-slate-200 shrink-0">
-                                        <Image
-                                          src="/images/about/about-hero.webp"
-                                          alt="Team member"
-                                          fill
-                                          className="object-cover"
-                                          sizes="24px"
-                                        />
-                                      </div>
-                                    </div>
-                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100/80 text-emerald-800 text-[10px] font-bold">
-                                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                      Available
-                                    </span>
-                                  </div>
-
-                                  <h3 className="font-sans font-bold text-[#161514] text-sm tracking-tight mb-1">
-                                    Hire a Dedicated Squad
-                                  </h3>
-                                  <p className="text-[11px] text-[#78716c] leading-relaxed mb-3">
-                                    Plug experienced growth specialists directly into your marketing workflows.
-                                  </p>
-
-                                  {/* Quick Specialist Roles */}
-                                  <ul className="flex flex-col gap-1.5">
-                                    {col.items.slice(0, 4).map((item) => (
-                                      <li key={item.label}>
-                                        <Link
-                                          href={item.href}
-                                          onClick={() => setIsServicesOpen(false)}
-                                          className="group/team flex items-center justify-between text-xs font-sans font-medium text-[#5d5a55] hover:text-[#161514] py-1 px-2 -mx-2 rounded-lg hover:bg-white transition-all"
-                                        >
-                                          <span className="group-hover/team:translate-x-0.5 transition-transform">
-                                            {item.label}
-                                          </span>
-                                          <ChevronRight className="w-3 h-3 text-[#f7ac4f] opacity-0 group-hover/team:opacity-100 transition-opacity" />
-                                        </Link>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-
-                                <Link
-                                  href="/contact"
-                                  onClick={() => setIsServicesOpen(false)}
-                                  className="mt-4 pt-3 border-t border-[#ece8df] inline-flex items-center justify-between text-xs font-bold text-[#b45309] hover:text-[#161514] transition-colors"
-                                >
-                                  <span>Request Squad Pricing</span>
-                                  <ArrowUpRight className="w-3.5 h-3.5" />
-                                </Link>
-                              </div>
-                            );
-                          }
-
-                          return (
-                            <div key={col.id} className="flex flex-col">
-                              {/* Column Header with Sleek Editorial Icon & Label */}
-                              <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[#f0eee9]">
-                                <span className="w-6 h-6 rounded-md bg-[#161514] text-[#f7ac4f] flex items-center justify-center shrink-0 shadow-xs">
-                                  {col.id === 'seo' && <Search className="w-3 h-3" />}
-                                  {col.id === 'ppc' && <Zap className="w-3 h-3" />}
-                                  {col.id === 'social' && <Sparkles className="w-3 h-3" />}
-                                  {col.id === 'ecommerce' && <ShoppingBag className="w-3 h-3" />}
-                                </span>
-
-                                <h3 className="font-sans font-bold text-[#161514] text-[13px] sm:text-sm tracking-tight">
-                                  {col.title}
-                                </h3>
-                              </div>
-
-                              {/* Column Links List with Smooth Hover Indication */}
-                              <ul className="flex flex-col gap-1">
-                                {col.items.map((item) => (
-                                  <li key={item.label}>
-                                    <Link
-                                      href={item.href}
-                                      onClick={() => setIsServicesOpen(false)}
-                                      className="group/sub flex items-center justify-between text-xs sm:text-[13px] font-sans font-medium text-[#55524d] hover:text-[#161514] hover:bg-[#f7ac4f]/10 px-2.5 py-1.5 -mx-2.5 rounded-lg transition-all duration-150"
-                                    >
-                                      <span className="group-hover/sub:translate-x-0.5 transition-transform">
-                                        {item.label}
-                                      </span>
-                                      {item.isNew ? (
-                                        <span className="px-1.5 py-0.2 rounded-full bg-[#fef3c7] text-[#92400e] text-[9px] font-bold tracking-tight">
-                                          New
-                                        </span>
-                                      ) : (
-                                        <ChevronRight className="w-3 h-3 text-[#f7ac4f] opacity-0 group-hover/sub:opacity-100 group-hover/sub:translate-x-0.5 transition-all" />
-                                      )}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
+                              <h3 className="font-sans font-bold text-[#161514] text-[13px] sm:text-sm tracking-tight transition-all duration-200 hover:text-red-600">
+                                {col.title}
+                              </h3>
                             </div>
-                          );
-                        })}
-                      </div>
 
-                      {/* Bottom Advisory Strip */}
-                      <div className="bg-[#faf9f6] border-t border-[#e8e6e2] -mx-7 sm:-mx-9 -mb-7 sm:-mb-9 px-7 sm:px-9 py-4 sm:py-4.5 rounded-b-[32px] flex flex-col md:flex-row items-center justify-between gap-4">
-                        <div className="flex items-center gap-2 text-xs sm:text-sm text-[#5d5a55] text-center md:text-left">
-                          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                          <span>
-                            <strong className="text-[#161514] font-bold">Unsure what channel you need?</strong>{' '}
-                            Tell us your objective and we will recommend the highest-ROI mix.
-                          </span>
-                        </div>
-
-                        <div className="flex items-center gap-4 sm:gap-6 shrink-0">
-                          <Link
-                            href="/services"
-                            onClick={() => setIsServicesOpen(false)}
-                            className="text-xs sm:text-sm font-semibold text-[#5d5a55] hover:text-[#161514] transition-colors"
-                          >
-                            All Services
-                          </Link>
-                          <Link
-                            href="/services"
-                            onClick={() => setIsServicesOpen(false)}
-                            className="text-xs sm:text-sm font-semibold text-[#5d5a55] hover:text-[#161514] transition-colors"
-                          >
-                            Pricing
-                          </Link>
-                          <Link
-                            href="/contact"
-                            onClick={() => setIsServicesOpen(false)}
-                            className="inline-flex items-center gap-1.5 px-5 sm:px-6 py-2.5 rounded-full bg-[#161514] hover:bg-[#2c2b29] text-white font-bold text-xs sm:text-sm tracking-tight shadow-sm transition-all duration-150 active:scale-95 group"
-                          >
-                            <span>Book Free Strategy Call</span>
-                            <ArrowUpRight className="w-3.5 h-3.5 text-[#f7ac4f] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                          </Link>
-                        </div>
+                            {/* Column Links List: Turns Red & Scales on Hover */}
+                            <ul className="flex flex-col gap-1">
+                              {col.items.map((subItem) => (
+                                <li key={subItem.label}>
+                                  <Link
+                                    href={subItem.href}
+                                    onClick={() => setIsServicesOpen(false)}
+                                    className="group/sub flex items-center justify-between text-xs sm:text-[13px] font-sans font-medium text-[#55524d] hover:bg-red-50/60 px-2.5 py-1.5 -mx-2.5 rounded-lg transition-all duration-200"
+                                  >
+                                    <span className="inline-block transition-all duration-200 ease-out origin-left group-hover/sub:text-red-600 group-hover/sub:scale-105 group-hover/sub:font-bold">
+                                      {subItem.label}
+                                    </span>
+                                    {subItem.isNew ? (
+                                      <span className="px-1.5 py-0.2 rounded-full bg-red-100 text-red-700 text-[9px] font-bold tracking-tight">
+                                        New
+                                      </span>
+                                    ) : (
+                                      <ChevronRight className="w-3 h-3 text-red-500 opacity-0 group-hover/sub:opacity-100 group-hover/sub:translate-x-0.5 transition-all" />
+                                    )}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -322,27 +198,33 @@ export function Navbar() {
                 <Link
                   key={item.title}
                   href={item.href}
-                  className={`px-3.5 sm:px-4 py-2 text-sm font-sans font-medium tracking-tight rounded-full transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f7ac4f] ${
-                    isActive
-                      ? 'text-[#161514] font-bold bg-[#f4f3f1]'
-                      : 'text-[#5d5a55] hover:text-[#161514] hover:bg-[#f4f3f1]'
+                  className={`group/navlink px-3.5 sm:px-4 py-2 text-sm font-sans tracking-tight rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 hover:bg-[#f4f3f1] ${
+                    isActive ? 'font-bold bg-[#f4f3f1]' : ''
                   }`}
                 >
-                  {item.title}
+                  <span
+                    className={`inline-block transition-all duration-200 ease-out origin-center font-medium group-hover/navlink:text-red-600 group-hover/navlink:scale-110 group-hover/navlink:font-bold ${
+                      isActive ? 'text-[#161514]' : 'text-[#5d5a55]'
+                    }`}
+                  >
+                    {item.title}
+                  </span>
                 </Link>
               );
             })}
           </div>
 
           {/* =========================================================================
-              3. Right Action: "Get in touch" (Warm Apricot Button with Brand Colors)
+              3. Right Action: "Get in touch" Button
               ========================================================================= */}
-          <div className="relative z-10 flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-xs sm:text-sm tracking-tight transition-all duration-150 shadow-sm active:scale-95"
+              className="group/cta inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-sans font-bold text-xs sm:text-sm tracking-tight transition-all duration-200 shadow-sm active:scale-95"
             >
-              Get in touch
+              <span className="inline-block transition-all duration-200 ease-out group-hover/cta:scale-105">
+                Get in touch
+              </span>
             </Link>
 
             {/* Mobile Hamburger Toggle */}
@@ -357,74 +239,6 @@ export function Navbar() {
           </div>
         </nav>
       </header>
-
-      {/* Mobile Drawer Menu */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white pt-28 px-6 pb-12 overflow-y-auto lg:hidden animate-in fade-in duration-200">
-          <div className="flex flex-col gap-6 max-w-md mx-auto">
-            <div className="flex flex-col gap-3 pb-6 border-b border-[#e8e6e2]">
-              {primaryNavItems.map((item) => (
-                <Link
-                  key={item.title}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-xl font-sans font-bold text-[#161514] hover:text-[#f7ac4f] py-2 transition-colors"
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </div>
-
-            {/* Core Services Quick Links in Mobile */}
-            <div className="flex flex-col gap-2">
-              <span className="text-xs font-mono font-bold uppercase text-[#5d5a55] tracking-wider">
-                Services Directory
-              </span>
-              <div className="grid grid-cols-1 gap-2 pt-1">
-                <Link
-                  href="/services/seo"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-sm font-semibold text-[#161514] hover:text-[#b45309] py-1"
-                >
-                  📊 SEO Services
-                </Link>
-                <Link
-                  href="/services/ppc"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-sm font-semibold text-[#161514] hover:text-[#b45309] py-1"
-                >
-                  🎯 PPC and Paid Ads
-                </Link>
-                <Link
-                  href="/services/social-media"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-sm font-semibold text-[#161514] hover:text-[#b45309] py-1"
-                >
-                  📷 Social Media Management
-                </Link>
-                <Link
-                  href="/services/web-development"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-sm font-semibold text-[#161514] hover:text-[#b45309] py-1"
-                >
-                  🛍️ E-Commerce & Websites
-                </Link>
-              </div>
-            </div>
-
-            {/* Rebuild CTA Button */}
-            <div className="flex flex-col gap-3 pt-4">
-              <Link
-                href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full text-center py-4 rounded-full bg-[#f7ac4f] hover:bg-[#f29a2e] text-[#161514] font-bold text-base shadow-sm active:scale-95 transition-all"
-              >
-                Get in touch
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }
